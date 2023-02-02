@@ -14,11 +14,10 @@ A simple blog theme powered by [Zola](getzola.org). See a live preview [here](ht
 - [X] Projects page.
 - [x] Social Links.
 - [x] Tags.
-
+- [X] Syntax highlighting.
 
 ### TODO:
 - [ ] Archive.
-- [ ] Syntax highlighting.
 
 ## Quick start
 
