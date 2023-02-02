@@ -17,8 +17,8 @@ A simple blog theme powered by [Zola](getzola.org). See a live preview [here](ht
 
 
 ### TODO:
-- [] Archive.
-- [] Syntax highlighting.
+- [ ] Archive.
+- [ ] Syntax highlighting.
 
 ## Quick start
 
