@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter.ttf');
+}
+@import 'parts/_cards.scss';
+@import 'parts/_code.scss';
+@import 'parts/_header.scss';
+@import 'parts/_image.scss';
+@import 'parts/misc.scss';
+@import 'parts/table.scss';
+@import 'parts/home-banner.scss';
+@import 'parts/footer.scss';
+@import 'parts/theme-switch.scss';
+
+:root {
+  --max-layout-width: 1000px;
+  --normal-layout-width: 600px;
+  --medium-layout-width: 350px;
+  --small-layout-width: 200px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  line-height: 190%;
+
+  --bg-0: #818181;
+  --bg-1: rgba(255, 255, 255, 5%);
+  --bg-2: rgba(23, 23, 23, 100%);
+  --primary-color: #ef5350;
+  --hover-color: white;
+  --background-color: #1f1f1f;
+  // --navbar-color:#222226;
+  --secondary-color: #696969;
+  --highlights: #b35a5a;
+  --links: #d35d6e;
+  --text-color: #d3d3d3;
+  --code: #ef476f;
+  --border-color: rgb(0, 0, 0);
+  --light-border-color: rgba(255, 255, 255, 0.1);
+  --input-back: #4b4a4a;
+  --input-color: #294797;
+  --meta-color: rgb(198, 197, 197);
+  --accent-color: #ff9a8c;
+}
+
+[data-theme='light'] {
+  --bg-0: #fff;
+  --bg-1: #f2f2f2;
+  --bg-2: #fefefe;
+  --hover-color: white;
+  --background-color: #fff;
+  // --navbar-color:#e3e3e3;
+  --secondary-color: rgb(158, 158, 158);
+  --links: #799351;
+  --text-color: #222226;
+  --border-color: rgb(114, 114, 114);
+  --light-border-color: rgba(255, 255, 255, 0.1);
+  --input-back: #161616;
+  --input-color: #294797;
+  --input-back: rgb(158, 158, 158);
+  --input-color: #e0a615;
+  --meta-color: rgb(53, 53, 53);
+  --accent-color: #aacb73;
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6em;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.content {
+  max-width: var(--max-layout-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  word-wrap: break-word;
+  min-height: 80vh;
+}
+h1 {
+  display: block;
+  font-size: 1.7em;
+  margin-top: 0.67em;
+  margin-bottom: 0em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 650;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin-top: 0.83em;
+  margin-bottom: 0em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1000px) {
+  .content {
+    max-width: var(--normal-layout-width);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .content {
+    max-width: var(--medium-layout-width);
+  }
+}
+@media only screen and (max-width: 300px) {
+  .content {
+    max-width: var(--small-layout-width);
+  }
+}
+@media all and (min-width: 640px) {
+  html {
+    font-size: 16.5px;
+  }
+}
+
+@media all and (min-width: 720px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media all and (min-width: 960px) {
+  html {
+    font-size: 20px;
+  }
+}

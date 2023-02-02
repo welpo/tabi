@@ -1,0 +1,14 @@
+<footer>
+    <section>
+    <nav class="socials nav-navs">
+        {%- if config.extra.socials %}
+        {% for social in config.extra.socials %}
+        <a rel="noopener noreferrer" target="_blank" class="nav-links social" href="{{ social.url }}">
+            <img alt={{ social.name }} title={{ social.name }} src="/social_icons/{{ social.icon }}.svg">
+        </a>
+        {% endfor %}
+        {% endif %}
+    </nav>
+    </section>
+    <script src="{{ get_url(path='js/main.js', trailing_slash=false) | safe }}"/></script>
+</footer>

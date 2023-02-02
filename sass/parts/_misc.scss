@@ -1,0 +1,63 @@
+.primary-color {
+  color: var(--primary-color);
+}
+
+.draft-label {
+  color: var(--hover-color);
+  text-decoration: none;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-left: 6px;
+  background-color: var(--primary-color);
+}
+
+.title-container {
+  border-bottom: var(--secondary-color) solid 0.5px;
+  padding-bottom: 15px;
+}
+
+::-moz-selection {
+  background: var(--primary-color);
+  color: var(--hover-color);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--primary-color);
+  color: var(--hover-color);
+}
+
+p {
+  line-height: 1.5;
+}
+
+hr {
+  border: 0;
+  border-top: 3px solid var(--border-color);
+  margin: 1em 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--border-color);
+  color: #737373;
+  margin: 0;
+  padding-left: 1em;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration-color: var(--links);
+  font-weight: 1000;
+}
+
+a:hover {
+  background-color: var(--primary-color);
+  color: var(--hover-color);
+}
+/* Remove post list padding */
+@media screen and (max-width: 600px) {
+  .list > ul {
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -1,0 +1,45 @@
+.theme-switcher {
+  align-self: center;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+
+  .switch {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    // top: -30px;
+    left: 0px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      transition: all 0.2s ease-in-out;
+      border: none;
+    }
+    .sun {
+      opacity: 1;
+    }
+    .moon {
+      opacity: 0;
+    }
+  }
+  input {
+    display: none;
+    &:checked + .switch {
+      .sun {
+        opacity: 0;
+      }
+      .moon {
+        opacity: 1;
+      }
+    }
+  }
+}

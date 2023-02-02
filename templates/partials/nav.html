@@ -1,0 +1,26 @@
+<header>
+	<nav class="navbar">
+		<div class="nav-title">
+			<a class="home-title" href={{ config.base_url }}>{{ config.title }}</a>
+		</div>
+
+		{%- if config.extra.menu %}
+		<div class="nav-navs">
+			<div>
+				{% for menu in config.extra.menu %}
+				<a class="nav-links" href={{ menu.url }}>
+						{{ menu.name }}</a>
+				{% endfor %}
+			</div>
+			<label class="theme-switcher" for="themeswitch">
+				<input type="checkbox" id="themeswitch">
+				<div class="switch">
+					<img alt="theme switch to light" class="moon" src="/menu_icon/moon.png">
+					<img alt="theme switch to dark" class="sun" src="/menu_icon/sun.png">
+				</div>
+			</label>
+		</div>
+		{% endif %}
+
+	</nav>
+</header>
