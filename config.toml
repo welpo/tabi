@@ -1,5 +1,5 @@
 # Necessary stuff.
-base_url = "https://welpo.github.io/tabi"
+base_url = "/"
 title = "~/tabi"
 description = "tabi is a simple personal site and blogging theme for Zola."
 generate_feed = true
@@ -12,7 +12,7 @@ taxonomies = [
 
 [markdown]
 highlight_code = true
-highlight_theme = "ayu-dark"
+highlight_theme = "css"
 
 [extra]
 toc = true
