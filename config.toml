@@ -26,9 +26,9 @@ headerImage = ""
 
 # The icon is display besides the menu text but is not necessary. It needs to be placed under "menu_icon" in the static "folder"
 menu = [
-    { name = "home", url = "/", weight = 1},
-    { name = "tags", url = "/tags", weight = 1 },
-    { name = "projects", url = "/projects", weight = 1 },
+    { name = "home", url = "$BASE_URL/", weight = 1},
+    { name = "tags", url = "$BASE_URL/tags", weight = 1 },
+    { name = "projects", url = "$BASE_URL/projects", weight = 1 },
 ]
 #The icons available can be found in "social_icons" in the "static" folder
 socials = [

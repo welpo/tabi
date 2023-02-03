@@ -8,14 +8,14 @@
 		<div class="nav-navs">
 			<div>
 				{% for menu in config.extra.menu %}
-				<a class="nav-links" href={{ menu.url }}>{{ menu.name }}</a>
+				<a class="nav-links" href={{ menu.url | safe | replace(from="$BASE_URL", to=config.base_url) }}>{{ menu.name }}</a>
 				{% endfor %}
 			</div>
 			<label class="theme-switcher" for="themeswitch">
 				<input type="checkbox" id="themeswitch">
 				<div class="switch">
-					<img alt="set dark theme" class="moon" src="/menu_icon/moon.png">
-					<img alt="set light theme" class="sun" src="/menu_icon/sun.png">
+					<img alt="set dark theme" class="moon" src="{{ config.base_url }}/menu_icon/moon.png">
+					<img alt="set light theme" class="sun" src="{{config.base_url}}/menu_icon/sun.png">
 				</div>
 			</label>
 		</div>

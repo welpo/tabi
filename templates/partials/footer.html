@@ -4,7 +4,7 @@
         {%- if config.extra.socials %}
         {% for social in config.extra.socials %}
         <a rel="noopener noreferrer" target="_blank" class="nav-links social" href="{{ social.url }}">
-            <img alt={{ social.name }} title={{ social.name }} src="/social_icons/{{ social.icon }}.svg">
+            <img alt={{ social.name }} title={{ social.name }} src="{{config.base_url}}/social_icons/{{ social.icon }}.svg">
         </a>
         {% endfor %}
         {% endif %}
