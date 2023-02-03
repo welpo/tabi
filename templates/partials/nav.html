@@ -8,8 +8,7 @@
 		<div class="nav-navs">
 			<div>
 				{% for menu in config.extra.menu %}
-				<a class="nav-links" href={{ menu.url }}>
-						{{ menu.name }}</a>
+				<a class="nav-links" href={{ menu.url }}>{{ menu.name }}</a>
 				{% endfor %}
 			</div>
 			<label class="theme-switcher" for="themeswitch">
