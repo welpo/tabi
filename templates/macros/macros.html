@@ -77,6 +77,12 @@
 </div>
 {% endmacro content %}
 
+{% macro index_content(page) %}
+    <section class="body">
+			{{ page.content | safe }}
+    </section>
+{% endmacro content %}
+
 {% macro content(page) %}
 <main>
     <article>
