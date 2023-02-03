@@ -60,11 +60,6 @@ header {
   padding: 5px;
   border-radius: 5px;
   transition: 100ms;
-  &:hover {
-    color: var(--links);
-    justify-content: right;
-    background-color: var(--secondary-color);
-  }
 }
 
 .home-title {
