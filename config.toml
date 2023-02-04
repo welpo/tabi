@@ -1,5 +1,5 @@
 # Necessary stuff.
-base_url = "/"
+base_url = "http://127.0.0.1:1111"
 title = "~/tabi"
 description = "tabi is a simple personal site and blogging theme for Zola."
 generate_feed = true
@@ -26,11 +26,16 @@ headerImage = ""
 
 # The icon is display besides the menu text but is not necessary. It needs to be placed under "menu_icon" in the static "folder"
 menu = [
-    { name = "home", url = "$BASE_URL/", weight = 1},
-    { name = "tags", url = "$BASE_URL/tags", weight = 1 },
-    { name = "projects", url = "$BASE_URL/projects", weight = 1 },
+    { name = "home", url = "$BASE_URL/" },
+    { name = "tags", url = "$BASE_URL/tags" },
+    { name = "projects", url = "$BASE_URL/projects" },
 ]
 #The icons available can be found in "social_icons" in the "static" folder
 socials = [
+    { name = "github", url = "$BASE_URL/atom.xml", icon = "rss" },
     { name = "github", url = "https://github.com/welpo/", icon = "github" },
+    { name = "soundcloud", url = "https://soundcloud.com/oskerwyld", icon = "soundcloud" },
+    { name = "instagram", url = "https://instagram.com/oskerwyld", icon = "instagram" },
+    { name = "youtube", url = "https://youtube.com/@oskerwyld", icon = "youtube" },
+    { name = "spotify", url = "https://open.spotify.com/artist/5Hv2bYBhMp1lUHFri06xkE", icon = "spotify" },
 ]
