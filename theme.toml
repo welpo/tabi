@@ -5,7 +5,7 @@ homepage = "https://github.com/welpo/tabi"
 # The minimum version of Zola required
 min_version = "0.4.0"
 # An optional live demo URL
-demo = "https://welpo.github.io/tabi"
+demo = "https://welpo.ooo/tabi"
 
 # Any variable there can be overridden in the end user `config.toml`
 # You don't need to prefix variables by the theme name but as this will
