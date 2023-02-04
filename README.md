@@ -2,11 +2,20 @@
 
 A simple blog theme powered by [Zola](getzola.org). See a live preview [here](https://welpo.ooo/tabi).
 
-> tabi — 旅 — Journey
+> tabi (旅): Journey.
 
-![dark](https://user-images.githubusercontent.com/6399341/216358758-912b47e3-03ed-4b6d-b818-37cea7c42f45.png)
 
-![light](https://user-images.githubusercontent.com/6399341/216358783-ddfa06fe-ea97-480d-b676-eb8526881e83.png)
+<details open>
+  <summary>Dark theme</summary>
+  
+![tabi-dark](https://user-images.githubusercontent.com/6399341/216767530-cfe66699-ee6a-40b0-93ff-ce6879f5381e.png)
+</details>
+
+<details close>
+  <summary>Light theme</summary>
+  
+![tabi-light](https://user-images.githubusercontent.com/6399341/216767537-94c431bb-10f9-48c3-942b-e64b27d98c7d.png)
+</details>
 
 ## Features
 
@@ -33,6 +42,6 @@ zola serve
 ## Inspiration
 
 This theme was inspired by:
-- [shadharon](https://github.com/syedzayyan/shadharon). tabi started as a fork of syedzayyan's theme.
+- [shadharon](https://github.com/syedzayyan/shadharon). tabi started as a fork of [syedzayyan](https://github.com/syedzayyan)'s theme.
 - [Alfonso García's site](https://alfoncode.com/)
 - [tale-zola](https://github.com/aaranxu/tale-zola)
