@@ -37,39 +37,39 @@
     overflow: hidden;
 }
 
-@media all and (max-width:720px) {
+@media all and (max-width: 720px) {
     .cards {
         gap: 18px;
     }
 }
 
-.bloglist-table-row{
-    padding:2%;
-    background-color:var(--navbar-color);
+.bloglist-table-row {
+    padding: 2%;
+    background-color: var(--navbar-color);
     border-radius: 5px;
     transition: 300ms;
     width: 28%;
-    margin-right:1%;
-    margin-top:3%;
+    margin-right: 1%;
+    margin-top: 1%;
 }
-.bloglist-container{
-    display:flex;
+.bloglist-container {
+    display: flex;
     flex-wrap: wrap;
 }
-.bloglist-table-row:hover{
+.bloglist-table-row:hover {
     box-shadow: 10px 10px 0px var(--border-color);
 }
-.bloglist-links{
-    text-decoration:none;
+.bloglist-links {
+    text-decoration: none;
 }
-.bloglist-table-row-data{
-    padding:10px;
+.bloglist-table-row-data {
+    padding: 10px;
 }
-.bloglist-table-row-date{
-    font-size:12px;
+.bloglist-table-row-date {
+    font-size: 12px;
 }
-@media only screen and (max-width:600px) {
-    .bloglist-table-row{
-      width:100%;
+@media only screen and (max-width: 600px) {
+    .bloglist-table-row {
+        width: 100%;
     }
-  }
+}
