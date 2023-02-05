@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Inter';
   src: url('fonts/Inter.ttf');
+  font-display: swap;
 }
 @import 'parts/_cards.scss';
 @import 'parts/_code.scss';
