@@ -2,13 +2,13 @@
 <div class="bloglist-container">
     {%- for page in pages %}
     <section class="bloglist-table-row">
-        <h3>
+        <div class="bloglist-title">
             <a href={{ page.permalink }}>{{page.title}}</a>
-        </h3>
+        </div>
 
         <div class="meta">
             {%- if page.date %}
-            <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+            <time>{{ page.date | date(format="%d %B %Y") }}</time>
             {% endif -%}
             <br />
             <span>{{ page.reading_time }} minute read</span>
@@ -57,18 +57,18 @@
 {% endmacro tags %}
 
 {% macro page_header(title) %}
-<h2>
+<h1>
     {{ title }}
-</h2>
+</h1>
 {% endmacro content %}
 
 
 {% macro page_desc(desc) %}
 <div id="banner-container-home">
     <div id="home-banner-text">
-        <h1>
+        <h3>
             {{ desc.title }}
-        </h1>
+        </h3>
         <p id="banner-home-subtitle">{{ desc.text }}</p>
     </div>
     <div class="image-container-home">
