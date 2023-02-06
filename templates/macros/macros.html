@@ -8,7 +8,7 @@
 
         <div class="meta">
             {%- if page.date %}
-            {{ page.date | date(format="%d %B %Y") }}
+            {{ page.date | date(format=config.extra.timeformat) }}
             {% endif -%}
             <br />
             <span>{{ page.reading_time }} minute read</span>
@@ -86,7 +86,7 @@
 
             <div class="meta">
                 {% if page.date %}
-                Posted on {{ page.date | date(format="%d %B %Y") }}
+                Posted on {{ page.date | date(format=config.extra.timeformat) }}
                 ~
                 {% endif %}
                 <span> {{ page.reading_time }} minute read</span>
@@ -182,7 +182,7 @@
 
             <div class="meta">
                 {%- if page.date %}
-                {{ page.date | date(format="%d %B %Y") }}
+                {{ page.date | date(format=config.extra.timeformat) }}
                 {% endif -%}
                 {% if page.draft %}
                 <span class="draft-label">DRAFT</span>
@@ -212,7 +212,7 @@
     {% for page in pages %}
     <li class="post">
         <a href="{{ page.permalink }}">{{ page.title }}</a>
-        <span class="meta">{{ page.date | date(format="%d %B %Y") }}</span>
+        <span class="meta">{{ page.date | date(format=config.extra.timeformat) }}</span>
     </li>
     {% endfor %}
 </ul>
