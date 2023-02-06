@@ -6,10 +6,8 @@
 {% endif -%}
 
 {%- if section.extra.desc %}
-	{{ post_macros::page_desc(desc=section.extra.desc) }}
+	{{ post_macros::page_desc(desc=section.extra.desc, page=section) }}
 {% endif -%}
-
-{{ post_macros::index_content(page=section) }}
 
 <main class="list">
 	<div class="title-container">
