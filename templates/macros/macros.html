@@ -119,7 +119,7 @@
         {% endif %}
 
         {# Optional table of contents #}
-        {% if config.extra.toc | default(value=false) %}
+        {% if page.extra.toc | default(value=false) %}
         {% if page.toc %}
         <h2>Table of Contents</h2>
         <ul>

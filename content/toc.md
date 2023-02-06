@@ -3,6 +3,9 @@ title = "Table of Contents Test"
 date = "2022-11-22"
 [taxonomies]
 tags = ["test"]
+
+[extra]
+toc = true
 +++
 
 # Heading 1

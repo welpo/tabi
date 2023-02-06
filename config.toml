@@ -15,7 +15,6 @@ highlight_code = true
 highlight_theme = "css"
 
 [extra]
-toc = true
 use_cdn = false
 
 timeformat = "%d %B %Y"  # Default format: "31 January 2049"
