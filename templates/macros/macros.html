@@ -57,7 +57,7 @@
 {% endmacro tags %}
 
 {% macro page_header(title) %}
-<h1>
+<h1 class="title-container">
     {{ title }}
 </h1>
 {% endmacro content %}
@@ -80,7 +80,7 @@
 {% macro content(page) %}
 <main>
     <article>
-        <div class="title">
+        <div>
             {#<h1 class="title">{{ page.title }}</h1>#}
             {{ post_macros::page_header(title=page.title) }}
 
@@ -203,7 +203,7 @@
 
 {% macro list_title(pages, tag_name=false) %}
 {% if tag_name %}
-<h1>Entries tagged - "{{ term.name }}"</h1>
+<h1 class="title-container">Entries tagged - "{{ term.name }}"</h1>
 {% else %}
 <h1 class="page-title">All articles</h1>
 {% endif %}
