@@ -25,9 +25,6 @@ A simple blog theme powered by [Zola](getzola.org). See a live preview [here](ht
 - [x] Tags.
 - [X] Syntax highlighting.
 
-### TODO:
-- [ ] Archive.
-
 See the project's roadmap [here](https://github.com/users/welpo/projects/1).
 
 ## Quick start
