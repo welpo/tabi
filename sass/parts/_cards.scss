@@ -65,6 +65,7 @@
 .bloglist-container {
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 1rem;
 }
 .bloglist-table-row:hover {
     box-shadow: 10px 10px 0px var(--border-color);
