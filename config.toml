@@ -35,7 +35,7 @@ menu = [
 
 #The icons available can be found in "social_icons" in the "static" folder
 socials = [
-    { name = "github", url = "$BASE_URL/atom.xml", icon = "rss" },
+    { name = "atom feed", url = "$BASE_URL/atom.xml", icon = "rss" },
     { name = "github", url = "https://github.com/welpo/", icon = "github" },
     { name = "soundcloud", url = "https://soundcloud.com/oskerwyld", icon = "soundcloud" },
     { name = "instagram", url = "https://instagram.com/oskerwyld", icon = "instagram" },
