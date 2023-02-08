@@ -1,12 +1,10 @@
 code {
   background-color: var(--bg-1);
   padding: 0.1em 0.2em;
-  border-radius: 5px;
 }
 
 pre {
   /* Rounded border */
-  border-radius: 5px;
   border: 1px solid var(--border-color);
   line-height: 1.4;
   overflow-x: auto;
@@ -35,7 +33,6 @@ pre code[class*="language-"] {
 
 pre code[class*="language-"]::before {
   background: black;
-  border-radius: 0 0 0.25rem 0.25rem;
   color: white;
   font-size: 12px;
   letter-spacing: 0.025rem;

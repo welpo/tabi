@@ -57,17 +57,16 @@ header {
   justify-content: right;
   color: var(--text-color);
   padding: 0.66rem;
-  border-radius: 5px;
   transition: 100ms;
 }
 
 .home-title {
   font-size: 1.7em;
   font-weight: 600;
+  padding-right: 0.33rem;
   border: none;
   color: var(--accent-color);
   text-decoration: none;
-  border-radius: 5px;
 }
 
 .meta {
