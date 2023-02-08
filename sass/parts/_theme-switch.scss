@@ -1,14 +1,14 @@
 .theme-switcher {
   align-self: center;
-  margin-left: 5px;
-  width: 20px;
-  height: 20px;
+  margin-left: 0.5rem;
+  width: 1rem;
+  height: 1rem;
   position: relative;
   cursor: pointer;
 
   .switch {
-    height: 20px;
-    width: 20px;
+    width: 1rem;
+    height: 1rem;
     position: absolute;
     // top: -30px;
     left: 0px;

@@ -2,13 +2,13 @@
 <div class="bloglist-container">
     {%- for page in pages %}
     <section class="bloglist-table-row">
-        <h3>
+        <div class="bloglist-title">
             <a href={{ page.permalink }}>{{page.title}}</a>
-        </h3>
+        </div>
 
         <div class="meta">
             {%- if page.date %}
-            <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+            {{ page.date | date(format=config.extra.timeformat) }}
             {% endif -%}
             <br />
             <span>{{ page.reading_time }} minute read</span>
@@ -57,18 +57,18 @@
 {% endmacro tags %}
 
 {% macro page_header(title) %}
-<h2>
+<div class="title-container section-title">
     {{ title }}
-</h2>
+</div>
 {% endmacro page_header %}
 
 
 {% macro page_desc(desc, page) %}
 <div id="banner-container-home">
     <div id="home-banner-text">
-        <h1>
-					{{ desc.title }}
-        </h1>
+        <h3>
+            {{ desc.title }}
+        </h3>
         <section id="banner-home-subtitle">
 					{{ page.content | safe }}
         </section>
@@ -83,13 +83,13 @@
 {% macro content(page) %}
 <main>
     <article>
-        <div class="title">
+        <div>
             {#<h1 class="title">{{ page.title }}</h1>#}
             {{ post_macros::page_header(title=page.title) }}
 
             <div class="meta">
                 {% if page.date %}
-                Posted on <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                Posted on {{ page.date | date(format=config.extra.timeformat) }}
                 ~
                 {% endif %}
                 <span> {{ page.reading_time }} minute read</span>
@@ -122,7 +122,7 @@
         {% endif %}
 
         {# Optional table of contents #}
-        {% if config.extra.toc | default(value=false) %}
+        {% if page.extra.toc | default(value=false) %}
         {% if page.toc %}
         <h2>Table of Contents</h2>
         <ul>
@@ -185,7 +185,7 @@
 
             <div class="meta">
                 {%- if page.date %}
-                <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                {{ page.date | date(format=config.extra.timeformat) }}
                 {% endif -%}
                 {% if page.draft %}
                 <span class="draft-label">DRAFT</span>
@@ -206,7 +206,7 @@
 
 {% macro list_title(pages, tag_name=false) %}
 {% if tag_name %}
-<h1>Entries tagged - "{{ term.name }}"</h1>
+<h1 class="title-container">Entries tagged - "{{ term.name }}"</h1>
 {% else %}
 <h1 class="page-title">All articles</h1>
 {% endif %}
@@ -215,7 +215,7 @@
     {% for page in pages %}
     <li class="post">
         <a href="{{ page.permalink }}">{{ page.title }}</a>
-        <span class="meta">{{ page.date | date(format="%Y-%m-%d") }}</span>
+        <span class="meta">{{ page.date | date(format=config.extra.timeformat) }}</span>
     </li>
     {% endfor %}
 </ul>

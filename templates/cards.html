@@ -18,7 +18,7 @@
     </main>
 
     {% if paginator %}
-        <ul class="pagination">
+        <div class="pagination">
             {% if paginator.previous %}
                 <span class="page-item page-prev">
                     <a href={{ paginator.previous }} class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
@@ -30,6 +30,6 @@
                     <a href={{ paginator.next }} class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
                 </span>
             {% endif %}
-        </ul>
+            </div>
     {% endif %}
 {% endblock main_content %}

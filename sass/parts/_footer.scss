@@ -30,15 +30,29 @@ footer {
     .social {
       background-image: unset;
       padding: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     
     .social>img {
+      color: #000000;
       width: 32px;
       height: 32px;
       padding: 18px;
       filter: invert(1);
     }
     
-    [data-theme="light"] .social>img {
-      filter: invert(0);
+[data-theme="light"] {
+  .social {
+    &:hover {
+      &>img {
+        filter: invert(1);
+      }
     }
+
+    &>img {
+      filter: none;
+    }
+  }
+}

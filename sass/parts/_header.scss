@@ -1,6 +1,5 @@
 header {
   width: 100%;
-  // background-color: var(--navbar-color);
   .main {
     display: flex;
     flex-direction: row;
@@ -38,7 +37,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 1em 0;
+  padding: 1em 24px;
   margin: 0 auto;
   margin-bottom: 0.2rem;
 }
@@ -57,7 +56,7 @@ header {
   text-decoration: none;
   justify-content: right;
   color: var(--text-color);
-  padding: 5px;
+  padding: 0.66rem;
   border-radius: 5px;
   transition: 100ms;
 }
@@ -68,6 +67,7 @@ header {
   border: none;
   color: var(--accent-color);
   text-decoration: none;
+  border-radius: 5px;
 }
 
 .meta {
@@ -77,16 +77,10 @@ header {
 
 @media only screen and (max-width: 1000px) {
   .navbar {
-    max-width: 100%;
-    justify-content: right;
-  }
-
-  .nav-title {
-    margin: 0 auto;
+    max-width: var(--normal-layout-width);
   }
 
   .nav-navs {
-    margin: 0 auto;
     display: flex;
     justify-content: flex-end;
   }
