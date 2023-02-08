@@ -43,6 +43,16 @@ footer {
       filter: invert(1);
     }
     
-    [data-theme="light"] .social>img {
-      filter: invert(0);
+[data-theme="light"] {
+  .social {
+    &:hover {
+      &>img {
+        filter: invert(1);
+      }
     }
+
+    &>img {
+      filter: none;
+    }
+  }
+}
