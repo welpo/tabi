@@ -1,6 +1,6 @@
 +++
 title = "Almost no JavaScript"
-date = "2022-11-22"
+date = "2021-04-02"
 [taxonomies]
 tags = ["test"]
 +++
