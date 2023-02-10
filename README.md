@@ -19,7 +19,7 @@ A simple blog theme powered by [Zola](getzola.org). See a live preview [here](ht
 
 ## Features
 
-- [X] Dark and light modes. Default theme is dark with a switcher in the navbar.
+- [X] Dark and light modes. Default theme is light with a switcher in the navbar.
 - [X] Projects page.
 - [X] Archive page.
 - [x] Social Links.
