@@ -142,6 +142,10 @@ h5 {
   font-weight: bold;
 }
 
+img {
+  border: none;
+}
+
 @media only screen and (max-width: 1000px) {
   .content {
     max-width: var(--normal-layout-width);
