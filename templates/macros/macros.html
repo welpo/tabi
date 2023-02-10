@@ -74,7 +74,7 @@
         </section>
     </div>
     <div class="image-container-home">
-			<img alt="the owner" class="banner-home-img" src="{{ desc.img }}" />
+			<img alt="the owner" class="banner-home-img" src={{ desc.img | safe | replace(from="$BASE_URL", to=config.base_url) }} />
     </div>
 </div>
 {% endmacro page_desc %}
