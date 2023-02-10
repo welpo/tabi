@@ -41,7 +41,6 @@
   --meta-color: rgb(53, 53, 53);
   --accent-color: #aacb73;
 }
-
 [data-theme='dark'] {
   --bg-0: #818181;
   --bg-1: rgba(133, 133, 133, 0.5);
@@ -60,7 +59,12 @@
   --input-color: #294797;
   --meta-color: rgb(198, 197, 197);
   --accent-color: #ff9a8c;
+
+  .invertable-image {
+    filter: invert(1);
+  }
 }
+
 html {
   background-color: var(--background-color);
   color: var(--text-color);
