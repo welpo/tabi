@@ -1,9 +1,9 @@
 .z-code {
   color: #bfbab0;
-  background-color: #151515;
+  background-color: #272430;
 }
-[data-theme="light"] .z-code {
-  background-color: #272430
+[data-theme="dark"] .z-code {
+  background-color: #151515;
 }
 .z-comment,
 .z-punctuation.z-definition.z-comment {

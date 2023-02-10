@@ -23,20 +23,20 @@
       border: none;
     }
     .sun {
-      opacity: 1;
+      opacity: 0;
     }
     .moon {
-      opacity: 0;
+      opacity: 1;
     }
   }
   input {
     display: none;
     &:checked + .switch {
       .sun {
-        opacity: 0;
+        opacity: 1;
       }
       .moon {
-        opacity: 1;
+        opacity: 0;
       }
     }
   }

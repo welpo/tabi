@@ -6,15 +6,15 @@ A simple blog theme powered by [Zola](getzola.org). See a live preview [here](ht
 
 
 <details open>
-  <summary>Dark theme</summary>
-  
-![tabi-dark](https://user-images.githubusercontent.com/6399341/216767530-cfe66699-ee6a-40b0-93ff-ce6879f5381e.png)
+  <summary>Light theme</summary>
+
+![tabi-light](https://user-images.githubusercontent.com/6399341/216767537-94c431bb-10f9-48c3-942b-e64b27d98c7d.png)
 </details>
 
 <details close>
-  <summary>Light theme</summary>
-  
-![tabi-light](https://user-images.githubusercontent.com/6399341/216767537-94c431bb-10f9-48c3-942b-e64b27d98c7d.png)
+  <summary>Dark theme</summary>
+
+![tabi-dark](https://user-images.githubusercontent.com/6399341/216767530-cfe66699-ee6a-40b0-93ff-ce6879f5381e.png)
 </details>
 
 ## Features

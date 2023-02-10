@@ -40,10 +40,18 @@ footer {
       width: 32px;
       height: 32px;
       padding: 18px;
+      filter: invert(0);
+    }
+
+.social {
+  &:hover {
+    &>img {
       filter: invert(1);
     }
-    
-[data-theme="light"] {
+  }
+}
+
+[data-theme="dark"] {
   .social {
     &:hover {
       &>img {
@@ -52,7 +60,7 @@ footer {
     }
 
     &>img {
-      filter: none;
+      filter: invert(1);
     }
   }
 }
