@@ -9,19 +9,13 @@ tags = ["markdown", "test"]
 
 ```rust
 fn main() {
-    let number: u8 = 4;
-
-    match number {
-        i if i == 0 => println!("Zero"),
-        i if i  > 0 => println!("Greater than zero")
-        i if i <= 0 => println!("Smaller or equal to zero"),
-    }
+        println!("Hello, world!") -> ();
 }
 ```
 ## Quote
 
 > We're all hurtling towards death. Yet here we are, for the moment, alive. Each of us knowing we're going to die. Each of us secretly believing we won't.
-> 
+>
 > — Charlie Kaufman, Synecdoche, New York
 
 
