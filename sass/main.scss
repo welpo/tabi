@@ -41,7 +41,7 @@
 
   --code-font: 'Cascadia Code';
 
-  --bg-0: #fff;
+  --bg-0: #f0f0f0;
   --bg-1: #e7e7e7;
   --bg-2: #fefefe;
   --hover-color: white;
@@ -58,16 +58,16 @@
   --input-color: #e0a615;
   --meta-color: rgb(53, 53, 53);
   --accent-color: #aacb73;
+  --table-header-color: #91bf47;
 }
 [data-theme='dark'] {
-  --bg-0: #818181;
+  --bg-0: #2f2f2f;
   --bg-1: rgba(133, 133, 133, 0.5);
   --bg-2: rgba(23, 23, 23, 100%);
   --primary-color: #ef5350;
   --hover-color: white;
   --background-color: #1f1f1f;
   --secondary-color: #696969;
-  --highlights: #b35a5a;
   --links: #d35d6e;
   --text-color: #e1e1e1;
   --code: #ef476f;
@@ -77,6 +77,7 @@
   --input-color: #294797;
   --meta-color: rgb(198, 197, 197);
   --accent-color: #ff9a8c;
+  --table-header-color: #554994;
 
   .invertable-image {
     filter: invert(.88);
