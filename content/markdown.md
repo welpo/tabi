@@ -9,7 +9,7 @@ tags = ["markdown", "test"]
 
 ```rust
 fn main() {
-        println!("Hello, world!") -> ();
+    println!("Hello, world!") -> ();
 }
 ```
 ## Quote
@@ -17,8 +17,6 @@ fn main() {
 > We're all hurtling towards death. Yet here we are, for the moment, alive. Each of us knowing we're going to die. Each of us secretly believing we won't.
 >
 > — Charlie Kaufman, Synecdoche, New York
-
-
 
 ## Code tags
 
