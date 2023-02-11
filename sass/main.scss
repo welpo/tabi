@@ -12,6 +12,13 @@
   font-display: swap;
 }
 
+@font-face {
+  /* Copyright 2019 - Present, Microsoft Corporation, with Reserved Font Name 'Cascadia Code'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
+  font-family: 'Cascadia Code';
+  src: url('fonts/CascadiaCode.ttf');
+  font-display: swap;
+}
+
 @import 'parts/_archive.scss';
 @import 'parts/_cards.scss';
 @import 'parts/_code.scss';
@@ -31,6 +38,8 @@
   --small-layout-width: 200px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   line-height: 190%;
+
+  --code-font: 'Cascadia Code';
 
   --bg-0: #fff;
   --bg-1: #e7e7e7;
