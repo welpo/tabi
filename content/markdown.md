@@ -5,6 +5,23 @@ date = "2023-01-31"
 tags = ["markdown", "test"]
 +++
 
+## Table
+
+Here's an example of a table. Its header colour changes depending on the current theme.
+
+| Symbol  | Element | Atomic Number |
+|---------|---------|---------------|
+| H       | Hydrogen| 1             |
+| C       | Carbon  | 6             |
+| Fe      | Iron    | 26            |
+| Au      | Gold    | 79            |
+
+## Invertable image
+
+This image inverts when switching to dark mode. This isn't very useful for photographs, but works great for diagrams, line drawings, graphs…
+
+{{ invertable_image(src="$BASE_URL/img/graph.png", alt="Invertable graph") }}
+
 ## Code Block
 
 ```rust
@@ -23,8 +40,3 @@ fn main() {
 Lorem ipsum `dolor` sit amet, `consectetur adipiscing` elit.
 `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`
 
-## Invertable image
-
-This image inverts when switching to dark mode. This isn't very useful for photographs, but works great for diagrams, line drawings, graphs…
-
-{{ invertable_image(src="$BASE_URL/img/graph.png", alt="Invertable graph") }}
