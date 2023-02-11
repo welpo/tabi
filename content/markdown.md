@@ -20,7 +20,7 @@ Here's an example of a table. Its header colour changes depending on the current
 
 This image inverts when switching to dark mode. This isn't very useful for photographs, but works great for diagrams, line drawings, graphs…
 
-{{ invertable_image(src="$BASE_URL/img/graph.png", alt="Invertable graph") }}
+{{ invertable_image(src="$BASE_URL/img/graph.webp", alt="Invertable graph") }}
 
 ## Code Block
 
@@ -39,4 +39,3 @@ fn main() {
 
 Lorem ipsum `dolor` sit amet, `consectetur adipiscing` elit.
 `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`
-
