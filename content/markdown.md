@@ -15,8 +15,10 @@ fn main() {
 ## Quote
 
 > We're all hurtling towards death. Yet here we are, for the moment, alive. Each of us knowing we're going to die. Each of us secretly believing we won't.
+> 
+> — Charlie Kaufman, Synecdoche, New York
 
-— Charlie Kaufman, Synecdoche, New York
+
 
 ## Code tags
 
