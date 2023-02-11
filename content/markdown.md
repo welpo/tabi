@@ -9,7 +9,13 @@ tags = ["markdown", "test"]
 
 ```rust
 fn main() {
-    println!("Hello World");
+    let number: u8 = 4;
+
+    match number {
+        i if i == 0 => println!("Zero"),
+        i if i  > 0 => println!("Greater than zero")
+        i if i <= 0 => println!("Smaller or equal to zero"),
+    }
 }
 ```
 ## Quote
