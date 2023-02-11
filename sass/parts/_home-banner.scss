@@ -30,6 +30,14 @@
     color: var(--text-color);
 }
 
+#banner-home-subtitle p {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+#banner-home-subtitle a {
+    font-weight: 400;
+}
+
 .banner-home-img {
     aspect-ratio: 1 / 1;
     max-width: 15rem;
