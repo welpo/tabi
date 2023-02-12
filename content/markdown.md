@@ -7,7 +7,7 @@ tags = ["markdown", "test"]
 
 ## Table
 
-Here's an example of a table. Its header colour changes depending on the current theme.
+Here's an example of a table. Its colours change depending on the current theme.
 
 | Symbol  | Element | Atomic Number |
 |---------|---------|---------------|
