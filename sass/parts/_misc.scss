@@ -38,7 +38,7 @@ hr {
 
 blockquote {
   border-left: 3px solid var(--border-color);
-  color: #8f8f8f;
+  color: var(--quote-color);
   margin: 0;
   padding-left: 1em;
 }
@@ -78,7 +78,7 @@ table {
 
 table thead tr {
   background-color: var(--table-header-color);
-  color: white;
+  color: #1f1f1f;
   text-align: left;
 }
 
