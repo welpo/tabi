@@ -78,6 +78,10 @@
   .invertable-image {
     filter: invert(.88);
   }
+
+  .dimmable-image {
+    filter: brightness(.8) contrast(1.2);
+  }
 }
 
 html {
