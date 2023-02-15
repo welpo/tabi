@@ -1,0 +1,1 @@
+<img class="dimmable-image" {% if src %}src={{ src | safe | replace(from="$BASE_URL", to=config.base_url) }} {% endif %} {% if alt %}alt="{{ alt }}"{% endif %}/>
