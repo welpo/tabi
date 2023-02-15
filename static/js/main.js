@@ -1,14 +1,15 @@
-//https://codepen.io/codeorum/pen/bGedRJO
-
 var themeSwitcher = document.querySelector('.theme-switcher input');
 var currentTheme = localStorage.getItem('theme');
 
-// check what is current theme right now and activate it
+// detect the user's preferred color scheme and activate it
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
     if (currentTheme === 'dark') {
         themeSwitcher.checked = true;
     }
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeSwitcher.checked = true;
 }
 
 // switch between themes
