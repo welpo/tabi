@@ -4,26 +4,15 @@ A simple blog theme powered by [Zola](https://getzola.org). See a live preview [
 
 > tabi (旅): Journey.
 
-
-<details open>
-  <summary>Light theme</summary>
-
-![tabi-light](https://user-images.githubusercontent.com/6399341/216767537-94c431bb-10f9-48c3-942b-e64b27d98c7d.png)
-</details>
-
-<details close>
-  <summary>Dark theme</summary>
-
-![tabi-dark](https://user-images.githubusercontent.com/6399341/216767530-cfe66699-ee6a-40b0-93ff-ce6879f5381e.png)
-</details>
+![tabi](https://user-images.githubusercontent.com/6399341/219136652-23d0a4fd-cf3c-4a00-8fb1-ce1ca7b2660f.png)
 
 ## Features
 
-- [X] Dark and light modes. Default theme is light with a switcher in the navbar.
+- [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
 - [X] Projects page.
 - [X] Archive page.
-- [x] Social Links.
 - [x] Tags.
+- [x] Social Links.
 - [X] Syntax highlighting.
 - [X] Invertable images ([shortcode](https://www.getzola.org/documentation/content/shortcodes/)).
 
