@@ -1,21 +1,24 @@
 @font-face {
   /* Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
   font-family: 'Inter';
-  src: url('fonts/Inter.ttf');
+  src: local('Inter'),
+    url('fonts/Inter.ttf');
   font-display: swap;
 }
 
 @font-face {
   /* Copyright 2014, 2015, 2016 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
   font-family: 'Source Serif Pro';
-  src: url('fonts/SourceSerifPro-Regular.ttf');
+  src: local('Source Serif Pro'),
+    url('fonts/SourceSerifPro-Regular.ttf');
   font-display: swap;
 }
 
 @font-face {
   /* Copyright 2019 - Present, Microsoft Corporation, with Reserved Font Name 'Cascadia Code'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
   font-family: 'Cascadia Code';
-  src: url('fonts/CascadiaCode.ttf');
+  src: local('Cascadia Code'),
+    url('fonts/CascadiaCode.ttf');
   font-display: swap;
 }
 
