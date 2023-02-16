@@ -1,15 +1,14 @@
-var themeSwitcher = document.querySelector('.theme-switcher input');
-var currentTheme = localStorage.getItem('theme');
+const themeSwitcher = document.querySelector('.theme-switcher input');
+const currentTheme = localStorage.getItem('theme');
 
 // detect the user's preferred color scheme and activate it
 if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    if (currentTheme === 'dark') {
-        themeSwitcher.checked = true;
-    }
-} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    themeSwitcher.checked = true;
+    document.documentElement.setAttribute( 'data-theme', currentTheme);
+    themeSwitcher.checked = currentTheme === 'dark';
+} else {
+    const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute( 'data-theme', isSystemDark? 'dark' : 'light');
+    themeSwitcher.checked = isSystemDark;
 }
 
 // switch between themes
