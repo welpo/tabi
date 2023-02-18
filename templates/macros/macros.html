@@ -6,7 +6,7 @@
             <a href={{ page.permalink }}>{{page.title}}</a>
         </div>
 
-        <div class="meta">
+        <div class="card-meta">
             {%- if page.date %}
             {{ page.date | date(format=config.extra.timeformat) }}
             {% endif -%}
@@ -66,9 +66,7 @@
 {% macro page_desc(desc, page) %}
 <div id="banner-container-home">
     <div id="home-banner-text">
-        <h3>
-            {{ desc.title }}
-        </h3>
+            <div class="home-banner-header">{{ desc.title }}</div>
         <section id="banner-home-subtitle">
 					{{ page.content | safe }}
         </section>
@@ -84,13 +82,13 @@
 <main>
     <article>
         <div>
-            {#<h1 class="title">{{ page.title }}</h1>#}
-            {{ post_macros::page_header(title=page.title) }}
-
+            <div class="article-title">
+                {{ page.title }}
+            </div>
             <div class="meta">
                 {% if page.date %}
                 Posted on {{ page.date | date(format=config.extra.timeformat) }}
-                ~
+                •
                 {% endif %}
                 <span> {{ page.reading_time }} minute read</span>
                 {% if page.draft %}

@@ -44,11 +44,11 @@
 
   --code-font: 'Cascadia Code';
 
+  --background-color: white;
   --bg-0: #f0f0f0;
   --bg-1: #e7e7e7;
   --bg-2: #fefefe;
   --hover-color: white;
-  --background-color: white;
   --primary-color: #91D8E4;
   --secondary-color: rgb(158, 158, 158);
   --links: #78cfcb;
@@ -56,17 +56,17 @@
   --quote-color: #355f62;
   --border-color: rgb(114, 114, 114);
   --light-border-color: rgba(255, 255, 255, 0.1);
-  --meta-color: rgb(53, 53, 53);
+  --meta-color: #757575;
   --accent-color: #087E96;
   --table-header-color: #BFEAF5;
 }
 [data-theme='dark'] {
+  --background-color: #1f1f1f;
   --bg-0: #2f2f2f;
   --bg-1: rgba(133, 133, 133, 0.5);
   --bg-2: rgba(23, 23, 23, 100%);
   --primary-color: #7cc4d1;
   --hover-color: white;
-  --background-color: #1f1f1f;
   --secondary-color: #696969;
   --links: #8fdfe5;
   --text-color: #eae9e9;
@@ -74,7 +74,7 @@
   --code: #ef476f;
   --border-color: rgb(0, 0, 0);
   --light-border-color: rgba(255, 255, 255, 0.1);
-  --meta-color: rgb(198, 197, 197);
+  --meta-color: #BBBBBB;
   --accent-color: #91e0ee;
   --table-header-color: #b7e4e4;
 
@@ -104,6 +104,11 @@ body {
   min-height: 80vh;
 }
 
+article{
+  max-width: calc(var(--max-layout-width) - 14rem);
+  margin: 0 auto;
+}
+
 .section-title {
   display: block;
   font-size: 2.2em;
@@ -111,47 +116,48 @@ body {
   margin-bottom: 0em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: 650;
+  font-weight: 550;
 }
 
 h1 {
   display: block;
   font-size: 2em;
+  font-size: 1.375em;
   margin-top: 0.67em;
   margin-bottom: 0em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: 650;
+  font-weight: 550;
 }
 
 h2 {
-  display: block;
-  font-size: 1.7em;
-  margin-top: 0.83em;
-  margin-bottom: 0em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-}
-
-h3 {
-  display: block;
-  font-size: 1.5em;
-  margin-top: 0.83em;
-  margin-bottom: 0em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: bold;
-}
-
-h4 {
   display: block;
   font-size: 1.2em;
   margin-top: 0.83em;
   margin-bottom: 0em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: bold;
+  font-weight: 550;
+}
+
+h3 {
+  display: block;
+  font-size: 1.15em;
+  margin-top: 0.83em;
+  margin-bottom: 0em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 550;
+}
+
+h4 {
+  display: block;
+  font-size: 1em;
+  margin-top: 0.83em;
+  margin-bottom: 0em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 550;
 }
 
 h5 {
@@ -161,12 +167,14 @@ h5 {
   margin-bottom: 0em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: bold;
+  font-weight: 550;
 }
 
 p {
   font-family: 'Source Serif Pro', serif;
-  font-size: 1.2em;
+  margin-top: 0.4rem;
+  margin-bottom: 2.3vmin;
+  font-size: 1em;
 }
 
 @media only screen and (max-width: 1000px) {
