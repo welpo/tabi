@@ -62,7 +62,7 @@ header {
 
 .home-title {
   font-size: 1.7em;
-  font-weight: 600;
+  font-weight: 450;
   padding-right: 0.33rem;
   border: none;
   color: var(--accent-color);
@@ -72,6 +72,13 @@ header {
 .meta {
   color: var(--meta-color);
   letter-spacing: -0.5px;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding-bottom: 1vmin;
+}
+
+.card-meta {
+  color: var(--meta-color);
 }
 
 @media only screen and (max-width: 1000px) {

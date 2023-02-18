@@ -10,6 +10,17 @@
   background-color: var(--primary-color);
 }
 
+.article-title {
+  padding-bottom: 1.2vmin;
+  display: block;
+  font-size: 2.2em;
+  margin-top: 0.67em;
+  margin-bottom: 0em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 550;
+}
+
 .title-container {
   border-bottom: var(--secondary-color) solid 0.5px;
   padding-bottom: 15px;
@@ -46,7 +57,7 @@ blockquote {
 a {
   color: var(--text-color);
   text-decoration-color: var(--links);
-  font-weight: 600;
+  font-weight: 580;
 }
 
 a:hover {
