@@ -92,12 +92,12 @@ html {
   color: var(--text-color);
   line-height: 1.6em;
 }
+
 body {
   margin: 0;
   padding: 0;
-align-items:center;
-justify-content:center;
 }
+
 .content {
   max-width: var(--max-layout-width);
   margin: 0 auto;
@@ -176,6 +176,7 @@ p {
   font-family: 'Source Serif Pro', serif;
   margin-top: 0.4rem;
   margin-bottom: 2.3vmin;
+  line-height: 2rem;
   font-size: 1em;
 }
 

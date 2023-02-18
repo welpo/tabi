@@ -86,36 +86,33 @@
                 {{ page.title }}
             </div>
             <div class="meta">
-                {% if page.date %}
-                Posted on {{ page.date | date(format=config.extra.timeformat) }}
-                •
-                {% endif %}
-                <span> {{ page.reading_time }} minute read</span>
                 {% if page.draft %}
                 <span class="draft-label">DRAFT</span>
                 {% endif %}
 
-                {% if page.taxonomies and page.taxonomies.tags %}
-                <div class="post-tags">
-                    <nav class="nav tags">
-                        {% for tag in page.taxonomies.tags %}
-                        <svg class="tags-item-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                        </svg>
-                        <a href={{ get_taxonomy_url(kind='tags' , name=tag) | safe }}>{{ tag }}</a>&nbsp;
-                        {% endfor %}
-                    </nav>
-                </div>
+                {% if page.date %}
+                {{ page.date | date(format=config.extra.timeformat) }} •
                 {% endif %}
+
+                <span> {{ page.reading_time }} minute read{% if page.taxonomies and page.taxonomies.tags %}&nbsp;{%
+                    endif %}</span>
+
+                {% if page.taxonomies and page.taxonomies.tags %}
+                <nav class="nav tags"> • Categories:
+                    {% for tag in page.taxonomies.tags %}
+                    <a href={{ get_taxonomy_url(kind='tags' , name=tag) | safe }}>{{ tag }}</a>{% if not loop.last %},
+                    {% endif %}
+                    {% endfor %}
+                </nav>
+                {% endif %}
+
             </div>
         </div>
 
         {% if page.extra.tldr %}
         <div class="tldr">
-            <strong>tl;dr:</strong>
-            {{ page.extra.tldr }}
+            <h3>TL;DR:</h3>
+            <p>{{ page.extra.tldr }}</p>
         </div>
         {% endif %}
 

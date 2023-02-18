@@ -77,6 +77,13 @@ header {
   padding-bottom: 1vmin;
 }
 
+.meta a {
+  color: var(--meta-color);
+  text-decoration-color: none;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
 .card-meta {
   color: var(--meta-color);
 }
