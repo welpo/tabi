@@ -78,7 +78,7 @@
   --accent-color: #91e0ee;
   --table-header-color: #b7e4e4;
 
-  .invertable-image {
+  .invertible-image {
     filter: invert(.88);
   }
 
@@ -95,6 +95,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+align-items:center;
+justify-content:center;
 }
 .content {
   max-width: var(--max-layout-width);
@@ -166,6 +168,9 @@ h5 {
 
 p {
   font-family: 'Source Serif Pro', serif;
+  max-width: 730px;
+  margin-top: 0.5rem;
+  margin-bottom: 1.4rem;
   font-size: 1.2em;
 }
 

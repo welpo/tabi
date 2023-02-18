@@ -14,7 +14,7 @@ A simple blog theme powered by [Zola](https://getzola.org). See a live preview [
 - [x] Tags.
 - [x] Social Links.
 - [X] Syntax highlighting.
-- [X] Invertable and dimmable images shortcodes.
+- [X] Invertible and dimmable images shortcodes.
 
 See the project's roadmap [here](https://github.com/users/welpo/projects/1).
 
