@@ -7,16 +7,16 @@ tags = ["markdown", "test"]
 
 ## Image shortcodes
 
-### Invertable image
+### Invertible image
 
 You can use this shortcode for graphs, line drawings, diagrams…
 
-{{ invertable_image(src="$BASE_URL/img/graph.webp", alt="Invertable graph") }}
+{{ invertible_image(src="$BASE_URL/img/graph.webp", alt="Invertible graph") }}
 
 Usage:
 
 ```
-{{/* invertable_image(src="img/graph.webp", alt="Invertable graph") */}}
+{{/* invertible_image(src="img/graph.webp", alt="Invertible graph") */}}
 ```
 
 ### Dimmable image
