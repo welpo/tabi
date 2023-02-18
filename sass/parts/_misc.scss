@@ -37,6 +37,10 @@
   color: var(--hover-color);
 }
 
+.nav.tags {
+  display: inline-block;
+}
+
 p {
   line-height: 1.5;
 }
@@ -58,6 +62,12 @@ a {
   color: var(--text-color);
   text-decoration-color: var(--links);
   font-weight: 580;
+}
+
+p a {
+  color: var(--accent-color);
+  text-decoration: inherit;
+  font-weight: inherit;
 }
 
 a:hover {
