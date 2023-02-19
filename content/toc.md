@@ -1,6 +1,6 @@
 +++
-title = "Table of Contents Test"
-date = "2022-11-22"
+title = "Table of Contents"
+date = "2023-01-02"
 [taxonomies]
 tags = ["test"]
 
