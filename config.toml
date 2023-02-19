@@ -17,7 +17,7 @@ highlight_theme = "css"
 [extra]
 use_cdn = false
 
-timeformat = "%d %B %Y"  # Default format: "31 January 2049"
+date_format = ""  # If unset, uses format: "1st January 2049"
 
 #Full path after the base URL required. So if you were to place it in "static" it would be "/favicon.ico"
 favicon = ""
