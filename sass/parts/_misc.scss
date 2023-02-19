@@ -11,15 +11,21 @@
 }
 
 .article-title {
-  padding-bottom: 1.2vmin;
   display: block;
   font-size: 2em;
-  margin-top: 0.67em;
   margin-bottom: 0em;
   margin-left: 0;
   margin-right: 0;
   font-weight: 550;
   line-height: 2.4rem;
+}
+
+ul {
+  margin-top: 0;
+}
+
+.toc-container {
+  margin-bottom: 4vmin;
 }
 
 .title-container {
