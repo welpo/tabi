@@ -1,3 +1,27 @@
+{% macro format_date(date) %}
+    {% if config.extra.date_format %}
+        {{ date | date(format=config.extra.date_format) }}
+    {% else %}
+        {% set day = date | date(format='%-d') | int %}
+        {% set suffix = "" %}
+        {% if day in [11, 12, 13] %}
+            {% set suffix = "th" %}
+        {% else %}
+            {% set last_digit = day % 10 %}
+            {% if last_digit == 1 %}
+                {% set suffix = "st" %}
+            {% elif last_digit == 2 %}
+                {% set suffix = "nd" %}
+            {% elif last_digit == 3 %}
+                {% set suffix = "rd" %}
+            {% else %}
+                {% set suffix = "th" %}
+            {% endif %}
+        {% endif %}
+        {{ date | date(format="%-d") }}{{ suffix }} {{ date | date(format="%B %Y") }}
+    {% endif %}
+{% endmacro %}
+
 {% macro list_posts(pages) %}
 <div class="bloglist-container">
     {%- for page in pages %}
@@ -8,7 +32,7 @@
 
         <div class="card-meta">
             {%- if page.date %}
-            {{ page.date | date(format=config.extra.timeformat) }}
+                {{ post_macros::format_date(date=page.date, format=config.extra.date_format) }}
             {% endif -%}
             <br />
             <span>{{ page.reading_time }} minute read</span>
@@ -91,7 +115,8 @@
                 {% endif %}
 
                 {% if page.date %}
-                {{ page.date | date(format=config.extra.timeformat) }} •
+                    {{ post_macros::format_date(date=page.date) }}
+                    •
                 {% endif %}
 
                 <span> {{ page.reading_time }} minute read{% if page.taxonomies and page.taxonomies.tags %}&nbsp;{%
@@ -180,7 +205,7 @@
 
             <div class="meta">
                 {%- if page.date %}
-                {{ page.date | date(format=config.extra.timeformat) }}
+                    {{ post_macros::format_date(date=page.date) }}
                 {% endif -%}
                 {% if page.draft %}
                 <span class="draft-label">DRAFT</span>
@@ -210,7 +235,7 @@
     {% for page in pages %}
     <li class="post">
         <a href="{{ page.permalink }}">{{ page.title }}</a>
-        <span class="meta">{{ page.date | date(format=config.extra.timeformat) }}</span>
+        <span class="meta">{{ post_macros::format_date(date=page.date) }}</span>
     </li>
     {% endfor %}
 </ul>
