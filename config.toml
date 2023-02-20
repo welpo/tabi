@@ -11,6 +11,7 @@ taxonomies = [
 ]
 
 [markdown]
+external_links_target_blank = true
 highlight_code = true
 highlight_theme = "css"
 
