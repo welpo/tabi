@@ -39,10 +39,13 @@
   --normal-layout-width: 600px;
   --medium-layout-width: 350px;
   --small-layout-width: 200px;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  line-height: 190%;
 
+  --sans-serif-font: 'Inter', Helvetica, Arial, sans-serif;
+  --serif-font: 'Source Serif Pro', 'Georgia', serif;
   --code-font: 'Cascadia Code';
+
+  font-family: var(--sans-serif-font);
+  line-height: 190%;
 
   --background-color: white;
   --bg-0: #f0f0f0;
@@ -176,7 +179,7 @@ h5 {
 }
 
 p {
-  font-family: 'Source Serif Pro', serif;
+  font-family: var(--serif-font);
   margin-top: 0.4rem;
   margin-bottom: 2.3vmin;
   line-height: 2rem;

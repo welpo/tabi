@@ -8,7 +8,7 @@ tags = ["markdown", "test"]
 
 ## Table
 
-Here's an example of a table. Its colours change depending on the current theme.
+Here's an example of a table[^1]. Its colours change depending on the current theme.
 
 | Symbol  | Element | Atomic Number |
 |---------|---------|---------------|
@@ -36,3 +36,6 @@ Lorem ipsum `dolor` sit amet, `consectetur adipiscing` elit.
 > We're all hurtling towards death. Yet here we are, for the moment, alive. Each of us knowing we're going to die. Each of us secretly believing we won't.
 >
 > — Charlie Kaufman, Synecdoche, New York
+
+
+[^1]: And here's an example of a footnote!
