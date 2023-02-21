@@ -119,3 +119,21 @@ table td {
 table tbody tr:nth-child(even) {
   background-color: var(--bg-0);
 }
+
+.footnote-reference {
+  font-family: var(--serif-font);
+  font-size: 0.7rem;
+}
+
+.footnote-definition {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  sup {
+    font-size: 0.75rem;
+    margin-right: 0.15rem;
+  }
+  p {
+    display: inline;
+  }
+}
