@@ -119,11 +119,10 @@
                     •
                 {% endif %}
 
-                <span reading-time="{{ page.reading_time }} min read" word-count="{{ page.word_count }} words">{% if page.taxonomies and page.taxonomies.tags %}&nbsp;{%
-                    endif %}</span>
+                <span title="{{ page.word_count }} words">{{ page.reading_time }} min read{% if page.taxonomies and page.taxonomies.tags %}&nbsp;•&nbsp;{%endif %}</span>
 
                 {% if page.taxonomies and page.taxonomies.tags %}
-                <nav class="nav tags"> • Categories:
+                <nav class="nav tags">Categories:
                     {% for tag in page.taxonomies.tags %}
                     <a href={{ get_taxonomy_url(kind='tags' , name=tag) | safe }}>{{ tag }}</a>{% if not loop.last %},
                     {% endif %}
