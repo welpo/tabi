@@ -119,3 +119,11 @@ table td {
 table tbody tr:nth-child(even) {
   background-color: var(--bg-0);
 }
+
+.meta span:hover::before {
+  content: attr(word-count);
+}
+
+.meta span::before {
+  content: attr(reading-time);
+}

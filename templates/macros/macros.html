@@ -119,7 +119,7 @@
                     •
                 {% endif %}
 
-                <span> {{ page.reading_time }} minute read{% if page.taxonomies and page.taxonomies.tags %}&nbsp;{%
+                <span reading-time="{{ page.reading_time }} min read" word-count="{{ page.word_count }} words">{% if page.taxonomies and page.taxonomies.tags %}&nbsp;{%
                     endif %}</span>
 
                 {% if page.taxonomies and page.taxonomies.tags %}
