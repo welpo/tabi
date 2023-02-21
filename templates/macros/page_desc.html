@@ -1,0 +1,13 @@
+{% macro page_desc(desc, page) %}
+<div id="banner-container-home">
+    <div id="home-banner-text">
+        <div class="home-banner-header">{{ desc.title }}</div>
+        <section id="banner-home-subtitle">
+            {{ page.content | safe }}
+        </section>
+    </div>
+    <div class="image-container-home">
+        <img alt="the owner" class="banner-home-img" src={{ desc.img | replace(from="$BASE_URL", to=config.base_url) | safe}} />
+    </div>
+</div>
+{% endmacro %}

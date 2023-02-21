@@ -1,0 +1,38 @@
+{% macro list_posts(pages) %}
+<div class="bloglist-container">
+    {% for page in pages %}
+    <section class="bloglist-table-row">
+        <div class="bloglist-title">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </div>
+
+        <div class="card-meta">
+            {% if page.date %}
+                {{ macros_format_date::format_date(date=page.date) }}
+            {% endif %}
+
+            <br/>
+            <span>{{ page.reading_time }} min read</span>
+            {% if page.draft %}
+            <span class="draft-label">DRAFT</span>
+            {% endif %}
+        </div>
+
+        <br/>
+        <div class="description">
+            {% if page.description %}
+            {{ page.description }}
+            {% elif page.summary %}
+            {{ page.summary | safe }}&hellip;
+            {% else %}
+            {% set hide_read_more = true %}
+            {% endif %}
+        </div>
+
+        {% if not hide_read_more %}
+        <a class="readmore" href={{ page.permalink }}>Read more ⟶</a>
+        {% endif %}
+    </section>
+    {% endfor %}
+</div>
+{% endmacro %}

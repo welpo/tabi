@@ -5,7 +5,7 @@
         {% set section = get_section(path=section.extra.section_path) %}
     {% endif -%}
 
-    {{ post_macros::page_header(title=section.title) }}
+    {{ macros_page_header::page_header(title=section.title) }}
 
     <main>
         {%- if paginator %}
@@ -14,7 +14,7 @@
             {%- set show_pages = section.pages -%}
         {% endif -%}
 
-        {{ post_macros::cards_posts(pages=show_pages) }}
+        {{ macros_cards_posts::cards_posts(pages=show_pages) }}
     </main>
 
     {% if paginator %}
