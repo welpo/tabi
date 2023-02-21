@@ -1,0 +1,79 @@
+{% macro content(page, separator='•') %}
+<main>
+    <article>
+        <div>
+            <div class="article-title">
+                {{ page.title }}
+            </div>
+            <div class="meta">
+                {% if page.draft %}
+                <span class="draft-label">DRAFT</span>
+                {% endif %}
+
+                {% if page.date %}
+                    {{ macros_format_date::format_date(date=page.date) }}
+                    {{ separator }}
+                {% endif %}
+
+                <span title="{{ page.word_count }} words">{{ page.reading_time }} min read</span>
+
+                {% if page.taxonomies and page.taxonomies.tags %}
+                <nav class="nav tags">&nbsp;{{ separator }}&nbsp;Categories:
+                    {% for tag in page.taxonomies.tags %}
+                    <a href={{ get_taxonomy_url(kind='tags' , name=tag) | safe }}>{{ tag }}</a>{% if not loop.last %},
+                    {% endif %}
+                    {% endfor %}
+                </nav>
+                {% endif %}
+
+            </div>
+        </div>
+
+        {% if page.extra.tldr %}
+        <div class="tldr">
+            <h3>TL;DR:</h3>
+            <p>{{ page.extra.tldr }}</p>
+        </div>
+        {% endif %}
+
+        {# Optional table of contents #}
+        {% if page.extra.toc | default(value=false) %}
+        {% if page.toc %}
+            <div class="toc-container">
+            <h3>Table of Contents</h3>
+            <ul>
+                {% for h1 in page.toc %}
+                <li>
+                    <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                    {% if h1.children %}
+                    <ul>
+                        {% for h2 in h1.children %}
+                        <li>
+                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                            {% if h2.children %}
+                            <ul>
+                                {% for h3 in h2.children %}
+                                <li>
+                                    <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            </div>
+        {% endif %}
+        {% endif %}
+
+        <section class="body">
+            {{ page.content | safe }}
+        </section>
+
+    </article>
+</main>
+{% endmacro content %}
