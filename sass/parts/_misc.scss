@@ -130,6 +130,7 @@ table tbody tr:nth-child(even) {
   border-top: 1px solid var(--border-color);
   padding-top: 1rem;
   sup {
+    font-family: var(--serif-font);
     font-size: 0.75rem;
     margin-right: 0.15rem;
   }
