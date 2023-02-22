@@ -1,0 +1,29 @@
+{% macro set_title() %}
+
+{# Setup. #}
+{% set prefix = config.title | safe %}
+{% set separator = " • " %}
+
+{% if current_path and current_path == "/" %}
+    {% set suffix = "" %}
+    {% set separator = "" %}
+{% elif title %}
+    {% set suffix =  title %}
+{% elif section.title %}
+    {% set suffix = section.title %}
+{% elif page.title %}
+    {% set suffix = page.title %}
+{% elif term.name %}
+    {# Individual tags. #}
+    {% set suffix = term.name ~ " tag" %}
+{% elif taxonomy.name %}
+    {# List of tags. #}
+    {% set suffix = taxonomy.name | capitalize %}
+{% else %}
+    {% set suffix = "Lost?" %}
+{% endif %}
+
+{# Return the final concatenated string. #}
+{{ prefix ~ separator ~ suffix}}
+
+{% endmacro page_header %}
