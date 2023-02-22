@@ -20,10 +20,13 @@ use_cdn = false
 
 date_format = ""  # If unset, uses format: "1st January 2049"
 
-#Full path after the base URL required. So if you were to place it in "static" it would be "/favicon.ico"
+# Custom separator used in title tag and posts metadata (between date, time to read, and tags).
+separator = "•"
+
+# Full path after the base URL required. So if you were to place it in "static" it would be "/favicon.ico"
 favicon = ""
 
-#This header image is used for SEO. For example if you were to share an image via Messenger/Instagram/Twitter a preview picture is also presented
+# This header image is used for SEO. For example if you were to share an image via Messenger/Instagram/Twitter a preview picture is also presented
 headerImage = ""
 
 # The icon is display besides the menu text but is not necessary. It needs to be placed under "menu_icon" in the static "folder"
