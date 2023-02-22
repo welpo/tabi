@@ -35,3 +35,11 @@ This theme was inspired by:
 - [Alfonso García's site](https://alfoncode.com/)
 - [tale-zola](https://github.com/aaranxu/tale-zola)
 - [internetVin's blog](https://internetvin.ghost.io)
+
+## Contributing
+
+Please do! Take a look at the [Contributing Guidelines](/CONTRIBUTING.md) to learn more.
+
+## License
+
+The code is available under the [MIT license](./LICENSE).
