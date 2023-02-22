@@ -2,7 +2,7 @@
 title = "Markdown examples"
 date = "2023-01-31"
 [taxonomies]
-tags = ["markdown", "test"]
+tags = ["markdown", "showcase"]
 +++
 
 

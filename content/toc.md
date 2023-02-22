@@ -2,7 +2,7 @@
 title = "Table of Contents"
 date = "2022-11-01"
 [taxonomies]
-tags = ["test"]
+tags = ["showcase", "markdown"]
 
 [extra]
 toc = true

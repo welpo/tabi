@@ -2,7 +2,7 @@
 title = "Almost no JavaScript"
 date = "2023-01-06"
 [taxonomies]
-tags = ["test"]
+tags = ["showcase"]
 +++
 
 # Javascript?

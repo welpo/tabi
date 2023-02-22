@@ -2,7 +2,7 @@
 title = "Custom shortcodes"
 date = "2023-02-19"
 [taxonomies]
-tags = ["test", "shortcodes"]
+tags = ["showcase", "shortcodes"]
 +++
 
 ## Image shortcodes
