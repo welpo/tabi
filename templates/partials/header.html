@@ -55,6 +55,12 @@
     <meta property="og:description" content="{{ config.description }}">
     <meta property="og:site_name" content="{{ config.title }}">
 
-    <meta http-equiv="Content-Security-Policy" 
-    content="default-src 'self' ws://127.0.0.1:1024/; img-src 'self' https://*; script-src 'self'; style-src 'self'; font-src 'self'" />
+    <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'
+    {% if config.extra.allowed_domains %}
+        {%- for domain in config.extra.allowed_domains -%}
+            {{ domain.directive }} {{ domain.domains | join(sep=' ') }};
+        {%- endfor -%}
+    {% endif %}">
+
 </head>

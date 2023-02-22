@@ -12,9 +12,10 @@ A simple blog theme powered by [Zola](https://getzola.org). See a live preview [
 - [X] Projects page.
 - [X] Archive page.
 - [x] Tags.
-- [x] Social Links.
-- [X] Syntax highlighting.
+- [x] Social links.
+- [X] Code syntax highlighting.
 - [X] Invertible and dimmable images shortcodes.
+- [X] Customizable secure headers.
 
 See the project's roadmap [here](https://github.com/users/welpo/projects/1).
 
