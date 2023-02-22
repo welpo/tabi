@@ -4,29 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {# Site title #}
-    {% set current_path = current_path | default(value="/") %}
-    {% if current_path == "/" %}
-    <title>
-        {{ config.title | default(value="Home") }}
-    </title>
-    {% else %}
-    <title>
-        {{ page.title | default(value=config.title) | default(value="Post") }}
-    </title>
-    {% endif %}
+    <title>{{ macros_set_title::set_title(title="") }}</title>
 
     {# Favicon #}
     {% if config.extra.favicon %}
     <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
     {% endif %}
 
-
-
     {# RSS #}
     <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path="atom.xml",
         trailing_slash=false) }}">
     <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css" ) }} />
-
 
     {% if config.extra.stylesheets %}
     {% for stylesheet in config.extra.stylesheets %}
