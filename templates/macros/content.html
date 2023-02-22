@@ -1,4 +1,6 @@
-{% macro content(page, separator='•') %}
+{% macro content(page) %}
+{% set separator = config.extra.separator | default(value="•") %}
+
 <main>
     <article>
         <div>

@@ -2,7 +2,8 @@
 
 {# Setup. #}
 {% set prefix = config.title | safe %}
-{% set separator = " • " %}
+{% set custom_separator = config.extra.separator | default(value="•") %}
+{% set separator = " " ~ custom_separator ~ " " %}
 
 {% if current_path and current_path == "/" %}
     {% set suffix = "" %}
