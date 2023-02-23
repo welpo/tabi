@@ -45,10 +45,14 @@
 
     <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'
-    {% if config.extra.allowed_domains %}
+    {%- if config.extra.allowed_domains -%}
+    ; 
         {%- for domain in config.extra.allowed_domains -%}
-            {{ domain.directive }} {{ domain.domains | join(sep=' ') }};
+            {{ domain.directive }} {{ domain.domains | join(sep=' ') }}
+            {%- if not loop.last -%}
+            ;
+            {%- endif -%}
         {%- endfor -%}
-    {% endif %}">
+    {%- endif -%}">
 
 </head>
