@@ -20,6 +20,16 @@
   line-height: 2.4rem;
 }
 
+iframe {
+  border: none;
+  display:block;
+  aspect-ratio: 16/9;
+  width: 100vmin;
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 ul {
   margin-top: 0;
 }
