@@ -1,0 +1,2 @@
+<img src="{{ light_src | safe | replace(from="$BASE_URL" , to=config.base_url) }}" {% if alt %}alt="{{ alt }}" {% endif %} class="img-light">
+<img src="{{ dark_src | safe | replace(from="$BASE_URL" , to=config.base_url) }}" {% if alt %}alt="{{ alt }}" {% endif %} class="img-dark">
