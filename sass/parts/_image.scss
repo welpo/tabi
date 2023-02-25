@@ -37,3 +37,16 @@ figure h4::before {
 svg {
   max-height: 15px;
 }
+
+.img-dark {
+  display: none;
+}
+
+[data-theme="dark"] {
+  .img-dark {
+    display: block;
+  }
+  .img-light {
+    display: none;
+  }
+}

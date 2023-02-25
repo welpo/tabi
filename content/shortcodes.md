@@ -7,9 +7,20 @@ tags = ["showcase", "shortcodes"]
 
 ## Image shortcodes
 
+### Dual theme images
+
+Useful if you want to use a different image for the light and dark themes:
+
+{{ dual_theme_image(light_src="$BASE_URL/img/paris_day.webp", dark_src="$BASE_URL/img/paris_night.webp" alt="The Eiffel tower") }}
+
+Usage:
+```
+{{/* dual_theme_image(light_src="$BASE_URL/img/paris_day.webp", dark_src="$BASE_URL/img/paris_night.webp" alt="The Eiffel tower") */}}
+```
+
 ### Invertible image
 
-You can use this shortcode for graphs, line drawings, diagrams…
+Good for graphs, line drawings, diagrams… Inverts the colours of the image. The source image will be used for the light theme.
 
 {{ invertible_image(src="$BASE_URL/img/graph.webp", alt="Invertible graph") }}
 
