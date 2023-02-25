@@ -6,6 +6,13 @@ figure {
   height: auto;
 }
 
+figcaption {
+  font-family: var(--serif-font);
+  font-size: 0.72rem;
+  color: var(--text-color-2);
+  text-align: center;
+}
+
 figure img {
   max-height: 500px;
 }
@@ -15,12 +22,6 @@ img {
   margin: 0 auto;
   max-width: 100%;
   height: auto;
-}
-
-@media screen and (min-width: 600px) {
-  figure {
-    padding: 0 40px;
-  }
 }
 
 figure h4 {
