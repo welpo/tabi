@@ -57,3 +57,5 @@ Usage:
 Your references go here.
 
 Each in a new line. Markdown (links, italics…) will be rendered.
+
+{%/* end */%}
