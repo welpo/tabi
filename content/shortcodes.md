@@ -13,7 +13,7 @@ Useful if you want to use a different image for the light and dark themes:
 
 {{ dual_theme_image(light_src="$BASE_URL/img/paris_day.webp", dark_src="$BASE_URL/img/paris_night.webp" alt="The Eiffel tower") }}
 
-Usage:
+#### Usage
 ```
 {{/* dual_theme_image(light_src="$BASE_URL/img/paris_day.webp", dark_src="$BASE_URL/img/paris_night.webp" alt="The Eiffel tower") */}}
 ```
@@ -24,8 +24,7 @@ Good for graphs, line drawings, diagrams… Inverts the colours of the image. Th
 
 {{ invertible_image(src="$BASE_URL/img/graph.webp", alt="Invertible graph") }}
 
-Usage:
-
+#### Usage
 ```
 {{/* invertible_image(src="img/graph.webp", alt="Invertible graph") */}}
 ```
@@ -36,7 +35,7 @@ Images with too much brightness or contrast can be jarring against a dark backgr
 
 {{ dimmable_image(src="$BASE_URL/img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") }}
 
-Usage:
+#### Usage
 
 ```
 {{/* dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") */}}
@@ -60,7 +59,7 @@ Winger, J. A. (2010). The Art of Debate: An Examination of Rhetoric in Greendale
 
 {% end %}
 
-Usage:
+#### Usage
 
 ```
 {%/* references() */%}
