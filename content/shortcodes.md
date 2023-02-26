@@ -1,8 +1,10 @@
 +++
 title = "Custom shortcodes"
-date = "2023-02-19"
+date = 2023-02-19
 [taxonomies]
 tags = ["showcase", "shortcodes"]
+[extra]
+last_updated = 2023-02-26
 +++
 
 ## Image shortcodes
