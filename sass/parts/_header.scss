@@ -73,6 +73,7 @@ header {
   letter-spacing: -0.5px;
   font-size: 0.8rem;
   font-weight: 300;
+  padding: 0;
   padding-top: 0.7vmin;
   padding-bottom: 3vmin;
   line-height: 1.4rem;
@@ -83,6 +84,11 @@ header {
   text-decoration-color: none;
   font-weight: inherit;
   text-decoration: none;
+}
+
+.meta ul, li{
+  list-style-type: none;
+  display: inline;
 }
 
 .card-meta {

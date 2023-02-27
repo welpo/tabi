@@ -3,43 +3,42 @@
 
 <main>
     <article>
-        <div>
-            <div class="article-title">
-                {{ page.title }}
-            </div>
-            <div class="meta">
-                {% if page.draft %}
-                <span class="draft-label">DRAFT</span>
-                {% endif %}
-
-                {% if page.date %}
-                    {{ macros_format_date::format_date(date=page.date) }}
-                    {{ separator }}
-                {% endif %}
-
-                <span title="{{ page.word_count }} words">{{ page.reading_time }} min read</span>
-
-                {% if page.taxonomies and page.taxonomies.tags %}
-                <nav class="nav tags">&nbsp;{{ separator }}&nbsp;Tags:
-                    {% for tag in page.taxonomies.tags %}
-                    <a href={{ get_taxonomy_url(kind='tags' , name=tag) | safe }}>{{ tag }}</a>{% if not loop.last %},
-                    {% endif %}
-                    {% endfor %}
-                </nav>
-                {% endif %}
-
-                {% if page.updated %}
-                    <br>Last updated on {{ macros_format_date::format_date(date=page.updated) }}
-                {% endif %}
-
-            </div>
+        <div class="article-title">
+            {{ page.title }}
         </div>
+
+        <ul class="meta">
+            {% if page.draft %}
+                <span class="draft-label">DRAFT</span>
+            {% endif %}
+
+            {% if page.date %}
+                <span>{{ macros_format_date::format_date(date=page.date) }}</span>
+                {{ separator }}
+            {% endif %}
+
+            <span title="{{ page.word_count }} words">{{ page.reading_time }} min read</span>
+
+            {% if page.taxonomies and page.taxonomies.tags %}
+                {{ separator }}&nbsp;Tags:
+                {% for tag in page.taxonomies.tags %}
+                    <li><a href={{ get_taxonomy_url(kind='tags' , name=tag) | safe }}>{{ tag }}</a></li>
+                    {%- if not loop.last -%}
+                        ,
+                    {%- endif -%}
+                {% endfor %}
+            {% endif %}
+
+            {% if page.updated %}
+                <br><span>Last updated on {{ macros_format_date::format_date(date=page.updated) }}</span>
+            {% endif %}
+        </ul>
 
         {% if page.extra.tldr %}
-        <div class="tldr">
-            <h3>TL;DR:</h3>
-            <p>{{ page.extra.tldr }}</p>
-        </div>
+            <div class="tldr">
+                <h3>TL;DR:</h3>
+                <p>{{ page.extra.tldr }}</p>
+            </div>
         {% endif %}
 
         {# Optional table of contents #}
