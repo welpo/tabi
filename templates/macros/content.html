@@ -20,7 +20,7 @@
                 <span title="{{ page.word_count }} words">{{ page.reading_time }} min read</span>
 
                 {% if page.taxonomies and page.taxonomies.tags %}
-                <nav class="nav tags">&nbsp;{{ separator }}&nbsp;Categories:
+                <nav class="nav tags">&nbsp;{{ separator }}&nbsp;Tags:
                     {% for tag in page.taxonomies.tags %}
                     <a href={{ get_taxonomy_url(kind='tags' , name=tag) | safe }}>{{ tag }}</a>{% if not loop.last %},
                     {% endif %}
