@@ -28,6 +28,10 @@
                 </nav>
                 {% endif %}
 
+                {% if page.updated %}
+                    <br>Last updated on {{ macros_format_date::format_date(date=page.updated) }}
+                {% endif %}
+
             </div>
         </div>
 
