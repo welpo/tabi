@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2023-02-26
+updated = 2023-02-27
 [taxonomies]
 tags = ["showcase", "shortcodes"]
 +++
@@ -27,7 +27,7 @@ Good for graphs, line drawings, diagrams… Inverts the colours of the image. Th
 
 #### Usage
 ```
-{{/* invertible_image(src="img/graph.webp", alt="Invertible graph") */}}
+{{/* invertible_image(src="$BASE_URL/img/graph.webp", alt="Invertible graph") */}}
 ```
 
 ### Dimmable image
@@ -39,7 +39,7 @@ Images with too much brightness or contrast can be jarring against a dark backgr
 #### Usage
 
 ```
-{{/* dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") */}}
+{{/* dimmable_image(src="$BASE_URL/img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") */}}
 ```
 
 ## References
