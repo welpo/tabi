@@ -1,16 +1,16 @@
 {% macro list_title(pages, tag_name=false) %}
 {% if tag_name %}
-    <h1 class="title-container">Entries tagged - "{{ term.name }}"</h1>
+    <div class="title-container section-title">Tag {{ term.name }}</div>
 {% else %}
     <h1 class="page-title">All articles</h1>
 {% endif %}
 
 <ul class="posts">
-{% for page in pages %}
-<li class="post">
-    <a href="{{ page.permalink }}">{{ page.title }}</a>
-    <span class="meta">{{ macros_format_date::format_date(date=page.date) }}</span>
-</li>
-{% endfor %}
+    {% for page in pages %}
+        <li class="post">
+            <div><a href="{{ page.permalink }}">{{ page.title }}</a></div>
+            <span class="meta">{{ macros_format_date::format_date(date=page.date) }}</span>
+        </li>
+    {% endfor %}
 </ul>
 {% endmacro list_title %}
