@@ -2,22 +2,27 @@
 
 {% block main_content %}
 
-{{ macros_page_header::page_header(title="Tags")}}
+{{ macros_page_header::page_header(title="Tags") }}
 
-<div class="tag-cloud">
-    <ul class="tags">
-        {% for term in terms %}
-        <div class="tags-item" id="{{ term.name }}">
-            <svg class="tags-item-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-                <line x1="7" y1="7" x2="7.01" y2="7"></line>
-            </svg>
-            <a href="{{ term.permalink | safe }}">
-                {{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
-            </a>
-        </div>
+<div class="tags">
+    <ul class="list-with-title">
+        {% for term in terms -%}
+        <li>
+            <h2 class="listing-title"><a href="#{{ term.name }}">{{ term.name }}</a></h2>
+            <ul class="listing">
+                {% for page in term.pages -%}
+                <li class="listing-item">
+                    <a href="{{ page.permalink }}" title="{{ page.title }}">{{ page.title }}</a>
+                    <div class="post-time">
+                        <span class="date">
+                            {{ macros_format_date::format_date(date=page.date) }}
+                        </span>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
             {% endfor %}
+        </li>
     </ul>
 </div>
 
