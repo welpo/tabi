@@ -5,8 +5,8 @@
 {% set section = get_section(path=section.extra.section_path) %}
 {% endif -%}
 
-{%- if section.extra.desc %}
-	{{ macros_page_desc::page_desc(desc=section.extra.desc, page=section) }}
+{%- if section.extra.header %}
+	{{ macros_page_desc::page_desc(desc=section.extra.header, page=section) }}
 {% endif -%}
 
 <main class="list">
