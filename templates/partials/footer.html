@@ -3,7 +3,7 @@
     <nav class="socials nav-navs">
         {%- if config.extra.socials %}
         {% for social in config.extra.socials %}
-        <a rel="noopener noreferrer" target="_blank" class="nav-links social" href={{ social.url | safe | replace(from="$BASE_URL", to=config.base_url) }}>
+        <a rel="noopener noreferrer" target="_blank" class="nav-links no-hover-padding social" href={{ social.url | safe | replace(from="$BASE_URL", to=config.base_url) }}>
             <img alt={{ social.name }} title={{ social.name }} src="{{config.base_url}}/social_icons/{{ social.icon }}.svg">
         </a>
         {% endfor %}

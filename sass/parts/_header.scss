@@ -56,13 +56,13 @@ header {
   justify-content: right;
   color: var(--text-color);
   padding: 0.66rem;
-  transition: 100ms;
 }
 
 .home-title {
   font-size: 1.7em;
   font-weight: 450;
-  padding-right: 0.33rem;
+  padding: 0.12rem;
+  margin-left: -0.12rem;
   border: none;
   color: var(--accent-color);
   text-decoration: none;

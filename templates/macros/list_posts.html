@@ -1,38 +1,55 @@
-{% macro list_posts(pages) %}
+{% macro list_posts(posts, max) %}
+
 <div class="bloglist-container">
-    {% for page in pages %}
-    <section class="bloglist-table-row">
-        <div class="bloglist-title">
-            <a href="{{ page.permalink }}">{{ page.title }}</a>
-        </div>
-
-        <div class="card-meta">
-            {% if page.date %}
-                {{ macros_format_date::format_date(date=page.date) }}
-            {% endif %}
-
-            <br/>
-            <span>{{ page.reading_time }} min read</span>
-            {% if page.draft %}
-            <span class="draft-label">DRAFT</span>
-            {% endif %}
-        </div>
-
-        <br/>
-        <div class="description">
-            {% if page.description %}
-            {{ page.description }}
-            {% elif page.summary %}
-            {{ page.summary | safe }}&hellip;
+    {% for post in posts %}
+        {% if loop.index <= max %}
+            {% if loop.index == max %}
+                <section class="bloglist-row">
+            {% elif loop.last %}
+                <section class="bloglist-row">
             {% else %}
-            {% set hide_read_more = true %}
+                <section class="bloglist-row bottom-divider">
             {% endif %}
-        </div>
 
-        {% if not hide_read_more %}
-        <a class="readmore" href={{ page.permalink }}>Read more ⟶</a>
+            {% if post.date %}
+                <div class="date">
+                    {{ macros_format_date::format_date(date=post.date) }}
+                </div>
+            {% endif %}
+
+            <div class="bloglist-content">
+                <div class="bloglist-title">
+                    <a href="{{ post.permalink }}">{{ post.title }}</a>
+                </div>
+
+                {% if post.taxonomies.tags %}
+                    <div class="bloglist-tags">
+                        {% for tag in post.taxonomies.tags %}
+                            <a class="tag" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <div class="description">
+                    {% if post.description %}
+                        {{ post.description }}
+                    {% elif post.summary %}
+                        {{ post.summary | safe }}&hellip;
+                    {% endif %}
+                </div>
+
+                <a class="readmore" href={{ post.permalink }}>Read more →</a>
+            </div>
+        </section>
+    {% endif %}
+        {% if not loop.last %}
+            {% if loop.index == max %}
+                <div class="all-posts">
+                    <a href="{{ get_url(path="/blog/") }}">All posts ⟶</a>
+                </div>
+            {% endif %}
         {% endif %}
-    </section>
     {% endfor %}
 </div>
+
 {% endmacro %}
