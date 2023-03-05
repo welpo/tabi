@@ -32,7 +32,7 @@ zola serve
 
 This theme was inspired by:
 - [shadharon](https://github.com/syedzayyan/shadharon). tabi started as a fork of [syedzayyan](https://github.com/syedzayyan)'s theme.
-- [Alfonso García's site](https://alfoncode.com/)
+- [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
 - [tale-zola](https://github.com/aaranxu/tale-zola)
 - [internetVin's blog](https://internetvin.ghost.io)
 
