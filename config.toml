@@ -31,7 +31,7 @@ headerImage = ""
 
 # The icon is display besides the menu text but is not necessary. It needs to be placed under "menu_icon" in the static "folder"
 menu = [
-    { name = "home", url = "$BASE_URL/" },
+    { name = "blog", url = "$BASE_URL/blog" },
     { name = "archive", url = "$BASE_URL/archive" },
     { name = "tags", url = "$BASE_URL/tags" },
     { name = "projects", url = "$BASE_URL/projects" },
