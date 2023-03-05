@@ -2,39 +2,29 @@
 
 {% block main_content %}
 {% if section.extra.section_path -%}
-{% set section = get_section(path=section.extra.section_path) %}
+    {% set extra_section = get_section(path=section.extra.section_path) %}
 {% endif -%}
 
 {%- if section.extra.header %}
-	{{ macros_page_desc::page_desc(desc=section.extra.header, page=section) }}
+    {{ macros_page_desc::page_desc(desc=section.extra.header, page=section) }}
 {% endif -%}
 
 <main class="list">
-	<div>
-		{{ macros_page_header::page_header(title=section.title) }}
-	</div>
-	{%- if paginator %}
-	{%- set show_pages = paginator.pages -%}
-	{% else %}
-	{%- set show_pages = section.pages -%}
-	{% endif -%}
+    <div>
+        {{ macros_page_header::page_header(title=section.title) }}
+    </div>
 
-	{{ macros_list_posts::list_posts(pages=show_pages) }}
+    {%- if paginator %}
+        {%- set pages = paginator.pages -%}
+    {% else %}
+        {%- set pages = extra_section.pages -%}
+    {% endif -%}
+
+	{% set max = section.extra.max_posts | default(value=999999) %}
+    {{ macros_list_posts::list_posts(posts=pages, max=max) }}
 </main>
 
 {% if paginator %}
-<div class="pagination">
-	{% if paginator.previous %}
-	<span class="page-item page-prev">
-		<a href={{ paginator.previous }} class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
-	</span>
-	{% endif %}
-
-	{% if paginator.next %}
-	<span class="page-item page-next">
-		<a href={{ paginator.next }} class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
-	</span>
-	{% endif %}
-</div>
+    {{ macros_paginate::paginate() }}
 {% endif %}
 {% endblock main_content %}

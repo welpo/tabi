@@ -1,0 +1,30 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 1em;
+    list-style: none;
+    padding: 0;
+
+    li {
+        margin-right: 1rem;
+    }
+
+    .page-link {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+
+        &.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+
+    .page-numbers {
+        font-size: 0.9rem;
+        color: var(--meta-color);
+    }
+}
