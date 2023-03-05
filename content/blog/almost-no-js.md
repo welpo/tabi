@@ -1,6 +1,8 @@
 +++
 title = "Almost no JavaScript"
-date = "2023-01-06"
+date = 2023-01-06
+description = "JavaScript is only used when HTML and CSS aren't enough."
+
 [taxonomies]
 tags = ["showcase"]
 +++
