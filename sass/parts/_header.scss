@@ -77,18 +77,18 @@ header {
   padding-top: 0.7vmin;
   padding-bottom: 3vmin;
   line-height: 1.4rem;
-}
-
-.meta a {
+  
+  a {
   color: var(--meta-color);
   text-decoration-color: none;
   font-weight: inherit;
   text-decoration: none;
-}
+  }
 
-.meta ul, li{
-  list-style-type: none;
-  display: inline;
+  ul, li {
+    list-style-type: none;
+    display: inline;
+  }
 }
 
 .card-meta {
