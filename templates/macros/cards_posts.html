@@ -21,7 +21,7 @@
 
             <div class="meta">
                 {%- if page.date %}
-                    {{ macros_format_date::format_date(date=page.date) }}
+                    {{ page.date | date(format=config.extra.date_format | default (value="%d %B %Y")) }}
                 {% endif -%}
                 {% if page.draft %}
                 <span class="draft-label">DRAFT</span>

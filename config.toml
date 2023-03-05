@@ -16,9 +16,7 @@ highlight_code = true
 highlight_theme = "css"
 
 [extra]
-use_cdn = false
-
-date_format = ""  # If unset, uses format: "1st January 2049"
+date_format = ""  # If unset, uses format: "6 July 2049" ("%d %B %Y")
 
 # Custom separator used in title tag and posts metadata (between date, time to read, and tags).
 separator = "•"

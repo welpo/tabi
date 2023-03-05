@@ -13,7 +13,7 @@
 
             {% if post.date %}
                 <div class="date">
-                    {{ macros_format_date::format_date(date=post.date) }}
+                    {{ post.date | date(format=config.extra.date_format | default (value="%d %B %Y")) }}
                 </div>
             {% endif %}
 
