@@ -8,7 +8,7 @@
 
     {# Favicon #}
     {% if config.extra.favicon %}
-    <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
+        <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
     {% endif %}
 
     {# RSS #}
@@ -17,16 +17,16 @@
     <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css" ) }} />
 
     {% if config.extra.stylesheets %}
-    {% for stylesheet in config.extra.stylesheets %}
-    <link rel="stylesheet" href="{{ get_url(path=stylesheet) }}">
-    {% endfor %}
+        {% for stylesheet in config.extra.stylesheets %}
+            <link rel="stylesheet" href="{{ get_url(path=stylesheet) }}">
+        {% endfor %}
     {% endif %}
 
     <meta name="description" content="{{ config.description }}">
     {% if is_404 %}
-    <meta name="robots" content="noindex, follow">
+        <meta name="robots" content="noindex, follow">
     {% else %}
-    <meta name="robots" content="index, nofollow">
+        <meta name="robots" content="index, nofollow">
     {% endif %}
 
     <meta property="og:title" content="{{ config.title }}">

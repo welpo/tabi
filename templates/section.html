@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block main_content %}
+
 {% if section.extra.section_path -%}
     {% set extra_section = get_section(path=section.extra.section_path) %}
 {% endif -%}
@@ -27,4 +28,5 @@
 {% if paginator %}
     {{ macros_paginate::paginate() }}
 {% endif %}
+
 {% endblock main_content %}
