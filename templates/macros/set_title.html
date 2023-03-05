@@ -16,7 +16,7 @@
     {% set suffix = page.title %}
 {% elif term.name %}
     {# Individual tags. #}
-    {% set suffix = term.name ~ " tag" %}
+    {% set suffix = term.name %}
 {% elif taxonomy.name %}
     {# List of tags. #}
     {% set suffix = taxonomy.name | capitalize %}

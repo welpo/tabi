@@ -2,6 +2,15 @@
 
 {% block main_content %}
 
-{{ macros_list_title::list_title(pages=term.pages, tag_name=term.name) }}
+{{ macros_page_header::page_header(title=term.name | title) }}
+
+{% set max = section.extra.max_posts | default(value=999999) %}
+{{ macros_list_posts::list_posts(posts=term.pages, max=max) }}
+
+<ul class="pagination">
+    <li class="page-item">
+        <a class="all-tags" href="{{ get_url(path="/tags/") }}">← All tags</a>
+    </li>
+</ul>
 
 {% endblock main_content %}
