@@ -1,0 +1,29 @@
+{% macro paginate() %}
+{% if paginator %}
+    <ul class="pagination">
+        {% if paginator.previous %}
+            <li class="page-item page-prev">
+                <a href="{{ paginator.previous }}" class="page-link" aria-label="Previous page">← Prev</a>
+            </li>
+        {% else %}
+            <li class="page-item page-prev">
+                <span class="page-link disabled" aria-disabled="true" aria-label="Previous (disabled)">← Prev</span>
+            </li>
+        {% endif %}
+
+        <li class="page-item page-numbers">
+            {{ paginator.current_index }} of {{ paginator.number_pagers }}
+        </li>
+
+        {% if paginator.next %}
+            <li class="page-item page-next">
+                <a href="{{ paginator.next }}" class="page-link" aria-label="Next page">Next →</a>
+            </li>
+        {% else %}
+            <li class="page-item page-next">
+                <span class="page-link disabled" aria-disabled="true" aria-label="Next page (disabled)">Next →</span>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
+{% endmacro paginate %}
