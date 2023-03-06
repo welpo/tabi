@@ -7,7 +7,6 @@ template = "section.html"
 [extra]
 header = {title = "Hello! I'm tabi~", img = "$BASE_URL/img/main.webp" }
 section_path = "blog/_index.md"
-section_title = "Latest posts"
 max_posts = 4
 +++
 
