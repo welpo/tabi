@@ -7,20 +7,9 @@
     list-style: none;
     padding: 0;
 
-    li {
-        margin-right: 1rem;
-    }
-
-    .page-link {
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-
-        &.disabled {
-            opacity: 0.5;
-            pointer-events: none;
-        }
+    .page-item .disabled {
+        opacity: 0.5;
+        pointer-events: none;
     }
 
     .page-numbers {
