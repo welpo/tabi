@@ -34,7 +34,7 @@ iframe {
 .zola-anchor {
   font-size: 1rem;
   position: absolute;
-  margin-left: -1.7em;
+  margin-left: -1.9em;
   padding-right: 0.45em;
   padding-left: 0.4em;
   opacity: 0;
@@ -49,9 +49,9 @@ h6:hover .zola-anchor {
   opacity: 1;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   a:hover {
-  background-color: transparent;
+    background-color: transparent;
   }
 }
 
