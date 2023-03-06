@@ -31,6 +31,30 @@ iframe {
   margin-bottom: 3vmin;
 }
 
+.zola-anchor {
+  font-size: 1rem;
+  position: absolute;
+  margin-left: -1.9em;
+  padding-right: 0.45em;
+  padding-left: 0.4em;
+  opacity: 0;
+}
+
+h1:hover .zola-anchor,
+h2:hover .zola-anchor,
+h3:hover .zola-anchor,
+h4:hover .zola-anchor,
+h5:hover .zola-anchor,
+h6:hover .zola-anchor {
+  opacity: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  a:hover {
+    background-color: transparent;
+  }
+}
+
 ul {
   margin-top: 0;
 }
@@ -40,8 +64,11 @@ ul {
 }
 
 .title-container {
-  border-bottom: var(--secondary-color) solid 0.5px;
   padding-bottom: 15px;
+}
+
+.bottom-divider {
+  border-bottom: var(--secondary-color) solid 0.5px;
 }
 
 ::-moz-selection {
@@ -77,21 +104,33 @@ blockquote {
 }
 
 a {
-  color: var(--text-color);
-  text-decoration-color: var(--links);
-  font-weight: 580;
-}
-
-p a {
   color: var(--accent-color);
   text-decoration: inherit;
   font-weight: inherit;
+  position: relative;
 }
 
 a:hover {
   background-color: var(--primary-color);
   color: var(--hover-color);
 }
+
+a:not(.no-hover-padding, .zola-anchor)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -0.15em;
+  right: -0.15em;
+  z-index: -1;
+  background-color: var(--primary-color);
+  opacity: 0;
+}
+
+a:not(.no-hover-padding):hover::before {
+  opacity: 1;
+}
+
 /* Remove post list padding */
 @media screen and (max-width: 600px) {
   .list > ul {

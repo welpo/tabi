@@ -1,4 +1,5 @@
 {% macro cards_posts(pages) %}
+
 <div class="cards">
     {%- for page in pages %}
     <div class="card">
@@ -21,7 +22,7 @@
 
             <div class="meta">
                 {%- if page.date %}
-                    {{ macros_format_date::format_date(date=page.date) }}
+                    {{ page.date | date(format=config.extra.date_format | default (value="%d %B %Y")) }}
                 {% endif -%}
                 {% if page.draft %}
                 <span class="draft-label">DRAFT</span>
@@ -38,4 +39,5 @@
 
     {% endfor -%}
 </div>
+
 {% endmacro cards_posts %}

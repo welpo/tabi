@@ -32,7 +32,9 @@
 @import 'parts/home-banner.scss';
 @import 'parts/footer.scss';
 @import 'parts/theme-switch.scss';
+@import 'parts/posts_list.scss';
 @import 'parts/tags.scss';
+@import 'parts/pagination.scss';
 @import 'syntax/syntax-ayu-dark.scss';
 
 :root {
@@ -54,13 +56,13 @@
   --bg-2: #fefefe;
   --hover-color: white;
   --primary-color: #91D8E4;
-  --secondary-color: rgb(158, 158, 158);
+  --secondary-color: #d7d7d7;
   --links: #78cfcb;
   --text-color: #222226;
   --text-color-2: #45454b;
+  --text-color-high-contrast: #151516;
   --quote-color: #355f62;
   --border-color: rgb(114, 114, 114);
-  --light-border-color: rgba(255, 255, 255, 0.1);
   --meta-color: #757575;
   --accent-color: #087E96;
   --table-header-color: #BFEAF5;
@@ -71,15 +73,13 @@
   --bg-1: rgba(133, 133, 133, 0.5);
   --bg-2: rgba(23, 23, 23, 100%);
   --primary-color: #7cc4d1;
-  --hover-color: white;
-  --secondary-color: #696969;
+  --secondary-color: #4a4a4a;
   --links: #8fdfe5;
   --text-color: #eae9e9;
   --text-color-2: #c7c7c7;
+  --text-color-high-contrast: #f8f8f8;
   --quote-color: #a9c5c7;
-  --code: #ef476f;
   --border-color: rgb(0, 0, 0);
-  --light-border-color: rgba(255, 255, 255, 0.1);
   --meta-color: #BBBBBB;
   --accent-color: #91e0ee;
   --table-header-color: #b7e4e4;
@@ -130,6 +130,7 @@ article{
   margin-left: 0;
   margin-right: 0;
   font-weight: 550;
+  color: var(--text-color-high-contrast);
 }
 
 h1 {
@@ -205,15 +206,9 @@ p {
     max-width: var(--small-layout-width);
   }
 }
-@media all and (min-width: 640px) {
+@media all and (min-width: 600px) {
   html {
     font-size: 16.5px;
-  }
-}
-
-@media all and (min-width: 720px) {
-  html {
-    font-size: 17px;
   }
 }
 

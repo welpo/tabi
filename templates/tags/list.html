@@ -2,20 +2,19 @@
 
 {% block main_content %}
 
-{{ macros_page_header::page_header(title="Tags") }}
+{{ macros_page_header::page_header(title="All tags")}}
 
-<ul class="taglist-container">
-    {% for term in terms -%}
-        <section class="taglist-table-row">
-            <div class="bloglist-title">
-                <a href="{{ term.permalink }}"> {{ term.name }}</a>
+<div class="tag-cloud">
+    <ul class="tags">
+        {% for term in terms %}
+            <div class="tags-item">
+                <li id "{{ term.name }}"><a href="{{ term.permalink | safe }}">
+                    {{ term.name }}</a>
+                    <span> – {{ term.pages | length }} post{{ term.pages | length | pluralize }}</span>
+                </li>
             </div>
-
-            <div class="card-meta">
-                {{ term.pages | length }} post{{ term.pages | length | pluralize }}
-            </div>
-        </section>
-    {% endfor %}
-</ul>
+        {% endfor %}
+    </ul>
+</div>
 
 {% endblock main_content %}

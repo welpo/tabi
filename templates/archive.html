@@ -1,10 +1,12 @@
-{% extends "base.html" %} {% block main_content %}
+{% extends "base.html" %}
+
+{% block main_content %}
 
 {{ macros_page_header::page_header(title=section.title) }}
 
 <div class="archive">
   <ul class="list-with-title">
-    {% set section_item = get_section(path="_index.md") %} {% for year, posts in
+    {% set section_item = get_section(path="blog/_index.md") %} {% for year, posts in
     section_item.pages | group_by(attribute="year") %} {% if posts | length > 0
     %}
     <li>
@@ -27,4 +29,5 @@
     </li>
   </ul>
 </div>
+
 {% endblock main_content %}

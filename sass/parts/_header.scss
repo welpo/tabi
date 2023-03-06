@@ -56,13 +56,13 @@ header {
   justify-content: right;
   color: var(--text-color);
   padding: 0.66rem;
-  transition: 100ms;
 }
 
 .home-title {
   font-size: 1.7em;
   font-weight: 450;
-  padding-right: 0.33rem;
+  padding: 0.12rem;
+  margin-left: -0.12rem;
   border: none;
   color: var(--accent-color);
   text-decoration: none;
@@ -77,18 +77,18 @@ header {
   padding-top: 0.7vmin;
   padding-bottom: 3vmin;
   line-height: 1.4rem;
-}
-
-.meta a {
+  
+  a {
   color: var(--meta-color);
   text-decoration-color: none;
   font-weight: inherit;
   text-decoration: none;
-}
+  }
 
-.meta ul, li{
-  list-style-type: none;
-  display: inline;
+  ul, li {
+    list-style-type: none;
+    display: inline;
+  }
 }
 
 .card-meta {

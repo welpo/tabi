@@ -1,6 +1,8 @@
 +++
 title = "Secure by default"
-date = "2023-02-22"
+date = 2023-02-22
+description = "tabi has an easily customizable Content Security Policy (CSP) with safe defaults. Get peace of mind and an A+ on Mozilla Observatory."
+
 [taxonomies]
 tags = ["security", "showcase"]
 +++

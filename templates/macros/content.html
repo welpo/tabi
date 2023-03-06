@@ -1,4 +1,5 @@
 {% macro content(page) %}
+
 {% set separator = config.extra.separator | default(value="•") %}
 
 <main>
@@ -13,7 +14,7 @@
             {% endif %}
 
             {% if page.date %}
-                <span>{{ macros_format_date::format_date(date=page.date) }}</span>
+                <span>{{ page.date | date(format=config.extra.date_format | default (value="%d %B %Y")) }}</span>
                 {{ separator }}
             {% endif %}
 
@@ -30,7 +31,7 @@
             {% endif %}
 
             {% if page.updated %}
-                <br><span>Last updated on {{ macros_format_date::format_date(date=page.updated) }}</span>
+                <br><span>Last updated on {{ page.updated | date(format=config.extra.date_format | default (value="%d %B %Y")) }}</span>
             {% endif %}
         </ul>
 
@@ -81,4 +82,5 @@
 
     </article>
 </main>
+
 {% endmacro content %}

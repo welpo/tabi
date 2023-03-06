@@ -24,7 +24,7 @@
 .home-banner-header {
     margin-bottom: 1rem;
     font-size: 2.8rem;
-    font-weight: 600;
+    font-weight: 550;
 }
 
 #banner-home-subtitle {
@@ -36,7 +36,7 @@
 }
 
 #banner-home-subtitle p {
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-family: var(--sans-serif-font);
     font-size: 1rem;
 }
 
