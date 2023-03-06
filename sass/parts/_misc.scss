@@ -111,7 +111,7 @@ a {
 }
 
 a:hover {
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
   color: var(--hover-color);
 }
 
@@ -123,7 +123,7 @@ a:not(.no-hover-padding, .zola-anchor)::before {
   left: -0.15em;
   right: -0.15em;
   z-index: -1;
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
   opacity: 0;
 }
 
