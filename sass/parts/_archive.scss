@@ -1,7 +1,6 @@
 .archive {
   .listing-title {
     font-size: 1.5rem;
-    opacity: 0.9;
     margin-bottom: 1rem;
   }
 
@@ -12,7 +11,7 @@
     .post-time {
       width: 4rem;
       .date {
-        opacity: 0.5;
+        color: var(--meta-color);
       }
     }
   }
