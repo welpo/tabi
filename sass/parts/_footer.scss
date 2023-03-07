@@ -29,7 +29,7 @@ footer nav {
 
 .social {
   background-image: unset;
-  padding: 1vmin;
+  padding: 0.5vmin;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,9 +38,8 @@ footer nav {
 .social>img {
   color: #000000;
   aspect-ratio: 1/1;
-  width: 1.6rem;
+  width: 1.5rem;
   height: auto;
-  padding: 0.7vmin;
 }
 
 .social {
@@ -63,4 +62,9 @@ footer nav {
       filter: invert(1);
     }
   }
+}
+
+.credits {
+  font-size: 0.88rem;
+  color: var(--meta-color); 
 }
