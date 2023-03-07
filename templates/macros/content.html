@@ -10,28 +10,28 @@
 
         <ul class="meta">
             {% if page.draft %}
-                <span class="draft-label">DRAFT</span>
+                <li class="draft-label">DRAFT</li>
             {% endif %}
 
             {% if page.date %}
-                <span>{{ page.date | date(format=config.extra.date_format | default (value="%d %B %Y")) }}</span>
-                {{ separator }}
+                <li>{{ page.date | date(format=config.extra.date_format | default (value="%d %B %Y")) }} {{ separator }}</li>
             {% endif %}
 
-            <span title="{{ page.word_count }} words">{{ page.reading_time }} min read</span>
+            <li title="{{ page.word_count }} words">&nbsp;{{ page.reading_time }} min read</li>
 
             {% if page.taxonomies and page.taxonomies.tags %}
-                {{ separator }}&nbsp;Tags:
+                <li>&nbsp;{{ separator }}&nbsp;Tags:&nbsp;</li>
                 {% for tag in page.taxonomies.tags %}
-                    <li><a href={{ get_taxonomy_url(kind='tags' , name=tag) | safe }}>{{ tag }}</a></li>
+                    <li><a href={{ get_taxonomy_url(kind='tags' , name=tag) | safe }}>{{ tag }}</a>
                     {%- if not loop.last -%}
-                        ,
+                        ,&nbsp;
                     {%- endif -%}
+                    </li>
                 {% endfor %}
             {% endif %}
 
             {% if page.updated %}
-                <br><span>Last updated on {{ page.updated | date(format=config.extra.date_format | default (value="%d %B %Y")) }}</span>
+                </ul><ul class="meta last-updated"><li>Last updated on {{ page.updated | date(format=config.extra.date_format | default (value="%d %B %Y")) }}</li>
             {% endif %}
         </ul>
 

@@ -6,14 +6,12 @@
 
 <div class="tag-cloud">
     <ul class="tags">
-        {% for term in terms %}
-            <div class="tags-item">
-                <li id "{{ term.name }}"><a href="{{ term.permalink | safe }}">
-                    {{ term.name }}</a>
-                    <span> – {{ term.pages | length }} post{{ term.pages | length | pluralize }}</span>
-                </li>
-            </div>
-        {% endfor %}
+        {%- for term in terms -%}
+            <li class="tags-item" id "{{ term.name }}"><a href="{{ term.permalink | safe }}">
+                {{ term.name }}</a>
+                – {{ term.pages | length }} post{{ term.pages | length | pluralize }}
+            </li>
+        {%- endfor -%}
     </ul>
 </div>
 
