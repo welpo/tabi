@@ -1,7 +1,3 @@
-.primary-color {
-  color: var(--primary-color);
-}
-
 .draft-label {
   color: var(--hover-color);
   text-decoration: none;
@@ -68,7 +64,7 @@ ul {
 }
 
 .bottom-divider {
-  border-bottom: var(--secondary-color) solid 0.5px;
+  border-bottom: var(--divider-color) solid 0.5px;
 }
 
 ::-moz-selection {
@@ -97,21 +93,21 @@ hr {
 }
 
 blockquote {
-  border-left: 0.2rem solid var(--accent-color);
+  border-left: 0.2rem solid var(--primary-color);
   color: var(--quote-color);
   margin: 0;
   padding-left: 1em;
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--primary-color);
   text-decoration: inherit;
   font-weight: inherit;
   position: relative;
 }
 
 a:hover {
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   color: var(--hover-color);
 }
 
@@ -123,7 +119,7 @@ a:not(.no-hover-padding, .zola-anchor)::before {
   left: -0.15em;
   right: -0.15em;
   z-index: -1;
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   opacity: 0;
 }
 
