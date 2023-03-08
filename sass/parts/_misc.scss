@@ -45,10 +45,13 @@ h6:hover .zola-anchor {
   opacity: 1;
 }
 
-.zola-anchor h1, h2, h3, h4, h5, h6 {
-  a:hover {
-    background-color: transparent;
-  }
+.zola-anchor h1 a:hover, 
+.zola-anchor h2 a:hover, 
+.zola-anchor h3 a:hover, 
+.zola-anchor h4 a:hover, 
+.zola-anchor h5 a:hover, 
+.zola-anchor h6 a:hover {
+  background-color: transparent;
 }
 
 ul {
