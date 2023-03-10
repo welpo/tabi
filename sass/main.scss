@@ -40,7 +40,7 @@
 :root {
   --max-layout-width: 1000px;
   --normal-layout-width: 600px;
-  --medium-layout-width: 350px;
+  --medium-layout-width: 400px;
   --small-layout-width: 200px;
 
   --sans-serif-font: 'Inter', Helvetica, Arial, sans-serif;
@@ -98,7 +98,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin: 0;
+  margin: 0 12px;
   padding: 0;
 }
 
@@ -114,10 +114,6 @@ body {
 article {
   max-width: calc(var(--max-layout-width) - 14rem);
   margin: 0 auto;
-}
-
-main {
-  padding: 0 24px;
 }
 
 .section-title {
@@ -192,13 +188,16 @@ p {
   .content {
     max-width: var(--normal-layout-width);
   }
+  body {
+    margin: 0 32px;
+  }
 }
 @media only screen and (max-width: 600px) {
   .content {
     max-width: var(--medium-layout-width);
   }
-  main {
-    padding: 0;
+  body {
+    margin: 0 16px;
   }
 }
 @media only screen and (max-width: 300px) {
