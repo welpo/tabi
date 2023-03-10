@@ -1,30 +1,30 @@
-{% macro set_title() %}
+{%- macro set_title() -%}
 
 {# Setup. #}
-{% set prefix = config.title | safe %}
-{% set custom_separator = config.extra.separator | default(value="•") %}
-{% set separator = " " ~ custom_separator ~ " " %}
+{%- set prefix = config.title | safe -%}
+{%- set custom_separator = config.extra.separator | default(value="•") -%}
+{%- set separator = " " ~ custom_separator ~ " " -%}
 
-{% if current_path and current_path == "/" %}
-    {% set suffix = "" %}
-    {% set separator = "" %}
+{%- if current_path and current_path == "/" -%}
+    {%- set suffix = "" -%}
+    {%- set separator = "" -%}
 {% elif title %}
-    {% set suffix =  title %}
-{% elif section.title %}
-    {% set suffix = section.title %}
+    {%- set suffix =  title -%}
+{% elif section.title -%}
+    {%- set suffix = section.title -%}
 {% elif page.title %}
-    {% set suffix = page.title %}
+    {%- set suffix = page.title -%}
 {% elif term.name %}
     {# Individual tags. #}
-    {% set suffix = term.name %}
+    {%- set suffix = term.name -%}
 {% elif taxonomy.name %}
     {# List of tags. #}
-    {% set suffix = taxonomy.name | capitalize %}
+    {%- set suffix = taxonomy.name | capitalize -%}
 {% else %}
-    {% set suffix = "Lost?" %}
-{% endif %}
+    {%- set suffix = "Lost?" %}
+{%- endif -%}
 
 {# Return the final concatenated string. #}
-{{ prefix ~ separator ~ suffix}}
+{{- prefix ~ separator ~ suffix -}}
 
-{% endmacro page_header %}
+{%- endmacro page_header -%}
