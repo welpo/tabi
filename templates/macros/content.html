@@ -14,7 +14,7 @@
             {% endif %}
 
             {% if page.date %}
-                <li>{{ page.date | date(format=config.extra.date_format | default (value="%d %B %Y")) }} {{ separator }}</li>
+                <li>{{ macros_format_date::format_date(date=page.date, short=true) }} {{ separator }}</li>
             {% endif %}
 
             <li title="{{ page.word_count }} words">&nbsp;{{ page.reading_time }} min read</li>
@@ -31,7 +31,7 @@
             {% endif %}
 
             {% if page.updated %}
-                </ul><ul class="meta last-updated"><li>Last updated on {{ page.updated | date(format=config.extra.date_format | default (value="%d %B %Y")) }}</li>
+                </ul><ul class="meta last-updated"><li>Last updated on {{ macros_format_date::format_date(date=page.updated, short=true) }}</li>
             {% endif %}
         </ul>
 

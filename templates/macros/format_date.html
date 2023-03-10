@@ -1,0 +1,33 @@
+{% macro format_date(date, short) %}
+
+{% if config.extra.short_date_format %}
+    {{ date | date(format=config.extra.short_date_format) }}
+{% elif config.extra.long_date_format %}
+    {{ date | date(format=config.extra.long_date_format) }}
+{% else %}
+    {% set day = date | date(format='%-d') | int %}
+
+    {% if day in [11, 12, 13] %}
+        {% set suffix = "th" %}
+    {% else %}
+        {% set last_digit = day % 10 %}
+        {% if last_digit == 1 %}
+            {% set suffix = "st" %}
+        {% elif last_digit == 2 %}
+            {% set suffix = "nd" %}
+        {% elif last_digit == 3 %}
+            {% set suffix = "rd" %}
+        {% else %}
+            {% set suffix = "th" %}
+        {% endif %}
+    {% endif %}
+
+    {# Return the date. #}
+    {% if short == true %}
+        {{ date | date(format="%-d") }}{{ suffix }} {{ date | date(format="%b %Y") }}
+    {% else %}
+        {{ date | date(format="%-d") }}{{ suffix }} {{ date | date(format="%B %Y") }}
+    {% endif %}
+{% endif %}
+
+{% endmacro %}

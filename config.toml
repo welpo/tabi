@@ -16,8 +16,13 @@ highlight_code = true
 highlight_theme = "css"
 
 [extra]
-# If unset, uses format: "6 July 2049" ("%d %B %Y"). Don't leave it empty or dates won't appear. Either use a proper format or comment out the line.
-# date_format = "%d %B %Y"
+# Date format used when listing posts (main page, /blog section, tag posts list…)
+# Default is "6th July 2049".
+long_date_format = ""
+
+# Date format used for blog posts.
+# Default is "31st Dec 2011".
+short_date_format = ""
 
 # Custom separator used in title tag and posts metadata (between date, time to read, and tags).
 separator = "•"
