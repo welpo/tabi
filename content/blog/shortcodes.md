@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2023-02-27
+updated = 2023-03-11
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -45,6 +45,8 @@ Images with too much brightness or contrast can be jarring against a dark backgr
 ```
 
 ## References
+
+### Hanging indent
 
 This shortcode formats a reference section with a hanging indent like so:
 
