@@ -7,25 +7,19 @@ code {
 }
 
 pre {
-  /* Rounded border */
   border: 1px solid var(--border-color);
   line-height: 1.4;
   overflow-x: auto;
   padding: 1em;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 pre code {
   background-color: transparent;
   color: inherit;
   padding: 0;
-
-  // We only want a border around `code` and not `pre code` blocks.
   border: 0;
-}
-
-pre {
-  position: relative;
-  -webkit-overflow-scrolling: touch;
 }
 
 pre code[class*="language-"] {
@@ -33,8 +27,6 @@ pre code[class*="language-"] {
 }
 
 pre code[class*="language-"]::before {
-  background: black;
-  color: white;
   font-size: 12px;
   letter-spacing: 0.025rem;
   padding: 0.1rem 0.5rem;
@@ -56,7 +48,7 @@ pre code[class="language-js"]::before {
 pre code[class*="language-yml"]::before,
 pre code[class*="language-yaml"]::before {
   content: "yaml";
-  background: #f71e6a;
+  background: #C51117;
   color: white;
 }
 
@@ -64,40 +56,40 @@ pre code[class*="language-shell"]::before,
 pre code[class*="language-bash"]::before,
 pre code[class*="language-sh"]::before {
   content: "shell";
-  background: green;
+  background: #33A841;
   color: white;
 }
 
 pre code[class*="language-json"]::before {
   content: "json";
-  background: dodgerblue;
-  color: #000000;
+  color: black;
+  background: whitesmoke;
 }
 
 pre code[class*="language-python"]::before,
 pre code[class*="language-py"]::before {
-  content: "py";
-  background: blue;
-  color: yellow;
+  content: "python";
+  background: #306698;
+  color: #ffd343;
 }
 
 pre code[class*="language-css"]::before {
   content: "css";
-  background: cyan;
-  color: black;
+  background: #215AEF;
+  color: white;
 }
 
 pre code[class*="language-go"]::before {
   content: "Go";
-  background: cyan;
-  color: royalblue;
+  background: #00ADD8;
+  color: white;
 }
 
 pre code[class*="language-md"]::before,
 pre code[class*="language-md"]::before {
   content: "Markdown";
-  background: royalblue;
-  color: whitesmoke;
+  background: #159ADC;
+  color: white;
 }
 
 pre code[class*="language-rust"]::before,
