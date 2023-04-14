@@ -4,7 +4,7 @@ A simple blog theme powered by [Zola](https://getzola.org). See a live preview [
 
 > tabi (旅): Journey.
 
-![tabi](https://github.com/welpo/tabi/screenshot.png)
+![tabi](screenshot.png)
 
 ## Features
 
