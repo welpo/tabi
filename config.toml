@@ -16,6 +16,11 @@ highlight_code = true
 highlight_theme = "css"
 
 [extra]
+
+# Enable JavaScript theme toggler for dark/light mode (and automatic switching).
+# The default setting is the light theme.
+theme_switcher = true
+
 # Date format used when listing posts (main page, /blog section, tag posts list…)
 # Default is "6th July 2049".
 long_date_format = "%d %B %Y"
