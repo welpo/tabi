@@ -1,6 +1,6 @@
 # tabi
 
-A simple blog theme powered by [Zola](https://getzola.org). See a live preview [here](https://welpo.ooo/tabi).
+A simple blog theme powered by [Zola](https://getzola.org). See a live preview [here](https://welpo.github.io/tabi).
 
 > tabi (旅): Journey.
 
