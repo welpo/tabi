@@ -1,126 +1,129 @@
 header {
-  width: 100%;
-  .main {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
+    width: 100%;
+
+    .main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
 }
 
 .page-header {
-  font-size: 3em;
-  line-height: 100%;
-  font-family: var(--header-font);
-  margin: 4rem 0px 1rem 0px;
+    font-size: 3em;
+    line-height: 100%;
+    font-family: var(--header-font);
+    margin: 4rem 0px 1rem 0px;
 }
 
 .centered-header {
-  font-family: var(--header-font);
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 1em;
+    font-family: var(--header-font);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1em;
 }
 
 .navbar {
-  max-width: var(--max-layout-width);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1em 0;
-  margin: 0 auto;
+    max-width: var(--max-layout-width);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 0;
+    margin: 0 auto;
 }
 
 .nav-navs {
-  display: flex;
-  gap: 5px;
-  img {
-    border: none;
-  }
+    display: flex;
+    gap: 5px;
+
+    img {
+        border: none;
+    }
 }
 
 .nav-links {
-  font-size: 1em;
-  font-weight: 340;
-  text-decoration: none;
-  justify-content: right;
-  color: var(--text-color);
-  padding: 0.66rem;
+    font-size: 1em;
+    font-weight: 340;
+    text-decoration: none;
+    justify-content: right;
+    color: var(--text-color);
+    padding: 0.66rem;
 }
 
 .home-title {
-  font-size: 1.7em;
-  font-weight: 450;
-  padding: 0.12rem;
-  margin-left: -0.12rem;
-  border: none;
-  color: var(--primary-color);
-  text-decoration: none;
+    font-size: 1.7em;
+    font-weight: 450;
+    padding: 0.12rem;
+    margin-left: -0.12rem;
+    border: none;
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 .meta {
-  color: var(--meta-color);
-  letter-spacing: -0.5px;
-  font-size: 0.8rem;
-  font-weight: 300;
-  padding: 0;
-  padding-top: 0.7vmin;
-  padding-bottom: 3vmin;
-  line-height: 1.4rem;
-  
-  a {
-  color: var(--meta-color);
-  text-decoration-color: none;
-  font-weight: inherit;
-  text-decoration: none;
-  }
+    color: var(--meta-color);
+    letter-spacing: -0.5px;
+    font-size: 0.8rem;
+    font-weight: 300;
+    padding: 0;
+    padding-top: 0.7vmin;
+    padding-bottom: 3vmin;
+    line-height: 1.4rem;
 
-  ul, li {
-    list-style-type: none;
-    display: inline;
-  }
+    a {
+        color: var(--meta-color);
+        text-decoration-color: none;
+        font-weight: inherit;
+        text-decoration: none;
+    }
+
+    ul,
+    li {
+        list-style-type: none;
+        display: inline;
+    }
 }
 
 .card-meta {
-  color: var(--meta-color);
-  font-size: 0.92rem;
+    color: var(--meta-color);
+    font-size: 0.92rem;
 }
 
 @media only screen and (max-width: 1000px) {
-  .navbar {
-    max-width: var(--normal-layout-width);
-  }
+    .navbar {
+        max-width: var(--normal-layout-width);
+    }
 
-  .nav-navs {
-    display: flex;
-    justify-content: flex-end;
-  }
+    .nav-navs {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 @media only screen and (max-width: 600px) {
-  .nav-navs {
-    margin-top: 0.8rem;
-    width: 100%;
-    justify-content: center;
-  }
+    .nav-navs {
+        margin-top: 0.8rem;
+        width: 100%;
+        justify-content: center;
+    }
 
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media only screen and (max-width: 300px) {
-  .navbar {
-    max-width: var(--small-layout-width);
-  }
+    .navbar {
+        max-width: var(--small-layout-width);
+    }
 }

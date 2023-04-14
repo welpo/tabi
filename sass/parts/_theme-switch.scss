@@ -1,41 +1,47 @@
 .theme-switcher {
-  align-self: center;
-  margin-left: 0.5rem;
-  width: 1rem;
-  height: 1rem;
-  position: relative;
-  cursor: pointer;
-
-  .switch {
+    align-self: center;
+    margin-left: 0.5rem;
     width: 1rem;
     height: 1rem;
-    position: absolute;
-    left: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      width: 100%;
-      height: auto;
-      position: absolute;
-      border: none;
+    position: relative;
+    cursor: pointer;
+
+    .switch {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            border: none;
+        }
+
+        .sun {
+            opacity: 0;
+        }
+
+        .moon {
+            opacity: 1;
+        }
     }
-    .sun {
-      opacity: 0;
+
+    input {
+        display: none;
+
+        &:checked + .switch {
+            .sun {
+                opacity: 1;
+            }
+
+            .moon {
+                opacity: 0;
+            }
+        }
     }
-    .moon {
-      opacity: 1;
-    }
-  }
-  input {
-    display: none;
-    &:checked + .switch {
-      .sun {
-        opacity: 1;
-      }
-      .moon {
-        opacity: 0;
-      }
-    }
-  }
 }

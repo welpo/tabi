@@ -1,25 +1,25 @@
 @font-face {
-  /* Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-  font-family: 'Inter';
-  src: local('Inter'),
-    url('fonts/Inter.ttf');
-  font-display: swap;
+    /* Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
+    font-family: 'Inter';
+    src: local('Inter'),
+        url('fonts/Inter.ttf');
+    font-display: swap;
 }
 
 @font-face {
-  /* Copyright 2014, 2015, 2016 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-  font-family: 'Source Serif Pro';
-  src: local('Source Serif Pro'),
-    url('fonts/SourceSerifPro-Regular.ttf');
-  font-display: swap;
+    /* Copyright 2014, 2015, 2016 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
+    font-family: 'Source Serif Pro';
+    src: local('Source Serif Pro'),
+        url('fonts/SourceSerifPro-Regular.ttf');
+    font-display: swap;
 }
 
 @font-face {
-  /* Copyright 2019 - Present, Microsoft Corporation, with Reserved Font Name 'Cascadia Code'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-  font-family: 'Cascadia Code';
-  src: local('Cascadia Code'),
-    url('fonts/CascadiaCode.ttf');
-  font-display: swap;
+    /* Copyright 2019 - Present, Microsoft Corporation, with Reserved Font Name 'Cascadia Code'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
+    font-family: 'Cascadia Code';
+    src: local('Cascadia Code'),
+        url('fonts/CascadiaCode.ttf');
+    font-display: swap;
 }
 
 @import 'parts/_archive.scss';
@@ -38,185 +38,191 @@
 @import 'syntax/syntax-ayu-dark.scss';
 
 :root {
-  --max-layout-width: 1000px;
-  --normal-layout-width: 600px;
-  --medium-layout-width: 400px;
-  --small-layout-width: 200px;
+    --max-layout-width: 1000px;
+    --normal-layout-width: 600px;
+    --medium-layout-width: 400px;
+    --small-layout-width: 200px;
 
-  --sans-serif-font: 'Inter', Helvetica, Arial, sans-serif;
-  --serif-font: 'Source Serif Pro', 'Georgia', serif;
-  --code-font: 'Cascadia Code';
+    --sans-serif-font: 'Inter', Helvetica, Arial, sans-serif;
+    --serif-font: 'Source Serif Pro', 'Georgia', serif;
+    --code-font: 'Cascadia Code';
 
-  font-family: var(--sans-serif-font);
-  line-height: 190%;
+    font-family: var(--sans-serif-font);
+    line-height: 190%;
 
-  --background-color: white;
-  --bg-0: #f0f0f0;
-  --bg-1: #e7e7e7;
-  --bg-2: #fefefe;
-  --hover-color: white;
-  --primary-color: #087E96;
-  --divider-color: #d7d7d7;
-  --text-color: #222226;
-  --text-color-high-contrast: #313333;
-  --quote-color: #355f62;
-  --border-color: #727272;
-  --meta-color: #5b5b65;
-  --table-header-color: #BFEAF5;
+    --background-color: white;
+    --bg-0: #f0f0f0;
+    --bg-1: #e7e7e7;
+    --bg-2: #fefefe;
+    --hover-color: white;
+    --primary-color: #087E96;
+    --divider-color: #d7d7d7;
+    --text-color: #222226;
+    --text-color-high-contrast: #313333;
+    --quote-color: #355f62;
+    --border-color: #727272;
+    --meta-color: #5b5b65;
+    --table-header-color: #BFEAF5;
 }
+
 [data-theme='dark'] {
-  --background-color: #1f1f1f;
-  --bg-0: #2f2f2f;
-  --bg-1: #4c4d4d;
-  --bg-2: #171717;
-  --hover-color: black;
-  --primary-color: #91e0ee;
-  --divider-color: #4a4a4a;
-  --text-color: #D4D4D4;
-  --text-color-high-contrast: #eceeef;
-  --quote-color: #a9c5c7;
-  --border-color: black;
-  --meta-color: #B0B0B0;
-  --table-header-color: #b7e4e4;
+    --background-color: #1f1f1f;
+    --bg-0: #2f2f2f;
+    --bg-1: #4c4d4d;
+    --bg-2: #171717;
+    --hover-color: black;
+    --primary-color: #91e0ee;
+    --divider-color: #4a4a4a;
+    --text-color: #D4D4D4;
+    --text-color-high-contrast: #eceeef;
+    --quote-color: #a9c5c7;
+    --border-color: black;
+    --meta-color: #B0B0B0;
+    --table-header-color: #b7e4e4;
 
-  .invertible-image {
-    filter: invert(.88);
-  }
+    .invertible-image {
+        filter: invert(.88);
+    }
 
-  .dimmable-image {
-    filter: brightness(.8) contrast(1.2);
-  }
+    .dimmable-image {
+        filter: brightness(.8) contrast(1.2);
+    }
 }
 
 html {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6em;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6em;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0 12px;
-  padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 12px;
+    padding: 0;
 }
 
 .content {
-  width: 100%;
-  max-width: var(--max-layout-width);
-  margin: 0 auto;
-  margin-top: 6vmin;
-  margin-bottom: 4rem;
-  word-wrap: break-word;
+    width: 100%;
+    max-width: var(--max-layout-width);
+    margin: 0 auto;
+    margin-top: 6vmin;
+    margin-bottom: 4rem;
+    word-wrap: break-word;
 }
 
 article {
-  max-width: calc(var(--max-layout-width) - 17rem);
-  margin: 0 auto;
+    max-width: calc(var(--max-layout-width) - 17rem);
+    margin: 0 auto;
 }
 
 .section-title {
-  display: block;
-  font-size: 2.2em;
-  margin-bottom: 0em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: 550;
-  color: var(--text-color-high-contrast);
+    display: block;
+    font-size: 2.2em;
+    margin-bottom: 0em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 550;
+    color: var(--text-color-high-contrast);
 }
 
 .last-updated {
-  margin-top: -5vmin;
+    margin-top: -5vmin;
 }
 
 h1 {
-  display: block;
-  font-size: 1.5em;
-  margin-top: 0.67em;
-  margin-bottom: 0em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: 550;
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.67em;
+    margin-bottom: 0em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 550;
 }
 
 h2 {
-  display: block;
-  font-size: 1.4em;
-  margin-top: 0.5em;
-  margin-bottom: 0em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: 550;
+    display: block;
+    font-size: 1.4em;
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 550;
 }
 
 h3 {
-  display: block;
-  font-size: 1.2em;
-  margin-top: 0.3em;
-  margin-bottom: 0em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: 550;
+    display: block;
+    font-size: 1.2em;
+    margin-top: 0.3em;
+    margin-bottom: 0em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 550;
 }
 
 h4 {
-  display: block;
-  font-size: 1em;
-  margin-top: 0.83em;
-  margin-bottom: 0em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: 550;
+    display: block;
+    font-size: 1em;
+    margin-top: 0.83em;
+    margin-bottom: 0em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 550;
 }
 
 h5 {
-  display: block;
-  font-size: 1em;
-  margin-top: 0.83em;
-  margin-bottom: 0em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: normal;
+    display: block;
+    font-size: 1em;
+    margin-top: 0.83em;
+    margin-bottom: 0em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
 }
 
 p {
-  font-family: var(--serif-font);
-  margin-top: 0.4rem;
-  margin-bottom: 2.3vmin;
-  line-height: 2rem;
-  font-size: 1em;
+    font-family: var(--serif-font);
+    margin-top: 0.4rem;
+    margin-bottom: 2.3vmin;
+    line-height: 2rem;
+    font-size: 1em;
 }
 
 @media only screen and (max-width: 1000px) {
-  .content {
-    max-width: var(--normal-layout-width);
-  }
-  body {
-    margin: 0 32px;
-  }
+    .content {
+        max-width: var(--normal-layout-width);
+    }
+
+    body {
+        margin: 0 32px;
+    }
 }
+
 @media only screen and (max-width: 600px) {
-  .content {
-    max-width: var(--medium-layout-width);
-  }
-  body {
-    margin: 0 16px;
-  }
+    .content {
+        max-width: var(--medium-layout-width);
+    }
+
+    body {
+        margin: 0 16px;
+    }
 }
+
 @media only screen and (max-width: 300px) {
-  .content {
-    max-width: var(--small-layout-width);
-  }
+    .content {
+        max-width: var(--small-layout-width);
+    }
 }
+
 @media all and (min-width: 600px) {
-  html {
-    font-size: 16.5px;
-  }
+    html {
+        font-size: 16.5px;
+    }
 }
 
 @media all and (min-width: 960px) {
-  html {
-    font-size: 20px;
-  }
+    html {
+        font-size: 20px;
+    }
 }

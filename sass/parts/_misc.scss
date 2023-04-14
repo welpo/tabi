@@ -1,37 +1,37 @@
 .draft-label {
-  color: var(--hover-color);
-  text-decoration: none;
-  padding: 2px 4px;
-  margin-left: 6px;
-  background-color: var(--primary-color);
+    color: var(--hover-color);
+    text-decoration: none;
+    padding: 2px 4px;
+    margin-left: 6px;
+    background-color: var(--primary-color);
 }
 
 .article-title {
-  color: var(--text-color-high-contrast);
-  display: block;
-  font-size: 2rem;
-  font-weight: 550;
-  line-height: 3rem;
+    color: var(--text-color-high-contrast);
+    display: block;
+    font-size: 2rem;
+    font-weight: 550;
+    line-height: 3rem;
 }
 
 iframe {
-  border: none;
-  display: block;
-  aspect-ratio: 16/9;
-  width: 100vmin;
-  max-width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 3vmin;
+    border: none;
+    display: block;
+    aspect-ratio: 16/9;
+    width: 100vmin;
+    max-width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 3vmin;
 }
 
 .zola-anchor {
-  font-size: 1rem;
-  position: absolute;
-  margin-left: -1.9em;
-  padding-right: 0.45em;
-  padding-left: 0.4em;
-  opacity: 0;
+    font-size: 1rem;
+    position: absolute;
+    margin-left: -1.9em;
+    padding-right: 0.45em;
+    padding-left: 0.4em;
+    opacity: 0;
 }
 
 h1:hover .zola-anchor,
@@ -40,123 +40,127 @@ h3:hover .zola-anchor,
 h4:hover .zola-anchor,
 h5:hover .zola-anchor,
 h6:hover .zola-anchor {
-  opacity: 1;
+    opacity: 1;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  a:hover {
-    background-color: transparent;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    a:hover {
+        background-color: transparent;
+    }
 }
 
 @media (max-width: 500px) {
-  .zola-anchor {
-    display: none;
-  }
+    .zola-anchor {
+        display: none;
+    }
 }
 
 ul {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .toc-container {
-  margin-bottom: 4vmin;
+    margin-bottom: 4vmin;
 }
 
 .title-container {
-  padding-bottom: 15px;
+    padding-bottom: 15px;
 }
 
 .bottom-divider {
-  border-bottom: var(--divider-color) solid 0.5px;
+    border-bottom: var(--divider-color) solid 0.5px;
 }
 
 ::-moz-selection {
-  background: var(--primary-color);
-  color: var(--hover-color);
-  text-shadow: none;
+    background: var(--primary-color);
+    color: var(--hover-color);
+    text-shadow: none;
 }
 
 ::selection {
-  background: var(--primary-color);
-  color: var(--hover-color);
+    background: var(--primary-color);
+    color: var(--hover-color);
 }
 
 .nav.tags {
-  display: inline-block;
+    display: inline-block;
 }
 
 p {
-  line-height: 1.5;
+    line-height: 1.5;
 }
 
 hr {
-  border: 0;
-  border-top: 3px solid var(--border-color);
-  margin: 1em 0;
+    border: 0;
+    border-top: 3px solid var(--border-color);
+    margin: 1em 0;
 }
 
 blockquote {
-  border-left: 0.2rem solid var(--primary-color);
-  color: var(--quote-color);
-  margin: 0;
-  padding-left: 1em;
+    border-left: 0.2rem solid var(--primary-color);
+    color: var(--quote-color);
+    margin: 0;
+    padding-left: 1em;
 }
 
 a {
-  color: var(--primary-color);
-  text-decoration: inherit;
-  font-weight: inherit;
-  position: relative;
+    color: var(--primary-color);
+    text-decoration: inherit;
+    font-weight: inherit;
+    position: relative;
 }
 
 a:hover {
-  background-color: var(--primary-color);
-  color: var(--hover-color);
+    background-color: var(--primary-color);
+    color: var(--hover-color);
 }
 
 a:not(.no-hover-padding, .zola-anchor)::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -0.15em;
-  right: -0.15em;
-  z-index: -1;
-  background-color: var(--primary-color);
-  opacity: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -0.15em;
+    right: -0.15em;
+    z-index: -1;
+    background-color: var(--primary-color);
+    opacity: 0;
 }
 
 a:not(.no-hover-padding):hover::before {
-  opacity: 1;
+    opacity: 1;
 }
 
-/* Remove post list padding */
 @media screen and (max-width: 600px) {
-  .list > ul {
-    margin: 0;
-    padding: 0;
-  }
+    .list > ul {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 table {
-  justify-self: center;
-  font: inherit;
-  overflow: hidden;
-  border-style : hidden!important;
-  margin: 2rem 0;
-  font-family: sans-serif;
-  min-width: 400px;
-  border: none;
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 13rem;
+    justify-self: center;
+    font: inherit;
+    overflow: hidden;
+    border-style: hidden !important;
+    margin: 2rem 0;
+    font-family: sans-serif;
+    min-width: 400px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 13rem;
 }
 
 table thead tr {
-  background-color: var(--table-header-color);
-  color: #1f1f1f;
-  text-align: left;
+    background-color: var(--table-header-color);
+    color: #1f1f1f;
+    text-align: left;
 }
 
 table th,
@@ -166,29 +170,31 @@ table td {
 }
 
 table tbody tr:nth-child(even) {
-  background-color: var(--bg-0);
+    background-color: var(--bg-0);
 }
 
 .footnote-reference {
-  font-family: var(--serif-font);
-  font-size: 0.7rem;
+    font-family: var(--serif-font);
+    font-size: 0.7rem;
 }
 
 .footnote-definition {
-  margin-top: 3.5rem;
-  border-top: 1px solid var(--border-color);
-  padding-top: 1rem;
-  sup {
-    font-family: var(--serif-font);
-    font-size: 0.75rem;
-    margin-right: 0.15rem;
-  }
-  p {
-    display: inline;
-  }
+    margin-top: 3.5rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+
+    sup {
+        font-family: var(--serif-font);
+        font-size: 0.75rem;
+        margin-right: 0.15rem;
+    }
+
+    p {
+        display: inline;
+    }
 }
 
 .references p {
-  text-indent: -2.4rem;
-  margin-left: 2.4rem;
+    text-indent: -2.4rem;
+    margin-left: 2.4rem;
 }

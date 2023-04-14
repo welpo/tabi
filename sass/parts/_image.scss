@@ -1,52 +1,53 @@
 figure {
-  box-sizing: border-box;
-  display: inline-block;
-  margin: 0;
-  max-width: 100%;
-  height: auto;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    max-width: 100%;
+    height: auto;
 }
 
 figcaption {
-  font-family: var(--serif-font);
-  font-size: 0.72rem;
-  color: var(--meta-color);
-  text-align: center;
+    font-family: var(--serif-font);
+    font-size: 0.72rem;
+    color: var(--meta-color);
+    text-align: center;
 }
 
 figure img {
-  max-height: 500px;
+    max-height: 500px;
 }
 
 img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  height: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
 }
 
 figure h4 {
-  font-size: 1rem;
-  margin: 0;
-  margin-bottom: 1em;
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 1em;
 }
 
 figure h4::before {
-  content: "↳ ";
+    content: "↳ ";
 }
 
 svg {
-  max-height: 15px;
+    max-height: 15px;
 }
 
 .img-dark {
-  display: none;
+    display: none;
 }
 
 [data-theme="dark"] {
-  .img-dark {
-    display: block;
-  }
-  .img-light {
-    display: none;
-  }
+    .img-dark {
+        display: block;
+    }
+
+    .img-light {
+        display: none;
+    }
 }

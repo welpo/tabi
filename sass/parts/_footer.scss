@@ -1,70 +1,68 @@
 footer {
-  margin-top: auto;
-  margin-bottom: 1.4rem;
-  font-family: var(--post-font-family);
+    margin-top: auto;
+    margin-bottom: 1.4rem;
+    font-family: var(--post-font-family);
 }
 
 footer section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0rem;
 }
 
 footer nav {
-  display: flex;
-  gap: 0rem;
-  margin: 0 0rem;
+    display: flex;
+    gap: 0rem;
+    margin: 0 0rem;
 }
 
 .socials {
-  justify-content: center;
-  /* flex-child */
-  flex-grow: 0;
-  /* flex-container */
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+    justify-content: center;
+    flex-grow: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 
 .social {
-  background-image: unset;
-  padding: 0.5vmin;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-image: unset;
+    padding: 0.5vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.social>img {
-  color: #000000;
-  aspect-ratio: 1/1;
-  width: 1.5rem;
-  height: auto;
+.social > img {
+    color: #000000;
+    aspect-ratio: 1/1;
+    width: 1.5rem;
+    height: auto;
 }
 
 .social {
-  &:hover {
-    &>img {
-      filter: invert(1);
+    &:hover {
+        & > img {
+            filter: invert(1);
+        }
     }
-  }
 }
 
 [data-theme="dark"] {
-  .social {
-    &:hover {
-      &>img {
-        filter: invert(0);
-      }
-    }
+    .social {
+        &:hover {
+            & > img {
+                filter: invert(0);
+            }
+        }
 
-    &>img {
-      filter: invert(1);
+        & > img {
+            filter: invert(1);
+        }
     }
-  }
 }
 
 .credits {
-  font-size: 0.88rem;
-  color: var(--meta-color); 
+    font-size: 0.88rem;
+    color: var(--meta-color);
 }

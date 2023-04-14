@@ -1,100 +1,100 @@
 code {
-  background-color: var(--bg-1);
-  padding: 0.1em 0.2em;
-  font-family: var(--code-font);
-  font-weight: 350;
-  font-size: 0.92em;
+    background-color: var(--bg-1);
+    padding: 0.1em 0.2em;
+    font-family: var(--code-font);
+    font-weight: 350;
+    font-size: 0.92em;
 }
 
 pre {
-  border: 1px solid var(--border-color);
-  line-height: 1.4;
-  overflow-x: auto;
-  padding: 1em;
-  position: relative;
-  -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border-color);
+    line-height: 1.4;
+    overflow-x: auto;
+    padding: 1em;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
 }
 
 pre code {
-  background-color: transparent;
-  color: inherit;
-  padding: 0;
-  border: 0;
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    border: 0;
 }
 
 pre code[class*="language-"] {
-  -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
 }
 
 pre code[class*="language-"]::before {
-  font-size: 12px;
-  letter-spacing: 0.025rem;
-  padding: 0.1rem 0.5rem;
-  position: absolute;
-  right: 0.1rem;
-  margin-top: 0.1rem;
-  text-align: right;
-  text-transform: uppercase;
-  top: 0;
+    font-size: 12px;
+    letter-spacing: 0.025rem;
+    padding: 0.1rem 0.5rem;
+    position: absolute;
+    right: 0.1rem;
+    margin-top: 0.1rem;
+    text-align: right;
+    text-transform: uppercase;
+    top: 0;
 }
 
 pre code[class="language-javaScript"]::before,
 pre code[class="language-js"]::before {
-  content: "js";
-  background: #f7df1e;
-  color: black;
+    content: "js";
+    background: #f7df1e;
+    color: black;
 }
 
 pre code[class*="language-yml"]::before,
 pre code[class*="language-yaml"]::before {
-  content: "yaml";
-  background: #C51117;
-  color: white;
+    content: "yaml";
+    background: #C51117;
+    color: white;
 }
 
 pre code[class*="language-shell"]::before,
 pre code[class*="language-bash"]::before,
 pre code[class*="language-sh"]::before {
-  content: "shell";
-  background: #33A841;
-  color: white;
+    content: "shell";
+    background: #33A841;
+    color: white;
 }
 
 pre code[class*="language-json"]::before {
-  content: "json";
-  color: black;
-  background: whitesmoke;
+    content: "json";
+    color: black;
+    background: whitesmoke;
 }
 
 pre code[class*="language-python"]::before,
 pre code[class*="language-py"]::before {
-  content: "python";
-  background: #306698;
-  color: #ffd343;
+    content: "python";
+    background: #306698;
+    color: #ffd343;
 }
 
 pre code[class*="language-css"]::before {
-  content: "css";
-  background: #215AEF;
-  color: white;
+    content: "css";
+    background: #215AEF;
+    color: white;
 }
 
 pre code[class*="language-go"]::before {
-  content: "Go";
-  background: #00ADD8;
-  color: white;
+    content: "Go";
+    background: #00ADD8;
+    color: white;
 }
 
 pre code[class*="language-md"]::before,
 pre code[class*="language-md"]::before {
-  content: "Markdown";
-  background: #159ADC;
-  color: white;
+    content: "Markdown";
+    background: #159ADC;
+    color: white;
 }
 
 pre code[class*="language-rust"]::before,
 pre code[class*="language-rs"]::before {
-  content: "rust";
-  background: #fff8f6;
-  color: #ff4647;
+    content: "rust";
+    background: #fff8f6;
+    color: #ff4647;
 }
