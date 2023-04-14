@@ -33,7 +33,6 @@ favicon = ""
 # This header image is used for SEO. For example if you were to share an image via Messenger/Instagram/Twitter a preview picture is also presented
 headerImage = ""
 
-# The icon is display besides the menu text but is not necessary. It needs to be placed under "menu_icon" in the static "folder"
 menu = [
     { name = "blog", url = "$BASE_URL/blog" },
     { name = "archive", url = "$BASE_URL/archive" },
@@ -41,7 +40,7 @@ menu = [
     { name = "projects", url = "$BASE_URL/projects" },
 ]
 
-#The icons available can be found in "social_icons" in the "static" folder
+# The icons available can be found in "social_icons" in the "static" folder
 socials = [
     { name = "atom feed", url = "$BASE_URL/atom.xml", icon = "rss" },
     { name = "github", url = "https://github.com/welpo/", icon = "github" },
@@ -56,7 +55,7 @@ socials = [
 # Useful if you want to load remote content safely (embed YouTube videos, which needs frame-src, for example).
 # Default directive is self.
 # Default config, allows for https remote images and embedding YouTube and Vimeo content.
-# This configuration gets an A+ in Mozilla's Observatory: https://observatory.mozilla.org
+# This configuration (along with the right webserver settings) gets an A+ in Mozilla's Observatory: https://observatory.mozilla.org
 allowed_domains = [
     { directive = "img-src", domains = ["'self'", "https://*"] },
     { directive = "script-src", domains = ["'self'"] },
