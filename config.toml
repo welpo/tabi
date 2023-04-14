@@ -1,5 +1,5 @@
 # Necessary stuff.
-base_url = "http://127.0.0.1:1111"
+base_url = "https://welpo.github.io/tabi"
 title = "~/tabi"
 description = "tabi is a simple personal site and blogging theme for Zola."
 generate_feed = true
