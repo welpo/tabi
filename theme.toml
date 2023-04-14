@@ -1,11 +1,18 @@
 name = "tabi"
-description = "Simple blog theme powered by Zola"
+description = "A fast, lightweight and modern Zola blogging theme with optional JavaScript."
 license = "MIT"
 homepage = "https://github.com/welpo/tabi"
+
 # The minimum version of Zola required
-min_version = "0.4.0"
+min_version = "0.9.0"
+
 # An optional live demo URL
-demo = "https://welpo.ooo/tabi"
+demo = "https://welpo.github.io/tabi"
+
+# The theme author info: you!
+[author]
+name = "Óscar Fernández"
+homepage = "https://welpo.ooo"
 
 # Any variable there can be overridden in the end user `config.toml`
 # You don't need to prefix variables by the theme name but as this will
@@ -13,7 +20,32 @@ demo = "https://welpo.ooo/tabi"
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
 
-# The theme author info: you!
-[author]
-name = "welpo"
-homepage = "https://welpo.ooo"
+# Enable JavaScript theme toggler for dark/light mode (and automatic switching).
+# The default setting is the light theme.
+theme_switcher = true
+
+# Date format used when listing posts (main page, /blog section, tag posts list…)
+# Default is "6th July 2049".
+long_date_format = "%d %B %Y"
+
+separator = "•"
+
+menu = [
+    { name = "blog", url = "$BASE_URL/blog" },
+    { name = "archive", url = "$BASE_URL/archive" },
+    { name = "tags", url = "$BASE_URL/tags" },
+    { name = "projects", url = "$BASE_URL/projects" },
+]
+
+# Custom security headers. What urls should your website be able to connect to?
+# You need to specify the CSP and the URLs associated with the directive.
+# Useful if you want to load remote content safely (embed YouTube videos, which needs frame-src, for example).
+# Default directive is self.
+# Default config, allows for https remote images and embedding YouTube and Vimeo content.
+# This configuration (along with the right webserver settings) gets an A+ in Mozilla's Observatory: https://observatory.mozilla.org
+allowed_domains = [
+    { directive = "img-src", domains = ["'self'", "https://*"] },
+    { directive = "script-src", domains = ["'self'"] },
+    { directive = "style-src", domains = ["'self'"] },
+    { directive = "frame-src", domains = ["player.vimeo.com", "https://www.youtube-nocookie.com"] },
+]
