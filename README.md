@@ -9,6 +9,8 @@ A simple blog theme powered by [Zola](https://getzola.org). See a live preview [
 ## Features
 
 - [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
+- [X] [KaTeX](https://katex.org/) support.
+- [X] All JavaScript (theme switcher and KaTeX) can be fully disabled.
 - [X] Projects page.
 - [X] Archive page.
 - [x] Tags.
