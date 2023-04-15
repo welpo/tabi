@@ -1,7 +1,7 @@
 +++
 title = "Almost no JavaScript"
 date = 2023-01-06
-updated = = 2023-04-15
+updated = 2023-04-15
 description = "JavaScript is only used when HTML and CSS aren't enough."
 
 [taxonomies]
