@@ -43,15 +43,13 @@ h6:hover .zola-anchor {
     opacity: 1;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    a:hover {
-        background-color: transparent;
-    }
+h1 .zola-anchor:hover,
+h2 .zola-anchor:hover,
+h3 .zola-anchor:hover,
+h4 .zola-anchor:hover,
+h5 .zola-anchor:hover,
+h6 .zola-anchor:hover {
+    background-color: transparent;
 }
 
 @media (max-width: 500px) {
