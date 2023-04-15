@@ -20,15 +20,6 @@
                 {% endif %}
             </h1>
 
-            <div class="meta">
-                {% if page.date %}
-                    {{ macros_format_date::format_date(date=page.date, short=false) }}
-                {% endif %}
-                {% if page.draft %}
-                    <span class="draft-label">DRAFT</span>
-                {% endif %}
-            </div>
-
             <div class="card-description">
                 {% if page.description %}
                     {{ page.description }}
