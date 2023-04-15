@@ -182,7 +182,7 @@ h5 {
 p {
     font-family: var(--serif-font);
     margin-top: 0.4rem;
-    margin-bottom: 2.3vmin;
+    margin-bottom: max(2.3vmin, 24px);
     line-height: 2rem;
     font-size: 1em;
 }
