@@ -10,4 +10,4 @@ section_path = "blog/_index.md"
 max_posts = 4
 +++
 
-Tabi is a simple theme for [Zola](https://www.getzola.org/). It aims to be a personal page and home to blog posts. It features responsive design, dark and light modes, and high performance.
+Tabi is a fast, lightweight, and modern [Zola](https://getzola.org) theme. It aims to be a personal page and home to blog posts. It features responsive design, dark and light modes, custom shortcodes, and much more.
