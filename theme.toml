@@ -1,5 +1,5 @@
 name = "tabi"
-description = "A fast, lightweight and modern Zola blogging theme with optional JavaScript."
+description = "A fast, lightweight, and modern Zola theme with optional JavaScript, and a perfect Lighthouse score."
 license = "MIT"
 homepage = "https://github.com/welpo/tabi"
 
