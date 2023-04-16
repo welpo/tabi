@@ -18,6 +18,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
 - [X] [KaTeX](https://katex.org/) support.
 - [X] All JavaScript (theme switcher and KaTeX) can be fully disabled.
+- [X] Responsive design.
 - [X] Projects page.
 - [X] Archive page.
 - [x] Tags.
