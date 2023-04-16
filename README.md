@@ -34,8 +34,63 @@ See the project's roadmap [here](https://github.com/users/welpo/projects/1).
 git clone git@github.com:welpo/tabi.git
 cd tabi
 zola serve
-# open http://127.0.0.1:1111/ in the browser
 ```
+
+Open http://127.0.0.1:1111/ in the browser.
+
+## Installation
+
+To add tabi to you existing Zola site:
+
+1. Add the theme as a git submodule:
+
+```
+git submodule add https://github.com/welpo/tabi.git themes/tabi
+```
+
+Or clone the theme into your themes directory:
+
+```
+git clone https://github.com/welpo/tabi.git themes/tabi`
+```
+
+2. Enable the theme in your `config.toml`:
+
+```
+theme = "tabi"`
+```
+
+3. Set a `title` in your `config.toml`:
+
+```
+title = "Your Site Title"
+```
+
+4. Create a `content/_index.md` file with the following content:
+
+```
++++
+title = "Home"
+paginate_by = 5 # Set the number of posts per page
+template = "index.html"
++++
+```
+
+If you want to serve your blog posts from a different path, such as `blog/`, add a `section_path` in the `[extra]` section of `content/_index.md` (this file will need pagination):
+
+```
+[extra]
+section_path = "blog/_index.md"
+```
+
+5. If you want an intro page (see screenshot above), add these lines to `content/_index.md`:
+
+```
+[extra]
+header = {title = "Hello! I'm tabi~", img = "$BASE_URL/img/main.webp" }
+```
+
+The content outside the front matter will be rendered between the header title and the posts listing. In the screenshot above, it's the text that reads "Tabi is a fast, lightweight, and modern Zola theme…".
 
 ## Inspiration
 
