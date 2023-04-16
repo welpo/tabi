@@ -1,1 +1,2 @@
-<img class="dimmable-image" {% if src %}src={{ src | safe | replace(from="$BASE_URL", to=config.base_url) }} {% endif %} {% if alt %}alt="{{ alt }}"{% endif %}/>
+{% set meta = get_image_metadata(path=src) %}
+<img class="dimmable-image" src="{{ get_url(path=src) }}" {% if alt %}alt="{{ alt }}" {% endif %} {% if meta.width %}width="{{ meta.width }}" {% endif %} {% if meta.height %}height="{{ meta.height }}" {% endif %}/>

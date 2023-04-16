@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2023-03-11
+updated = 2023-04-16
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -14,34 +14,35 @@ tags = ["showcase", "shortcodes"]
 
 Useful if you want to use a different image for the light and dark themes:
 
-{{ dual_theme_image(light_src="$BASE_URL/img/paris_day.webp", dark_src="$BASE_URL/img/paris_night.webp" alt="The Eiffel tower") }}
+{{ dual_theme_image(light_src="img/paris_day.webp", dark_src="img/paris_night.webp" alt="The Eiffel tower") }}
 
 #### Usage
 ```
-{{/* dual_theme_image(light_src="$BASE_URL/img/paris_day.webp", dark_src="$BASE_URL/img/paris_night.webp" alt="The Eiffel tower") */}}
+{{/* dual_theme_image(light_src="img/paris_day.webp", dark_src="img/paris_night.webp" alt="The Eiffel tower") */}}
 ```
 
 ### Invertible image
 
 Good for graphs, line drawings, diagrams… Inverts the colours of the image. The source image will be used for the light theme.
 
-{{ invertible_image(src="$BASE_URL/img/graph.webp", alt="Invertible graph") }}
+{{ invertible_image(src="img/graph.webp", alt="Invertible graph") }}
 
 #### Usage
+
 ```
-{{/* invertible_image(src="$BASE_URL/img/graph.webp", alt="Invertible graph") */}}
+{{/* invertible_image(src="img/graph.webp", alt="Invertible graph") */}}
 ```
 
 ### Dimmable image
 
 Images with too much brightness or contrast can be jarring against a dark background. Here's an example of a photograph that dims when the dark theme is active.
 
-{{ dimmable_image(src="$BASE_URL/img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") }}
+{{ dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") }}
 
 #### Usage
 
 ```
-{{/* dimmable_image(src="$BASE_URL/img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") */}}
+{{/* dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") */}}
 ```
 
 ## References
