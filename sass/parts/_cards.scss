@@ -9,7 +9,7 @@
 .card {
     min-height: 100px;
     background: var(--bg-2);
-    border: 2px solid var(--border-color);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
 
