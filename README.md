@@ -8,7 +8,7 @@ See a live preview [here](https://welpo.github.io/tabi).
 
 ![tabi](screenshot.png)
 
-Tabi has a perfect score on Google's Lighthouse audit:
+tabi has a perfect score on Google's Lighthouse audit:
 
 ![lighthouse](lighthouse_score.png)
 
@@ -98,7 +98,7 @@ section_path = "blog/_index.md"
 header = {title = "Hello! I'm tabi~", img = "$BASE_URL/img/main.webp" }
 ```
 
-The content outside the front matter will be rendered between the header title and the posts listing. In the screenshot above, it's the text that reads "Tabi is a fast, lightweight, and modern Zola theme…".
+The content outside the front matter will be rendered between the header title and the posts listing. In the screenshot above, it's the text that reads "tabi is a fast, lightweight, and modern Zola theme…".
 
 ## Inspiration
 
