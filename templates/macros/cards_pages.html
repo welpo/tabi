@@ -3,6 +3,7 @@
 <div class="cards">
     {%- for page in pages %}
     <div class="card">
+        <a rel="noopener noreferrer" target="_blank" href={{ page.extra.link_to }}>
         {% if page.extra.local_image %}
             <img class="card-image" alt={{ page.extra.local_image }} src="{{ get_url(path=page.extra.local_image) }}">
         {% elif page.extra.remote_image %}
@@ -10,6 +11,7 @@
         {% else %}
             <div class="card-image-placeholder"></div>
         {% endif %}
+        </a>
 
         <div class="card-info">
             <h1 class="card-title">
