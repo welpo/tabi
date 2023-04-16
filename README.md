@@ -8,9 +8,14 @@ See a live preview [here](https://welpo.github.io/tabi).
 
 ![tabi](screenshot.png)
 
+Tabi has a perfect score on Google's Lighthouse audit:
+
+![lighthouse](lighthouse_score.png)
+
 ## Features
 
 - [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
+- [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
 - [X] [KaTeX](https://katex.org/) support.
 - [X] All JavaScript (theme switcher and KaTeX) can be fully disabled.
 - [X] Projects page.
