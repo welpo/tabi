@@ -1,4 +1,4 @@
-{% set light_meta = get_image_metadata(path=light_src) %}
-{% set dark_meta = get_image_metadata(path=dark_src) %}
+{% set light_meta = get_image_metadata(path=light_src, allow_missing=true) %}
+{% set dark_meta = get_image_metadata(path=dark_src, allow_missing=true) %}
 <img src="{{ get_url(path=light_src) }}" {% if alt %}alt="{{ alt }}" {% endif %} {% if light_meta.width %}width="{{ light_meta.width }}" {% endif %} {% if light_meta.height %}height="{{ light_meta.height }}" {% endif %} class="img-light">
 <img src="{{ get_url(path=dark_src) }}" {% if alt %}alt="{{ alt }}" {% endif %} {% if dark_meta.width %}width="{{ dark_meta.width }}" {% endif %} {% if dark_meta.height %}height="{{ dark_meta.height }}" {% endif %} class="img-dark">

@@ -7,7 +7,7 @@
             <a rel="noopener noreferrer" target="_blank" href={{ page.extra.link_to }}>
         {% endif %}
         {% if page.extra.local_image %}
-            {% set meta = get_image_metadata(path=page.extra.local_image) %}
+            {% set meta = get_image_metadata(path=page.extra.local_image, allow_missing=true) %}
             <img class="card-image" alt={{ page.extra.local_image }} src="{{ get_url(path=page.extra.local_image) }}" {% if meta.width %}width="{{ meta.width }}" {% endif %} {% if meta.height %}height="{{ meta.height }}" {% endif %}>
         {% elif page.extra.remote_image %}
             <img class="card-image" alt={{ page.extra.remote_image }} src="{{ page.extra.remote_image }}">
