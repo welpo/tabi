@@ -32,6 +32,7 @@ iframe {
     padding-right: 0.45em;
     padding-left: 0.4em;
     opacity: 0;
+    user-select: none;
 }
 
 h1:hover .zola-anchor,
