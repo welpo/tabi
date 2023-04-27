@@ -13,5 +13,7 @@
             <small>Powered by <a href="https://www.getzola.org" target="_blank">Zola</a> & <a href="https://github.com/welpo/tabi" target="_blank">tabi</a></small>
         </div>
     </section>
-    <script src="{{ get_url(path='js/main.js', trailing_slash=false) | safe }}"/></script>
+    {%- if config.extra.theme_switcher == true -%}
+        <script src="{{ get_url(path='js/main.js', trailing_slash=false) | safe }}"/></script>
+    {%- endif -%}
 </footer>
