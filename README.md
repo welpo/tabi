@@ -6,11 +6,11 @@ See a live preview [here](https://welpo.github.io/tabi).
 
 > tabi (旅): Journey.
 
-![tabi](light_dark_screenshot.png)
+![tabi](https://github.com/welpo/tabi/raw/main/light_dark_screenshot.png)
 
 tabi has a perfect score on Google's Lighthouse audit:
 
-![lighthouse](lighthouse_score.png)
+![lighthouse](https://raw.githubusercontent.com/welpo/tabi/main/lighthouse_score.png)
 
 ## Features
 
