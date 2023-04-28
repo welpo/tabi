@@ -1,16 +1,16 @@
 @font-face {
-    /* Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
+    /* Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
     font-family: 'Inter';
     src: local('Inter'),
-        url('fonts/Inter.ttf');
+        url('fonts/Inter4.0-beta8.woff2') format("woff2");
     font-display: swap;
 }
 
 @font-face {
-    /* Copyright 2014, 2015, 2016 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-    font-family: 'Source Serif Pro';
-    src: local('Source Serif Pro'),
-        url('fonts/SourceSerifPro-Regular.ttf');
+    /* Copyright 2014 - 2023 Adobe (http://www.adobe.com/), with Reserved Font Name ‘Source’.adobe.com/). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
+    font-family: 'Source Serif';
+    src: local('Source Serif'),
+        url('fonts/SourceSerif4Variable-Roman.otf.woff2') format("woff2");
     font-display: swap;
 }
 
@@ -18,7 +18,7 @@
     /* Copyright 2019 - Present, Microsoft Corporation, with Reserved Font Name 'Cascadia Code'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
     font-family: 'Cascadia Code';
     src: local('Cascadia Code'),
-        url('fonts/CascadiaCode.ttf');
+        url('fonts/CascadiaCode.woff2') format("woff2");
     font-display: swap;
 }
 
@@ -44,7 +44,7 @@
     --small-layout-width: 200px;
 
     --sans-serif-font: 'Inter', Helvetica, Arial, sans-serif;
-    --serif-font: 'Source Serif Pro', 'Georgia', serif;
+    --serif-font: 'Source Serif', 'Georgia', serif;
     --code-font: 'Cascadia Code';
 
     font-family: var(--sans-serif-font);
