@@ -13,7 +13,6 @@ footer section {
 
 footer nav {
     display: flex;
-    gap: 0rem;
     margin: 0 0rem;
 }
 
@@ -23,6 +22,10 @@ footer nav {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
+
+    ul {
+        gap: 5px;
+    }
 }
 
 .social {

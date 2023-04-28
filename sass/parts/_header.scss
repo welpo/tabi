@@ -43,10 +43,16 @@ header {
 
 .nav-navs {
     display: flex;
-    gap: 5px;
+    flex-wrap: wrap;
 
-    img {
-        border: none;
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 1px;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 }
 
@@ -57,6 +63,7 @@ header {
     justify-content: right;
     color: var(--text-color);
     padding: 0.66rem;
+    line-height: 2.5;
 }
 
 .home-title {
@@ -114,6 +121,7 @@ header {
         margin-top: 0.8rem;
         width: 100%;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .navbar {

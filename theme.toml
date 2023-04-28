@@ -44,7 +44,7 @@ menu = [
 # Default config, allows for https remote images and embedding YouTube and Vimeo content.
 # This configuration (along with the right webserver settings) gets an A+ in Mozilla's Observatory: https://observatory.mozilla.org
 allowed_domains = [
-    { directive = "img-src", domains = ["'self'", "https://*"] },
+    { directive = "img-src", domains = ["'self'", "https://*", "data:"] },
     { directive = "script-src", domains = ["'self'"] },
     { directive = "style-src", domains = ["'self'"] },
     { directive = "frame-src", domains = ["player.vimeo.com", "https://www.youtube-nocookie.com"] },
