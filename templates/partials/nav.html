@@ -6,23 +6,19 @@
 
         {%- if config.extra.menu %}
             <div class="nav-navs">
-                <div>
+                <ul>
                     {% for menu in config.extra.menu %}
-                    <a class="nav-links no-hover-padding" href={{ menu.url | safe | replace(from="$BASE_URL" , to=config.base_url) }}>{{ menu.name
-                        }}</a>
+                        <li>
+                            <a class="nav-links no-hover-padding" href={{ menu.url | safe | replace(from="$BASE_URL" , to=config.base_url) }}>{{ menu.name }}</a>
+                        </li>
                     {% endfor %}
-                </div>
-                {%- if config.extra.theme_switcher == true -%}
-                <label class="theme-switcher" for="themeswitch">
-                    <input type="checkbox" id="themeswitch">
-                    <div class="switch">
-                        <img alt="set dark theme" class="moon" src="{{ config.base_url }}/menu_icon/moon.svg">
-                        <img alt="set light theme" class="sun" src="{{ config.base_url }}/menu_icon/sun.svg">
-                    </div>
-                {%- endif -%}
-                </label>
+                    {%- if config.extra.theme_switcher == true -%}
+                        <li class="theme-switcher-wrapper">
+                            <div class="theme-switcher"></div>
+                        </li>
+                    {%- endif -%}
+                </ul>
             </div>
         {% endif %}
-
     </nav>
 </header>
