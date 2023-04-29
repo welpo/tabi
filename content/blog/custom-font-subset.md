@@ -174,7 +174,7 @@ fi
 
 Make sure to modify the script to match the path where you stored the `subset_font` script. The config and font paths should work fine with tabi's default setup.
 
-Now, every time you commit changes to your Git project, the pre-commit hook will check for modifications in the `config.toml` file and automatically run the``subset_font` script to update the `custom_subset.css` file.
+Now, every time you commit changes to your Git project, the pre-commit hook will check for modifications in the `config.toml` file and automatically run the `subset_font` script to update the `custom_subset.css` file.
 
 By the way, if you're interested in a way to automatically update the date of your Zola posts or compress your PNG files, check out [this post](https://welpo.ooo/blog/zola-date-git-hook/).
 
