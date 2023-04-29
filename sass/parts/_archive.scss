@@ -10,10 +10,12 @@
         gap: 1rem;
 
         .post-time {
-            width: 4rem;
+            min-width: 3.3rem;
+            margin-bottom: 0.5rem;
 
             .date {
                 color: var(--meta-color);
+                white-space: nowrap;
             }
         }
     }
