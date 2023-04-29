@@ -95,6 +95,7 @@ html {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6em;
+    text-rendering: optimizeLegibility;
 }
 
 body {
