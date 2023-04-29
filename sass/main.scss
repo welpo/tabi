@@ -118,6 +118,11 @@ body {
 article {
     max-width: calc(var(--max-layout-width) - 17rem);
     margin: 0 auto;
+
+    p,
+    li {
+        font-family: var(--serif-font);
+    }
 }
 
 .section-title {
@@ -185,7 +190,6 @@ h5 {
 }
 
 p {
-    font-family: var(--serif-font);
     margin-top: 0.4rem;
     margin-bottom: max(2.3vmin, 24px);
     line-height: 2rem;
