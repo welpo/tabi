@@ -6,12 +6,12 @@
 
     .listing-item {
         padding: 0.2rem 1rem;
+        margin-bottom: 0.5rem;
         display: flex;
         gap: 1rem;
 
         .post-time {
             min-width: 3.3rem;
-            margin-bottom: 0.5rem;
 
             .date {
                 color: var(--meta-color);
