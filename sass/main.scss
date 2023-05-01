@@ -209,6 +209,11 @@ p {
 @media only screen and (max-width: 600px) {
     .content {
         max-width: var(--medium-layout-width);
+        margin-top: 0rem;
+    }
+
+    article {
+        margin-top: 1.3rem;
     }
 
     body {
