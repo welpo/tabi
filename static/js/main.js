@@ -1,23 +1,29 @@
-const themeSwitcher = document.querySelector('.theme-switcher');
-let currentTheme = localStorage.getItem('theme');
-let userHasManuallyChangedTheme = currentTheme !== null;
+// Get the theme switcher button element.
+const themeSwitcher = document.querySelector(".theme-switcher");
 
-function setTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-  currentTheme = theme;
-}
+// Retrieve theme from localStorage.
+let currentTheme = localStorage.getItem("theme");
 
+// Function to switch between dark and light themes.
 function switchTheme() {
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  setTheme(newTheme);
-  userHasManuallyChangedTheme = true;
+    // Set the new theme based on the current theme.
+    currentTheme = currentTheme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    localStorage.setItem("theme", currentTheme);
 }
 
-themeSwitcher.addEventListener('click', switchTheme, false);
+// Initialize the theme switcher button.
+themeSwitcher.addEventListener("click", switchTheme, false);
 
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  if (!userHasManuallyChangedTheme) {
-    setTheme(e.matches ? 'dark' : 'light');
-  }
+// Update the theme based on system preference if the user hasn't manually changed the theme.
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
+    if (!localStorage.getItem("theme")) {
+        currentTheme = e.matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", currentTheme);
+    }
 });
+
+// Fix the theme switcher button not working on the first click by updating currentTheme.
+if (!currentTheme) {
+    currentTheme = document.documentElement.getAttribute("data-theme");
+}
