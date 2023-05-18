@@ -1,6 +1,7 @@
 +++
 title = "Optimise loading times with a custom font subset"
 date = 2023-04-29
+updated = 2023-05-18
 description = "Learn how to create a custom subset that only includes the necessary glyphs."
 
 [taxonomies]
@@ -176,6 +177,6 @@ Make sure to modify the script to match the path where you stored the `subset_fo
 
 Now, every time you commit changes to your Git project, the pre-commit hook will check for modifications in the `config.toml` file and automatically run the `subset_font` script to update the `custom_subset.css` file.
 
-By the way, if you're interested in a way to automatically update the date of your Zola posts or compress your PNG files, check out [this post](https://welpo.ooo/blog/zola-date-git-hook/).
+By the way, if you're interested in a way to automatically update the date of your Zola posts or compress your PNG files, check out [this post](https://osc.garden/blog/zola-date-git-hook/).
 
 If you want to use all scripts at once (compressing PNG files, updating the date, and creating the font subset), combine their code into a single `.git/hooks/pre-commit` file.
