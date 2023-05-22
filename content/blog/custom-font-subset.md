@@ -128,7 +128,7 @@ temp_subset=$(mktemp)
 # Run the pyftsubset command with the filtered characters as --text argument.
 pyftsubset "$font_file" \
     --text="$unique_chars" \
-    --layout-features="" --flavor="woff2" --output-file="$temp_subset" --with-zopfli
+    --layout-features="*" --flavor="woff2" --output-file="$temp_subset" --with-zopfli
 
 # Base64 encode the temporary subset.woff2 file and create the CSS file.
 base64_encoded_font=$(base64 -i "$temp_subset")

@@ -1,7 +1,7 @@
 +++
 title = "Optimitza la càrrega amb un subconjunt de font personalitzat"
 date = 2023-04-29
-updated = 2023-05-18
+updated = 2023-05-22
 description = "Aprèn com crear un subconjunt personalitzat que només inclogui els glifs necessaris."
 
 [taxonomies]
@@ -128,7 +128,7 @@ temp_subset=$(mktemp)
 # Executa la comanda pyftsubset amb els caràcters filtrats com a argument --text.
 pyftsubset "$font_file" \
     --text="$unique_chars" \
-    --layout-features="" --flavor="woff2" --output-file="$temp_subset" --with-zopfli
+    --layout-features="*" --flavor="woff2" --output-file="$temp_subset" --with-zopfli
 
 # Codifica en base64 el fitxer temporal subset.woff2 i crea el fitxer CSS.
 base64_encoded_font=$(base64 -i "$temp_subset")

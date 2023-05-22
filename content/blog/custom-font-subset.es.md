@@ -1,7 +1,7 @@
 +++
 title = "Optimiza la carga con un subconjunto de fuente personalizado"
 date = 2023-04-29
-updated = 2023-05-18
+updated = 2023-05-22
 description = "Aprende cómo crear un subconjunto personalizado que solo incluya los glifos necesarios."
 
 [taxonomies]
@@ -128,7 +128,7 @@ temp_subset=$(mktemp)
 # Ejecuta el comando pyftsubset con los caracteres filtrados como argumento --text.
 pyftsubset "$font_file" \
     --text="$unique_chars" \
-    --layout-features="" --flavor="woff2" --output-file="$temp_subset" --with-zopfli
+    --layout-features="*" --flavor="woff2" --output-file="$temp_subset" --with-zopfli
 
 # Codifica en Base64 el archivo temporal subset.woff2 y crea el archivo CSS.
 base64_encoded_font=$(base64 -i "$temp_subset")
