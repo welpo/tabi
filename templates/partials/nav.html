@@ -1,17 +1,67 @@
 <header>
     <nav class="navbar">
         <div class="nav-title">
-            <a class="home-title" href={{ config.base_url }}>{{ config.title }}</a>
+            <a class="home-title" href={{ get_url(path="/", lang=lang) }}>{{ config.title }}</a>
         </div>
 
         {%- if config.extra.menu %}
             <div class="nav-navs">
                 <ul>
-                    {% for menu in config.extra.menu %}
-                        <li>
-                            <a class="nav-links no-hover-padding" href={{ menu.url | safe | replace(from="$BASE_URL" , to=config.base_url) }}>{{ menu.name }}</a>
+                    {%- if config.extra.menu %}
+                        {% for menu in config.extra.menu %}
+                            <li>
+                                <a class="nav-links no-hover-padding" href={{ get_url(path=menu.url, lang=lang) | safe | replace(from="$BASE_URL", to=config.base_url) }}/>
+                                {%- if lang != config.default_language -%}
+                                    {{ trans(key=menu.name | safe, lang=lang) }}
+                                {%- else -%}
+                                    {{ menu.name | safe }}
+                                {%- endif -%}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    {%- endif -%}
+
+                    {# Language switcher #}
+                    {# Display the language switcher only if more than one language is available #}
+                    {%- if config.languages | length > 1 %}
+                        <li class="language-switcher">
+                            <div class="dropdown" type="Button">
+                                <div class="language-switcher-icon"></div>
+
+                                {# Display the current language first in the dropdown #}
+                                <div class="dropdown-content">
+                                    {%- if lang != config.default_language %}
+                                        {{ trans(key="language_name" | safe, lang=lang) }}
+                                    {% else %}
+                                        {{ config.extra.language_name.en }}
+                                    {%- endif %}
+
+                                    {# Loop through all the available languages in the config #}
+                                    {%- for lcode, language_name in config.extra.language_name -%}
+                                        {# Skip the current language to avoid linking to the current page #}
+                                        {%- if lang != lcode -%}
+                                            {# Check if the language code matches the default language #}
+                                            {%- if lcode == config.default_language -%}
+                                                {# If it does, link to the root path (no language code in URL) #}
+                                                <a type="Button" href="{{ current_url | replace(from=current_path | default(value="") | truncate(length=4, end=""), to="/") }}">{{ language_name }}</a>
+                                            {%- else -%}
+                                                {# Check if the current language is the default language #}
+                                                {%- if lang == config.default_language -%}
+                                                    {# If it is, append the language code to the base URL #}
+                                                    <a type="Button" href="{{ config.base_url }}/{{ lcode }}{{ current_path | default(value="/") | safe }}">{{ language_name }}</a>
+                                                {%- else -%}
+                                                    {# If it's not, replace the current language code in the URL with the new one #}
+                                                    <a type="Button" href="{{ current_url | replace(from='/' ~ lang ~ '/', to='/' ~ lcode ~ '/') }}"/>{{ language_name }}</a>
+                                                {%- endif -%}
+                                            {%- endif -%}
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                </div>
+                            </div>
                         </li>
-                    {% endfor %}
+                    {%- endif %}
+
+                    {# Theme switcher #}
                     {%- if config.extra.theme_switcher == true -%}
                         <li class="theme-switcher-wrapper">
                             <div class="theme-switcher"></div>

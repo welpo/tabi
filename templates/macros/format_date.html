@@ -1,10 +1,15 @@
 {% macro format_date(date, short) %}
 
-{% if config.extra.short_date_format and short %}
-    {{ date | date(format=config.extra.short_date_format) }}
-{% elif config.extra.long_date_format and not short %}
-    {{ date | date(format=config.extra.long_date_format) }}
+{# Set locale #}
+{%- if lang != config.default_language %}
+    {% set date_locale = trans(key="date_locale" | safe, lang=lang) %}
 {% else %}
+    {% set date_locale = "en_GB" %}
+{% endif %}
+
+{% if config.extra.long_date_format and not short %}
+    {{ date | date(format=config.extra.long_date_format, locale=date_locale) }}
+{% elif not config.extra.short_date_format and date_locale == "en_GB" %}
     {% set day = date | date(format='%-d') | int %}
 
     {% if day in [11, 12, 13] %}
@@ -29,6 +34,8 @@
     {% else %}
         {{ date | date(format="%B %Y") }}
     {% endif %}
+{% elif short %}
+    {{ date | date(format="%d %b %Y", locale=date_locale) }}
 {% endif %}
 
 {% endmacro %}

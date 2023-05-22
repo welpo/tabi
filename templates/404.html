@@ -1,10 +1,19 @@
 {% extends "page.html" %}
 
 {% block main_content %}
-
-    <main class="centered-header">
+    <main class="centered-text">
         {{ macros_page_header::page_header(title="404")}}
-        <span>not found</span>
+        <div class="subheader">not found</div>
+
+        {# Default English message #}
+        <p>The page you requested doesn't seem to exist or has not been translated to your language yet. Check the URL for errors, or <a href="{{ config.base_url }}">return to the homepage</a>.</p>
+
+        {# Iterate through each language and display the localised 404 message along with a "Go Home" link #}
+        {%- for language_name, language in config.languages -%}
+            {%- if language_name != config.default_language -%}
+                <p>{{ trans(key="404_error", lang=language_name) }} <a href="{{ config.base_url }}/{{ language_name }}/">{{ trans(key="go_home", lang=language_name) }}</a>.</p>
+            {%- endif -%}
+        {%- endfor -%}
     </main>
 
 {% endblock main_content %}

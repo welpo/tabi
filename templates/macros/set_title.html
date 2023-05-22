@@ -5,7 +5,14 @@
 {%- set custom_separator = config.extra.separator | default(value="•") -%}
 {%- set separator = " " ~ custom_separator ~ " " -%}
 
-{%- if current_path and current_path == "/" -%}
+{# Get the base path for the current language. #}
+{%- if lang != config.default_language %}
+    {%- set base_path = "/" ~ lang ~ "/" %}
+{%- else -%}
+    {%- set base_path = "/" %}
+{%- endif %}
+
+{%- if current_path and current_path == base_path -%}
     {%- set suffix = "" -%}
     {%- set separator = "" -%}
 {% elif title %}
@@ -19,9 +26,13 @@
     {%- set suffix = term.name -%}
 {% elif taxonomy.name %}
     {# List of tags. #}
-    {%- set suffix = taxonomy.name | capitalize -%}
+    {%- if lang != config.default_language -%}
+        {%- set suffix = trans(key=taxonomy.name | safe, lang=lang) | capitalize -%}
+    {% else %}
+        {%- set suffix = taxonomy.name | capitalize -%}
+    {% endif %}
 {% else %}
-    {%- set suffix = "Lost?" %}
+    {%- set suffix = "404" %}
 {%- endif -%}
 
 {# Return the final concatenated string. #}

@@ -1,4 +1,4 @@
 +++
-title = "Archive"
+title = "Arxiu"
 template = "archive.html"
 +++

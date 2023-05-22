@@ -14,7 +14,7 @@
             {% endif %}
         </nav>
         <div class="credits">
-            <small>Powered by <a href="https://www.getzola.org" target="_blank">Zola</a> & <a href="https://github.com/welpo/tabi" target="_blank">tabi</a></small>
+            <small>{%- if lang != config.default_language %} {{ trans(key="powered_by" | safe, lang=lang) }} {% else %} Powered by {% endif %} <a href="https://www.getzola.org" target="_blank">Zola</a> {%- if lang != config.default_language %} {{ trans(key="and" | safe, lang=lang) }} {% else %} & {% endif %} <a href="https://github.com/welpo/tabi" target="_blank">tabi</a></small>
         </div>
     </section>
 </footer>
