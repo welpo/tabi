@@ -34,7 +34,7 @@
     {% else %}
         {{ date | date(format="%B %Y") }}
     {% endif %}
-{% elif short %}
+{% else %}
     {{ date | date(format="%d %b %Y", locale=date_locale) }}
 {% endif %}
 
