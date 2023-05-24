@@ -38,9 +38,10 @@ header {
 
     ul {
         display: flex;
-        align-items: center;
-        gap: 1px;
         flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
         list-style: none;
         padding: 0;
         margin: 0;
@@ -98,8 +99,8 @@ header {
 }
 
 .language-switcher {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
