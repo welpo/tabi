@@ -25,7 +25,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [x] Tags.
 - [x] Social links.
 - [X] Code syntax highlighting.
-- [X] [Custom shortcodes](./templates/shortcodes/).
+- [X] [Custom shortcodes](https://welpo.github.io/tabi/blog/shortcodes/).
 - [X] Customizable secure headers.
 
 ## Quick start
@@ -99,6 +99,20 @@ header = {title = "Hello! I'm tabi~", img = "$BASE_URL/img/main.webp" }
 ```
 
 The content outside the front matter will be rendered between the header title and the posts listing. In the screenshot above, it's the text that reads "tabi is a fast, lightweight, and modern Zola theme…".
+
+6. If you want a multilingual site, you will need to set up each language. In `config.toml`:
+
+- set the translations for a few strings;
+- set the title and taxonomies for each language;
+- add the `language_name.{code}` in `[extra]`. This is the text shown in the language switcher.
+
+See [these lines in the provided `config.toml`](https://github.com/welpo/tabi/blob/3210de56d2b5e6a0405d743ad23f72ba1342664f/config.toml#L17-L101) for an example.
+
+You will need an `_index.{language_code}.md` per language for each section (e.g. /blog or /projects) that you want to enable in that language.
+
+The same is true for individual posts, which should have the exact same name as the default language, with an extra `.{code}` before the extension (e.g. the Spanish version of `security.md` would be `security.es.md`).
+
+This configuration allows the language switcher to take the user to the translation of the current URL. If a translation doesn't exist, the 404 page will be displayed, with an explanation in each language set in the config.
 
 ## Inspiration
 
