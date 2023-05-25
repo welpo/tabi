@@ -1,7 +1,7 @@
 +++
 title = "Optimiza la carga con un subconjunto de fuente personalizado"
 date = 2023-04-29
-updated = 2023-05-22
+updated = 2023-05-25
 description = "Aprende cómo crear un subconjunto personalizado que solo incluya los glifos necesarios."
 
 [taxonomies]
@@ -38,12 +38,12 @@ El script que sigue toma un archivo `config.toml` y un archivo de fuente como en
 #!/usr/bin/env bash
 
 usage() {
-    echo "Usage: $0 [--config|-c CONFIG_FILE] [--font|-f FONT_FILE] [--output|-o OUTPUT_PATH]"
+    echo "Usage: $0 [--config | -c CONFIG_FILE] [--font | -f FONT_FILE] [--output | -o OUTPUT_PATH]"
     echo
     echo "Options:"
     echo "  --config, -c   Path to the config.toml file."
     echo "  --font, -f     Path to the font file."
-    echo "  --output, -o   Output path for the generated subset.css file (default: current directory)"
+    echo "  --output, -o   Output path for the generated custom_subset.css file (default: current directory)"
     echo "  --help, -h     Show this help message and exit"
 }
 
@@ -116,7 +116,7 @@ if [ -n "$language_names" ]; then
     done
 fi
 
-# Combina las cadenas extraídas..
+# Combina las cadenas extraídas.
 combined="$title$menu_names$language_names"
 
 # Obtiene los caracteres únicos.
@@ -125,7 +125,7 @@ unique_chars=$(echo "$combined" | grep -o . | sort -u | tr -d '\n')
 # Crea un archivo temporal para subset.woff2.
 temp_subset=$(mktemp)
 
-# Ejecuta el comando pyftsubset con los caracteres filtrados como argumento --text.
+# Crea el subconjunto.
 pyftsubset "$font_file" \
     --text="$unique_chars" \
     --layout-features="*" --flavor="woff2" --output-file="$temp_subset" --with-zopfli

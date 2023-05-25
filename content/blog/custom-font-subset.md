@@ -1,7 +1,7 @@
 +++
 title = "Optimise loading times with a custom font subset"
 date = 2023-04-29
-updated = 2023-05-22
+updated = 2023-05-25
 description = "Learn how to create a custom subset that only includes the necessary glyphs."
 
 [taxonomies]
@@ -38,7 +38,7 @@ The script below takes a `config.toml` file and a font file as input, extracts t
 #!/usr/bin/env bash
 
 usage() {
-    echo "Usage: $0 [--config|-c CONFIG_FILE] [--font|-f FONT_FILE] [--output|-o OUTPUT_PATH]"
+    echo "Usage: $0 [--config | -c CONFIG_FILE] [--font | -f FONT_FILE] [--output | -o OUTPUT_PATH]"
     echo
     echo "Options:"
     echo "  --config, -c   Path to the config.toml file."
@@ -125,16 +125,19 @@ unique_chars=$(echo "$combined" | grep -o . | sort -u | tr -d '\n')
 # Create a temporary file for subset.woff2.
 temp_subset=$(mktemp)
 
-# Run the pyftsubset command with the filtered characters as --text argument.
+# Create the subset.
 pyftsubset "$font_file" \
     --text="$unique_chars" \
     --layout-features="*" --flavor="woff2" --output-file="$temp_subset" --with-zopfli
+
+# Remove trailing slash from output path, if present.
+output_path=${output_path%/}
 
 # Base64 encode the temporary subset.woff2 file and create the CSS file.
 base64_encoded_font=$(base64 -i "$temp_subset")
 echo "@font-face{font-family:\"Inter Subset\";src:url(data:application/font-woff2;base64,$base64_encoded_font);}" > "$output_path/custom_subset.css"
 
-# Remove the temporary subset.woff2 file
+# Remove the temporary subset.woff2 file.
 rm "$temp_subset"
 ```
 

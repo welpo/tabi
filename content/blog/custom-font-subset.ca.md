@@ -1,7 +1,7 @@
 +++
 title = "Optimitza la càrrega amb un subconjunt de font personalitzat"
 date = 2023-04-29
-updated = 2023-05-22
+updated = 2023-05-25
 description = "Aprèn com crear un subconjunt personalitzat que només inclogui els glifs necessaris."
 
 [taxonomies]
@@ -38,12 +38,12 @@ El següent script pren un fitxer `config.toml` i un fitxer de font com a entrad
 #!/usr/bin/env bash
 
 usage() {
-    echo "Usage: $0 [--config|-c CONFIG_FILE] [--font|-f FONT_FILE] [--output|-o OUTPUT_PATH]"
+    echo "Usage: $0 [--config | -c CONFIG_FILE] [--font | -f FONT_FILE] [--output | -o OUTPUT_PATH]"
     echo
     echo "Options:"
     echo "  --config, -c   Path to the config.toml file."
     echo "  --font, -f     Path to the font file."
-    echo "  --output, -o   Output path for the generated subset.css file (default: current directory)"
+    echo "  --output, -o   Output path for the generated custom_subset.css file (default: current directory)"
     echo "  --help, -h     Show this help message and exit"
 }
 
@@ -125,7 +125,7 @@ unique_chars=$(echo "$combined" | grep -o . | sort -u | tr -d '\n')
 # Crea un fitxer temporal per a subset.woff2.
 temp_subset=$(mktemp)
 
-# Executa la comanda pyftsubset amb els caràcters filtrats com a argument --text.
+# Crea el subconjunto.
 pyftsubset "$font_file" \
     --text="$unique_chars" \
     --layout-features="*" --flavor="woff2" --output-file="$temp_subset" --with-zopfli
@@ -134,7 +134,7 @@ pyftsubset "$font_file" \
 base64_encoded_font=$(base64 -i "$temp_subset")
 echo "@font-face{font-family:\"Inter Subset\";src:url(data:application/font-woff2;base64,$base64_encoded_font);}" > "$output_path/custom_subset.css"
 
-# Elimina el fitxer temporal subset.woff2
+# Elimina el fitxer temporal subset.woff2.
 rm "$temp_subset"
 ```
 
