@@ -10,19 +10,19 @@
 
         <ul class="meta">
             {% if page.draft %}
-                <li class="draft-label">DRAFT</li>
+                <li class="draft-label">{%- if lang != config.default_language %} {{ trans(key="draft" | safe, lang=lang) }} {% else %} DRAFT {% endif %}</li>
             {% endif %}
 
             {% if page.date %}
                 <li>{{ macros_format_date::format_date(date=page.date, short=true) }} {{ separator }}</li>
             {% endif %}
 
-            <li title="{{ page.word_count }} words">&nbsp;{{ page.reading_time }} min read</li>
+            <li title="{{ page.word_count }} {%- if lang != config.default_language %} {{ trans(key="words" | safe, lang=lang) }} {% else %} words {% endif %}">&nbsp;{{ page.reading_time }}{%- if lang != config.default_language %} {{ trans(key="min_read" | safe, lang=lang) }} {% else %} min read {% endif %}</li>
 
             {% if page.taxonomies and page.taxonomies.tags %}
-                <li>&nbsp;{{ separator }}&nbsp;Tags:&nbsp;</li>
+                <li>&nbsp;{{ separator }}&nbsp;{%- if lang != config.default_language -%}{{ trans(key="tags" | safe, lang=lang) | capitalize }}{% else %}Tags{%- endif -%}:&nbsp;</li>
                 {% for tag in page.taxonomies.tags %}
-                    <li><a href={{ get_taxonomy_url(kind='tags' , name=tag) | safe }}>{{ tag }}</a>
+                    <li><a href={{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}>{{ tag }}</a>
                     {%- if not loop.last -%}
                         ,&nbsp;
                     {%- endif -%}
@@ -31,7 +31,7 @@
             {% endif %}
 
             {% if page.updated %}
-                </ul><ul class="meta last-updated"><li>Last updated on {{ macros_format_date::format_date(date=page.updated, short=true) }}</li>
+                </ul><ul class="meta last-updated"><li>{%- if lang != config.default_language %} {{ trans(key="last_updated_on" | safe, lang=lang) }} {% else %} Last updated on {% endif %} {{ macros_format_date::format_date(date=page.updated, short=true) }}</li>
             {% endif %}
         </ul>
 
@@ -46,7 +46,7 @@
         {% if page.extra.toc | default(value=false) %}
         {% if page.toc %}
             <div class="toc-container">
-            <h3>Table of Contents</h3>
+            <h3>{%- if lang != config.default_language %} {{ trans(key="table_of_contents" | safe, lang=lang) }} {% else %} Table of Contents {% endif %}</h3>
             <ul>
                 {% for h1 in page.toc %}
                 <li>

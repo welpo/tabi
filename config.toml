@@ -1,7 +1,6 @@
-# Necessary stuff.
 base_url = "https://welpo.github.io/tabi"
 title = "~/tabi"
-description = "tabi is a simple personal site and blogging theme for Zola."
+description = "tabi is a fast, lightweight, and modern Zola theme with multi-language support, optional JavaScript, and a perfect Lighthouse score."
 generate_feed = true
 compile_sass = true
 minify_html = true
@@ -15,14 +14,98 @@ external_links_target_blank = true
 highlight_code = true
 highlight_theme = "css"
 
+default_language = "en"
+
+[languages.es]
+title = "~/tabi"
+description = "tabi es un tema de Zola rápido, liviano y moderno con JavaScript opcional y una puntuación perfecta en Lighthouse."
+generate_feed = true
+compile_sass = true
+minify_html = true
+
+taxonomies = [
+    {name = "tags", feed = true},
+]
+
+[languages.ca]
+title = "~/tabi"
+description = "tabi és un tema de Zola ràpid, lleuger i modern amb JavaScript opcional i una puntuació perfecta a Lighthouse."
+generate_feed = true
+compile_sass = true
+minify_html = true
+
+taxonomies = [
+    {name = "tags", feed = true},
+]
+
+[languages.es.translations]
+language_name = "Español"
+date_locale = "es_ES"
+# Menu items.
+blog = "blog"
+archive = "archivo"
+tags = "etiquetas"
+words = "palabras"
+projects = "proyectos"
+# Other text.
+tags_title = "Todas las etiquetas"
+404_error = "La página que has solicitado parece no existir o aún no se ha traducido a tu idioma. Revisa la URL en busca de errores o"
+go_home = "regresa a la página de inicio"
+read_more = "Leer más"
+all_posts = "Todas las entradas"
+all_tags = "Todas las etiquetas"
+min_read = "min de lectura"
+powered_by = "Impulsado por"
+and = "y"
+post = "entrada"
+posts = "entradas"
+prev = "Anterior"
+next = "Siguiente"
+of = "de"
+draft = "BORRADOR"
+table_of_contents = "Tabla de contenido"
+last_updated_on = "Última actualización el"
+
+[languages.ca.translations]
+language_name = "Català"
+date_locale = "ca_ES"
+# Menu items.
+blog = "blog"
+archive = "arxiu"
+tags = "etiquetes"
+words = "paraules"
+projects = "projectes"
+# Other text.
+tags_title = "Totes les etiquetes"
+404_error = "La pàgina que has sol·licitat sembla que no existeix o encara no s'ha traduït al teu idioma. Comprova l'URL per detectar errors o"
+go_home = "torna a la pàgina d'inici"
+read_more = "Llegir més"
+all_posts = "Totes les entrades"
+all_tags = "Totes les etiquetes"
+min_read = "min de lectura"
+powered_by = "Propulsat per"
+and = "i"
+post = "entrada"
+posts = "entrades"
+prev = "Anterior"
+next = "Següent"
+of = "de"
+draft = "ESBORRANY"
+table_of_contents = "Taula de contingut"
+last_updated_on = "Última actualizació el"
+
 [extra]
+
+language_name.ca = "Català"
+language_name.en = "English"
+language_name.es = "Español"
 
 # Enable JavaScript theme toggler for dark/light mode (and automatic switching).
 # The default setting is the light theme.
 theme_switcher = true
 
 # Date format used when listing posts (main page, /blog section, tag posts list…)
-# Default is "6th July 2049".
+# Default is "6th July 2049" in English and "%d %B %Y" in other languages.
 long_date_format = "%d %B %Y"
 
 # Date format used for blog posts.
@@ -43,10 +126,10 @@ favicon_emoji = "🌱"
 headerImage = ""
 
 menu = [
-    { name = "blog", url = "$BASE_URL/blog" },
-    { name = "archive", url = "$BASE_URL/archive" },
-    { name = "tags", url = "$BASE_URL/tags" },
-    { name = "projects", url = "$BASE_URL/projects" },
+    { name = "blog", url = "blog/" },
+    { name = "archive", url = "archive/" },
+    { name = "tags", url = "tags/" },
+    { name = "projects", url = "projects/" },
 ]
 
 # The icons available can be found in "social_icons" in the "static" folder

@@ -1,5 +1,5 @@
 name = "tabi"
-description = "A fast, lightweight, and modern Zola theme with optional JavaScript, and a perfect Lighthouse score."
+description = "A fast, lightweight, and modern Zola theme with multi-language support, optional JavaScript, and a perfect Lighthouse score"
 license = "MIT"
 homepage = "https://github.com/welpo/tabi"
 
@@ -19,6 +19,12 @@ homepage = "https://osc.garden"
 # be merged with user data, some kind of prefix or nesting is preferable
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
+# Languages of your site.
+# You'll need to add the language translations for each non-English language.
+# See the config.toml file for an example.
+language_name.ca = "Català"
+language_name.en = "English"
+language_name.es = "Español"
 
 # Enable JavaScript theme toggler for dark/light mode (and automatic switching).
 # The default setting is the light theme.

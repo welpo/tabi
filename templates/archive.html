@@ -4,30 +4,42 @@
 
 {{ macros_page_header::page_header(title=section.title) }}
 
+{# Set locale for date #}
+{%- if lang != config.default_language %}
+    {% set date_locale = trans(key="date_locale" | safe, lang=lang) %}
+{% else %}
+    {% set date_locale = "en_GB" %}
+{% endif %}
+
 <div class="archive">
-  <ul class="list-with-title">
-    {% set section_item = get_section(path="blog/_index.md") %} {% for year, posts in
-    section_item.pages | group_by(attribute="year") %} {% if posts | length > 0
-    %}
-    <li>
-      <h2 class="listing-title">{{ year }}</h2>
-      <ul class="listing">
-        {% for post in posts %}
-        <li class="listing-item">
-          <div class="post-time">
-            <span class="date">
-              {{ post.date | date(format="%d %b") }}
-            </span>
-          </div>
-          <a href="{{ post.permalink }}" title="{{ post.title }}"
-            >{{ post.title }}</a
-          >
+    <ul class="list-with-title">
+        {%- if lang == config.default_language %}
+            {%- set section_item = get_section(path="blog/" ~ "_index.md") %}
+        {%- else %}
+            {%- set section_item = get_section(path="blog/" ~ "_index." ~ lang ~ ".md") %}
+        {%- endif %}  
+
+        {% for year, posts in
+        section_item.pages | group_by(attribute="year") %} {% if posts | length > 0
+        %}
+        <li>
+            <h2 class="listing-title">{{ year }}</h2>
+            <ul class="listing">
+                {% for post in posts %}
+                <li class="listing-item">
+                    <div class="post-time">
+                        <span class="date">
+                            {{ post.date | date(format="%d %b", locale=date_locale) }}
+                        </span>
+                    </div>
+                    <a href="{{ post.permalink }}" title="{{ post.title }}"
+                        >{{ post.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %} {% endfor %}
         </li>
-        {% endfor %}
-      </ul>
-      {% endif %} {% endfor %}
-    </li>
-  </ul>
+    </ul>
 </div>
 
 {% endblock main_content %}

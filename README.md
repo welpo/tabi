@@ -1,6 +1,6 @@
 # tabi
 
-A fast, lightweight, and modern [Zola](https://getzola.org) theme. It aims to be a personal page and home to blog posts.
+A fast, lightweight, and modern [Zola](https://getzola.org) theme with multi-language support. It aims to be a personal page and home to blog posts.
 
 See a live preview [here](https://welpo.github.io/tabi).
 
@@ -14,6 +14,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 
 ## Features
 
+- [X] Multi-language support.
 - [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
 - [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
 - [X] [KaTeX](https://katex.org/) support.
@@ -26,8 +27,6 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] Code syntax highlighting.
 - [X] [Custom shortcodes](./templates/shortcodes/).
 - [X] Customizable secure headers.
-
-See the project's roadmap [here](https://github.com/users/welpo/projects/1).
 
 ## Quick start
 

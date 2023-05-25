@@ -1,7 +1,7 @@
 +++
 title = "Optimise loading times with a custom font subset"
 date = 2023-04-29
-updated = 2023-05-18
+updated = 2023-05-25
 description = "Learn how to create a custom subset that only includes the necessary glyphs."
 
 [taxonomies]
@@ -43,7 +43,7 @@ usage() {
     echo "Options:"
     echo "  --config, -c   Path to the config.toml file."
     echo "  --font, -f     Path to the font file."
-    echo "  --output, -o   Output path for the generated custom_subset.css file (default: current directory)"
+    echo "  --output, -o   Output path for the generated subset.css file (default: current directory)"
     echo "  --help, -h     Show this help message and exit"
 }
 
@@ -102,11 +102,22 @@ if [ ! -f "$font_file" ]; then
 fi
 
 # Extract the title and menu names from the config file.
-title=$(awk -F' = ' '/title/{print $2}' "$config_file" | tr -d '"' | grep -v "atom feed")
-menu_names=$(awk '/menu/{f=1;next} /^\S/{f=0} f{print}' "$config_file" | awk -F' = ' '/name/{print $2}' | tr -d '"' )
+title=$(awk -F' = ' '/^title/{print $2}' "$config_file" | tr -d '"' | grep -v "atom feed")
+menu_names=$(awk -F' = ' '/^menu/{f=1;next} /socials/{f=0} f && /name/{print $2}' "$config_file" | cut -d',' -f1 | tr -d '"' )
+language_names=$(awk -F' = ' '/^language_name\./{print $2}' "$config_file" | tr -d '"' )
+
+# If the site is multilingual, get the menu translations.
+if [ -n "$language_names" ]; then
+    for menu_name in $menu_names; do
+        # Find the line with the menu name inside a [languages.*.translations] section and get the translated menus.
+        menu_translation=$(awk -F' = ' "/\\[languages.*\\.translations\\]/{f=1;next} /^\\[/ {f=0} f && /$menu_name =/{print \$2}" "$config_file" | tr -d '"' )
+        # Add the found menu value to the translations string
+        menu_names+="$menu_translation"
+    done
+fi
 
 # Combine the extracted strings.
-combined="$title$menu_names"
+combined="$title$menu_names$language_names"
 
 # Get unique characters.
 unique_chars=$(echo "$combined" | grep -o . | sort -u | tr -d '\n')
@@ -117,7 +128,7 @@ temp_subset=$(mktemp)
 # Create the subset.
 pyftsubset "$font_file" \
     --text="$unique_chars" \
-    --layout-features="" --flavor="woff2" --output-file="$temp_subset" --with-zopfli
+    --layout-features="*" --flavor="woff2" --output-file="$temp_subset" --with-zopfli
 
 # Remove trailing slash from output path, if present.
 output_path=${output_path%/}

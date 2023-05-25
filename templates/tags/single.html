@@ -9,7 +9,7 @@
 
 <ul class="pagination">
     <li class="page-item">
-        <a class="all-tags" href="{{ get_url(path="/tags/") }}">← All tags</a>
+        <a class="all-tags" href="{{ get_url(path="tags", lang=lang) }}/">← {%- if lang != config.default_language %} {{ trans(key="all_tags" | safe, lang=lang) }}{% else %} All tags {%- endif -%}</a>
     </li>
 </ul>
 

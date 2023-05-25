@@ -196,6 +196,14 @@ p {
     font-size: 1em;
 }
 
+.centered-text {
+    text-align: center;
+}
+
+.subheader {
+    margin-bottom: 2rem;
+}
+
 @media only screen and (max-width: 1000px) {
     .content {
         max-width: var(--normal-layout-width);

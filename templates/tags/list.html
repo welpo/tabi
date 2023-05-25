@@ -2,14 +2,26 @@
 
 {% block main_content %}
 
-{{ macros_page_header::page_header(title="All tags")}}
+{%- if lang != config.default_language %}
+    {% set title = trans(key="tags_title" | safe, lang=lang) %}
+{% else %}
+    {% set title = "All tags" %}
+{% endif %}
+
+{{ macros_page_header::page_header(title=title)}}
 
 <div class="tag-cloud">
     <ul class="tags">
         {%- for term in terms -%}
             <li class="tags-item" id "{{ term.name }}"><a href="{{ term.permalink | safe }}">
                 {{ term.name }}</a>
-                – {{ term.pages | length }} post{{ term.pages | length | pluralize }}
+                – {{ term.pages | length }}{%- if term.pages | length == 1 %}
+                {# Only one post. Singular. #}
+                    {%- if lang != config.default_language %} {{ trans(key="post" | safe, lang=lang) }}{% else %} post {%- endif -%}
+                {% elif term.pages | length > 1 %}
+                {# More than one post per tag. Plural. #}
+                    {%- if lang != config.default_language %} {{ trans(key="posts" | safe, lang=lang) }}{% else %} posts {%- endif -%}
+                {%- endif -%}
             </li>
         {%- endfor -%}
     </ul>

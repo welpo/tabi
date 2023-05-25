@@ -4,25 +4,25 @@
     <ul class="pagination">
         {% if paginator.previous %}
             <li class="page-item page-prev">
-                <a href="{{ paginator.previous }}" class="page-link" aria-label="Previous page">← Prev</a>
+                <a href="{{ paginator.previous }}" class="page-link" aria-label="{%- if lang != config.default_language %} {{ trans(key="prev" | safe, lang=lang) }}{% else %} Prev {%- endif -%}">← {%- if lang != config.default_language %} {{ trans(key="prev" | safe, lang=lang) }}{% else %} Prev {%- endif -%}</a>
             </li>
         {% else %}
             <li class="page-item page-prev">
-                <span class="page-link disabled" aria-disabled="true" aria-label="Previous (disabled)">← Prev</span>
+                <span class="page-link disabled" aria-disabled="true" aria-label="{%- if lang != config.default_language %} {{ trans(key="prev" | safe, lang=lang) }}{% else %} Prev {%- endif -%} (disabled)">← {%- if lang != config.default_language %} {{ trans(key="prev" | safe, lang=lang) }}{% else %} Prev {%- endif -%}</span>
             </li>
         {% endif %}
 
         <li class="page-item page-numbers">
-            {{ paginator.current_index }} of {{ paginator.number_pagers }}
+            {{ paginator.current_index }} {%- if lang != config.default_language %} {{ trans(key="of" | safe, lang=lang) }}{% else %} of {%- endif %} {{ paginator.number_pagers }}
         </li>
 
         {% if paginator.next %}
             <li class="page-item page-next">
-                <a href="{{ paginator.next }}" class="page-link" aria-label="Next page">Next →</a>
+                <a href="{{ paginator.next }}" class="page-link" aria-label="{%- if lang != config.default_language %} {{ trans(key="next" | safe, lang=lang) }}{% else %} Next {%- endif -%}">{%- if lang != config.default_language %} {{ trans(key="next" | safe, lang=lang) }}{% else %} Next {%- endif %} →</a>
             </li>
         {% else %}
             <li class="page-item page-next">
-                <span class="page-link disabled" aria-disabled="true" aria-label="Next page (disabled)">Next →</span>
+                <span class="page-link disabled" aria-disabled="true" aria-label="{%- if lang != config.default_language %} {{ trans(key="next" | safe, lang=lang) }}{% else %} Next {%- endif -%} (disabled)">{%- if lang != config.default_language %} {{ trans(key="next" | safe, lang=lang) }}{% else %} Next {%- endif %} →</span>
             </li>
         {% endif %}
     </ul>
