@@ -10,6 +10,9 @@
     {% if config.extra.favicon %}
         <link rel="icon" type="image/png" href={{ config.extra.favicon }} />
     {% endif %}
+    {% if config.extra.favicon_emoji %}
+        <link rel=icon href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="90">{{ config.extra.favicon_emoji }}</text></svg>'>
+    {% endif %}
 
     {# RSS #}
     <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path="atom.xml",
