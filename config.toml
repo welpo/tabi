@@ -65,6 +65,8 @@ of = "de"
 draft = "BORRADOR"
 table_of_contents = "Tabla de contenido"
 last_updated_on = "Última actualización el"
+show_original_quote = "Mostrar cita original"
+show_translation = "Mostrar traducción"
 
 [languages.ca.translations]
 language_name = "Català"
@@ -93,6 +95,8 @@ of = "de"
 draft = "ESBORRANY"
 table_of_contents = "Taula de contingut"
 last_updated_on = "Última actualizació el"
+show_original_quote = "Mostra la cita original"
+show_translation = "Mostra la traducció"
 
 [extra]
 

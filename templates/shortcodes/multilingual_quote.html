@@ -1,0 +1,20 @@
+<div class="quote-container">
+    <input type="checkbox" id="toggle" class="quote-toggle">
+    <div class="quote">
+        <div class="translated">
+            <blockquote>
+                <p>"{{ translated }}"</p>
+                <p> — {{ author }} <label for="toggle" class="quote-label quote-label-original">
+                    ({%- if lang != config.default_language %}{{ trans(key="show_original_quote" | safe, lang=lang) }}{% else %}Show original quote{% endif %})</label></p>
+            </blockquote>
+        </div>
+        <div class="original">
+            <blockquote>
+                <p>"{{ original }}"</p>
+                <p> — {{ author }} <label for="toggle" class="quote-label quote-label-translate">
+                    ({%- if lang != config.default_language %}{{ trans(key="show_translation" | safe, lang=lang) }}{% else %}Show translation{% endif %})
+                </label></p>
+            </blockquote>
+        </div>
+    </div>
+</div>

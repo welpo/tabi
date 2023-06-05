@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2023-05-21
+updated = 2023-06-05
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -36,7 +36,7 @@ Ideal para gráficos, dibujos lineales, diagramas... Invierte los colores de la 
 
 ### Imagen atenuable
 
-Las imágenes con demasiado brillo o contraste pueden ser impactantes en un fondo oscuro. Aquí tienes un ejemplo de una fotografía que se atenúa cuando el tema oscuro está activo.
+Las imágenes con demasiado brillo o contraste pueden ser demasiado discordantes en un fondo oscuro. Aquí tienes un ejemplo de una fotografía que se atenúa cuando el tema oscuro está activo.
 
 {{ dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Fotografía de un desierto, cielo celestial") }}
 
@@ -44,6 +44,20 @@ Las imágenes con demasiado brillo o contraste pueden ser impactantes en un fond
 
 ```
 {{/* dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Fotografía de un desierto, cielo celestial") */}}
+```
+
+## Citas
+
+### Citas multilenguaje
+
+Este shortcode permite mostrar una cita traducida y en su lenguaje original:
+
+{{ multilingual_quote(original="Ce qui est terrible, ce n’est pas de souffrir ni de mourir, mais de mourir en vain.", translated="Lo terrible no es sufrir o morir, sino morir en vano.", author="Jean-Paul Sartre") }}
+
+#### Uso
+
+```
+{{/* multilingual_quote(original="Ce qui est terrible, ce n’est pas de souffrir ni de mourir, mais de mourir en vain.", translated="Lo terrible no es sufrir o morir, sino morir en vano.", author="Jean-Paul Sartre") */}}
 ```
 
 ## Referencias
