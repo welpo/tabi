@@ -1,7 +1,7 @@
 +++
 title = "Markdown examples"
 date = 2023-01-31
-updated = 2023-04-28
+updated = 2023-06-05
 description = "This post showcases some examples of Markdown formatting, including a table, code blocks and tags, quotes, tables, and footnotes."
 
 [taxonomies]
@@ -53,7 +53,7 @@ Lorem ipsum `dolor` sit amet, `consectetur adipiscing` elit.
 
 ## Quote
 
-> We're all hurtling towards death. Yet here we are, for the moment, alive. Each of us knowing we're going to die. Each of us secretly believing we won't.
+> "We're all hurtling towards death. Yet here we are, for the moment, alive. Each of us knowing we're going to die. Each of us secretly believing we won't."
 >
 > — Charlie Kaufman, Synecdoche, New York
 
