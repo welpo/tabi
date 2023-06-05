@@ -30,6 +30,8 @@ tabi has a perfect score on Google's Lighthouse audit:
 
 ## Quick start
 
+Once you have installed Zola 0.17.0 or newer:
+
 ```bash
 git clone https://github.com/welpo/tabi.git
 cd tabi
