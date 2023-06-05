@@ -108,7 +108,7 @@ The content outside the front matter will be rendered between the header title a
 - set the title and taxonomies for each language;
 - add the `language_name.{code}` in `[extra]`. This is the text shown in the language switcher.
 
-See [these lines in the provided `config.toml`](https://github.com/welpo/tabi/blob/3210de56d2b5e6a0405d743ad23f72ba1342664f/config.toml#L17-L101) for an example.
+See [these lines in the provided `config.toml`](https://github.com/welpo/tabi/blob/6e9bcf92046f553f6bebdbf7d9c5291739bb1cb5/config.toml#L17-L105) for an example.
 
 You will need an `_index.{language_code}.md` per language for each section (e.g. /blog or /projects) that you want to enable in that language.
 
