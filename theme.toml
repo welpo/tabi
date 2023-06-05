@@ -4,7 +4,7 @@ license = "MIT"
 homepage = "https://github.com/welpo/tabi"
 
 # The minimum version of Zola required
-min_version = "0.9.0"
+min_version = "0.17.0"
 
 # An optional live demo URL
 demo = "https://welpo.github.io/tabi"
