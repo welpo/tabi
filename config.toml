@@ -67,6 +67,9 @@ table_of_contents = "Tabla de contenido"
 last_updated_on = "Última actualización el"
 show_original_quote = "Mostrar cita original"
 show_translation = "Mostrar traducción"
+# Quotation marks for multilingual quote shortcode.
+open_quotation_mark = "«"
+close_quotation_mark = "»"
 
 [languages.ca.translations]
 language_name = "Català"
@@ -97,6 +100,9 @@ table_of_contents = "Taula de contingut"
 last_updated_on = "Última actualizació el"
 show_original_quote = "Mostra la cita original"
 show_translation = "Mostra la traducció"
+# Quotation marks for multilingual quote shortcode.
+open_quotation_mark = "«"
+close_quotation_mark = "»"
 
 [extra]
 

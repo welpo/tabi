@@ -1,19 +1,35 @@
+{%- if lang != config.default_language -%}
+    {%- set open_quote = trans(key="open_quotation_mark" | safe, lang=lang) -%}
+    {%- set close_quote = trans(key="close_quotation_mark" | safe, lang=lang) -%}
+{%- else -%}
+    {%- set open_quote = "“" -%}
+    {%- set close_quote = "”" -%}
+{%- endif -%}
+
 <div class="quote-container">
     <input type="checkbox" id="toggle" class="quote-toggle">
     <div class="quote">
         <div class="translated">
             <blockquote>
-                <p>"{{ translated }}"</p>
+                <p>{{ open_quote ~ translated ~ close_quote }}</p>
                 <p> — {{ author }} <label for="toggle" class="quote-label quote-label-original">
-                    ({%- if lang != config.default_language %}{{ trans(key="show_original_quote" | safe, lang=lang) }}{% else %}Show original quote{% endif %})</label></p>
+                    ({%- if lang != config.default_language -%}
+                        {{ trans(key="show_original_quote" | safe, lang=lang) }}
+                    {%- else -%}
+                        Show original quote
+                    {%- endif -%})</label></p>
             </blockquote>
         </div>
         <div class="original">
             <blockquote>
-                <p>"{{ original }}"</p>
+                <p>{{ open_quote ~ original ~ close_quote }}</p>
                 <p> — {{ author }} <label for="toggle" class="quote-label quote-label-translate">
-                    ({%- if lang != config.default_language %}{{ trans(key="show_translation" | safe, lang=lang) }}{% else %}Show translation{% endif %})
-                </label></p>
+                    ({%- if lang != config.default_language -%}
+                        {{ trans(key="show_translation" | safe, lang=lang) }}
+                    {%- else -%}
+                        Show translation
+                    {%- endif -%})
+                </label></p>            
             </blockquote>
         </div>
     </div>
