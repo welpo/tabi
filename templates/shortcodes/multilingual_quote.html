@@ -9,12 +9,12 @@
 {%- set random_id = get_random(end=100000) -%}
 
 <div class="quote-container">
-    <input type="checkbox" id="toggle{{ random_id }}" class="quote-toggle">
+    <input type="checkbox" id="toggle-{{ random_id }}" class="quote-toggle">
     <div class="quote">
         <div class="translated">
             <blockquote>
                 <p>{{ open_quote ~ translated ~ close_quote }}</p>
-                <p> — {{ author }} <label for="toggle{{ random_id }}" class="quote-label quote-label-original">
+                <p> — {{ author }} <label for="toggle-{{ random_id }}" class="quote-label quote-label-original">
                     ({%- if lang != config.default_language -%}
                         {{ trans(key="show_original_quote" | safe, lang=lang) }}
                     {%- else -%}
@@ -25,7 +25,7 @@
         <div class="original">
             <blockquote>
                 <p>{{ open_quote ~ original ~ close_quote }}</p>
-                <p> — {{ author }} <label for="toggle{{ random_id }}" class="quote-label quote-label-translate">
+                <p> — {{ author }} <label for="toggle-{{ random_id }}" class="quote-label quote-label-translate">
                     ({%- if lang != config.default_language -%}
                         {{ trans(key="show_translation" | safe, lang=lang) }}
                     {%- else -%}
