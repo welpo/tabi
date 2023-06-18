@@ -36,6 +36,7 @@
 @import 'parts/posts_list.scss';
 @import 'parts/tags.scss';
 @import 'parts/pagination.scss';
+@import 'parts/_header-anchor.scss';
 @import 'syntax/syntax-ayu-dark.scss';
 
 :root {
@@ -140,6 +141,10 @@ article {
 
 .last-updated {
     margin-top: -5vmin;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
 }
 
 h1 {

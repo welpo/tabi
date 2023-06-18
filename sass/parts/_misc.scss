@@ -25,40 +25,6 @@ iframe {
     margin-bottom: 3vmin;
 }
 
-.zola-anchor {
-    font-size: 1rem;
-    position: absolute;
-    margin-left: -1.9em;
-    padding-right: 0.45em;
-    padding-left: 0.4em;
-    opacity: 0;
-    user-select: none;
-}
-
-h1:hover .zola-anchor,
-h2:hover .zola-anchor,
-h3:hover .zola-anchor,
-h4:hover .zola-anchor,
-h5:hover .zola-anchor,
-h6:hover .zola-anchor {
-    opacity: 1;
-}
-
-h1 .zola-anchor:hover,
-h2 .zola-anchor:hover,
-h3 .zola-anchor:hover,
-h4 .zola-anchor:hover,
-h5 .zola-anchor:hover,
-h6 .zola-anchor:hover {
-    background-color: transparent;
-}
-
-@media (max-width: 500px) {
-    .zola-anchor {
-        display: none;
-    }
-}
-
 ul {
     margin-top: 0;
 }
@@ -119,7 +85,7 @@ a:hover {
     color: var(--hover-color);
 }
 
-a:not(.no-hover-padding, .zola-anchor)::before {
+a:not(.no-hover-padding)::before {
     content: "";
     position: absolute;
     top: 0;
