@@ -1,7 +1,7 @@
 +++
 title = "Optimiza la carga con un subconjunto de fuente personalizado"
 date = 2023-04-29
-updated = 2023-05-25
+updated = 2023-06-22
 description = "Aprende cómo crear un subconjunto personalizado que solo incluya los glifos necesarios."
 
 [taxonomies]
@@ -102,7 +102,7 @@ if [ ! -f "$font_file" ]; then
 fi
 
 # Extrae el título y los nombres de los menús del archivo de configuración.
-title=$(awk -F' = ' '/^title/{print $2}' "$config_file" | tr -d '"' | grep -v "atom feed")
+title=$(awk -F' = ' '/^title/{print $2}' "$config_file" | tr -d '"')
 menu_names=$(awk -F' = ' '/^menu/{f=1;next} /socials/{f=0} f && /name/{print $2}' "$config_file" | cut -d',' -f1 | tr -d '"' )
 language_names=$(awk -F' = ' '/^language_name\./{print $2}' "$config_file" | tr -d '"' )
 
