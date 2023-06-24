@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/feed_style.xsl" type="text/xsl"?>
-<feed xmlns="http://www.w3.org/2005/Atom"
-      xmlns:media="http://search.yahoo.com/mrss/"
-      xml:lang="{{ lang }}">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
     <title>{{ config.title }}
     {%- if term %} - {{ term.name }}
     {%- elif section.title %} - {{ section.title }}
