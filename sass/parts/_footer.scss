@@ -23,6 +23,10 @@ footer nav {
     flex-wrap: wrap;
     align-items: flex-end;
 
+    svg {
+        max-height: 15px;
+    }
+
     ul {
         gap: 5px;
     }
