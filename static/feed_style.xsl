@@ -6,7 +6,7 @@
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
       <head>
         <title>
-          <xsl:value-of select="/atom:feed/atom:title"/>
+          <xsl:value-of select="/atom:feed/atom:title"/> • Feed
         </title>
         <meta charset="utf-8"/>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -24,7 +24,7 @@
                 <!-- https://commons.wikimedia.org/wiki/File:Feed-icon.svg -->
                   <svg
                   xmlns="http://www.w3.org/2000/svg" version="1.1"
-                  style="flex-shrink: 0; width: 1.6rem; height: 1.6rem;"
+                  style="flex-shrink: 0; width: 1.5rem; height: 1.5rem;"
                   viewBox="0 0 256 256">
                   <defs>
                     <linearGradient x1="0.085" y1="0.085" x2="0.915" y2="0.915"
