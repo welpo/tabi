@@ -166,3 +166,14 @@ table tbody tr:nth-child(even) {
     text-indent: -2.4rem;
     margin-left: 2.4rem;
 }
+
+.info-box {
+    border: 1px solid #087E96;
+    border-left-width: 0.3rem;
+    background-color: #d1f3f8;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
