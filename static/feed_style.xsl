@@ -20,7 +20,7 @@
               <strong>This is a web feed</strong>, also known as an Atom feed. <strong>Subscribe</strong> by copying the URL from the address bar into your newsreader. Visit <a href="https://aboutfeeds.com">About Feeds</a> to learn more and get started. It’s free.
             </div>
             <section id="banner-home-subtitle">
-            <div class="padding-top home-banner-header">
+            <div class="padding-top home-title">
                 <xsl:value-of select="/atom:feed/atom:title"/>
             </div>
             <p>
@@ -33,8 +33,8 @@
             Visit Website → </a><p></p>
             </section>
 
-            <div class="padding-top title-container section-title bottom-divider">
-            Recent Posts
+            <div class="padding-top listing-title bottom-divider">
+            <h1>Recent Posts</h1>
             </div>
             <div class="bloglist-container">
               <xsl:for-each select="/atom:feed/atom:entry">
