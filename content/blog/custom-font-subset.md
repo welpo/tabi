@@ -1,7 +1,7 @@
 +++
 title = "Optimise loading times with a custom font subset"
 date = 2023-04-29
-updated = 2023-05-25
+updated = 2023-06-22
 description = "Learn how to create a custom subset that only includes the necessary glyphs."
 
 [taxonomies]
@@ -102,7 +102,7 @@ if [ ! -f "$font_file" ]; then
 fi
 
 # Extract the title and menu names from the config file.
-title=$(awk -F' = ' '/^title/{print $2}' "$config_file" | tr -d '"' | grep -v "atom feed")
+title=$(awk -F' = ' '/^title/{print $2}' "$config_file" | tr -d '"')
 menu_names=$(awk -F' = ' '/^menu/{f=1;next} /socials/{f=0} f && /name/{print $2}' "$config_file" | cut -d',' -f1 | tr -d '"' )
 language_names=$(awk -F' = ' '/^language_name\./{print $2}' "$config_file" | tr -d '"' )
 

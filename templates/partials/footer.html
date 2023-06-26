@@ -6,7 +6,7 @@
                     {%- if config.generate_feed and config.extra.feed_icon -%}
                     <li>
                         <a rel="noopener noreferrer" target="_blank" class="nav-links no-hover-padding social" href={{ get_url(path=config.feed_filename, lang=lang, trailing_slash=false) | safe }}>
-                        <img alt="atom/rss feed" title="atom/rss feed" src="{{config.base_url}}/social_icons/rss.svg">
+                        <img alt="feed" title="feed" src="{{config.base_url}}/social_icons/rss.svg">
                         </a>
                     </li>
                     {%- endif -%}
