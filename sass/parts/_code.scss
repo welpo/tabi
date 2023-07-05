@@ -6,12 +6,12 @@ code {
 }
 
 pre {
-    border: 1px solid var(--border-color);
     line-height: 1.4;
     overflow-x: auto;
-    padding: 1em;
+    padding: 2rem 1rem 1rem;
     position: relative;
     -webkit-overflow-scrolling: touch;
+    border-radius: 5px;
 }
 
 pre code {
@@ -19,6 +19,7 @@ pre code {
     color: inherit;
     padding: 0;
     border: 0;
+    border-radius: 4px;
 }
 
 pre code[class*="language-"] {
@@ -26,74 +27,19 @@ pre code[class*="language-"] {
 }
 
 pre code[class*="language-"]::before {
-    font-size: 12px;
-    letter-spacing: 0.025rem;
-    padding: 0.1rem 0.5rem;
+    content: attr(data-lang);
+    display: block;
+    background-color: var(--primary-color);
+    color: var(--hover-color);
+    padding: 0.2rem;
+    padding-left: 1rem;
+    font-family: var(--code-font);
+    width: 100%;
+    font-size: 0.65rem;
+    width: 100%;
     position: absolute;
-    right: 0.1rem;
-    margin-top: 0.1rem;
-    text-align: right;
+    text-align: left;
     text-transform: uppercase;
     top: 0;
-}
-
-pre code[class="language-javaScript"]::before,
-pre code[class="language-js"]::before {
-    content: "js";
-    background: #f7df1e;
-    color: black;
-}
-
-pre code[class*="language-yml"]::before,
-pre code[class*="language-yaml"]::before {
-    content: "yaml";
-    background: #C51117;
-    color: white;
-}
-
-pre code[class*="language-shell"]::before,
-pre code[class*="language-bash"]::before,
-pre code[class*="language-sh"]::before {
-    content: "shell";
-    background: #33A841;
-    color: white;
-}
-
-pre code[class*="language-json"]::before {
-    content: "json";
-    color: black;
-    background: whitesmoke;
-}
-
-pre code[class*="language-python"]::before,
-pre code[class*="language-py"]::before {
-    content: "python";
-    background: #306698;
-    color: #ffd343;
-}
-
-pre code[class*="language-css"]::before {
-    content: "css";
-    background: #215AEF;
-    color: white;
-}
-
-pre code[class*="language-go"]::before {
-    content: "Go";
-    background: #00ADD8;
-    color: white;
-}
-
-pre code[class*="language-md"]::before,
-pre code[class*="language-md"]::before {
-    content: "Markdown";
-    background: #159ADC;
-    color: white;
-}
-
-pre code[class*="language-rust"]::before,
-pre code[class*="language-rs"]::before {
-    content: "rust";
-    background: #fff8f6;
-    color: #ff4647;
+    left: 0;
 }
