@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2023-06-05
+updated = 2023-07-05
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -44,6 +44,20 @@ Las imágenes con demasiado brillo o contraste pueden ser demasiado discordantes
 
 ```
 {{/* dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Fotografía de un desierto, cielo celestial") */}}
+```
+
+### Imagen a ancho completo
+
+La imagen se expandirá para coincidir con el ancho del encabezado, que generalmente es más ancho que el texto del artículo (excepto en móvil/ventanas pequeñas).
+
+Todos los otros shortcodes de imágenes pueden usar el ancho completo asignando el valor `true` al parámetro opcional `full_width`.
+
+{{ full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Fotografía de un canal en Ámsterdam") }}
+
+#### Uso
+
+```
+{{/* full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Fotografía de un canal en Ámsterdam") */}}
 ```
 
 ## Citas

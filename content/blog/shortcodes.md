@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2023-06-05
+updated = 2023-07-05
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -43,6 +43,20 @@ Images with too much brightness or contrast can be jarring against a dark backgr
 
 ```
 {{/* dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") */}}
+```
+
+### Full-width image
+
+The image will expand to match the width of the header, which is usually wider than the article text (except on mobile/small windows).
+
+All other image shortcodes can be made into full-width by setting the optional parameter `full_width` to `true`.
+
+{{ full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Photograph of a canal in Amsterdam") }}
+
+#### Usage
+
+```
+{{/* full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Photograph of a canal in Amsterdam") */}}
 ```
 
 ## Quotes

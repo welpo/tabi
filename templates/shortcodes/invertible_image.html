@@ -1,2 +1,8 @@
 {% set meta = get_image_metadata(path=src, allow_missing=true) %}
+{% if full_width | default(value=false) %}
+    <div class="full-width">
+{% endif %}
 <img class="invertible-image" {% if src %}src="{{ get_url(path=src) }}" {% endif %} {% if alt %}alt="{{ alt }}" {% endif %} {% if meta.width %}width="{{ meta.width }}" {% endif %} {% if meta.height %}height="{{ meta.height }}" {% endif %}/>
+{% if full_width | default(value=false) %}
+    </div>
+{% endif %}

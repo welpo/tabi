@@ -1,0 +1,4 @@
+{% set meta = get_image_metadata(path=src, allow_missing=true) %}
+<div class="full-width">
+<img {% if src %}src="{{ get_url(path=src) }}" {% endif %} {% if alt %}alt="{{ alt }}" {% endif %} {% if meta.width %}width="{{ meta.width }}" {% endif %} {% if meta.height %}height="{{ meta.height }}" {% endif %}/>
+</div>
