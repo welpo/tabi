@@ -1,18 +1,7 @@
 header {
     font-family: 'Inter Subset', var(--sans-serif-font);
     width: 100%;
-
-    .main {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 12px;
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
-}
+} 
 
 .page-header {
     font-size: 3em;
