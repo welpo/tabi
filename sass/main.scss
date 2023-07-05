@@ -120,12 +120,23 @@ body {
 }
 
 article {
-    max-width: calc(var(--max-layout-width) - 12rem);
+    $base-margin: 6rem;
+
+    max-width: calc(var(--max-layout-width) - 2*$base-margin);
     margin: 0 auto;
 
     p,
     li {
         font-family: var(--serif-font);
+    }
+
+    .full-width {
+        width: auto;
+        height: auto;
+        max-width: calc(100% + 2*$base-margin);
+        margin-left: -$base-margin;
+        margin-right: -$base-margin;
+        display: flex;
     }
 }
 
@@ -252,5 +263,15 @@ p {
 @media all and (min-width: 960px) {
     html {
         font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    article .full-width {
+        width: auto;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        display: block;
     }
 }
