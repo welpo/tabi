@@ -112,35 +112,6 @@ a:not(.no-hover-padding):hover::before {
     }
 }
 
-table {
-    justify-self: center;
-    font: inherit;
-    overflow: hidden;
-    border-style: hidden !important;
-    margin: 2rem 0;
-    min-width: 400px;
-    border: none;
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 13rem;
-}
-
-table thead tr {
-    background-color: var(--primary-color);
-    color: var(--hover-color);
-    text-align: left;
-}
-
-table th,
-table td {
-    padding: 0.5em 0.7em;
-    font-family: 'Source Serif Pro', serif;
-}
-
-table tbody tr:nth-child(even) {
-    background-color: var(--bg-0);
-}
-
 .footnote-reference {
     font-family: var(--serif-font);
     font-size: 0.7rem;
