@@ -22,11 +22,16 @@
     </div>
     {% include "partials/footer.html" %}
 
-    {% if page.extra.katex and page.extra.katex == true %}
+    {# Add KaTeX functionality (loads CSS and JS) #}
+    {%- if page.extra.katex and page.extra.katex == true -%}
         <link rel="stylesheet" href="{{ get_url(path='katex_min.css', trailing_slash=false) | safe }}">
-
         <script defer src="{{ get_url(path='js/katex_min.js', trailing_slash=false) | safe }}"></script>
-    {% endif %}
+    {%- endif -%}
+
+    {# Add copy button to codeblocks #}
+    {%- if config.extra.copy_button and config.extra.copy_button == true -%}
+        <script defer src="{{ get_url(path='js/copyCodeToClipboard_min.js', trailing_slash=false) | safe }}"/></script>
+    {%- endif -%}
 </body>
 
 </html>

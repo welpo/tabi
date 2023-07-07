@@ -1,15 +1,28 @@
 table {
     border-spacing: 0;
     border-collapse: collapse;
+    justify-self: center;
+    font: inherit;
+    overflow: hidden;
+    border-style: hidden !important;
+    margin: 2rem auto;
+    min-width: 13rem;
+    border-radius: 5px;
 }
 
-table th {
+table th,
+table td {
     padding: 6px 13px;
     border: 1px solid #dfe2e5;
     font-size: large;
 }
 
-table td {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
+table thead tr {
+    background-color: var(--primary-color);
+    color: var(--hover-color);
+    text-align: left;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: var(--bg-0);
 }

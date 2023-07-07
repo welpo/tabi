@@ -62,7 +62,7 @@
                     {%- endif %}
 
                     {# Theme switcher #}
-                    {%- if config.extra.theme_switcher == true -%}
+                    {%- if config.extra.theme_switcher and config.extra.theme_switcher == true -%}
                         <li class="theme-switcher-wrapper">
                             <div class="theme-switcher"></div>
                         </li>
