@@ -13,7 +13,9 @@
         gap: 1rem;
 
         .post-time {
-            min-width: 3.3rem;
+            min-width: 5rem;
+            text-align: left;
+            padding-left: 1vmin;
 
             .date {
                 color: var(--meta-color);
