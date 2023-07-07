@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2023-07-05
+updated = 2023-07-07
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -39,7 +39,7 @@ Les imatges amb massa brillantor o contrast poden ser molestes en un fons fosc. 
 
 {{ dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Fotografia d'un desert, cel celestial") }}
 
-#### Usage
+#### Ús
 
 ```
 {{/* dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Fotografia d'un desert, cel celestial") */}}
