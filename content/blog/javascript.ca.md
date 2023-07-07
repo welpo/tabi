@@ -1,7 +1,7 @@
 +++
 title = "Sense JavaScript obligatori"
 date = 2023-01-06
-updated = 2023-04-28
+updated = 2023-07-07
 description = "JavaScript només s'utilitza quan HTML i CSS no són suficients."
 
 [taxonomies]
