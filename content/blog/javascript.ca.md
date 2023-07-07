@@ -1,7 +1,7 @@
 +++
 title = "Sense JavaScript obligatori"
 date = 2023-01-06
-updated = 2023-07-07
+updated = 2023-07-08
 description = "JavaScript només s'utilitza quan HTML i CSS no són suficients."
 
 [taxonomies]
@@ -17,6 +17,6 @@ Aquest tema funciona perfectament sense JavaScript. Opcionalment, pot carregar u
 
 Aquestes dues configuracions cal aplicar-les a la secció `[extra]` del fitxer `config.toml`.
 
-La funcionalitat de KaTex, que requereix carregar un fitxer JavaScript de 274 KB, es pot activar per a publicacions específiques. Això es pot fer establint `katex = true` a la secció `[extra]` de l'encapçalament de la publicació.
+La [funcionalitat de KaTeX](@/blog/markdown.ca.md#katex), que requereix carregar un fitxer JavaScript de 274 KB, es pot activar per a publicacions específiques. Això es pot fer establint `katex = true` a la secció `[extra]` de l'encapçalament de la publicació.
 
 A part d'això, és un tema ràpid amb HTML i CSS. Tal i com hauria de ser (la major part de) la web :-)

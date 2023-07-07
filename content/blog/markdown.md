@@ -1,7 +1,7 @@
 +++
 title = "Markdown examples"
 date = 2023-01-31
-updated = 2023-06-05
+updated = 2023-07-08
 description = "This post showcases some examples of Markdown formatting, including a table, code blocks and tags, quotes, tables, and footnotes."
 
 [taxonomies]
@@ -23,7 +23,20 @@ To display the expression **on its own line and centered**, wrap it around `$$` 
 
 For example, `\\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}} \\]` renders: \\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}} \\]
 
-To activate $\KaTeX$ for a post, include `katex = true` within the `[extra]` section of the post's front matter. For enhanced performance and security, the JavaScript, CSS, and fonts are hosted locally.
+To activate $\KaTeX$ for a post, include `katex = true` within the `[extra]` section of the post's front matter. For exemple:
+
+```toml,hl_lines=5-6
++++
+title = "Testing KaTeX"
+date = 2002-11-30
+updated = 2023-07-08
+
+[extra]
+katex = true
++++
+```
+
+For enhanced performance and security, the $\KaTeX$ JavaScript, CSS, and fonts are hosted locally.
 
 **Note**: After enabling $\KaTeX$, if you want to use \$ without rendering a mathematical expression, escape it with a single backslash: `\$`.
 

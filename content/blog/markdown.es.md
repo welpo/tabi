@@ -1,7 +1,7 @@
 +++
 title = "Ejemplos de Markdown"
 date = 2023-01-31
-updated = 2023-06-05
+updated = 2023-07-08
 description = "Esta publicación muestra algunos ejemplos de formato Markdown, incluyendo una tabla, bloques de código y etiquetas, citas, tablas y notas al pie de página."
 
 [taxonomies]
@@ -23,7 +23,20 @@ Para mostrar la expresión **en su propia línea y centrada**, envuélvela entre
 
 Por ejemplo, `\\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}} \\]` se mostraría como: \\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}} \\]
 
-Para activar $\KaTeX$ en una publicación, incluye `katex = true` dentro de la sección `[extra]` del encabezado de la publicación. Para un mejor rendimiento y seguridad, el JavaScript, CSS y las fuentes se alojan localmente.
+Para activar $\KaTeX$ en una publicación, incluye `katex = true` dentro de la sección `[extra]` del encabezado de la publicación. Por ejemplo:
+
+```toml,hl_lines=5-6
++++
+title = "Probando KaTeX"
+date = 2002-11-30
+updated = 2023-07-08
+
+[extra]
+katex = true
++++
+```
+
+Para un mejor rendimiento y seguridad, el JavaScript, CSS y las fuentes de $\KaTeX$ se alojan localmente.
 
 **Nota**: Después de habilitar $\KaTeX$, si deseas usar \$ sin representar una expresión matemática, escápalo con una sola barra invertida: `\$`.
 
