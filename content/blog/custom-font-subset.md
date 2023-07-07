@@ -1,7 +1,7 @@
 +++
 title = "Optimise loading times with a custom font subset"
 date = 2023-04-29
-updated = 2023-06-22
+updated = 2023-07-08
 description = "Learn how to create a custom subset that only includes the necessary glyphs."
 
 [taxonomies]
@@ -147,12 +147,12 @@ Save the script somewhere like `~/bin/subset_font`. Make it executable with `chm
 
 Now you can run it with the required `--config` and `--font` options:
 
-```
+```bash
 ~/bin/subset_font --config path/to/config.toml --font path/to/font.woff2
 ```
 By default, this generates a `custom_subset.css` file in the current directory. Use `-o` or `--output` to specify a different path:
 
-```
+```bash
 ~/bin/subset_font -c path/to/config.toml -f path/to/font.woff2 -o path/to/output
 ```
 
