@@ -29,7 +29,6 @@ Per activar $\KaTeX$ en una publicaci√≥, inclou `katex = true` dins de la secci√
 +++
 title = "Provant KaTeX"
 date = 2002-11-30
-updated = 2023-07-08
 
 [extra]
 katex = true
