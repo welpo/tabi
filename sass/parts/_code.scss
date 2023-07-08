@@ -43,7 +43,6 @@ pre {
     line-height: 1.4;
     overflow-x: auto;
     padding: 2rem 1rem 1rem;
-    -webkit-overflow-scrolling: touch;
     border-radius: 5px;
 
     code {
@@ -54,7 +53,16 @@ pre {
         color: inherit;
         padding: 0rem;
         border: 0rem;
+        overflow-x: auto;
         border-radius: 5px;
+        -webkit-overflow-scrolling: touch;
+
+        // Hide horizontal scrollbar
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         &::before {
             content: attr(data-lang);
@@ -71,10 +79,6 @@ pre {
             text-transform: uppercase;
             top: 0;
             left: 0;
-        }
-
-        &[class*="language-"] {
-            -webkit-overflow-scrolling: touch;
         }
     }
 }
