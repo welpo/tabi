@@ -81,6 +81,25 @@
         </section>
 
     </article>
+
+    {# giscus / utterances comments #}
+    {% if config.extra.giscus.enabled_for_all_posts or page.extra.giscus %}
+        {# TODO: HERE GOES GISCUS SUPPORT #}
+    {% elif config.extra.utterances.enabled_for_all_posts or page.extra.utterances %}
+        <div class="comments">
+            <script src="https://utteranc.es/client.js"
+                repo="{{ config.extra.utterances.repo }}"
+                issue-term="{{ config.extra.utterances.issue_term }}"
+                label="{{ config.extra.utterances.label }}"
+                theme="{{ config.extra.utterances.theme }}"
+                {%- if config.extra.utterances.lazy_loading -%}
+                    data-loading="lazy"
+                {%- endif -%}
+                crossorigin="anonymous"
+                async>
+            </script>
+        </div>
+    {% endif %}
 </main>
 
 {% endmacro content %}

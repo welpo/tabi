@@ -10,6 +10,14 @@ function switchTheme() {
     currentTheme = currentTheme === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", currentTheme);
     localStorage.setItem("theme", currentTheme);
+
+    // Send a message to the Utterances iframe to change its theme.
+    document.querySelectorAll(".utterances-frame").forEach((frame) => {
+        frame.contentWindow.postMessage(
+            { type: 'set-theme', theme: `github-${currentTheme}` },
+            '*'
+        );
+    });
 }
 
 // Initialize the theme switcher button.

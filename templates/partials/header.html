@@ -63,6 +63,13 @@
     ; 
         {%- for domain in config.extra.allowed_domains -%}
             {{ domain.directive }} {{ domain.domains | join(sep=' ') }}
+
+            {# Automatically allow giscus/utterances, if enabled #}
+            {%- if domain.directive == "script-src" or domain.directive == "frame-src" or domain.directive == "style-src" -%}
+                {%- if config.extra.giscus.enabled_for_all_posts or page.extra.giscus %} giscus.app
+                {%- elif config.extra.utterances.enabled_for_all_posts or page.extra.utterances%} utteranc.es
+                {%- endif %}
+            {%- endif -%}
             {%- if not loop.last -%}
             ;
             {%- endif -%}
