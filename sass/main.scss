@@ -158,7 +158,12 @@ article {
     margin-top: -5vmin;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     position: relative;
 }
 
@@ -239,6 +244,14 @@ strong {
     body {
         margin: 0 32px;
     }
+
+    article .full-width {
+        width: auto;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -271,15 +284,5 @@ strong {
 @media all and (min-width: 960px) {
     html {
         font-size: 20px;
-    }
-}
-
-@media only screen and (max-width: 1000px) {
-    article .full-width {
-        width: auto;
-        max-width: none;
-        margin-left: 0;
-        margin-right: 0;
-        display: block;
     }
 }
