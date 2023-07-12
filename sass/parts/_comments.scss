@@ -1,10 +1,12 @@
 .utterances-frame {
-    min-height: 18rem;
     width: 100%;
 }
 
 .comments {
-    padding-top: 5vmin;
+    border-top: var(--divider-color) solid 0.5px;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     iframe {
         border: none;

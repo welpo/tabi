@@ -179,41 +179,28 @@ allowed_domains = [
 custom_subset = true
 
 # giscus support for comments. https://giscus.app
-# TODO: make sure giscus / utterances are added to the Custom security headers when enabled
-# TODO: Mention this fact in the docs
 [extra.giscus]
-enabled_for_all_posts = false  # Enables utterances on all posts. You can also do it on a post-per-post basis by setting `utterances = true` in the [extra] section of the post's front matter.
-repo = "yourname/yourrepository"
-
-
-enable_reactions = true
+enabled_for_all_posts = false  # Enables giscus on all posts. It can be enabled on individual posts by setting `giscus = true` in the [extra] section of the post's front matter.
+repo = "welpo/test-utterances"
+repo_id = "R_kgDOJ59Urw"
+category = "Announcements"
+category_id = "DIC_kwDOJ59Ur84CX0QG"
+mapping = "slug"  # Available: pathname; url; title; slug. "slug" will use the post's filename (slug); this is the only way to share comments between languages.
+strict_title_matching = 1  # 1 to enable, 0 to disable. https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-strict
+enable_reactions = 1  # 1 to enable, 0 to disable.
 comment_box_above_comments = true
-lazy_loading = true
 light_theme = "noborder_light"
 dark_theme = "noborder_dark"
-# TODO: Set data-lang to page's language
+lang = ""  # Leave blank to set it based on the page's language.
+lazy_loading = true
+automatic_loading = true  # If set to false, a "Show comments" button will be shown.
 
-# <script src="https://giscus.app/client.js"
-#         data-repo-id="[REPOSITORI ID]"
-#         data-category="[NOM CATEGORIA]"
-#         data-category-id="[ID CATEGORIA]"
-#         data-mapping="pathname"
-#         data-strict="0"
-#         data-lang="ca"
-#         crossorigin="anonymous"
-#         async>
-# </script>
-
-
-
-
-
-
-# Utterances support for comments. https://utteranc.es
+# utterances support for comments. https://utteranc.es
 [extra.utterances]
-enabled_for_all_posts = false  # Enables utterances on all posts. You can also do it on a post-per-post basis by setting `utterances = true` in the [extra] section of the post's front matter.
-repo = "welpo/test-utterances"  # https://utteranc.es/#heading-repository
-issue_term = "pathname"  # Available: pathname; url; title. More info: https://utteranc.es/#heading-mapping
+enabled_for_all_posts = false  # Enables utterances on all posts. It can be enabled on individual posts by setting `utterances = true` in the [extra] section of the post's front matter.
+repo = "yourgithubuser/yourrepo"  # https://utteranc.es/#heading-repository
+issue_term = "slug"  # Available: pathname; url; title; slug. "slug" will use the post's filename (slug); this is the only way to share comments between languages. https://utteranc.es/#heading-mapping
 label = "💬"  # https://utteranc.es/#heading-issue-label
-theme = "preferred-color-scheme"  # https://utteranc.es/#heading-theme. If you use the theme switcher, it's probably best to use "preferred-color-scheme"
+light_theme = "github-light"  # https://utteranc.es/#heading-theme
+dark_theme = "github-dark"  # https://utteranc.es/#heading-theme
 lazy_loading = true
