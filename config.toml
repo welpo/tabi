@@ -184,7 +184,7 @@ custom_subset = true
 # Setup instructions: https://welpo.github.io/tabi/blog/comments/#setup
 [extra.giscus]
 enabled_for_all_posts = false  # Enables giscus on all posts. It can be enabled on individual posts by setting `giscus = true` in the [extra] section of a post's front matter.
-automatic_loading = true  # If set to false, a "Show comments" button will be shown.
+automatic_loading = true  # If set to false, a "Load comments" button will be shown.
 repo = "welpo/tabi-comments"
 repo_id = "R_kgDOJ59Urw"  # Find this value in https://giscus.app/
 category = "Announcements"
@@ -202,7 +202,7 @@ lazy_loading = true
 # Setup instructions: https://welpo.github.io/tabi/blog/comments/#setup
 [extra.utterances]
 enabled_for_all_posts = false  # Enables utterances on all posts. It can be enabled on individual posts by setting `utterances = true` in the [extra] section of a post's front matter.
-automatic_loading = true  # If set to false, a "Show comments" button will be shown.
+automatic_loading = true  # If set to false, a "Load comments" button will be shown.
 repo = "yourGithubUsername/yourRepo"  # https://utteranc.es/#heading-repository
 issue_term = "slug"  # Available: pathname; url; title; slug. "slug" will use the post's filename (slug); this is the only way to share comments between languages. https://utteranc.es/#heading-mapping
 label = "💬"  # https://utteranc.es/#heading-issue-label
