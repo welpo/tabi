@@ -1,7 +1,7 @@
 +++
 title = "Secure by default"
 date = 2023-02-22
-updated = 2023-05-22
+updated = 2023-07-14
 description = "tabi has an easily customizable Content Security Policy (CSP) with safe defaults. Get peace of mind and an A+ on Mozilla Observatory."
 
 [taxonomies]
@@ -26,5 +26,7 @@ allowed_domains = [
 The `allowed_domains` list specifies the URLs that the website should be able to connect to, and each domain in the list is associated with a CSP directive such as `frame-src`, `connect-src`, or `script-src`. The `templates/partials/header.html` file dynamically generates the CSP header based on this list.
 
 This feature allows you to easily customize the website's security headers to allow for specific use cases, such as embedding YouTube videos, loading scripts or remote fonts ([not recommended](https://www.albertovarela.net/blog/2022/11/stop-using-google-fonts/)).
+
+**Note**: [enabling comments](@/blog/comments.md) automatically allows scripts and frames from either utterances/giscus, as well as unsafe-inline styles when using utterances (required so that the frame can adjust its size based on the number of comments).
 
 [^1]: Requires proper webserver configuration (e.g. redirecting HTTP traffic to HTTPS).

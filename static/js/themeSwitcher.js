@@ -5,25 +5,29 @@ const themeSwitcher = document.querySelector(".theme-switcher");
 let currentTheme = localStorage.getItem("theme");
 
 // Function to switch between dark and light themes.
-function switchTheme() {
-    // Set the new theme based on the current theme.
-    currentTheme = currentTheme === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", currentTheme);
-    localStorage.setItem("theme", currentTheme);
+function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+
+    // Dispatch a custom event for utterances and giscus.
+    const event = new CustomEvent("themeChanged", {
+        detail: { theme: theme }
+    });
+    window.dispatchEvent(event);
 }
 
-// Initialize the theme switcher button.
+function switchTheme() {
+    // Set the new theme based on the current theme.
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+}
+
 themeSwitcher.addEventListener("click", switchTheme, false);
 
 // Update the theme based on system preference if the user hasn't manually changed the theme.
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
     if (!localStorage.getItem("theme")) {
-        currentTheme = e.matches ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", currentTheme);
+        const newTheme = e.matches ? "dark" : "light";
+        setTheme(newTheme);
     }
 });
-
-// Fix the theme switcher button not working on the first click by updating currentTheme.
-if (!currentTheme) {
-    currentTheme = document.documentElement.getAttribute("data-theme");
-}
