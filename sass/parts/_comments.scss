@@ -4,6 +4,7 @@
 
 .comments {
     border-top: var(--divider-color) solid 0.5px;
+    border-bottom: var(--divider-color) solid 0.5px;
     margin-top: 2rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -15,4 +16,18 @@
         max-width: 100%;
         aspect-ratio: inherit;
     }
+
+    .load-comments-button {
+        display: inline-block;
+        font-family: var(--sans-serif-font);
+        color: inherit;
+        font-size: 0.95rem;
+        background: none;
+        border: none;
+        padding: 0.5em 1em;
+        margin: 0.5em;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
 }

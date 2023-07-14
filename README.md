@@ -16,18 +16,19 @@ tabi has a perfect score on Google's Lighthouse audit:
 
 - [X] Multi-language support.
 - [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
+- [X] Support for [comments using giscus or utterances](https://welpo.github.io/tabi/blog/comments/).
 - [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
 - [X] [KaTeX](https://katex.org/) support.
-- [X] All JavaScript (theme switcher and KaTeX) can be fully disabled.
-- [X] Stylized [feed](https://welpo.github.io/tabi/atom.xml).
-- [X] Responsive design.
-- [X] Projects page.
-- [X] Archive page.
+- [X] All JavaScript can be [fully disabled](https://welpo.github.io/tabi/blog/javascript/).
+- [X] [Stylized feed](https://welpo.github.io/tabi/atom.xml).
+- [X] [Projects page](https://welpo.github.io/tabi/projects/).
+- [X] [Archive page](https://welpo.github.io/tabi/archive/).
 - [x] Tags.
 - [x] Social links.
+- [X] Responsive design.
 - [X] Code syntax highlighting.
+- [X] [Customizable secure headers](https://welpo.github.io/tabi/blog/security/).
 - [X] [Custom shortcodes](https://welpo.github.io/tabi/blog/shortcodes/).
-- [X] Customizable secure headers.
 
 ## Quick start
 

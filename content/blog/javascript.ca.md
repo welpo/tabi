@@ -1,22 +1,31 @@
 +++
 title = "Sense JavaScript obligatori"
 date = 2023-01-06
-updated = 2023-07-08
+updated = 2023-07-13
 description = "JavaScript només s'utilitza quan HTML i CSS no són suficients."
 
 [taxonomies]
-tags = ["funcionalitat"]
+tags = ["funcionalitat", "tutorial"]
 +++
 
 ## JavaScript?
 
-Aquest tema funciona perfectament sense JavaScript. Opcionalment, pot carregar una quantitat mínima per afegir algunes funcionalitats que no són possibles utilitzant només HTML i CSS:
+Aquest tema no requereix JavaScript obligatori. Opcionalment, pot carregar una quantitat mínima per afegir algunes característiques que són impossibles d'aconseguir amb HTML i CSS.
 
-- **Canvi de mode clar/fosc**. S'activa establint `theme_switcher = true`. (~900 bytes)
-- **Còpia de blocs de codi amb un sol clic**. S'activa establint `copy_button = true`. (~700 bytes)
+### Opcions globals
 
-Aquestes dues configuracions cal aplicar-les a la secció `[extra]` del fitxer `config.toml`.
+- **Canvi de mode clar/fosc**. Habilitat configurant `theme_switcher = true`. (~900 bytes)
+- **Còpia de blocs de codi amb un sol clic**. Habilitat configurant `copy_button = true`. (~700 bytes)
 
-La [funcionalitat de KaTeX](@/blog/markdown.ca.md#katex), que requereix carregar un fitxer JavaScript de 274 KB, es pot activar per a publicacions específiques. Això es pot fer establint `katex = true` a la secció `[extra]` de l'encapçalament de la publicació.
+Aquestes dues configuracions es poden aplicar a la secció `[extra]` del teu fitxer `config.toml`.
 
-A part d'això, és un tema ràpid amb HTML i CSS. Tal i com hauria de ser (la major part de) la web :-)
+- [**Comentaris**](@/blog/comments.ca.md). giscus (2 KB) o utterances (1 KB) es poden habilitar globalment configurant `enabled_for_all_posts = true` a la secció correcta de `config.toml` (`[extra.giscus]` o `[extra.utterances]`).
+
+### Configuracions específiques de la pàgina
+
+Les següents configuracions es poden habilitar en posts específics configurant certes variables a la secció `[extra]` del front matter de la publicació.
+
+- [**KaTeX**](@/blog/markdown.ca.md#katex) (274 KB) es pot habilitar amb `katex = true`.
+- [**Comentaris**](@/blog/comments.ca.md). Es poden habilitar a publicacions específiques assignant `utterances = true` o `giscus = true`.
+
+A part d'això, és un tema ràpid amb HTML i CSS que funciona sense JavaScript. Just com hauria de ser (la majoria de) la web :-)

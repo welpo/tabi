@@ -58,7 +58,5 @@ function initUtterances() {
     }
 }
 
-// Initialize Utterances once the window has loaded.
-window.addEventListener('load', () => {
-    initUtterances();
-});
+// Initialize Utterances.
+initUtterances();

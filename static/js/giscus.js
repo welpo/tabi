@@ -75,7 +75,5 @@ function initGiscus() {
     }
 }
 
-// Initialize Giscus when the window loads.
-window.addEventListener('load', () => {
-    initGiscus();
-});
+// Initialize Giscus.
+initGiscus();
