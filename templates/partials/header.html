@@ -39,11 +39,14 @@
     <meta name="color-scheme" content="light dark">
 
     {%- if page.description %}
-        <meta name="description" content="{{ page.description }}" />
+        <meta name="description" content="{{ page.description | striptags | safe }}" />
+        <meta property="og:description" content="{{ page.description | striptags | safe }}">
     {%- elif page.summary %}
-        <meta name="description" content="{{ page.summary }}" />
+        <meta name="description" content="{{ page.summary | striptags | safe }}" />
+        <meta property="og:description" content="{{ page.summary | striptags | safe }}">
     {%- else %}
         <meta name="description" content="{{ config.description }}" />
+        <meta property="og:description" content="{{ config.description }}">
     {%- endif %}
 
     {% if is_404 %}
@@ -63,7 +66,6 @@
     {% set current_url = current_url | default(value="/") %}
     <meta property="og:url" content="{{ current_url }}">
     
-    <meta property="og:description" content="{{ config.description }}">
     <meta property="og:site_name" content="{{ config.title }}">
 
     <meta http-equiv="Content-Security-Policy"
