@@ -1,6 +1,7 @@
 +++
 title = "Añade comentarios a tus publicaciones con giscus o utterances"
 date = 2023-07-14
+updated = 2023-07-16
 description = "Descubre cómo habilitar una sección de comentarios en tus publicaciones usando giscus o utterances, permitiendo la interacción y feedback de los lectores."
 
 [taxonomies]
@@ -8,6 +9,7 @@ tags = ["funcionalidad", "tutorial"]
 
 [extra]
 giscus = true
+quick_navigation_buttons = true
 +++
 
 tabi actualmente soporta dos sistemas de comentarios: [giscus](https://giscus.app/es) y [utterances](https://utteranc.es/).
@@ -76,6 +78,7 @@ Alternativamente, puedes habilitar los comentarios en publicaciones concretas co
 +++
 title = "Los molinos de viento de mi vida: reflexiones de un escudero"
 date = 1605-01-16
+updated = 2023-07-16
 description = "Mi viaje junto a Don Quijote, enfrentándome a gigantes imaginarios y descubriendo las verdaderas batallas de la vida."
 
 [taxonomies]
