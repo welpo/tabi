@@ -180,6 +180,11 @@ allowed_domains = [
 # Please see https://welpo.github.io/tabi/blog/custom-font-subset/ to learn how to create this file.
 custom_subset = true
 
+# Quick navigation buttons.
+# Adds "go up" and "go to comments" buttons on the bottom right (hidden for mobile).
+# Can also be enabled on individual posts in the front matter's [extra].
+quick_navigation_buttons = false
+
 # giscus support for comments. https://giscus.app
 # Setup instructions: https://welpo.github.io/tabi/blog/comments/#setup
 [extra.giscus]

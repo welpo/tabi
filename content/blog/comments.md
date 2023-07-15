@@ -1,6 +1,7 @@
 +++
 title = "Add comments to your posts with giscus or utterances"
 date = 2023-07-14
+updated = 2023-07-16
 description = "Discover how to enable a comments section on your posts using giscus or utterances, enabling reader interaction and feedback."
 
 [taxonomies]
@@ -8,6 +9,7 @@ tags = ["showcase", "tutorial"]
 
 [extra]
 giscus = true
+quick_navigation_buttons = true
 +++
 
 tabi currently supports two comment systems: [giscus](https://giscus.app/) and [utterances](https://utteranc.es/).
@@ -76,6 +78,7 @@ Alternatively, enable comments on an individual post's front matter by adding `u
 +++
 title = "Bears, Beets, Battlestar Galactica: The Dwight Schrute Guide to Life"
 date = 2007-04-26
+updated = 2023-07-16
 description = "Lessons learned from beet farming and paper sales."
 
 [taxonomies]

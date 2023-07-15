@@ -1,6 +1,7 @@
 +++
 title = "Afegeix comentaris a les teves publicacions amb giscus o utterances"
 date = 2023-07-14
+updated = 2023-07-16
 description = "Descobreix com habilitar una secció de comentaris a les teves publicacions utilitzant giscus o utterances, permetent la interacció i feedback dels lectors."
 
 [taxonomies]
@@ -8,6 +9,7 @@ tags = ["funcionalitat", "tutorial"]
 
 [extra]
 giscus = true
+quick_navigation_buttons = true
 +++
 
 tabi actualment suporta dos sistemes de comentaris: [giscus](https://giscus.app/ca) i [utterances](https://utteranc.es/).
@@ -74,6 +76,7 @@ Alternativament, pots habilitar els comentaris de publicacions concretes afegint
 +++
 title = "L'art de l'entremaliadura segons Shin-Chan
 date = 1990-02-14
+updated = 2023-07-16
 description = "Descobreix com les travessures poden canviar la teva perspectiva de vida."
 
 [taxonomies]
