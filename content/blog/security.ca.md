@@ -1,7 +1,7 @@
 +++
 title = "Seguretat per defecte"
 date = 2023-02-22
-updated = 2023-07-14
+updated = 2023-07-17
 description = "tabi té una Política de Seguretat de Contingut (CSP) fàcilment personalitzable amb valors segurs per defecte. Obtingues tranquil·litat i un A+ en l'Observatori de Mozilla."
 
 [taxonomies]
@@ -27,6 +27,6 @@ La llista `allowed_domains` especifica les URLs a les quals el lloc web hauria d
 
 Aquesta funcionalitat permet personalitzar fàcilment les capçaleres de seguretat del lloc web per permetre casos d'ús específics, com ara inserir vídeos de YouTube, carregar scripts o tipografies remotes ([no recomanat](https://www.albertovarela.net/blog/2022/11/stop-using-google-fonts/)).
 
-**Nota**: [habilitar els comentaris](@/blog/comments.ca.md) permet automàticament scripts i frames de utterances/giscus, així com estils en línia no segurs en el cas de utterances (necessari perquè el frame pugui ajustar la seva mida en funció del nombre de comentaris).
+**Nota**: [habilitar els comentaris](@/blog/comments.ca.md) permet automàticament scripts i frames del sistema de comentaris corresponent, així com estils en línia no segurs en el cas de utterances i Hyvor Talk.
 
 [^1]: Requereix una configuració adequada del servidor web (p. ex., redirigir el trànsit HTTP a HTTPS).
