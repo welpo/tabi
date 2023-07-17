@@ -102,8 +102,8 @@
     {%- endif -%}">
 
     {%- if config.extra.theme_switcher and config.extra.theme_switcher == true -%}
-        <script type="text/javascript" src="{{ get_url(path='js/initializeTheme_min.js') | safe }}"></script>
-        <script defer src="{{ get_url(path='js/themeSwitcher_min.js', trailing_slash=false) | safe }}"/></script>
+        <script type="text/javascript" src="{{ get_url(path='js/initializeTheme.min.js') | safe }}"></script>
+        <script defer src="{{ get_url(path='js/themeSwitcher.min.js', trailing_slash=false) | safe }}"/></script>
     {%- endif -%}
 
 </head>
