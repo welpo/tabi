@@ -12,7 +12,7 @@ giscus = true
 quick_navigation_buttons = true
 +++
 
-tabi actualment suporta tres sistemes de comentaris: [giscus](https://giscus.app/ca) i [utterances](https://utteranc.es/) y [Hyvor Talk](https://talk.hyvor.com/).
+tabi actualment suporta tres sistemes de comentaris: [giscus](https://giscus.app/ca) i [utterances](https://utteranc.es/) i [Hyvor Talk](https://talk.hyvor.com/).
 
 giscus i utterances són projectes de codi obert que et permeten afegir una secció de comentaris al teu lloc web utilitzant les «issues» (utterances) o «discussions» (giscus) de GitHub. Són perfectes per a generadors de llocs estàtics com Zola, ja que permeten als teus lectors interactuar i deixar comentaris a les teves publicacions sense requerir un backend tradicional o una base de dades.
 
