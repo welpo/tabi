@@ -8,8 +8,6 @@ description = "JavaScript solo se utiliza cuando HTML y CSS no son suficientes."
 tags = ["funcionalidad", "tutorial"]
 +++
 
-## ¿JavaScript?
-
 Este tema no tiene JavaScript obligatorio. Opcionalmente, puede cargar una cantidad mínima para agregar algunas características que son imposibles de lograr con HTML y CSS.
 
 ### Opciones globales
@@ -19,13 +17,13 @@ Este tema no tiene JavaScript obligatorio. Opcionalmente, puede cargar una canti
 
 Estas dos configuraciones se pueden aplicar en la sección `[extra]` de tu `config.toml`.
 
-- [**Comentarios**](@/blog/comments.es.md). giscus (2 KB) o utterances (1 KB) se pueden habilitar globalmente configurando `enabled_for_all_posts = true` en la sección apropiada de tu archivo `config.toml` (`[extra.giscus]` o `[extra.utterances]`).
+- [**Comentarios**](@/blog/comments.es.md). giscus (2 KB), utterances (1 KB) o Hyvor Talk (~800 bytes) se pueden habilitar globalmente configurando `enabled_for_all_posts = true` en la sección apropiada de tu archivo `config.toml` (`[extra.giscus]`, `[extra.utterances]` o `[extra.hyvortalk]`).
 
 ### Opciones para publicaciones individuales
 
 Las siguientes configuraciones se pueden habilitar en publicaciones específicas configurando ciertas variables en la sección `[extra]` del front matter del post.
 
 - [**KaTeX**](@/blog/markdown.es.md#katex) (274 KB) se puede habilitar con `katex = true`.
-- [**Comentarios**](@/blog/comments.es.md). Se pueden habilitar en posts específicos configurando `utterances = true` o `giscus = true`.
+- [**Comentarios**](@/blog/comments.es.md). Se pueden habilitar en posts específicos configurando el nombre del sistema `= true` (por ejemplo, `hyvortalk = true`).
 
 Aparte de eso, es un tema rápido con HTML y CSS que funciona con JavaScript deshabilitado. Como debería ser (en su mayoría) la web :-)

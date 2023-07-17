@@ -41,14 +41,34 @@
     data-light-theme="{{ config.extra.utterances.light_theme }}"
     data-dark-theme="{{ config.extra.utterances.dark_theme }}"
     data-lazy-loading="{{ config.extra.utterances.lazy_loading | default(value=true) }}">
+
+{% elif comment_system == "hyvortalk" %}
+    {# Store required Hyvor Talk data attributes in the div #}
+    data-website-id="{{ config.extra.hyvortalk.website_id }}"
+    {% if config.extra.hyvortalk.page_id_is_slug %}
+        data-page-id="{{ page.slug }}"
+    {% else %}
+        data-page-id="{{ current_url }}"
+    {% endif %}
+    {% if config.extra.hyvortalk.lang  %}
+        data-page-language="{{ config.extra.hyvortalk.lang }}"
+    {% else %}
+        data-page-language="{{ lang }}"
+    {% endif %}
+    data-page-author="{{ config.extra.hyvortalk.page_author }}"
+    {% if config.extra.hyvortalk.lazy_loading  %}
+        data-loading="lazy">
+    {% else %}
+        data-loading="default">
+    {% endif %}
 {% endif %}
-</div>
 
 {% if automatic_loading %}
     <script src="{{ get_url(path='js/' ~ comment_system ~ '_min.js', trailing_slash=false) | safe }}" async></script>
 {% else %}
-    <button id="load-comments" class="load-comments-button" data-script-src="{{ get_url(path='js/' ~ comment_system ~ '_min.js', trailing_slash=false) | safe }}">...</button>
+    <button id="load-comments" class="load-comments-button" data-script-src="{{ get_url(path='js/' ~ comment_system ~ '_min.js', trailing_slash=false) | safe }}">{%- if lang != config.default_language %} {{ trans(key="load_comments" | safe, lang=lang) }}{% else %} Load comments {%- endif -%}</button>
     <script src="{{ get_url(path='js/loadComments_min.js', trailing_slash=false) | safe }}" async></script>
 {% endif %}
+</div>
 
 {%- endmacro add_comments -%}
