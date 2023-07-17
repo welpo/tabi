@@ -1,7 +1,7 @@
 +++
 title = "Add comments to your posts with giscus, utterances or Hyvor Talk"
 date = 2023-07-14
-updated = 2023-07-16
+updated = 2023-07-17
 description = "Discover how to enable a comments section on your posts using giscus, utterances, or Hyvor Talk, enabling reader interaction and feedback."
 
 [taxonomies]
@@ -97,7 +97,6 @@ Alternatively, enable comments on an individual post's front matter by adding th
 +++
 title = "Bears, Beets, Battlestar Galactica: The Dwight Schrute Guide to Life"
 date = 2007-04-26
-updated = 2023-07-17
 description = "Lessons learned from beet farming and paper sales."
 
 [taxonomies]

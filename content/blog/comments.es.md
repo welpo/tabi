@@ -1,7 +1,7 @@
 +++
 title = "Añade comentarios a tus publicaciones con giscus, utterances o Hyvor Talk"
 date = 2023-07-14
-updated = 2023-07-16
+updated = 2023-07-17
 description = "Descubre cómo habilitar una sección de comentarios en tus publicaciones usando giscus, utterances o Hyvor Talk, permitiendo la interacción y feedback de los lectores."
 
 [taxonomies]
@@ -97,7 +97,6 @@ Alternativamente, puedes habilitar los comentarios en publicaciones concretas a�
 +++
 title = "Los molinos de viento de mi vida: reflexiones de un escudero"
 date = 1605-01-16
-updated = 2023-07-17
 description = "Mi viaje junto a Don Quijote, enfrentándome a gigantes imaginarios y descubriendo las verdaderas batallas de la vida."
 
 [taxonomies]
