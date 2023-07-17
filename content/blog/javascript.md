@@ -8,8 +8,6 @@ description = "JavaScript is only used when HTML and CSS aren't enough."
 tags = ["showcase", "tutorial"]
 +++
 
-## JavaScript?
-
 This theme has no mandatory JavaScript. Optionally, it can load a minimal amount to add some features that are impossible to achieve with HTML and CSS.
 
 ### Globally enabled settings

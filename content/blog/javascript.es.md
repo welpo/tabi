@@ -8,8 +8,6 @@ description = "JavaScript solo se utiliza cuando HTML y CSS no son suficientes."
 tags = ["funcionalidad", "tutorial"]
 +++
 
-## ¿JavaScript?
-
 Este tema no tiene JavaScript obligatorio. Opcionalmente, puede cargar una cantidad mínima para agregar algunas características que son imposibles de lograr con HTML y CSS.
 
 ### Opciones globales
