@@ -214,3 +214,13 @@ label = "💬"  # https://utteranc.es/#heading-issue-label
 light_theme = "github-light"  # https://utteranc.es/#heading-theme
 dark_theme = "photon-dark"  # https://utteranc.es/#heading-theme
 lazy_loading = true
+
+# Hyvor Talk support for comments. https://talk.hyvor.com
+[extra.hyvortalk]
+enabled_for_all_posts = false  # Enables hyvortalk on all posts. It can be enabled on individual posts by setting `hyvortalk = true` in the [extra] section of a post's front matter.
+automatic_loading = true  # If set to false, a "Load comments" button will be shown.
+website_id = "1234"
+page_id_is_slug = true  # If true, it will use the post's filename (slug) as id; this is the only way to share comments between languages. If false, it will use the entire url as id.
+lang = ""  # Leave blank to match the page's language.
+page_author = ""  # Email (or base64 encoded email) of the author.
+lazy_loading = true

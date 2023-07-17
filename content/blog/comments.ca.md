@@ -1,8 +1,8 @@
 +++
-title = "Afegeix comentaris a les teves publicacions amb giscus o utterances"
+title = "Afegeix comentaris a les teves publicacions amb giscus, utterances o Hyvor Talk"
 date = 2023-07-14
 updated = 2023-07-16
-description = "Descobreix com habilitar una secció de comentaris a les teves publicacions utilitzant giscus o utterances, permetent la interacció i feedback dels lectors."
+description = "Descobreix com habilitar una secció de comentaris a les teves publicacions utilitzant giscus, utterances o Hyvor Talk, permetent la interacció i feedback dels lectors."
 
 [taxonomies]
 tags = ["funcionalitat", "tutorial"]
@@ -12,7 +12,7 @@ giscus = true
 quick_navigation_buttons = true
 +++
 
-tabi actualment suporta dos sistemes de comentaris: [giscus](https://giscus.app/ca) i [utterances](https://utteranc.es/).
+tabi actualment suporta tres sistemes de comentaris: [giscus](https://giscus.app/ca) i [utterances](https://utteranc.es/) y [Hyvor Talk](https://talk.hyvor.com/).
 
 giscus i utterances són projectes de codi obert que et permeten afegir una secció de comentaris al teu lloc web utilitzant les «issues» (utterances) o «discussions» (giscus) de GitHub. Són perfectes per a generadors de llocs estàtics com Zola, ja que permeten als teus lectors interactuar i deixar comentaris a les teves publicacions sense requerir un backend tradicional o una base de dades.
 
@@ -24,15 +24,19 @@ Ambdues són excel·lents eines per afegir comentaris al teu blog, però giscus 
 - Respostes a comentaris i vista de conversa.
 - Més segur: utterances requereix habilitar estils en línia no segurs («unsafe inline styles») per establir l'altura del frame; giscus no.
 - Suport multilingüe: utterances només està disponible en anglès; giscus suporta més de 20 idiomes.
-- Desenvolupament més actiu: l'últim commit de giscus, en el moment d'aquesta publicació, va ser fa una setmana. L'últim commit d'utterances es va fer fa més d'un any.
+- Desenvolupament més actiu: l'últim commit de giscus, en el moment d'aquesta publicació, va ser fa dos dies. L'últim commit d'utterances es va fer fa més d'un any.
+
+Hyvor Talk és una plataforma de comentaris de pagament centrada en la privadesa. Ofereix tots els avantatges del giscus i alguns més, com la moderació i la detecció de correu brossa.
 
 ## Configuració
 
-Tots dos sistemes requereixen una configuració similar. Primer, visita el lloc web del sistema que vols habilitar: [giscus.app](https://giscus.app/ca) o [utteranc.es](https://utteranc.es/).
+### Sistemes basats en GitHub
+
+giscus y utterances requereixen una configuració similar. Primer, visita el lloc web del sistema que vulguis habilitar: [giscus.app](https://giscus.app/ca) o [utteranc.es](https://utteranc.es/).
 
 Segueix les instruccions de la secció **Configuració** del lloc web, i tria les opcions que prefereixis. Finalment, estableix els valors que es mostren a la secció **Habilitar giscus/utterances** (el bloc de codi `script`) en la secció corresponent del teu `config.toml`: `[extra.giscus]` o `[extra.utterances]`.
 
-### Giscus
+#### giscus
 
 giscus té més opcions que utterances:
 
@@ -53,7 +57,7 @@ dark_theme = "noborder_dark"
 lang = ""  # Deixa en blanc perquè coincideixi amb l'idioma de la pàgina.
 lazy_loading = true
 ```
-### utterances
+#### utterances
 
 ```
 [extra.utterances]
@@ -66,17 +70,32 @@ light_theme = "github-light"
 dark_theme = "photon-dark"
 lazy_loading = true
 ```
+
+### Hyvor Talk
+
+Configura el teu lloc web des de la [consola Hyvor Talk](https://talk.hyvor.com/console) i completa la configuració a `config.toml`:
+
+```toml
+[extra.hyvortalk]
+enabled_for_all_posts = false
+automatic_loading = true
+website_id = "1234"
+page_id_is_slug = true
+lang = ""
+page_author = ""  # Correu (o correu codificat en base64) de l'autor.
+lazy_loading = true
+```
+
 ### Configuracions comunes
 
 La opció `enabled_for_all_posts = true` habilita globalment el sistema de comentaris corresponent.
 
-Alternativament, pots habilitar els comentaris de publicacions concretes afegint `utterances = true` o `giscus = true`. Per exemple, així és com habilitaries giscus:
+Alternativament, pots habilitar els comentaris a publicacions concretes afegint el nom del sistema (`utterances`, `giscus` o `hyvortalk`) ` = true`. Per exemple, així és com habilitaries giscus:
 
 ```toml,hl_lines=09-10
 +++
 title = "L'art de l'entremaliadura segons Shin-Chan
 date = 1990-02-14
-updated = 2023-07-16
 description = "Descobreix com les travessures poden canviar la teva perspectiva de vida."
 
 [taxonomies]
@@ -87,9 +106,9 @@ giscus = true
 +++
 ```
 
-Si accidentalment habilitas tots dos sistemes, Zola mostrarà un error.
+Si accidentalment habilites més d'un sistema, Zola mostrarà un error.
 
-Si el teu lloc web té múltiples idiomes amb publicacions coincidents (com aquesta demo), i t'agradaria compartir comentaris entre idiomes, has d'utilitzar `issue_term = "slug"`. Això utilitzarà el nom de l'arxiu Markdown (sense l'etiqueta d'idioma) com a identificador. Totes les altres opcions crearan diferents seccions de comentaris per a cada idioma.
+Si el teu lloc web té múltiples idiomes amb publicacions coincidents (com aquesta demo), i t'agradaria compartir comentaris entre idiomes, has d'utilitzar `issue_term = "slug"` (per giscus y utterances) o `page_id_is_slug = true` (per Hyvor Talk). Això utilitzarà el nom de l'arxiu Markdown (sense l'etiqueta d'idioma) com a identificador. Totes les altres opcions crearan diferents seccions de comentaris per a cada idioma.
 
 ## Exemple en viu
 
