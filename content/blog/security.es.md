@@ -12,7 +12,7 @@ La configuración predeterminada del tema obtiene una calificación de A+ en [Mo
 
 Esto se logra configurando programáticamente las cabeceras de la Política de Seguridad de Contenido (CSP) en función de una lista de dominios permitidos definida por el usuario en el archivo `config.toml`. Aquí tienes la configuración predeterminada y recomendada (puedes eliminar la última directiva si no deseas insertar videos de YouTube):
 
-```
+```toml
 [extra]
 allowed_domains = [
     { directive = "font-src", domains = ["'self'", "data:"] },

@@ -12,7 +12,7 @@ The default configuration of the theme gets an A+ score on [Mozilla Observatory]
 
 This is accomplished by programatically configuring Content Security Policy (CSP) headers based on a user-defined list of allowed domains in the `config.toml` file. Here's the default and recommended setup (you could remove the last directive if you don't want to embed YouTube videos):
 
-```
+```toml
 [extra]
 allowed_domains = [
     { directive = "font-src", domains = ["'self'", "data:"] },

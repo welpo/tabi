@@ -12,7 +12,7 @@ La configuració per defecte del tema obté una puntuació A+ a l'[Observatori d
 
 Això s'aconsegueix configurant programàticament les capçaleres de la Política de Seguretat de Contingut (CSP) basant-se en una llista de dominis permesos definida per l'usuari en el fitxer `config.toml`. Aquí tens la configuració per defecte i recomanada (pots eliminar l'última directiva si no vols inserir vídeos de YouTube):
 
-```
+```toml
 [extra]
 allowed_domains = [
     { directive = "font-src", domains = ["'self'", "data:"] },
