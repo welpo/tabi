@@ -1,7 +1,7 @@
 +++
 title = "Añade comentarios a tus publicaciones con giscus, utterances o Hyvor Talk"
 date = 2023-07-14
-updated = 2023-07-17
+updated = 2023-07-26
 description = "Descubre cómo habilitar una sección de comentarios en tus publicaciones usando giscus, utterances o Hyvor Talk, permitiendo la interacción y feedback de los lectores."
 
 [taxonomies]
@@ -10,9 +10,10 @@ tags = ["funcionalidad", "tutorial"]
 [extra]
 giscus = true
 quick_navigation_buttons = true
+toc = true
 +++
 
-tabi actualmente soporta tres sistemas de comentarios: [giscus](https://giscus.app/es) y [utterances](https://utteranc.es/) y [Hyvor Talk](https://talk.hyvor.com/).
+tabi actualmente soporta cuatro sistemas de comentarios: [giscus](https://giscus.app/es) y [utterances](https://utteranc.es/), [Hyvor Talk](https://talk.hyvor.com/) e [Isso](https://isso-comments.de/).
 
 giscus y utterances son proyectos de código abierto que te permiten añadir una sección de comentarios a tu sitio web usando las «issues» (utterances) o «discussions» (giscus) de GitHub. Son perfectos para generadores de sitios estáticos como Zola, ya que permiten a tus lectores interactuar y dejar comentarios en tus publicaciones sin requerir un backend tradicional ni una base de datos.
 
@@ -27,6 +28,8 @@ Ambas son excelentes herramientas para agregar comentarios a tu blog, pero giscu
 - Desarrollo más activo: el último commit de giscus, a fecha de esta publicación, fue hace una dos días. El último commit de utterances fue hace más de un año.
 
 Hyvor Talk es una plataforma de comentarios de pago centrada en la privacidad. Ofrece todas las ventajas de giscus y algunas más, como moderación y detección de spam.
+
+Isso es un sistema de comentarios de código abierto y autoalojado que almacena los comentarios en su propia base de datos. Una de sus principales ventajas es la privacidad; no comparte los datos de los usuarios con terceros. También tiene una interfaz ligera y limpia, lo que facilita que tus visitantes dejen comentarios. Isso también permite comentarios anónimos, lo que podría aumentar la participación de los usuarios en tu sitio web.
 
 ## Configuración
 
@@ -87,11 +90,30 @@ page_author = ""  # Correo (o correo codificado en base64) del autor.
 lazy_loading = true
 ```
 
+### Isso
+
+Para habilitar Isso, primero necesitarás instalar y ejecutar un servidor Isso ([aquí tienes una guía útil](https://blog.phusion.nl/2018/08/16/isso-simple-self-hosted-commenting-system/#1installingisso)). Luego, completa estas configuraciones en `config.toml`:
+
+```toml
+[extra.isso]
+enabled_for_all_posts = false
+automatic_loading = true
+endpoint_url = "https://example.com/comments/"  # URL a Isso.
+page_id_is_slug = true
+lang = ""
+max_comments_top = "inf"
+max_comments_nested = "5"
+avatar = true
+voting = true
+page_author_hashes = ""
+lazy_loading = true
+```
+
 ### Ajustes comunes
 
 La opción `enabled_for_all_posts = true` habilitará globalmente el sistema de comentarios correspondiente.
 
-Alternativamente, puedes habilitar los comentarios en publicaciones concretas añadiendo el nombre del sistema (`utterances`, `giscus` o `hyvortalk`) `= true`. Por ejemplo, así habilitarías giscus:
+Alternativamente, puedes habilitar los comentarios en publicaciones concretas añadiendo el nombre del sistema (`utterances`, `giscus`, `hyvortalk` o `isso`) `= true`. Por ejemplo, así habilitarías giscus:
 
 ```toml,hl_lines=09-10
 +++
@@ -109,7 +131,7 @@ giscus = true
 
 Si accidentalmente habilitas más de un sistema, Zola mostrará un error.
 
-Si tu web tiene múltiples idiomas con publicaciones coincidentes (como esta demo), y te gustaría compartir comentarios entre idiomas, debes usar `issue_term = "slug"` (en el caso de giscus y utterances) o `page_id_is_slug = true` (para Hyvor Talk). Esto usará el nombre del archivo Markdown (sin la etiqueta de idioma) como identificador. Todas las demás opciones crearán diferentes secciones de comentarios para cada idioma.
+Si tu web tiene múltiples idiomas con publicaciones coincidentes (como esta demo), y te gustaría compartir comentarios entre idiomas, debes usar `issue_term = "slug"` (en el caso de giscus y utterances) o `page_id_is_slug = true` (para Hyvor Talk e Isso). Esto usará el nombre del archivo Markdown (sin la etiqueta de idioma) como identificador. Todas las demás opciones crearán diferentes secciones de comentarios para cada idioma.
 
 
 ## Ejemplo en vivo

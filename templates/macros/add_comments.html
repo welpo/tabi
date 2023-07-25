@@ -1,8 +1,8 @@
 {%- macro add_comments(comment_system, automatic_loading) -%}
 
-<div id="comments" class="comments centered-text"
+<div id="comments" class="comments"
+
 {% if comment_system == "giscus" %}
-    {# Store required giscus data attributes in the div #}
     data-repo="{{ config.extra.giscus.repo }}"
     data-repo-id="{{ config.extra.giscus.repo_id }}"
     data-category="{{ config.extra.giscus.category }}"
@@ -27,10 +27,10 @@
     {% else %}
         data-lang="{{ lang }}"
     {% endif %}
-    data-lazy-loading="{{ config.extra.giscus.lazy_loading | default(value=true) }}">
+    data-lazy-loading="{{ config.extra.giscus.lazy_loading }}"
+    >
 
 {% elif comment_system == "utterances" %}
-    {# Store required utterances data attributes in the div #}
     data-repo="{{ config.extra.utterances.repo }}"
     {% if config.extra.utterances.issue_term == "slug" %}
         data-issue-term="{{ page.slug }}"
@@ -40,10 +40,10 @@
     data-label="{{ config.extra.utterances.label }}"
     data-light-theme="{{ config.extra.utterances.light_theme }}"
     data-dark-theme="{{ config.extra.utterances.dark_theme }}"
-    data-lazy-loading="{{ config.extra.utterances.lazy_loading | default(value=true) }}">
+    data-lazy-loading="{{ config.extra.utterances.lazy_loading }}"
+    >
 
 {% elif comment_system == "hyvortalk" %}
-    {# Store required Hyvor Talk data attributes in the div #}
     data-website-id="{{ config.extra.hyvortalk.website_id }}"
     {% if config.extra.hyvortalk.page_id_is_slug %}
         data-page-id="{{ page.slug }}"
@@ -57,10 +57,30 @@
     {% endif %}
     data-page-author="{{ config.extra.hyvortalk.page_author }}"
     {% if config.extra.hyvortalk.lazy_loading  %}
-        data-loading="lazy">
+        data-loading="lazy"
     {% else %}
-        data-loading="default">
+        data-loading="default"
     {% endif %}
+    >
+
+{% elif comment_system == "isso" %}
+    data-endpoint-url="{{ config.extra.isso.endpoint_url }}"
+    {% if config.extra.isso.page_id_is_slug %}
+        data-isso-id="{{ page.slug }}"
+        data-title="{{ page.slug }}"
+    {% endif %}
+    {% if config.extra.isso.lang  %}
+        data-page-language="{{ config.extra.isso.lang }}"
+    {% else %}
+        data-page-language="{{ lang }}"
+    {% endif %}
+    data-max-comments-top="{{ config.extra.isso.max_comments_top }}"
+    data-max-comments-nested="{{ config.extra.isso.max_comments_nested }}"
+    data-avatar="{{ config.extra.isso.avatar }}"
+    data-voting="{{ config.extra.isso.voting }}"
+    data-page-author-hashes="{{ config.extra.isso.page_author_hashes }}"
+    data-lazy-loading="{{ config.extra.isso.lazy_loading }}"
+    >
 {% endif %}
 
 {% if automatic_loading %}

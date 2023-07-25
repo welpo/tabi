@@ -18,16 +18,15 @@
     }
 
     .load-comments-button {
-        display: inline-block;
+        display: block;
         font-family: var(--sans-serif-font);
         color: inherit;
         font-size: 0.95rem;
         background: none;
         border: none;
         padding: 0.5em 1em;
-        margin: 0.5em;
+        margin: 0.5em auto;
         cursor: pointer;
         text-decoration: none;
     }
-
 }
