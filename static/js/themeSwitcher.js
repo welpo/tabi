@@ -13,7 +13,7 @@ function setTheme(theme, saveToLocalStorage = false) {
         localStorage.setItem("theme", theme);
     }
 
-    // Dispatch a custom event for utterances and giscus.
+    // Dispatch a custom event for comment systems.
     const event = new CustomEvent("themeChanged", {
         detail: { theme: theme }
     });

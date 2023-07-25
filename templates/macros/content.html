@@ -84,16 +84,33 @@
         {% set giscus_enabled = config.extra.giscus.enabled_for_all_posts or page.extra.giscus %}
         {% set utterances_enabled = config.extra.utterances.enabled_for_all_posts or page.extra.utterances %}
         {% set hyvortalk_enabled = config.extra.hyvortalk.enabled_for_all_posts or page.extra.hyvortalk %}
+        {% set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso %}
 
         {# Ensure only one comment system is enabled #}
-        {% if giscus_enabled and utterances_enabled or giscus_enabled and hyvortalk_enabled or utterances_enabled and hyvortalk_enabled %}
-            {{ throw(message="ERROR: Multiple comment systems have been enabled for the same page. Check your config.toml and individual page settings to ensure only one comment system is activated at a time.") }}
-        {% elif giscus_enabled %}
+        {# Counter for enabled comment systems #}
+        {% set enabled_systems = 0 %}
+
+        {# Check and count the enabled comment systems #}
+        {% if giscus_enabled %}
             {% set comment_system = "giscus" %}
-        {% elif utterances_enabled %}
+            {% set enabled_systems = enabled_systems + 1 %}
+        {% endif %}
+        {% if utterances_enabled %}
             {% set comment_system = "utterances" %}
-        {% elif hyvortalk_enabled %}
+            {% set enabled_systems = enabled_systems + 1 %}
+        {% endif %}
+        {% if hyvortalk_enabled %}
             {% set comment_system = "hyvortalk" %}
+            {% set enabled_systems = enabled_systems + 1 %}
+        {% endif %}
+        {% if isso_enabled %}
+            {% set comment_system = "isso" %}
+            {% set enabled_systems = enabled_systems + 1 %}
+        {% endif %}
+
+        {# Ensure only one comment system is enabled #}
+        {% if enabled_systems > 1 %}
+            {{ throw(message="ERROR: Multiple comment systems have been enabled for the same page. Check your config.toml and individual page settings to ensure only one comment system is activated at a time.") }}
         {% endif %}
 
         {% if comment_system %}

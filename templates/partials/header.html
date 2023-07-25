@@ -73,12 +73,15 @@
     {%- if config.extra.allowed_domains -%}
     ; 
         {# Check if a comment system is enabled to allow the necessary domains and directives #}
-        {%- set utterances_enabled = config.extra.utterances.enabled_for_all_posts or page.extra.utterances -%}
-        {%- set giscus_enabled = config.extra.giscus.enabled_for_all_posts or page.extra.giscus -%}
+        {% set utterances_enabled = config.extra.utterances.enabled_for_all_posts or page.extra.utterances %}
+        {% set giscus_enabled = config.extra.giscus.enabled_for_all_posts or page.extra.giscus %}
         {% set hyvortalk_enabled = config.extra.hyvortalk.enabled_for_all_posts or page.extra.hyvortalk %}
+        {% set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso %}
 
         {% if hyvortalk_enabled %}
             connect-src talk.hyvor.com;
+        {% elif isso_enabled %}
+            connect-src {{ config.extra.isso.endpoint_url }};
         {% endif %}
 
         {%- for domain in config.extra.allowed_domains -%}
@@ -93,6 +96,11 @@
                 {%- if giscus_enabled %} giscus.app
                 {%- elif utterances_enabled %} utteranc.es
                 {%- elif hyvortalk_enabled %} talk.hyvor.com
+                {%- endif %}
+            {%- endif -%}
+
+            {%- if domain.directive == "script-src" -%}
+                {%- if isso_enabled %} {{ config.extra.isso.endpoint_url }}
                 {%- endif %}
             {%- endif -%}
             {%- if not loop.last -%}

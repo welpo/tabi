@@ -224,3 +224,19 @@ page_id_is_slug = true  # If true, it will use the post's filename (slug) as id;
 lang = ""  # Leave blank to match the page's language.
 page_author = ""  # Email (or base64 encoded email) of the author.
 lazy_loading = true
+
+# Isso support for comments. https://isso-comments.de/
+# You need to self-host the backend first: https://blog.phusion.nl/2018/08/16/isso-simple-self-hosted-commenting-system/
+# More info on some settings: https://isso-comments.de/docs/reference/client-config/
+[extra.isso]
+enabled_for_all_posts = false  # Enables Isso on all posts. It can be enabled on individual posts by setting `isso = true` in the [extra] section of a post's front matter.
+automatic_loading = true  # If set to false, a "Load comments" button will be shown.
+endpoint_url = ""  # Accepts relative paths like "/comments/" or "/isso/", as well as full urls like "https://example.com/comments/". Include the trailing slash.
+page_id_is_slug = true  # If true, it will use the post's filename (slug) as id; this is the only way to share comments between languages. If false, it will use the entire url as id.
+lang = ""  # Leave blank to match the page's language.
+max_comments_top = "inf"  # Number of top level comments to show by default. If some comments are not shown, an “X Hidden” link is shown.
+max_comments_nested = "5"  # Number of nested comments to show by default. If some comments are not shown, an “X Hidden” link is shown.
+avatar = true
+voting = true
+page_author_hashes = ""  # hash (or list of hashes) of the author.
+lazy_loading = true  # Loads when the comments are in the viewport (using the Intersection Observer API).
