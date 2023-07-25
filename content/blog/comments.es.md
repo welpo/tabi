@@ -1,8 +1,8 @@
 +++
-title = "Añade comentarios a tus publicaciones con giscus, utterances o Hyvor Talk"
+title = "Añade comentarios a tus publicaciones con estas 4 plataformas"
 date = 2023-07-14
 updated = 2023-07-26
-description = "Descubre cómo habilitar una sección de comentarios en tus publicaciones usando giscus, utterances o Hyvor Talk, permitiendo la interacción y feedback de los lectores."
+description = "Descubre cómo habilitar una sección de comentarios en tus publicaciones usando giscus, utterances, Hyvor Talk, o Isso, permitiendo la interacción y feedback de los lectores."
 
 [taxonomies]
 tags = ["funcionalidad", "tutorial"]

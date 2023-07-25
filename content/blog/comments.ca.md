@@ -1,8 +1,8 @@
 +++
-title = "Afegeix comentaris a les teves publicacions amb giscus, utterances o Hyvor Talk"
+title = "Afegeix comentaris a les teves publicacions amb aquestes 4 plataformes"
 date = 2023-07-14
 updated = 2023-07-26
-description = "Descobreix com habilitar una secció de comentaris a les teves publicacions utilitzant giscus, utterances o Hyvor Talk, permetent la interacció i feedback dels lectors."
+description = "Descobreix com habilitar una secció de comentaris a les teves publicacions utilitzant giscus, utterances, Hyvor Talk, o Isso, permetent la interacció i feedback dels lectors."
 
 [taxonomies]
 tags = ["funcionalitat", "tutorial"]

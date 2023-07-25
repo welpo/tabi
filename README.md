@@ -16,7 +16,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 
 - [X] Multi-language support.
 - [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
-- [X] Support for [comments using giscus, utterances or Hyvor Talk](https://welpo.github.io/tabi/blog/comments/).
+- [X] Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
 - [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
 - [X] [KaTeX](https://katex.org/) support.
 - [X] All JavaScript can be [fully disabled](https://welpo.github.io/tabi/blog/javascript/).

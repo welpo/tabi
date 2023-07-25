@@ -1,8 +1,8 @@
 +++
-title = "Add comments to your posts with giscus, utterances or Hyvor Talk"
+title = "Add comments to your posts with these 4 comment systems"
 date = 2023-07-14
 updated = 2023-07-26
-description = "Discover how to enable a comments section on your posts using giscus, utterances, or Hyvor Talk, enabling reader interaction and feedback."
+description = "Discover how to enable a comments section on your posts using giscus, utterances, Hyvor Talk, or Isso, enabling reader interaction and feedback."
 
 [taxonomies]
 tags = ["showcase", "tutorial"]
