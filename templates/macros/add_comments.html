@@ -89,6 +89,8 @@
     <button id="load-comments" class="load-comments-button" data-script-src="{{ get_url(path='js/' ~ comment_system ~ '.min.js', trailing_slash=false) | safe }}">{%- if lang != config.default_language %} {{ trans(key="load_comments" | safe, lang=lang) }}{% else %} Load comments {%- endif -%}</button>
     <script src="{{ get_url(path='js/loadComments.min.js', trailing_slash=false) | safe }}" async></script>
 {% endif %}
+
+<noscript>You need JavaScript to view the comments.</noscript>
 </div>
 
 {%- endmacro add_comments -%}
