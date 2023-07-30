@@ -1,7 +1,7 @@
 table {
     border-spacing: 0;
     border-collapse: collapse;
-    justify-self: center;
+    text-align: center;
     font: inherit;
     overflow: hidden;
     border-style: hidden !important;
@@ -20,7 +20,6 @@ table td {
 table thead tr {
     background-color: var(--primary-color);
     color: var(--hover-color);
-    text-align: left;
 }
 
 table tbody tr:nth-child(even) {
