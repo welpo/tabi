@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="/feed_style/{{ lang }}.xsl" type="text/xsl"?>
+<!-- Load the default stylesheet (English) first, as fallback. -->
+<?xml-stylesheet href="{{ get_url(path='/feed_style/en.xsl', trailing_slash=false) | safe }}" type="text/xsl"?>
+<?xml-stylesheet href="{{ get_url(path='/feed_style/' ~ lang ~ '.xsl', trailing_slash=false) | safe }}" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
     <title>{{ config.title }}
     {%- if term %} - {{ term.name }}
