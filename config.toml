@@ -21,7 +21,6 @@ default_language = "en"
 title = "~/tabi"
 description = "tabi es un tema de Zola rápido, liviano y moderno con JavaScript opcional y una puntuación perfecta en Lighthouse."
 generate_feed = true
-# If you're using feeds, you might want to create/translate the static/feed_style/{lang}.xsl file.
 compile_sass = true
 minify_html = true
 
@@ -33,7 +32,6 @@ taxonomies = [
 title = "~/tabi"
 description = "tabi és un tema de Zola ràpid, lleuger i modern amb JavaScript opcional i una puntuació perfecta a Lighthouse."
 generate_feed = true
-# If you're using feeds, you might want to create/translate the static/feed_style/{lang}.xsl file.
 compile_sass = true
 minify_html = true
 
@@ -74,6 +72,16 @@ load_comments = "Cargar comentarios"
 # Quotation marks for multilingual quote shortcode.
 open_quotation_mark = "«"
 close_quotation_mark = "»"
+# Translations for stylised Atom feed.
+this_is_a_web_feed = "Esta es una fuente web"
+also_known_as_an_Atom_feed = "también conocida como fuente Atom"
+subscribe = "Suscríbete"
+by_copying_the_URL_from_the_address_bar_into_your_newsreader = "copiando la URL de la barra de direcciones en tu lector de noticias"
+visit = "Visita"
+to_learn_more_and_get_started = "para aprender más y empezar"
+it_s_free = "Es gratis"
+website = "la web"
+recent_posts = "Publicaciones recientes"
 
 [languages.ca.translations]
 language_name = "Català"
@@ -108,6 +116,16 @@ load_comments = "Carregar comentaris"
 # Quotation marks for multilingual quote shortcode.
 open_quotation_mark = "«"
 close_quotation_mark = "»"
+# Translations for stylised Atom feed.
+this_is_a_web_feed = "Aquest és un canal web"
+also_known_as_an_Atom_feed = "també conegut com a canal Atom"
+subscribe = "Subscriu-te"
+by_copying_the_URL_from_the_address_bar_into_your_newsreader = "copiant l'URL de la barra d'adreces al teu lector de notícies"
+visit = "Visita"
+to_learn_more_and_get_started = "per aprendre més i començar"
+it_s_free = "És gratuït"
+website = "la web"
+recent_posts = "Publicacions recents"
 
 [extra]
 
