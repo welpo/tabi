@@ -43,7 +43,7 @@
                                             {# Check if the language code matches the default language #}
                                             {%- if lcode == config.default_language -%}
                                                 {# If it does, link to the root path (no language code in URL) #}
-                                                <a type="Button" href="{{ current_url | replace(from=current_path | default(value="") | truncate(length=4, end=""), to="/") }}">{{ language_name }}</a>
+                                                <a type="Button" href="{{ current_url | replace(from='/' ~ lang ~ '/', to = '/') }}">{{ language_name }}</a>
                                             {%- else -%}
                                                 {# Check if the current language is the default language #}
                                                 {%- if lang == config.default_language -%}

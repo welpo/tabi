@@ -3,7 +3,7 @@
   xmlns:atom="http://www.w3.org/2005/Atom">
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
   <xsl:template match="/">
-    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="ca">
       <head>
         <title>
           <xsl:value-of select="/atom:feed/atom:title"/> • Feed
@@ -11,7 +11,7 @@
         <meta charset="utf-8"/>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="main.css"/>
+        <link rel="stylesheet" href="/main.css"/>
       </head>
       <body>
         <div class="content">
