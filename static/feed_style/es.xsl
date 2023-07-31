@@ -6,7 +6,7 @@
     <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
       <head>
         <title>
-          <xsl:value-of select="/atom:feed/atom:title"/> • Feed
+          <xsl:value-of select="/atom:feed/atom:title"/> • Canal Atom
         </title>
         <meta charset="utf-8"/>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -17,7 +17,7 @@
         <div class="content">
           <main>
             <div class="info-box">
-              <strong>This is a web feed</strong>, also known as an Atom feed. <strong>Subscribe</strong> by copying the URL from the address bar into your newsreader. Visit <a href="https://aboutfeeds.com">About Feeds</a> to learn more and get started. It’s free.
+              <strong>Esta es una fuente web</strong>, también conocida como fuente Atom. <strong>Suscríbete</strong> copiando la URL de la barra de direcciones en tu lector de noticias. Visita <a href="https://aboutfeeds.com">Acerca de Feeds</a> (en inglés) para aprender más y empezar. Es gratis.
             </div>
             <section id="banner-home-subtitle">
             <div class="padding-top home-title">
@@ -30,11 +30,11 @@
               <xsl:attribute name="href">
                 <xsl:value-of select="/atom:feed/atom:link[2]/@href"/>
               </xsl:attribute>
-            Visit Website → </a><p></p>
+            Visita la web → </a><p></p>
             </section>
 
             <div class="padding-top listing-title bottom-divider">
-            <h1>Recent Posts</h1>
+            <h1>Publicaciones recientes</h1>
             </div>
             <div class="bloglist-container">
               <xsl:for-each select="/atom:feed/atom:entry">
