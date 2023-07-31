@@ -21,6 +21,7 @@ default_language = "en"
 title = "~/tabi"
 description = "tabi es un tema de Zola rápido, liviano y moderno con JavaScript opcional y una puntuación perfecta en Lighthouse."
 generate_feed = true
+# If you're using feeds, you might want to create/translate the static/feed_style/{lang}.xsl file.
 compile_sass = true
 minify_html = true
 
@@ -32,6 +33,7 @@ taxonomies = [
 title = "~/tabi"
 description = "tabi és un tema de Zola ràpid, lleuger i modern amb JavaScript opcional i una puntuació perfecta a Lighthouse."
 generate_feed = true
+# If you're using feeds, you might want to create/translate the static/feed_style/{lang}.xsl file.
 compile_sass = true
 minify_html = true
 

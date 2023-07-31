@@ -3,21 +3,21 @@
   xmlns:atom="http://www.w3.org/2005/Atom">
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
   <xsl:template match="/">
-    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="ca">
       <head>
         <title>
-          <xsl:value-of select="/atom:feed/atom:title"/> • Feed
+          <xsl:value-of select="/atom:feed/atom:title"/> • Canal Atom
         </title>
         <meta charset="utf-8"/>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="main.css"/>
+        <link rel="stylesheet" href="/main.css"/>
       </head>
       <body>
         <div class="content">
           <main>
             <div class="info-box">
-              <strong>This is a web feed</strong>, also known as an Atom feed. <strong>Subscribe</strong> by copying the URL from the address bar into your newsreader. Visit <a href="https://aboutfeeds.com">About Feeds</a> to learn more and get started. It’s free.
+              <strong>Aquest és un canal web</strong>, també conegut com a canal Atom. <strong>Subscriu-te</strong> copiant l'URL de la barra d'adreces al teu lector de notícies. Visita <a href="https://aboutfeeds.com">Sobre Feeds</a> (en anglès) per aprendre més i començar. És gratuït.
             </div>
             <section id="banner-home-subtitle">
             <div class="padding-top home-title">
@@ -30,11 +30,11 @@
               <xsl:attribute name="href">
                 <xsl:value-of select="/atom:feed/atom:link[2]/@href"/>
               </xsl:attribute>
-            Visit Website → </a><p></p>
+            Visita la web → </a><p></p>
             </section>
 
             <div class="padding-top listing-title bottom-divider">
-            <h1>Recent Posts</h1>
+            <h1>Publicacions recents</h1>
             </div>
             <div class="bloglist-container">
               <xsl:for-each select="/atom:feed/atom:entry">
