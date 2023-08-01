@@ -10,7 +10,8 @@
                     {%- if config.extra.menu %}
                         {% for menu in config.extra.menu %}
                             <li>
-                                <a class="nav-links no-hover-padding" href={{ get_url(path=menu.url, lang=lang) | safe | replace(from="$BASE_URL", to=config.base_url) }}/>
+                                {% set trailing_slash = menu.trailing_slash | default(value=true) %}
+                                <a class="nav-links no-hover-padding" href="{{ get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) }}"/>
                                 {%- if lang != config.default_language -%}
                                     {{ trans(key=menu.name | safe, lang=lang) }}
                                 {%- else -%}
