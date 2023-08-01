@@ -1,7 +1,7 @@
 +++
 title = "Sin JavaScript obligatorio"
 date = 2023-01-06
-updated = 2023-07-13
+updated = 2023-08-01
 description = "JavaScript solo se utiliza cuando HTML y CSS no son suficientes."
 
 [taxonomies]
@@ -17,7 +17,7 @@ Este tema no tiene JavaScript obligatorio. Opcionalmente, puede cargar una canti
 
 Estas dos configuraciones se pueden aplicar en la sección `[extra]` de tu `config.toml`.
 
-- [**Comentarios**](@/blog/comments.es.md). giscus (2 KB), utterances (1 KB) o Hyvor Talk (~800 bytes) se pueden habilitar globalmente configurando `enabled_for_all_posts = true` en la sección apropiada de tu archivo `config.toml` (`[extra.giscus]`, `[extra.utterances]` o `[extra.hyvortalk]`).
+- [**Comentarios**](@/blog/comments.es.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) o Isso (1KB) se pueden habilitar globalmente configurando `enabled_for_all_posts = true` en la sección apropiada de tu archivo `config.toml` (`[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` o `[extra.isso]`).
 
 ### Opciones para publicaciones individuales
 

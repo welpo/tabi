@@ -1,7 +1,7 @@
 +++
 title = "Sense JavaScript obligatori"
 date = 2023-01-06
-updated = 2023-07-13
+updated = 2023-08-01
 description = "JavaScript només s'utilitza quan HTML i CSS no són suficients."
 
 [taxonomies]
@@ -17,7 +17,7 @@ Aquest tema no requereix JavaScript obligatori. Opcionalment, pot carregar una q
 
 Aquestes dues configuracions es poden aplicar a la secció `[extra]` del teu fitxer `config.toml`.
 
-- [**Comentaris**](@/blog/comments.ca.md). giscus (2 KB), utterances (1 KB) o Hyvor Talk (~800 bytes) es poden habilitar globalment configurant `enabled_for_all_posts = true` a la secció correcta de `config.toml` (`[extra.giscus]`, `[extra.utterances]` o `[extra.hyvortalk]`).
+- [**Comentaris**](@/blog/comments.ca.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) o Isso (1KB) es poden habilitar globalment configurant `enabled_for_all_posts = true` a la secció correcta de `config.toml` (`[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` o `[extra.isso]`).
 
 ### Configuracions específiques de la pàgina
 

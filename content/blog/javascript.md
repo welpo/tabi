@@ -1,7 +1,7 @@
 +++
 title = "No mandatory JavaScript"
 date = 2023-01-06
-updated = 2023-07-13
+updated = 2023-08-01
 description = "JavaScript is only used when HTML and CSS aren't enough."
 
 [taxonomies]
@@ -17,7 +17,7 @@ This theme has no mandatory JavaScript. Optionally, it can load a minimal amount
 
 These two settings can be applied in the `[extra]` section of your `config.toml` file.
 
-- [**Comments**](@/blog/comments.md). giscus (2 KB), utterances (1 KB) or Hyvor Talk (~800 bytes) can be globally enabled by setting `enabled_for_all_posts = true` in the right section of your  `config.toml` (i.e. `[extra.giscus]`, `[extra.utterances]` or `[extra.hyvortalk]`).
+- [**Comments**](@/blog/comments.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) or Isso (1KB) can be globally enabled by setting `enabled_for_all_posts = true` in the right section of your  `config.toml` (i.e. `[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` or `[extra.isso]`).
 
 ### Page-specific settings
 
