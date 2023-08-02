@@ -63,8 +63,7 @@ fn main() {
 
 ## Etiquetas de código
 
-Lorem ipsum `dolor` sit amet, `consectetur adipiscing` elit.
-`Lorem ipsum dolor sit amet, consectetur adipiscing elit.`
+En Rust, declaras una variable mutable con `let mut x = 5;`, mientras que en Python, simplemente usas `x = 5`. De manera similar, para imprimir un valor en Rust, utilizarías `println!("Valor: {}", x);`, pero en Python, es tan sencillo como `print(f"Valor: {x}")`.
 
 ## Cita
 
