@@ -33,6 +33,11 @@
     {%- if config.extra.copy_button and config.extra.copy_button == true -%}
         <script defer src="{{ get_url(path='js/copyCodeToClipboard.min.js', trailing_slash=false) | safe }}"/></script>
     {%- endif -%}
+
+    {# Add backlinks to footnotes #}
+    {%- if config.extra.footnote_backlinks and config.extra.footnote_backlinks == true or page.extra.footnote_backlinks and page.extra.footnote_backlinks == true -%}
+        <script defer src="{{ get_url(path='js/footnoteBacklinks.min.js', trailing_slash=false | safe )}}"/></script>
+    {%- endif -%}
 </body>
 
 </html>
