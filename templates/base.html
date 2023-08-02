@@ -24,13 +24,13 @@
     {% include "partials/footer.html" %}
 
     {# Add KaTeX functionality (loads CSS and JS) #}
-    {%- if page.extra.katex and page.extra.katex == true -%}
+    {%- if config.extra.katex and config.extra.katex == true or page.extra.katex and page.extra.katex == true -%}
         <link rel="stylesheet" href="{{ get_url(path='katex.min.css', trailing_slash=false) | safe }}">
         <script defer src="{{ get_url(path='js/katex.min.js', trailing_slash=false) | safe }}"></script>
     {%- endif -%}
 
     {# Add copy button to codeblocks #}
-    {%- if config.extra.copy_button and config.extra.copy_button == true -%}
+    {%- if config.extra.copy_button and config.extra.copy_button == true or page.extra.copy_button and page.extra.copy_button == true -%}
         <script defer src="{{ get_url(path='js/copyCodeToClipboard.min.js', trailing_slash=false) | safe }}"/></script>
     {%- endif -%}
 

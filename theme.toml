@@ -36,6 +36,9 @@ copy_button = true
 # Adds backlinks to footnotes (loads ~500 bytes of JavaScripts).
 footnote_backlinks = false
 
+# Enable KaTeX for all posts.
+katex = false
+
 # Date format used when listing posts (main page, /blog section, tag posts list…)
 # Default is "6th July 2049" in English and "%d %B %Y" in other languages.
 long_date_format = "%d %B %Y"

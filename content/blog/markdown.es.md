@@ -36,6 +36,8 @@ katex = true
 +++
 ```
 
+Para activarlo globalmente, añade `katex = true` en la sección `[extra]` de tu `config.toml`.
+
 Para un mejor rendimiento y seguridad, el JavaScript, CSS y las fuentes de $\KaTeX$ se alojan localmente.
 
 **Nota**: Después de habilitar $\KaTeX$, si deseas usar \$ sin representar una expresión matemática, escápalo con una sola barra invertida: `\$`.

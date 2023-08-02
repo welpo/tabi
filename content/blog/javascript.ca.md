@@ -10,25 +10,21 @@ tags = ["funcionalitat", "tutorial"]
 
 Aquest tema no requereix JavaScript obligatori. Opcionalment, pot carregar una quantitat mínima per afegir algunes característiques que són impossibles d'aconseguir amb HTML i CSS.
 
-## Opcions globals
+## Opcions habilitades globalment
 
-Pots habilitar les següents opcions per a totes les pàgines:
+L'**interruptor de mode clar/fosc** pot habilitar-se configurant `theme_switcher = true` a la secció `[extra]` del teu `config.toml` (~900 bytes de JavaScript).
 
-- **Canvi de mode clar/fosc**. Habilitat configurant `theme_switcher = true`. (~900 bytes)
-- **Còpia de blocs de codi amb un sol clic**. Habilitat configurant `copy_button = true`. (~700 bytes)
-- **Enllaços de retorn de notes a peu de pàgina**. Habilitats configurant `footnote_backlinks = true` (~500 bytes).
+## Configuracions que es poden habilitar tant globalment com en publicacions individuals
 
+Les següents configuracions es poden habilitar globalment per a totes les pàgines o específicament per a publicacions individuals:
 
-Aquestes dues configuracions es poden aplicar a la secció `[extra]` del teu fitxer `config.toml`.
+- [**KaTeX**](@/blog/markdown.ca.md#katex). Habilitat configurant `katex = true` (274 KB).
+- [**Còpia de blocs de codi amb un sol clic**](@/blog/markdown.ca.md#bloc-de-codi). Habilitada configurant `copy_button = true`. (~700 bytes)
+- [**Enllaços de retorn de notes al peu de pàgina**](@/blog/markdown.ca.md#1). Habilitats configurant `footnote_backlinks = true` (~500 bytes).
 
-- [**Comentaris**](@/blog/comments.ca.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) o Isso (1KB) es poden habilitar globalment configurant `enabled_for_all_posts = true` a la secció correcta de `config.toml` (`[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` o `[extra.isso]`).
+Per habilitar aquestes configuracions globalment, afegeix-les a la secció `[extra]` del teu `config.toml`. Per habilitar-les en publicacions individuals, estableix les variables corresponents a l'apartat `[extra]` del front matter de la publicació.
 
-## Configuracions específiques de la pàgina
-
-Les següents configuracions es poden habilitar en posts específics configurant certes variables a la secció `[extra]` del front matter de la publicació.
-
-- [**KaTeX**](@/blog/markdown.ca.md#katex) (274 KB) es pot habilitar amb `katex = true`.
-- [**Comentaris**](@/blog/comments.ca.md). Es poden habilitar assignant el nom del sistema `= true` (per exemple, `hyvortalk = true`).
-- **Enllaços de retorn de notes a peu de pàgina**. Es poden habilitar amb `footnote_backlinks = true`.
+- [**Comentaris**](@/blog/comments.ca.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) o Isso (1KB) es poden habilitar globalment configurant `enabled_for_all_posts = true` a la secció apropiada del teu fitxer `config.toml` (`[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` o `[extra.isso]`). Per habilitar comentaris en publicacions individuals, configura el nom del sistema `= true` (per exemple, `hyvort
+- [**Comentaris**](@/blog/comments.ca.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) o Isso (1KB) es poden habilitar globalment configurant `enabled_for_all_posts = true` a la secció apropiada del teu fitxer `config.toml` (`[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` o `[extra.isso]`). Per habilitar comentaris en publicacions individuals, configura el nom del sistema `= true` (per exemple, `hyvortalk = true`) al front matter del post.
 
 A part d'això, és un tema ràpid amb HTML i CSS que funciona sense JavaScript. Just com hauria de ser (la majoria de) la web :-)

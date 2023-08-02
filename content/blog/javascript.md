@@ -12,22 +12,18 @@ This theme has no mandatory JavaScript. Optionally, it can load a minimal amount
 
 ## Globally enabled settings
 
-You can enable the following settings for all pages:
+The **light/dark mode switch** can be enabled by setting `theme_switcher = true` in the `[extra]` section of your `config.toml` (~900 bytes of JavaScript).
 
-- **Light/dark mode switch**. Enabled by setting `theme_switcher = true`. (~900 bytes)
-- **One-click copy of code blocks**. Enabled by setting `copy_button = true`. (~700 bytes)
-- **Footnote backlinks**. Enabled by setting `footnote_backlinks = true` (~500 bytes).
+## Settings that can be enabled globally and for individual posts
 
-These settings can be applied in the `[extra]` section of your `config.toml` file.
+The following settings can be enabled globally for all pages or specifically for individual posts:
 
-- [**Comments**](@/blog/comments.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) or Isso (1KB) can be globally enabled by setting `enabled_for_all_posts = true` in the right section of your  `config.toml` (i.e. `[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` or `[extra.isso]`).
+- [**KaTeX support**](@/blog/markdown.md#katex). Enabled by setting `katex = true` (274 KB).
+- [**One-click copy of code blocks**](@/blog/markdown.md#code-block). Enabled by setting `copy_button = true`. (~700 bytes)
+- [**Footnote backlinks**](@/blog/markdown.md#1). Enabled by setting `footnote_backlinks = true` (~500 bytes).
 
-## Page-specific settings
+To enable these settings globally, add them in the `[extra]` section of your `config.toml` file. To enable for individual posts, set the corresponding variables in the `[extra]` section of the post's front matter.
 
-The following settings can be enabled on specific posts by setting certain variables in the `[extra]` section of the post's front matter.
-
-- [**KaTeX** support](@/blog/markdown.md#katex) (274 KB) can be enabled by setting `katex = true`.
-- [**Comments**](@/blog/comments.md) can be enabled by setting the name of the system `= true` (e.g. `hyvortalk = true`).
-- **Footnote backlinks** can be enabled by setting `footnote_backlinks = true`.
+- [**Comments**](@/blog/comments.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) or Isso (1KB) can be globally enabled by setting `enabled_for_all_posts = true` in the right section of your  `config.toml` (i.e. `[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` or `[extra.isso]`). To enable comments on individual posts, set the name of the system `= true` (e.g. `hyvortalk = true`) in the post's front matter.
 
 Other than that, it's a fast theme with HTML and CSS which works with JavaScript disabled. Just the way (most of) the web should be :-)
