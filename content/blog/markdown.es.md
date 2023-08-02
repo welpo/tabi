@@ -9,6 +9,7 @@ tags = ["markdown", "funcionalidad"]
 
 [extra]
 katex = true
+footnote_backlinks = true
 +++
 
 ## $\KaTeX$

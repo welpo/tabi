@@ -33,6 +33,9 @@ theme_switcher = true
 # Add a "copy" button to codeblocks (loads ~700 bytes of JavaScript).
 copy_button = true
 
+# Adds backlinks to footnotes (loads ~500 bytes of JavaScripts).
+footnote_backlinks = false
+
 # Date format used when listing posts (main page, /blog section, tag posts list…)
 # Default is "6th July 2049" in English and "%d %B %Y" in other languages.
 long_date_format = "%d %B %Y"
