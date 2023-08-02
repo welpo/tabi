@@ -1,7 +1,7 @@
 +++
 title = "Exemples de Markdown"
 date = 2023-01-31
-updated = 2023-07-08
+updated = 2023-08-02
 description = "Aquesta publicació mostra alguns exemples de format en Markdown, incloent-hi una taula, blocs de codi i etiquetes, citacions, taules i notes a peu de pàgina."
 
 [taxonomies]
@@ -68,5 +68,7 @@ Lorem ipsum `dolor` sit amet, `consectetur adipiscing` elit.
 > "La vida, perquè sigui vida, s'ha de viure a poc a poc…"
 >
 > — Mercè Rodoreda, La plaça del Diamant
+
+<hr>
 
 [^1]: I aquí tens un exemple de nota a peu de pàgina!

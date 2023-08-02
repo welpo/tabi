@@ -1,7 +1,7 @@
 +++
 title = "Markdown examples"
 date = 2023-01-31
-updated = 2023-07-08
+updated = 2023-08-02
 description = "This post showcases some examples of Markdown formatting, including a table, code blocks and tags, quotes, tables, and footnotes."
 
 [taxonomies]
@@ -69,5 +69,6 @@ Lorem ipsum `dolor` sit amet, `consectetur adipiscing` elit.
 >
 > — Charlie Kaufman, Synecdoche, New York
 
+<hr>
 
 [^1]: And here's an example of a footnote!
