@@ -1,7 +1,7 @@
 +++
 title = "Ejemplos de Markdown"
 date = 2023-01-31
-updated = 2023-08-02
+updated = 2023-08-06
 description = "Esta publicación muestra algunos ejemplos de formato Markdown, incluyendo una tabla, bloques de código y etiquetas, citas, tablas y notas al pie de página."
 
 [taxonomies]
@@ -67,7 +67,7 @@ En Rust, declaras una variable mutable con `let mut x = 5;`, mientras que en Pyt
 
 ## Cita
 
-> "A mí me sobra el cuerpo, Orfeo, me sobra el cuerpo porque me falta alma."
+> «A mí me sobra el cuerpo, Orfeo, me sobra el cuerpo porque me falta alma.»
 >
 > — Miguel de Unamuno, Niebla
 
