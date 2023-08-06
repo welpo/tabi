@@ -71,12 +71,12 @@
     <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'
     {%- if config.extra.allowed_domains -%}
-    ; 
-        {# Check if a comment system is enabled to allow the necessary domains and directives #}
-        {% set utterances_enabled = config.extra.utterances.enabled_for_all_posts or page.extra.utterances %}
-        {% set giscus_enabled = config.extra.giscus.enabled_for_all_posts or page.extra.giscus %}
-        {% set hyvortalk_enabled = config.extra.hyvortalk.enabled_for_all_posts or page.extra.hyvortalk %}
-        {% set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso %}
+    ;
+        {#- Check if a comment system is enabled to allow the necessary domains and directives -#}
+        {%- set utterances_enabled = config.extra.utterances.enabled_for_all_posts or page.extra.utterances -%}
+        {%- set giscus_enabled = config.extra.giscus.enabled_for_all_posts or page.extra.giscus -%}
+        {%- set hyvortalk_enabled = config.extra.hyvortalk.enabled_for_all_posts or page.extra.hyvortalk -%}
+        {%- set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso -%}
 
         {% if hyvortalk_enabled %}
             connect-src talk.hyvor.com;
