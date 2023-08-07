@@ -71,8 +71,7 @@ hr {
 }
 
 blockquote {
-    border-left: 0.2rem solid var(--primary-color);
-    color: var(--quote-color);
+    border-left: 0.3rem solid var(--primary-color);
     margin: 0;
     padding-left: 1em;
 }
@@ -149,9 +148,8 @@ hr {
 }
 
 .info-box {
-    border: 1px solid #087E96;
+    border: 1px solid var(--primary-color);
     border-left-width: 0.3rem;
-    background-color: #d1f3f8;
     padding: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;

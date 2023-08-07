@@ -1,7 +1,7 @@
 +++
 title = "Exemples de Markdown"
 date = 2023-01-31
-updated = 2023-08-02
+updated = 2023-08-06
 description = "Aquesta publicació mostra alguns exemples de format en Markdown, incloent-hi una taula, blocs de codi i etiquetes, citacions, taules i notes a peu de pàgina."
 
 [taxonomies]
@@ -67,7 +67,7 @@ A Rust, declares una variable mutable amb `let mut x = 5;`, mentre que a Python,
 
 ## Quote
 
-> "La vida, perquè sigui vida, s'ha de viure a poc a poc…"
+> «La vida, perquè sigui vida, s'ha de viure a poc a poc…»
 >
 > — Mercè Rodoreda, La plaça del Diamant
 

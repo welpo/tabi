@@ -256,7 +256,7 @@ h4.isso-thread-heading {
 }
 
 .isso-post-action > input:hover {
-    background-color: var(--primary-color-dark);
+    opacity: 0.8;
 }
 
 /* ========================================================================== */
