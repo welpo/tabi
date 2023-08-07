@@ -9,7 +9,10 @@
 {% import "macros/add_comments.html" as macros_add_comments %}
 
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{ lang }}" {% if config.extra.default_theme -%}
+    data-theme="{{config.extra.default_theme}}"
+{%- endif -%}>
+
 {% include "partials/header.html" %}
 
 <body>
