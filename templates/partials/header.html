@@ -28,7 +28,7 @@
         <link rel="stylesheet" href={{ get_url(path="inter_subset_es.css" ) }}>
     {% endif %}
 
-    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css" ) }} />
+    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css", cachebust=true ) }} />
 
     {% if config.extra.stylesheets %}
         {% for stylesheet in config.extra.stylesheets %}
