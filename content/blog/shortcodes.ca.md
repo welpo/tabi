@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2023-07-07
+updated = 2023-08-09
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -43,6 +43,30 @@ Les imatges amb massa brillantor o contrast poden ser molestes en un fons fosc. 
 
 ```
 {{/* dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Fotografia d'un desert, cel celestial") */}}
+```
+
+### Canvi d'imatge en passar el cursor
+
+La imatge mostrada canvia quan l'usuari passa el cursor per sobre. Útil per a comparacions d'abans i després, per exemple.
+
+{{ image_hover(default_src="img/edited.webp", hovered_src="img/raw.webp", default_alt="Foto editada", hovered_alt="Foto original") }}
+
+#### Ús
+
+```
+{{/* image_hover(default_src="img/before.webp", hovered_src="img/after.webp", default_alt="Foto editada", hovered_alt="Foto original") */}}
+```
+
+### Canvi d'imatge via clic
+
+Mostra una imatge i canvia a una diferent en fer clic. Ideal per destacar diferències o cridar l'atenció sobre detalls.
+
+{{ image_toggler(default_src="img/mojave_day.webp", toggled_src="img/mojave_night.webp", default_alt="Mojave de dia", toggled_alt="Mojave de nit") }}
+
+#### Ús
+
+```
+{{/* image_toggler(default_src="img/mojave_day.webp", toggled_src="img/mojave_night.webp", default_alt="Mojave de dia", toggled_alt="Mojave de nit") */}}
 ```
 
 ### Imatge d'amplada completa

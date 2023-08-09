@@ -1,0 +1,21 @@
+.image-hover-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    .image-default {
+        display: block;
+    }
+
+    .image-hovered {
+        display: none;
+    }
+
+    &:hover .image-hovered {
+        display: block;
+    }
+
+    &:hover .image-default {
+        display: none;
+    }
+}

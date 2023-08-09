@@ -1,0 +1,18 @@
+{%- set random_id = get_random(end=100000) -%}
+
+{% set default_meta = get_image_metadata(path=default_src, allow_missing=true) %}
+{% set toggled_meta = get_image_metadata(path=toggled_src, allow_missing=true) %}
+
+<div class="image-toggler-container {% if full_width | default(value=false) %}full-width{% endif %}">
+    <input type="checkbox" id="toggle-img-{{ random_id }}" class="image-toggler-toggle">
+    <label for="toggle-img-{{ random_id }}" class="image-label">
+        <div class="image-default">
+            <img src="{{ get_url(path=default_src) }}" alt="{{ default_alt }}"
+                width="{{ default_meta.width }}" height="{{ default_meta.height }}">
+        </div>
+        <div class="image-toggled">
+            <img src="{{ get_url(path=toggled_src) }}" alt="{{ toggled_alt }}"
+                width="{{ toggled_meta.width }}" height="{{ toggled_meta.height }}">
+        </div>
+    </label>
+</div>

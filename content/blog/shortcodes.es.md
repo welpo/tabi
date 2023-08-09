@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2023-07-05
+updated = 2023-08-09
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -44,6 +44,30 @@ Las imágenes con demasiado brillo o contraste pueden ser demasiado discordantes
 
 ```
 {{/* dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Fotografía de un desierto, cielo celestial") */}}
+```
+
+### Cambio de imagen al pasar el cursor
+
+La imagen mostrada cambia cuando el usuario pasa el cursor por encima. Útil para comparaciones de antes y después, por ejemplo.
+
+{{ image_hover(default_src="img/edited.webp", hovered_src="img/raw.webp", default_alt="Foto editada", hovered_alt="Foto original") }}
+
+#### Uso
+
+```
+{{/* image_hover(default_src="img/before.webp", hovered_src="img/after.webp", default_alt="Imagen editada", hovered_alt="Toma original") */}}
+```
+
+### Cambio de imagen vía click
+
+Muestra una imagen y cambia a una diferente al hacer clic. Ideal para destacar diferencias o llamar la atención sobre detalles.
+
+{{ image_toggler(default_src="img/mojave_day.webp", toggled_src="img/mojave_night.webp", default_alt="Mojave durante el día", toggled_alt="Mojave durante la noche") }}
+
+#### Uso
+
+```
+{{/* image_toggler(default_src="img/mojave_day.webp", toggled_src="img/mojave_night.webp", default_alt="Mojave durante el día", toggled_alt="Mojave durante la noche") */}}
 ```
 
 ### Imagen a ancho completo
