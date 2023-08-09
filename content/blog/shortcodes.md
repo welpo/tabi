@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2023-07-05
+updated = 2023-08-09
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -45,6 +45,30 @@ Images with too much brightness or contrast can be jarring against a dark backgr
 {{/* dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") */}}
 ```
 
+### Swap image on hover
+
+Povides an interaction where the image displayed changes as the user hovers over it. Useful for before-after comparisons, for example.
+
+{{ image_hover(default_src="img/edited.webp", hovered_src="img/raw.webp", default_alt="Edited picture", hovered_alt="Original shot") }}
+
+#### Usage
+
+```
+{{/* image_hover(default_src="img/before.webp", hovered_src="img/after.webp", default_alt="Edited picture", hovered_alt="Original shot") */}}
+```
+
+### Interactive image toggle
+
+Display an image and switch to a different one on click. Ideal for highlighting differences or drawing attention to details.
+
+{{ image_toggler(default_src="img/mojave_day.webp", toggled_src="img/mojave_night.webp", default_alt="Mojave during the day", toggled_alt="Mojave at night") }}
+
+#### Usage
+
+```
+{{/* image_toggler(default_src="img/mojave_day.webp", toggled_src="img/mojave_night.webp", default_alt="Mojave during the day", toggled_alt="Mojave at night") */}}
+```
+
 ### Full-width image
 
 The image will expand to match the width of the header, which is usually wider than the article text (except on mobile/small windows).
@@ -63,7 +87,7 @@ All other image shortcodes can be made into full-width by setting the optional p
 
 ### Multilingual quotes
 
-This shortcode allows you to display both the translated and original text for a quote:
+This shortcode allows you to display both the translated and original text for a quote. The quotation marks will be added automatically:
 
 {{ multilingual_quote(original="Qué sosiego, ir por la vida en silencio, saludando sólo a los amigos.", translated="What tranquility, to go through life in silence, greeting only friends.", author="Francisco Umbral") }}
 
