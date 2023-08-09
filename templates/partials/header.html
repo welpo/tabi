@@ -36,7 +36,7 @@
         {% endfor %}
     {% endif %}
 
-    <meta name="color-scheme" content="light dark">
+    <meta name="color-scheme" content="{%- if config.extra.theme_switcher -%}light dark{%- elif config.extra.default_theme -%}{{config.extra.default_theme}}{%- else -%}light{%- endif -%}">
 
     {%- if page.description %}
         <meta name="description" content="{{ page.description | striptags | safe }}" />
