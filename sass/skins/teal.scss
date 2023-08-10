@@ -1,0 +1,12 @@
+// This file is never loaded; it's serves as reference for the default skin (in main.scss).
+// When creating your own skin, you can use https://webaim.org/resources/contrastchecker/
+// to verify the accessibility and readability of your colourscheme.
+// The light background is #fff and the dark background is #1f1f1f.
+
+:root {
+    --primary-color: #087e96; // Contrast ratio: 4.73:1
+}
+
+[data-theme='dark'] {
+    --primary-color: #91e0ee;  // Contrast ratio: 11.06:1
+}

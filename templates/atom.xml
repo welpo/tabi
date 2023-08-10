@@ -32,6 +32,11 @@
         </str:recent_posts>
     </str:translations>
 
+    {# Load extra CSS (skin) if set in config.toml #}
+    {%- if config.extra.skin and config.extra.skin != "teal" -%}
+        <link rel="extra-stylesheet" href="{{ get_url(path='skins/' ~ config.extra.skin ~ '.css', cachebust=true) | safe }}" />
+    {%- endif -%}
+
     <title>{{ config.title | striptags | safe }}
     {%- if term %} - {{ term.name }}
     {%- elif section.title %} - {{ section.title }}
