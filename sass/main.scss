@@ -1,3 +1,23 @@
+@use 'parts/_archive.scss';
+@use 'parts/_cards.scss';
+@use 'parts/_code.scss';
+@use 'parts/_comments.scss';
+@use 'parts/_footer.scss';
+@use 'parts/_header-anchor.scss';
+@use 'parts/_header.scss';
+@use 'parts/_home-banner.scss';
+@use 'parts/_image-toggler.scss';
+@use 'parts/_image-hover.scss';
+@use 'parts/_image.scss';
+@use 'parts/_misc.scss';
+@use 'parts/_multilingual_quote.scss';
+@use 'parts/_pagination.scss';
+@use 'parts/_posts_list.scss';
+@use 'parts/_table.scss';
+@use 'parts/_tags.scss';
+@use 'parts/_theme-switch.scss';
+@use 'syntax/syntax-ayu-dark.scss';
+
 @font-face {
     /* Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
     font-family: 'Inter';
@@ -21,26 +41,6 @@
         url('fonts/CascadiaCode-SemiLight.woff2') format("woff2");
     font-display: swap;
 }
-
-@import 'parts/archive.scss';
-@import 'parts/cards.scss';
-@import 'parts/code.scss';
-@import 'parts/comments.scss';
-@import 'parts/footer.scss';
-@import 'parts/header-anchor.scss';
-@import 'parts/header.scss';
-@import 'parts/home-banner.scss';
-@import 'parts/image-toggler.scss';
-@import 'parts/image-hover.scss';
-@import 'parts/image.scss';
-@import 'parts/misc.scss';
-@import 'parts/multilingual_quote.scss';
-@import 'parts/pagination.scss';
-@import 'parts/posts_list.scss';
-@import 'parts/table.scss';
-@import 'parts/tags.scss';
-@import 'parts/theme-switch.scss';
-@import 'syntax/syntax-ayu-dark.scss';
 
 :root {
     --max-layout-width: 1000px;
