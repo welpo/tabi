@@ -1,0 +1,7 @@
+:root {
+    --primary-color: #D33C5C;  // Contrast ratio: 4.61:1
+}
+
+[data-theme='dark'] {
+    --primary-color: #fabed2;  // Contrast ratio: 10.48:1
+}

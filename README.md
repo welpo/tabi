@@ -2,7 +2,7 @@
 
 A fast, lightweight, and modern [Zola](https://getzola.org) theme with multi-language support. It aims to be a personal page and home to blog posts.
 
-See a live preview [here](https://welpo.github.io/tabi).
+See a live preview (and the theme's documentation) [here](https://welpo.github.io/tabi).
 
 > tabi (旅): Journey.
 
@@ -20,6 +20,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
 - [X] [KaTeX](https://katex.org/) support.
 - [X] All JavaScript can be [fully disabled](https://welpo.github.io/tabi/blog/javascript/).
+- [X] [Customizable skins](https://welpo.github.io/tabi/customise-tabi/).
 - [X] [Stylized feed](https://welpo.github.io/tabi/atom.xml).
 - [X] [Projects page](https://welpo.github.io/tabi/projects/).
 - [X] [Archive page](https://welpo.github.io/tabi/archive/).

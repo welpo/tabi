@@ -12,6 +12,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="{/atom:feed/@xml:base}/main.css"/>
+        <link rel="stylesheet" href="{/atom:feed/atom:link[@rel='extra-stylesheet']/@href}" />
 
       </head>
       <body>
@@ -29,7 +30,7 @@
             </p>
             <a class="readmore">
               <xsl:attribute name="href">
-                <xsl:value-of select="/atom:feed/atom:link[2]/@href"/>
+                <xsl:value-of select="/atom:feed/atom:link[3]/@href"/>
               </xsl:attribute>
             <xsl:value-of select="/atom:feed/str:translations/str:visit" /><xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:website" /><xsl:text> </xsl:text>→</a><p></p>
             </section>

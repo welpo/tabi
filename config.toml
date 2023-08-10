@@ -144,6 +144,14 @@ theme_switcher = true
 # Defaults to "light", if unset.
 default_theme = "light"
 
+# Choose the colourscheme (skin) for the theme. Default is "teal".
+# Skin available: blue, lavender, mint, red, sakura, teal, monochrome, lowcontrast_orange, lowcontrast_peach, lowcontrast_pink, indigo_ingot, evangelion
+# WARNING! "lowcontrast" skins, while aesthetically pleasing, may not provide optimal
+# contrast (in light theme) for readability and might not be suitable for all users.
+# Furthermore, low contrasting elements will affect your Google Lighthouse rating.
+# All other skins have optimal contrast.
+skin = ""
+
 # Add a "copy" button to codeblocks (loads ~700 bytes of JavaScript).
 copy_button = true
 
