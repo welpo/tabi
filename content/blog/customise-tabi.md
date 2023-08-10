@@ -1,6 +1,7 @@
 +++
 title = "Customise tabi with skins and a default theme"
 date = 2023-08-09
+updated = 2023-08-10
 description = "Learn how to customise tabi using skins and setting a default theme, making your site uniquely yours."
 
 [taxonomies]
@@ -169,7 +170,11 @@ For this colourscheme, choose `skin = "lowcontrast_pink"`.
 
 You're not just limited to predefined skins. Why not create a look that's distinctively tailored to your preferences?
 
-To get started, head over to `themes/tabi/sass/skins` and add a new file (e.g. `your_skin.scss`). This file needs to have these two variables (this is the default skin, teal):
+You can save your new skin it in either of these two directories:
+1. Inside the theme's directory: `themes/tabi/sass/skins`
+2. Inside your main site's directory: `sass/skins` (you'll need to create this folder)
+
+Create a new `.scss` file (for example, `your_skin.scss`) in your preferred location. This file needs to have these two variables (this is the default skin, "teal"):
 
 ```scss
 :root {

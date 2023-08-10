@@ -1,6 +1,7 @@
 +++
 title = "Personaliza el color de tabi y el tema predeterminado"
 date = 2023-08-09
+updated = 2023-08-10
 description = "Aprende a personalizar tabi usando skins y estableciendo un tema predeterminado, haciendo que tu sitio sea único."
 
 [taxonomies]
@@ -160,7 +161,11 @@ Para usar estos colores, asigna `skin = "lowcontrast_pink"`.
 
 No estás limitado a las skins predefinidas. ¿Por qué no diseñas un aspecto único que te represente?
 
-Para empezar, dirígete a `themes/tabi/sass/skins` y crea un nuevo archivo (por ejemplo, `tu_skin.scss`). Este archivo debe tener estas dos variables (esta es la piel predeterminada, `teal`):
+Puedes guardar tu nueva skin en cualquiera de estos dos directorios:
+1. Dentro del directorio del tema: `themes/tabi/sass/skins`
+2. Dentro del directorio principal de tu sitio: `sass/skins` (necesitarás crear esta carpeta)
+
+Crea un nuevo archivo `.scss` (por ejemplo, `tu_skin.scss`) en la ubicación que prefieras. Este archivo debe contener estas dos variables (esta es la skin predeterminada, "teal"):
 
 ```scss
 :root {
