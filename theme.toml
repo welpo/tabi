@@ -39,6 +39,7 @@ default_theme = "light"
 
 # Choose the colourscheme (skin) for the theme. Default is "teal".
 # Skin available: blue, lavender, mint, red, sakura, teal, monochrome, lowcontrast_orange, lowcontrast_peach, lowcontrast_pink, indigo_ingot, evangelion
+# See them live and learn how to create your own: https://welpo.github.io/tabi/blog/customise-tabi/#skins
 # WARNING! "lowcontrast" skins, while aesthetically pleasing, may not provide optimal
 # contrast (in light theme) for readability and might not be suitable for all users.
 # Furthermore, low contrasting elements will affect your Google Lighthouse rating.
