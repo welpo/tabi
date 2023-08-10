@@ -6,6 +6,10 @@
     {%- set close_quote = "”" -%}
 {%- endif -%}
 
+{# The `random_id` ensures that each instance of the shortcode has a "unique" id #}
+{# allowing individual interactive elements (like toggles) to function correctly. #}
+{# This avoids conflicts when multiple instances of the shortcode are used. #}
+{# More context: https://github.com/welpo/tabi/issues/82 #}
 {%- set random_id = get_random(end=100000) -%}
 
 <div class="quote-container">

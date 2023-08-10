@@ -1,3 +1,6 @@
+{# The `random_id` ensures that each instance of the shortcode has a "unique" id #}
+{# allowing individual interactive elements (like toggles) to function correctly. #}
+{# This avoids conflicts when multiple instances of the shortcode are used. #}
 {%- set random_id = get_random(end=100000) -%}
 
 {% set default_meta = get_image_metadata(path=default_src, allow_missing=true) %}
