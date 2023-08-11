@@ -37,6 +37,10 @@ code {
     }
 }
 
+a:hover code {
+    background-color: inherit;
+}
+
 pre {
     overflow: hidden;
     position: relative;
