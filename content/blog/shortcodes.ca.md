@@ -6,6 +6,11 @@ description = "Aquest tema inclou alguns shortcodes personalitzats útils que po
 
 [taxonomies]
 tags = ["funcionalitat", "shortcodes"]
+
+[extra]
+toc = true
+toc_levels = 2
+quick_navigation_buttons = true
 +++
 
 ## Shortcodes d'imatge

@@ -6,6 +6,11 @@ description = "This theme includes some useful custom shortcodes that you can us
 
 [taxonomies]
 tags = ["showcase", "shortcodes"]
+
+[extra]
+toc = true
+toc_levels = 2
+quick_navigation_buttons = true
 +++
 
 ## Image shortcodes
