@@ -5,23 +5,23 @@ table {
     font: inherit;
     overflow: hidden;
     border-style: hidden !important;
-    margin: 2rem auto;
-    min-width: 13rem;
+    margin: 1rem auto;
     border-radius: 5px;
-}
 
-table th,
-table td {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
-    font-size: large;
-}
+    th, td {
+        padding: 6px 13px;
+        border: 1px solid var(--bg-1);
+        font-size: large;
+    }
 
-table thead tr {
-    background-color: var(--primary-color);
-    color: var(--hover-color);
-}
+    thead tr {
+        background-color: var(--primary-color);
+        color: var(--hover-color);
+    }
 
-table tbody tr:nth-child(even) {
-    background-color: var(--bg-0);
+    tbody {
+        tr:nth-child(even) {
+            background-color: var(--bg-0);
+        }
+    }
 }
