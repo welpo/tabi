@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2023-08-09
+updated = 2023-08-11
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -126,6 +126,34 @@ Winger, J. A. (2010). El arte del debate: Un examen de la retórica en el modelo
 Tus referencias van aquí.
 
 Cada una en una línea nueva. Se renderizará Markdown (enlaces, cursivas…).
+
+{%/* end */%}
+```
+
+## Contenedores
+
+### Contenedor ancho
+
+Utiliza este código corto si deseas tener una tabla, párrafo, bloque de código… más ancho. En escritorio, ocupará el ancho del encabezado. En móviles no tendrá efecto, excepto para las tablas, que ganarán scroll horizontal.
+
+{% wide_container() %}
+
+| Título            |  Año  | Director             | Director de Fotografía| Género        | IMDb  | Duración     |
+|-------------------|-------|----------------------|-----------------------|---------------|-------|--------------|
+| Beoning           | 2018  | Lee Chang-dong       | Hong Kyung-pyo        | Drama/Misterio| 7.5   | 148 min      |
+| The Master        | 2012  | Paul Thomas Anderson | Mihai Mălaimare Jr.   | Drama/Historia| 7.1   | 137 min      |
+| The Tree of Life  | 2011  | Terrence Malick      | Emmanuel Lubezki      | Drama         | 6.8   | 139 min      |
+
+{% end %}
+
+#### Uso
+
+```
+{%/* wide_container() */%}
+
+Coloca tu bloque de código, párrafo, tabla… aquí.
+
+El Markdown, por supuesto, será interpretado.
 
 {%/* end */%}
 ```
