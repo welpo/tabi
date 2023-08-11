@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2023-08-09
+updated = 2023-08-11
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -125,6 +125,34 @@ Winger, J. A. (2010). The Art of Debate: An Examination of Rhetoric in Greendale
 Your references go here.
 
 Each in a new line. Markdown (links, italics…) will be rendered.
+
+{%/* end */%}
+```
+
+## Containers
+
+### Wide container
+
+Use this shortcode if you want to have a wider table, paragraph, code block… On desktop, it will take up the width of the header. It will have no effect on mobile, except for tables, which will get a horizontal scroll.
+
+{% wide_container() %}
+
+| Title             |  Year | Director             | Cinematographer       | Genre         | IMDb  | Duration     |
+|-------------------|-------|----------------------|-----------------------|---------------|-------|--------------|
+| Beoning           | 2018  | Lee Chang-dong       | Hong Kyung-pyo        | Drama/Mystery | 7.5   | 148 min      |
+| The Master        | 2012  | Paul Thomas Anderson | Mihai Mălaimare Jr.   | Drama/History | 7.1   | 137 min      |
+| The Tree of Life  | 2011  | Terrence Malick      | Emmanuel Lubezki      | Drama         | 6.8   | 139 min      |
+
+{% end %}
+
+#### Usage
+
+```
+{%/* wide_container() */%}
+
+Place your code block, paragraph, table… here.
+
+Markdown will of course be rendered.
 
 {%/* end */%}
 ```

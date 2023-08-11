@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2023-08-09
+updated = 2023-08-11
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -128,3 +128,34 @@ Cada una en una nova línia. Es renderitzarà el Markdown (enllaços, cursiva…
 
 {%/* end */%}
 ```
+
+## Contenidors
+
+### Contenidor ample
+
+Utilitza aquest codi curt si vols tenir una taula, paràgraf, bloc de codi… més ample. A l'escriptori, ocuparà l'amplada de la capçalera. A mòbils no tindrà efecte, excepte per les taules, que guanyaran scroll horitzontal.
+
+{% wide_container() %}
+
+| Títol             |  Any  | Director              | Director de fotografia | Gènere         | IMDb  | Durada       |
+|-------------------|-------|----------------------|-------------------------|----------------|-------|--------------|
+| Beoning           | 2018  | Lee Chang-dong       | Hong Kyung-pyo          | Drama/Misteri  | 7.5   | 148 min      |
+| The Master        | 2012  | Paul Thomas Anderson | Mihai Mălaimare Jr.     | Drama/Història | 7.1   | 137 min      |
+| The Tree of Life  | 2011  | Terrence Malick      | Emmanuel Lubezki        | Drama          | 6.8   | 139 min      |
+
+{% end %}
+
+#### Ús
+
+```
+{%/* wide_container() */%}
+
+Posa el teu bloc de codi, paràgraf, taula… aquí.
+
+El Markdown, per suposat, serà interpretat.
+
+{%/* end */%}
+```
+"""
+
+¡Espero que esto sea lo que buscabas!

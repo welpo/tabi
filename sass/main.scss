@@ -247,11 +247,11 @@ strong {
     }
 
     article .full-width {
-        width: auto;
         max-width: none;
         margin-left: 0;
         margin-right: 0;
         display: block;
+        overflow-x: auto;
     }
 }
 
