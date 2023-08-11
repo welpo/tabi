@@ -43,6 +43,7 @@
         {% endif %}
 
         {# Optional table of contents #}
+        {% set toc_levels = page.extra.toc_levels | default(value=3) %}
         {% if page.extra.toc | default(value=false) %}
         {% if page.toc %}
             <div class="toc-container">
@@ -51,12 +52,12 @@
                 {% for h1 in page.toc %}
                 <li>
                     <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-                    {% if h1.children %}
+                    {% if h1.children and toc_levels > 1 %}
                     <ul>
                         {% for h2 in h1.children %}
                         <li>
                             <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                            {% if h2.children %}
+                            {% if h2.children and toc_levels > 2 %}
                             <ul>
                                 {% for h3 in h2.children %}
                                 <li>
