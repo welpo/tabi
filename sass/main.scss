@@ -141,7 +141,6 @@ article {
         max-width: calc(100% + 2*$base-margin);
         margin-left: -$base-margin;
         margin-right: -$base-margin;
-        display: flex;
 
         > * {
             margin: 0;
