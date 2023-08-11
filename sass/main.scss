@@ -136,15 +136,18 @@ article {
     }
 
     .full-width {
-        width: auto;
-        height: auto;
+        display: flex;
+        flex-direction: column;
         max-width: calc(100% + 2*$base-margin);
         margin-left: -$base-margin;
         margin-right: -$base-margin;
 
-        > * {
-            margin: 0;
-            padding: 0;
+        > *:first-child {
+            margin-top: 0;
+        }
+
+        > *:last-child {
+            margin-bottom: 0;
         }
     }
 }
