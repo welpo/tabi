@@ -142,8 +142,19 @@ article {
         margin-left: -$base-margin;
         margin-right: -$base-margin;
         display: flex;
+
+        > * {
+            margin: 0;
+            padding: 0;
+        }
     }
 }
+
+.full-width > * {
+    margin: 0;
+    padding: 0;
+}
+
 
 .section-title {
     display: block;
