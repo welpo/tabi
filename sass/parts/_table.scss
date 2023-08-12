@@ -8,7 +8,8 @@ table {
     margin: 1rem auto;
     border-radius: 5px;
 
-    th, td {
+    th,
+    td {
         padding: 6px 13px;
         border: 1px solid var(--bg-1);
         font-size: large;
@@ -23,5 +24,10 @@ table {
         tr:nth-child(even) {
             background-color: var(--bg-0);
         }
+    }
+
+    details,
+    summary {
+        font-family: inherit !important;
     }
 }

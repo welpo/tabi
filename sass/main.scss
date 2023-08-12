@@ -131,7 +131,9 @@ article {
     margin: 0 auto;
 
     p,
-    li {
+    li,
+    details,
+    summary {
         font-family: var(--serif-font);
     }
 
