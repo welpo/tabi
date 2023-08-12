@@ -139,14 +139,6 @@ article {
         max-width: calc(100% + 2*$base-margin);
         margin-left: -$base-margin;
         margin-right: -$base-margin;
-
-        > *:first-child {
-            margin-top: 0;
-        }
-
-        > *:last-child {
-            margin-bottom: 0;
-        }
     }
 }
 
