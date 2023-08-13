@@ -18,6 +18,10 @@ table {
     thead tr {
         background-color: var(--primary-color);
         color: var(--hover-color);
+
+        code {
+            background-color: transparent;
+        }
     }
 
     tbody {
