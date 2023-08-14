@@ -1,0 +1,54 @@
+{% macro toc(page, header) %}
+
+{%- set toc_levels = page.extra.toc_levels | default(value=3) -%}
+
+{% if toc_ignore_pattern %}
+    {%- set toc_ignore_pattern = page.extra.toc_ignore_pattern -%}
+{% endif %}
+
+<div class="toc-container">
+    {% if header %}
+        <h3>{%- if lang != config.default_language %} {{ trans(key="table_of_contents" | safe, lang=lang) }} {% else %} Table of Contents {% endif %}</h3>
+    {% endif %}
+
+    <ul>
+        {% for h1 in page.toc %}
+            {# Only render headers if there's no ignore pattern, or if the header text doesn't match the pattern. #}
+            {% if not toc_ignore_pattern or not (h1.title is matching(toc_ignore_pattern)) %}
+                <li><a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                    {% if h1.children and toc_levels > 1 %}
+                        <ul>
+                            {% for h2 in h1.children %}
+                                {% if not toc_ignore_pattern or not (h2.title is matching(toc_ignore_pattern)) %}
+                                    <li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                        {% if h2.children and toc_levels > 2 %}
+                                            <ul>
+                                                {% for h3 in h2.children %}
+                                                    {% if not toc_ignore_pattern or not (h3.title is matching(toc_ignore_pattern)) %}
+                                                        <li><a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                                                            {% if h3.children and toc_levels > 3 %}
+                                                                <ul>
+                                                                    {% for h4 in h3.children %}
+                                                                        {% if not toc_ignore_pattern or not (h4.title is matching(toc_ignore_pattern)) %}
+                                                                            <li><a href="{{ h4.permalink | safe }}">{{ h4.title }}</a></li>
+                                                                        {% endif %}
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            {% endif %}
+                                                        </li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+{% endmacro toc %}
