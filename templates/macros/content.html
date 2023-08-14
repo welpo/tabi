@@ -42,43 +42,15 @@
             </div>
         {% endif %}
 
-        {# Optional table of contents #}
-        {% set toc_levels = page.extra.toc_levels | default(value=3) %}
-        {% if page.extra.toc | default(value=false) %}
-        {% if page.toc %}
-            <div class="toc-container">
-            <h3>{%- if lang != config.default_language %} {{ trans(key="table_of_contents" | safe, lang=lang) }} {% else %} Table of Contents {% endif %}</h3>
-            <ul>
-                {% for h1 in page.toc %}
-                <li>
-                    <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
-                    {% if h1.children and toc_levels > 1 %}
-                    <ul>
-                        {% for h2 in h1.children %}
-                        <li>
-                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                            {% if h2.children and toc_levels > 2 %}
-                            <ul>
-                                {% for h3 in h2.children %}
-                                <li>
-                                    <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            {% endif %}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                </li>
-                {% endfor %}
-            </ul>
-            </div>
-        {% endif %}
+        {# Optional table of contents below the header #}
+        {% if page.extra.toc | default(value=false) and page.toc %}
+            {{ macros_toc::toc(page=page, header=true) }} 
         {% endif %}
 
         <section class="body">
-            {{ page.content | safe }}
+            {# The replace pattern is used to enable arbitrary locations for the Table of Contents #}
+            {# This is Philipp Oppermann's workaround: https://github.com/getzola/zola/issues/584#issuecomment-474329637 #}
+            {{ page.content | replace(from="<!-- toc -->", to=macros_toc::toc(page=page, header=false)) | safe }}
         </section>
 
         {# Check if comments are enabled #}
