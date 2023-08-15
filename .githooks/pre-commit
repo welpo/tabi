@@ -2,12 +2,12 @@
 
 #################################################################################
 # This script is run by git before a commit is made.                            #
-# Does some housekeeping tasks before a commit is made.                         #
 #                                                                               #
-#                                   FEATURES                                    #
+#                                  FEATURES                                     #
 # Updates the "updated" field in the front matter of .md files.                 #
 # Compresses PNG files with either oxipng or optipng if available.              #
 # Runs subset_font if config.toml has been modified.                            #
+# Aborts the commit if a draft .md file is being committed.                     #
 # Updates the README if the line numbers for the language section have changed. #
 #################################################################################
 
@@ -24,11 +24,16 @@ function extract_date() {
     grep -m 1 "^$field =" "$file" | sed -e "s/$field = //" -e 's/ *$//'
 }
 
-##################################################################
-# Compress PNG files with either oxipng or optipng if available. #
-# Update the "updated" field in the front matter of .md files.   #
-#          https://osc.garden/blog/zola-date-git-hook/           #
-##################################################################
+# Function to check if the .md file is a draft.
+function is_draft() {
+    local file="$1"
+    awk '/^\+\+\+$/,/^\+\+\+$/{if(/draft = true/){exit 1}}' "$file"
+}
+
+# Check if the script is being run from the root of the repo.
+if [[ ! $(git rev-parse --show-toplevel) == $(pwd) ]]; then
+    error_exit "This script must be run from the root of the repo."
+fi
 
 # Check if oxipng is installed.
 png_compressor=""
@@ -38,11 +43,18 @@ elif command -v optipng &> /dev/null; then
     png_compressor="optipng -o 7"
 fi
 
-# Get the modified .md and .png files, ignoring "_index.md" files.
-modified_files=$(git diff --cached --name-only --diff-filter=M | grep -E '\.(md|png)$' | grep -v '_index.md$')
+##################################################################
+# Compress PNG files with either oxipng or optipng if available. #
+# Update the "updated" field in the front matter of .md files.   #
+#          https://osc.garden/blog/zola-date-git-hook/           #
+# Interrupt the commit if a draft .md file is being committed.   #
+##################################################################
 
-# Loop through each modified .md or .png file.
-for file in $modified_files; do
+# Get the newly added and modified .md and .png files, ignoring "_index.md" files.
+all_changed_files=$(git diff --cached --name-only --diff-filter=AM | grep -E '\.(md|png)$' | grep -v '_index.md$')
+
+# Loop through each newly added or modified .md or .png file for PNG optimization and draft checking.
+for file in $all_changed_files; do
     # If the file is a PNG and png_compressor is set, compress it and add it to the commit.
     if [[ "$file" == *.png ]] && [[ -n "$png_compressor" ]]; then
         $png_compressor "$file" || error_exit "Failed to compress PNG file $file"
@@ -50,40 +62,49 @@ for file in $modified_files; do
         continue
     fi
 
-    # If the file is an .md file, update the "updated" field in the front matter.
+    # If the file is an .md file and it's a draft, abort the commit.
     if [[ "$file" == *.md ]]; then
-        # Get the last modified date from the filesystem.
-        last_modified_date=$(date -r "$file" +'%Y-%m-%d')
-
-        # Extract the "date" field from the front matter.
-        date_value=$(extract_date "$file" "date")
-
-        # Skip the file if the last modified date is the same as the "date" field.
-        if [[ "$last_modified_date" == "$date_value" ]]; then
-            continue
+        if is_draft "$file"; then
+            error_exit "Draft file $file is being committed!"
         fi
-
-        # Update the "updated" field with the last modified date.
-        # If the "updated" field doesn't exist, create it below the "date" field.
-        if ! awk -v date_line="$last_modified_date" 'BEGIN{FS=OFS=" = "; first = 1} {
-            if (/^date =/ && first) {
-                print; getline;
-                if (!/^updated =/) print "updated" OFS date_line;
-                first=0;
-            }
-            if (/^updated =/ && !first) gsub(/[^ ]*$/, date_line, $2);
-            print;
-        }' "$file" > "${file}.tmp"
-        then
-            error_exit "Failed to process $file with AWK"
-        fi
-
-        mv "${file}.tmp" "$file" || error_exit "Failed to overwrite $file with updated content"
-
-
-        # Stage the changes.
-        git add "$file"
     fi
+done
+
+# Get the modified .md to update the "updated" field in the front matter.
+modified_files=$(git diff --cached --name-only --diff-filter=M | grep -E '\.md$' | grep -v '_index.md$')
+
+# Loop through each modified .md file.
+for file in $modified_files; do
+    # Get the last modified date from the filesystem.
+    last_modified_date=$(date -r "$file" +'%Y-%m-%d')
+
+    # Extract the "date" field from the front matter.
+    date_value=$(extract_date "$file" "date")
+
+    # Skip the file if the last modified date is the same as the "date" field.
+    if [[ "$last_modified_date" == "$date_value" ]]; then
+        continue
+    fi
+
+    # Update the "updated" field with the last modified date.
+    # If the "updated" field doesn't exist, create it below the "date" field.
+    if ! awk -v date_line="$last_modified_date" 'BEGIN{FS=OFS=" = "; first = 1} {
+        if (/^date =/ && first) {
+            print; getline;
+            if (!/^updated =/) print "updated" OFS date_line;
+            first=0;
+        }
+        if (/^updated =/ && !first) gsub(/[^ ]*$/, date_line, $2);
+        print;
+    }' "$file" > "${file}.tmp"
+    then
+        error_exit "Failed to process $file with AWK"
+    fi
+
+    mv "${file}.tmp" "$file" || error_exit "Failed to overwrite $file with updated content"
+
+    # Stage the changes.
+    git add "$file"
 done
 
 #########################################################
