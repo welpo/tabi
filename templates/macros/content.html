@@ -32,6 +32,9 @@
 
             {% if page.updated %}
                 </ul><ul class="meta last-updated"><li>{%- if lang != config.default_language %} {{ trans(key="last_updated_on" | safe, lang=lang) }} {% else %} Last updated on {% endif %} {{ macros_format_date::format_date(date=page.updated, short=true) }}</li>
+                {% if config.extra.remote_repository_url %}
+                    <li>&nbsp;{{ separator }}&nbsp;<a href="{{ macros_create_history_url::create_history_url(relative_path=page.relative_path) }}" target="_blank" rel="noopener noreferrer">{%- if lang != config.default_language -%}{{ trans(key="see_changes" | safe, lang=lang) }}{% else %}See changes{%- endif -%}<small> ↗</small></a></li>
+                {% endif %}
             {% endif %}
         </ul>
 

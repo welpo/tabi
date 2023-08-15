@@ -69,6 +69,7 @@ last_updated_on = "Última actualización el"
 show_original_quote = "Mostrar cita original"
 show_translation = "Mostrar traducción"
 load_comments = "Cargar comentarios"
+see_changes = "Ver cambios"
 # Quotation marks for multilingual quote shortcode.
 open_quotation_mark = "«"
 close_quotation_mark = "»"
@@ -113,6 +114,7 @@ last_updated_on = "Última actualizació el"
 show_original_quote = "Mostra la cita original"
 show_translation = "Mostra la traducció"
 load_comments = "Carregar comentaris"
+see_changes = "Veure canvis"
 # Quotation marks for multilingual quote shortcode.
 open_quotation_mark = "«"
 close_quotation_mark = "»"
@@ -132,6 +134,17 @@ recent_posts = "Publicacions recents"
 language_name.ca = "Català"
 language_name.en = "English"
 language_name.es = "Español"
+
+# Remote repository for your Zola site.
+# Only used to link to the commit history of updated posts, right next to the updated date.
+# Supports GitHub, GitLab and Gitea.
+remote_repository_url = "https://github.com/welpo/tabi"
+# Set this to "auto" to try and auto-detect the platform based on the repository URL.
+# Accepted values are "github", "gitlab", and "gitea".
+# Defaults to "auto".
+remote_repository_git_platform = "auto"
+# Branch in the repo hosting the Zola site. Defaults to "main".
+remote_repository_branch = "main"
 
 # Enable JavaScript theme toggler to allow users to switch between dark/light mode.
 # Also enables automatic switching based on user's OS-level theme settings.
