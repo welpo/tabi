@@ -8,22 +8,21 @@
 {% if git_platform == "auto" %}
     {% if repository_url is containing("github.") %}
         {% set git_platform = "github" %}
-    {% elif repository_url is containing("gitea.") %}
-        {% set git_platform = "gitea" %}
     {% elif repository_url is containing("gitlab.") %}
         {% set git_platform = "gitlab" %}
+    {% elif repository_url is matching("(gitea\.|codeberg\.)") %}
+        {% set git_platform = "gitea" %}
     {% endif %}
 {% endif %}
 
 {# Generate the commit history URL based on the git platform #}
 {% if git_platform == "github" %}
     {{ repository_url ~ '/commits/' ~ branch ~ '/content/' }}{{ relative_path | urlencode }}
-{% elif git_platform == "gitea" %}
-    {{ repository_url ~ '/commits/branch/' ~ branch ~ '/' }}{{ relative_path | urlencode }}
 {% elif git_platform == "gitlab" %}
     {{ repository_url ~ '/-/commits/' ~ branch ~ '/' }}{{ relative_path | urlencode }}
+{% elif git_platform in ["gitea", "codeberg"] %}
+    {{ repository_url ~ '/commits/branch/' ~ branch ~ '/' }}{{ relative_path | urlencode }}
 {% else %}
-    {# Throw an error with a direct link to report a bug for unsupported or unspecified platforms #}
     {{ throw(message="ERROR: Unknown, unsupported, or unspecified git platform. If you're using a custom domain, please specify the 'git_platform' in the config. If you think this is a bug, please report it: https://github.com/welpo/tabi/issues/new?assignees=&labels=bug&template=bug_report.md&title=Unsupported%20Git%20Platform%20Detected") }}
 {% endif %}
 
