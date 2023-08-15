@@ -1,0 +1,138 @@
+#!/usr/bin/env bash
+
+#################################################################################
+# This script is run by git before a commit is made.                            #
+# Does some housekeeping tasks before a commit is made.                         #
+#                                                                               #
+#                                   FEATURES                                    #
+# Updates the "updated" field in the front matter of .md files.                 #
+# Compresses PNG files with either oxipng or optipng if available.              #
+# Runs subset_font if config.toml has been modified.                            #
+# Updates the README if the line numbers for the language section have changed. #
+#################################################################################
+
+# Function to exit the script with an error message.
+function error_exit() {
+    echo "ERROR: $1" >&2
+    exit "${2:-1}"
+}
+
+# Function to extract the date from the front matter.
+function extract_date() {
+    local file="$1"
+    local field="$2"
+    grep -m 1 "^$field =" "$file" | sed -e "s/$field = //" -e 's/ *$//'
+}
+
+##################################################################
+# Compress PNG files with either oxipng or optipng if available. #
+# Update the "updated" field in the front matter of .md files.   #
+#          https://osc.garden/blog/zola-date-git-hook/           #
+##################################################################
+
+# Check if oxipng is installed.
+png_compressor=""
+if command -v oxipng &> /dev/null; then
+    png_compressor="oxipng -o max"
+elif command -v optipng &> /dev/null; then
+    png_compressor="optipng -o 7"
+fi
+
+# Get the modified .md and .png files, ignoring "_index.md" files.
+modified_files=$(git diff --cached --name-only --diff-filter=M | grep -E '\.(md|png)$' | grep -v '_index.md$')
+
+# Loop through each modified .md or .png file.
+for file in $modified_files; do
+    # If the file is a PNG and png_compressor is set, compress it and add it to the commit.
+    if [[ "$file" == *.png ]] && [[ -n "$png_compressor" ]]; then
+        $png_compressor "$file" || error_exit "Failed to compress PNG file $file"
+        git add --force "$file" || error_exit "Failed to add compressed PNG file $file"
+        continue
+    fi
+
+    # If the file is an .md file, update the "updated" field in the front matter.
+    if [[ "$file" == *.md ]]; then
+        # Get the last modified date from the filesystem.
+        last_modified_date=$(date -r "$file" +'%Y-%m-%d')
+
+        # Extract the "date" field from the front matter.
+        date_value=$(extract_date "$file" "date")
+
+        # Skip the file if the last modified date is the same as the "date" field.
+        if [[ "$last_modified_date" == "$date_value" ]]; then
+            continue
+        fi
+
+        # Update the "updated" field with the last modified date.
+        # If the "updated" field doesn't exist, create it below the "date" field.
+        if ! awk -v date_line="$last_modified_date" 'BEGIN{FS=OFS=" = "; first = 1} {
+            if (/^date =/ && first) {
+                print; getline;
+                if (!/^updated =/) print "updated" OFS date_line;
+                first=0;
+            }
+            if (/^updated =/ && !first) gsub(/[^ ]*$/, date_line, $2);
+            print;
+        }' "$file" > "${file}.tmp"
+        then
+            error_exit "Failed to process $file with AWK"
+        fi
+
+        mv "${file}.tmp" "$file" || error_exit "Failed to overwrite $file with updated content"
+
+
+        # Stage the changes.
+        git add "$file"
+    fi
+done
+
+#########################################################
+# Run subset_font if config.toml has been modified.     #
+# https://welpo.github.io/tabi/blog/custom-font-subset/ #
+#########################################################
+if git diff --cached --name-only | grep -q "config.toml"; then
+    echo "config.toml modified. Running subset_font…"
+
+    # Call the subset_font script.
+    ~/bin/subset_font -c config.toml -f static/fonts/Inter4.woff2 -o static/
+
+    # Add the generated subset.css file to the commit.
+    git add static/custom_subset.css
+fi
+
+################################################################################
+# Update the README if the line numbers for the language section have changed. #
+################################################################################
+
+# File paths and names.
+config_file="config.toml"
+config_readme="README.md"
+
+# Ensure the required files are present.
+[ ! -f "$config_file" ] && error_exit "$config_file not found!"
+[ ! -f "$config_readme" ] && error_exit "$config_readme not found!"
+
+# Determine the line numbers for relevant sections in config.toml.
+lang_start_line=$(grep -n "^\[languages.es\]$" "$config_file" | cut -d: -f1)
+extra_start_line=$(grep -n "^\[extra\]$" "$config_file" | cut -d: -f1)
+lang_end_line=$((extra_start_line - 2))
+
+# Extract currently documented line numbers from README.
+documented_lines=$(grep -o 'https://github.com/welpo/tabi/blob/main/config.toml#L[0-9]*-L[0-9]*' "$config_readme" | grep -o 'L[0-9]*-L[0-9]*')
+doc_start_line=$(echo "$documented_lines" | cut -d'-' -f1 | tr -d 'L')
+doc_end_line=$(echo "$documented_lines" | cut -d'-' -f2 | tr -d 'L')
+
+# Ensure that the variables are set and are numbers.
+if [[ ! $lang_start_line =~ ^[0-9]+$ ]] || [[ ! $doc_start_line =~ ^[0-9]+$ ]] || [[ ! $lang_end_line =~ ^[0-9]+$ ]] || [[ ! $doc_end_line =~ ^[0-9]+$ ]]; then
+    error_exit "Line number variables are not set correctly."
+fi
+
+# Update the README if there's a discrepancy in the line numbers.
+if [ "$lang_start_line" -ne "$doc_start_line" ] || [ "$lang_end_line" -ne "$doc_end_line" ]; then
+    if ! perl -pi -e "s|https://github.com/welpo/tabi/blob/main/config.toml#L[0-9]*-L[0-9]*|https://github.com/welpo/tabi/blob/main/config.toml#L$lang_start_line-L$lang_end_line|g" "$config_readme"; then
+        error_exit "Perl processing failed for $config_readme"
+    fi
+    
+    # Add updated README to commit.
+    git add "$config_readme"
+fi
