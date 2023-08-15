@@ -2,6 +2,9 @@
 
 #################################################################################
 # This script is run by git before a commit is made.                            #
+# To use it, copy it to .git/hooks/pre-commit and make it executable.           #
+# Alternatively, run the following command from the root of the repo:           #
+# git config core.hooksPath .githooks                                           #
 #                                                                               #
 #                                  FEATURES                                     #
 # Updates the "updated" field in the front matter of .md files.                 #
