@@ -6,6 +6,8 @@ generate_feed = true
 compile_sass = true
 minify_html = true
 
+default_language = "en"
+
 taxonomies = [
     {name = "tags", feed = true},
 ]
