@@ -32,9 +32,9 @@
 
                 <div class="description">
                     {% if post.description %}
-                        <p>{{ post.description }}</p>
+                        <p>{{ post.description | striptags | safe }}</p>
                     {% elif post.summary %}
-                        <p>{{ post.summary | safe }}&hellip;</p>
+                        <p>{{ post.summary | striptags | safe }}</p>
                     {% endif %}
                 </div>
 
