@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-#################################################################################
-# This script is run by git before a commit is made.                            #
-# To use it, copy it to .git/hooks/pre-commit and make it executable.           #
-# Alternatively, run the following command from the root of the repo:           #
-# git config core.hooksPath .githooks                                           #
-#                                                                               #
-#                                  FEATURES                                     #
-# Updates the "updated" field in the front matter of .md files.                 #
-# Compresses PNG files with either oxipng or optipng if available.              #
-# Runs subset_font if config.toml has been modified.                            #
-# Aborts the commit if a draft .md file is being committed.                     #
-# Updates the README if the line numbers for the language section have changed. #
-#################################################################################
+###################################################################################
+# This script is run by git before a commit is made.                              #
+# To use it, copy it to .git/hooks/pre-commit and make it executable.             #
+# Alternatively, run the following command from the root of the repo:             #
+# git config core.hooksPath .githooks                                             #
+#                                                                                 #
+#                                  FEATURES                                       #
+# Updates the "updated" field in the front matter of .md files.                   #
+# Compresses PNG files with either oxipng or optipng if available.                #
+# Runs subset_font if config.toml has been modified.                              #
+# Aborts the commit if a draft .md file or a file with "TODO" is being committed. #
+# Updates the README if the line numbers for the language section have changed.   #
+###################################################################################
 
 # Function to exit the script with an error message.
 function error_exit() {
@@ -30,7 +30,13 @@ function extract_date() {
 # Function to check if the .md file is a draft.
 function is_draft() {
     local file="$1"
-    awk '/^\+\+\+$/,/^\+\+\+$/{if(/draft = true/){exit 1}}' "$file"
+    awk '/^\+\+\+$/,/^\+\+\+$/ { if(/draft = true/) exit 0 } END { exit 1 }' "$file"
+}
+
+# Check if the file contains "TODO".
+function contains_todo() {
+    local file="$1"
+    grep -q "TODO" "$file"
 }
 
 # Check if the script is being run from the root of the repo.
@@ -53,8 +59,8 @@ fi
 # Interrupt the commit if a draft .md file is being committed.   #
 ##################################################################
 
-# Get the newly added and modified .md and .png files, ignoring "_index.md" files.
-all_changed_files=$(git diff --cached --name-only --diff-filter=AM | grep -E '\.(md|png)$' | grep -v '_index.md$')
+# Get the newly added and modified files.
+all_changed_files=$(git diff --cached --name-only --diff-filter=AM)
 
 # Loop through each newly added or modified .md or .png file for PNG optimization and draft checking.
 for file in $all_changed_files; do
@@ -70,6 +76,11 @@ for file in $all_changed_files; do
         if is_draft "$file"; then
             error_exit "Draft file $file is being committed!"
         fi
+    fi
+
+    # If the file contains "TODO", abort the commit.
+    if contains_todo "$file"; then
+        error_exit "File $file contains TODO! Remove or complete the TODO before committing."
     fi
 done
 
