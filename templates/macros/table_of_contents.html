@@ -2,7 +2,7 @@
 
 {%- set toc_levels = page.extra.toc_levels | default(value=3) -%}
 
-{% if toc_ignore_pattern %}
+{% if page.extra.toc_ignore_pattern %}
     {%- set toc_ignore_pattern = page.extra.toc_ignore_pattern -%}
 {% endif %}
 
