@@ -15,8 +15,8 @@
 # Stops you from commiting:                                                     #
 # - a draft .md file                                                            #
 # - a file with a "TODO"                                                        #
-# - a JS file without a minified version.                                       #
-# - a minified JS file that isn't as small as it can be.                        #
+# - a JS file without a minified version                                        #
+# - a minified JS file that isn't as small as it can be                         #
 #################################################################################
 
 # Function to exit the script with an error message.
@@ -53,9 +53,29 @@ function has_minified_version() {
 
 function is_minified() {
     local file="$1"
-    # Check if the file is as small as it can be.
-    terser --compress --mangle -- "$file" | wc -c | grep -q "^$(wc -c < "$file")$"
+    
+    # Original file size.
+    local original_size=$(wc -c < "$file")
+    
+    # File size after compression with terser.
+    local terser_size=$(terser --compress --mangle -- "$file" | wc -c)
+    
+    # File size after compression with uglifyjs.
+    local uglifyjs_size=$(uglifyjs --compress --mangle -- "$file" | wc -c)
+
+    # Check if the file is already as small as or smaller than both minified versions.
+    if (( original_size <= terser_size && original_size <= uglifyjs_size )); then
+        return 0
+    fi
+    
+    # If the file isn't as small as it can be, suggest the better compressor in the error message
+    if (( terser_size < uglifyjs_size )); then
+        error_exit "Minified JS file $file isn't as small as it can be with terser! Consider using terser for better compression."
+    else
+        error_exit "Minified JS file $file isn't as small as it can be with uglifyjs! Consider using uglifyjs for better compression."
+    fi
 }
+
 
 # Check if the script is being run from the root of the repo.
 if [[ ! $(git rev-parse --show-toplevel) == $(pwd) ]]; then
@@ -80,7 +100,7 @@ fi
 # Get the newly added and modified files.
 all_changed_files=$(git diff --cached --name-only --diff-filter=AM)
 
-# Loop through each newly added or modified .md or .png file for PNG optimization and draft checking.
+# Loop through all newly added or modified files.
 for file in $all_changed_files; do
     # If the file is a PNG and png_compressor is set, compress it and add it to the commit.
     if [[ "$file" == *.png ]] && [[ -n "$png_compressor" ]]; then
@@ -107,8 +127,9 @@ for file in $all_changed_files; do
     fi
 
     # If the file is a minified JS file and it isn't as small as it can be, abort the commit.
-    if [[ "$file" == *.min.js ]] && ! is_minified "$file"; then
-        error_exit "Minified JS file $file isn't as small as it can be! Did you minify it?"
+    # Error message shows which minifier is best for the file.
+    if [[ "$file" == *.min.js ]]; then
+        is_minified "$file"
     fi
 done
 
