@@ -1,18 +1,23 @@
 #!/usr/bin/env bash
 
-###################################################################################
-# This script is run by git before a commit is made.                              #
-# To use it, copy it to .git/hooks/pre-commit and make it executable.             #
-# Alternatively, run the following command from the root of the repo:             #
-# git config core.hooksPath .githooks                                             #
-#                                                                                 #
-#                                  FEATURES                                       #
-# Updates the "updated" field in the front matter of .md files.                   #
-# Compresses PNG files with either oxipng or optipng if available.                #
-# Runs subset_font if config.toml has been modified.                              #
-# Aborts the commit if a draft .md file or a file with "TODO" is being committed. #
-# Updates the README if the line numbers for the language section have changed.   #
-###################################################################################
+#################################################################################
+# This script is run by git before a commit is made.                            #
+# To use it, copy it to .git/hooks/pre-commit and make it executable.           #
+# Alternatively, run the following command from the root of the repo:           #
+# git config core.hooksPath .githooks                                           #
+#                                                                               #
+#                                  FEATURES                                     #
+# Updates the "updated" field in the front matter of .md files.                 #
+# Compresses PNG files with either oxipng or optipng if available.              #
+# Runs subset_font if config.toml has been modified.                            #
+# Updates the README if the line numbers for the language section have changed. #
+#                                                                               #
+# Stops you from commiting:                                                     #
+# - a draft .md file                                                            #
+# - a file with a "TODO"                                                        #
+# - a JS file without a minified version.                                       #
+# - a minified JS file that isn't as small as it can be.                        #
+#################################################################################
 
 # Function to exit the script with an error message.
 function error_exit() {
@@ -37,6 +42,19 @@ function is_draft() {
 function contains_todo() {
     local file="$1"
     grep -q "TODO" "$file"
+}
+
+function has_minified_version() {
+    local file="$1"
+    local extension="${file##*.}"
+    local minified_file="${file%.*}.min.$extension"
+    [ -f "$minified_file" ]
+}
+
+function is_minified() {
+    local file="$1"
+    # Check if the file is as small as it can be.
+    terser --compress --mangle -- "$file" | wc -c | grep -q "^$(wc -c < "$file")$"
 }
 
 # Check if the script is being run from the root of the repo.
@@ -81,6 +99,16 @@ for file in $all_changed_files; do
     # If the file contains "TODO", abort the commit.
     if contains_todo "$file"; then
         error_exit "File $file contains TODO! Remove or complete the TODO before committing."
+    fi
+
+    # If the file is a JS file and it doesn't have a minified version, abort the commit.
+    if [[ "$file" == *.js ]] && [[ "$file" != *.min.js ]] && ! has_minified_version "$file"; then
+        error_exit "JS file $file doesn't have a minified version!"
+    fi
+
+    # If the file is a minified JS file and it isn't as small as it can be, abort the commit.
+    if [[ "$file" == *.min.js ]] && ! is_minified "$file"; then
+        error_exit "Minified JS file $file isn't as small as it can be! Did you minify it?"
     fi
 done
 
