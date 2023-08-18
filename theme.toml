@@ -20,6 +20,9 @@ homepage = "https://osc.garden"
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
 
+# Languages for your site.
+# Each should have a translation section above.
+# e.g. [languages.ca.translations]
 language_name.ca = "Català"
 language_name.en = "English"
 language_name.es = "Español"
