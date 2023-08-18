@@ -30,7 +30,7 @@
             </p>
             <a class="readmore">
               <xsl:attribute name="href">
-                <xsl:value-of select="/atom:feed/atom:link[3]/@href"/>
+                <xsl:value-of select="/atom:feed/atom:link[2]/@href"/>
               </xsl:attribute>
             <xsl:value-of select="/atom:feed/str:translations/str:visit" /><xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:website" /><xsl:text> </xsl:text>→</a><p></p>
             </section>
