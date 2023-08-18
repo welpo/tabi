@@ -79,7 +79,7 @@
                 {# Shows link to remote repository if repository is set and `show_remote_source` is not false #}
                 {% set show_source = config.extra.show_remote_source | default(value=true) %}
                 {%- if config.extra.remote_repository_url and show_source -%}
-                &nbsp;{{ separator }}
+                {{ separator }}
                     <a href="{{ config.extra.remote_repository_url }}" target="_blank">
                         {%- if lang != config.default_language -%}
                             {{ trans(key="site_source" | safe, lang=lang) }}
