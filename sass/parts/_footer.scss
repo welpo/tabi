@@ -72,4 +72,9 @@ footer nav {
 .credits {
     font-size: 0.88rem;
     color: var(--meta-color);
+    text-align: center;
+
+    p {
+        margin: 0;
+    }
 }

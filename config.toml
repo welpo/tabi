@@ -230,6 +230,15 @@ socials = [
     { name = "spotify", url = "https://open.spotify.com/artist/5Hv2bYBhMp1lUHFri06xkE", icon = "spotify" },
 ]
 
+# Enable a copyright notice for the footer, shown between socials and the "Powered by" text.
+# You can use $CURRENT_YEAR to automatically insert the current year.
+# Markdown is supported (links, emphasis, etc).
+# copyright = "© $CURRENT_YEAR Your Name • Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
+
+# For multi-language sites, you can set a different copyright for each language.
+# If this is set to true, ensure you have a `copyright` translation for each language.
+translate_copyright = false
+
 # Custom security headers. What urls should your website be able to connect to?
 # You need to specify the CSP and the URLs associated with the directive.
 # Useful if you want to load remote content safely (embed YouTube videos, which needs frame-src, for example).
