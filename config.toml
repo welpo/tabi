@@ -208,6 +208,14 @@ menu = [
 # The RSS icon will be shown if (1) it's enabled and (2) the following variable is set to true.
 feed_icon = true
 
+# Email address for footer's social section.
+# Protect against spambots:
+# 1. Use base64 for email (convert at https://www.base64encode.org/ or `printf 'your@email.com' | base64`).
+# 2. Or, set 'encode_plaintext_email' to true for auto-encoding (only protects on site, not in public repos).
+email = "bWFpbEBleGFtcGxlLmNvbQ=="  # base64 encoded version of "mail@example.com"
+# Decoding requires ~400 bytes of JavaScript. If JS is disabled, the email won't be displayed.
+encode_plaintext_email = true  # Setting is ignored if email is already encoded.
+
 # The icons available can be found in "social_icons" in the "static" folder.
 socials = [
     { name = "github", url = "https://github.com/welpo/", icon = "github" },
