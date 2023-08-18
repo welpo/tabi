@@ -70,9 +70,9 @@ function is_minified() {
     
     # If the file isn't as small as it can be, suggest the better compressor in the error message
     if (( terser_size < uglifyjs_size )); then
-        error_exit "Minified JS file $file isn't as small as it can be with terser! Consider using terser for better compression."
+        error_exit "Minified JS file $file isn't as small as it can be! Try using terser for better compression."
     else
-        error_exit "Minified JS file $file isn't as small as it can be with uglifyjs! Consider using uglifyjs for better compression."
+        error_exit "Minified JS file $file isn't as small as it can be! Try using uglifyjs for better compression."
     fi
 }
 
