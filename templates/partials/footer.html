@@ -56,9 +56,9 @@
                     {% set current_year = now() | date(format="%Y") %}
                     {# Translate the copyright if set in the config #}
                     {%- if config.extra.translate_copyright and lang != config.default_language -%} 
-                        <p>{{ trans(key="copyright", lang=lang) | replace(from="$CURRENT_YEAR", to=current_year) | markdown | safe }}</p>
+                        <p>{{ trans(key="copyright", lang=lang) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
                     {%- else -%}
-                        <p>{{ config.extra.copyright | replace(from="$CURRENT_YEAR", to=current_year) | markdown | safe }}</p>
+                        <p>{{ config.extra.copyright | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
                     {%- endif -%}
                 {%- endif -%}
 
