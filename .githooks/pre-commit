@@ -11,6 +11,7 @@
 # Compresses PNG files with either oxipng or optipng if available.              #
 # Runs subset_font if config.toml has been modified.                            #
 # Updates the README if the line numbers for the language section have changed. #
+# Syncs the [extra] section from config.toml to theme.toml.                     #
 #                                                                               #
 # Stops you from commiting:                                                     #
 # - a draft .md file                                                            #
@@ -130,6 +131,27 @@ for file in $all_changed_files; do
     # Error message shows which minifier is best for the file.
     if [[ "$file" == *.min.js ]]; then
         is_minified "$file"
+    fi
+
+    # Sync the [extra] section from config.toml to theme.toml.
+    # Check if config.toml has been modified; use spaces to avoid matching a substring.
+    if [[ "$file" == "config.toml" ]]; then
+        # Get the line number where [extra] starts in config.toml.
+        config_extra_line=$(grep -n "^\[extra\]$" "config.toml" | cut -d: -f1)
+
+        # Extract content after [extra] from config.toml.
+        config_extra_content=$(tail -n +"$config_extra_line" "config.toml")
+
+        # Get the line number where [extra] starts in theme.toml.
+        theme_extra_line=$(grep -n "^\[extra\]$" "theme.toml" | cut -d: -f1)
+
+        # Replace content after [extra] in theme.toml with extracted content from config.toml.
+        awk -v n="$theme_extra_line" 'NR<n' theme.toml > theme.tmp
+        echo "$config_extra_content" >> theme.tmp
+        mv theme.tmp theme.toml
+
+        # Add theme.toml to the list of files to be committed.
+        git add "theme.toml"
     fi
 done
 
