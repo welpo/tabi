@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2023-08-11
+updated = 2023-08-24
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -88,7 +88,7 @@ All other image shortcodes can be made into full-width by setting the optional p
 {{/* full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Photograph of a canal in Amsterdam") */}}
 ```
 
-## Quotes
+## Text shortcodes
 
 ### Multilingual quotes
 
@@ -102,9 +102,7 @@ This shortcode allows you to display both the translated and original text for a
 {{/* multilingual_quote(original="Qué sosiego, ir por la vida en silencio, saludando sólo a los amigos.", translated="What tranquility, to go through life in silence, greeting only friends.", author="Francisco Umbral") */}}
 ```
 
-## References
-
-### Hanging indent
+### References with hanging indent
 
 This shortcode formats a reference section with a hanging indent like so:
 
@@ -132,6 +130,20 @@ Your references go here.
 Each in a new line. Markdown (links, italics…) will be rendered.
 
 {%/* end */%}
+```
+
+### Spoiler
+
+This shortcode allows you to blur text until the user clicks on it. Like this: Goldfish have a memory span of a few {{ spoiler(text="months. Yes, [really](https://en.wikipedia.org/wiki/Goldfish#Cognitive_abilities).") }}
+
+As you can see, Markdown is rendered. You can even add newlines with `<br>`.
+
+This shortcode has the optional flag `fixed_blur` to blur a fixed placeholder ("SPOILER"), instead of blurring the actual contents. Like this: it is {{ spoiler(text="not necessary", fixed_blur=true)}} to wait 24 hours before filing a missing person report.
+
+#### Usage
+
+```
+{{/* spoiler(text="text to hide", fixed_blur=false) */}}
 ```
 
 ## Containers

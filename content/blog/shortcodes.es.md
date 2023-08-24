@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2023-08-11
+updated = 2023-08-24
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -89,7 +89,7 @@ Todos los otros shortcodes de imágenes pueden usar el ancho completo asignando 
 {{/* full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Fotografía de un canal en Ámsterdam") */}}
 ```
 
-## Citas
+## Shortcodes de texto
 
 ### Citas multilenguaje
 
@@ -103,9 +103,7 @@ Este shortcode permite mostrar una cita traducida y en su lenguaje original:
 {{/* multilingual_quote(original="Ce qui est terrible, ce n’est pas de souffrir ni de mourir, mais de mourir en vain.", translated="Lo terrible no es sufrir o morir, sino morir en vano.", author="Jean-Paul Sartre") */}}
 ```
 
-## Referencias
-
-### Sangría francesa
+### Referencias con sangría francesa
 
 Este shortcode formatea una sección de referencias con sangría francesa de la siguiente manera:
 
@@ -133,6 +131,21 @@ Tus referencias van aquí.
 Cada una en una línea nueva. Se renderizará Markdown (enlaces, cursivas…).
 
 {%/* end */%}
+```
+
+### Spoilers
+
+Este shortcode permite ocultar texto que se revelará al hacer clic. Por ejemplo: las galletas de la fortuna tiene su origen en {{ spoiler(text="Japón. Sí, [en serio](https://es.wikipedia.org/wiki/Galleta_de_la_suerte#Historia_y_origen).") }}
+
+Como ves, el Markdown se renderiza.
+
+Este shortcode tiene la opción `fixed_blur` para difuminar el texto "SPOILER", en lugar de difuminar el contenido real. Por ejemplo: es {{ spoiler(text="innecesario", fixed_blur=true)}} esperar 24 horas antes de denunciar la desaparición de una persona.
+
+
+#### Uso
+
+```
+{{/* spoiler(text="texto que ocultar", fixed_blur=false) */}}
 ```
 
 ## Contenedores

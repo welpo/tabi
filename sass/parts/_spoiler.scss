@@ -1,0 +1,53 @@
+.spoiler-toggle {
+    display: none; // Hide the checkbox.
+}
+
+.spoiler-content {
+    cursor: help; // Indicate interactive element.
+    display: inline-block; // Allow content to only take up its own width.
+
+    .spoiler-hidden {
+        filter: blur(6px);
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+
+        a {
+            pointer-events: none; // Make links unclickable.
+        }
+    }
+}
+
+.spoiler-toggle:checked + .spoiler-content {
+    .spoiler-hidden {
+        filter: none;
+        user-select: auto;
+
+        a {
+            pointer-events: auto; // Enable clicking on links when revealed.
+        }
+    }
+}
+
+.spoiler-container.fixed-blur {
+    .spoiler-content:before {
+        content: 'SPOILER'; // Display the word "SPOILER".
+        filter: blur(6px);
+        display: inline-block; // Block display within the inline flow.
+    }
+
+    .spoiler-content .spoiler-hidden {
+        display: none; // Completely hide the actual content.
+    }
+
+    .spoiler-toggle:checked + .spoiler-content {
+        &:before {
+            content: none; // Hide the word "SPOILER".
+        }
+
+        .spoiler-hidden {
+            display: inline; // Reveal the actual content.
+        }
+    }
+}

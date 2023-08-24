@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2023-08-11
+updated = 2023-08-24
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -88,7 +88,7 @@ Tots els altres shortcodes d'imatges poden utilizar l'amplada completa assignant
 {{/* full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Fotografia d'un canal a Àmsterdam") */}}
 ```
 
-## Cites
+## Shortcodes de text
 
 ### Cites multillenguatge
 
@@ -102,9 +102,7 @@ Aquest shortcode permet mostrar una cita traduïda i en el llenguatge original:
 {{/* multilingual_quote(original="Die Logik ist zwar unerschütterlich, aber einem Menschen, der leben will, widersteht sie nicht.", translated="La lògica, encara que inquebrantable, no resisteix a un home que vol viure.", author="Franz Kafka") */}}
 ```
 
-## Referències
-
-### Sagnat invertit
+### Referències amb sagnat invertit
 
 Aquest shortcode formata una secció de referència amb un sagnat invertit de la següent manera:
 
@@ -134,6 +132,20 @@ Cada una en una nova línia. Es renderitzarà el Markdown (enllaços, cursiva…
 {%/* end */%}
 ```
 
+### Spoiler
+
+Aquest shortcode amaga el text fins que l'usuari fa clic per revelar-lo. Per exemple: A l'antiga Roma, el *vomitorium* era {{ spoiler(text="l'entrada a través de la qual les multituds entraven i sortien d'un estadi, no un espai especial utilitzat per a vomitar durant els àpats. Sí, [de debó](https://ca.wikipedia.org/wiki/Vomitori).") }}
+
+Com veus, el Markdown es renderitza.
+
+Aquest shortcode té l'opció `fixed_blur` per difuminar el text "SPOILER", en lloc de difuminar el contingut real. Per exemple: és {{ spoiler(text="innecessari", fixed_blur=true)}} esperar 24 hores abans de denunciar la desaparició d'una persona.
+
+#### Ús
+
+```
+{{/* spoiler(text="text a amagar", fixed_blur=false) */}}
+```
+
 ## Contenidors
 
 ### Contenidor ample
@@ -161,6 +173,3 @@ El Markdown, per suposat, serà interpretat.
 
 {%/* end */%}
 ```
-"""
-
-¡Espero que esto sea lo que buscabas!
