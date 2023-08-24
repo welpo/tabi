@@ -1,0 +1,13 @@
+{# The `random_id` ensures that each instance of the shortcode has a "unique" id #}
+{# allowing individual interactive elements (like toggles) to function correctly. #}
+{# This avoids conflicts when multiple instances of the shortcode are used. #}
+{# More context: https://github.com/welpo/tabi/issues/82 #}
+{%- set random_id = get_random(end=100000) -%}
+{%- set fixed_blur = fixed_blur | default(value=false) -%}
+
+<label class="spoiler-container{% if fixed_blur %} fixed-blur{% endif %}">
+    <input type="checkbox" id="spoiler-{{random_id}}" class="spoiler-toggle" role="button" aria-pressed="false" />
+    <span class="spoiler-content" title="reveal spoiler" tabindex="0">
+        <span class="spoiler-hidden">{{ text | markdown | trim_start_matches(pat="<p>") | trim_start_matches(pat="</p>") | safe }}</span>
+    </span>
+</label>
