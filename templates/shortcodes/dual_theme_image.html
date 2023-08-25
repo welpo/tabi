@@ -1,10 +1,12 @@
-{% set light_meta = get_image_metadata(path=light_src, allow_missing=true) %}
-{% set dark_meta = get_image_metadata(path=dark_src, allow_missing=true) %}
-{% if full_width | default(value=false) %}
+{%- set light_meta = get_image_metadata(path=light_src, allow_missing=true) -%}
+{%- set dark_meta = get_image_metadata(path=dark_src, allow_missing=true) -%}
+{%- set lazy_loading = lazy_loading | default(value=true) -%}
+
+{%- if full_width | default(value=false) -%}
     <div class="full-width">
-{% endif %}
-<img src="{{ get_url(path=light_src) }}" {% if alt %}alt="{{ alt }}" {% endif %} {% if light_meta.width %}width="{{ light_meta.width }}" {% endif %} {% if light_meta.height %}height="{{ light_meta.height }}" {% endif %} class="img-light">
-<img src="{{ get_url(path=dark_src) }}" {% if alt %}alt="{{ alt }}" {% endif %} {% if dark_meta.width %}width="{{ dark_meta.width }}" {% endif %} {% if dark_meta.height %}height="{{ dark_meta.height }}" {% endif %} class="img-dark">
+{%- endif -%}
+<img src="{{ get_url(path=light_src) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if light_meta.width %} width="{{ light_meta.width }}"{% endif %}{% if light_meta.height %} height="{{ light_meta.height }}"{% endif %} class="img-light">
+<img src="{{ get_url(path=dark_src) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if dark_meta.width %} width="{{ dark_meta.width }}"{% endif %}{% if dark_meta.height %} height="{{ dark_meta.height }}"{% endif %} class="img-dark">
 {% if full_width | default(value=false) %}
     </div>
 {% endif %}

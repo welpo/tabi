@@ -1,8 +1,10 @@
-{% set meta = get_image_metadata(path=src, allow_missing=true) %}
+{%- set meta = get_image_metadata(path=src, allow_missing=true) -%}
+{%- set lazy_loading = lazy_loading | default(value=true) -%}
+
 {% if full_width | default(value=false) %}
     <div class="full-width">
 {% endif %}
-<img class="dimmable-image" src="{{ get_url(path=src) }}" {% if alt %}alt="{{ alt }}" {% endif %} {% if meta.width %}width="{{ meta.width }}" {% endif %} {% if meta.height %}height="{{ meta.height }}" {% endif %}/>
+<img class="dimmable-image" src="{{ get_url(path=src) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if meta.width %} width="{{ meta.width }}"{% endif %}{% if meta.height %} height="{{ meta.height }}" {% endif %}/>
 {% if full_width | default(value=false) %}
     </div>
 {% endif %}
