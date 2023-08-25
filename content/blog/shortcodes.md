@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2023-08-24
+updated = 2023-08-26
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -14,6 +14,8 @@ quick_navigation_buttons = true
 +++
 
 ## Image shortcodes
+
+**Note**: all image shortcodes have two optional parameters: `full_width`, which defaults to `false` (see [below](#full-width-image)), and `lazy_loading`, which defaults to `true`.
 
 ### Dual theme images
 

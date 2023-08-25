@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2023-08-24
+updated = 2023-08-26
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -14,6 +14,8 @@ quick_navigation_buttons = true
 +++
 
 ## Shortcodes d'imatge
+
+**Nota**: tots els shortcodes d'imatge tenen dos paràmetres opcionals: `full_width`, que té com a valor predeterminat `false` (vegeu [a sota](#imatge-d-amplada-completa)), i `lazy_loading`, que té com a valor predeterminat `true`.
 
 ### Imatges per a temes duals
 
