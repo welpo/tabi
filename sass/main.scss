@@ -45,6 +45,8 @@
 }
 
 :root {
+    color-scheme: light;
+
     --max-layout-width: 1000px;
     --normal-layout-width: 600px;
     --medium-layout-width: 400px;
@@ -76,6 +78,8 @@
 }
 
 [data-theme='dark'] {
+    color-scheme: dark;
+
     --background-color: #1f1f1f;
     --bg-0: #2f2f2f;
     --bg-1: #3c3c3c;
