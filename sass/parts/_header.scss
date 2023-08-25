@@ -82,11 +82,6 @@ header {
     }
 }
 
-.card-meta {
-    color: var(--meta-color);
-    font-size: 0.92rem;
-}
-
 .language-switcher {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -108,7 +103,7 @@ header {
 .dropdown {
     display: inline-block;
     position: relative;
-    z-index: 99;
+    z-index: 1;
     font-size: 0.8rem;
 }
 
@@ -117,7 +112,7 @@ header {
     position: absolute;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    z-index: 99;
+    z-index: 1;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
