@@ -60,13 +60,6 @@ pre {
         border: 0rem;
         border-radius: 5px;
 
-        // Hide horizontal scrollbar
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        &::-webkit-scrollbar {
-            display: none;
-        }
-
         &::before {
             content: attr(data-lang);
             display: block;
