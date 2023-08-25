@@ -1,0 +1,119 @@
+#button-container {
+    display: flex;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    flex-direction: column;
+    gap: 0.6rem;
+    z-index: 2; // Above "copy-code" buttons. Important for the ToC.
+
+    #toc-button,
+    #comments-button,
+    #top-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        cursor: pointer;
+        border: none;
+        border-radius: 50%;
+        background-color: var(--bg-1);
+        padding: 0.4rem;
+        width: 1rem;
+        height: 1rem;
+        text-align: center;
+
+        &:hover {
+            background-color: var(--bg-3);
+
+            svg {
+                fill: var(--primary-color);
+            }
+
+            &::before {
+                background-color: transparent;
+            }
+        }
+
+        svg {
+            fill: var(--text-color);
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+
+    #toc-floating-container {
+
+        $padding-vertical: 0.7rem;
+        $padding-horizontal: 1rem;
+
+        #toc-button {
+            position: relative;
+            z-index: 2;
+        }
+
+        .toc-container {
+            margin: 0;
+            margin-top: $padding-vertical;
+        }
+
+        .toc-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            bottom: 100%;
+            z-index: 2;
+            margin-bottom: $padding-vertical;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            border: 1px solid var(--divider-color);
+            border-radius: 5px;
+            background-color: var(--background-color);
+            padding-right: $padding-horizontal;
+            max-height: 80vh;
+            overflow-y: auto;
+            font-size: 0.8rem;
+            text-align: left;
+            white-space: nowrap; // Prevents wrapping, allowing content to define width.
+
+            ul {
+                padding-left: $padding-horizontal;
+                list-style: none;
+            }
+        }
+
+        .toggle {
+            display: none;
+
+            &:checked {
+
+                + .overlay,
+                + .overlay + #toc-button + .toc-content {
+                    display: block;
+                }
+
+                + .overlay + #toc-button svg {
+                    fill: var(--primary-color); // Show the ToC icon as toggled.
+                }
+            }
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 40%;
+            z-index: 1; // Lower than the Table of Contents
+            background: var(--background-color);
+        }
+
+    }
+}
+
+@media (max-width: 700px) {
+    #button-container {
+        display: none !important;
+    }
+}
