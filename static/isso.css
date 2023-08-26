@@ -19,15 +19,18 @@
     font-size: 0.9em;
     font-family: var(--sans-serif-font);
 }
+
 h4.isso-thread-heading {
     padding-bottom: 0.2em;
     color: var(--text-color);
     font-size: 1.2rem;
 }
+
 .isso-feedlink {
     float: right;
     padding-left: 1em;
 }
+
 .isso-feedlink a {
     vertical-align: bottom;
     font-size: 0.8em;
@@ -41,20 +44,24 @@ h4.isso-thread-heading {
     margin: 0 auto;
     max-width: 68em;
 }
+
 .isso-preview .isso-comment {
     margin: 0;
     padding-top: 0;
 }
+
 .isso-comment:not(:first-of-type),
 .isso-follow-up .isso-comment {
     margin-bottom: 0.5em;
     border-top: 1px solid var(--divider-color);
 }
+
 .isso-avatar {
     display: block;
     float: left;
     margin: 0.95em 0.95em 0;
 }
+
 .isso-avatar svg {
     border: 1px solid var(--divider-color);
     border-radius: 3px;
@@ -63,26 +70,33 @@ h4.isso-thread-heading {
     height: 100%;
     max-height: 48px;
 }
+
 .isso-text-wrapper {
     display: block;
     padding: 0.3em;
 }
+
 .isso-follow-up {
     padding-left: calc(7% + 20px);
 }
+
 .isso-comment-footer {
     font-size: 0.95em;
 }
+
 .isso-comment-header {
     font-size: 0.85em;
 }
+
 .isso-comment-header a {
     text-decoration: none;
 }
+
 /* Only for comment header, spacer between up-/downvote should have no padding */
 .isso-comment-header .isso-spacer {
     padding: 0 6px;
 }
+
 .isso-spacer,
 .isso-permalink,
 .isso-note,
@@ -91,29 +105,34 @@ h4.isso-thread-heading {
     font-weight: normal;
     text-shadow: none;
 }
+
 .isso-permalink:hover,
 .isso-note:hover,
 .isso-parent:hover {
     color: var(--hover-color);
 }
+
 .isso-note {
     float: right;
 }
+
 .isso-author {
     color: var(--text-color);
     font-weight: 500;
 }
+
 .isso-page-author-suffix {
     color: var(--text-color-high-contrast);
     font-weight: bold;
 }
+
 /* Style author comments and replies */
-.isso-is-page-author > .isso-text-wrapper {
+.isso-is-page-author>.isso-text-wrapper {
     background-color: var(--bg-1);
 }
+
 .isso-textarea,
 .isso-preview {
-    border: none;
     background-color: var(--bg-2);
     padding: 10px;
     width: 100%;
@@ -121,12 +140,15 @@ h4.isso-thread-heading {
     font-size: 0.8em;
     font-family: var(--sans-serif-font);
 }
+
 .isso-text p {
     margin-top: -0.4em;
 }
+
 .isso-text p:last-child {
     margin-bottom: 0.2em;
 }
+
 .isso-text h1,
 .isso-text h2,
 .isso-text h3,
@@ -136,11 +158,13 @@ h4.isso-thread-heading {
     font-weight: bold;
     font-size: 130%;
 }
+
 .isso-comment-footer {
     clear: left;
     color: var(--meta-color);
     font-size: 0.80em;
 }
+
 .isso-feedlink,
 .isso-comment-footer a {
     margin: 0.4em;
@@ -148,22 +172,28 @@ h4.isso-thread-heading {
     font-weight: bold;
     text-decoration: none;
 }
+
 .isso-comment-footer .isso-votes {
     color: var(--meta-color);
 }
+
 .isso-upvote svg,
 .isso-downvote svg {
     position: relative;
     top: .2em;
 }
-.isso-upvote:hover svg, .isso-downvote:hover svg {
+
+.isso-upvote:hover svg,
+.isso-downvote:hover svg {
     fill: var(--hover-color);
 }
+
 /* Reply postbox under existing comment */
 .isso-comment .isso-postbox {
     margin-top: 0.8em;
 }
-.isso-comment.isso-no-votes > * > .isso-comment-footer .isso-votes {
+
+.isso-comment.isso-no-votes>*>.isso-comment-footer .isso-votes {
     display: none;
 }
 
@@ -174,10 +204,12 @@ h4.isso-thread-heading {
     clear: right;
     margin: 0 auto 2em;
 }
+
 .isso-form-wrapper {
     display: flex;
     flex-direction: column;
 }
+
 .isso-textarea,
 .isso-preview {
     margin-top: 0.2em;
@@ -185,59 +217,73 @@ h4.isso-thread-heading {
     border-radius: 5px;
     width: 100%;
 }
+
 .isso-textarea {
     outline: 0;
     width: 100%;
     resize: none;
 }
+
 .isso-form-wrapper input[type=checkbox] {
     position: relative;
     bottom: 1px;
     vertical-align: middle;
     margin-left: 0;
 }
+
 .isso-notification-section {
     display: none;
     padding-top: .3em;
     padding-bottom: 10px;
     font-size: 0.90em;
 }
+
 .isso-auth-section {
     display: flex;
     flex-direction: row;
 }
-.isso-input-wrapper {
-    display: inline-block;
-    position: relative;
+
+.isso-input-wrapper,
+.isso-post-action {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     margin: 0 auto;
-    max-width: 25%;
+    max-width: 35%;
     font-size: 0.8em;
     font-family: var(--sans-serif-font);
     text-align: center;
 }
+
+.isso-input-wrapper {
+    margin-right: 0.5em;
+}
+
+.isso-input-wrapper input,
+.isso-post-action input {
+    margin-top: auto;
+}
+
+.isso-input-wrapper label {
+    display: inline-block;
+    margin-top: auto;
+    height: auto;
+    line-height: 1.4em;
+}
+
 .isso-input-wrapper input {
     border: 1px solid var(--divider-color);
     border-radius: 5px;
     background-color: var(--bg-2);
     padding: 0.3em;
-    width: 90%;
+    width: 100%;
     color: var(--text-color);
     line-height: 1.2em;
     font-family: var(--sans-serif-font);
 }
-.isso-input-wrapper label {
-    display: inline-block;
-    height: 1.4em;
-    line-height: 1.4em;
-}
-.isso-post-action {
-    display: block;
-    align-self: flex-end;
-    margin: 0 auto;
-    margin-bottom: 0.3em;
-}
-.isso-post-action > input {
-    cursor: pointer;
+
+.isso-post-action input {
     cursor: pointer;
     margin: 0.1em;
     border: none;
@@ -247,7 +293,14 @@ h4.isso-thread-heading {
     color: var(--background-color);
     font-size: 0.8rem;
 }
-.isso-post-action > input:hover {
+
+.isso-post-action {
+    display: block;
+    align-self: flex-end;
+    margin: 0 auto;
+}
+
+.isso-post-action>input:hover {
     opacity: 0.8;
 }
 
@@ -256,24 +309,25 @@ h4.isso-thread-heading {
 /* ========================================================================== */
 .isso-preview,
 .isso-post-action input[name="edit"],
-.isso-postbox.isso-preview-mode > .isso-form-wrapper input[name="preview"],
-.isso-postbox.isso-preview-mode > .isso-form-wrapper .isso-textarea {
+.isso-postbox.isso-preview-mode>.isso-form-wrapper input[name="preview"],
+.isso-postbox.isso-preview-mode>.isso-form-wrapper .isso-textarea {
     display: none;
 }
-.isso-postbox.isso-preview-mode > .isso-form-wrapper .isso-preview {
+
+.isso-postbox.isso-preview-mode>.isso-form-wrapper .isso-preview {
     display: block;
 }
-.isso-postbox.isso-preview-mode > .isso-form-wrapper input[name="edit"] {
+
+.isso-postbox.isso-preview-mode>.isso-form-wrapper input[name="edit"] {
     display: inline;
 }
+
 .isso-preview {
-    background: repeating-linear-gradient(
-        -45deg,
-        var(--bg-0),
-        var(--bg-0) 10px,
-        var(--bg-2) 10px,
-        var(--bg-2) 20px
-    );
+    background: repeating-linear-gradient(-45deg,
+            var(--bg-0),
+            var(--bg-0) 10px,
+            var(--bg-2) 10px,
+            var(--bg-2) 20px);
     background-color: var(--bg-0);
 }
 
@@ -287,8 +341,11 @@ h4.isso-thread-heading {
 .isso-target {
     animation: isso-target-fade 5s ease-out;
 }
+
 @keyframes isso-target-fade {
-    0% { background-color: var(--divider-color) }
+    0% {
+        background-color: var(--divider-color)
+    }
 }
 
 /* ========================================================================== */
@@ -299,14 +356,17 @@ h4.isso-thread-heading {
         flex-direction: column;
         text-align: center;
     }
+
     .isso-input-wrapper {
         display: block;
         margin: 0 0 .4em;
         max-width: 100%;
     }
+
     .isso-input-wrapper input {
         width: 100%;
     }
+
     .isso-post-action {
         margin: 0.4em auto;
         width: 60%;
