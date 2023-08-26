@@ -28,13 +28,29 @@
         <link rel="stylesheet" href={{ get_url(path="inter_subset_es.css" ) }}>
     {% endif %}
 
-    <link rel="stylesheet" type="text/css" media="screen" href={{ get_url(path="main.css", cachebust=true ) }} />
+    {# Define array of CSS files to load. main.css is always loaded. #}
+    {%- set stylesheets = [ "main.css" ] -%}
+
+    {# Load extra CSS files from config.toml #}
+    {%- if config.extra.stylesheets -%}
+        {%- set stylesheets = stylesheets | concat(with=config.extra.stylesheets) -%}
+    {%- endif -%}
+
+    {# Load extra CSS files from page metadata #}
+    {%- if page.extra.stylesheets -%}
+        {%- set stylesheets = stylesheets | concat(with=page.extra.stylesheets) -%}
+    {%- endif -%}
 
     {# Load extra CSS for custom skin #}
     {%- if config.extra.skin and config.extra.skin != "teal" -%}
-        <link rel="stylesheet" href="{{ get_url(path='skins/' ~ config.extra.skin ~ '.css', cachebust=true) | safe }}" />
+        {%- set stylesheets = stylesheets | concat(with='skins/' ~ config.extra.skin ~ '.css') -%}
     {%- endif -%}
 
+    {# Load all stylesheets #}
+    {%- for stylesheet in stylesheets %}
+        <link rel="stylesheet" href="{{ get_url(path=stylesheet, cachebust=true) | safe }}" />
+    {%- endfor %}
+    
     <meta name="color-scheme" content="{%- if config.extra.theme_switcher -%}light dark{%- elif config.extra.default_theme -%}{{config.extra.default_theme}}{%- else -%}light{%- endif -%}">
 
     {%- if page.description %}
