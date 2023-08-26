@@ -176,6 +176,12 @@ default_theme = "light"
 # All other skins have optimal contrast.
 skin = ""
 
+# List additional stylesheets to load site-wide.
+# These stylesheets should be located in your site's `static` directory.
+# Example: stylesheets = ["extra1.css", "path/extra2.css"]
+# You can load a stylesheet for a single post by adding it to the [extra] section of the post's front matter, following this same format.
+stylesheets = []
+
 # Add a "copy" button to codeblocks (loads ~700 bytes of JavaScript).
 copy_button = true
 
