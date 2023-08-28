@@ -93,11 +93,11 @@
         {%- set hyvortalk_enabled = config.extra.hyvortalk.enabled_for_all_posts or page.extra.hyvortalk -%}
         {%- set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso -%}
 
-        {% if hyvortalk_enabled %}
+        {%- if hyvortalk_enabled -%}
             connect-src talk.hyvor.com;
-        {% elif isso_enabled %}
+        {%- elif isso_enabled -%}
             connect-src {{ config.extra.isso.endpoint_url }};
-        {% endif %}
+        {%- endif -%}
 
         {%- for domain in config.extra.allowed_domains -%}
             {{ domain.directive }} {{ domain.domains | join(sep=' ') -}}
