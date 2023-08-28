@@ -7,7 +7,9 @@
     {% set date_locale = "en_GB" %}
 {% endif %}
 
-{% if config.extra.long_date_format and not short %}
+{% if config.extra.short_date_format and short %}
+    {{ date | date(format=config.extra.short_date_format, locale=date_locale) }}
+{% elif config.extra.long_date_format and not short %}
     {{ date | date(format=config.extra.long_date_format, locale=date_locale) }}
 {% elif not config.extra.short_date_format and date_locale == "en_GB" %}
     {% set day = date | date(format='%-d') | int %}
