@@ -24,6 +24,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] [Stylized feed](https://welpo.github.io/tabi/atom.xml).
 - [X] [Projects page](https://welpo.github.io/tabi/projects/).
 - [X] [Archive page](https://welpo.github.io/tabi/archive/).
+- [x] [Table of Contents](https://welpo.github.io/tabi/blog/toc/).
 - [x] Tags.
 - [x] Social links.
 - [X] Responsive design.
