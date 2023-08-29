@@ -1,6 +1,14 @@
 {% macro content(page) %}
 
-{% set separator = config.extra.separator | default(value="•") %}
+{%- set separator = config.extra.separator | default(value="•") -%}
+
+{%- set rel_attributes = macros_rel_attributes::rel_attributes() | trim -%}
+
+{%- if config.markdown.external_links_target_blank -%}
+    {%- set blank_target = "target=_blank" -%}
+{%- else -%}
+    {%- set blank_target = "" -%}
+{%- endif -%}
 
 <main>
     <article>
@@ -35,7 +43,7 @@
                 {# Show link to remote changes if enabled #}
                 {% set show_remote_changes = config.extra.show_remote_changes | default(value=true) %}
                 {% if config.extra.remote_repository_url and show_remote_changes %}
-                    <li>&nbsp;{{ separator }}&nbsp;<a href="{{ macros_create_history_url::create_history_url(relative_path=page.relative_path) }}" target="_blank" rel="noopener noreferrer">{%- if lang != config.default_language -%}{{ trans(key="see_changes" | safe, lang=lang) }}{% else %}See changes{%- endif -%}<small> ↗</small></a></li>
+                    <li>&nbsp;{{ separator }}&nbsp;<a href="{{ macros_create_history_url::create_history_url(relative_path=page.relative_path) }}" {{ blank_target }} rel="{{ rel_attributes }}">{%- if lang != config.default_language -%}{{ trans(key="see_changes" | safe, lang=lang) }}{% else %}See changes{%- endif -%}<small> ↗</small></a></li>
                 {% endif %}
             {% endif %}
         </ul>
