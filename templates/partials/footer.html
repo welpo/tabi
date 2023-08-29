@@ -1,4 +1,13 @@
-{% set separator = config.extra.separator | default(value="•") %}
+{%- set separator = config.extra.separator | default(value="•") -%}
+
+{%- set rel_attributes = macros_rel_attributes::rel_attributes() | trim -%}
+
+{%- if config.markdown.external_links_target_blank -%}
+    {%- set blank_target = "target=_blank" -%}
+{%- else -%}
+    {%- set blank_target = "" -%}
+{%- endif -%}
+
 <footer>
     <section>
         <nav class="socials nav-navs">
@@ -6,7 +15,7 @@
                 <ul>
                     {%- if config.generate_feed and config.extra.feed_icon -%}
                     <li>
-                        <a rel="noopener noreferrer" target="_blank" class="nav-links no-hover-padding social" href={{ get_url(path=config.feed_filename, lang=lang, trailing_slash=false) | safe }}>
+                        <a class="nav-links no-hover-padding social" rel="{{ rel_attributes }}" {{ blank_target }} href={{ get_url(path=config.feed_filename, lang=lang, trailing_slash=false) | safe }}>
                         <img alt="feed" title="feed" src="{{ get_url(path='/social_icons/rss.svg') }}">
                         </a>
                     </li>
@@ -30,9 +39,9 @@
 
                         <li class="{% if email_needs_decoding %}js{% endif %}">
                             {%- if email_needs_decoding -%}
-                                <a rel="noopener noreferrer" target="_blank" class="nav-links no-hover-padding social" href="#" data-encoded-email="{{ encoded_email | safe }}">
+                                <a class="nav-links no-hover-padding social" href="#" data-encoded-email="{{ encoded_email | safe }}">
                             {%- else -%}
-                                <a rel="noopener noreferrer" target="_blank" class="nav-links no-hover-padding social" href="mailto:{{ config.extra.email | safe }}">
+                                <a class="nav-links no-hover-padding social" href="mailto:{{ config.extra.email | safe }}">
                             {%- endif -%}
                                 <img alt="email" title="email" src="{{ get_url(path='social_icons/email.svg') }}">
                             </a>
@@ -41,7 +50,7 @@
 
                     {% for social in config.extra.socials %}
                         <li>
-                            <a rel="noopener noreferrer me" target="_blank" class="nav-links no-hover-padding social" href={{ social.url | safe }}>
+                            <a class="nav-links no-hover-padding social" rel="{{ rel_attributes }} me" {{ blank_target }} href={{ social.url | safe }}>
                                 <img alt={{ social.name }} title={{ social.name }} src="{{ get_url(path='social_icons/' ~ social.icon ~ '.svg') }}">
                             </a>
                         </li>
@@ -68,19 +77,19 @@
                 {%- else -%} 
                     Powered by
                 {%- endif -%} 
-                &nbsp;<a href="https://www.getzola.org" target="_blank">Zola</a>&nbsp;
+                &nbsp;<a rel="{{ rel_attributes }}" {{ blank_target }} href="https://www.getzola.org">Zola</a>&nbsp;
                 {%- if lang != config.default_language -%}
                     {{ trans(key="and" | safe, lang=lang) }} 
                 {%- else -%} 
                     &
                 {%- endif -%} 
-                &nbsp;<a href="https://github.com/welpo/tabi" target="_blank">tabi</a>
+                &nbsp;<a rel="{{ rel_attributes }}" {{ blank_target }} href="https://github.com/welpo/tabi">tabi</a>
 
                 {# Shows link to remote repository if repository is set and `show_remote_source` is not false #}
                 {% set show_source = config.extra.show_remote_source | default(value=true) %}
                 {%- if config.extra.remote_repository_url and show_source -%}
                 {{ separator }}
-                    <a href="{{ config.extra.remote_repository_url }}" target="_blank">
+                    <a rel="{{ rel_attributes }}" {{ blank_target }} href="{{ config.extra.remote_repository_url }}">
                         {%- if lang != config.default_language -%}
                             {{ trans(key="site_source" | safe, lang=lang) }}
                         {%- else -%}

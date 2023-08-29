@@ -1,0 +1,19 @@
+{% macro rel_attributes() %}
+
+{%- set rel_attributes = [] -%}
+{%- if config.markdown.external_links_target_blank -%}
+    {%- set rel_attributes = rel_attributes | concat(with="noopener")  -%}
+{%- endif -%}
+{# https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel#nofollow #}
+{# This is ignored, as it doesn't make sense to set `nofollow` on projects or social links. #}
+{# {%- if config.markdown.external_links_no_follow -%}
+    {%- set rel_attributes = rel_attributes | concat(with="nofollow")  -%}
+{%- endif -%} #}
+{%- if config.markdown.external_links_no_referrer -%}
+    {%- set rel_attributes = rel_attributes | concat(with="noreferrer")  -%}
+{%- endif -%}
+
+{# Return the array of rel attributes joined by a space #}
+{{- rel_attributes | join(sep=" ") -}}
+
+{% endmacro external_links %}
