@@ -11,13 +11,13 @@
 # Compresses PNG files with either oxipng or optipng if available.              #
 # Runs subset_font if config.toml has been modified.                            #
 # Updates the README if the line numbers for the language section have changed. #
-# Syncs the [extra] section from config.toml to theme.toml.                     #
 #                                                                               #
 # Stops you from commiting:                                                     #
 # - a draft .md file                                                            #
 # - a file with a "TODO"                                                        #
 # - a JS file without a minified version                                        #
 # - a minified JS file that isn't as small as it can be                         #
+# - a config.toml and theme.toml with different amounts of lines in [extra]     #
 #################################################################################
 
 # Function to exit the script with an error message.
@@ -77,7 +77,6 @@ function is_minified() {
     fi
 }
 
-
 # Check if the script is being run from the root of the repo.
 if [[ ! $(git rev-parse --show-toplevel) == $(pwd) ]]; then
     error_exit "This script must be run from the root of the repo."
@@ -103,6 +102,11 @@ all_changed_files=$(git diff --cached --name-only --diff-filter=AM)
 
 # Loop through all newly added or modified files.
 for file in $all_changed_files; do
+    # Ignore this script.
+    if [[ "$file" == "$0" ]]; then
+        continue
+    fi
+
     # If the file is a PNG and png_compressor is set, compress it and add it to the commit.
     if [[ "$file" == *.png ]] && [[ -n "$png_compressor" ]]; then
         $png_compressor "$file" || error_exit "Failed to compress PNG file $file"
@@ -133,25 +137,24 @@ for file in $all_changed_files; do
         is_minified "$file"
     fi
 
-    # Sync the [extra] section from config.toml to theme.toml.
-    # Check if config.toml has been modified; use spaces to avoid matching a substring.
-    if [[ "$file" == "config.toml" ]]; then
+    # Ensure the [extra] section from config.toml and theme.toml have the same amount of lines.
+    if [[ "$file" == "config.toml" ]] || [[ "$file" == "theme.toml" ]]; then
         # Get the line number where [extra] starts in config.toml.
-        config_extra_line=$(grep -n "^\[extra\]$" "config.toml" | cut -d: -f1)
-
-        # Extract content after [extra] from config.toml.
-        config_extra_content=$(tail -n +"$config_extra_line" "config.toml")
+        extra_line_config=$(grep -n "^\[extra\]$" "config.toml" | cut -d: -f1)
 
         # Get the line number where [extra] starts in theme.toml.
-        theme_extra_line=$(grep -n "^\[extra\]$" "theme.toml" | cut -d: -f1)
+        extra_line_theme=$(grep -n "^\[extra\]$" "theme.toml" | cut -d: -f1)
 
-        # Replace content after [extra] in theme.toml with extracted content from config.toml.
-        awk -v n="$theme_extra_line" 'NR<n' theme.toml > theme.tmp
-        echo "$config_extra_content" >> theme.tmp
-        mv theme.tmp theme.toml
+        # Get the number of lines in the [extra] section in config.toml.
+        extra_lines_config=$(tail -n +"$extra_line_config" "config.toml" | wc -l)
 
-        # Add theme.toml to the list of files to be committed.
-        git add "theme.toml"
+        # Get the number of lines in the [extra] section in theme.toml.
+        extra_lines_theme=$(tail -n +"$extra_line_theme" "theme.toml" | wc -l)
+
+        # Abort the commit if the number of lines in the [extra] section don't match.
+        if [[ "$extra_lines_config" -ne "$extra_lines_theme" ]]; then
+            error_exit "The [extra] section in config.toml and theme.toml don't have the same amount of lines!"
+        fi
     fi
 done
 
