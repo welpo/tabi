@@ -1,79 +1,75 @@
 #banner-container-home {
     display: flex;
-    width: 100%;
-    margin: 0.2rem auto;
-    align-items: center;
     justify-content: center;
-}
-
-.image-container-home {
-    position: relative;
-    width: 22%;
-    overflow: hidden;
-    text-align: center;
-}
-
-#home-banner-text {
-    width: 78%;
-    margin-bottom: 30px;
-    font-size: 1.875rem;
-    line-height: 3rem;
-    color: var(--primary-color);
-}
-
-.home-banner-header {
-    margin-bottom: 1rem;
-    font-size: 2.8rem;
-    font-weight: 550;
-}
-
-#banner-home-subtitle {
-    width: 95%;
-    padding-right: 5%;
-    font-weight: 250;
-    line-height: 1.75rem;
-    color: var(--text-color);
-}
-
-#banner-home-subtitle p {
-    font-size: 1rem;
-}
-
-#banner-home-subtitle a {
-    font-weight: 400;
-}
-
-.banner-home-img {
-    aspect-ratio: 1 / 1;
-    max-width: 15rem;
-    max-height: 15rem;
+    align-items: center;
+    margin: 0.2rem auto;
     width: 100%;
-    height: auto;
-    border: none;
-}
 
-@media only screen and (max-width: 600px) {
-    #banner-container-home {
+    @media only screen and (max-width: 600px) {
         display: block;
-        margin: 0em auto;
         margin-bottom: 2rem;
     }
 
-    .home-banner-header {
-        font-size: 2.2rem;
-        margin-bottom: 0;
-    }
-
-    .banner-home-img {
-        max-width: 12rem;
-        max-height: 12rem;
-    }
-
-    .image-container-home {
-        width: 95%;
-    }
-
     #home-banner-text {
-        width: 95%;
+        margin-bottom: 1.5rem;
+        color: var(--primary-color);
+        font-size: 1.875rem;
+        line-height: 3rem;
+
+        #home-banner-header {
+            margin-bottom: 1rem;
+            font-weight: 550;
+            font-size: 2.8rem;
+
+            @media only screen and (max-width: 600px) {
+                margin-bottom: 0;
+                font-size: 2.2rem;
+            }
+        }
+
+        #banner-home-subtitle {
+            color: var(--text-color);
+            font-weight: 250;
+            line-height: 1.75rem;
+
+            p {
+                font-size: 1rem;
+            }
+
+            a {
+                font-weight: 400;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+        }
+    }
+
+    #image-container-home {
+        position: relative;
+        padding-left: 2rem;
+        min-width: 11rem;
+        min-height: 11rem;
+        overflow: hidden;
+        text-align: center;
+
+        #banner-home-img {
+            border: none;
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            max-width: 15rem;
+            height: auto;
+            max-height: 15rem;
+
+            @media only screen and (max-width: 600px) {
+                max-width: 12rem;
+                max-height: 12rem;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            padding-left: 0;
+        }
     }
 }
