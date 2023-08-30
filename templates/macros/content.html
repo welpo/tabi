@@ -17,7 +17,7 @@
                 <li>{{ macros_format_date::format_date(date=page.date, short=true) }} {{ separator }}</li>
             {% endif %}
 
-            {% if !page.extra.skip_readtime %}
+            {% if page.extra.show_reading_time %}
                 <li title="{{ page.word_count }} {%- if lang != config.default_language %} {{ trans(key="words" | safe, lang=lang) }} {% else %} words {% endif %}">&nbsp;{{ page.reading_time }}{%- if lang != config.default_language %} {{ trans(key="min_read" | safe, lang=lang) }} {% else %} min read {% endif %}</li>
             {% endif %}
 
