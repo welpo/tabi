@@ -22,10 +22,13 @@
             {% endif %}
 
             {% if page.date %}
-                <li>{{ macros_format_date::format_date(date=page.date, short=true) }} {{ separator }}</li>
+                <li>{{ macros_format_date::format_date(date=page.date, short=true) }}</li>
             {% endif %}
 
-            <li title="{{ page.word_count }} {%- if lang != config.default_language %} {{ trans(key="words" | safe, lang=lang) }} {% else %} words {% endif %}">&nbsp;{{ page.reading_time }}{%- if lang != config.default_language %} {{ trans(key="min_read" | safe, lang=lang) }} {% else %} min read {% endif %}</li>
+            {# page settings override config settings #}
+            {% if page.extra.show_reading_time | default(value="") == true or page.extra.show_reading_time | default(value="") != false and config.extra.show_reading_time | default(value=true) %}
+                {{ separator }} <li title="{{ page.word_count }} {%- if lang != config.default_language %} {{ trans(key="words" | safe, lang=lang) }} {% else %} words {% endif %}">{{ page.reading_time }}{%- if lang != config.default_language %} {{ trans(key="min_read" | safe, lang=lang) }} {% else %} min read {% endif %}</li>
+            {% endif %}
 
             {% if page.taxonomies and page.taxonomies.tags %}
                 <li>&nbsp;{{ separator }}&nbsp;{%- if lang != config.default_language -%}{{ trans(key="tags" | safe, lang=lang) | capitalize }}{% else %}Tags{%- endif -%}:&nbsp;</li>
