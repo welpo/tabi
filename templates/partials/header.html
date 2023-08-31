@@ -57,8 +57,8 @@
         <meta name="description" content="{{ page.description | striptags | safe }}" />
         <meta property="og:description" content="{{ page.description | striptags | safe }}">
     {%- elif page.summary %}
-        <meta name="description" content="{{ page.summary | striptags | safe }}" />
-        <meta property="og:description" content="{{ page.summary | striptags | safe }}">
+        <meta name="description" content="{{ page.summary | striptags | safe | trim_end_matches(pat=".") }}…" />
+        <meta property="og:description" content="{{ page.summary | striptags | safe | trim_end_matches(pat=".") }}…">
     {%- else %}
         <meta name="description" content="{{ config.description }}" />
         <meta property="og:description" content="{{ config.description }}">
