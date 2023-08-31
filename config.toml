@@ -186,6 +186,7 @@ stylesheets = []
 copy_button = true
 
 # Show the reading time of a page.
+# Can also be enabled or disabled on individual pages in the front matter's [extra].
 show_reading_time = true
 
 # Adds backlinks to footnotes (loads ~500 bytes of JavaScripts).
