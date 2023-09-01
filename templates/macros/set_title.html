@@ -26,11 +26,7 @@
     {%- set suffix = term.name -%}
 {% elif taxonomy.name %}
     {# List of tags. #}
-    {%- if lang != config.default_language -%}
-        {%- set suffix = trans(key=taxonomy.name | safe, lang=lang) | capitalize -%}
-    {% else %}
-        {%- set suffix = taxonomy.name | capitalize -%}
-    {% endif %}
+    {%- set suffix = macros_translate::translate(key=taxonomy.name) | capitalize -%}
 {% else %}
     {%- set suffix = "404" %}
 {%- endif -%}

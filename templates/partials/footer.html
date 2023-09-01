@@ -64,36 +64,24 @@
                 {%- if config.extra.copyright -%}
                     {% set current_year = now() | date(format="%Y") %}
                     {# Translate the copyright if set in the config #}
-                    {%- if config.extra.translate_copyright and lang != config.default_language -%} 
-                        <p>{{ trans(key="copyright", lang=lang) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
+                    {%- if config.extra.translate_copyright -%}
+                        <p>{{ macros_translate::translate(key="copyright", default=config.extra.copyright) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
                     {%- else -%}
                         <p>{{ config.extra.copyright | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
                     {%- endif -%}
                 {%- endif -%}
 
                 {# Shows "Powered by Zola & tabi" notice #}
-                {%- if lang != config.default_language -%} 
-                    {{ trans(key="powered_by" | safe, lang=lang) }} 
-                {%- else -%} 
-                    Powered by
-                {%- endif -%} 
-                &nbsp;<a rel="{{ rel_attributes }}" {{ blank_target }} href="https://www.getzola.org">Zola</a>&nbsp;
-                {%- if lang != config.default_language -%}
-                    {{ trans(key="and" | safe, lang=lang) }} 
-                {%- else -%} 
-                    &
-                {%- endif -%} 
-                &nbsp;<a rel="{{ rel_attributes }}" {{ blank_target }} href="https://github.com/welpo/tabi">tabi</a>
+                {{ macros_translate::translate(key="powered_by", default="Powered by") }}
+                <a rel="{{ rel_attributes }}" {{ blank_target }} href="https://www.getzola.org">Zola</a>
+                {{ macros_translate::translate(key="and", default="&") }}
+                <a rel="{{ rel_attributes }}" {{ blank_target }} href="https://github.com/welpo/tabi">tabi</a>
 
                 {# Shows link to remote repository #}
                 {%- if config.extra.remote_repository_url and config.extra.show_remote_source | default(value=true) -%}
                 {{ separator }}
                     <a rel="{{ rel_attributes }}" {{ blank_target }} href="{{ config.extra.remote_repository_url }}">
-                        {%- if lang != config.default_language -%}
-                            {{ trans(key="site_source" | safe, lang=lang) }}
-                        {%- else -%}
-                            Site source
-                        {%- endif -%}
+                        {{ macros_translate::translate(key="site_source", default="Site source") }}
                     </a>
                 {%- endif -%}
             </small>

@@ -19,7 +19,7 @@
         <div class="content">
           <main>
             <div class="info-box">
-              <strong><xsl:value-of select="/atom:feed/str:translations/str:this_is_a_web_feed" /></strong>, <xsl:value-of select="/atom:feed/str:translations/str:also_known_as_an_Atom_feed" />. <strong><xsl:value-of select="/atom:feed/str:translations/str:subscribe" /></strong> <xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:by_copying_the_URL_from_the_address_bar_into_your_newsreader" />.<xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:visit" /><xsl:text> </xsl:text><a href="https://aboutfeeds.com">About Feeds</a><xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:to_learn_more_and_get_started" />.<xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:it_s_free" />.
+              <strong><xsl:value-of select="/atom:feed/str:translations/str:this_is_a_web_feed"/></strong>, <xsl:value-of select="/atom:feed/str:translations/str:also_known_as_an_Atom_feed" />. <strong><xsl:value-of select="/atom:feed/str:translations/str:subscribe" /></strong> <xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:by_copying_the_URL_from_the_address_bar_into_your_newsreader" />.<xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:visit" /><xsl:text> </xsl:text><a href="https://aboutfeeds.com">About Feeds</a><xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:to_learn_more_and_get_started" />.<xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:it_s_free" />.
             </div>
             <section id="banner-home-subtitle">
             <div class="padding-top home-title">

@@ -11,7 +11,7 @@
         {# Iterate through each language and display the localised 404 message along with a "Go Home" link #}
         {%- for language_name, language in config.languages -%}
             {%- if language_name != config.default_language -%}
-                <p>{{ trans(key="404_error", lang=language_name) }} <a href="{{ config.base_url }}/{{ language_name }}/">{{ trans(key="go_home", lang=language_name) }}</a>.</p>
+                <p>{{ macros_translate::translate(key="404_error", force_lang=language_name) }} <a href="{{ config.base_url }}/{{ language_name }}/">{{ macros_translate::translate(key="go_home", force_lang=language_name) }}</a>.</p>
             {%- endif -%}
         {%- endfor -%}
     </main>

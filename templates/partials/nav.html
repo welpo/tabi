@@ -12,11 +12,7 @@
                             <li>
                                 {% set trailing_slash = menu.trailing_slash | default(value=true) %}
                                 <a class="nav-links no-hover-padding" href="{{ get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) }}"/>
-                                {%- if lang != config.default_language -%}
-                                    {{ trans(key=menu.name | safe, lang=lang) }}
-                                {%- else -%}
-                                    {{ menu.name | safe }}
-                                {%- endif -%}
+                                {{ macros_translate::translate(key=menu.name, default=menu.name) }}
                                 </a>
                             </li>
                         {% endfor %}
@@ -31,11 +27,7 @@
 
                                 {# Display the current language first in the dropdown #}
                                 <div class="dropdown-content">
-                                    {%- if lang != config.default_language %}
-                                        {{ trans(key="language_name" | safe, lang=lang) }}
-                                    {% else %}
-                                        {{ config.extra.language_name.en }}
-                                    {%- endif %}
+                                    {{ macros_translate::translate(key="language_name", default=config.extra.language_name.en) }}
 
                                     {# Loop through all the available languages in the config #}
                                     {%- for lcode, language_name in config.extra.language_name -%}
