@@ -215,8 +215,8 @@ short_date_format = ""
 # Custom separator used in title tag and posts metadata (between date, time to read, and tags).
 separator = "•"
 
-# Full path after the base URL required. So if you were to place it in "static" it would be "/favicon.ico"
-favicon = ""
+# Full path after the base URL required. So if you were to place it in "static" it would be "/favicon.png"
+favicon = "img/seedling.png"
 
 # Add an emoji here to use it as favicon.
 # Compatibility: https://caniuse.com/link-icon-svg
