@@ -27,20 +27,6 @@ homepage = "https://osc.garden"
 # language_name.en = "English"
 # language_name.es = "Español"
 
-# Remote repository for your Zola site.
-# Used for `show_remote_changes` and `show_remote_source` (see below).
-# Supports GitHub, GitLab, Gitea, and Codeberg.
-# remote_repository_url = "https://github.com/welpo/tabi"
-# Set this to "auto" to try and auto-detect the platform based on the repository URL.
-# Accepted values are "github", "gitlab", "gitea", and "codeberg".
-remote_repository_git_platform = "auto"  # Defaults to "auto".
-# Branch in the repo hosting the Zola site.
-remote_repository_branch = "main"  # Defaults to "main".
-# Show a link to the commit history of updated posts, right next to the last updated date.
-show_remote_changes = true  # Defaults to true.
-# Show a link to the repository of the site, right next to the "Powered by Zola & tabi" text.
-show_remote_source = true  # Defaults to true.
-
 # Enable JavaScript theme toggler to allow users to switch between dark/light mode.
 # Also enables automatic switching based on user's OS-level theme settings.
 # If disabled, your site will only use the theme specified in the `default_theme` variable.
@@ -67,18 +53,41 @@ skin = ""
 # You can load a stylesheet for a single post by adding it to the [extra] section of the post's front matter, following this same format.
 stylesheets = []
 
+# Remote repository for your Zola site.
+# Used for `show_remote_changes` and `show_remote_source` (see below).
+# Supports GitHub, GitLab, Gitea, and Codeberg.
+# remote_repository_url = "https://github.com/welpo/tabi"
+# Set this to "auto" to try and auto-detect the platform based on the repository URL.
+# Accepted values are "github", "gitlab", "gitea", and "codeberg".
+remote_repository_git_platform = "auto"  # Defaults to "auto".
+# Branch in the repo hosting the Zola site.
+remote_repository_branch = "main"  # Defaults to "main".
+# Show a link to the commit history of updated posts, right next to the last updated date.
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+show_remote_changes = true  # Defaults to true.
+# Show a link to the repository of the site, right next to the "Powered by Zola & tabi" text.
+show_remote_source = true  # Defaults to true.
+
 # Add a "copy" button to codeblocks (loads ~700 bytes of JavaScript).
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
 copy_button = true
 
 # Show the reading time of a page.
-# Can also be enabled or disabled on individual pages in the front matter's [extra].
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
 show_reading_time = true
 
 # Adds backlinks to footnotes (loads ~500 bytes of JavaScripts).
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
 footnote_backlinks = false
 
 # Enable KaTeX for all posts.
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
 katex = false
+
+# Quick navigation buttons.
+# Adds "go up" and "go to comments" buttons on the bottom right (hidden for mobile).
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+quick_navigation_buttons = false
 
 # Date format used when listing posts (main page, /blog section, tag posts list…)
 # Default is "6th July 2049" in English and "%d %B %Y" in other languages.
@@ -157,11 +166,6 @@ allowed_domains = [
 # This avoids a flashing text issue in Firefox.
 # Please see https://welpo.github.io/tabi/blog/custom-font-subset/ to learn how to create this file.
 # custom_subset = true
-
-# Quick navigation buttons.
-# Adds "go up" and "go to comments" buttons on the bottom right (hidden for mobile).
-# Can also be enabled on individual posts in the front matter's [extra].
-# quick_navigation_buttons = true
 
 # giscus support for comments. https://giscus.app
 # Setup instructions: https://welpo.github.io/tabi/blog/comments/#setup

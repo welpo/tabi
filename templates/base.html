@@ -9,6 +9,7 @@
 {% import "macros/paginate.html" as macros_paginate %}
 {% import "macros/rel_attributes.html" as macros_rel_attributes %}
 {% import "macros/set_title.html" as macros_set_title %}
+{% import "macros/settings.html" as macros_settings %}
 {% import "macros/table_of_contents.html" as macros_toc %}
 
 <!DOCTYPE html>
@@ -27,23 +28,6 @@
             Nothing here?!
         {% endblock main_content %}
     </div>
-    {% include "partials/footer.html" %}
-
-    {# Add KaTeX functionality (loads CSS and JS) #}
-    {%- if config.extra.katex and config.extra.katex == true or page.extra.katex and page.extra.katex == true -%}
-        <link rel="stylesheet" href="{{ get_url(path='katex.min.css', trailing_slash=false) | safe }}">
-        <script defer src="{{ get_url(path='js/katex.min.js', trailing_slash=false) | safe }}"></script>
-    {%- endif -%}
-
-    {# Add copy button to codeblocks #}
-    {%- if config.extra.copy_button and config.extra.copy_button == true or page.extra.copy_button and page.extra.copy_button == true -%}
-        <script defer src="{{ get_url(path='js/copyCodeToClipboard.min.js', trailing_slash=false) | safe }}"/></script>
-    {%- endif -%}
-
-    {# Add backlinks to footnotes #}
-    {%- if config.extra.footnote_backlinks and config.extra.footnote_backlinks == true or page.extra.footnote_backlinks and page.extra.footnote_backlinks == true -%}
-        <script defer src="{{ get_url(path='js/footnoteBacklinks.min.js', trailing_slash=false | safe )}}"/></script>
-    {%- endif -%}
 </body>
 
 </html>
