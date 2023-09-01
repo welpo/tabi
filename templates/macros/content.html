@@ -10,6 +10,42 @@
     {%- set blank_target = "" -%}
 {%- endif -%}
 
+{# Debugging #}
+{# {% set last_ancestor = page.ancestors | slice(start=-1) %}
+{% set current_section = get_section(path=last_ancestor.0) %}
+
+{% set settings_to_test = [
+    "footnote_backlinks",
+    "katex",
+    "quick_navigation_buttons",
+    "show_reading_time",
+    "show_remote_changes"
+] %}
+
+<table>
+    <thead>
+        <tr>
+            <th>setting</th>
+            <th>page</th>
+            <th>section</th>
+            <th>config</th>
+            <th>macro output</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for setting in settings_to_test %}
+            <tr>
+                <td><code>{{ setting }}</code></td>
+                <td>{{ page.extra[setting] | default(value="⬛") }}</td>
+                <td>{{ current_section.extra[setting] | default(value="⬛") }}</td>
+                <td>{{ config.extra[setting] | default(value="⬛") }}</td>
+                <td>{{ macros_settings::evaluate_setting_priority(setting=setting, page=page) }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table> #}
+{# End debugging #}
+
 <main>
     <article>
         <div class="article-title">
@@ -26,7 +62,7 @@
             {% endif %}
 
             {# page settings override config settings #}
-            {% if page.extra.show_reading_time | default(value="") == true or page.extra.show_reading_time | default(value="") != false and config.extra.show_reading_time | default(value=true) %}
+            {% if macros_settings::evaluate_setting_priority(setting="show_reading_time", page=page, default_global_value=true) == "true" %}
                 {{ separator }} <li title="{{ page.word_count }} {%- if lang != config.default_language %} {{ trans(key="words" | safe, lang=lang) }} {% else %} words {% endif %}">{{ page.reading_time }}{%- if lang != config.default_language %} {{ trans(key="min_read" | safe, lang=lang) }} {% else %} min read {% endif %}</li>
             {% endif %}
 
@@ -44,8 +80,7 @@
             {% if page.updated %}
                 </ul><ul class="meta last-updated"><li>{%- if lang != config.default_language %} {{ trans(key="last_updated_on" | safe, lang=lang) }} {% else %} Last updated on {% endif %} {{ macros_format_date::format_date(date=page.updated, short=true) }}</li>
                 {# Show link to remote changes if enabled #}
-                {% set show_remote_changes = config.extra.show_remote_changes | default(value=true) %}
-                {% if config.extra.remote_repository_url and show_remote_changes %}
+                {% if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" %}
                     <li>&nbsp;{{ separator }}&nbsp;<a href="{{ macros_create_history_url::create_history_url(relative_path=page.relative_path) }}" {{ blank_target }} rel="{{ rel_attributes }}">{%- if lang != config.default_language -%}{{ trans(key="see_changes" | safe, lang=lang) }}{% else %}See changes{%- endif -%}<small> ↗</small></a></li>
                 {% endif %}
             {% endif %}
@@ -110,7 +145,8 @@
     </article>
 </main>
 
-{% if config.extra.quick_navigation_buttons or page.extra.quick_navigation_buttons %}
+{# Quick navigation buttons #}
+{% if macros_settings::evaluate_setting_priority(setting="quick_navigation_buttons", page=page, default_global_value=false) == "true" %}
     <div id="button-container">
         {# Button to go show a floating Table of Contents #}
         {% if page.toc %}
@@ -139,5 +175,21 @@
         </a>
     </div>
 {% endif %}
+
+{# Add KaTeX functionality #}
+{%- if macros_settings::evaluate_setting_priority(setting="katex", page=page, default_global_value=false) == "true" -%}
+    <link rel="stylesheet" href="{{ get_url(path='katex.min.css', trailing_slash=false) | safe }}">
+    <script defer src="{{ get_url(path='js/katex.min.js', trailing_slash=false) | safe }}"></script>
+{%- endif -%}
+
+{# Add copy button to code blocks #}
+{%- if macros_settings::evaluate_setting_priority(setting="copy_button", page=page, default_global_value=true) == "true" -%}
+    <script defer src="{{ get_url(path='js/copyCodeToClipboard.min.js', trailing_slash=false) | safe }}"/></script>
+{%- endif -%}
+
+{# Add backlinks to footnotes #}
+{%- if macros_settings::evaluate_setting_priority(setting="footnote_backlinks", page=page, default_global_value=false) == "true" -%}
+    <script defer src="{{ get_url(path='js/footnoteBacklinks.min.js', trailing_slash=false | safe )}}"/></script>
+{%- endif -%}
 
 {% endmacro content %}

@@ -85,9 +85,8 @@
                 {%- endif -%} 
                 &nbsp;<a rel="{{ rel_attributes }}" {{ blank_target }} href="https://github.com/welpo/tabi">tabi</a>
 
-                {# Shows link to remote repository if repository is set and `show_remote_source` is not false #}
-                {% set show_source = config.extra.show_remote_source | default(value=true) %}
-                {%- if config.extra.remote_repository_url and show_source -%}
+                {# Shows link to remote repository #}
+                {%- if config.extra.remote_repository_url and config.extra.show_remote_source | default(value=true) -%}
                 {{ separator }}
                     <a rel="{{ rel_attributes }}" {{ blank_target }} href="{{ config.extra.remote_repository_url }}">
                         {%- if lang != config.default_language -%}
