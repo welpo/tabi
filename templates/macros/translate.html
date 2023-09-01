@@ -1,0 +1,14 @@
+{% macro translate(key, default="", force_lang="") %}
+
+{%- if config.default_language != "en" -%}
+    {#- The entire site should be translated -#}
+    {{- trans(key=key | safe, lang=lang) -}}
+{%- elif lang != config.default_language -%} 
+    {{- trans(key=key | safe, lang=lang) -}}
+{%- elif force_lang -%}
+    {{- trans(key=key | safe, lang=force_lang) -}}
+{%- else -%} 
+    {{- default -}}
+{%- endif -%} 
+
+{% endmacro %}

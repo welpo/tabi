@@ -1,15 +1,12 @@
-{%- if lang != config.default_language -%}
-    {%- set open_quote = trans(key="open_quotation_mark" | safe, lang=lang) -%}
-    {%- set close_quote = trans(key="close_quotation_mark" | safe, lang=lang) -%}
-{%- else -%}
-    {%- set open_quote = "“" -%}
-    {%- set close_quote = "”" -%}
-{%- endif -%}
+{%- import "macros/translate.html" as macros_translate -%}
 
-{# The `random_id` ensures that each instance of the shortcode has a "unique" id #}
-{# allowing individual interactive elements (like toggles) to function correctly. #}
-{# This avoids conflicts when multiple instances of the shortcode are used. #}
-{# More context: https://github.com/welpo/tabi/issues/82 #}
+{%- set open_quote = macros_translate::translate(key="open_quotation_mark", default="“") -%}
+{%- set close_quote = macros_translate::translate(key="close_quotation_mark", default="”") -%}
+
+{#- The `random_id` ensures that each instance of the shortcode has a "unique" id -#}
+{#- allowing individual interactive elements (like toggles) to function correctly. -#}
+{#- This avoids conflicts when multiple instances of the shortcode are used. -#}
+{#- More context: https://github.com/welpo/tabi/issues/82 -#}
 {%- set random_id = get_random(end=100000) -%}
 
 <div class="quote-container">
@@ -19,22 +16,15 @@
             <blockquote>
                 <p>{{ open_quote ~ translated ~ close_quote }}</p>
                 <p> — {{ author }} <label for="toggle-{{ random_id }}" class="quote-label quote-label-original">
-                    ({%- if lang != config.default_language -%}
-                        {{ trans(key="show_original_quote" | safe, lang=lang) }}
-                    {%- else -%}
-                        Show original quote
-                    {%- endif -%})</label></p>
+                    ({{- macros_translate::translate(key="show_original_quote", default="Show original quote") -}})
+                    </label></p>
             </blockquote>
         </div>
         <div class="original">
             <blockquote>
                 <p>{{ open_quote ~ original ~ close_quote }}</p>
                 <p> — {{ author }} <label for="toggle-{{ random_id }}" class="quote-label quote-label-translate">
-                    ({%- if lang != config.default_language -%}
-                        {{ trans(key="show_translation" | safe, lang=lang) }}
-                    {%- else -%}
-                        Show translation
-                    {%- endif -%})
+                    ({{- macros_translate::translate(key="show_translation", default="Show translation") -}})
                 </label></p>            
             </blockquote>
         </div>

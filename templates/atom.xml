@@ -1,34 +1,36 @@
+{% import "macros/translate.html" as macros_translate %}
+
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="{{ get_url(path='/feed_style.xsl', trailing_slash=false) | safe }}" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="{{ lang }}" xml:base="{{ config.base_url }}">
     {# This section stores the strings/translations for the stylised feed. If the translation is not found, the default English text will be used. #}
     <str:translations xmlns:str="https://github.com/welpo/tabi">
         <str:this_is_a_web_feed>
-            {%- if lang != config.default_language -%} {{ trans(key="this_is_a_web_feed" | safe, lang=lang) }} {%- else -%} This is a web feed {%- endif -%}
+            {{- macros_translate::translate(key="this_is_a_web_feed", default="This is a web feed") -}}
         </str:this_is_a_web_feed>
         <str:also_known_as_an_Atom_feed>
-            {%- if lang != config.default_language -%} {{ trans(key="also_known_as_an_Atom_feed" | safe, lang=lang) }} {%- else -%} also known as an Atom feed {%- endif -%}
+            {{- macros_translate::translate(key="also_known_as_an_Atom_feed", default="also known as an Atom feed") -}}
         </str:also_known_as_an_Atom_feed>
         <str:subscribe>
-            {%- if lang != config.default_language -%} {{ trans(key="subscribe" | safe, lang=lang) }} {%- else -%} Subscribe {%- endif -%}
+            {{- macros_translate::translate(key="subscribe", default="Subscribe") -}}
         </str:subscribe>
         <str:by_copying_the_URL_from_the_address_bar_into_your_newsreader>
-            {%- if lang != config.default_language -%} {{ trans(key="by_copying_the_URL_from_the_address_bar_into_your_newsreader" | safe, lang=lang) }} {%- else -%} by copying the URL from the address bar into your newsreader {%- endif -%}
+            {{- macros_translate::translate(key="by_copying_the_URL_from_the_address_bar_into_your_newsreader", default="by copying the URL from the address bar into your newsreader") -}}
         </str:by_copying_the_URL_from_the_address_bar_into_your_newsreader>
         <str:visit>
-            {%- if lang != config.default_language -%} {{ trans(key="visit" | safe, lang=lang) }} {%- else -%} Visit {%- endif -%}
+            {{- macros_translate::translate(key="visit", default="Visit") -}}
         </str:visit>
         <str:to_learn_more_and_get_started>
-            {%- if lang != config.default_language -%} {{ trans(key="to_learn_more_and_get_started" | safe, lang=lang) }} {%- else -%} to learn more and get started {%- endif -%}
+            {{- macros_translate::translate(key="to_learn_more_and_get_started", default="to learn more and get started") -}}
         </str:to_learn_more_and_get_started>
         <str:it_s_free>
-            {%- if lang != config.default_language -%} {{ trans(key="it_s_free" | safe, lang=lang) }} {%- else -%} It's free {%- endif -%}
+            {{- macros_translate::translate(key="it_s_free", default="It's free") -}}
         </str:it_s_free>
         <str:website>
-            {%- if lang != config.default_language -%} {{ trans(key="website" | safe, lang=lang) }} {%- else -%} website {%- endif -%}
+            {{- macros_translate::translate(key="website", default="website") -}}
         </str:website>
         <str:recent_posts>
-            {%- if lang != config.default_language -%} {{ trans(key="recent_posts" | safe, lang=lang) }} {%- else -%} Recent posts {%- endif -%}
+            {{- macros_translate::translate(key="recent_posts", default="Recent posts") -}}
         </str:recent_posts>
     </str:translations>
 

@@ -2,11 +2,7 @@
 
 {% block main_content %}
 
-{%- if lang != config.default_language %}
-    {% set title = trans(key="tags_title" | safe, lang=lang) %}
-{% else %}
-    {% set title = "All tags" %}
-{% endif %}
+{%- set title = macros_translate::translate(key="tags_title", default="All tags") -%}
 
 {{ macros_page_header::page_header(title=title)}}
 
@@ -17,10 +13,10 @@
                 {{ term.name }}</a>
                 – {{ term.pages | length }}{%- if term.pages | length == 1 %}
                 {# Only one post. Singular. #}
-                    {%- if lang != config.default_language %} {{ trans(key="post" | safe, lang=lang) }}{% else %} post {%- endif -%}
+                    {{- macros_translate::translate(key="post", default="post") -}}
                 {% elif term.pages | length > 1 %}
                 {# More than one post per tag. Plural. #}
-                    {%- if lang != config.default_language %} {{ trans(key="posts" | safe, lang=lang) }}{% else %} posts {%- endif -%}
+                    {{- macros_translate::translate(key="posts", default="posts") -}}
                 {%- endif -%}
             </li>
         {%- endfor -%}

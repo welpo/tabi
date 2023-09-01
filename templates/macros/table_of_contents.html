@@ -8,7 +8,7 @@
 
 <div class="toc-container">
     {% if header %}
-        <h3>{%- if lang != config.default_language %} {{ trans(key="table_of_contents" | safe, lang=lang) }} {% else %} Table of Contents {% endif %}</h3>
+        <h3>{{ macros_translate::translate(key="table_of_contents", default="Table of Contents") }}</h3>
     {% endif %}
 
     <ul>

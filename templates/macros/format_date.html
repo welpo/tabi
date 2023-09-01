@@ -1,11 +1,7 @@
 {% macro format_date(date, short) %}
 
 {# Set locale #}
-{%- if lang != config.default_language %}
-    {% set date_locale = trans(key="date_locale" | safe, lang=lang) %}
-{% else %}
-    {% set date_locale = "en_GB" %}
-{% endif %}
+{% set date_locale = macros_translate::translate(key="date_locale", default="en_GB") %}
 
 {% if config.extra.short_date_format and short %}
     {{ date | date(format=config.extra.short_date_format, locale=date_locale) }}
