@@ -1,7 +1,7 @@
 +++
 title = "Exemples de Markdown"
 date = 2023-01-31
-updated = 2023-08-06
+updated = 2023-09-01
 description = "Aquesta publicació mostra alguns exemples de format en Markdown, incloent-hi una taula, blocs de codi i etiquetes, citacions, taules i notes a peu de pàgina."
 
 [taxonomies]
@@ -24,7 +24,7 @@ Per mostrar l'expressió **en una línia pròpia i centrada**, embolcalla-la amb
 
 Per exemple, `\\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}} \\]` es renderitzarà com: \\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}} \\]
 
-Per activar $\KaTeX$ en una publicació, inclou `katex = true` dins de la secció `[extra]` dels metadades de la publicació. Per exemple:
+Per activar $\KaTeX$ en una publicació o secció sencera, inclou `katex = true` dins de la secció `[extra]` de les metadades. Per exemple:
 
 ```toml,hl_lines=5-6
 +++
