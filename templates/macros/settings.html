@@ -1,4 +1,4 @@
-{# 
+{#
 Evaluates the priority of a particular setting across different scopes.
 
 The priority is as follows: page > section > config.
@@ -9,7 +9,7 @@ Parameters:
     - default_global_value: The setting's default value.
 #}
 
-{% macro evaluate_setting_priority(setting, page) %}
+{% macro evaluate_setting_priority(setting, page, default_global_value="") %}
 
 {#- Retrieve last ancestor to determine current section, if applicable -#}
 {%- if page -%}
@@ -18,19 +18,16 @@ Parameters:
 {%- endif -%}
 
 {%- set priority_order = [
-    page.extra[setting] | default(value=""),
-    current_section.extra[setting] | default(value=""),
+    page.extra[setting] | default(value=default_global_value),
+    current_section.extra[setting] | default(value=default_global_value),
     config.extra[setting] | default(value=default_global_value)
 ] -%}
 
-{%- set output = "false" -%}
+{%- set output = default_global_value -%}
 
 {%- for value in priority_order -%}
-    {%- if value == true -%}
-        {%- set_global output = "true" -%}
-        {%- break -%}
-    {%- elif value == false -%}
-        {%- set_global output = "false" -%}
+    {%- if value != default_global_value -%}
+        {%- set_global output = value -%}
         {%- break -%}
     {%- endif -%}
 {%- endfor -%}
