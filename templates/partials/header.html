@@ -73,9 +73,11 @@
     <meta property="og:title" content="{{ config.title }}">
     <meta property="og:type" content="article" />
 
-    {% if config.extra.headerImage %}
-        <meta property="og:image" content="{{ config.extra.headerImage }}">
-        <meta name="twitter:card" content="{{ config.extra.headerImage }}">
+    {# Image for social media sharing #}
+    {%- set social_media_card = macros_settings::evaluate_setting_priority(setting="social_media_card", page=page | default(value=""), default_global_value="") -%}
+    {% if social_media_card %}
+        <meta property="og:image" content="{{ get_url(path=social_media_card) }}">
+        <meta name="twitter:card" content="{{ get_url(path=social_media_card) }}">
     {% endif %}
 
     {% set current_url = current_url | default(value="/") %}
