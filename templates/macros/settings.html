@@ -9,10 +9,12 @@ Parameters:
     - default_global_value: The setting's default value.
 #}
 
-{% macro evaluate_setting_priority(setting, page, default_global_value="") %}
+{% macro evaluate_setting_priority(setting, page, section="", default_global_value="") %}
 
-{#- Retrieve last ancestor to determine current section, if applicable -#}
-{%- if page -%}
+{%- if section -%}
+    {%- set current_section = section -%}
+{%- elif page -%}
+    {#- Retrieve last ancestor to determine current section, if applicable -#}
     {%- set last_ancestor = page.ancestors | slice(start=-1) %}
     {%- set current_section = get_section(path=last_ancestor.0) %}
 {%- endif -%}
