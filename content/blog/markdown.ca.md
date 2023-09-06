@@ -28,13 +28,11 @@ Per exemple, `\\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{
 Per activar $\KaTeX$ en una publicació o secció sencera, inclou `katex = true` dins de la secció `[extra]` de les metadades. Per exemple:
 
 ```toml,hl_lines=5-6
-+++
 title = "Provant KaTeX"
 date = 2002-11-30
 
 [extra]
 katex = true
-+++
 ```
 
 Per activar-lo globalment, afeigeix `katex = true` a la secció `[extra]` del teu `config.toml`.

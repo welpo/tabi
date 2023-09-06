@@ -116,7 +116,6 @@ La opció `enabled_for_all_posts = true` habilita globalment el sistema de comen
 Alternativament, pots habilitar els comentaris a publicacions concretes afegint el nom del sistema (`utterances`, `giscus`, `hyvortalk` o `isso`) ` = true`. Per exemple, així és com habilitaries giscus:
 
 ```toml,hl_lines=09-10
-+++
 title = "L'art de l'entremaliadura segons Shin-Chan
 date = 1990-02-14
 description = "Descobreix com les travessures poden canviar la teva perspectiva de vida."
@@ -126,7 +125,6 @@ tags = ["personal", "travessures"]
 
 [extra]
 giscus = true
-+++
 ```
 
 Si accidentalment habilites més d'un sistema, Zola mostrarà un error.

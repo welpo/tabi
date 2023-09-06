@@ -117,7 +117,6 @@ La opción `enabled_for_all_posts = true` habilitará globalmente el sistema de 
 Alternativamente, puedes habilitar los comentarios en publicaciones concretas añadiendo el nombre del sistema (`utterances`, `giscus`, `hyvortalk` o `isso`) `= true`. Por ejemplo, así habilitarías giscus:
 
 ```toml,hl_lines=09-10
-+++
 title = "Los molinos de viento de mi vida: reflexiones de un escudero"
 date = 1605-01-16
 description = "Mi viaje junto a Don Quijote, enfrentándome a gigantes imaginarios y descubriendo las verdaderas batallas de la vida."
@@ -127,7 +126,6 @@ tags = ["personal", "reflexiones"]
 
 [extra]
 giscus = true
-+++
 ```
 
 Si accidentalmente habilitas más de un sistema, Zola mostrará un error.

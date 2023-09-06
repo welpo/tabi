@@ -28,13 +28,11 @@ Por ejemplo, `\\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{
 Para activar $\KaTeX$ en una publicación o sección entera, incluye `katex = true` dentro de la sección `[extra]` del encabezado. Por ejemplo:
 
 ```toml,hl_lines=5-6
-+++
 title = "Probando KaTeX"
 date = 2002-11-30
 
 [extra]
 katex = true
-+++
 ```
 
 Para activarlo globalmente, añade `katex = true` en la sección `[extra]` de tu `config.toml`.
