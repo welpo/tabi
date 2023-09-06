@@ -20,15 +20,15 @@ Parameters:
 {%- endif -%}
 
 {%- set priority_order = [
-    page.extra[setting] | default(value=default_global_value),
-    current_section.extra[setting] | default(value=default_global_value),
-    config.extra[setting] | default(value=default_global_value)
+    page.extra[setting] | default(value=""),
+    current_section.extra[setting] | default(value=""),
+    config.extra[setting] | default(value="")
 ] -%}
 
 {%- set output = default_global_value -%}
 
 {%- for value in priority_order -%}
-    {%- if value != default_global_value -%}
+    {%- if value != "" -%}
         {%- set_global output = value -%}
         {%- break -%}
     {%- endif -%}
