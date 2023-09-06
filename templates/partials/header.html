@@ -51,31 +51,33 @@
         <link rel="stylesheet" href="{{ get_url(path=stylesheet, cachebust=true) | safe }}" />
     {%- endfor %}
     
-    <meta name="color-scheme" content="{%- if config.extra.theme_switcher -%}light dark{%- elif config.extra.default_theme -%}{{config.extra.default_theme}}{%- else -%}light{%- endif -%}">
+    <meta name="color-scheme" content="{%- if config.extra.theme_switcher -%}light dark{%- elif config.extra.default_theme -%}{{config.extra.default_theme}}{%- else -%}light{%- endif -%}" />
 
     {%- if page.description %}
         <meta name="description" content="{{ page.description | striptags | safe }}" />
-        <meta property="og:description" content="{{ page.description | striptags | safe }}">
+        <meta property="og:description" content="{{ page.description | striptags | safe }}" />
     {%- elif page.summary %}
         <meta name="description" content="{{ page.summary | striptags | safe | trim_end_matches(pat=".") }}…" />
-        <meta property="og:description" content="{{ page.summary | striptags | safe | trim_end_matches(pat=".") }}…">
+        <meta property="og:description" content="{{ page.summary | striptags | safe | trim_end_matches(pat=".") }}…" />
     {%- else %}
         <meta name="description" content="{{ config.description }}" />
-        <meta property="og:description" content="{{ config.description }}">
+        <meta property="og:description" content="{{ config.description }}" />
     {%- endif %}
 
     {% if is_404 %}
-        <meta name="robots" content="noindex, follow">
+        <meta name="robots" content="noindex, follow" />
     {% else %}
-        <meta name="robots" content="index, nofollow">
+        <meta name="robots" content="index, nofollow" />
     {% endif %}
 
-    <meta property="og:title" content="{{ config.title }}">
+    <meta property="og:title" content="{{ config.title }}" />
     <meta property="og:type" content="article" />
 
-    {% if config.extra.headerImage %}
-        <meta property="og:image" content="{{ config.extra.headerImage }}">
-        <meta name="twitter:card" content="{{ config.extra.headerImage }}">
+    {# Image for social media sharing #}
+    {%- set social_media_card = macros_settings::evaluate_setting_priority(setting="social_media_card", page=page | default(value=""), section=section | default(value=""), default_global_value="") -%}
+    {% if social_media_card %}
+        <meta property="og:image" content="{{ get_url(path=social_media_card, cachebust=true) }}" />
+        <meta name="twitter:card" content="summary_large_image" />
     {% endif %}
 
     {% set current_url = current_url | default(value="/") %}

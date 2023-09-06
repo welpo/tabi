@@ -6,6 +6,9 @@ description = "tabi tiene una Política de Seguridad de Contenido (CSP) fácilme
 
 [taxonomies]
 tags = ["seguridad", "funcionalidad"]
+
+[extra]
+social_media_card = "img/social_cards/es_blog_security.jpg"
 +++
 
 La configuración predeterminada del tema obtiene una calificación de A+ en [Mozilla Observatory](https://observatory.mozilla.org).[^1]

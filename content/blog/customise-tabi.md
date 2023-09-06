@@ -10,6 +10,7 @@ tags = ["showcase", "tutorial"]
 [extra]
 toc = true
 quick_navigation_buttons = true
+social_media_card = "img/social_cards/blog_customise_tabi.jpg"
 +++
 
 tabi can be customised in two ways: by setting the default theme (dark or light) and by choosing the main colour for the theme (skins).

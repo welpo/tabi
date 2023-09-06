@@ -6,6 +6,9 @@ description = "Aprende cómo crear un subconjunto personalizado que solo incluya
 
 [taxonomies]
 tags = ["funcionalidad", "tutorial"]
+
+[extra]
+social_media_card = "img/social_cards/es_blog_custom_font_subset.jpg"
 +++
 
 ## El problema

@@ -222,8 +222,11 @@ favicon = "img/seedling.png"
 # Compatibility: https://caniuse.com/link-icon-svg
 favicon_emoji = "🌱"
 
-# This header image is used for SEO. For example if you were to share an image via Messenger/Instagram/Twitter a preview picture is also presented
-headerImage = ""
+# Path to the fallback image for social media cards (the preview image shown when sharing a link on WhatsApp, LinkedIn…).
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+# Learn how to create these images in batch and automatically:
+# https://osc.garden/blog/automating-social-media-cards-zola/
+social_media_card = "img/social_cards/index.jpg"
 
 menu = [
     { name = "blog", url = "blog", trailing_slash = true },

@@ -11,6 +11,7 @@ tags = ["showcase", "tutorial"]
 giscus = true
 quick_navigation_buttons = true
 toc = true
+social_media_card = "img/social_cards/blog_comments.jpg"
 +++
 
 tabi currently supports four comment systems: [giscus](https://giscus.app/), [utterances](https://utteranc.es/), [Hyvor Talk](https://talk.hyvor.com/), and [Isso](https://isso-comments.de/).

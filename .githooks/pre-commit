@@ -45,6 +45,48 @@ function contains_todo() {
     grep -q "TODO" "$file"
 }
 
+# Check for changes outside of the front matter.
+function has_body_changes() {
+    local file="$1"
+    local in_front_matter=1
+    local triple_plus_count=0
+
+    diff_output=$(git diff --unified=999 --cached --output-indicator-new='%' --output-indicator-old='&' "$file")
+
+    while read -r line; do
+        if [[ "$line" =~ ^\+\+\+$ ]]; then
+            triple_plus_count=$((triple_plus_count + 1))
+            if [[ $triple_plus_count -eq 2 ]]; then
+                in_front_matter=0
+            fi
+        elif [[ $in_front_matter -eq 0 ]]; then
+            if [[ "$line" =~ ^[\%\&] ]]; then
+                return 0
+            fi
+        fi
+    done <<< "$diff_output"
+    return 1
+}
+
+# Function to update the social media card for a post or section.
+function generate_and_commit_card {
+    local file=$1
+    social_media_card=$(social-cards-zola -o static/img/social_cards -b http://127.0.0.1:1025 -u -p -i "$file") || {
+        echo "Failed to update social media card for $file"
+        exit 1
+    }
+    
+    git add "$social_media_card" || {
+        echo "Failed to add social media card $social_media_card"
+        exit 1
+    }
+    
+    git add "$file" || {
+        echo "Failed to add $file"
+        exit 1
+    }
+}
+
 function has_minified_version() {
     local file="$1"
     local extension="${file##*.}"
@@ -94,7 +136,9 @@ fi
 # Compress PNG files with either oxipng or optipng if available. #
 # Update the "updated" field in the front matter of .md files.   #
 #          https://osc.garden/blog/zola-date-git-hook/           #
-# Interrupt the commit if a draft .md file is being committed.   #
+# Ensure the [extra] section from config.toml and theme.toml     #
+# have the same amount of lines.                                 #
+# Ensure JavaScript files are minified.                          #
 ##################################################################
 
 # Get the newly added and modified files.
@@ -112,13 +156,6 @@ for file in $all_changed_files; do
         $png_compressor "$file" || error_exit "Failed to compress PNG file $file"
         git add --force "$file" || error_exit "Failed to add compressed PNG file $file"
         continue
-    fi
-
-    # If the file is an .md file and it's a draft, abort the commit.
-    if [[ "$file" == *.md ]]; then
-        if is_draft "$file"; then
-            error_exit "Draft file $file is being committed!"
-        fi
     fi
 
     # If the file contains "TODO", abort the commit.
@@ -159,10 +196,21 @@ for file in $all_changed_files; do
 done
 
 # Get the modified .md to update the "updated" field in the front matter.
-modified_files=$(git diff --cached --name-only --diff-filter=M | grep -E '\.md$' | grep -v '_index.md$')
+modified_md_files=$(git diff --cached --name-only --diff-filter=M | grep -E '\.md$' | grep -v '_index.md$')
 
 # Loop through each modified .md file.
-for file in $modified_files; do
+for file in $modified_md_files; do
+    # If the file is an .md file and it's a draft, abort the commit.
+    if is_draft "$file"; then
+        error_exit "Draft file $file is being committed!"
+    fi
+
+    # If changes are only in the front matter, skip the file.
+    if ! has_body_changes "$file"; then
+        continue
+    fi
+
+    # Modify the "updated" date, if necessary.
     # Get the last modified date from the filesystem.
     last_modified_date=$(date -r "$file" +'%Y-%m-%d')
 
@@ -193,7 +241,13 @@ for file in $modified_files; do
 
     # Stage the changes.
     git add "$file"
+
 done
+
+# Use `social-cards-zola` to create/update the social media card for Markdown files.
+# See https://osc.garden/blog/automating-social-media-cards-zola/ for context.
+# Use parallel to create the social media cards in parallel and commit them.
+echo "$modified_md_files" | parallel -j 8 generate_and_commit_card
 
 #########################################################
 # Run subset_font if config.toml has been modified.     #

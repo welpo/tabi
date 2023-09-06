@@ -6,6 +6,9 @@ description = "tabi té una Política de Seguretat de Contingut (CSP) fàcilment
 
 [taxonomies]
 tags = ["seguretat", "funcionalitat"]
+
+[extra]
+social_media_card = "img/social_cards/ca_blog_security.jpg"
 +++
 
 La configuració per defecte del tema obté una puntuació A+ a l'[Observatori de Mozilla](https://observatory.mozilla.org).[^1]

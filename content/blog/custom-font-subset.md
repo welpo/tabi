@@ -6,6 +6,9 @@ description = "Learn how to create a custom subset that only includes the necess
 
 [taxonomies]
 tags = ["showcase", "tutorial"]
+
+[extra]
+social_media_card = "img/social_cards/blog_custom_font_subset.jpg"
 +++
 
 ## The problem

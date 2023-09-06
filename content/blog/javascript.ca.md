@@ -9,6 +9,7 @@ tags = ["funcionalitat", "tutorial"]
 
 [extra]
 footnote_backlinks = true
+social_media_card = "img/social_cards/ca_blog_javascript.jpg"
 +++
 
 Aquest tema no requereix JavaScript obligatori. Opcionalment, pot carregar una quantitat mínima per afegir algunes característiques que són impossibles d'aconseguir amb HTML i CSS.
