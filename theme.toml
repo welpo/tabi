@@ -89,6 +89,10 @@ katex = false
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
 quick_navigation_buttons = false
 
+# Add a Table of Contents to all posts, right below the title and metadata.
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+# toc = false
+
 # Date format used when listing posts (main page, /blog section, tag posts list…)
 # Default is "6th July 2049" in English and "%d %B %Y" in other languages.
 # long_date_format = "%d %B %Y"

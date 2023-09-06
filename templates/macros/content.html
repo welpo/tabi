@@ -19,7 +19,8 @@
     "katex",
     "quick_navigation_buttons",
     "show_reading_time",
-    "show_remote_changes"
+    "show_remote_changes",
+    "toc",
 ] %}
 
 <table>
@@ -95,7 +96,7 @@
         {% endif %}
 
         {# Optional table of contents below the header #}
-        {% if page.extra.toc | default(value=false) and page.toc %}
+        {% if page.toc and macros_settings::evaluate_setting_priority(setting="toc", page=page, default_global_value=false) == "true" %}
             {{ macros_toc::toc(page=page, header=true) }} 
         {% endif %}
 
