@@ -10,6 +10,7 @@ tags = ["funcionalitat", "tutorial"]
 [extra]
 toc = true
 quick_navigation_buttons = true
+social_media_card = "img/social_cards/ca_blog_customise_tabi.jpg"
 +++
 
 tabi pot ser personalitzat de dues maneres: establint el tema per defecte (fosc o clar) i triant el color principal per al tema ("skin").

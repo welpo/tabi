@@ -6,6 +6,9 @@ description = "tabi has an easily customizable Content Security Policy (CSP) wit
 
 [taxonomies]
 tags = ["security", "showcase"]
+
+[extra]
+social_media_card = "img/social_cards/blog_security.jpg"
 +++
 
 The default configuration of the theme gets an A+ score on [Mozilla Observatory](https://observatory.mozilla.org).[^1]

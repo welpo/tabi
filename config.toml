@@ -222,11 +222,11 @@ favicon = "img/seedling.png"
 # Compatibility: https://caniuse.com/link-icon-svg
 favicon_emoji = "🌱"
 
-# Path to the fallback image for social media cards (the image shown when sharing a link on WhatsApp, LinkedIn…).
-# Read more: https://nikitahl.com/html-meta-tags-for-social-media
-# Using an image representative of each post is recommended. You can do so by setting this variable in the [extra] section of a post's front matter.
-# If a post doesn't have a social media card, the site's default, below, will be used.
-social_media_card_path = ""
+# Path to the fallback image for social media cards (the preview image shown when sharing a link on WhatsApp, LinkedIn…).
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+# Learn how to create these images in batch and automatically:
+# https://osc.garden/blog/automating-social-media-cards-zola/
+social_media_card = "img/social_cards/index.jpg"
 
 menu = [
     { name = "blog", url = "blog", trailing_slash = true },

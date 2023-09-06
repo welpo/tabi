@@ -10,6 +10,7 @@ tags = ["markdown", "funcionalitat"]
 [extra]
 katex = true
 footnote_backlinks = true
+social_media_card = "img/social_cards/ca_blog_markdown.jpg"
 +++
 
 ## $\KaTeX$

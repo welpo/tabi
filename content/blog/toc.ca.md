@@ -10,6 +10,7 @@ tags = ["funcionalitat", "markdown", "tutorial"]
 [extra]
 toc = true
 quick_navigation_buttons = true
+social_media_card = "img/social_cards/ca_blog_toc.jpg"
 +++
 
 ## Documentació

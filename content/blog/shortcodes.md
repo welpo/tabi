@@ -11,6 +11,7 @@ tags = ["showcase", "shortcodes"]
 toc = true
 toc_levels = 2
 quick_navigation_buttons = true
+social_media_card = "img/social_cards/blog_shortcodes.jpg"
 +++
 
 ## Image shortcodes

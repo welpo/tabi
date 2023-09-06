@@ -10,6 +10,7 @@ tags = ["showcase", "markdown", "tutorial"]
 [extra]
 toc = true
 quick_navigation_buttons = true
+social_media_card = "img/social_cards/blog_toc.jpg"
 +++
 
 ## Documentation

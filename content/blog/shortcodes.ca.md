@@ -11,6 +11,7 @@ tags = ["funcionalitat", "shortcodes"]
 toc = true
 toc_levels = 2
 quick_navigation_buttons = true
+social_media_card = "img/social_cards/ca_blog_shortcodes.jpg"
 +++
 
 ## Shortcodes d'imatge

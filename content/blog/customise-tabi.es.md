@@ -10,6 +10,7 @@ tags = ["funcionalidad", "tutorial"]
 [extra]
 toc = true
 quick_navigation_buttons = true
+social_media_card = "img/social_cards/es_blog_customise_tabi.jpg"
 +++
 
 tabi puede ser personalizado de dos maneras: estableciendo el tema predeterminado (oscuro o claro) y eligiendo el color principal para el tema ("skin").

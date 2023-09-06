@@ -9,6 +9,7 @@ tags = ["showcase", "tutorial"]
 
 [extra]
 footnote_backlinks = true
+social_media_card = "img/social_cards/blog_javascript.jpg"
 +++
 
 This theme has no mandatory JavaScript. Optionally, it can load a minimal amount to add some features that are impossible to achieve with HTML and CSS.

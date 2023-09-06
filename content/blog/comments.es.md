@@ -11,6 +11,7 @@ tags = ["funcionalidad", "tutorial"]
 giscus = true
 quick_navigation_buttons = true
 toc = true
+social_media_card = "img/social_cards/es_blog_comments.jpg"
 +++
 
 tabi actualmente soporta cuatro sistemas de comentarios: [giscus](https://giscus.app/es) y [utterances](https://utteranc.es/), [Hyvor Talk](https://talk.hyvor.com/) e [Isso](https://isso-comments.de/).
