@@ -47,13 +47,14 @@ pre {
     display: block;
     line-height: 1.4;
     overflow-x: auto;
-    padding: 2rem 1rem 1rem;
+    padding: 2.4rem 1rem 1rem;
     border-radius: 5px;
 
     code {
         display: block;
         overflow-x: auto;
         white-space: pre;
+        font-size: 0.8rem;  // Fits ~77 characters.
         background-color: transparent;
         color: inherit;
         padding: 0rem;
