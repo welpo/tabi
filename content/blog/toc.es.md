@@ -52,13 +52,11 @@ El código para lograr esto:
 Si colocas la TdC en algún lugar distinto al predeterminado y le añades un encabezado, seguramente quieras ocultar dicho encabezado de la TdC (consulta la [sección para ocultar encabezados](#ocultando-encabezados-de-la-tdc)). Puedes lograrlo así:
 
 ```markdown,hl_lines=06 11-13
-+++
 title = "El título de tu post"
 date = 2034-01-11
 
 [extra]
 toc_ignore_pattern = "^(Tabla de contenido)"
-+++
 
 Aquí va algún texto introductorio.
 

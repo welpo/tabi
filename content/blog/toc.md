@@ -51,13 +51,11 @@ The code to achieve this:
 If you set a custom position and a custom header for the ToC, you'll probably want to hide it (see the [section below](#hiding-headers-from-the-toc)) like this:
 
 ```markdown,hl_lines=06 11-13
-+++
 title = "Your Post's Title"
 date = 2034-01-11
 
 [extra]
 toc_ignore_pattern = "^(Table of Contents)"
-+++
 
 Here goes some introductory text.
 

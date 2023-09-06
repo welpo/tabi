@@ -1,0 +1,342 @@
+/*
+ * based on "Catppuccin Frappe" https://github.com/catppuccin/catppuccin
+ */
+
+:root {
+  --rosewater: #f2d5cf;
+  --flamingo: #eebebe;
+  --pink: #f4b8e4;
+  --mauve: #ca9ee6;
+  --red: #e78284;
+  --maroon: #ea999c;
+  --peach: #ef9f76;
+  --yellow: #e5c890;
+  --green: #a6d189;
+  --teal: #81c8be;
+  --sky: #99d1db;
+  --blue: #8caaee;
+  --lavender: #b4befe;
+  --text: #cdd6f4;
+  --overlay0: #737994;
+}
+
+.z-code {
+  color: var(--text);
+  background-color: var(--codeblock-bg);
+}
+
+.z-comment {
+  color: var(--overlay0);
+  font-style: italic;
+}
+
+.z-string {
+  color: var(--green);
+
+  &.z-regexp {
+    color: var(--sky);
+  }
+}
+
+.z-constant.z-numeric,
+.z-string.z-regexp {
+  color: var(--sky);
+}
+
+.z-constant {
+  &.z-character.z-escape {
+    color: var(--sky);
+  }
+
+  &.z-language {
+    color: var(--lavender);
+  }
+}
+
+.z-support.z-function.z-builtin.z-variable.z-other.z-constant {
+  color: var(--sky);
+}
+
+.z-keyword {
+  color: var(--red);
+
+  &.z-control {
+
+    &.z-loop,
+    &.z-conditional,
+    &.z-c + + {
+      color: var(--mauve);
+    }
+
+    &.z-return,
+    &.z-flow.z-return {
+      color: var(--pink);
+    }
+  }
+}
+
+.z-support.z-type.z-exception {
+  color: var(--sky);
+}
+
+.z-keyword.z-operator {
+  color: var(--teal);
+}
+
+.z-punctuation {
+  &.z-accessor {
+    color: var(--teal);
+  }
+
+  &.z-section {
+    color: var(--text);
+  }
+}
+
+.z-keyword.z-control.z-import.z-include {
+  color: var(--peach);
+}
+
+.z-storage {
+  color: var(--red);
+
+  &.z-type {
+    color: var(--yellow);
+  }
+
+  &.z-modifier {
+    color: var(--red);
+  }
+}
+
+.z-entity.z-name.z-namespace,
+.z-meta.z-path,
+.z-storage.z-type.z-class {
+  color: var(--rosewater);
+}
+
+.z-entity.z-name.z-label {
+  color: var(--blue);
+}
+
+.z-keyword.z-declaration.z-class {
+  color: var(--red);
+}
+
+.z-entity.z-name.z-class,
+.z-meta.z-toc-list.z-full-identifier {
+  color: var(--teal);
+}
+
+.z-entity {
+  &.z-other.z-inherited-class {
+    color: var(--teal);
+  }
+
+  &.z-name.z-function {
+    color: var(--blue);
+    font-style: italic;
+  }
+}
+
+.z-variable.z-function {
+  color: var(--blue);
+  font-style: italic;
+}
+
+.z-entity.z-name.z-function.z-preprocessor,
+.z-keyword.z-control.z-import {
+  color: var(--red);
+}
+
+.z-entity.z-name.z-function {
+
+  &.z-constructor,
+  &.z-destructor {
+    color: var(--lavender);
+  }
+}
+
+.z-variable.z-parameter.z-function {
+  color: var(--rosewater);
+}
+
+.z-keyword.z-declaration.z-function {
+  color: var(--maroon);
+}
+
+.z-support {
+  &.z-function {
+    color: var(--teal);
+  }
+
+  &.z-constant {
+    color: var(--blue);
+  }
+
+  &.z-type,
+  &.z-class {
+    color: var(--blue);
+    font-style: italic;
+  }
+}
+
+.z-variable {
+  &.z-function {
+    color: var(--blue);
+  }
+
+  &.z-parameter {
+    color: var(--rosewater);
+  }
+
+  &.z-other {
+    color: var(--text);
+
+    &.z-member {
+      color: var(--rosewater);
+    }
+  }
+
+  &.z-language {
+    color: var(--peach);
+  }
+}
+
+.z-entity {
+  &.z-name.z-tag {
+    color: var(--sky);
+  }
+
+  &.z-other.z-attribute-name {
+    color: var(--mauve);
+    font-style: italic;
+  }
+}
+
+.z-punctuation.z-definition.z-tag {
+  color: var(--maroon);
+}
+
+.z-markup.z-underline.z-link.z-markdown {
+  color: var(--rosewater);
+  font-style: underline;
+  font-style: italic;
+}
+
+.z-comment.z-block.z-markdown,
+.z-meta.z-code-fence {
+  color: var(--peach);
+  font-style: italic;
+}
+
+.z-markup.z-raw {
+
+  &.z-code-fence,
+  &.z-inline {
+    color: var(--peach);
+    font-style: italic;
+  }
+}
+
+.z-punctuation.z-definition.z-heading,
+.z-entity.z-name.z-section {
+  color: var(--blue);
+}
+
+.z-markup {
+  &.z-italic {
+    color: var(--maroon);
+    font-style: italic;
+  }
+
+  &.z-bold {
+    color: var(--maroon);
+    font-weight: bold;
+  }
+}
+
+.z-constant.z-character.z-escape,
+.z-source.z-shell.z-bash .z-meta.z-function.z-shell .z-meta.z-compound.z-shell .z-meta.z-function-call.z-identifier.z-shell {
+  color: var(--pink);
+}
+
+.z-variable.z-language.z-shell {
+  color: var(--red);
+}
+
+.z-source.z-lua .z-meta.z-function.z-lua .z-meta.z-block.z-lua .z-meta.z-mapping {
+  &.z-value.z-lua .z-meta.z-mapping.z-key.z-lua .z-string.z-unquoted.z-key.z-lua {
+    color: var(--lavender);
+  }
+
+  &.z-key.z-lua .z-string.z-unquoted.z-key.z-lua {
+    color: var(--flamingo);
+  }
+}
+
+.z-entity.z-name.z-constant.z-java {
+  color: var(--peach);
+}
+
+.z-support {
+  &.z-type.z-property-name.z-css {
+    color: var(--flamingo);
+  }
+
+  &.z-constant.z-property-value.z-css {
+    color: var(--text);
+  }
+}
+
+.z-constant.z-numeric.z-suffix.z-css,
+.z-keyword.z-other.z-unit.z-css,
+.z-variable.z-other.z-custom-property.z-name.z-css,
+.z-support.z-type.z-custom-property.z-name.z-css,
+.z-punctuation.z-definition.z-custom-property.z-css {
+  color: var(--peach);
+}
+
+.z-entity.z-name.z-tag.z-css {
+  color: var(--lavender);
+}
+
+.z-variable.z-other.z-sass {
+  color: var(--peach);
+}
+
+.z-invalid {
+  color: var(--text);
+  background-color: var(--red);
+
+  &.z-deprecated {
+    color: var(--text);
+    background-color: var(--mauve);
+  }
+}
+
+.z-meta.z-diff {
+  color: --OVERLAY0;
+
+  &.z-header {
+    color: --OVERLAY0;
+  }
+}
+
+.z-markup {
+  &.z-deleted {
+    color: var(--red);
+  }
+
+  &.z-inserted {
+    color: var(--green);
+  }
+
+  &.z-changed {
+    color: var(--yellow);
+  }
+}
+
+.z-message.z-error {
+  color: var(--red);
+}

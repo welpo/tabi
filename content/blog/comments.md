@@ -117,7 +117,6 @@ Setting `enabled_for_all_posts = true` for a comment system will enable it globa
 Alternatively, enable comments on an individual post's front matter by adding the name of the system (`utterances`, `giscus`, `hyvortalk`, or `isso`) `= true`. For example, this is how you would enable giscus:
 
 ```toml,hl_lines=09-10
-+++
 title = "Bears, Beets, Battlestar Galactica: The Dwight Schrute Guide to Life"
 date = 2007-04-26
 description = "Lessons learned from beet farming and paper sales."
@@ -127,7 +126,6 @@ tags = ["personal", "beets"]
 
 [extra]
 giscus = true
-+++
 ```
 
 If you accidentally enable more than one system, your site will fail to build with an error.
