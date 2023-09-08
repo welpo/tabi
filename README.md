@@ -14,7 +14,8 @@ tabi has a perfect score on Google's Lighthouse audit:
 
 ## Features
 
-- [X] Multi-language support.
+- [X] Full multi-language support. Set as many languages to your site as you wish.
+- [X] Single non-English language support. Set your entire site to Chinese, Spanish, French, Russian… or any [other supported language](/i18n).
 - [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
 - [X] Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
 - [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
@@ -112,7 +113,9 @@ The content outside the front matter will be rendered between the header title a
 - set the title and taxonomies for each language;
 - add the `language_name.{code}` in `[extra]`. This is the text shown in the language switcher.
 
-See [these lines in the provided `config.toml`](https://github.com/welpo/tabi/blob/main/config.toml#L22-L134) for an example.
+TODO: Mention i18n/
+
+See [these lines in the provided `config.toml`](https://github.com/welpo/tabi/blob/main/config.toml#L21-L43) for an example.
 
 You will need an `_index.{language_code}.md` per language for each section (e.g. /blog or /projects) that you want to enable in that language.
 
@@ -130,7 +133,11 @@ This theme was inspired by:
 
 ## Contributing
 
-Please do! Take a look at the [Contributing Guidelines](/CONTRIBUTING.md) to learn more.
+Please do! 
+
+TODO: we appreciate bug reports, translations, documentation improvements, and pull requests.
+
+Take a look at the [Contributing Guidelines](/CONTRIBUTING.md) to learn more.
 
 ## License
 

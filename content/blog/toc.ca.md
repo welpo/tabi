@@ -1,7 +1,7 @@
 +++
 title = "Taula de contingut"
 date = 2022-11-01
-updated = 2023-08-14
+updated = 2023-09-08
 description = "Una publicació que mostra la taula de contingut opcional i la seva configuració."
 
 [taxonomies]
@@ -52,11 +52,13 @@ El codi per aconseguir-ho:
 Si col·loques la TdC en un lloc diferent del predeterminat i li afegeixes un capçalera, segurament voldràs ocultar aquest capçalera de la TdC (consulta la [secció per ocultar capçaleres](#ocultant-capcaleres-de-la-tdc)). Pots fer-ho així:
 
 ```markdown,hl_lines=06 11-13
++++
 title = "El títol del teu post"
 date = 2034-01-11
 
 [extra]
 toc_ignore_pattern = "^(Taula de contingut)"
++++
 
 Aquí va algun text introductori.
 
