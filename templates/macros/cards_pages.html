@@ -27,13 +27,13 @@
         {% endif %}
 
         <div class="card-info">
-            <h1 class="card-title">
+            <h2 class="card-title">
                 {% if page.extra.link_to %}
                     <a rel="{{ rel_attributes }}" {{ blank_target }} href={{ page.extra.link_to }}>{{page.title}}</a>
                 {% else %}
                     <a href={{ page.permalink }}>{{page.title}}</a>
                 {% endif %}
-            </h1>
+            </h2>
 
             <div class="card-description">
                 {% if page.description %}
