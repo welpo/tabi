@@ -105,13 +105,28 @@
         {%- set hyvortalk_enabled = config.extra.hyvortalk.enabled_for_all_posts or page.extra.hyvortalk -%}
         {%- set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso -%}
 
+        {#- Initialise a base connect-src directive -#}
+        {%- set connect_src = "connect-src 'self'" -%}
+
         {%- if hyvortalk_enabled -%}
-            connect-src talk.hyvor.com;
+            {%- set connect_src = connect_src ~ " talk.hyvor.com" -%}
         {%- elif isso_enabled -%}
-            connect-src {{ config.extra.isso.endpoint_url }};
+            {%- set connect_src = connect_src ~ " " ~ config.extra.isso.endpoint_url -%}
+        {%- endif -%}
+
+        {#- Append WebSocket for Zola serve mode -#}
+        {%- if config.mode == "serve" -%}
+            {%- set connect_src = connect_src ~ " ws:" -%}
         {%- endif -%}
 
         {%- for domain in config.extra.allowed_domains -%}
+            {%- if domain.directive == "connect-src" -%}
+                {%- set configured_connect_src = domain.domains | join(sep=' ') -%}
+                {%- set_global connect_src = connect_src ~ " " ~ configured_connect_src  -%}
+                {%- continue -%}
+            {%- endif -%}
+
+            {#- Handle directives that are not connect-src -#}
             {{ domain.directive }} {{ domain.domains | join(sep=' ') -}}
 
             {% if utterances_enabled or hyvortalk_enabled -%}
@@ -134,6 +149,10 @@
             ;
             {%- endif -%}
         {%- endfor -%}
+
+        {#- Insert the generated connect-src -#}
+        {{ ";" ~ connect_src }}
+
     {%- endif -%}">
 
     {%- if config.extra.theme_switcher and config.extra.theme_switcher == true -%}
