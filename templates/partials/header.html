@@ -20,7 +20,7 @@
     
     {# CSS #}
     {# Load subset of glyphs for header. Avoids flashing issue in Firefox #}
-    {% if config.extra.custom_subset == true %}
+    {% if config.extra.custom_subset and config.extra.custom_subset == true %}
         <link rel="stylesheet" href={{ get_url(path="custom_subset.css" ) }}>
     {% elif lang == 'en' %}
         <link rel="stylesheet" href={{ get_url(path="inter_subset_en.css" ) }}>
