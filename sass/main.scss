@@ -150,12 +150,10 @@ article {
 
 .section-title {
     display: block;
-    font-size: 2.2em;
-    margin-bottom: 0em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 550;
+    margin: 0;
     color: var(--text-color-high-contrast);
+    font-weight: 550;
+    font-size: 2.2em;
 }
 
 .last-updated {
