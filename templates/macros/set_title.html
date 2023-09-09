@@ -32,6 +32,10 @@
 {%- endif -%}
 
 {# Return the final concatenated string. #}
-{{- prefix ~ separator ~ suffix -}}
+{%- if config.extra.invert_title_order -%}
+    {{- suffix ~ separator ~ prefix -}}
+{%- else -%}
+    {{- prefix ~ separator ~ suffix -}}
+{%- endif -%}
 
 {%- endmacro set_title -%}
