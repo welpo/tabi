@@ -9,6 +9,7 @@ tags = ["funcionalitat", "tutorial", "Preguntes Freqüents"]
 [extra]
 quick_navigation_buttons = true
 toc_ignore_pattern = "^(Preguntes Freqüents)"
+social_media_card = "img/social_cards/ca_blog_faq_languages.jpg"
 +++
 
 tabi simplifica el procés de creació de llocs web multilingües perquè puguis connectar amb una audiència global. En aquesta guia, t'explicarem tot el que necessites saber, des de com configurar la llengua principal en el teu lloc fins a com contribuir amb les teves pròpies traduccions. Comencem!

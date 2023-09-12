@@ -9,6 +9,7 @@ tags = ["showcase", "tutorial", "FAQ"]
 [extra]
 quick_navigation_buttons = true
 toc_ignore_pattern = "^(Frequently Asked Questions)"
+social_media_card = "img/social_cards/blog_faq_languages.jpg"
 +++
 
 To broaden your reach to a global audience, tabi streamlines the process of building multilingual websites. In this guide, we'll walk you through everything you need to know—from setting a default language for your site to contributing your own translations. Let's get started!

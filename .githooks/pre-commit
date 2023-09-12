@@ -71,7 +71,7 @@ function has_body_changes() {
 # Function to update the social media card for a post or section.
 function generate_and_commit_card {
     local file=$1
-    social_media_card=$(social-cards-zola -o static/img/social_cards -b http://127.0.0.1:1025 -u -p -i "$file") || {
+    social_media_card=$(social-cards-zola -o static/img/social_cards -b http://127.0.0.1:1111 -u -p -i "$file") || {
         echo "Failed to update social media card for $file"
         exit 1
     }
@@ -86,6 +86,8 @@ function generate_and_commit_card {
         exit 1
     }
 }
+
+export -f generate_and_commit_card
 
 function has_minified_version() {
     local file="$1"
@@ -200,6 +202,7 @@ modified_md_files=$(git diff --cached --name-only --diff-filter=M | grep -E '\.m
 
 # Loop through each modified .md file.
 for file in $modified_md_files; do
+echo $file
     # If the file is an .md file and it's a draft, abort the commit.
     if is_draft "$file"; then
         error_exit "Draft file $file is being committed!"
