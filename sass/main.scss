@@ -141,6 +141,10 @@ article {
         font-family: var(--serif-font);
     }
 
+    strong {
+        font-weight: 620;
+    }
+
     .full-width {
         max-width: calc(100% + 2*$base-margin);
         margin-left: -$base-margin;
@@ -227,7 +231,7 @@ p {
 }
 
 strong {
-    font-weight: 620;
+    font-weight: 500;
 }
 
 .centered-text {
