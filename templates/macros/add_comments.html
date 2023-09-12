@@ -86,7 +86,7 @@
 {% if automatic_loading %}
     <script src="{{ get_url(path='js/' ~ comment_system ~ '.min.js', trailing_slash=false) | safe }}" async></script>
 {% else %}
-    <button id="load-comments" class="load-comments-button" data-script-src="{{ get_url(path='js/' ~ comment_system ~ '.min.js', trailing_slash=false) | safe }}">{{ macros_translate::translate(key="load_comments", default="Load comments") }}</button>
+    <button id="load-comments" class="load-comments-button" data-script-src="{{ get_url(path='js/' ~ comment_system ~ '.min.js', trailing_slash=false) | safe }}">{{ macros_translate::translate(key="load_comments", default="Load comments", language_strings=language_strings) }}</button>
     <script src="{{ get_url(path='js/loadComments.min.js', trailing_slash=false) | safe }}" async></script>
 {% endif %}
 

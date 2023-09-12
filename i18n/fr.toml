@@ -1,0 +1,61 @@
+# This has been machine translated.
+# If you would like to help correct errors or improve the translation,
+# please open an issue or submit a pull request.
+# https://github.com/welpo/tabi
+language_name = "Français"  # Shown in language picker for multi-language sites.
+date_locale = "fr_FR"
+full_stop = "."  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu
+blog = "blog"
+archive = "archives"
+tags = "étiquettes"
+projects = "projets"
+
+# Navigation.
+read_more = "Lire plus"
+post = "article"
+posts = "articles"  # Plural of "post".
+prev = "Précédent"  # As in "Previous" page.
+next = "Suivant"  # As in "Next" page.
+of = "de"  # E.g. Page 1 "of" 3
+all_posts = "Tous les articles"
+all_tags = "Toutes les étiquettes"
+
+# Post metadata.
+draft = "BROUILLON"
+min_read = "min de lecture"
+words = "mots"
+last_updated_on = "Dernière mise à jour le"
+see_changes = "Voir les modifications"
+
+# Post body.
+table_of_contents = "Table des matières"
+load_comments = "Afficher les commentaires"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "Propulsé par"
+and = "et"
+site_source = "Code du site"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "La page que vous avez demandée semble ne pas exister"
+translation_missing = "ou n'a pas encore été traduite dans votre langue"
+check_url = "Vérifiez l'URL pour des erreurs ou"
+go_home = "retournez à la page d'accueil"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "Afficher la citation originale"
+show_translation = "Afficher la traduction"
+open_quotation_mark = "«"
+close_quotation_mark = "»"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "Ceci est un flux web, également connu sous le nom de flux Atom. Abonnez-vous en copiant l'URL de la barre d'adresse dans votre lecteur de nouvelles. Visitez About Feeds pour en savoir plus et commencer. C'est gratuit."
+visit_the_site = "Visitez le site web"
+recent_posts = "Articles récents"

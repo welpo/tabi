@@ -2,7 +2,7 @@
 
 {% block main_content %}
 
-{%- set title = macros_translate::translate(key="tags_title", default="All tags") -%}
+{%- set title = macros_translate::translate(key="all_tags", default="All tags", language_strings=language_strings) -%}
 
 {{ macros_page_header::page_header(title=title)}}
 
@@ -13,10 +13,10 @@
                 {{ term.name }}</a>
                 – {{ term.pages | length }}{%- if term.pages | length == 1 %}
                 {# Only one post. Singular. #}
-                    {{- macros_translate::translate(key="post", default="post") -}}
+                    {{- macros_translate::translate(key="post", default="post", language_strings=language_strings) -}}
                 {% elif term.pages | length > 1 %}
                 {# More than one post per tag. Plural. #}
-                    {{- macros_translate::translate(key="posts", default="posts") -}}
+                    {{- macros_translate::translate(key="posts", default="posts", language_strings=language_strings) -}}
                 {%- endif -%}
             </li>
         {%- endfor -%}

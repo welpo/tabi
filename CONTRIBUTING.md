@@ -5,7 +5,10 @@ Halló!
 Thanks for contributing to [tabi](https://github.com/welpo/tabi). Before implementing new features and changes, please [submit an issue](https://github.com/welpo/tabi/issues/new) so that we can discuss it.
 
 We welcome contributions in many forms, including:
+
 - Bug reports;
+- New translations;
+- Improvements to existing translations;
 - Feature requests;
 - Code patches;
 - Documentation improvements;

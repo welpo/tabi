@@ -1,19 +1,34 @@
 {% extends "page.html" %}
 
+{% macro display_404_message(language_name) %}
+    {%- set language_strings = load_data(path="i18n/" ~ language_name ~ '.toml', required=false) -%}
+    {%- if not language_strings -%}
+        {%- set language_strings = load_data(path="themes/tabi/i18n/" ~ language_name ~ '.toml', required=false) -%}
+    {%- endif -%}
+    <p>{{ macros_translate::translate(key="page_missing", default="The page you've requested seems to be missing", force_lang=language_name, language_strings=language_strings) }}
+    {%- if config.languages | length > 0 -%}
+        &nbsp;{{ macros_translate::translate(key="translation_missing", default="or hasn't been translated into your language yet", force_lang=language_name, language_strings=language_strings) }}{{ macros_translate::translate(key="full_stop", default=".", force_lang=language_name, language_strings=language_strings) }}
+    {%- else %}.
+    {%- endif %}
+    {{ macros_translate::translate(key="check_url", default="Check the URL for errors or", force_lang=language_name, language_strings=language_strings) }} 
+    <a href="{{ config.base_url }}{% if language_name != config.default_language %}/{{ language_name }}{% endif %}/">
+    {{ macros_translate::translate(key="go_home", default="go back to the homepage", force_lang=language_name, language_strings=language_strings) }}</a>{{ macros_translate::translate(key="full_stop", default=".", force_lang=language_name, language_strings=language_strings) }}</p>
+{% endmacro %}
+
 {% block main_content %}
     <main class="centered-text">
         {{ macros_page_header::page_header(title="404")}}
-        <div class="subheader">not found</div>
+        <div class="subheader">{{ macros_translate::translate(key="not_found") }}</div>
 
-        {# Default English message #}
-        <p>The page you requested doesn't seem to exist{%- if config.languages | length > 0 %} or has not been translated to your language yet{%- endif -%}. Check the URL for errors, or <a href="{{ config.base_url }}">return to the homepage</a>.</p>
+        {# 404 message for base language #}
+        {{ self::display_404_message(language_name=config.default_language, is_multilingual=is_multilingual) }}
 
-        {# Iterate through each language and display the localised 404 message along with a "Go Home" link #}
+        {#- Iterate through each extra language, to display the localised 404 message -#}
         {%- for language_name, language in config.languages -%}
-            {%- if language_name != config.default_language -%}
-                <p>{{ macros_translate::translate(key="404_error", force_lang=language_name) }} <a href="{{ config.base_url }}/{{ language_name }}/">{{ macros_translate::translate(key="go_home", force_lang=language_name) }}</a>.</p>
+            {%- if language_name == config.default_language -%}
+                {%- continue -%} {#- We've already displayed the 404 message for the base language -#}
             {%- endif -%}
+            {{ self::display_404_message(language_name=language_name, is_multilingual=is_multilingual) }}
         {%- endfor -%}
     </main>
-
 {% endblock main_content %}

@@ -1,0 +1,61 @@
+# This has been machine translated.
+# If you would like to help correct errors or improve the translation,
+# please open an issue or submit a pull request.
+# https://github.com/welpo/tabi
+language_name = "Українська"  # Shown in language picker for multi-language sites.
+date_locale = "uk_UA"
+full-stop = "."  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu
+blog = "блог"
+archive = "архів"
+tags = "теги"
+projects = "проєкти"
+
+# Navigation.
+read_more = "Читати далі"
+post = "пост"
+posts = "пости"  # Plural of "post".
+prev = "Попер."  # As in "Previous" page.
+next = "Наст."  # As in "Next" page.
+of = "з"  # E.g. Page 1 "of" 3
+all_posts = "Всі пости"
+all_tags = "Всі теги"
+
+# Post metadata.
+draft = "ЧЕРНЕТКА"
+min_read = "хв. читання"
+words = "слова"
+last_updated_on = "Останнє оновлення"
+see_changes = "Переглянути зміни"
+
+# Post body.
+table_of_contents = "Зміст"
+load_comments = "Завантажити коментарі"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "Під управлінням"
+and = "та"
+site_source = "Вихідний код сайту"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "Сторінка, яку ви запитуєте, відсутня"
+translation_missing = "або ще не перекладена на вашу мову"
+check_url = "Перевірте URL на помилки або"
+go_home = "поверніться на головну сторінку"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "Показати оригінальну цитату"
+show_translation = "Показати переклад"
+open_quotation_mark = "«"
+close_quotation_mark = "»"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "Це веб-канал, також відомий як Atom-канал. Щоб підписатися, скопіюйте URL з адресного рядка у ваш RSS-читач. Відвідайте About Feeds для додаткової інформації та початку використання."
+visit_the_site = "Відвідати веб-сайт"
+recent_posts = "Останні пости"

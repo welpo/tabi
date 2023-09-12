@@ -1,0 +1,61 @@
+# This has been machine translated.
+# If you would like to help correct errors or improve the translation,
+# please open an issue or submit a pull request.
+# https://github.com/welpo/tabi
+language_name = "日本語"  # Shown in language picker for multi-language sites.
+date_locale = "ja_JP"
+full_stop = "。"  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu
+blog = "ブログ"
+archive = "アーカイブ"
+tags = "タグ"
+projects = "プロジェクト"
+
+# Navigation.
+read_more = "続きを読む"
+post = "投稿"
+posts = "投稿一覧"  # Plural of "post".
+prev = "前"  # As in "Previous" page.
+next = "次"  # As in "Next" page.
+of = "中"  # E.g. Page 1 "of" 3
+all_posts = "すべての投稿"
+all_tags = "すべてのタグ"
+
+# Post metadata.
+draft = "ドラフト"
+min_read = "読了時間（分）"
+words = "単語数"
+last_updated_on = "最終更新日"
+see_changes = "変更を見る"
+
+# Post body.
+table_of_contents = "目次"
+load_comments = "コメントを読む"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "Powered by"
+and = "と"
+site_source = "サイトのソースコード"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "お探しのページは存在しません"
+translation_missing = "または、まだあなたの言語に翻訳されていません"
+check_url = "URLが正しいか確認してください、または"
+go_home = "ホームページに戻る"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "オリジナルの引用を見る"
+show_translation = "翻訳を見る"
+open_quotation_mark = "「"
+close_quotation_mark = "」"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "これはウェブフィードです、また、Atomフィードとしても知られています。URLをアドレスバーからニュースリーダーにコピーして登録してください。About Feedsを訪れて、詳細を知り、始めてください。無料です。"
+visit_the_site = "ウェブサイトを訪れる"
+recent_posts = "最近の投稿"

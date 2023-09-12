@@ -19,14 +19,6 @@ homepage = "https://osc.garden"
 # be merged with user data, some kind of prefix or nesting is preferable
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
-
-# Languages for your site.
-# Each should have a translation section above.
-# e.g. [languages.ca.translations]
-# language_name.ca = "Català"
-# language_name.en = "English"
-# language_name.es = "Español"
-
 # Enable JavaScript theme toggler to allow users to switch between dark/light mode.
 # Also enables automatic switching based on user's OS-level theme settings.
 # If disabled, your site will only use the theme specified in the `default_theme` variable.

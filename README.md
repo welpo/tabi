@@ -14,7 +14,8 @@ tabi has a perfect score on Google's Lighthouse audit:
 
 ## Features
 
-- [X] Multi-language support.
+- [X] [Comprehensive multi-language support](https://welpo.github.io/tabi/blog/faq-languages/#how-does-tabi-handle-multilingual-support). Add as many languages as you wish.
+- [X] [Set any language as default](https://welpo.github.io/tabi/blog/faq-languages/#how-do-i-set-a-default-language-for-my-site). Set your base site to Chinese, Spanish, French, Hindi… or any [other supported language](/i18n). The theme's interface will be translated accordingly.
 - [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
 - [X] Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
 - [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
@@ -106,19 +107,21 @@ header = {title = "Hello! I'm tabi~", img = "img/main.webp" }
 
 The content outside the front matter will be rendered between the header title and the posts listing. In the screenshot above, it's the text that reads "tabi is a fast, lightweight, and modern Zola theme…".
 
-6. If you want a multilingual site, you will need to set up each language. In `config.toml`:
+6. If you want a multilingual site, you will need to set up each language. In `config.toml`, set the title and taxonomies for each language, like:
 
-- set the translations for a few strings;
-- set the title and taxonomies for each language;
-- add the `language_name.{code}` in `[extra]`. This is the text shown in the language switcher.
-
-See [these lines in the provided `config.toml`](https://github.com/welpo/tabi/blob/main/config.toml#L22-L134) for an example.
+```toml
+[languages.es]
+title = "~/tabi"
+taxonomies = [{name = "tags", feed = true}]
+```
 
 You will need an `_index.{language_code}.md` per language for each section (e.g. /blog or /projects) that you want to enable in that language.
 
 The same is true for individual posts, which should have the exact same name as the default language, with an extra `.{code}` before the extension (e.g. the Spanish version of `security.md` would be `security.es.md`).
 
 This configuration allows the language switcher to take the user to the translation of the current URL. If a translation doesn't exist, the 404 page will be displayed, with an explanation in each language set in the config.
+
+To learn more about multilingual support, see the [Frequently Asked Questions](https://welpo.github.io/tabi/blog/faq-languages/).
 
 ## Inspiration
 
@@ -130,7 +133,9 @@ This theme was inspired by:
 
 ## Contributing
 
-Please do! Take a look at the [Contributing Guidelines](/CONTRIBUTING.md) to learn more.
+Please do! We appreciate bug reports, improvements to translations or documentation (however minor), feature requests…
+
+Take a look at the [Contributing Guidelines](/CONTRIBUTING.md) to learn more.
 
 ## License
 

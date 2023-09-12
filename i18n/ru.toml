@@ -1,0 +1,57 @@
+language_name = "Русский"  # Shown in language picker for multi-language sites.
+date_locale = "ru_RU"
+full-stop = "."  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu.
+blog = "блог"
+archive = "архив"
+tags = "теги"
+projects = "проекты"
+
+# Navigation.
+read_more = "Читать далее"
+post = "пост"
+posts = "посты"  # Plural of "post".
+prev = "Пред."  # As in "Previous" page.
+next = "След."  # As in "Next" page.
+of = "из"  # E.g. Page 1 "of" 3
+all_posts = "Все посты"
+all_tags = "Все теги"
+
+# Post metadata.
+draft = "ЧЕРНОВИК"
+min_read = "мин чтения"
+words = "слова"
+last_updated_on = "Последнее обновление"
+see_changes = "Смотреть изменения"
+
+# Post body.
+table_of_contents = "Содержание"
+load_comments = "Загрузить комментарии"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "Под управлением"
+and = "&"
+site_source = "Исходный код сайта"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "Запрашиваемая вами страница отсутствует"
+translation_missing = "или еще не переведена на ваш язык"
+check_url = "Проверьте URL на ошибки или"
+go_home = "вернитесь на главную страницу"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "Показать оригинальную цитату"
+show_translation = "Показать перевод"
+open_quotation_mark = "«"
+close_quotation_mark = "»"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "Это веб-фид, известный также как Atom-фид. Чтобы подписаться, скопируйте URL из адресной строки в ваш RSS-ридер. Посетите About Feeds для дополнительной информации и начала использования."
+visit_the_site = "Посетить веб-сайт"
+recent_posts = "Последние посты"

@@ -12,7 +12,7 @@
                             <li>
                                 {% set trailing_slash = menu.trailing_slash | default(value=true) %}
                                 <a class="nav-links no-hover-padding" href="{{ get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) }}"/>
-                                {{ macros_translate::translate(key=menu.name, default=menu.name) }}
+                                {{ macros_translate::translate(key=menu.name, default=menu.name, language_strings=language_strings) }}
                                 </a>
                             </li>
                         {% endfor %}
@@ -21,37 +21,7 @@
                     {# Language switcher #}
                     {# Display the language switcher only if more than one language is available #}
                     {%- if config.languages | length > 0 %}
-                        <li class="language-switcher">
-                            <div class="dropdown" type="Button">
-                                <div class="language-switcher-icon"></div>
-
-                                {# Display the current language first in the dropdown #}
-                                <div class="dropdown-content">
-                                    {{ macros_translate::translate(key="language_name", default=config.extra.language_name.en) }}
-
-                                    {# Loop through all the available languages in the config #}
-                                    {%- for lcode, language_name in config.extra.language_name -%}
-                                        {# Skip the current language to avoid linking to the current page #}
-                                        {%- if lang != lcode -%}
-                                            {# Check if the language code matches the default language #}
-                                            {%- if lcode == config.default_language -%}
-                                                {# If it does, link to the root path (no language code in URL) #}
-                                                <a type="Button" href="{{ current_url | replace(from='/' ~ lang ~ '/', to = '/') }}">{{ language_name }}</a>
-                                            {%- else -%}
-                                                {# Check if the current language is the default language #}
-                                                {%- if lang == config.default_language -%}
-                                                    {# If it is, append the language code to the base URL #}
-                                                    <a type="Button" href="{{ config.base_url }}/{{ lcode }}{{ current_path | default(value="/") | safe }}">{{ language_name }}</a>
-                                                {%- else -%}
-                                                    {# If it's not, replace the current language code in the URL with the new one #}
-                                                    <a type="Button" href="{{ current_url | replace(from='/' ~ lang ~ '/', to='/' ~ lcode ~ '/') }}"/>{{ language_name }}</a>
-                                                {%- endif -%}
-                                            {%- endif -%}
-                                        {%- endif -%}
-                                    {%- endfor -%}
-                                </div>
-                            </div>
-                        </li>
+                    {% include "partials/language_switcher.html" %}
                     {%- endif %}
 
                     {# Theme switcher #}

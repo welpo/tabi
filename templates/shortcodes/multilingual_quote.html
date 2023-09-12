@@ -1,7 +1,12 @@
 {%- import "macros/translate.html" as macros_translate -%}
+{# Load internationalisation data #}
+{%- set language_strings = load_data(path="i18n/" ~ lang ~ '.toml', required=false) -%}
+{%- if not language_strings -%}
+    {%- set language_strings = load_data(path="themes/tabi/i18n/" ~ lang ~ ".toml", required=false) -%}
+{%- endif -%}
 
-{%- set open_quote = macros_translate::translate(key="open_quotation_mark", default="“") -%}
-{%- set close_quote = macros_translate::translate(key="close_quotation_mark", default="”") -%}
+{%- set open_quote = macros_translate::translate(key="open_quotation_mark", default="“", language_strings=language_strings) -%}
+{%- set close_quote = macros_translate::translate(key="close_quotation_mark", default="”", language_strings=language_strings) -%}
 
 {#- The `random_id` ensures that each instance of the shortcode has a "unique" id -#}
 {#- allowing individual interactive elements (like toggles) to function correctly. -#}
@@ -15,16 +20,16 @@
         <div class="translated">
             <blockquote>
                 <p>{{ open_quote ~ translated ~ close_quote }}</p>
-                {% if author %}<p> — {{ author }}{% endif %}<label for="toggle-{{ random_id }}" class="quote-label quote-label-original">
-                    ({{- macros_translate::translate(key="show_original_quote", default="Show original quote") -}})
-                    </label></p>
+                {% if author %}<p> — {{ author }}{% endif %} <label for="toggle-{{ random_id }}" class="quote-label quote-label-original">
+                    ({{- macros_translate::translate(key="show_original_quote", default="Show original quote", language_strings=language_strings) -}})
+                </label></p>
             </blockquote>
         </div>
         <div class="original">
             <blockquote>
                 <p>{{ open_quote ~ original ~ close_quote }}</p>
                 {% if author %}<p> — {{ author }}{% endif %} <label for="toggle-{{ random_id }}" class="quote-label quote-label-translate">
-                    ({{- macros_translate::translate(key="show_translation", default="Show translation") -}})
+                    ({{- macros_translate::translate(key="show_translation", default="Show translation", language_strings=language_strings) -}})
                 </label></p>            
             </blockquote>
         </div>

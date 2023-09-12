@@ -1,0 +1,61 @@
+# This has been machine translated.
+# If you would like to help correct errors or improve the translation,
+# please open an issue or submit a pull request.
+# https://github.com/welpo/tabi
+language_name = "Deutsch"  # Shown in language picker for multi-language sites.
+date_locale = "de_DE"
+full_stop = "."  #  Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu
+blog = "blog"
+archive = "archiv"
+tags = "tags"
+projects = "projekte"
+
+# Navigation.
+read_more = "Weiterlesen"
+post = "beitrag"
+posts = "beiträge"  # Plural of "post".
+prev = "Vorherig"  # As in "Previous" page.
+next = "Nächst"  # As in "Next" page.
+of = "von"  # E.g. Page 1 "of" 3
+all_posts = "Alle Beiträge"
+all_tags = "Alle Tags"
+
+# Post metadata.
+draft = "ENTWURF"
+min_read = "min. lesedauer"
+words = "wörter"
+last_updated_on = "Zuletzt aktualisiert am"
+see_changes = "Änderungen anzeigen"
+
+# Post body.
+table_of_contents = "Inhaltsverzeichnis"
+load_comments = "Kommentare laden"
+
+# Footer.
+powered_by = "Angetrieben von"
+and = "und"
+site_source = "Quellcode der Seite"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "Die Seite, die du angefordert hast, scheint nicht zu existieren"
+translation_missing = "oder wurde noch nicht in deine Sprache übersetzt"
+check_url = "Überprüfe die URL auf Fehler oder"
+go_home = "zurück zur Startseite gehen"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "Originalzitat anzeigen"
+show_translation = "Übersetzung anzeigen"
+open_quotation_mark = "„"
+close_quotation_mark = "“"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "Dies ist ein Web-Feed, auch bekannt als Atom-Feed. Abonnieren Sie, indem Sie die URL aus der Adressleiste in Ihren Nachrichtenleser kopieren. Besuchen Sie About Feeds, um mehr zu erfahren und loszulegen. Es ist kostenlos."
+visit_the_site = "Besuchen Sie die Webseite"
+recent_posts = "Aktuelle Beiträge"
