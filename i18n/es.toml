@@ -8,6 +8,7 @@ blog = "blog"
 archive = "archivo"
 tags = "etiquetas"
 projects = "proyectos"
+about = "sobre mí"
 
 # Navigation.
 read_more = "Leer más"

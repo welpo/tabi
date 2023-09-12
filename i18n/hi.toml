@@ -10,6 +10,7 @@ blog = "ब्लॉग"
 archive = "संग्रह"
 tags = "टैग"
 projects = "परियोजनाएं"
+about = "बारे में"
 
 # Navigation.
 read_more = "और पढ़ें"

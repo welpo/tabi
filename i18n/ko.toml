@@ -12,6 +12,7 @@ blog = "블로그"
 archive = "아카이브"
 tags = "태그"
 projects = "프로젝트"
+about = "소개"
 
 # Navigation.
 read_more = "더 읽기"

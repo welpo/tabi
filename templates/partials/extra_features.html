@@ -1,0 +1,46 @@
+{# Quick navigation buttons #}
+{% if macros_settings::evaluate_setting_priority(setting="quick_navigation_buttons", page=page, default_global_value=false) == "true" %}
+    <div id="button-container">
+        {# Button to go show a floating Table of Contents #}
+        {% if page.toc %}
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" class="overlay"></label>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents" aria-label="toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    {{ macros_toc::toc(page=page, header=false, language_strings=language_strings) }}
+                </div>
+            </div>
+        {% endif %}
+
+        {# Button to go to the comment section #}
+        {% if comment_system %}
+            <a href="#comments" id="comments-button" title="Go to comment section">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        {% endif %}
+
+        {# Button to go to the top of the page #}
+        <a href="#" id="top-button" title="Go to top of page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+{% endif %}
+
+{# Add KaTeX functionality #}
+{%- if macros_settings::evaluate_setting_priority(setting="katex", page=page, default_global_value=false) == "true" -%}
+    <link rel="stylesheet" href="{{ get_url(path='katex.min.css', trailing_slash=false) | safe }}">
+    <script defer src="{{ get_url(path='js/katex.min.js', trailing_slash=false) | safe }}"></script>
+{%- endif -%}
+
+{# Add copy button to code blocks #}
+{%- if macros_settings::evaluate_setting_priority(setting="copy_button", page=page, default_global_value=true) == "true" -%}
+    <script defer src="{{ get_url(path='js/copyCodeToClipboard.min.js', trailing_slash=false) | safe }}"/></script>
+{%- endif -%}
+
+{# Add backlinks to footnotes #}
+{%- if macros_settings::evaluate_setting_priority(setting="footnote_backlinks", page=page, default_global_value=false) == "true" -%}
+    <script defer src="{{ get_url(path='js/footnoteBacklinks.min.js', trailing_slash=false | safe )}}"/></script>
+{%- endif -%}
