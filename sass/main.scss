@@ -21,31 +21,30 @@
 @use 'parts/_theme-switch.scss';
 
 @font-face {
-    /* Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-    font-family: 'Inter';
     src: local('Inter'),
         url('fonts/Inter4.woff2') format("woff2");
+    /* Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
+    font-family: 'Inter';
     font-display: swap;
 }
 
 @font-face {
-    /* Copyright 2014 - 2023 Adobe (http://www.adobe.com/), with Reserved Font Name ‘Source’.adobe.com/). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-    font-family: 'Source Serif';
     src: local('Source Serif'),
         url('fonts/SourceSerif4Variable-Roman.ttf.woff2') format("woff2");
+    /* Copyright 2014 - 2023 Adobe (http://www.adobe.com/), with Reserved Font Name ‘Source’.adobe.com/). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
+    font-family: 'Source Serif';
     font-display: swap;
 }
 
 @font-face {
-    /* Copyright 2019 - Present, Microsoft Corporation, with Reserved Font Name 'Cascadia Code'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-    font-family: 'Cascadia Code';
     src: local('Cascadia Code'),
         url('fonts/CascadiaCode-SemiLight.woff2') format("woff2");
+    /* Copyright 2019 - Present, Microsoft Corporation, with Reserved Font Name 'Cascadia Code'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
+    font-family: 'Cascadia Code';
     font-display: swap;
 }
 
 :root {
-    color-scheme: light;
 
     --max-layout-width: 1000px;
     --normal-layout-width: 600px;
@@ -55,9 +54,6 @@
     --sans-serif-font: 'Inter', Helvetica, Arial, sans-serif;
     --serif-font: 'Source Serif', 'Georgia', serif;
     --code-font: 'Cascadia Code';
-
-    font-family: var(--sans-serif-font);
-    line-height: 190%;
 
     --background-color: white;
     --bg-0: #f0f0f0;
@@ -74,10 +70,13 @@
     --codeblock-highlight: #383444;
 
     --theme-switcher-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z'/%3E%3C/svg%3E%0A");
+    color-scheme: light;
+    line-height: 190%;
+
+    font-family: var(--sans-serif-font);
 }
 
 [data-theme='dark'] {
-    color-scheme: dark;
 
     --background-color: #1f1f1f;
     --bg-0: #2f2f2f;
@@ -94,6 +93,7 @@
     --codeblock-highlight: #282834;
 
     --theme-switcher-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 96 960 960' %3E%3Cpath d='M480 776q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 616q-17 0-28.5-11.5T40 576q0-17 11.5-28.5T80 536h80q17 0 28.5 11.5T200 576q0 17-11.5 28.5T160 616H80Zm720 0q-17 0-28.5-11.5T760 576q0-17 11.5-28.5T800 536h80q17 0 28.5 11.5T920 576q0 17-11.5 28.5T880 616h-80ZM480 296q-17 0-28.5-11.5T440 256v-80q0-17 11.5-28.5T480 136q17 0 28.5 11.5T520 176v80q0 17-11.5 28.5T480 296Zm0 720q-17 0-28.5-11.5T440 976v-80q0-17 11.5-28.5T480 856q17 0 28.5 11.5T520 896v80q0 17-11.5 28.5T480 1016ZM226 378l-43-42q-12-11-11.5-28t11.5-29q12-12 29-12t28 12l42 43q11 12 11 28t-11 28q-11 12-27.5 11.5T226 378Zm494 495-42-43q-11-12-11-28.5t11-27.5q11-12 27.5-11.5T734 774l43 42q12 11 11.5 28T777 873q-12 12-29 12t-28-12Zm-42-495q-12-11-11.5-27.5T678 322l42-43q11-12 28-11.5t29 11.5q12 12 12 29t-12 28l-43 42q-12 11-28 11t-28-11ZM183 873q-12-12-12-29t12-28l43-42q12-11 28.5-11t27.5 11q12 11 11.5 27.5T282 830l-42 43q-11 12-28 11.5T183 873Z'/%3E%3C/svg%3E");
+    color-scheme: dark;
 
     .invertible-image {
         filter: invert(.88);
@@ -114,25 +114,25 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     margin: 0 5vmin;
     padding: 0;
+    min-height: 100vh;
 }
 
 .content {
-    width: 100%;
-    max-width: var(--max-layout-width);
+    word-wrap: break-word;
     margin: 0 auto;
     margin-top: 6vmin;
     margin-bottom: 4rem;
-    word-wrap: break-word;
+    width: 100%;
+    max-width: var(--max-layout-width);
 }
 
 article {
     $base-margin: 6rem;
+    margin: 0 auto;
 
     max-width: calc(var(--max-layout-width) - 2*$base-margin);
-    margin: 0 auto;
 
     p,
     li,
@@ -146,9 +146,9 @@ article {
     }
 
     .full-width {
-        max-width: calc(100% + 2*$base-margin);
-        margin-left: -$base-margin;
         margin-right: -$base-margin;
+        margin-left: -$base-margin;
+        max-width: calc(100% + 2*$base-margin);
     }
 }
 
@@ -175,59 +175,59 @@ h6 {
 
 h1 {
     display: block;
-    font-size: 1.5em;
     margin-top: 0.67em;
+    margin-right: 0;
     margin-bottom: 0em;
     margin-left: 0;
-    margin-right: 0;
     font-weight: 550;
+    font-size: 1.5em;
 }
 
 h2 {
     display: block;
-    font-size: 1.4em;
     margin-top: 0.5em;
+    margin-right: 0;
     margin-bottom: 0em;
     margin-left: 0;
-    margin-right: 0;
     font-weight: 550;
+    font-size: 1.4em;
 }
 
 h3 {
     display: block;
-    font-size: 1.2em;
     margin-top: 0.3em;
+    margin-right: 0;
     margin-bottom: 0em;
     margin-left: 0;
-    margin-right: 0;
     font-weight: 550;
+    font-size: 1.2em;
 }
 
 h4 {
     display: block;
-    font-size: 1em;
     margin-top: 0.83em;
+    margin-right: 0;
     margin-bottom: 0em;
     margin-left: 0;
-    margin-right: 0;
     font-weight: 550;
+    font-size: 1em;
 }
 
 h5 {
     display: block;
-    font-size: 1em;
     margin-top: 0.83em;
+    margin-right: 0;
     margin-bottom: 0em;
     margin-left: 0;
-    margin-right: 0;
     font-weight: normal;
+    font-size: 1em;
 }
 
 p {
     margin-top: 0.4rem;
     margin-bottom: max(2.3vmin, 24px);
-    line-height: 2rem;
     font-size: 1em;
+    line-height: 2rem;
 }
 
 strong {
@@ -252,18 +252,18 @@ strong {
     }
 
     article .full-width {
-        max-width: none;
-        margin-left: 0;
-        margin-right: 0;
         display: block;
+        margin-right: 0;
+        margin-left: 0;
+        max-width: none;
         overflow-x: auto;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .content {
-        max-width: var(--medium-layout-width);
         margin-top: 0rem;
+        max-width: var(--medium-layout-width);
     }
 
     article {

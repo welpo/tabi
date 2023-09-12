@@ -1,16 +1,16 @@
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 24px;
-    padding: 12px 0;
     margin-top: 4vmin;
+    padding: 12px 0;
 }
 
 .card {
-    min-height: 100px;
-    background: var(--bg-2);
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background: var(--bg-2);
+    min-height: 100px;
     overflow: hidden;
 }
 
@@ -28,8 +28,8 @@
 }
 
 .card-image-placeholder {
-    height: 12px;
     width: 100%;
+    height: 12px;
 }
 
 .card-description {

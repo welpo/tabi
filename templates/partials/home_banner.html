@@ -1,25 +1,22 @@
-{% macro page_desc(desc, page) %}
-
+{%- set header = section.extra.header-%}
 <div id="banner-container-home">
     <div id="home-banner-text">
-        <h1 id="home-banner-header">{{ desc.title }}</h1>
+        <h1 id="home-banner-header">{{ header.title }}</h1>
         <section id="banner-home-subtitle">
-            {{ page.content | safe }}
+            {{ section.content | safe }}
         </section>
     </div>
-    {%- if desc.img -%}
+    {%- if header.img -%}
         {# Check if the image contains "$BASE_URL". This feature will be removed in the future #} {# in favour of using the proper image path. It will be a breaking change. #}
-        {%- if desc.img is containing("$BASE_URL") -%}
-            {%- set image_path = desc.img | replace(from="$BASE_URL", to=config.base_url) | safe -%}
+        {%- if header.img is containing("$BASE_URL") -%}
+            {%- set image_path = header.img | replace(from="$BASE_URL", to=config.base_url) | safe -%}
             {# When the feature is removed, uncomment below to throw a descriptive error #}
             {# {{ throw(message="ERROR: The image path for the header should not contain '$BASE_URL'. Please remove it and use the proper image path.") }} #}
         {%- else -%}
-            {%- set image_path = get_url(path=desc.img, trailing_slash=false) | safe -%}
+            {%- set image_path = get_url(path=header.img, trailing_slash=false) | safe -%}
         {%- endif -%}
         <div id="image-container-home">
             <img alt="the owner" id="banner-home-img" src="{{ image_path }}" />
         </div>
     {%- endif -%}
 </div>
-
-{% endmacro %}

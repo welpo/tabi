@@ -1,17 +1,17 @@
 table {
-    border-spacing: 0;
-    border-collapse: collapse;
-    text-align: center;
-    font: inherit;
-    overflow: hidden;
-    border-style: hidden !important;
     margin: 1rem auto;
+    border-style: hidden !important;
     border-radius: 5px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow: hidden;
+    font: inherit;
+    text-align: center;
 
     th,
     td {
-        padding: 6px 13px;
         border: 1px solid var(--bg-1);
+        padding: 6px 13px;
         font-size: large;
     }
 

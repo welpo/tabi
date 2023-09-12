@@ -1,5 +1,4 @@
-{% macro create_history_url(relative_path) %}
-
+{%- set relative_path = page.relative_path -%}
 {%- set repository_url = config.extra.remote_repository_url | trim_end_matches(pat='/') -%}
 {%- set branch = config.extra.remote_repository_branch | default(value="main") -%}
 {%- set git_platform = config.extra.remote_repository_git_platform | default(value="auto") -%}
@@ -25,5 +24,3 @@
 {%- else -%}
     {{ throw(message="ERROR: Unknown, unsupported, or unspecified git platform. If you're using a custom domain, please specify the 'git_platform' in the config. If you think this is a bug, please report it: https://github.com/welpo/tabi/issues/new?assignees=&labels=bug&template=bug_report.md&title=Unsupported%20Git%20Platform%20Detected") }}
 {%- endif -%}
-
-{% endmacro %}
