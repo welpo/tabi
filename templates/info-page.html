@@ -1,0 +1,17 @@
+{# Template for non-articles (About Me, Privacy…) #}
+
+{% extends "base.html" %}
+
+{%- block main_content %}
+
+{{ macros_page_header::page_header(title=page.title) }}
+
+<div id="page-content">
+    <main>
+        {{ page.content | safe }}
+    </main>
+</div>
+
+{%- include "partials/extra_features.html" -%}
+
+{%- endblock main_content %}

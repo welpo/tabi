@@ -8,6 +8,7 @@ blog = "blog"
 archive = "archive"
 tags = "tags"
 projects = "projects"
+about = "about"
 
 # Navigation.
 read_more = "Read more"

@@ -12,6 +12,7 @@ blog = "блог"
 archive = "архів"
 tags = "теги"
 projects = "проєкти"
+about = "про мене"
 
 # Navigation.
 read_more = "Читати далі"

@@ -12,6 +12,7 @@ blog = "博客"
 archive = "归档"
 tags = "标签"
 projects = "项目"
+about = "关于"
 
 # Navigation.
 read_more = "阅读更多"

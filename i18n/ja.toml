@@ -12,6 +12,7 @@ blog = "ブログ"
 archive = "アーカイブ"
 tags = "タグ"
 projects = "プロジェクト"
+about = "自己紹介"
 
 # Navigation.
 read_more = "続きを読む"
