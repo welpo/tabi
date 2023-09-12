@@ -117,6 +117,7 @@ header {
     transform: translateX(-50%);
     text-align: center;
     background: var(--background-color);
+    white-space: nowrap;
 
     a {
         display: block;

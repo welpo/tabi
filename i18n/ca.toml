@@ -1,0 +1,57 @@
+language_name = "Català"  # Shown in language picker for multi-language sites.
+date_locale = "ca_ES"
+full_stop ="."  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu
+blog = "blog"
+archive = "arxiu"
+tags = "etiquetes"
+projects = "projectes"
+
+# Navigation.
+read_more = "Llegir més"
+post = "entrada"
+posts = "entrades"  # Plural of "post".
+prev = "Anterior"  # As in "Previous" page.
+next = "Següent"  # As in "Next" page.
+of = "de"  # E.g. Page 1 "of" 3
+all_posts = "Totes les entrades"
+all_tags = "Totes les etiquetes"
+
+# Post metadata.
+draft = "ESBORRANY"
+min_read = "min de lectura"
+words = "paraules"
+last_updated_on = "Última actualizació el"
+see_changes = "Veure canvis"
+
+# Post body.
+table_of_contents = "Taula de contingut"
+load_comments = "Carregar comentaris"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "Propulsat per"
+and = "i"
+site_source = "Codi del lloc"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "La pàgina que has sol·licitat sembla que no existeix"
+translation_missing = "o encara no s'ha traduït al teu idioma"
+check_url = "Comprova l'URL per detectar errors o"
+go_home = "torna a la pàgina d'inici"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "Mostra la cita original"
+show_translation = "Mostra la traducció"
+open_quotation_mark = "«"
+close_quotation_mark = "»"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "Aquest és un canal web, també conegut com a canal Atom. Subscriu-te copiant l'URL de la barra d'adreces al teu lector de notícies. Visita About Feeds per aprendre més i començar. És gratuït."
+visit_the_site = "Visita la web"
+recent_posts = "Publicacions recents"

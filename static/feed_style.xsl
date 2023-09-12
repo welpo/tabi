@@ -19,7 +19,17 @@
         <div class="content">
           <main>
             <div class="info-box">
-              <strong><xsl:value-of select="/atom:feed/str:translations/str:this_is_a_web_feed"/></strong>, <xsl:value-of select="/atom:feed/str:translations/str:also_known_as_an_Atom_feed" />. <strong><xsl:value-of select="/atom:feed/str:translations/str:subscribe" /></strong> <xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:by_copying_the_URL_from_the_address_bar_into_your_newsreader" />.<xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:visit" /><xsl:text> </xsl:text><a href="https://aboutfeeds.com">About Feeds</a><xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:to_learn_more_and_get_started" />.<xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:it_s_free" />.
+                <!-- This block replaces the text "About Feeds" with a hyperlink in the translated string -->
+                <xsl:choose>
+                    <xsl:when test="contains(/atom:feed/str:translations/str:about_feeds, 'About Feeds')">
+                        <xsl:value-of select="substring-before(/atom:feed/str:translations/str:about_feeds, 'About Feeds')"/>
+                        <a href="https://aboutfeeds.com/" target="_blank">About Feeds</a>
+                        <xsl:value-of select="substring-after(/atom:feed/str:translations/str:about_feeds, 'About Feeds')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="/atom:feed/str:translations/str:about_feeds"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </div>
             <section id="banner-home-subtitle">
             <div class="padding-top home-title">
@@ -32,7 +42,7 @@
               <xsl:attribute name="href">
                 <xsl:value-of select="/atom:feed/atom:link[2]/@href"/>
               </xsl:attribute>
-            <xsl:value-of select="/atom:feed/str:translations/str:visit" /><xsl:text> </xsl:text><xsl:value-of select="/atom:feed/str:translations/str:website" /><xsl:text> </xsl:text>→</a><p></p>
+            <xsl:value-of select="/atom:feed/str:translations/str:visit_the_site" /> →</a><p></p>
             </section>
 
             <div class="padding-top listing-title bottom-divider">

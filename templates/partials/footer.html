@@ -65,23 +65,23 @@
                     {% set current_year = now() | date(format="%Y") %}
                     {# Translate the copyright if set in the config #}
                     {%- if config.extra.translate_copyright -%}
-                        <p>{{ macros_translate::translate(key="copyright", default=config.extra.copyright) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
+                        <p>{{ macros_translate::translate(key="copyright", default=config.extra.copyright, language_strings=language_strings) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
                     {%- else -%}
                         <p>{{ config.extra.copyright | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
                     {%- endif -%}
                 {%- endif -%}
 
                 {# Shows "Powered by Zola & tabi" notice #}
-                {{ macros_translate::translate(key="powered_by", default="Powered by") }}
+                {{ macros_translate::translate(key="powered_by", default="Powered by", language_strings=language_strings) }}
                 <a rel="{{ rel_attributes }}" {{ blank_target }} href="https://www.getzola.org">Zola</a>
-                {{ macros_translate::translate(key="and", default="&") }}
+                {{ macros_translate::translate(key="and", default="&", language_strings=language_strings) }}
                 <a rel="{{ rel_attributes }}" {{ blank_target }} href="https://github.com/welpo/tabi">tabi</a>
 
                 {# Shows link to remote repository #}
                 {%- if config.extra.remote_repository_url and config.extra.show_remote_source | default(value=true) -%}
                 {{ separator }}
                     <a rel="{{ rel_attributes }}" {{ blank_target }} href="{{ config.extra.remote_repository_url }}">
-                        {{ macros_translate::translate(key="site_source", default="Site source") }}
+                        {{ macros_translate::translate(key="site_source", default="Site source", language_strings=language_strings) }}
                     </a>
                 {%- endif -%}
             </small>

@@ -1,0 +1,61 @@
+# This has been machine translated.
+# If you would like to help correct errors or improve the translation,
+# please open an issue or submit a pull request.
+# https://github.com/welpo/tabi
+language_name = "简体中文"  # Shown in language picker for multi-language sites.
+date_locale = "zh_CN"
+full_stop = "。"  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu.
+blog = "博客"
+archive = "归档"
+tags = "标签"
+projects = "项目"
+
+# Navigation.
+read_more = "阅读更多"
+post = "文章"
+posts = "文章"  # Plural of "post".
+prev = "上一页"  # As in "Previous" page.
+next = "下一页"  # As in "Next" page.
+of = "/"  # E.g. Page 1 "of" 3
+all_posts = "所有文章"
+all_tags = "所有标签"
+
+# Post metadata.
+draft = "草稿"
+min_read = "分钟阅读"
+words = "单词"
+last_updated_on = "最后更新于"
+see_changes = "查看更改"
+
+# Post body.
+table_of_contents = "目录"
+load_comments = "加载评论"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "由"
+and = "和"
+site_source = "网站源代码"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "您请求的页面似乎不存在"
+translation_missing = "或尚未翻译成您的语言"
+check_url = "请检查URL是否有误或"
+go_home = "返回首页"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "显示原文引用"
+show_translation = "显示译文"
+open_quotation_mark = "“"
+close_quotation_mark = "”"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "这是一个网页订阅源，也称为Atom订阅源。通过复制地址栏中的URL到您的新闻阅读器订阅。访问 About Feeds 了解更多并开始使用。免费。"
+visit_the_site = "访问网站"
+recent_posts = "近期文章"

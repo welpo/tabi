@@ -1,14 +1,24 @@
-{% macro translate(key, default="", force_lang="") %}
+{#
+Macro: translate
+Purpose: Translate text strings based on the current language setting.
+Parameters:
+- key: The key used to look up the translation in the loaded language data.
+- language_strings: The loaded language data (from a .toml file).
+- default: The default text to use if a translation is not found.
 
-{%- if config.default_language != "en" -%}
-    {#- The entire site should be translated -#}
-    {{- trans(key=key | safe, lang=lang) -}}
-{%- elif lang != config.default_language -%} 
-    {{- trans(key=key | safe, lang=lang) -}}
-{%- elif force_lang -%}
-    {{- trans(key=key | safe, lang=force_lang) -}}
-{%- else -%} 
-    {{- default -}}
-{%- endif -%} 
+Usage:
+Use this macro to translate text in templates. The macro looks for the
+translation based on the given 'key' in 'language_strings'. If not found,
+it falls back to using the 'default' text.
 
+Note:
+The 'language_strings' are loaded in base.html based on the current language
+from files in the 'i18n' folder.
+
+Example:
+{{ macros_translate::translate(key="site_source", language_strings=language_strings, default="Site source", language_strings=language_strings) }}
+#}
+
+{% macro translate(key, language_strings="", default="") %}
+{{- language_strings[key] | default(value=default) | safe -}}
 {% endmacro %}

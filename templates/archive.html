@@ -5,7 +5,7 @@
 {{ macros_page_header::page_header(title=section.title) }}
 
 {# Set locale for date #}
-{% set date_locale = macros_translate::translate(key="date_locale", default="en_GB") %}
+{% set date_locale = macros_translate::translate(key="date_locale", default="en_GB", language_strings=language_strings) %}
 
 <div class="archive">
     <ul class="list-with-title">

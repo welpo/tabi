@@ -1,6 +1,5 @@
 {% import "macros/add_comments.html" as macros_add_comments %}
 {% import "macros/cards_pages.html" as macros_cards_pages %}
-{% import "macros/content.html" as macros_content %}
 {% import "macros/create_history_url.html" as macros_create_history_url %}
 {% import "macros/format_date.html" as macros_format_date %}
 {% import "macros/list_posts.html" as macros_list_posts %}
@@ -12,6 +11,15 @@
 {% import "macros/settings.html" as macros_settings %}
 {% import "macros/table_of_contents.html" as macros_toc %}
 {% import "macros/translate.html" as macros_translate %}
+
+{# Load the internationalisation data for the current language from 
+the .toml files in the user's '/i18n' folder, falling back to the theme's.
+This variable will hold all the text strings for the language #}
+{%- set language_strings = load_data(path="i18n/" ~ lang ~ '.toml', required=false) -%}
+{%- if not language_strings -%}
+    {%- set language_strings = load_data(path="themes/tabi/i18n/" ~ lang ~ ".toml", required=false) -%}
+{%- endif -%}
+
 
 <!DOCTYPE html>
 <html lang="{{ lang }}" {% if config.extra.default_theme -%}

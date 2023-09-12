@@ -1,28 +1,28 @@
-{% macro paginate() %}
+{% macro paginate(language_strings="") %}
 
 {% if paginator %}
     <ul class="pagination">
         {% if paginator.previous %}
             <li class="page-item page-prev">
-                <a href="{{ paginator.previous }}" class="page-link" aria-label="{{ macros_translate::translate(key="prev", default="Prev") }}">← {{ macros_translate::translate(key="prev", default="Prev") }}</a>
+                <a href="{{ paginator.previous }}" class="page-link" aria-label="{{ macros_translate::translate(key="prev", default="Prev", language_strings=language_strings) }}">← {{ macros_translate::translate(key="prev", default="Prev", language_strings=language_strings) }}</a>
             </li>
         {% else %}
             <li class="page-item page-prev">
-                <span class="page-link disabled" aria-disabled="true" aria-label="{{ macros_translate::translate(key="prev", default="Prev") }} (disabled)">← {{ macros_translate::translate(key="prev", default="Prev") }}</span>
+                <span class="page-link disabled" aria-disabled="true" aria-label="{{ macros_translate::translate(key="prev", default="Prev", language_strings=language_strings) }} (disabled)">← {{ macros_translate::translate(key="prev", default="Prev", language_strings=language_strings) }}</span>
             </li>
         {% endif %}
 
         <li class="page-item page-numbers">
-            {{ paginator.current_index }} {{ macros_translate::translate(key="of", default="of") }} {{ paginator.number_pagers }}
+            {{ paginator.current_index }} {{ macros_translate::translate(key="of", default="of", language_strings=language_strings) }} {{ paginator.number_pagers }}
         </li>
 
         {% if paginator.next %}
             <li class="page-item page-next">
-                <a href="{{ paginator.next }}" class="page-link" aria-label="{{ macros_translate::translate(key="next", default="Next") }}">{{ macros_translate::translate(key="next", default="Next") }} →</a>
+                <a href="{{ paginator.next }}" class="page-link" aria-label="{{ macros_translate::translate(key="next", default="Next", language_strings=language_strings) }}">{{ macros_translate::translate(key="next", default="Next", language_strings=language_strings) }} →</a>
             </li>
         {% else %}
             <li class="page-item page-next">
-                <span class="page-link disabled" aria-disabled="true" aria-label="{{ macros_translate::translate(key="next", default="Next") }} (disabled)">{{ macros_translate::translate(key="next", default="Next") }} →</span>
+                <span class="page-link disabled" aria-disabled="true" aria-label="{{ macros_translate::translate(key="next", default="Next", language_strings=language_strings) }} (disabled)">{{ macros_translate::translate(key="next", default="Next", language_strings=language_strings) }} →</span>
             </li>
         {% endif %}
     </ul>

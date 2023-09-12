@@ -1,0 +1,59 @@
+# This has been machine translated.
+# If you would like to help correct errors or improve the translation, please open an issue or submit a pull request.
+language_name = "हिंदी"  # Shown in language picker for multi-language sites.
+date_locale = "hi_IN"
+full_stop ="।"  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu
+blog = "ब्लॉग"
+archive = "संग्रह"
+tags = "टैग"
+projects = "परियोजनाएं"
+
+# Navigation.
+read_more = "और पढ़ें"
+post = "पोस्ट"
+posts = "पोस्ट्स"  # Plural of "post".
+prev = "पिछला"  # As in "Previous" page.
+next = "अगला"  # As in "Next" page.
+of = "का"  # E.g. Page 1 "of" 3
+all_posts = "सभी पोस्ट्स"
+all_tags = "सभी टैग्स"
+
+# Post metadata.
+draft = "मसौदा"
+min_read = "मिनट पठन समय"
+words = "शब्द"
+last_updated_on = "आखिरी अपडेट"
+see_changes = "बदलाव देखें"
+
+# Post body.
+table_of_contents = "विषय सूची"
+load_comments = "कमेंट्स लोड करें"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "चालित द्वारा"
+and = "और"
+site_source = "साइट का स्रोत"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "आपके द्वारा अनुरोधित पृष्ठ मौजूद नहीं है"
+translation_missing = "या फिर आपकी भाषा में अनुवाद नहीं किया गया है"
+check_url = "URL में त्रुटियों की जांच करें या"
+go_home = "मुख्य पृष्ठ पर वापस जाएं"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "मौलिक उद्धरण दिखाएं"
+show_translation = "अनुवाद दिखाएं"
+open_quotation_mark = "“"
+close_quotation_mark = "”"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "यह एक वेब फ़ीड है, जिसे एटम फ़ीड भी कहा जाता है। अपने न्यूज़रीडर में एड्रेस बार से URL कॉपी करके सब्सक्राइब करें। About Feeds पर जाकर और अधिक जानकारी प्राप्त करें और शुरू करें। यह सेवा मुफ़्त है।"
+visit_the_site = "वेबसाइट पर जाएं"
+recent_posts = "हाल की पोस्ट्स"

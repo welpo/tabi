@@ -1,4 +1,4 @@
-{% macro list_posts(posts, max) %}
+{% macro list_posts(posts, max, language_strings="") %}
 
 <div class="bloglist-container">
     {% for post in posts %}
@@ -13,7 +13,7 @@
 
             {% if post.date %}
                 <div class="date">
-                    {{ macros_format_date::format_date(date=post.date, short=false) }}
+                    {{ macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) }}
                 </div>
             {% endif %}
 
@@ -37,14 +37,14 @@
                         <p>{{ post.summary | striptags | safe | trim_end_matches(pat=".") }}…</p>
                     {% endif %}
                 </div>
-                <a class="readmore" href={{ post.permalink }}>{{ macros_translate::translate(key="read_more", default="Read more") }}&nbsp;→</a>
+                <a class="readmore" href={{ post.permalink }}>{{ macros_translate::translate(key="read_more", default="Read more", language_strings=language_strings) }}&nbsp;→</a>
             </div>
         </section>
     {% endif %}
         {% if not loop.last %}
             {% if loop.index == max %}
                 <div class="all-posts">
-                    <a href="{{ get_url(path="blog", lang=lang) }}/">{{ macros_translate::translate(key="all_posts", default="All posts") }}&nbsp;⟶</a>
+                    <a href="{{ get_url(path="blog", lang=lang) }}/">{{ macros_translate::translate(key="all_posts", default="All posts", language_strings=language_strings) }}&nbsp;⟶</a>
                 </div>
             {% endif %}
         {% endif %}

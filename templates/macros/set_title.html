@@ -1,4 +1,4 @@
-{%- macro set_title() -%}
+{%- macro set_title(language_strings="") -%}
 
 {# Setup. #}
 {%- set prefix = config.title | safe -%}
@@ -26,7 +26,7 @@
     {%- set suffix = term.name -%}
 {% elif taxonomy.name %}
     {# List of tags. #}
-    {%- set suffix = macros_translate::translate(key=taxonomy.name) | capitalize -%}
+    {%- set suffix = macros_translate::translate(key=taxonomy.name, language_strings=language_strings) | capitalize -%}
 {% else %}
     {%- set suffix = "404" %}
 {%- endif -%}

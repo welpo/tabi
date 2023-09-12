@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {# Site title #}
-    <title>{{ macros_set_title::set_title() }}</title>
+    <title>{{ macros_set_title::set_title(language_strings=language_strings) }}</title>
 
     {# Favicon #}
     {% if config.extra.favicon %}
