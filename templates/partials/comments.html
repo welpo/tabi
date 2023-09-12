@@ -1,4 +1,4 @@
-{%- macro add_comments(comment_system, automatic_loading) -%}
+{% set automatic_loading = config.extra[comment_system].automatic_loading %}
 
 <div id="comments" class="comments"
 
@@ -92,5 +92,3 @@
 
 <noscript>You need JavaScript to view the comments.</noscript>
 </div>
-
-{%- endmacro add_comments -%}

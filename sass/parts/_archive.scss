@@ -2,20 +2,20 @@
     margin-top: 4vmin;
 
     .listing-title {
-        font-size: 1.5rem;
         margin-bottom: 1rem;
+        font-size: 1.5rem;
     }
 
     .listing-item {
-        padding: 0.2rem 1rem;
-        margin-bottom: 0.5rem;
         display: flex;
         gap: 1rem;
+        margin-bottom: 0.5rem;
+        padding: 0.2rem 1rem;
 
         .post-time {
+            padding-left: 1vmin;
             min-width: 5rem;
             text-align: left;
-            padding-left: 1vmin;
 
             .date {
                 color: var(--meta-color);
@@ -25,9 +25,9 @@
     }
 
     ul {
-        list-style: none;
-        padding: 0;
         margin: 0;
+        padding: 0;
+        list-style: none;
     }
 
     li {

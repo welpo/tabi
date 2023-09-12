@@ -1,28 +1,28 @@
 .draft-label {
-    color: var(--hover-color);
+    margin-right: 0.3rem;
     background-color: var(--primary-color);
     padding: 2px 4px;
-    margin-right: 0.3rem;
+    color: var(--hover-color);
 }
 
 .article-title {
+    display: block;
     margin: 0;
     color: var(--text-color-high-contrast);
-    display: block;
-    font-size: 2rem;
     font-weight: 550;
+    font-size: 2rem;
     line-height: 3rem;
 }
 
 iframe {
-    border: none;
     display: block;
+    margin-right: 15%;
+    margin-bottom: 3vmin;
+    margin-left: 15%;
+    border: none;
     aspect-ratio: 16/9;
     width: 100vmin;
     max-width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-bottom: 3vmin;
 }
 
 ul {
@@ -61,16 +61,16 @@ ul {
 }
 
 blockquote {
-    border-left: 0.3rem solid var(--primary-color);
     margin: 0;
+    border-left: 0.3rem solid var(--primary-color);
     padding-left: 1em;
 }
 
 a {
-    color: var(--primary-color);
-    text-decoration: inherit;
-    font-weight: inherit;
     position: relative;
+    color: var(--primary-color);
+    font-weight: inherit;
+    text-decoration: inherit;
 }
 
 a:hover {
@@ -79,15 +79,15 @@ a:hover {
 }
 
 a:not(.no-hover-padding)::before {
-    content: "";
     position: absolute;
     top: 0;
+    right: -0.15em;
     bottom: 0;
     left: -0.15em;
-    right: -0.15em;
+    opacity: 0;
     z-index: -1;
     background-color: var(--primary-color);
-    opacity: 0;
+    content: "";
 }
 
 a:not(.no-hover-padding):hover::before {
@@ -102,24 +102,24 @@ a:not(.no-hover-padding):hover::before {
 }
 
 hr {
-    border: none;
-    height: 1px;
-    background-color: var(--divider-color);
     margin: 3.5rem 0 1rem;
+    border: none;
+    background-color: var(--divider-color);
+    height: 1px;
 }
 
 .footnote-reference {
-    font-family: var(--serif-font);
     font-size: 0.7rem;
+    font-family: var(--serif-font);
 }
 
 .footnote-definition {
     margin-bottom: 0.6rem;
 
     sup {
-        font-family: var(--serif-font);
-        font-size: 0.75rem;
         margin-right: 0.15rem;
+        font-size: 0.75rem;
+        font-family: var(--serif-font);
     }
 
     p {
@@ -128,21 +128,21 @@ hr {
 }
 
 .footnote-backlink {
-    font-size: 0.8rem;
     margin-left: 0.2rem;
+    font-size: 0.8rem;
 }
 
 .references p {
-    text-indent: -2.4rem;
     margin-left: 2.4rem;
+    text-indent: -2.4rem;
 }
 
 .info-box {
-    border: 1px solid var(--primary-color);
-    border-left-width: 0.3rem;
-    padding: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    border: 1px solid var(--primary-color);
+    border-left-width: 0.3rem;
     border-radius: 10px;
+    padding: 1rem;
     text-align: center;
 }

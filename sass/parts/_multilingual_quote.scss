@@ -7,14 +7,14 @@
 }
 
 .quote-label {
-    font-family: var(--sans-serif-font);
+    display: none;
     cursor: pointer;
+    border-radius: 5px;
     color: var(--meta-color);
+    font-size: 0.75rem;
+    font-family: var(--sans-serif-font);
     text-align: center;
     text-decoration: none;
-    font-size: 0.75rem;
-    border-radius: 5px;
-    display: none;
 }
 
 .quote-toggle:not(:checked) ~ .quote .translated .quote-label-original,

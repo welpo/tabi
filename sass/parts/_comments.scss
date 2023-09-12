@@ -3,30 +3,30 @@
 }
 
 .comments {
+    margin-top: 2rem;
     border-top: var(--divider-color) solid 0.5px;
     border-bottom: var(--divider-color) solid 0.5px;
-    margin-top: 2rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
 
     iframe {
-        border: none;
-        width: 100%;
         margin: 0;
-        max-width: 100%;
+        border: none;
         aspect-ratio: inherit;
+        width: 100%;
+        max-width: 100%;
     }
 
     .load-comments-button {
         display: block;
-        font-family: var(--sans-serif-font);
+        cursor: pointer;
+        margin: 0.5em auto;
+        border: none;
+        background: none;
+        padding: 0.5em 1em;
         color: inherit;
         font-size: 0.95rem;
-        background: none;
-        border: none;
-        padding: 0.5em 1em;
-        margin: 0.5em auto;
-        cursor: pointer;
+        font-family: var(--sans-serif-font);
         text-decoration: none;
     }
 }

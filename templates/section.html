@@ -8,7 +8,7 @@
 {% endif -%}
 
 {%- if section.extra.header %}
-    {{ macros_page_desc::page_desc(desc=section.extra.header, page=section) }}
+    {%- include "partials/home_banner.html" -%}
 {% endif -%}
 
 <div class="list">
@@ -28,7 +28,7 @@
 </main>
 
 {% if paginator %}
-    {{ macros_paginate::paginate(language_strings=language_strings) }}
+    {%- include "partials/paginate.html" -%}
 {% endif %}
 
 {% endblock main_content %}

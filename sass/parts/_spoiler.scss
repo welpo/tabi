@@ -3,15 +3,15 @@
 }
 
 .spoiler-content {
-    cursor: help; // Indicate interactive element.
     display: inline-block; // Allow content to only take up its own width.
+    cursor: help; // Indicate interactive element.
 
     .spoiler-hidden {
-        filter: blur(6px);
-        user-select: none;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
+        filter: blur(6px);
+        user-select: none;
 
         a {
             pointer-events: none; // Make links unclickable.
@@ -32,9 +32,9 @@
 
 .spoiler-container.fixed-blur {
     .spoiler-content:before {
-        content: 'SPOILER'; // Display the word "SPOILER".
-        filter: blur(6px);
         display: inline-block; // Block display within the inline flow.
+        filter: blur(6px);
+        content: 'SPOILER'; // Display the word "SPOILER".
     }
 
     .spoiler-content .spoiler-hidden {

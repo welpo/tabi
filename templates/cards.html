@@ -14,10 +14,10 @@
             {%- set show_pages = section.pages -%}
         {% endif -%}
 
-        {{ macros_cards_pages::cards_pages(pages=show_pages) }}
+    {%- include "partials/cards_pages.html" -%}
     </main>
 
     {% if paginator %}
-        {{ macros_paginate::paginate(language_strings=language_strings) }}
+        {%- include "partials/paginate.html" -%}
     {% endif %}
 {% endblock main_content %}

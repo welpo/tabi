@@ -3,9 +3,9 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 2rem;
+    padding: 0;
     font-size: 1em;
     list-style: none;
-    padding: 0;
 
     .page-item .disabled {
         opacity: 0.5;
@@ -13,7 +13,7 @@
     }
 
     .page-numbers {
-        font-size: 0.9rem;
         color: var(--meta-color);
+        font-size: 0.9rem;
     }
 }

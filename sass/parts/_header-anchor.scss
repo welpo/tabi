@@ -1,14 +1,14 @@
 .header-anchor {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
-    width: 1.9rem;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
     margin-left: -2rem;
     padding-right: 0.3rem;
-    opacity: 0;
-    user-select: none;
+    width: 1.9rem;
     height: 100%;
+    user-select: none;
     
     @media (max-width: 500px) {
         display: none;
@@ -17,9 +17,9 @@
 
 .link-icon {
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14.78 3.653a3.936 3.936 0 1 1 5.567 5.567l-3.627 3.627a3.936 3.936 0 0 1-5.88-.353.75.75 0 0 0-1.18.928 5.436 5.436 0 0 0 8.12.486l3.628-3.628a5.436 5.436 0 1 0-7.688-7.688l-3 3a.75.75 0 0 0 1.06 1.061l3-3Z'%3E%3C/path%3E%3Cpath d='M7.28 11.153a3.936 3.936 0 0 1 5.88.353.75.75 0 0 0 1.18-.928 5.436 5.436 0 0 0-8.12-.486L2.592 13.72a5.436 5.436 0 1 0 7.688 7.688l3-3a.75.75 0 1 0-1.06-1.06l-3 3a3.936 3.936 0 0 1-5.567-5.568l3.627-3.627Z'%3E%3C/path%3E%3C/svg%3E");
-    background: var(--text-color);
     align-self: center;
     cursor: pointer;
+    background: var(--text-color);
     width: 1rem;
     height: 1rem;
 }

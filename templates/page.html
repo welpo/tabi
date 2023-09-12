@@ -84,7 +84,7 @@
                 {# Show link to remote changes if enabled #}
                 {% if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" %}
                     {{ separator }}
-                    <li><a href="{{ macros_create_history_url::create_history_url(relative_path=page.relative_path) }}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}<small> ↗</small></a></li>
+                    <li><a href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}<small> ↗</small></a></li>
                 {% endif %}
             {% endif %}
         </ul>
@@ -141,8 +141,7 @@
         {% endif %}
 
         {% if comment_system %}
-            {% set automatic_loading = config.extra[comment_system].automatic_loading %}
-            {{ macros_add_comments::add_comments(comment_system=comment_system, automatic_loading=automatic_loading) }}
+            {% include "partials/comments.html" %}
         {% endif %}
 
     </article>

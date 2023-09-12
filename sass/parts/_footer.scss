@@ -17,10 +17,10 @@ footer nav {
 }
 
 .socials {
-    justify-content: center;
-    flex-grow: 0;
     display: flex;
+    flex-grow: 0;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: flex-end;
 
     svg {
@@ -33,18 +33,18 @@ footer nav {
 }
 
 .social {
-    background-image: unset;
-    padding: 0.5vmin;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: unset;
+    padding: 0.5vmin;
 }
 
 .social > img {
-    color: #000000;
     aspect-ratio: 1/1;
     width: 1.5rem;
     height: auto;
+    color: #000000;
 }
 
 .social {
@@ -70,8 +70,8 @@ footer nav {
 }
 
 .credits {
-    font-size: 0.88rem;
     color: var(--meta-color);
+    font-size: 0.88rem;
     text-align: center;
 
     p {

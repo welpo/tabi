@@ -1,11 +1,9 @@
-{%- macro set_title(language_strings="") -%}
-
-{# Setup. #}
+{#- Setup -#}
 {%- set prefix = config.title | safe -%}
 {%- set custom_separator = config.extra.separator | default(value="•") -%}
 {%- set separator = " " ~ custom_separator ~ " " -%}
 
-{# Get the base path for the current language. #}
+{#- Get the base path for the current language -#}
 {%- if lang != config.default_language %}
     {%- set base_path = "/" ~ lang ~ "/" %}
 {%- else -%}
@@ -22,20 +20,18 @@
 {% elif page.title %}
     {%- set suffix = page.title -%}
 {% elif term.name %}
-    {# Individual tags. #}
+    {#- Individual tags -#}
     {%- set suffix = term.name -%}
 {% elif taxonomy.name %}
-    {# List of tags. #}
+    {#- List of tags -#}
     {%- set suffix = macros_translate::translate(key=taxonomy.name, language_strings=language_strings) | capitalize -%}
 {% else %}
     {%- set suffix = "404" %}
 {%- endif -%}
 
-{# Return the final concatenated string. #}
+{#- Return the final concatenated string -#}
 {%- if config.extra.invert_title_order -%}
     {{- suffix ~ separator ~ prefix -}}
 {%- else -%}
     {{- prefix ~ separator ~ suffix -}}
 {%- endif -%}
-
-{%- endmacro set_title -%}

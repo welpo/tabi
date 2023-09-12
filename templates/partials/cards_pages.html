@@ -1,5 +1,3 @@
-{% macro cards_pages(pages) %}
-
 {%- set rel_attributes = macros_rel_attributes::rel_attributes() | trim -%}
 
 {%- if config.markdown.external_links_target_blank -%}
@@ -9,7 +7,7 @@
 {%- endif -%}
 
 <div class="cards">
-    {%- for page in pages %}
+    {%- for page in show_pages %}
     <div class="card">
         {% if page.extra.link_to %}
             <a rel="{{ rel_attributes }}" {{ blank_target }} href={{ page.extra.link_to }}>
@@ -45,5 +43,3 @@
 
     {% endfor -%}
 </div>
-
-{% endmacro cards_pages %}

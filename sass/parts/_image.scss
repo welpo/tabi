@@ -1,15 +1,15 @@
 figure {
-    box-sizing: border-box;
     display: inline-block;
+    box-sizing: border-box;
     margin: 0;
     max-width: 100%;
     height: auto;
 }
 
 figcaption {
-    font-family: var(--serif-font);
-    font-size: 0.72rem;
     color: var(--meta-color);
+    font-size: 0.72rem;
+    font-family: var(--serif-font);
     text-align: center;
 }
 
@@ -21,9 +21,9 @@ img {
 }
 
 figure h4 {
-    font-size: 1rem;
     margin: 0;
     margin-bottom: 1em;
+    font-size: 1rem;
 }
 
 figure h4::before {

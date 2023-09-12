@@ -1,10 +1,10 @@
 .theme-switcher {
+    -webkit-mask: var(--theme-switcher-svg);
+    position: relative;
     align-self: center;
+    cursor: pointer;
     margin-left: 0.5rem;
+    background: var(--text-color);
     width: 1rem;
     height: 1rem;
-    position: relative;
-    cursor: pointer;
-    -webkit-mask: var(--theme-switcher-svg);
-    background: var(--text-color);
 }
