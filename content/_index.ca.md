@@ -5,7 +5,7 @@ sort_by = "date"
 template = "section.html"
 
 [extra]
-header = {title = "Hola! Soc tabi~", img = "img/main.webp" }
+header = {title = "Hola! Soc tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, l'autor de tabi" }
 section_path = "blog/_index.ca.md"
 max_posts = 4
 social_media_card = "img/social_cards/ca.jpg"
