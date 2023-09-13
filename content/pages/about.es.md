@@ -11,7 +11,7 @@ social_media_card = "img/social_cards/about.es.jpg"
 
 Bienvenido a la demo de [**tabi**](https://github.com/welpo/tabi), un tema para [Zola](https://www.getzola.org/), un rapidísimo generador de sitios estáticos.
 
-**tabi** es obra de Óscar Fernández ([welpo](https://github.com/welpo/) en GitHub), inicialmente creado para [su página personal](https://osc.garden/). Es un tema moderno y lleno de funcionalidades que ofrece configuraciones predeterminadas sensatas y seguras.
+**tabi** es obra de Óscar Fernández ([welpo](https://github.com/welpo/) en GitHub), inicialmente creado para [su página personal](https://osc.garden/es/). Es un tema moderno y lleno de funcionalidades que ofrece configuraciones predeterminadas sensatas y seguras.
 
 ¿Buscas instrucciones detalladas o consejos sobre cómo utilizar **tabi**? Las secciones del [blog](https://welpo.github.io/tabi/es/blog/) y del [archivo](https://welpo.github.io/tabi/es/archive/) contienen la documentación del tema, que incluye desde muestras de funciones hasta guías detalladas.
 
