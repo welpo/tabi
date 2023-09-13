@@ -15,7 +15,7 @@
     {% endif %}
 
     {# Feed #}
-    <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path="atom.xml",
+    <link rel="alternate" type="application/atom+xml" title="{{ config.title | safe }}" href="{{ get_url(path="atom.xml",
         trailing_slash=false) }}">
     
     {# CSS #}
@@ -79,19 +79,32 @@
         <meta name="robots" content="index, nofollow" />
     {% endif %}
 
-    <meta property="og:title" content="{{ config.title }}" />
+    <meta property="og:title" content="{{ page.title | default(value=config.title) | safe }}" />
     <meta property="og:type" content="article" />
+
+    {# Add og:locale and hreflang tags for multilingual sites #}
+    {%- if config.languages | length > 0 %}
+        {%- include "partials/multilingual_tags.html" -%}
+    {%- else -%}
+        <meta property="og:locale" content="{{ macros_translate::translate(key="date_locale", default="en_GB", language_strings=language_strings) }}" />
+    {%- endif %}
 
     {# Image for social media sharing #}
     {%- set social_media_card = macros_settings::evaluate_setting_priority(setting="social_media_card", page=page | default(value=""), section=section | default(value=""), default_global_value="") -%}
     {% if social_media_card %}
         <meta property="og:image" content="{{ get_url(path=social_media_card, cachebust=true) }}" />
+        {%- set meta = get_image_metadata(path=social_media_card, allow_missing=true) -%}
+        {%- if meta -%}
+            <meta property="og:image:width" content="{{ meta.width }}" />
+            <meta property="og:image:height" content="{{ meta.height }}" />
+        {%- endif -%}
         <meta name="twitter:image" content="{{ get_url(path=social_media_card, cachebust=true) }}" />
         <meta name="twitter:card" content="summary_large_image" />
     {% endif %}
 
-    {% set current_url = current_url | default(value="/") %}
-    <meta property="og:url" content="{{ current_url }}">
+    {%- if current_url -%}
+        <meta property="og:url" content="{{ current_url }}">
+    {%- endif -%}
     
     <meta property="og:site_name" content="{{ config.title }}">
 

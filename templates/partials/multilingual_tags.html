@@ -1,0 +1,37 @@
+{# Get the base filename by stripping out any language code and '.md' suffix #}
+{%- if page.relative_path -%}
+    {%- set base_filename = page.relative_path | replace(from=".md", to="") | replace(from="." ~ lang, to="") -%}
+
+    {# Loop through all available languages in config #}
+    {%- for lcode, ldetails in config.languages -%}
+        {%- set translated_filename = base_filename -%}
+
+        {# If the language is not the default language, append the language code to the base filename #}
+        {%- if lcode != config.default_language -%}
+            {%- set translated_filename = base_filename ~ "." ~ lcode -%}
+        {%- endif -%}
+
+        {%- set translated_filename = translated_filename ~ ".md" -%}
+        {%- set translated_page = get_page(path=translated_filename) -%}
+
+        {# Create the og:locale and hreflang tags if the translated page exists #}
+        {%- if translated_page -%}
+            
+            {#- Dynamically load the language strings for each language -#}
+            {%- set other_language_strings = load_data(path="i18n/" ~ lcode ~ ".toml", required=false) -%}
+            {%- if not other_language_strings -%}
+                {%- set other_language_strings = load_data(path="themes/tabi/i18n/" ~ lcode ~ ".toml", required=false) -%}
+            {%- endif -%}
+            <meta property="og:locale:alternate" content="{{ macros_translate::translate(key="date_locale", default="en_GB", language_strings=other_language_strings) }}" />
+
+            {# Construct href for hreflang #}
+            {%- set href = translated_page.permalink -%}
+            {%- if lcode == config.default_language -%}
+                {%- set href = href | replace(from='/' ~ lang ~ '/', to = '/') -%}
+            {%- else -%}
+                {%- set href = href | replace(from='/' ~ lang ~ '/', to='/' ~ lcode ~ '/') -%}
+            {%- endif -%}
+            <link rel="alternate" hreflang="{{ lcode }}" href="{{ href | safe }}" />
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
