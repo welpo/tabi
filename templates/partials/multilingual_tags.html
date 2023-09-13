@@ -1,7 +1,11 @@
-{# Get the base filename by stripping out any language code and '.md' suffix #}
-{%- if page.relative_path -%}
-    {%- set base_filename = page.relative_path | replace(from=".md", to="") | replace(from="." ~ lang, to="") -%}
-
+{%- if section.relative_path -%}
+    {%- set base_path = section.relative_path-%}
+{%- elif page.relative_path -%}
+    {%- set base_path = page.relative_path -%}
+{%- endif -%}
+{%- if base_path -%}
+    {# Get the base filename by stripping out any language code and '.md' suffix #}
+    {%- set base_filename = base_path | replace(from=".md", to="") | replace(from="." ~ lang, to="") -%}
     {# Loop through all available languages in config #}
     {%- for lcode, ldetails in config.languages -%}
         {%- set translated_filename = base_filename -%}
@@ -10,13 +14,17 @@
         {%- if lcode != config.default_language -%}
             {%- set translated_filename = base_filename ~ "." ~ lcode -%}
         {%- endif -%}
-
         {%- set translated_filename = translated_filename ~ ".md" -%}
-        {%- set translated_page = get_page(path=translated_filename) -%}
+
+        {%- if page.relative_path -%}
+            {%- set translated_page = get_page(path=translated_filename) -%}
+        {%- else -%}
+            {%- set translated_page = get_section(path=translated_filename) -%}
+        {%- endif -%}
 
         {# Create the og:locale and hreflang tags if the translated page exists #}
         {%- if translated_page -%}
-            
+
             {#- Dynamically load the language strings for each language -#}
             {%- set other_language_strings = load_data(path="i18n/" ~ lcode ~ ".toml", required=false) -%}
             {%- if not other_language_strings -%}
@@ -25,7 +33,7 @@
             <meta property="og:locale:alternate" content="{{ macros_translate::translate(key="date_locale", default="en_GB", language_strings=other_language_strings) }}" />
 
             {# Construct href for hreflang #}
-            {%- set href = translated_page.permalink -%}
+            {%- set href = translated_page.permalink | default(value=translated_page.url) -%}
             {%- if lcode == config.default_language -%}
                 {%- set href = href | replace(from='/' ~ lang ~ '/', to = '/') -%}
             {%- else -%}

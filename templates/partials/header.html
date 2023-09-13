@@ -83,7 +83,7 @@
     <meta property="og:type" content="article" />
 
     {# Add og:locale and hreflang tags for multilingual sites #}
-    {%- if config.languages | length > 0 %}
+    {%- if config.languages | length > 0 and current_url %}
         {%- include "partials/multilingual_tags.html" -%}
     {%- else -%}
         <meta property="og:locale" content="{{ macros_translate::translate(key="date_locale", default="en_GB", language_strings=language_strings) }}" />
