@@ -16,7 +16,7 @@
             {%- set image_path = get_url(path=header.img, trailing_slash=false) | safe -%}
         {%- endif -%}
         <div id="image-container-home">
-            <img alt="the owner" id="banner-home-img" src="{{ image_path }}" />
+            <img alt="{{ header.img_alt | default(value="the owner") }}" id="banner-home-img" src="{{ image_path }}" />
         </div>
     {%- endif -%}
 </div>

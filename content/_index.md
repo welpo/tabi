@@ -5,7 +5,7 @@ sort_by = "date"
 template = "section.html"
 
 [extra]
-header = {title = "Hello! I'm tabi~", img = "img/main.webp" }
+header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, the theme's author" }
 section_path = "blog/_index.md"
 max_posts = 4
 social_media_card = "img/social_cards/index.jpg"
