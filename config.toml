@@ -68,6 +68,12 @@ browser_theme_color = "#087e96"
 # You can load a stylesheet for a single post by adding it to the [extra] section of the post's front matter, following this same format.
 stylesheets = []
 
+# Sets the default canonical URL for all pages.
+# Individual pages can override this in the [extra] section using canonical_url.
+# Example: "$base_url/blog/post1" will get the canonical URL "https://example.com/blog/post1".
+# Note: To ensure accuracy in terms of matching content, consider setting 'canonical_url' individually per page.
+# base_canonical_url = "https://example.com"
+
 # Remote repository for your Zola site.
 # Used for `show_remote_changes` and `show_remote_source` (see below).
 # Supports GitHub, GitLab, Gitea, and Codeberg.
