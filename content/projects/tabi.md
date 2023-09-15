@@ -5,7 +5,7 @@ weight = 1
 
 [extra]
 local_image = "img/tabi.webp"
-social_media_card = "img/projects_tabi.jpg"
+social_media_card = "img/social_cards/projects_tabi.jpg"
 +++
 
 [**tabi**](https://github.com/welpo/tabi) is a modern, feature-rich theme for [Zola](https://www.getzola.org/), a fast static site generator.

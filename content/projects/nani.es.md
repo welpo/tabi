@@ -5,7 +5,7 @@ weight = 3
 
 [extra]
 local_image = "img/nani.webp"
-social_media_card = "img/es_projects_nani.jpg"
+social_media_card = "img/social_cards/es_projects_nani.jpg"
 +++
 
 Si trabajas en un servidor remoto, sabrás que compartir archivos con otras personas puede ser un proceso tedioso. `nani` es un script en Bash diseñado para simplificar esta tarea. Con un solo comando, puedes convertir archivos locales en enlaces públicos, facilitando el proceso de compartir directamente desde tu servidor.

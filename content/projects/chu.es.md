@@ -5,7 +5,7 @@ weight = 2
 
 [extra]
 local_image = "img/chu.webp"
-social_media_card = "img/es_projects_chu.jpg"
+social_media_card = "img/social_cards/es_projects_chu.jpg"
 +++
 
 [**chu**](https://github.com/welpo/chu) es un subidor de archivos creado con Python, Flask y uWSGI. Este proyecto integra diversas técnicas de optimización para hacer que la subida de archivos sea no solo más sencilla, sino también más inteligente.

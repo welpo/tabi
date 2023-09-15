@@ -5,7 +5,7 @@ weight = 4
 
 [extra]
 local_image = "img/spectro.webp"
-social_media_card = "img/ca_projects_spectro.jpg"
+social_media_card = "img/social_cards/ca_projects_spectro.jpg"
 +++
 
 Transforma fitxers d'àudio en espectrogrames amb format BBCode de manera senzilla amb `spectro`. Aquest script en Bash suporta una àmplia varietat de formats d'àudio com Ogg, MP3, FLAC, AAC i més.

@@ -5,7 +5,7 @@ weight = 2
 
 [extra]
 local_image = "img/chu.webp"
-social_media_card = "img/projects_chu.jpg"
+social_media_card = "img/social_cards/projects_chu.jpg"
 +++
 
 [**chu**](https://github.com/welpo/chu) is a Python-based file uploader built using Python, Flask, and uWSGI. It integrates multiple optimization techniques to make file uploads not just simpler, but smarter.
