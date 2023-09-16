@@ -16,10 +16,16 @@
         {%- endif -%}
         {%- set translated_filename = translated_filename ~ ".md" -%}
 
-        {%- if page.relative_path -%}
-            {%- set translated_page = get_page(path=translated_filename) -%}
-        {%- else -%}
-            {%- set translated_page = get_section(path=translated_filename) -%}
+        {# Check if the translated page or section exists #}
+        {%- set translation_exists = load_data(path=translated_filename, required=false) -%}
+
+        {# Get the page #}
+        {%- if translation_exists -%}
+            {%- if page.relative_path -%}
+                {%- set translated_page = get_page(path=translated_filename, metadata_only=true) -%}
+            {%- else -%}
+                {%- set translated_page = get_section(path=translated_filename, metadata_only=true) -%}
+            {%- endif -%}
         {%- endif -%}
 
         {# Create the og:locale and hreflang tags if the translated page exists #}
