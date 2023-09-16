@@ -51,6 +51,7 @@ function loadIsso(commentsDiv) {
     script.setAttribute('data-isso', endpointUrl);
     script.setAttribute('data-isso-lang', lang);
     script.setAttribute('data-isso-max-comments-top', maxCommentsTop);
+    script.setAttribute('data-isso-max-comments-nested', maxCommentsNested);
     script.setAttribute('data-isso-avatar', avatar);
     script.setAttribute('data-isso-vote', voting);
     script.setAttribute('data-isso-page-author-hashes', hashes);
