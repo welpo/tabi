@@ -33,7 +33,11 @@
         {{ date | date(format="%B %Y") }}
     {% endif %}
 {% else %}
-    {{ date | date(format="%d %b %Y", locale=date_locale) }}
+    {% if short %}
+        {{ date | date(format="%-d %b %Y", locale=date_locale) }}
+    {% else %}
+        {{ date | date(format="%d %b %Y", locale=date_locale) }}
+    {% endif %}
 {% endif %}
 
 {% endmacro %}
