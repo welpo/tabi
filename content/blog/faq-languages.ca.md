@@ -117,7 +117,7 @@ Nota: quan provis la teva traducció, és possible que necessitis reiniciar `zol
 
 ## He trobat un error en una traducció. Com el corregeixo?
 
-Si trobes un error en una traducció, pots crear un problema o una sol·licitud d'extracció al [repositori de tabi](https://github.com/welpo/tabi).
+Si trobes un error en una traducció, pots crear una issue o una Pull Request al [repositori de tabi](https://github.com/welpo/tabi).
 
 ## Com actualitzo les traduccions després d'una actualització del tema?
 
