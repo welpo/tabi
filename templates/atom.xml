@@ -62,8 +62,9 @@
         <link rel="alternate" href="{{ page.permalink | safe }}" type="text/html"/>
         <id>{{ page.permalink | safe }}</id>
         {% if config.extra.full_content_in_feed %}
-            <content type="html">{{ page.content | safe }}</content>
-        {% elif page.summary -%}
+            <content type="html">{{ page.content }}</content>
+        {% endif -%}
+        {% if page.summary -%}
             <summary type="html">{{ page.summary | striptags | safe | trim_end_matches(pat=".") }}…</summary>
         {% elif page.description -%}
             <summary type="html">{{ page.description | striptags | safe }}</summary>
