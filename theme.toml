@@ -130,6 +130,10 @@ menu = [
 # The RSS icon will be shown if (1) it's enabled and (2) the following variable is set to true.
 feed_icon = true
 
+# Show the full post content in the Atom feed.
+# If it's set to false, only the description or summary will be shown.
+full_content_in_feed = false
+
 # Email address for footer's social section.
 # Protect against spambots:
 # 1. Use base64 for email (convert at https://www.base64encode.org/ or `printf 'your@email.com' | base64`).
