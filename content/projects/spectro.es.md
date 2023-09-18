@@ -5,6 +5,7 @@ weight = 4
 
 [extra]
 local_image = "img/spectro.webp"
+canonical_url = "https://osc.garden/es/projects/spectro/"
 social_media_card = "img/social_cards/es_projects_spectro.jpg"
 +++
 

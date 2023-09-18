@@ -5,6 +5,7 @@ weight = 2
 
 [extra]
 local_image = "img/chu.webp"
+canonical_url = "https://osc.garden/projects/chu/"
 social_media_card = "img/social_cards/projects_chu.jpg"
 +++
 
