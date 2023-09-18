@@ -15,9 +15,12 @@ default_language = "en"
 taxonomies = [{name = "tags", feed = true}]
 
 [markdown]
-external_links_target_blank = true
 highlight_code = true
 highlight_theme = "css"
+smart_punctuation = true
+
+[link_checker]
+internal_level = "warn"
 
 [languages.es]
 title = "~/tabi"
@@ -36,6 +39,9 @@ minify_html = true
 taxonomies = [{name = "tags", feed = true}]
 
 [extra]
+# Check out the documentation (or the comments below) to learn how to customise tabi:
+# https://welpo.github.io/tabi/blog/mastering-tabi-settings/
+
 # Enable JavaScript theme toggler to allow users to switch between dark/light mode.
 # Also enables automatic switching based on user's OS-level theme settings.
 # If disabled, your site will only use the theme specified in the `default_theme` variable.
@@ -84,34 +90,34 @@ remote_repository_git_platform = "auto"  # Defaults to "auto".
 # Branch in the repo hosting the Zola site.
 remote_repository_branch = "main"  # Defaults to "main".
 # Show a link to the commit history of updated posts, right next to the last updated date.
-# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 show_remote_changes = true  # Defaults to true.
 # Show a link to the repository of the site, right next to the "Powered by Zola & tabi" text.
 show_remote_source = true  # Defaults to true.
 
 # Add a "copy" button to codeblocks (loads ~700 bytes of JavaScript).
-# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 copy_button = true
 
 # Show the reading time of a page.
-# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 show_reading_time = true
 
 # Adds backlinks to footnotes (loads ~500 bytes of JavaScripts).
-# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 footnote_backlinks = false
 
 # Enable KaTeX for all posts.
-# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 katex = false
 
 # Quick navigation buttons.
 # Adds "go up" and "go to comments" buttons on the bottom right (hidden for mobile).
-# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 quick_navigation_buttons = false
 
 # Add a Table of Contents to posts, right below the title and metadata.
-# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 toc = false
 
 # Date format used when listing posts (main page, /blog section, tag posts list…)
@@ -137,7 +143,7 @@ favicon = "img/seedling.png"
 favicon_emoji = "🌱"
 
 # Path to the fallback image for social media cards (the preview image shown when sharing a link on WhatsApp, LinkedIn…).
-# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://github.com/welpo/tabi/pull/128
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 # Learn how to create these images in batch and automatically:
 # https://osc.garden/blog/automating-social-media-cards-zola/
 social_media_card = "img/social_cards/index.jpg"
