@@ -1,0 +1,604 @@
++++
+title = "Domina la configuració de tabi: guia completa"
+date = 2023-09-18
+description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
+
+[taxonomies]
+tags = ["funcionalitat", "tutorial", "preguntes freqüents"]
+
+[extra]
+giscus = true
+footnote_backlinks = true
+quick_navigation_buttons = true
++++
+
+Aquesta és la guia completa sobre la configuració a tabi. Si tens alguna pregunta, pots utilitzar els [comentaris](#comments) al final d'aquesta pàgina o [obrir un issue a GitHub](https://github.com/welpo/tabi/issues/new).
+
+<details>
+    <summary><b>Taula de continguts</b></summary>
+    <!-- toc -->
+</details>
+
+## Jerarquia de configuració
+
+tabi té una jerarquia que permet personalitzar el teu lloc a diferents nivells. La jerarquia (de menor a major prioritat) és la següent:
+
+1. **Configuracions globals**: Aquestes són les configuracions que s'apliquen a tot el teu lloc. Es configuren a `config.toml`.
+2. **Configuracions de secció**: Aquestes són les configuracions que s'apliquen a una secció del teu lloc (per exemple, `/blog` o `/projects`). Es configuren a la metainformació de l'arxiu `_index.md` de la secció.
+3. **Configuracions de pàgina**: Aquestes són les configuracions que s'apliquen a una sola pàgina. Es configuren a la metainformació de la pàgina.
+
+En tots els casos, les opcions de tabi es configuren a la secció `[extra]`.
+
+Per a les configuracions que segueixen aquesta jerarquia, el valor establert a una pàgina reemplaça el valor d'una secció, que al seu torn reemplaça el valor global. En resum: com més específica sigui la configuració, més prioritat tindrà, o `pàgina > secció > config.toml`.
+
+---
+
+## Suport multilingüe
+
+tabi ofereix suport multilingüe complet per al teu lloc Zola, des de configurar un idioma predeterminat fins a afegir tots els que vulguis. Consulta les [preguntes freqüents sobre idiomes](/ca/blog/faq-languages/) per a més informació.
+
+---
+
+## Aparença
+
+### Pàgina principal
+
+La [pàgina principal](/) d'aquesta demo té una capçalera amb una imatge, un títol i una descripció:
+
+{{ dual_theme_image(light_src="img/header_light.webp", dark_src="img/header_dark.webp", alt="Capçalera de la pàgina principal") }}
+
+Per configurar la imatge i el títol, pots utilitzar la variable `header` al front matter de l'arxiu `_index.md` de la secció. Per exemple:
+
+```toml
+[extra]
+header = {title = "Hola! Soc tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, l'autor del tema" }
+```
+
+La descripció és contingut Markdown normal, escrit fora del front matter.
+
+Si vols mostrar publicacions a la pàgina principal, primer necessites decidir si la seva ruta serà `/` o quelcom diferent, com ara `/blog/`.
+
+Si vols servir les publicacions des de `/`, necessites configurar `paginate_by = 5` al front matter del teu arxiu `_index.md`. **Nota**: això no es configura a l'apartat `[extra]`, sinó al front matter principal. Exemple:
+
+```toml
+sort_by = "date"
+template = "section.html"
+paginate_by = 5
+
+[extra]
+header = {title = "Hola! Sóc tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, l'autor del tema" }
+```
+
+Si prefereixes servir les publicacions des de `/blog`, pots configurar `section_path = "/blog"` a la secció `[extra]`. Aquesta és la configuració d'aquesta demo:
+
+```toml
+title = "Publicacions recents"
+sort_by = "date"
+template = "section.html"
+
+[extra]
+header = {title = "Hola! Sóc tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, l'autor del tema" }
+section_path = "blog/_index.es.md"
+max_posts = 4
+```
+
+Fixa't que si configures `section_path`, no cal que configuris `paginate_by`. Pots establir `max_posts` per determinar el nombre de publicacions que vols mostrar a la pàgina principal.
+
+El `title` és el títol que apareix a sobre de les publicacions.
+
+### Commutador de mode clar i fosc
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:---------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |        ❌        |         ✅          |
+
+El commutador de mode clar i fosc (la icona de lluna/sol a la cantonada superior dreta) es pot habilitar configurant `theme_switcher = true` a `config.toml`.
+
+### Mode predeterminat (clar/fosc)
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:---------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |        ❌        |         ❌          |
+
+El mode predeterminat es pot especificar amb la variable `default_theme`, que accepta `"dark"` o `"light"`. Per defecte és `"light"`.
+
+**Nota**: el mode predeterminat només s'usa quan el commutador de mode està desactivat, ja sigui perquè s'ha configurat com a `false` a `config.toml` o perquè un usuari ha deshabilitat JavaScript.
+
+### Skin personalitzada
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:---------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |        ❌        |         ❌          |
+
+Les skins («pells») de tabi canvien el color principal del lloc web. Pots configurar la skin a `config.toml` amb `skin = "nom_de_la_skin`. Per exemple, `skin = "lavender"` es veu així (clica per canviar entre mode clar i fosc):
+
+{{ image_toggler(default_src="img/skins/lavender_light.webp", toggled_src="img/skins/lavender_dark.webp", default_alt="pell lavender en mode clar", toggled_alt="pell lavender en mode fosc", full_width=true) }}
+
+Explora les skins disponibles i aprèn com crear la teva pròpia consultant [la documentació](/ca/blog/customise-tabi/#skins).
+
+### Estils CSS personalitzats
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:---------------:|:-------------------:|
+|   ✅   |   ❌    |      ✅       |        ❌        |         ❌          |
+
+Pots carregar estils CSS personalitzats per a tot el lloc web o en pàgines específiques utilitzant `stylesheets`, que accepta una llista de rutes cap a arxius CSS. Per exemple:
+
+```toml
+stylesheets = ["css/custom.css", "css/another.css"]
+```
+
+### Color del tema del navegador
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:---------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |        ❌        |         ❌          |
+
+El color del tema del navegador és el color que apareix a la barra de pestanyes del navegador:
+
+{{ dual_theme_image(light_src="img/browser_theme_colour_light.webp", dark_src="img/browser_theme_colour_dark.webp" alt="pestanyes amb un tema de navegador de color") }}
+
+Pots establir-ho a `config.toml` com a `browser_theme_colour = "#087e96"`. Si vols diferents colors per als modes clar/obscur, pots establir un conjunt de colors amb `browser_theme_colour = ["#ffffff", "#000000"]`. El primer color és per al mode clar, el segon per al fosc.
+
+Aquesta variable accepta qualsevol color CSS vàlid, així que pots utilitzar paraules clau (per exemple, `blue`), codis hexadecimals (per exemple, `#087e96`) o valors RGB/HSL (per exemple, `rgb(8, 126, 150)`).
+
+---
+
+## Integració amb repositoris Git
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:--------------------:|:--------------------:|
+|   ❓   |    ❓   |       ✅      |          ❓          |          ❌          |
+
+❓: `show_remote_source` sí que segueix [la jerarquia](#jerarquia-de-configuracio) i es pot configurar en una pàgina, secció o de manera global. La resta de les configuracions només es poden establir a `config.toml`.
+
+Aquestes configuracions et permeten vincular el teu lloc web tabi amb un repositori públic de Git a GitHub, GitLab, Gitea o Codeberg. Exemples de configuració:
+
+```toml
+remote_repository_url = "https://github.com/welpo/tabi"
+remote_repository_git_platform = "auto"
+remote_repository_branch = "main"
+show_remote_changes = true
+show_remote_source = true
+```
+
+Això habilita dues funcions:
+
+1. `show_remote_source = true` afegeix un enllaç al codi font del teu lloc web (el teu `remote_repository_url`) que es mostrarà al peu de pàgina:
+
+{{ dual_theme_image(light_src="img/site_source_light.webp", dark_src="img/site_source_dark.webp" alt="Peu de pàgina del lloc web, mostrant un enllaç 'Codi font del lloc'") }}
+
+2. `show_remote_changes = true` afegeix un enllaç "Veure canvis ↗" a l'historial de commits de l'article actualitzat, al costat de la data de l'última actualització [^1]:
+
+{{ dual_theme_image(light_src="img/see_changes_light.webp", dark_src="img/see_changes_dark.webp" alt="Títol de l'article i metadades, mostrant un enllaç 'Veure canvis'") }}
+
+En clicar aquest enllaç, seràs dirigit a l'historial de commits de l'article, on podràs veure els canvis realitzats en ell:
+
+{{ dual_theme_image(light_src="img/commit_history_light.webp", dark_src="img/commit_history_dark.webp" alt="Historial de commits d'un article", full_width=true) }}
+
+---
+
+## Pàgines
+
+### Projectes
+
+tabi té una plantilla integrada per a projectes. Per habilitar-la, pots crear un directori a `content/projects/`. Allà, pots crear un fitxer `_index.md` amb el següent contingut al bloc de metadades:
+
+```toml
+title = "Projectes"
+sort_by = "weight"
+template = "cards.html"
+insert_anchor_links = "left"
+
+[extra]
+show_reading_time = false
+quick_navigation_buttons = true
+```
+
+- `title` és el títol de la pàgina.
+- `sort_by` determina com s'ordenen els projectes. Pots ordenar per "date", "update_date", "title", "title_bytes", "weight", "slug" o "none".
+- `template = "cards.html"` estableix la plantilla per renderitzar la pàgina de projectes.
+- `insert_anchor_links = "left"` afegeix enllaços àncora als encapçalaments.
+- `show_reading_time = false` amaga el temps estimat de lectura.
+- `quick_navigation_buttons = true` mostra els botons de navegació ràpida.
+
+Al costat del fitxer `_index.md`, pots crear un fitxer per a cada projecte. Per exemple, aquest és el bloc de metadades per a la pàgina del projecte [tabi](/ca/projects/tabi/):
+
+```toml
+title = "tabi"
+description = "Un tema de Zola ràpid, lleuger i modern amb suport multilingüe."
+weight = 1
+
+[extra]
+local_image = "img/tabi.webp"
+```
+
+- `title` és el títol del projecte.
+- `description` és la descripció del projecte.
+- `weight` determina l'ordre en què es mostren els projectes. Com menor sigui el pes, més amunt apareixerà el projecte.
+- `local_image` és la ruta de la imatge del projecte. Aquesta imatge es mostra a la pàgina de projectes.
+
+Quan un usuari faci clic a la imatge o al títol d'un projecte, serà portat a la pàgina del projecte. Si prefereixes que els usuaris vagin a un enllaç extern, pots establir `link_to = "https://example.com"` a la secció `[extra]` del fitxer `.md` del projecte.
+
+La pàgina del projecte individual es renderitza amb la plantilla predeterminada, tret que estableixis una altra, per exemple, `template = "info-page.html"`.
+
+### Archivo
+
+Agregar una página de archivo es similar a agregar una página de proyectos. Puedes crear un directorio en `content/archive/`. Allí, puedes crear un archivo `_index.md` con el siguiente bloque de metadatos:
+
+```toml
+title = "Archivo"
+template = "archive.html"
+```
+
+De forma predeterminada, el archivo listará las publicaciones ubicadas en `/blog/`. Si deseas cambiar esto, puedes establecer `section_path = "/otra-ruta/"` en la sección `[extra]` del archivo `_index.md`. Asegúrate de incluir la barra inclinada al final.
+
+### Etiquetes
+
+tabi té suport integrat per a etiquetes. Per habilitar-les, simplement afegeix la taxonomia al teu `config.toml`:
+
+```toml
+taxonomies = [{name = "tags", feed = true}]
+```
+
+Després, pots afegir etiquetes a les teves publicacions afegint-les a l'array `tags` en el bloc de metadades de la teva publicació. Per exemple:
+
+```toml,hl_lines=05-06
+title = "Els molins de vent de la meva vida: reflexions d'un escuder"
+date = 1605-01-16
+description = "El meu viatge al costat de Don Quixot, enfrontant-me a gegants imaginats i descobrint les veritables batalles de la vida."
+
+[taxonomies]
+tags = ["personal", "reflexions"]
+```
+
+### Pàgina sobre
+
+Si vols tenir una pàgina que no sigui un article, per exemple per a una secció "Sobre", "Contacte" o "Drets d'autor", pots utilitzar la plantilla `info-page.html`.
+
+Primer, crea un directori dins de `content/` amb el nom que prefereixis. Per exemple, `content/pages/`. Després, crea un fitxer `_index.md` dins d'aquest directori. El fitxer hauria de ser així:
+
+```markdown
++++
+render = false
+insert_anchor_links = "left"
++++
+```
+
+- `render = false` indica a Zola que no renderitzi la secció.
+- `insert_anchor_links = "left"` afegeix enllaços àncora als encapçalaments. Això és opcional.
+
+Dins del directori, pots crear qualsevol quantitat de fitxers `.md`.
+
+En aquesta demo, la pàgina [Sobre mi](/ca/about/) utilitza la plantilla `info-page.html`. El bloc de metadades és el següent:
+
+```toml
+title = "Sobre mi"
+template = "info-page.html"
+path = "about"
+```
+
+Fixa't com s'estableix `path = "about"`. Zola situarà la pàgina a `$base_url/about/`. Si vols que la pàgina estigui disponible a `/contacte/`, hauries d'establir `path = "contacte"`.
+
+---
+
+## SEO
+
+tabi s'encarrega de la majoria de tasques de SEO per a tu (com ara les etiquetes del protocol Open Graph, descripció, paleta de colors...), però hi ha certes configuracions que pots personalitzar.
+
+### Favicon
+
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:--------------------:|:--------------------:|
+|   ❌   |   ❌    |      ✅       |          ❌          |          ❌           |
+
+El favicon és la petita imatge que es mostra a la pestanya del navegador. Pots establir-la a `config.toml` amb `favicon = "img/favicon.png"`.
+
+### Favicon d'emoji
+
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:--------------------:|:--------------------:|
+|   ❌   |   ❌    |      ✅       |          ❌          |          ❌           |
+
+També pots establir un emoji com a favicon amb `favicon_emoji`. Per exemple, `favicon_emoji = "👾"`.
+
+Nota: Alguns navegadors no suporten favicons d'emoji. Consulta la taula de compatibilitat a [caniuse](https://caniuse.com/link-icon-svg).
+
+### URL canònica
+
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:--------------------:|:--------------------:|
+|   ✅   |   ✅    |      ✅       |          ❌          |          ❌           |
+
+L'URL canònica és una manera d'indicar als motors de cerca quina és l'URL preferida per al contingut del teu lloc web. Això és útil per al SEO i per evitar problemes de contingut duplicat.
+
+Per defecte, l'URL canònica és l'URL de la pàgina on et trobes. No obstant això, pots canviar això configurant `canonical_url` al front matter de la teva pàgina o secció.
+
+Si tens un lloc amb una estructura idèntica i contingut coincident, pots configurar `base_canonical_url` al teu `config.toml`. L'URL canònica es crearà substituint el `$base_url` de l'URL actual amb el `$base_canonical_url` que establisquis.
+
+Per exemple, si configures `base_canonical_url = "https://example.com"`, l'URL canònica de la pàgina `$base_url/blog/post1` serà `https://example.com/blog/post1`. Això és útil si tens un lloc amb diversos dominis que comparteixen el mateix contingut.
+
+**Nota**: per assegurar-te que l'URL canònica sigui correcta, probablement serà millor configurar `canonical_url` individualment per a cada pàgina.
+
+### Targetes per a xarxes socials
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:---------------:|:-------------------:|
+|   ✅   |   ✅   |      ✅       |        ✅       |         ❌          |
+
+Les targetes per a xarxes socials són les imatges que es mostren quan comparteixes un enllaç a les xarxes socials:
+
+![Una captura de pantalla de WhatsApp mostrant un enllaç amb una targeta per a xarxes socials](/img/with_social_media_card.webp)
+
+Pots establir la imatge per a xarxes socials amb `social_media_card = "img/social_media_card.png"`.
+
+Pots especificar rutes tant relatives com absolutes.
+
+- **Ruta relativa**: Posiciona la imatge a la mateixa carpeta que la teva entrada de blog i especifica el seu nom. Per exemple, `social_media_card = "relative_image.png"`.
+
+- **Ruta absoluta**: Posiciona la imatge en una carpeta específica i especifica la ruta des de l'arrel. Per exemple, `social_media_card = "/img/absolute_image.png"`.
+
+Si ambdues rutes, relativa i absoluta, són vàlides, la ruta relativa tindrà prioritat.
+
+Ja que segueix la [jerarquia](#jerarquia-de-configuracio), si no està configurat en una pàgina, però sí ho està en una secció, s'utilitzarà la imatge de la secció. Si no està configurat en una pàgina o secció, però sí en `config.toml`, s'utilitzarà la imatge global.
+
+**Consell**: automatitza la seva creació amb un [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [De reservat a rei de les xarxes: automatitzant les vistes prèvies dels enllaços amb Zola](https://osc.garden/ca/blog/automating-social-media-cards-zola/).
+
+---
+
+## Navegació
+
+### Barra de navegació
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:---------------:|:-------------------:|
+|   ❌   |   ❌   |      ✅       |        ❌       |         ❌          |
+
+La barra de navegació és la franja a la part superior de la pàgina que conté el títol del lloc i el menú de navegació. Pots personalitzar els elements que apareixen configurant `menu` en `config.toml`. Per exemple:
+
+```toml
+menu = [
+    { name = "blog", url = "blog", trailing_slash = true },
+    { name = "arxiu", url = "archive", trailing_slash = true },
+    { name = "etiquetes", url = "tags", trailing_slash = true },
+    { name = "projectes", url = "projects", trailing_slash = true },
+    { name = "sobre nosaltres", url = "about", trailing_slash = true },
+]
+```
+
+### Botons de navegació ràpida
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:---------------:|:-------------------:|
+|   ✅   |   ✅   |      ✅       |        ✅       |         ❌          |
+
+Els botons de navegació ràpida són els botons que apareixen a la part inferior dreta de la pantalla. Hauries de veure'ls en aquesta pàgina, si no estàs en un dispositiu mòbil. Es veuen així:
+
+{{ dual_theme_image(light_src="img/quick_navigation_buttons_light.webp", dark_src="img/quick_navigation_buttons_dark.webp", alt="Botons de navegació ràpida") }}
+
+Per activar-los, estableix `quick_navigation_buttons = true`.
+
+### Taula de continguts
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:------------------:|:--------------------:|
+|   ✅   |   ✅   |      ✅       |        ✅          |          ❌          |
+
+Activa l'índex de continguts just sota del títol i metadades de l'article amb `toc = true`.
+
+Per saber més sobre com personalitzar-ho, consulta [la documentació sobre la Taula de continguts](/ca/blog/toc/).
+
+### Enllaços de retorn a les notes a peu de pàgina
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:------------------:|:--------------------:|
+|   ✅   |   ✅   |      ✅       |        ✅          |          ✅          |
+
+Establir `footnote_backlinks = true` afegirà enllaços de retorn a les notes a peu de pàgina de les teves publicacions, com aquest:
+
+{{ dual_theme_image(light_src="img/footnote_backlinks_light.webp", dark_src="img/footnote_backlinks_dark.webp", alt="Enllaços de retorn a les notes a peu de pàgina", full_width=true) }}
+
+Quan facis clic en un enllaç de retorn (la fletxa ↩), et portarà de tornada al punt del text on es va fer referència a la nota a peu de pàgina.
+
+---
+
+## Usabilitat
+
+### Botó de copiar en blocs de codi
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:------------------:|:--------------------:|
+|   ✅   |   ✅   |      ✅       |        ✅          |          ✅          |
+
+Establir `copy_button = true` afegirà un petit botó de copiar a la part superior dreta dels blocs de codi, com aquest:
+
+{{ dual_theme_image(light_src="img/copy_button_on_code_blocks_light.webp", dark_src="img/copy_button_on_code_blocks_dark.webp", alt="Botó de copiar en blocs de codi", full_width=true) }}
+
+### Suport per a KaTeX
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:------------------:|:--------------------:|
+|   ✅   |   ✅   |      ✅       |        ✅          |          ✅          |
+
+KaTeX és una biblioteca JavaScript ràpida i fàcil d'usar per a la representació de matemàtiques TeX a la web. Pots habilitar-ho amb `katex = true`. Mira com es veu en tabi [aquí](/ca/blog/markdown/#katex).
+
+### Subconjunt de tipus de lletra personalitzat
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:------------------:|:--------------------:|
+|   ❌   |   ❌   |      ✅       |        ❌          |          ❌          |
+
+Les tipus de lletra personalitzades causen parpalleig del text en Firefox. Per resoldre això, tabi carrega un subconjunt de glifs per a la capçalera. Donat que això (lleugerament) augmenta el temps de càrrega inicial, és una bona idea intentar minimitzar la mida d'aquest subconjunt.
+
+Pots crear un subconjunt personalitzat adaptat al teu lloc, guardar-lo com a `static/custom_subset.css`, i fer que es carregui amb `custom_subset = true`.
+
+Per obtenir més informació, incloent instruccions sobre com crear un subconjunt personalitzat, consulta la [documentació](/ca/blog/custom-font-subset/).
+
+### Contingut complet al feed
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:-------------------:|:-------------------:|
+|   ❌   |   ❌   |      ✅       |         ❌          |         ❌          |
+
+Per defecte, el feed Atom només conté el resum o descripció de les teves publicacions. Pots incloure el contingut complet de les publicacions establint `full_content_in_feed = true` a `config.toml`.
+
+---
+
+## Comentaris {#afegir-comentaris}
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:-------------------:|:-------------------:|
+|   ✅   |   ❌   |      ✅       |         ❌          |         ✅          |
+
+Per activar els comentaris en una pàgina, establert el nom del sistema com a `true` al front matter. Per exemple, `utterances = true`.
+
+Si vols activar els comentaris de forma global, pots fer-ho establint `enabled_for_all_posts = true` a la secció apropiada del teu `config.toml` (per exemple, a `[extra.giscus]`).
+
+Llegeix la [documentació](/ca/blog/comments/) per a més informació sobre els sistemes disponibles i la seva configuració.
+
+---
+
+## Icones al peu de pàgina
+
+### Icones de xarxes socials
+
+| Pàgina | Secció | `config.toml` | Respecta jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:------------------:|:-------------------:|
+|   ❌   |   ❌   |      ✅       |         ❌         |         ❌          |
+
+Pots afegir icones de xarxes socials al peu de pàgina amb `socials`, que accepta una llista d'objectes de xarxes socials. Per exemple:
+
+```toml
+socials = [
+    { name = "github", url = "https://github.com/welpo/", icon = "github" },
+    { name = "soundcloud", url = "https://soundcloud.com/oskerwyld", icon = "soundcloud" },
+    { name = "instagram", url = "https://instagram.com/oskerwyld", icon = "instagram" },
+    { name = "youtube", url = "https://youtube.com/@oskerwyld", icon = "youtube" },
+    { name = "spotify", url = "https://open.spotify.com/artist/5Hv2bYBhMp1lUHFri06xkE", icon = "spotify" },
+]
+```
+
+Le icones provenen de Font Awesome. Per veure una llista de tots els icones disponibles, fes una ullada al [directori `static/social_icons`](https://github.com/welpo/tabi/tree/main/static/social_icons).
+
+### Icona de feed
+
+| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
+
+Pots afegir un enllaç al teu feed RSS/Atom al peu de pàgina amb `feed_icon = true`.
+
+---
+
+## Metadades
+
+### Copyright
+
+| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
+
+Per afegir una menció sobre els drets d'autor al teu lloc web, configura `copyright`:
+
+```toml
+copyright = "© $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
+```
+
+`$CURRENT_YEAR` es substituirà per l'any actual i `$SEPARATOR` es substituirà per la [variable `separator`](#separador-personalitzat). El text es processarà en Markdown. Per exemple:
+
+{{ dual_theme_image(light_src="img/copyright_light.webp", dark_src="img/copyright_dark.webp" alt="Secció de drets d'autor", full_width=true) }}
+
+Si tens un lloc multilingüe i vols establir diferents notificacions de drets d'autor per a diferents idiomes, pots:
+
+1. Configura `translate_copyright = true` a `config.toml`.
+2. Afegeix una clau `copyright` als arxius `i18n`. Consulta la [documentació](/ca/blog/faq-languages/#com-puc-personalitzar-o-sobreescriure-una-cadena-de-text-específica-al-meu-lloc-web).
+
+### Temps de lectura
+
+| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
+|   ✅   |   ✅    |      ✅       |          ✅           |         ❌          |
+
+Pots activar o desactivar el temps estimat de lectura d'un article amb `show_reading_time`. Si el configures com a `true`, apareixerà a les metadades de l'article, com això:
+
+{{ dual_theme_image(light_src="img/see_changes_light.webp", dark_src="img/see_changes_dark.webp" alt="Títol de l'article i metadades, mostrant un enllaç «Veure canvis»") }}
+
+Com que segueix [la jerarquia](#jerarquia-de-configuracio), pots activar-lo o desactivar-lo per a pàgines o seccions específiques. Per exemple, aquesta demo desactiva `show_reading_time = false` a la secció [projectes](https://welpo.github.io/tabi/ca/projects/) a l'arxiu [`_index.md`](https://github.com/welpo/tabi/blob/main/content/projects/_index.es.md?plain=1), de manera que les seves publicacions individuals no mostren el temps de lectura.
+
+### Format de data
+
+| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
+
+tabi té dos formats de data: `long_date_format` i `short_date_format`. El format curt s'utilitza a les metadades d'una publicació, mentre que el format llarg s'utilitza al llistar les publicacions (és a dir, a la [secció de blog](/ca/blog/) o a la [pàgina principal](/ca/)).
+
+Per defecte és "6th July 2049" per a ambdós formats en anglès. Per a altres idiomes, el predeterminat és `"%d %B %Y"` per al format llarg i `"%-d %b %Y"` per al format curt.
+
+A Zola, la sintaxi per al format de temps està inspirada en strftime. Una referència completa està disponible a la [documentació de chrono](https://docs.rs/chrono/0.4.31/chrono/format/strftime/index.html).
+
+### Separador personalitzat
+
+| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
+
+El separador apareix en diversos llocs: al títol del navegador, entre les metadades d'una publicació...
+
+El separador per defecte és un punt de llista (`•`), però pots canviar-lo configurant alguna cosa com `separator = "|"`.
+
+### Ordre del títol
+
+| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
+
+Per defecte, el títol a la pestanya del navegador és el nom del lloc seguit del títol de la pàgina. Per exemple, el títol de la secció del blog és «~/tabi • Blog».
+
+Configurant `invert_title_order = true`, pots invertir l'ordre del títol del lloc i el títol de la pàgina a la pestanya del navegador. Per exemple, l'etiqueta del títol de la secció del blog es convertiria en «Blog • ~/tabi».
+
+---
+
+Certainly, here is a high-quality, non-literal translation of the provided text into Catalan. I've adhered to your specifications, keeping the variables and English terms unchanged.
+
+## Seguretat
+
+### Correu electrònic codificat
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:--------------------:|:--------------------:|
+|   ❌   |   ❌   |      ✅       |          ❌          |          ✅          |
+
+Per tal de protegir la teva adreça de correu electrònic contra els spambots, pots codificar-la al peu de pàgina. Pots fer això establint `email` a una versió codificada en base64 de la teva adreça de correu electrònic[^2]. Per exemple, `email = "bWFpbEBleGFtcGxlLmNvbQ=="` és la versió codificada en base64 de "mail@example.com".
+
+Si no vols codificar el teu correu electrònic tu mateix, tabi pot fer-ho per tu si configures `encode_plaintext_email = true`. Això et permet establir un correu electrònic en text pla en la configuració. Tingues en compte que això només protegeix la teva adreça de correu electrònic al teu lloc web, no en repositoris públics.
+
+Si el correu electrònic està codificat (ja sigui per tu o per tabi), els usuaris amb JavaScript desactivat no veuran la icona de correu electrònic.
+
+### CSP (Content Security Policy)
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:--------------------:|:--------------------:|
+|   ❌   |   ❌   |      ✅       |          ❌          |          ❌          |
+
+La Content Security Policy (CSP) és una capa addicional de seguretat que ajuda a detectar i mitigar certs tipus d'atacs, inclosos atacs de Cross Site Scripting (XSS) i injecció de dades. Aquests atacs s'utilitzen per a tot, des del robatori de dades fins a la desfiguració de llocs web i la distribució de programari maliciós.
+
+tabi té una CSP predeterminada que permet imatges i vídeos remots, així com incrustacions de YouTube i Vimeo. Pots personalitzar-la amb `allowed_domains`, que accepta una llista de directrius de CSP. Aquesta és la CSP predeterminada:
+
+```toml
+allowed_domains = [
+    { directive = "font-src", domains = ["'self'", "data:"] },
+    { directive = "img-src", domains = ["'self'", "https://*", "data:"] },
+    { directive = "script-src", domains = ["'self'"] },
+    { directive = "style-src", domains = ["'self'"] },
+    { directive = "frame-src", domains = ["player.vimeo.com", "https://www.youtube-nocookie.com"] },
+]
+```
+
+Per a més informació, consulta la [pàgina de documentació de CSP](/ca/blog/security/).
+
+---
+
+[^1]: Si estàs utilitzant un repositori Git remot, potser voldràs automatitzar el procés d'actualització del camp `updated`. Aquí tens una guia per a això: [Zola Git Hook: actualitzant les dates de les publicacions](https://osc.garden/ca/blog/zola-date-git-hook/).
+
+[^2]: Per a codificar el teu correu electrònic en base64 pots utilitzar [eines en línia](https://www.base64encode.org/) o, al teu terminal, executar: `printf 'mail@example.com' | base64`

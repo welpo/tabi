@@ -5,10 +5,11 @@ weight = 1
 
 [extra]
 local_image = "img/tabi.webp"
+canonical_url = "https://osc.garden/ca/projects/tabi/"
 social_media_card = "img/social_cards/ca_projects_tabi.jpg"
 +++
 
-[**tabi**](https://github.com/welpo/tabi) és un tema modern i ric en característiques per a [Zola](https://www.getzola.org/), un generador de llocs web estàtics molt ràpid.
+[**tabi**](https://github.com/welpo/tabi) és un tema modern i ric en funcionalitat per a [Zola](https://www.getzola.org/), un generador de llocs web estàtics molt ràpid.
 
 {{ full_width_image(src="img/light_dark_tabi.webp", alt="Modes clar i fosc de tabi") }}
 
@@ -16,24 +17,32 @@ social_media_card = "img/social_cards/ca_projects_tabi.jpg"
 
 ## Característiques
 
-- [Suport multilingüe complet](https://welpo.github.io/tabi/ca/blog/faq-languages/#how-does-tabi-handle-multilingual-support). Afegeix tants idiomes com vulguis.
-- [Estableix qualsevol idioma com a predeterminat](https://welpo.github.io/tabi/ca/blog/faq-languages/#how-do-i-set-a-default-language-for-my-site). Configura el teu lloc en xinès, espanyol, francès, hindi... o qualsevol [altre idioma compatible](https://github.com/welpo/tabi/tree/main/i18n). La interfície del tema es traduirà en conseqüència.
-- Temes clars i foscos. S'adapta a la configuració del sistema operatiu, amb un interruptor a la barra de navegació.
-- Suport per a [comentaris utilitzant giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/ca/blog/comments/).
-- Puntuació perfecta a Lighthouse (Rendiment, Accessibilitat, Millors Pràctiques i SEO).
-- Suport de [KaTeX](https://katex.org/).
-- Tot el JavaScript es pot [deshabilitar completament](https://welpo.github.io/tabi/ca/blog/javascript/).
-- [Aspectes personalitzables](https://welpo.github.io/tabi/ca/blog/customise-tabi/).
-- [Feed estilitzat](https://welpo.github.io/tabi/ca/atom.xml).
-- [Pàgina de projectes](https://welpo.github.io/tabi/ca/projects/).
-- [Pàgina d'arxiu](https://welpo.github.io/tabi/ca/archive/).
-- [Taula de continguts](https://welpo.github.io/tabi/ca/blog/toc/).
-- Etiquetes.
-- Enllaços socials.
-- Disseny responsiu.
-- Ressaltat sintàctic del codi.
-- [Capçaleres de seguretat personalitzables](https://welpo.github.io/tabi/ca/blog/security/).
-- [Shortcodes personalitzats](https://welpo.github.io/tabi/ca/blog/shortcodes/).
+- [X] [Suport multilingüe complet](https://welpo.github.io/tabi/ca/blog/faq-languages/#com-gestiona-tabi-el-suport-multilingue). Afegeix tants idiomes com vulguis.
+- [X] [Estableix qualsevol idioma com a predeterminat](https://welpo.github.io/tabi/ca/blog/faq-languages/#com-estableixo-la-llengua-predeterminada-del-meu-lloc). Configura el teu lloc en xinès, espanyol, francès, hindi… o qualsevol [altre idioma compatible](https://github.com/welpo/tabi/tree/main/i18n). La interfície del tema es traduirà en conseqüència.
+- [X] Temes clars i foscos. S'adapta a la configuració del sistema operatiu, amb un interruptor a la barra de navegació.
+- [X] Suport per a [comentaris usant giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/ca/blog/comments/).
+- [X] Puntuació perfecta en Lighthouse (Rendiment, Accessibilitat, Millors Pràctiques i SEO).
+- [X] [Integració amb repositoris remots](https://welpo.github.io/tabi/ca/mastering-tabi-settings/#integracio-amb-repositoris-git) a GitHub, GitLab, Gitea i Codeberg per a l'historial de commits i mostrar el codi font del lloc.
+- [X] [Targetes per a xarxes socials](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#targetes-per-a-xarxes-socials).
+- [X] Suport de [KaTeX](https://katex.org/).
+- [X] Tot el JavaScript es pot [deshabilitar completament](https://welpo.github.io/tabi/ca/blog/javascript/).
+- [X] [Skins personalitzables](https://welpo.github.io/tabi/ca/blog/customise-tabi/).
+- [X] [Feed estilitzat](https://welpo.github.io/tabi/ca/atom.xml).
+- [X] [Botons de navegació ràpida](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#botons-de-navegacio-rapida).
+- [X] [Enllaços de retrocés per a notes al peu](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#enllacos-de-retorn-a-les-notes-a-peu-de-pagina).
+- [X] [Botó de copiar per a blocs de codi](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#boto-de-copiar-en-blocs-de-codi).
+- [X] [URL canòniques personalitzables](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#url-canonica).
+- [X] [Pàgina de projectes](https://welpo.github.io/tabi/ca/projects/).
+- [X] [Pàgina d'arxiu](https://welpo.github.io/tabi/ca/archive/).
+- [X] [Taula de continguts personalitzable](https://welpo.github.io/tabi/ca/blog/toc/).
+- [X] [Codificació de correu](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#correu-electronic-codificat) per a protecció contra spam.
+- [X] [Etiquetes](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#etiquetes).
+- [X] [Enllaços socials](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#icones-de-xarxes-socials).
+- [X] [Avís de drets d'autor personalitzat](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#copyright).
+- [X] Disseny responsive.
+- [X] Ressaltat de sintaxi de codi amb colors basats en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
+- [X] [Capçaleres de seguretat personalitzables](https://welpo.github.io/tabi/ca/blog/security/).
+- [X] [Shortcodes personalitzats](https://welpo.github.io/tabi/ca/blog/shortcodes/).
 
 ## Pràctiques de desenvolupament
 
