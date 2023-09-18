@@ -1,0 +1,58 @@
+language_name = "繁體中文"  # Shown in language picker for multi-language sites.
+date_locale = "zh_TW"
+full_stop = "。"  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu
+blog = "網誌"
+archive = "歸檔"
+tags = "標籤"
+projects = "專案"
+about = "關於"
+
+# Navigation.
+read_more = "閱讀全文"
+post = "文章"
+posts = "文章"  # Plural of "post".
+prev = "上一頁"  # As in "Previous" page.
+next = "下一頁"  # As in "Next" page.
+of = "/"  # E.g. Page 1 "of" 3
+all_posts = "所有文章"
+all_tags = "所有標籤"
+
+# Post metadata.
+draft = "草稿"
+min_read = "分鐘閱讀"
+words = "字"
+last_updated_on = "最後更新於"
+see_changes = "修改紀錄"
+
+# Post body.
+table_of_contents = "目錄"
+load_comments = "載入留言"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "網站基於"
+and = "和"
+site_source = "查看原始碼"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "您請求的頁面不存在"
+translation_missing = "或尚未被翻譯成繁體中文"
+check_url = "請檢查網址是否有誤或"
+go_home = "返回首頁"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "顯示原文"
+show_translation = "顯示翻譯"
+open_quotation_mark = "「"
+close_quotation_mark = "」"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "這是Web Feed，又稱為Atom Feed，把現在的網址複製到新聞閱讀器即可訂閱本站文章。造訪「About Feed」來了解更多資訊。"
+visit_the_site = "造訪網站"
+recent_posts = "近期文章"
