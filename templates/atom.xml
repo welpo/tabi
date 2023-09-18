@@ -12,10 +12,10 @@
             {{- macros_translate::translate(key="about_feeds", default="This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader", language_strings=language_strings) -}}
         </str:about_feeds>
         <str:visit_the_site>
-            {{- macros_translate::translate(key="visit_the_site", default="Visita la web", language_strings=language_strings) -}}
+            {{- macros_translate::translate(key="visit_the_site", default="Visit website", language_strings=language_strings) -}}
         </str:visit_the_site>
         <str:recent_posts>
-            {{- macros_translate::translate(key="recent_posts", default="Publicaciones recientes", language_strings=language_strings) -}}
+            {{- macros_translate::translate(key="recent_posts", default="Recent posts", language_strings=language_strings) -}}
         </str:recent_posts>
     </str:translations>
 
