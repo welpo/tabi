@@ -17,32 +17,32 @@ social_media_card = "img/social_cards/es_projects_tabi.jpg"
 
 ## Características
 
-- [X] [Soporte multilingüe completo](https://welpo.github.io/tabi/es/blog/faq-languages/#como-gestiona-tabi-el-soporte-multilingue). Añade tantos idiomas como desees.
-- [X] [Establece cualquier idioma como predeterminado](https://welpo.github.io/tabi/es/blog/faq-languages/#como-establezco-el-idioma-predeterminado-de-mi-sitio). Configura tu sitio en chino, español, francés, hindi… o cualquier [otro idioma compatible](https://github.com/welpo/tabi/tree/main/i18n). La interfaz del tema se traducirá en consecuencia.
-- [X] Temas claros y oscuros. Se adapta a la configuración del sistema operativo, con un interruptor en la barra de navegación.
-- [X] Soporte para [comentarios usando giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/es/blog/comments/).
-- [X] Puntuación perfecta en Lighthouse (Rendimiento, Accesibilidad, Mejores Prácticas y SEO).
-- [X] [Integración con repositorios remotos](https://welpo.github.io/tabi/es/mastering-tabi-settings/#integracion-con-repositorios-git) en GitHub, GitLab, Gitea y Codeberg para el historial de commits y mostrar el código fuente del sitio.
-- [X] [Tarjetas para redes sociales](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#tarjetas-para-redes-sociales).
-- [X] Soporte de [KaTeX](https://katex.org/).
-- [X] Todo el JavaScript se puede [deshabilitar completamente](https://welpo.github.io/tabi/es/blog/javascript/).
-- [X] [Skins personalizables](https://welpo.github.io/tabi/es/blog/customise-tabi/).
-- [X] [Feed estilizado](https://welpo.github.io/tabi/es/atom.xml).
-- [X] [Botones de navegación rápida](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#botones-de-navegacion-rapida).
-- [X] [Enlaces de retroceso para notas al pie](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#enlaces-de-retorno-en-notas-al-pie).
-- [X] [Botón de copiar para bloques de código](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#boton-de-copiar-en-bloques-de-codigo).
-- [X] [URL canónicas personalizables](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#url-canonica).
-- [X] [Página de proyectos](https://welpo.github.io/tabi/es/projects/).
-- [X] [Página de archivo](https://welpo.github.io/tabi/es/archive/).
-- [X] [Tabla de contenidos personalizable](https://welpo.github.io/tabi/es/blog/toc/).
-- [X] [Codificación de correo](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#encoded-email) para protección contra spam.
-- [X] [Etiquetas](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#tags).
-- [X] [Enlaces sociales](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#iconos-de-redes-sociales).
-- [X] [Aviso de derechos de autor personalizado](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#copyright).
-- [X] Diseño responsive.
-- [X] Resaltado de sintaxis de código con colores basados en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
-- [X] [Cabeceras de seguridad personalizables](https://welpo.github.io/tabi/es/blog/security/).
-- [X] [Shortcodes personalizados](https://welpo.github.io/tabi/es/blog/shortcodes/).
+- [Soporte multilingüe completo](https://welpo.github.io/tabi/es/blog/faq-languages/#como-gestiona-tabi-el-soporte-multilingue). Añade tantos idiomas como desees.
+- [Establece cualquier idioma como predeterminado](https://welpo.github.io/tabi/es/blog/faq-languages/#como-establezco-el-idioma-predeterminado-de-mi-sitio). Configura tu sitio en chino, español, francés, hindi… o cualquier [otro idioma compatible](https://github.com/welpo/tabi/tree/main/i18n). La interfaz del tema se traducirá en consecuencia.
+- Temas claros y oscuros. Se adapta a la configuración del sistema operativo, con un interruptor en la barra de navegación.
+- Soporte para [comentarios usando giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/es/blog/comments/).
+- Puntuación perfecta en Lighthouse (Rendimiento, Accesibilidad, Mejores Prácticas y SEO).
+- [Integración con repositorios remotos](https://welpo.github.io/tabi/es/mastering-tabi-settings/#integracion-con-repositorios-git) en GitHub, GitLab, Gitea y Codeberg para el historial de commits y mostrar el código fuente del sitio.
+- [Tarjetas para redes sociales](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#tarjetas-para-redes-sociales).
+- Soporte de [KaTeX](https://katex.org/).
+- Todo el JavaScript se puede [deshabilitar completamente](https://welpo.github.io/tabi/es/blog/javascript/).
+- [Skins personalizables](https://welpo.github.io/tabi/es/blog/customise-tabi/).
+- [Feed estilizado](https://welpo.github.io/tabi/es/atom.xml).
+- [Botones de navegación rápida](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#botones-de-navegacion-rapida).
+- [Enlaces de retroceso para notas al pie](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#enlaces-de-retorno-en-notas-al-pie).
+- [Botón de copiar para bloques de código](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#boton-de-copiar-en-bloques-de-codigo).
+- [URL canónicas personalizables](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#url-canonica).
+- [Página de proyectos](https://welpo.github.io/tabi/es/projects/).
+- [Página de archivo](https://welpo.github.io/tabi/es/archive/).
+- [Tabla de contenidos personalizable](https://welpo.github.io/tabi/es/blog/toc/).
+- [Codificación de correo](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#encoded-email) para protección contra spam.
+- [Etiquetas](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#tags).
+- [Enlaces sociales](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#iconos-de-redes-sociales).
+- [Aviso de derechos de autor personalizado](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#copyright).
+- Diseño responsive.
+- Resaltado de sintaxis de código con colores basados en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
+- [Cabeceras de seguridad personalizables](https://welpo.github.io/tabi/es/blog/security/).
+- [Shortcodes personalizados](https://welpo.github.io/tabi/es/blog/shortcodes/).
 
 ## Prácticas de desarrollo
 
