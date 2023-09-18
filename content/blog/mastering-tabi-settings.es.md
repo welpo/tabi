@@ -10,6 +10,7 @@ tags = ["funcionalidad", "tutorial", "preguntas frecuentes"]
 giscus = true
 footnote_backlinks = true
 quick_navigation_buttons = true
+social_media_card = "img/social_cards/es_blog_mastering_tabi_settings.jpg"
 +++
 
 Esta es la guía completa sobre la configuración en tabi. Si tienes alguna pregunta, puedes usar los [comentarios](#comments) al final de esta página o [abrir un issue en GitHub](https://github.com/welpo/tabi/issues/new).

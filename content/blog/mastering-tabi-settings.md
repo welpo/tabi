@@ -10,6 +10,7 @@ tags = ["showcase", "tutorial", "FAQ"]
 giscus = true
 footnote_backlinks = true
 quick_navigation_buttons = true
+social_media_card = "img/social_cards/blog_mastering_tabi_settings.jpg"
 +++
 
 This aims to be a comprehensive guide to every setting in tabi. If you have any questions, feel free to ask in the [comments below](#comments) or [open an issue on GitHub](https://github.com/welpo/tabi/issues/new).
