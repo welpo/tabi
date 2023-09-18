@@ -82,13 +82,6 @@
     <meta property="og:title" content="{{ page.title | default(value=config.title) | safe }}" />
     <meta property="og:type" content="article" />
 
-    {# Add og:locale and hreflang tags for multilingual sites #}
-    {%- if config.languages | length > 0 and current_url %}
-        {%- include "partials/multilingual_tags.html" -%}
-    {%- else -%}
-        <meta property="og:locale" content="{{ macros_translate::translate(key="date_locale", default="en_GB", language_strings=language_strings) }}" />
-    {%- endif %}
-
     {# Image for social media sharing #}
     {%- set social_media_card = macros_settings::evaluate_setting_priority(setting="social_media_card", page=page | default(value=""), section=section | default(value=""), default_global_value="") -%}
     {% if social_media_card %}
@@ -121,8 +114,28 @@
         <meta name="twitter:card" content="summary_large_image" />
     {% endif %}
 
+    {# Add og:locale and hreflang tags for multilingual sites #}
+    {%- if config.languages | length > 0 and current_url %}
+        {%- include "partials/multilingual_tags.html" -%}
+    {%- else -%}
+        <meta property="og:locale" content="{{ macros_translate::translate(key="date_locale", default="en_GB", language_strings=language_strings) }}" />
+    {%- endif %}
+
+    {# Set canonical URL #}
     {%- if current_url -%}
-        <meta property="og:url" content="{{ current_url }}">
+        {%- if page.extra.canonical_url or section.extra.canonical_url -%}
+            {%- set canonical_url = page.extra.canonical_url | default(value=section.extra.canonical_url) -%}
+        {%- elif config.extra.base_canonical_url -%}
+            {%- set canonical_url = current_url | replace(from=config.base_url, to=config.extra.base_canonical_url) -%}
+        {%- endif -%}
+    {%- endif -%}
+    
+    {# Add canonical URL, if set #}
+    {%- if canonical_url -%}
+        <link rel="canonical" href="{{ canonical_url }}" />
+        <meta property="og:url" content="{{ canonical_url }}" />
+    {%- elif current_url -%}
+        <meta property="og:url" content="{{ current_url }}" />
     {%- endif -%}
     
     <meta property="og:site_name" content="{{ config.title }}">
