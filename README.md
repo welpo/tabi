@@ -138,7 +138,9 @@ To learn more about multilingual support, see the [Frequently Asked Questions](h
 
 | Website | Creator | Description  | Site Source   |
 | - | - | - | - |
-| [osc.garden](https://osc.garden) | Óscar Fernández ([welpo](https://github.com/welpo)) | Data science, psychology, and Zola | [Source](https://github.com/welpo/osc.garden) |
+| [osc.garden](https://osc.garden) | Óscar Fernández ([welpo](https://github.com/welpo)) | Data science, psychology, and Zola | [Source](https://github.com/welpo/osc.garden) 
+| [sandip.live](https://sandip.live) | Sandip G ([sandman](https://github.com/sandman)) | Startups, tech and the good life | [Source](https://github.com/sandman/sandman.github.io) 
+| 
 
 Using tabi? Feel free to create a PR and add your site to this list.
 
