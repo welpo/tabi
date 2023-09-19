@@ -53,6 +53,6 @@ close_quotation_mark = "」"
 # Translations for stylised Atom feed.
 # https://welpo.github.io/tabi/atom.xml
 # Must contain "About Feeds"; it will become a link.
-about_feeds = "這是Web Feed，又稱為Atom Feed，把現在的網址複製到新聞閱讀器即可訂閱本站文章。造訪「About Feed」來了解更多資訊。"
+about_feeds = "這是Web Feed，又稱為Atom Feed，把現在的網址複製到新聞閱讀器即可訂閱本站文章。造訪「About Feeds」來了解更多資訊。"
 visit_the_site = "造訪網站"
 recent_posts = "近期文章"
