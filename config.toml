@@ -6,8 +6,9 @@ generate_feed = true
 compile_sass = true
 minify_html = true
 
-# To translate the entire theme, there must be a file with the same ISO 639-1 Code
-# in the `i18n` folder of your site or the tabi theme (e.g. "i18n/fr.toml" for French).
+# To translate the entire theme, there must be a file with the same ISO 639-1
+# (or IETF BCP 47) Code in the `i18n` folder of your site or the tabi theme
+# For example, "i18n/fr.toml" for French or "i18n/zh-Hans.toml" for Simplified Chinese.
 # Otherwise the theme will be in English.
 # See https://welpo.github.io/tabi/blog/faq-languages/ for more details.
 default_language = "en"

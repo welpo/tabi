@@ -86,7 +86,7 @@ En cada sección de idioma puedes establecer otras variables como `taxonomies`, 
 
 ## ¿Qué son estos códigos de dos letras?
 
-Los códigos de dos letras son [códigos de idioma ISO 639-1](https://localizely.com/iso-639-1-list/), que sirven para identificar idiomas de una manera estandarizada.
+Los códigos de dos letras son [códigos de idioma ISO 639-1](https://localizely.com/iso-639-1-list/) (o [IETF BCP 47](https://es.wikipedia.org/wiki/C%C3%B3digo_de_idioma_IETF), si hace falta), que sirven para identificar idiomas de una manera estandarizada.
 
 tabi utiliza estos códigos para permitir la navegación entre idiomas y traducir el tema.
 

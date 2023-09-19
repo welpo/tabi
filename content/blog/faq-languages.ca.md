@@ -86,7 +86,7 @@ En cada secció de llengua pots establir altres variables com `taxonomies`, `des
 
 ## Què són aquests codis de dues lletres?
 
-Els codis de dues lletres són [codis d'idioma ISO 639-1](https://localizely.com/iso-639-1-list/), que serveixen per identificar idiomes d'una manera estandarditzada.
+Els codis de dues lletres són [codis d'idioma ISO 639-1](https://localizely.com/iso-639-1-list/) (o [IETF BCP 47](https://ca.wikipedia.org/wiki/Codi_de_llengua_IETF), quan cal), que serveixen per identificar idiomes d'una manera estandarditzada.
 
 tabi utilitza aquests codis per permetre la navegació entre idiomes i traduir el tema.
 

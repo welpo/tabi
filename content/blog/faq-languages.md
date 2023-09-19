@@ -86,7 +86,7 @@ On each language's section, you can set other variables like `taxonomies`, `desc
 
 ## What are these two letter codes?
 
-The two letter codes are [ISO 639-1 language codes](https://localizely.com/iso-639-1-list/). They are used to identify languages in a standardised way.
+The two letter codes are [ISO 639-1 language codes](https://localizely.com/iso-639-1-list/) (or [IETF BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag), when necessary). They are used to identify languages in a standardised way.
 
 tabi uses these codes to allow navigation between languages and translate the theme.
 
