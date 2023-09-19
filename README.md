@@ -4,6 +4,8 @@ A fast, lightweight, and modern [Zola](https://getzola.org) theme with multi-lan
 
 See a live preview (and the theme's documentation) [here](https://welpo.github.io/tabi).
 
+Explore the [Sites Using tabi section](#sites-using-tabi) to see real-world applications.
+
 > tabi (旅): Journey.
 
 ![tabi](https://github.com/welpo/tabi/raw/main/light_dark_screenshot.png)
@@ -40,7 +42,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] Code syntax highlighting with colours based on [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - [X] [Customizable secure headers](https://welpo.github.io/tabi/blog/security/).
 - [X] [Custom shortcodes](https://welpo.github.io/tabi/blog/shortcodes/).
-- [X] Thorough documentation. See [Mastering tabi Settings: A Comprehensive Guide](https://welpo.github.io/tabi/blog/mastering-tabi-settings/)
+- [X] Thorough documentation. See [Mastering tabi Settings: A Comprehensive Guide](https://welpo.github.io/tabi/blog/mastering-tabi-settings/).
 
 ## Quick start
 
@@ -131,6 +133,14 @@ The same is true for individual posts, which should have the exact same name as 
 This configuration allows the language switcher to take the user to the translation of the current URL. If a translation doesn't exist, the 404 page will be displayed, with an explanation in each language set in the config.
 
 To learn more about multilingual support, see the [Frequently Asked Questions](https://welpo.github.io/tabi/blog/faq-languages/).
+
+## Sites Using tabi
+
+| Website | Creator | Description  | Site Source   |
+| - | - | - | - |
+| [osc.garden](https://osc.garden) | Óscar Fernández (@welpo) | Data science, psychology, and Zola | [Source](https://github.com/welpo/osc.garden) |
+
+Using tabi? Feel free to create a PR and add your site to this list.
 
 ## Inspiration
 
