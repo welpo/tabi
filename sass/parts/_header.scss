@@ -91,13 +91,13 @@ header {
 }
 
 .language-switcher-icon {
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M1 12a11 11 90 0 0 22 0 11 11 90 0 0-22 0m1-4h20M2 16h20M11 1a21 21 90 0 0 0 22m2-22a21 21 90 0 1 0 22'/%3E%3C/svg%3E%0A");
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='1.8' d='M1 12a11 11 90 0 0 22 0 11 11 90 0 0-22 0m1-4h20M2 16h20M11 1a21 21 90 0 0 0 22m2-22a21 21 90 0 1 0 22'/%3E%3C/svg%3E%0A");
     position: relative;
     align-self: center;
     cursor: pointer;
     background: var(--text-color);
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1rem;
+    height: 1rem;
 }
 
 .dropdown {
