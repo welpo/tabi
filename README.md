@@ -16,33 +16,33 @@ tabi has a perfect score on Google's Lighthouse audit:
 
 ## Features
 
-- [X] [Comprehensive multi-language support](https://welpo.github.io/tabi/blog/faq-languages/#how-does-tabi-handle-multilingual-support). Add as many languages as you wish.
 - [X] [Set any language as default](https://welpo.github.io/tabi/blog/faq-languages/#how-do-i-set-a-default-language-for-my-site). Set your base site to Chinese, Spanish, French, Hindi… or any [other supported language](/i18n). The theme's interface will be translated accordingly.
-- [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
-- [X] Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
-- [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
 - [X] [Integration with remote repositories](https://welpo.github.io/tabi/mastering-tabi-settings/#git-repository-integration) on GitHub, GitLab, Gitea & Codeberg for commit history and showing the site source.
-- [X] [Social media cards](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards).
+- [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
+- [X] Thorough documentation. See [Mastering tabi Settings: A Comprehensive Guide](https://welpo.github.io/tabi/blog/mastering-tabi-settings/).
+- [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
+- [X] [Comprehensive multi-language support](https://welpo.github.io/tabi/blog/faq-languages/#how-does-tabi-handle-multilingual-support). Add as many languages as you wish.
+- [X] Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
+- [X] Code syntax highlighting with colours based on [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - [X] [KaTeX](https://katex.org/) support for mathematical notation.
 - [X] All JavaScript can be [fully disabled](https://welpo.github.io/tabi/blog/javascript/).
-- [X] [Customizable skins](https://welpo.github.io/tabi/blog/customise-tabi/).
-- [X] [Stylized feed](https://welpo.github.io/tabi/atom.xml).
-- [X] [Quick navigation buttons](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#quick-navigation-buttons).
-- [X] [Footnote backlinks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#footnote-backlinks).
+- [X] [Mail encoding](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#encoded-email) for spam protection.
+- [X] [Customizable Table of Contents](https://welpo.github.io/tabi/blog/toc/).
 - [X] [Copy button for code blocks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copy-button-on-code-blocks).
+- [X] [Customizable secure headers](https://welpo.github.io/tabi/blog/security/).
+- [X] [Quick navigation buttons](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#quick-navigation-buttons).
+- [X] [Custom copyright notice](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copyright).
 - [X] [Custom canonical URLs](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#canonical-url).
+- [X] [Social media cards](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards).
+- [X] [Customizable skins](https://welpo.github.io/tabi/blog/customise-tabi/).
+- [X] [Footnote backlinks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#footnote-backlinks).
+- [X] Responsive design.
+- [X] [Custom shortcodes](https://welpo.github.io/tabi/blog/shortcodes/).
+- [X] [Stylized feed](https://welpo.github.io/tabi/atom.xml).
 - [X] [Projects page](https://welpo.github.io/tabi/projects/).
 - [X] [Archive page](https://welpo.github.io/tabi/archive/).
-- [X] [Customizable Table of Contents](https://welpo.github.io/tabi/blog/toc/).
-- [X] [Mail encoding](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#encoded-email) for spam protection.
-- [X] [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 - [X] [Social links](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-icons).
-- [X] [Custom copyright notice](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copyright).
-- [X] Responsive design.
-- [X] Code syntax highlighting with colours based on [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
-- [X] [Customizable secure headers](https://welpo.github.io/tabi/blog/security/).
-- [X] [Custom shortcodes](https://welpo.github.io/tabi/blog/shortcodes/).
-- [X] Thorough documentation. See [Mastering tabi Settings: A Comprehensive Guide](https://welpo.github.io/tabi/blog/mastering-tabi-settings/).
+- [X] [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 
 ## Quick start
 
