@@ -25,22 +25,22 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
 - [X] Code syntax highlighting with colours based on [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - [X] [KaTeX](https://katex.org/) support for mathematical notation.
-- [X] All JavaScript can be [fully disabled](https://welpo.github.io/tabi/blog/javascript/).
 - [X] [Mail encoding](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#encoded-email) for spam protection.
+- [X] All JavaScript can be [fully disabled](https://welpo.github.io/tabi/blog/javascript/).
 - [X] [Customizable Table of Contents](https://welpo.github.io/tabi/blog/toc/).
-- [X] [Copy button for code blocks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copy-button-on-code-blocks).
 - [X] [Customizable secure headers](https://welpo.github.io/tabi/blog/security/).
+- [X] [Copy button for code blocks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copy-button-on-code-blocks).
 - [X] [Quick navigation buttons](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#quick-navigation-buttons).
 - [X] [Custom copyright notice](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copyright).
 - [X] [Custom canonical URLs](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#canonical-url).
-- [X] [Social media cards](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards).
 - [X] [Customizable skins](https://welpo.github.io/tabi/blog/customise-tabi/).
-- [X] [Footnote backlinks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#footnote-backlinks).
-- [X] Responsive design.
 - [X] [Custom shortcodes](https://welpo.github.io/tabi/blog/shortcodes/).
-- [X] [Stylized feed](https://welpo.github.io/tabi/atom.xml).
+- [X] [Footnote backlinks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#footnote-backlinks).
+- [X] [Social media cards](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards).
+- [X] Responsive design.
 - [X] [Projects page](https://welpo.github.io/tabi/projects/).
 - [X] [Archive page](https://welpo.github.io/tabi/archive/).
+- [X] [Stylized feed](https://welpo.github.io/tabi/atom.xml).
 - [X] [Social links](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-icons).
 - [X] [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 

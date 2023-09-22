@@ -17,33 +17,33 @@ social_media_card = "img/social_cards/projects_tabi.jpg"
 
 ## Features
 
-- [X] [Set any language as default](https://welpo.github.io/tabi/blog/faq-languages/#how-do-i-set-a-default-language-for-my-site). Set your base site to Chinese, Spanish, French, Hindi… or any [other supported language](/i18n). The theme's interface will be translated accordingly.
-- [X] [Integration with remote repositories](https://welpo.github.io/tabi/mastering-tabi-settings/#git-repository-integration) on GitHub, GitLab, Gitea & Codeberg for commit history and showing the site source.
-- [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
-- [X] Thorough documentation. See [Mastering tabi Settings: A Comprehensive Guide](https://welpo.github.io/tabi/blog/mastering-tabi-settings/).
-- [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
-- [X] [Comprehensive multi-language support](https://welpo.github.io/tabi/blog/faq-languages/#how-does-tabi-handle-multilingual-support). Add as many languages as you wish.
-- [X] Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
-- [X] Code syntax highlighting with colours based on [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
-- [X] [KaTeX](https://katex.org/) support for mathematical notation.
-- [X] All JavaScript can be [fully disabled](https://welpo.github.io/tabi/blog/javascript/).
-- [X] [Mail encoding](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#encoded-email) for spam protection.
-- [X] [Customizable Table of Contents](https://welpo.github.io/tabi/blog/toc/).
-- [X] [Copy button for code blocks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copy-button-on-code-blocks).
-- [X] [Customizable secure headers](https://welpo.github.io/tabi/blog/security/).
-- [X] [Quick navigation buttons](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#quick-navigation-buttons).
-- [X] [Custom copyright notice](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copyright).
-- [X] [Custom canonical URLs](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#canonical-url).
-- [X] [Social media cards](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards).
-- [X] [Customizable skins](https://welpo.github.io/tabi/blog/customise-tabi/).
-- [X] [Footnote backlinks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#footnote-backlinks).
-- [X] Responsive design.
-- [X] [Custom shortcodes](https://welpo.github.io/tabi/blog/shortcodes/).
-- [X] [Stylized feed](https://welpo.github.io/tabi/atom.xml).
-- [X] [Projects page](https://welpo.github.io/tabi/projects/).
-- [X] [Archive page](https://welpo.github.io/tabi/archive/).
-- [X] [Social links](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-icons).
-- [X] [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
+- [Set any language as default](https://welpo.github.io/tabi/blog/faq-languages/#how-do-i-set-a-default-language-for-my-site). Set your base site to Chinese, Spanish, French, Hindi… or any [other supported language](/i18n). The theme's interface will be translated accordingly.
+- [Integration with remote repositories](https://welpo.github.io/tabi/mastering-tabi-settings/#git-repository-integration) on GitHub, GitLab, Gitea & Codeberg for commit history and showing the site source.
+- Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
+- Thorough documentation. See [Mastering tabi Settings: A Comprehensive Guide](https://welpo.github.io/tabi/blog/mastering-tabi-settings/).
+- Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
+- [Comprehensive multi-language support](https://welpo.github.io/tabi/blog/faq-languages/#how-does-tabi-handle-multilingual-support). Add as many languages as you wish.
+- Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
+- Code syntax highlighting with colours based on [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
+- [KaTeX](https://katex.org/) support for mathematical notation.
+- [Mail encoding](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#encoded-email) for spam protection.
+- All JavaScript can be [fully disabled](https://welpo.github.io/tabi/blog/javascript/).
+- [Customizable Table of Contents](https://welpo.github.io/tabi/blog/toc/).
+- [Customizable secure headers](https://welpo.github.io/tabi/blog/security/).
+- [Copy button for code blocks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copy-button-on-code-blocks).
+- [Quick navigation buttons](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#quick-navigation-buttons).
+- [Custom copyright notice](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copyright).
+- [Custom canonical URLs](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#canonical-url).
+- [Customizable skins](https://welpo.github.io/tabi/blog/customise-tabi/).
+- [Custom shortcodes](https://welpo.github.io/tabi/blog/shortcodes/).
+- [Footnote backlinks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#footnote-backlinks).
+- [Social media cards](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards).
+- Responsive design.
+- [Projects page](https://welpo.github.io/tabi/projects/).
+- [Archive page](https://welpo.github.io/tabi/archive/).
+- [Stylized feed](https://welpo.github.io/tabi/atom.xml).
+- [Social links](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-icons).
+- [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 
 ## Development Practices
 
