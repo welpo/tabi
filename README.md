@@ -1,6 +1,6 @@
 # tabi
 
-A fast, lightweight, and modern [Zola](https://getzola.org) theme with multi-language support. It aims to be a personal page and home to blog posts.
+A fast, lightweight, and modern [Zola](https://www.getzola.org) theme with multi-language support. It aims to be a personal page and home to blog posts.
 
 See a live preview (and the theme's documentation) [here](https://welpo.github.io/tabi).
 

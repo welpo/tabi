@@ -11,4 +11,4 @@ max_posts = 4
 social_media_card = "img/social_cards/es.jpg"
 +++
 
-tabi es un tema de [Zola](https://getzola.org) rápido, ligero y moderno. Su objetivo es ser una página personal y hogar para publicaciones de blogs. Cuenta con una puntuación perfecta en Lighthouse, diseño responsive, tema oscuro y claro, shortcodes personalizados y mucho más.
+tabi es un tema de [Zola](https://www.getzola.org) rápido, ligero y moderno. Su objetivo es ser una página personal y hogar para publicaciones de blogs. Cuenta con una puntuación perfecta en Lighthouse, diseño responsive, tema oscuro y claro, shortcodes personalizados y mucho más.
