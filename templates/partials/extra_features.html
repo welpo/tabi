@@ -37,10 +37,10 @@
 
 {# Add copy button to code blocks #}
 {%- if macros_settings::evaluate_setting_priority(setting="copy_button", page=page, default_global_value=true) == "true" -%}
-    <script defer src="{{ get_url(path='js/copyCodeToClipboard.min.js', trailing_slash=false) | safe }}"/></script>
+    <script defer src="{{ get_url(path='js/copyCodeToClipboard.min.js', trailing_slash=false) | safe }}"></script>
 {%- endif -%}
 
 {# Add backlinks to footnotes #}
 {%- if macros_settings::evaluate_setting_priority(setting="footnote_backlinks", page=page, default_global_value=false) == "true" -%}
-    <script defer src="{{ get_url(path='js/footnoteBacklinks.min.js', trailing_slash=false | safe )}}"/></script>
+    <script defer src="{{ get_url(path='js/footnoteBacklinks.min.js', trailing_slash=false | safe )}}"></script>
 {%- endif -%}
