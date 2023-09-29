@@ -142,6 +142,7 @@ To learn more about multilingual support, see the [Frequently Asked Questions](h
 | [sandip.live](https://sandip.live) | Sandip G ([sandman](https://github.com/sandman)) | Startups, tech and the good life | [Source](https://github.com/sandman/sandman.github.io) |
 | [seadve.github.io](https://seadve.github.io/) | Dave Patrick Caberto ([SeaDve](https://github.com/SeaDve/)) | Personal blog and portfolio with custom CSS | [Source](https://github.com/SeaDve/seadve.github.io) |
 | [donovan.is](https://donovan.is) | [Donovan Glover](https://github.com/donovanglover) | Linux, Rust, and Full Stack Web Development | [Source](https://github.com/donovanglover/donovan.is) |
+| [mikufan.page](https://mikufan.page) | [Nadia](https://github.com/nyadiia) | Personal blog | [Source](https://github.com/nyadiia/mikufan.page) |
 
 Using tabi? Feel free to create a PR and add your site to this list.
 
