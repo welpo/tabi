@@ -24,6 +24,9 @@ of = "中"  # E.g. Page 1 "of" 3
 all_posts = "すべての投稿"
 all_tags = "すべてのタグ"
 language_selection = "言語選択"
+toggle_mode = "$MODE モードに切り替え"  # $MODE will be replaced by a value (or both) below.
+dark = "暗い"
+light = "明るい"
 
 # Post metadata.
 draft = "ドラフト"

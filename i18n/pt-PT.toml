@@ -20,6 +20,9 @@ of = "de"  # E.g. Page 1 "of" 3
 all_posts = "Todas as publicações"
 all_tags = "Todas as etiquetas"
 language_selection = "Seleção de idioma"
+toggle_mode = "Alternar para o modo $MODE"  # $MODE will be replaced by a value (or both) below.
+dark = "escuro"
+light = "claro"
 
 # Post metadata.
 draft = "RASCUNHO"

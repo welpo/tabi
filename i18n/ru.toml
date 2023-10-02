@@ -20,6 +20,9 @@ of = "из"  # E.g. Page 1 "of" 3
 all_posts = "Все посты"
 all_tags = "Все теги"
 language_selection = "Выбор языка"
+toggle_mode = "Переключить на режим $MODE"  # $MODE will be replaced by a value (or both) below.
+dark = "тёмный"
+light = "светлый"
 
 # Post metadata.
 draft = "ЧЕРНОВИК"

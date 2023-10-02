@@ -20,6 +20,9 @@ of = "de"  # E.g. Page 1 "of" 3
 all_posts = "Totes les entrades"
 all_tags = "Totes les etiquetes"
 language_selection = "Selecció d'idioma"
+toggle_mode = "Canvia el mode $MODE"  # $MODE will be replaced by a value (or both) below.
+dark = "obscur"
+light = "clar"
 
 # Post metadata.
 draft = "ESBORRANY"

@@ -20,6 +20,9 @@ of = "di"  # E.g. Page 1 "of" 3
 all_posts = "Tutti i post"
 all_tags = "Tutti i tag"
 language_selection = "Selezione della lingua"
+toggle_mode = "Passa alla modalità $MODE"  # $MODE will be replaced by a value (or both) below.
+dark = "scuro"
+light = "chiaro"
 
 # Post metadata.
 draft = "BOZZA"

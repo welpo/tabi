@@ -20,6 +20,9 @@ of = "/"  # E.g. Page 1 "of" 3
 all_posts = "所有文章"
 all_tags = "所有標籤"
 language_selection = "語言選擇"  # Machine translated.
+toggle_mode = "切換到$MODE模式"  # $MODE will be replaced by a value (or both) below. Machine translated.
+dark = "暗"  # Machine translated.
+light = "亮"  # Machine translated.
 
 # Post metadata.
 draft = "草稿"
