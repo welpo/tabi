@@ -10,7 +10,6 @@
 # Updates the "updated" field in the front matter of .md files.                 #
 # Compresses PNG files with either oxipng or optipng if available.              #
 # Runs subset_font if config.toml has been modified.                            #
-# Updates the README if the line numbers for the language section have changed. #
 #                                                                               #
 # Stops you from commiting:                                                     #
 # - a draft .md file                                                            #
@@ -98,6 +97,12 @@ function has_minified_version() {
 
 function is_minified() {
     local file="$1"
+
+    # Check if terser and uglifyjs are installed.
+    if ! command -v terser &> /dev/null || ! command -v uglifyjs &> /dev/null; then
+        echo "Either terser or uglifyjs is not installed. Skipping minification check."
+        return 0
+    fi
     
     # Original file size.
     local original_size=$(wc -c < "$file")
@@ -250,14 +255,20 @@ done
 # Use `social-cards-zola` to create/update the social media card for Markdown files.
 # See https://osc.garden/blog/automating-social-media-cards-zola/ for context.
 # Use parallel to create the social media cards in parallel and commit them.
-echo "$modified_md_files" | parallel -j 8 generate_and_commit_card
+# echo "$modified_md_files" | parallel -j 8 generate_and_commit_card
 
 #########################################################
 # Run subset_font if config.toml has been modified.     #
 # https://welpo.github.io/tabi/blog/custom-font-subset/ #
 #########################################################
 if git diff --cached --name-only | grep -q "config.toml"; then
-    echo "config.toml modified. Running subset_font…"
+    echo "config.toml modified. Attempting to run subset_font…"
+
+    # Check if subset_font is available and exit early if not.
+    if ! command -v subset_font &> /dev/null; then
+        echo "subset_font command not found. Skipping this step."
+        exit 0
+    fi
 
     # Call the subset_font script.
     ~/bin/subset_font -c config.toml -f static/fonts/Inter4.woff2 -o static/
