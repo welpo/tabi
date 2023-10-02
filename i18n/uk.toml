@@ -23,6 +23,7 @@ next = "Наст."  # As in "Next" page.
 of = "з"  # E.g. Page 1 "of" 3
 all_posts = "Всі пости"
 all_tags = "Всі теги"
+language_selection = "Вибір мови"
 
 # Post metadata.
 draft = "ЧЕРНЕТКА"

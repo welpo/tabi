@@ -21,6 +21,7 @@ next = "अगला"  # As in "Next" page.
 of = "का"  # E.g. Page 1 "of" 3
 all_posts = "सभी पोस्ट्स"
 all_tags = "सभी टैग्स"
+language_selection = "भाषा चयन"
 
 # Post metadata.
 draft = "मसौदा"

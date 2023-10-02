@@ -19,6 +19,7 @@ next = "След."  # As in "Next" page.
 of = "из"  # E.g. Page 1 "of" 3
 all_posts = "Все посты"
 all_tags = "Все теги"
+language_selection = "Выбор языка"
 
 # Post metadata.
 draft = "ЧЕРНОВИК"

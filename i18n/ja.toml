@@ -23,6 +23,7 @@ next = "次"  # As in "Next" page.
 of = "中"  # E.g. Page 1 "of" 3
 all_posts = "すべての投稿"
 all_tags = "すべてのタグ"
+language_selection = "言語選択"
 
 # Post metadata.
 draft = "ドラフト"

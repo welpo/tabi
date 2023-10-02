@@ -19,6 +19,7 @@ next = "Successivo"  # As in "Next" page.
 of = "di"  # E.g. Page 1 "of" 3
 all_posts = "Tutti i post"
 all_tags = "Tutti i tag"
+language_selection = "Selezione della lingua"
 
 # Post metadata.
 draft = "BOZZA"

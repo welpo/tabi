@@ -23,6 +23,7 @@ next = "Nächst"  # As in "Next" page.
 of = "von"  # E.g. Page 1 "of" 3
 all_posts = "Alle Beiträge"
 all_tags = "Alle Tags"
+language_selection = "Sprachauswahl"
 
 # Post metadata.
 draft = "ENTWURF"

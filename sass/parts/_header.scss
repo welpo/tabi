@@ -1,7 +1,7 @@
 header {
     width: 100%;
     font-family: 'Inter Subset', var(--sans-serif-font);
-} 
+}
 
 .page-header {
     margin: 4rem 0px 1rem 0px;
@@ -81,23 +81,26 @@ header {
         list-style-type: none;
     }
 }
-
 .language-switcher {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 0.5rem;
     margin-left: 0.5rem;
-}
 
-.language-switcher-icon {
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='1.8' d='M1 12a11 11 90 0 0 22 0 11 11 90 0 0-22 0m1-4h20M2 16h20M11 1a21 21 90 0 0 0 22m2-22a21 21 90 0 1 0 22'/%3E%3C/svg%3E%0A");
-    position: relative;
-    align-self: center;
-    cursor: pointer;
-    background: var(--text-color);
-    width: 1rem;
-    height: 1rem;
+    .language-switcher-icon {
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='1.8' d='M1 12a11 11 90 0 0 22 0 11 11 90 0 0-22 0m1-4h20M2 16h20M11 1a21 21 90 0 0 0 22m2-22a21 21 90 0 1 0 22'/%3E%3C/svg%3E%0A");
+        position: relative;
+        align-self: center;
+        cursor: pointer;
+        background: var(--text-color);
+        width: 1rem;
+        height: 1rem;
+
+        &:hover {
+            background: var(--meta-color);
+        }
+    }
 }
 
 .dropdown {
@@ -105,27 +108,36 @@ header {
     position: relative;
     z-index: 1;
     font-size: 0.8rem;
-}
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    background: var(--background-color);
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-    text-align: center;
-    white-space: nowrap;
-
-    a {
+    &:hover .dropdown-content,
+    &:focus-within .dropdown-content {
         display: block;
     }
-}
 
-.dropdown:hover .dropdown-content {
-    display: block;
+    summary {
+        list-style: none;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        background: var(--background-color);
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        text-align: center;
+        white-space: nowrap;
+
+        a {
+            display: block;
+        }
+    }
 }
 
 @media only screen and (max-width: 1000px) {

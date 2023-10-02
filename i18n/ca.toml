@@ -19,6 +19,7 @@ next = "Següent"  # As in "Next" page.
 of = "de"  # E.g. Page 1 "of" 3
 all_posts = "Totes les entrades"
 all_tags = "Totes les etiquetes"
+language_selection = "Selecció d'idioma"
 
 # Post metadata.
 draft = "ESBORRANY"

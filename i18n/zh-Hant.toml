@@ -19,6 +19,7 @@ next = "下一頁"  # As in "Next" page.
 of = "/"  # E.g. Page 1 "of" 3
 all_posts = "所有文章"
 all_tags = "所有標籤"
+language_selection = "語言選擇"  # Machine translated.
 
 # Post metadata.
 draft = "草稿"
