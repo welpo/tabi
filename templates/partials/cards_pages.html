@@ -12,7 +12,7 @@
 
         {% set target_url = page.extra.link_to | default(value=page.permalink) %}
         
-        <a rel="{{ rel_attributes }}" {{ blank_target }} href="{{ target_url }}">
+        <a class="no-hover-padding" rel="{{ rel_attributes }}" {{ blank_target }} href="{{ target_url }}">
             {% if page.extra.local_image %}
                 {% set meta = get_image_metadata(path=page.extra.local_image, allow_missing=true) %}
                 <img class="card-image" alt="{{ page.extra.local_image }}" src="{{ get_url(path=page.extra.local_image) }}" {% if meta.width %}width="{{ meta.width }}" {% endif %} {% if meta.height %}height="{{ meta.height }}" {% endif %}>
