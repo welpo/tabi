@@ -23,6 +23,10 @@ next = "次"  # As in "Next" page.
 of = "中"  # E.g. Page 1 "of" 3
 all_posts = "すべての投稿"
 all_tags = "すべてのタグ"
+language_selection = "言語選択"
+toggle_mode = "$MODE モードに切り替え"  # $MODE will be replaced by a value (or both) below.
+dark = "暗い"
+light = "明るい"
 
 # Post metadata.
 draft = "ドラフト"
@@ -34,6 +38,10 @@ see_changes = "変更を見る"
 # Post body.
 table_of_contents = "目次"
 load_comments = "コメントを読む"
+
+# Copy code block button.
+copied = "コピーしました！"
+copy_code_to_clipboard = "コードをクリップボードにコピー"
 
 # Footer: Powered by Zola and tabi.
 powered_by = "Powered by"

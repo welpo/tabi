@@ -21,6 +21,10 @@ next = "अगला"  # As in "Next" page.
 of = "का"  # E.g. Page 1 "of" 3
 all_posts = "सभी पोस्ट्स"
 all_tags = "सभी टैग्स"
+language_selection = "भाषा चयन"
+toggle_mode = "$MODE मोड में टॉगल करें"  # $MODE will be replaced by a value (or both) below.
+dark = "अंधेरा"
+light = "रोशनी"
 
 # Post metadata.
 draft = "मसौदा"
@@ -32,6 +36,10 @@ see_changes = "बदलाव देखें"
 # Post body.
 table_of_contents = "विषय सूची"
 load_comments = "कमेंट्स लोड करें"
+
+# Copy code block button.
+copied = "कॉपी किया गया!"
+copy_code_to_clipboard = "कोड क्लिपबोर्ड में कॉपी करें"
 
 # Footer: Powered by Zola and tabi.
 powered_by = "चालित द्वारा"

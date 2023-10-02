@@ -23,6 +23,10 @@ next = "Наст."  # As in "Next" page.
 of = "з"  # E.g. Page 1 "of" 3
 all_posts = "Всі пости"
 all_tags = "Всі теги"
+language_selection = "Вибір мови"
+toggle_mode = "Перемкнути в режим $MODE"  # $MODE will be replaced by a value (or both) below.
+dark = "темний"
+light = "світлий"
 
 # Post metadata.
 draft = "ЧЕРНЕТКА"
@@ -34,6 +38,10 @@ see_changes = "Переглянути зміни"
 # Post body.
 table_of_contents = "Зміст"
 load_comments = "Завантажити коментарі"
+
+# Copy code block button.
+copied = "Скопійовано!"
+copy_code_to_clipboard = "Копіювати код у буфер обміну"
 
 # Footer: Powered by Zola and tabi.
 powered_by = "Під управлінням"

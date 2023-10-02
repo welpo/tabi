@@ -1,6 +1,13 @@
+const copiedText = document.getElementById('copy-success').textContent;
+const initCopyText = document.getElementById('copy-init').textContent;
+
 const changeIcon = (copyDiv, className) => {
     copyDiv.classList.add(className);
-    setTimeout(() => copyDiv.classList.remove(className), 2500);
+    copyDiv.setAttribute("aria-label", copiedText);
+    setTimeout(() => {
+        copyDiv.classList.remove(className);
+        copyDiv.setAttribute("aria-label", initCopyText);
+    }, 2500);
 };
 
 const addCopyEventListenerToDiv = (copyDiv, block) => {
@@ -31,6 +38,9 @@ const getTableCode = (block) => {
 
 document.querySelectorAll("pre").forEach((block) => {
     const copyDiv = document.createElement("div");
+    copyDiv.setAttribute("role", "button");
+    copyDiv.setAttribute("aria-label", initCopyText);
+    copyDiv.setAttribute("title", initCopyText);
     copyDiv.className = "copy-code";
     block.prepend(copyDiv);
     addCopyEventListenerToDiv(copyDiv, block);

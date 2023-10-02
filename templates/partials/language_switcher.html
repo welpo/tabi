@@ -1,43 +1,38 @@
 <li class="language-switcher">
-    <div class="dropdown" type="Button">
-        <div class="language-switcher-icon"></div>
-
-        <div class="dropdown-content">
+    <details class="dropdown">
+        <summary role="button" aria-haspopup="true" title="{{ macros_translate::translate(key="language_selection", default="Language selection", language_strings=language_strings) }}" aria-label="{{ macros_translate::translate(key="language_selection", default="Language selection", language_strings=language_strings) }}">
+            <div class="language-switcher-icon"></div>
+        </summary>
+        <div class="dropdown-content" role="menu">
             {#- Display the current language first in the dropdown -#}
             {{ macros_translate::translate(key="language_name", default=lang, language_strings=language_strings) }}
-
             {#- Loop through all the available languages in the config -#}
             {%- for lcode, ldetails in config.languages -%}
                 {#- Skip the current language to avoid linking to the current page -#}
                 {%- if lang == lcode -%}
                     {%- continue -%}
                 {%- endif -%}
-
                 {#- Dynamically load the language strings for each language -#}
                 {%- set other_language_strings = load_data(path="i18n/" ~ lcode ~ ".toml", required=false) -%}
                 {%- if not other_language_strings -%}
                     {%- set other_language_strings = load_data(path="themes/tabi/i18n/" ~ lcode ~ ".toml", required=false) -%}
                 {%- endif -%}
-
                 {#- Use the loaded language strings to get the language name -#}
                 {% set language_name = macros_translate::translate(key="language_name", default=lcode,
                 language_strings=other_language_strings) %}
-
                 {#- Check if the language code matches the default language -#}
                 {%- if lcode == config.default_language -%}
                     {#- If it does, link to the root path (no language code in URL) -#}
-                    <a type="Button" href="{{ current_url | replace(from='/' ~ lang ~ '/', to = '/') }}">{{ language_name }}</a>
-                {%- elif lang == config.default_language -%}
+                    <a role="menuitem" lang="{{ lcode }}" aria-label="{{ language_name }}" href="{{ current_url | replace(from='/' ~ lang ~ '/', to = '/') }}">{{ language_name }}</a>
                     {#- Check if the current language is the default language -#}
                     {#- If it is, append the language code to the base URL -#}
-                    <a type="Button" href="{{ config.base_url }}/{{ lcode }}{{ current_path | default(value=" /") | safe }}">{{
-                        language_name }}</a>
+                {%- elif lang == config.default_language -%}
+                    <a role="menuitem" lang="{{ lcode }}" aria-label="{{ language_name }}" href="{{ config.base_url }}/{{ lcode }}{{ current_path | default(value=" /") | safe }}">{{ language_name }}</a>
                 {%- else -%}
                     {#- If it's not, replace the current language code in the URL with the new one -#}
-                    <a type="Button" href="{{ current_url | replace(from='/' ~ lang ~ '/', to='/' ~ lcode ~ '/') }}">{{
-                        language_name }}</a>
+                    <a role="menuitem" lang="{{ lcode }}" aria-label="{{ language_name }}" href="{{ current_url | replace(from='/' ~ lang ~ '/', to='/' ~ lcode ~ '/') }}">{{ language_name }}</a>
                 {%- endif -%}
             {%- endfor -%}
         </div>
-    </div>
+    </details>
 </li>

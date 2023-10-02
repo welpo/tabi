@@ -23,6 +23,10 @@ next = "다음"  # As in "Next" page.
 of = "중"  # E.g. Page 1 "of" 3
 all_posts = "모든 게시물"
 all_tags = "모든 태그"
+language_selection = "언어 선택"
+toggle_mode = "$MODE 모드로 전환"  # $MODE will be replaced by a value (or both) below.
+dark = "어두운"
+light = "밝은"
 
 # Post metadata.
 draft = "임시 저장"
@@ -34,6 +38,10 @@ see_changes = "변경사항 보기"
 # Post body.
 table_of_contents = "목차"
 load_comments = "댓글 불러오기"
+
+# Copy code block button.
+copied = "복사됨!"
+copy_code_to_clipboard = "코드를 클립보드에 복사"
 
 # Footer: Powered by Zola and tabi.
 powered_by = "제공됨"

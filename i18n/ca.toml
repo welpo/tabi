@@ -19,6 +19,10 @@ next = "Següent"  # As in "Next" page.
 of = "de"  # E.g. Page 1 "of" 3
 all_posts = "Totes les entrades"
 all_tags = "Totes les etiquetes"
+language_selection = "Selecció d'idioma"
+toggle_mode = "Canvia el mode $MODE"  # $MODE will be replaced by a value (or both) below.
+dark = "obscur"
+light = "clar"
 
 # Post metadata.
 draft = "ESBORRANY"
@@ -30,6 +34,10 @@ see_changes = "Veure canvis"
 # Post body.
 table_of_contents = "Taula de contingut"
 load_comments = "Carregar comentaris"
+
+# Copy code block button.
+copied = "Copiat!"
+copy_code_to_clipboard = "Copia el codi al porta-retalls"
 
 # Footer: Powered by Zola and tabi.
 powered_by = "Propulsat per"

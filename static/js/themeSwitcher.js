@@ -8,6 +8,8 @@ let currentTheme = localStorage.getItem("theme") || document.documentElement.get
 function setTheme(theme, saveToLocalStorage = false) {
     document.documentElement.setAttribute("data-theme", theme);
     currentTheme = theme;
+    let togglePressed = theme === "dark" ? "true" : "false";
+    themeSwitcher.setAttribute("aria-pressed", togglePressed);
 
     if (saveToLocalStorage) {
         localStorage.setItem("theme", theme);
@@ -29,6 +31,10 @@ function switchTheme() {
 
 // Initialize the theme switcher button.
 themeSwitcher.addEventListener("click", switchTheme, false);
+themeSwitcher.setAttribute("role", "button");
+themeSwitcher.setAttribute("aria-label", "Toggle dark mode");
+let togglePressed = currentTheme === "dark" ? "true" : "false";
+themeSwitcher.setAttribute("aria-pressed", togglePressed);
 
 // Update the theme based on system preference if the user hasn't manually changed the theme.
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {

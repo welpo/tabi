@@ -19,6 +19,10 @@ next = "Seguinte"  # As in "Next" page.
 of = "de"  # E.g. Page 1 "of" 3
 all_posts = "Todas as publicações"
 all_tags = "Todas as etiquetas"
+language_selection = "Seleção de idioma"
+toggle_mode = "Alternar para o modo $MODE"  # $MODE will be replaced by a value (or both) below.
+dark = "escuro"
+light = "claro"
 
 # Post metadata.
 draft = "RASCUNHO"
@@ -30,6 +34,10 @@ see_changes = "Ver alterações"
 # Post body.
 table_of_contents = "Índice de conteúdo"
 load_comments = "Carregar comentários"
+
+# Copy code block button.
+copied = "Copiado!"
+copy_code_to_clipboard = "Copiar código para a área de transferência"
 
 # Footer: Powered by Zola and tabi.
 powered_by = "Impulsionado por"

@@ -23,6 +23,10 @@ next = "Nächst"  # As in "Next" page.
 of = "von"  # E.g. Page 1 "of" 3
 all_posts = "Alle Beiträge"
 all_tags = "Alle Tags"
+language_selection = "Sprachauswahl"
+toggle_mode = "Wechsle in den $MODE Modus"  # $MODE will be replaced by a value (or both) below.
+dark = "dunkel"
+light = "hell"
 
 # Post metadata.
 draft = "ENTWURF"
@@ -34,6 +38,10 @@ see_changes = "Änderungen anzeigen"
 # Post body.
 table_of_contents = "Inhaltsverzeichnis"
 load_comments = "Kommentare laden"
+
+# Copy code block button.
+copied = "Kopiert!"
+copy_code_to_clipboard = "Code in die Zwischenablage kopieren"
 
 # Footer.
 powered_by = "Angetrieben von"
