@@ -35,6 +35,10 @@ see_changes = "修改纪录"
 table_of_contents = "目录"
 load_comments = "载入留言"
 
+# Copy code block button.
+copied = "已复制!"  # Machine translated.
+copy_code_to_clipboard = "复制代码到剪贴板"  # Machine translated.
+
 # Footer: Powered by Zola and tabi.
 powered_by = "网站基于"
 and = "和"

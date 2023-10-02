@@ -39,6 +39,10 @@ see_changes = "변경사항 보기"
 table_of_contents = "목차"
 load_comments = "댓글 불러오기"
 
+# Copy code block button.
+copied = "복사됨!"
+copy_code_to_clipboard = "코드를 클립보드에 복사"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "제공됨"
 and = "&"

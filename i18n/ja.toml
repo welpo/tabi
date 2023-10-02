@@ -39,6 +39,10 @@ see_changes = "変更を見る"
 table_of_contents = "目次"
 load_comments = "コメントを読む"
 
+# Copy code block button.
+copied = "コピーしました！"
+copy_code_to_clipboard = "コードをクリップボードにコピー"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "Powered by"
 and = "と"

@@ -39,6 +39,10 @@ see_changes = "Переглянути зміни"
 table_of_contents = "Зміст"
 load_comments = "Завантажити коментарі"
 
+# Copy code block button.
+copied = "Скопійовано!"
+copy_code_to_clipboard = "Копіювати код у буфер обміну"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "Під управлінням"
 and = "та"

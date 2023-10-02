@@ -37,6 +37,10 @@ see_changes = "बदलाव देखें"
 table_of_contents = "विषय सूची"
 load_comments = "कमेंट्स लोड करें"
 
+# Copy code block button.
+copied = "कॉपी किया गया!"
+copy_code_to_clipboard = "कोड क्लिपबोर्ड में कॉपी करें"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "चालित द्वारा"
 and = "और"

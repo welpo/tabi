@@ -35,6 +35,10 @@ see_changes = "See changes"
 table_of_contents = "Table of Contents"
 load_comments = "Load comments"
 
+# Copy code block button.
+copied = "Copied!"
+copy_code_to_clipboard = "Copy code to clipboard"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "Powered by"
 and = "&"

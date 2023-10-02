@@ -37,6 +37,13 @@
 
 {# Add copy button to code blocks #}
 {%- if macros_settings::evaluate_setting_priority(setting="copy_button", page=page, default_global_value=true) == "true" -%}
+    {#- Add hidden HTML elements with the translated strings for the button's interactions -#}
+    <span id="copy-success" class="hidden">
+        {{ macros_translate::translate(key="copied", default="Copied!", language_strings=language_strings) }}
+    </span>
+    <span id="copy-init" class="hidden">
+        {{ macros_translate::translate(key="copy_code_to_clipboard", default="Copy code to clipboard", language_strings=language_strings) }}
+    </span>
     <script defer src="{{ get_url(path='js/copyCodeToClipboard.min.js', trailing_slash=false) | safe }}"></script>
 {%- endif -%}
 
