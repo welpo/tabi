@@ -32,7 +32,6 @@ function switchTheme() {
 // Initialize the theme switcher button.
 themeSwitcher.addEventListener("click", switchTheme, false);
 themeSwitcher.setAttribute("role", "button");
-themeSwitcher.setAttribute("aria-label", "Toggle dark mode");
 let togglePressed = currentTheme === "dark" ? "true" : "false";
 themeSwitcher.setAttribute("aria-pressed", togglePressed);
 

@@ -6,7 +6,7 @@
     
     {%- set combined_mode_str = dark_str ~ "/" ~ light_str -%}
     {%- set title_label = toggle_str | replace(from="$MODE", to=combined_mode_str) -%}
-    {%- set aria_label = 'Toggle ' ~ dark_str ~ ' mode' -%}
+    {%- set aria_label = toggle_str | replace(from="$MODE", to=dark_str) -%}
     
     <div 
         title="{{ title_label }}"
