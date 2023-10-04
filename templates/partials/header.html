@@ -142,71 +142,17 @@
     
     <meta property="og:site_name" content="{{ config.title }}">
 
-    <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'
-    {%- if config.extra.allowed_domains -%}
-    ;
-        {#- Check if a comment system is enabled to allow the necessary domains and directives -#}
-        {%- set utterances_enabled = config.extra.utterances.enabled_for_all_posts or page.extra.utterances -%}
-        {%- set giscus_enabled = config.extra.giscus.enabled_for_all_posts or page.extra.giscus -%}
-        {%- set hyvortalk_enabled = config.extra.hyvortalk.enabled_for_all_posts or page.extra.hyvortalk -%}
-        {%- set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso -%}
-
-        {#- Initialise a base connect-src directive -#}
-        {%- set connect_src = "connect-src 'self'" -%}
-
-        {%- if hyvortalk_enabled -%}
-            {%- set connect_src = connect_src ~ " talk.hyvor.com" -%}
-        {%- elif isso_enabled -%}
-            {%- set connect_src = connect_src ~ " " ~ config.extra.isso.endpoint_url -%}
-        {%- endif -%}
-
-        {#- Append WebSocket for Zola serve mode -#}
-        {%- if config.mode == "serve" -%}
-            {%- set connect_src = connect_src ~ " ws:" -%}
-        {%- endif -%}
-
-        {%- for domain in config.extra.allowed_domains -%}
-            {%- if domain.directive == "connect-src" -%}
-                {%- set configured_connect_src = domain.domains | join(sep=' ') -%}
-                {%- set_global connect_src = connect_src ~ " " ~ configured_connect_src  -%}
-                {%- continue -%}
-            {%- endif -%}
-
-            {#- Handle directives that are not connect-src -#}
-            {{ domain.directive }} {{ domain.domains | join(sep=' ') -}}
-
-            {% if utterances_enabled or hyvortalk_enabled -%}
-                {%- if domain.directive == "style-src" %} 'unsafe-inline'
-                {%- endif -%}
-            {% endif -%}
-
-            {%- if domain.directive == "script-src" or domain.directive == "frame-src" -%}
-                {%- if giscus_enabled %} giscus.app
-                {%- elif utterances_enabled %} utteranc.es
-                {%- elif hyvortalk_enabled %} talk.hyvor.com
-                {%- endif %}
-            {%- endif -%}
-
-            {%- if domain.directive == "script-src" -%}
-                {%- if isso_enabled %} {{ config.extra.isso.endpoint_url }}
-                {%- endif %}
-            {%- endif -%}
-            {%- if not loop.last -%}
-            ;
-            {%- endif -%}
-        {%- endfor -%}
-
-        {#- Insert the generated connect-src -#}
-        {{ ";" ~ connect_src }}
-
-    {%- endif -%}">
+    {%- include "partials/content_security_policy.html" -%}
 
     {%- if config.extra.theme_switcher and config.extra.theme_switcher == true -%}
         {# If JavaScript is disabled, hide the button. #}
         <noscript><link rel="stylesheet" href="{{ get_url(path='no_js.css') | safe }}"/></noscript>
         <script type="text/javascript" src="{{ get_url(path='js/initializeTheme.min.js') | safe }}"></script>
         <script defer src="{{ get_url(path='js/themeSwitcher.min.js', trailing_slash=false) | safe }}"/></script>
+    {%- endif -%}
+
+    {%- if config.extra.analytics.service -%}
+        {%- include "partials/analytics.html" -%}
     {%- endif -%}
 
 </head>

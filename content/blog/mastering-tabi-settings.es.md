@@ -1,6 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
+updated = 2023-09-29
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -441,9 +442,7 @@ Para obtener más información, incluyendo instrucciones sobre cómo crear un su
 
 Por defecto, el feed Atom solo contiene el resumen/descripción de tus publicaciones. Puedes incluir el contenido completo de las publicaciones estableciendo `full_content_in_feed = true` en `config.toml`.
 
----
-
-## Comentarios {#añadir-comentarios}
+### Comentarios {#añadir-comentarios}
 
 | Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
 |:------:|:-------:|:-------------:|:---------------:|:-------------------:|
@@ -454,6 +453,37 @@ Para activar los comentarios en una página, establece el nombre del sistema com
 Si quieres activar los comentarios de forma global, puedes hacerlo estableciendo `enabled_for_all_posts = true` en la sección apropiada de tu `config.toml` (por ejemplo, en `[extra.giscus]`).
 
 Lee la [documentación](/es/blog/comments/) para obtener más información sobre los sistemas disponibles y su configuración.
+
+### Análisis web
+
+| Página | Sección  | `config.toml` | Sigue Jerarquía | Requiere JavaScript |
+|:------:|:--------:|:-------------:|:----------------:|:-------------------:|
+|   ❌   |    ❌    |       ✅      |        ❌        |          ✅         |
+
+tabi ofrece soporte para 3 sistemas de análisis web que respetan la privacidad: [Plausible](https://plausible.io/), [GoatCounter](https://www.goatcounter.com/) y [Umami](https://umami.is/).
+
+Puedes configurarlos en la sección `[extra.analytics]` de tu archivo `config.toml`.
+
+- `service`: el servicio a utilizar. Las opciones disponibles son `"goatcounter"`, `"umami"`, y `"plausible"`.
+
+- `id`: el identificador único para tu servicio de análisis. Esto varía según el servicio:
+  - Para GoatCounter, es el código elegido durante el registro. Instancias auto-alojadas no requieren este campo.
+  - Para Umami, es la ID del sitio web.
+  - Para Plausible, es el nombre de dominio.
+
+- `self_hosted_url`. Opcional. Utiliza este campo para especificar la URL si tienes una instancia auto-alojada. La URL base variará según tu configuración particular. Algunos ejemplos:
+  - Para GoatCounter: `"https://stats.example.com"`
+  - Para Umami: `"https://umami.example.com"`
+  - Para Plausible: `"https://plausible.example.com"`
+
+Un ejemplo de configuración para GoatCounter no auto-alojada sería:
+
+```toml
+[extra.analytics]
+service = "goatcounter"
+id = "tabi"
+self_hosted_url = ""
+```
 
 ---
 

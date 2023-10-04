@@ -1,6 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
+updated = 2023-09-29
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -445,9 +446,7 @@ For more information, including instructions on how to create a custom subset, s
 
 By default, the Atom feed only contains the summary/description of your posts. You can include the entire posts' content by setting `full_content_in_feed = true` in `config.toml`.
 
----
-
-## Comments {#adding-comments}
+### Comments {#adding-comments}
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
@@ -458,6 +457,37 @@ To enable comments on an individual page, set the name of the system you want to
 To enable a system globally (on all pages), set `enabled_for_all_posts = true` in the correct section of your `config.toml` (e.g. inside `[extra.giscus]`).
 
 Read [the docs](/blog/comments/) for more information on the available systems and their setup.
+
+### Analytics
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❌  |   ❌    |      ✅       |         ❌        |         ✅          |
+
+tabi supports 3 privacy-friendly analytics systems: [Plausible](https://plausible.io/), [GoatCounter](https://www.goatcounter.com/) and [Umami](https://umami.is/).
+
+You can set them up in the `[extra.analytics]` section of your `config.toml`.
+
+- `service`: Specifies which analytics service to use. Supported options are `"goatcounter"`, `"umami"`, and `"plausible"`.
+
+- `id`: The unique identifier for your analytics service. This varies based on the service:
+  - For GoatCounter, it's the code chosen during signup. Self-hosted instances don't require this field.
+  - For Umami, it's the website ID.
+  - For Plausible, it's the domain name.
+
+- `self_hosted_url`: Optional. Use this field to specify the URL for self-hosted instances of your chosen analytics service. The base URL differs based on your specific setup. Some examples:
+  - For GoatCounter: `"https://stats.example.com"`
+  - For Umami: `"https://umami.example.com"`
+  - For Plausible: `"https://plausible.example.com"`
+
+An example configuration for non-self-hosted GoatCounter would look like this:
+
+```toml
+[extra.analytics]
+service = "goatcounter"
+id = "tabi"
+self_hosted_url = ""
+```
 
 ---
 

@@ -1,0 +1,93 @@
+<meta http-equiv="Content-Security-Policy"
+content="default-src 'self'
+{%- if config.extra.allowed_domains -%}
+;
+    {#- Check if a comment system is enabled to allow the necessary domains and directives -#}
+    {%- set utterances_enabled = config.extra.utterances.enabled_for_all_posts or page.extra.utterances -%}
+    {%- set giscus_enabled = config.extra.giscus.enabled_for_all_posts or page.extra.giscus -%}
+    {%- set hyvortalk_enabled = config.extra.hyvortalk.enabled_for_all_posts or page.extra.hyvortalk -%}
+    {%- set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso -%}
+
+    {#- Initialise a base script-src directive -#}
+    {%- set script_src = "script-src 'self'" -%}
+
+    {#- Initialise a base connect-src directive -#}
+    {%- set connect_src = "connect-src 'self'" -%}
+
+    {# Base logic for appending analytics domains #}
+    {%- set analytics_url = config.extra.analytics.self_hosted_url | default(value="") %}
+    {%- if analytics_url -%}
+        {%- set script_src = script_src ~ " " ~ analytics_url -%}
+        {%- set connect_src = connect_src ~ " " ~ analytics_url -%}
+    {%- else -%}
+        {%- if config.extra.analytics.service -%}
+            {%- if config.extra.analytics.service == "goatcounter" -%}
+                {%- set script_src = script_src ~ " gc.zgo.at" -%}
+                {%- set connect_src = connect_src ~ " gc.zgo.at" -%}
+            {%- elif config.extra.analytics.service == "umami" -%}
+                {%- set script_src = script_src ~ " analytics.eu.umami.is" -%}
+                {%- set connect_src = connect_src ~ " analytics.eu.umami.is" -%}
+            {%- elif config.extra.analytics.service == "plausible" -%}
+                {%- set script_src = script_src ~ " plausible.io" -%}
+                {%- set connect_src = connect_src ~ " plausible.io" -%}
+            {%- endif -%}
+        {%- endif -%}
+    {%- endif -%}
+
+    {%- if hyvortalk_enabled -%}
+        {%- set connect_src = connect_src ~ " talk.hyvor.com" -%}
+        {%- set script_src = script_src ~ " talk.hyvor.com" -%}
+    {%- elif isso_enabled -%}
+        {%- set connect_src = connect_src ~ " " ~ config.extra.isso.endpoint_url -%}
+        {%- set script_src = script_src ~ " " ~ config.extra.isso.endpoint_url -%}
+    {%- elif giscus_enabled -%}
+        {%- set script_src = script_src ~ " " ~ " giscus.app" -%}
+    {%- elif utterances_enabled -%}
+        {%- set script_src = script_src ~ " " ~ " utteranc.es" -%}
+    {%- endif -%}
+
+    {#- Append WebSocket for Zola serve mode -#}
+    {%- if config.mode == "serve" -%}
+        {%- set connect_src = connect_src ~ " ws:" -%}
+    {%- endif -%}
+
+    {%- for domain in config.extra.allowed_domains -%}
+        {%- if domain.directive == "connect-src" -%}
+            {%- set configured_connect_src = domain.domains | join(sep=' ') -%}
+            {%- set_global connect_src = connect_src ~ " " ~ configured_connect_src  -%}
+            {%- continue -%}
+        {%- endif -%}
+
+        {%- if domain.directive == "script-src" -%}
+            {%- set configured_script_src = domain.domains | join(sep=' ') -%}
+            {%- set_global script_src = script_src ~ " " ~ configured_script_src  -%}
+            {%- continue -%}
+        {%- endif -%}
+
+        {#- Handle directives that are not connect-src -#}
+        {{ domain.directive }} {{ domain.domains | join(sep=' ') -}}
+
+        {%- if utterances_enabled or hyvortalk_enabled -%}
+            {%- if domain.directive == "style-src" %} 'unsafe-inline'
+            {%- endif -%}
+        {%- endif -%}
+
+        {%- if domain.directive == "frame-src" -%}
+            {%- if giscus_enabled %} giscus.app
+            {%- elif utterances_enabled %} utteranc.es
+            {%- elif hyvortalk_enabled %} talk.hyvor.com
+            {%- endif %}
+        {%- endif -%}
+
+        {%- if not loop.last -%}
+        ;
+        {%- endif -%}
+    {%- endfor -%}
+
+    {#- Insert the generated connect-src -#}
+    {{ ";" ~ connect_src }}
+
+    {#- Insert the generated script-src -#}
+    {{ ";" ~ script_src }}
+
+{%- endif -%}">
