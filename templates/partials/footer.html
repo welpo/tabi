@@ -58,6 +58,32 @@
                 </ul>
             {% endif %}
         </nav>
+
+        {# Footer menu #}
+        <nav class="nav-navs">
+            {%- if config.extra.footer_menu %}
+                <small>
+                    <ul>
+                        {% for menu in config.extra.footer_menu %}
+                        <li>
+                            {%- set trailing_slash = menu.trailing_slash | default(value=true) -%}
+
+                            {%- if menu.url == "sitemap.xml" -%}
+                                {%- set url = get_url(path=menu.url, trailing_slash=trailing_slash) -%}
+                            {%- else -%}
+                                {%- set url = get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) -%}
+                            {%- endif -%}
+
+                            <a class="nav-links no-hover-padding" href="{{ url }}">
+                                {{ macros_translate::translate(key=menu.name, default=menu.name, language_strings=language_strings) }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </small>
+        {% endif %}
+        </nav>
+
         <div class="credits">
             <small>
                 {# Shows optional Copyright notice #}

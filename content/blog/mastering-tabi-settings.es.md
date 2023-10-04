@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2023-09-29
+updated = 2023-10-05
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -487,7 +487,7 @@ self_hosted_url = ""
 
 ---
 
-## Iconos en el pie de página
+## Pie de página
 
 ### Iconos de redes sociales
 
@@ -517,9 +517,21 @@ Los iconos provienen de Font Awesome. Para ver una lista de todos los iconos dis
 
 Puedes añadir un enlace a tu feed RSS/Atom en el pie de página con `feed_icon = true`.
 
----
+### Menú de pie de página
 
-## Metadatos
+| Página | Sección | `config.toml` | Respeta jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:---------------:|:------------------:|
+|   ❌   |   ❌    |      ✅       |        ❌       |        ❌          |
+
+Puedes añadir un menú al pie de página con `footer_menu`, que acepta una lista de elementos de menú. Por ejemplo:
+
+```toml
+footer_menu = [
+    {url = "about", name = "about", trailing_slash = true},
+    {url = "privacy", name = "privacy", trailing_slash = true},
+    {url = "sitemap.xml", name = "sitemap", trailing_slash = false},
+]
+```
 
 ### Copyright
 
@@ -541,6 +553,10 @@ Si tienes un sitio multilingüe y deseas establecer diferentes notificaciones de
 
 1. Configura `translate_copyright = true` en `config.toml`.
 2. Añade una clave `copyright` a los archivos `i18n`. Consulta la [documentación](/es/blog/faq-languages/#cómo-personalizo-o-sobrescribo-una-cadena-de-texto-específica-en-mi-sitio-web).
+
+---
+
+## Metadatos
 
 ### Tiempo de lectura
 
