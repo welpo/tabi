@@ -1,6 +1,6 @@
 function initHyvorTalk() {
     // Get the div that will contain the comments.
-    const commentsDiv = document.querySelector('#comments');
+    const commentsDiv = document.querySelector('.comments');
     if (commentsDiv) {
         // Get the various settings from data attributes on the div.
         const websiteId = commentsDiv.getAttribute('data-website-id');
