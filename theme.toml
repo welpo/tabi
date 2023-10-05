@@ -133,7 +133,6 @@ menu = [
     { name = "archive", url = "archive", trailing_slash = true },
     { name = "tags", url = "tags", trailing_slash = true },
     { name = "projects", url = "projects", trailing_slash = true },
-    { name = "about", url = "about", trailing_slash = true },
 ]
 
 # The RSS icon will be shown if (1) it's enabled and (2) the following variable is set to true.
@@ -158,6 +157,13 @@ encode_plaintext_email = true  # Setting is ignored if email is already encoded.
 #     { name = "instagram", url = "https://instagram.com/oskerwyld", icon = "instagram" },
 #     { name = "youtube", url = "https://youtube.com/@oskerwyld", icon = "youtube" },
 #     { name = "spotify", url = "https://open.spotify.com/artist/5Hv2bYBhMp1lUHFri06xkE", icon = "spotify" },
+# ]
+
+# Extra menu to show on the footer, below socials section.
+# footer_menu = [
+#     {url = "about", name = "about", trailing_slash = true},
+#     {url = "privacy", name = "privacy", trailing_slash = true},
+#     {url = "sitemap.xml", name = "sitemap", trailing_slash = false},
 # ]
 
 # Enable a copyright notice for the footer, shown between socials and the "Powered by" text.

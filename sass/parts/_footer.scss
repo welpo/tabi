@@ -1,7 +1,14 @@
 footer {
     margin-top: auto;
     margin-bottom: 1.4rem;
+    color: var(--meta-color);
+    font-size: 0.88rem;
     font-family: var(--post-font-family);
+    text-align: center;
+
+    .nav-links {
+        color: var(--primary-color);
+    }
 }
 
 footer section {
@@ -66,15 +73,5 @@ footer nav {
         & > img {
             filter: invert(1);
         }
-    }
-}
-
-.credits {
-    color: var(--meta-color);
-    font-size: 0.88rem;
-    text-align: center;
-
-    p {
-        margin: 0;
     }
 }

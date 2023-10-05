@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2023-09-29
+updated = 2023-10-05
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -458,7 +458,7 @@ Llegeix la [documentació](/ca/blog/comments/) per a més informació sobre els 
 
 ### Anàlisi web
 
-| Pàgina | Secció  | `config.toml` | Segueix Jerarquia | Requereix JavaScript |
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
 |:------:|:-------:|:-------------:|:-----------------:|:--------------------:|
 |   ❌   |    ❌   |       ✅       |         ❌         |          ✅          |
 
@@ -513,19 +513,31 @@ Le icones provenen de Font Awesome. Per veure una llista de tots els icones disp
 
 ### Icona de feed
 
-| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
 |:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
 
 Pots afegir un enllaç al teu feed RSS/Atom al peu de pàgina amb `feed_icon = true`.
 
----
+#### Menú de peu de pàgina
 
-## Metadades
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:-----------------:|:--------------------:|
+|   ❌   |   ❌    |      ✅       |        ❌         |          ❌          |
+
+Pots afegir un menú al peu de pàgina amb `footer_menu`, que accepta una llista d'elements de menú. Per exemple:
+
+```toml
+footer_menu = [
+    {url = "about", name = "about", trailing_slash = true},
+    {url = "privacy", name = "privacy", trailing_slash = true},
+    {url = "sitemap.xml", name = "sitemap", trailing_slash = false},
+]
+```
 
 ### Copyright
 
-| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
 |:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
 
@@ -544,9 +556,13 @@ Si tens un lloc multilingüe i vols establir diferents notificacions de drets d'
 1. Configura `translate_copyright = true` a `config.toml`.
 2. Afegeix una clau `copyright` als arxius `i18n`. Consulta la [documentació](/ca/blog/faq-languages/#com-puc-personalitzar-o-sobreescriure-una-cadena-de-text-específica-al-meu-lloc-web).
 
+---
+
+## Metadades
+
 ### Temps de lectura
 
-| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
 |:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
 |   ✅   |   ✅    |      ✅       |          ✅           |         ❌          |
 
@@ -558,7 +574,7 @@ Com que segueix [la jerarquia](#jerarquia-de-configuracio), pots activar-lo o de
 
 ### Format de data
 
-| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
 |:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
 
@@ -570,7 +586,7 @@ A Zola, la sintaxi per al format de temps està inspirada en strftime. Una refer
 
 ### Separador personalitzat
 
-| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
 |:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
 
@@ -580,7 +596,7 @@ El separador per defecte és un punt de llista (`•`), però pots canviar-lo co
 
 ### Ordre del títol
 
-| Pàgina | Secció  | `config.toml` | Respecta la jerarquia | Requereix JavaScript |
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
 |:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
 

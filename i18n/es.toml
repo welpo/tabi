@@ -3,12 +3,15 @@ date_locale = "es_ES"
 full_stop = "."  # Used at the end of a sentence.
 
 # Menu items.
-# Should match the names in config.extra.menu
+# Should match the names in config.extra.menu and config.extra.footer_menu.
 blog = "blog"
 archive = "archivo"
 tags = "etiquetas"
 projects = "proyectos"
 about = "sobre mí"
+contact = "contacto"
+privacy = "política de privacidad"
+sitemap = "mapa del sitio"
 
 # Navigation.
 read_more = "Leer más"

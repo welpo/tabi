@@ -7,12 +7,15 @@ date_locale = "ko_KR"
 full_stop = "."  # Used at the end of a sentence.
 
 # Menu items.
-# Should match the names in config.extra.menu
+# Should match the names in config.extra.menu and config.extra.footer_menu.
 blog = "블로그"
 archive = "아카이브"
 tags = "태그"
 projects = "프로젝트"
 about = "소개"
+contact = "연락처"
+privacy = "개인정보 처리방침"
+sitemap = "사이트맵"
 
 # Navigation.
 read_more = "더 읽기"

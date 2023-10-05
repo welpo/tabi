@@ -3,12 +3,15 @@ date_locale = "zh_TW"
 full_stop = "。"  # Used at the end of a sentence.
 
 # Menu items.
-# Should match the names in config.extra.menu
+# Should match the names in config.extra.menu and config.extra.footer_menu.
 blog = "網誌"
 archive = "歸檔"
 tags = "標籤"
 projects = "專案"
 about = "關於"
+contact = "聯絡方式"  # Machine translated.
+privacy = "隱私政策"  # Machine translated.
+sitemap = "網站地圖"  # Machine translated.
 
 # Navigation.
 read_more = "閱讀全文"

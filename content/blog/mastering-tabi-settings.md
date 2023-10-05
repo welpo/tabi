@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2023-09-29
+updated = 2023-10-05
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -491,7 +491,7 @@ self_hosted_url = ""
 
 ---
 
-## Footer Icons
+## Footer
 
 ### Social Media Icons
 
@@ -521,9 +521,21 @@ The icons are from Font Awesome. To see a list of all the available icons, take 
 
 You can add a link to your RSS/Atom feed to the footer with `feed_icon = true`.
 
----
+### Footer Menu
 
-## Metadata
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
+
+You can add a menu to the footer with `footer_menu`, which takes a list of menu items. For example:
+
+```toml
+footer_menu = [
+    {url = "about", name = "about", trailing_slash = true},
+    {url = "privacy", name = "privacy", trailing_slash = true},
+    {url = "sitemap.xml", name = "sitemap", trailing_slash = false},
+]
+```
 
 ### Copyright
 
@@ -545,6 +557,10 @@ If you have a multilingual site and want to set different copyright notices for 
 
 1. Set `translate_copyright = true` in `config.toml`.
 2. Add a `copyright` key to the `i18n` files. See the [documentation](/blog/faq-languages/#how-do-i-customise-or-override-a-specific-text-string-on-my-website).
+
+---
+
+## Metadata
 
 ### Reading Time
 
