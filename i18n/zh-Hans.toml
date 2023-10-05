@@ -24,8 +24,9 @@ all_posts = "所有文章"
 all_tags = "所有标签"
 language_selection = "语言选择"  # Machine translated.
 toggle_mode = "切换到$MODE模式"  # $MODE will be replaced by a value (or both) below. Machine translated.
-dark = "暗"  # Machine translated. 
+dark = "暗"  # Machine translated.
 light = "亮"  # Machine translated.
+reset_mode = "重置为操作系统默认模式"  # Machine translated.
 
 # Post metadata.
 draft = "草稿"

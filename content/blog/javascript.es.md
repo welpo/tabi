@@ -1,7 +1,7 @@
 +++
 title = "Sin JavaScript obligatorio"
 date = 2023-01-06
-updated = 2023-09-01
+updated = 2023-10-06
 description = "JavaScript solo se utiliza cuando HTML y CSS no son suficientes."
 
 [taxonomies]
@@ -16,8 +16,8 @@ Este tema no requiere JavaScript de manera obligatoria. Opcionalmente, puede car
 
 ## Opciones habilitadas globalmente
 
-- El **interruptor de modo claro/oscuro** puede habilitarse configurando `theme_switcher = true` en la sección `[extra]` de tu `config.toml` (~900 bytes de JavaScript).
-  
+- El **interruptor de modo claro/oscuro** puede habilitarse configurando `theme_switcher = true` en la sección `[extra]` de tu `config.toml` (~1KB de JavaScript).
+
 - **Descodificación de correo electrónico** (~400 bytes). Para proteger contra bots que recopilan correos electrónicos desde tu sitio web, puedes configurar `encode_plaintext_email = true`. Si tu sitio está en un repositorio público, para mayor protección, considera configurar tu `email` como una cadena codificada en base64[^1].
 
 ## Opciones que se pueden sobreescribir de forma jerárquica

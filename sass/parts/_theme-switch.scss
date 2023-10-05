@@ -11,3 +11,32 @@
         background: var(--meta-color);
     }
 }
+
+.theme-switcher-wrapper {
+    position: relative;
+}
+
+.theme-resetter {
+    -webkit-mask: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" %3E%3Cpath d="M295.87-193.869v-78.001h291.152q43.63 0 72.369-33.424 28.739-33.423 28.739-79.271t-28.739-79.391Q630.652-497.5 587.022-497.5H343.913l87.478 87.478-55.652 55.153L193.869-536.5l181.87-181.631 55.652 55.653-87.478 86.978h243.109q75.435 0 127.272 56.522 51.837 56.521 51.837 134.174 0 77.652-51.837 134.293-51.837 56.642-127.272 56.642H295.87Z"/%3E%3C/svg%3E');
+    position: absolute;
+    top: -0.6rem;
+    right: -0.6rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition-delay: 0.5s;
+    cursor: pointer;
+    background: var(--text-color);
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+.theme-switcher-wrapper:hover .theme-resetter.has-custom-theme {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.1s ease, visibility 0.1s ease;
+    transition-delay: 0s;
+    &:hover {
+        background: var(--meta-color);
+    }
+}

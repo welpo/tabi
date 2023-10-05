@@ -3,16 +3,27 @@
     {%- set toggle_str = macros_translate::translate(key='toggle_mode', default='Toggle $MODE mode', language_strings=language_strings) -%}
     {%- set dark_str = macros_translate::translate(key='dark', default='dark', language_strings=language_strings) -%}
     {%- set light_str = macros_translate::translate(key='light', default='light', language_strings=language_strings) -%}
-    
+
     {%- set combined_mode_str = dark_str ~ "/" ~ light_str -%}
     {%- set title_label = toggle_str | replace(from="$MODE", to=combined_mode_str) -%}
     {%- set aria_label = toggle_str | replace(from="$MODE", to=dark_str) -%}
-    
-    <div 
+
+    <div
         title="{{ title_label }}"
-        class="theme-switcher" 
-        role="button" 
-        aria-label="{{ aria_label }}" 
+        class="theme-switcher"
+        role="button"
+        aria-label="{{ aria_label }}"
         aria-pressed="false">
     </div>
+
+    {%- set reset_str = macros_translate::translate(key='reset_mode', default='Reset mode to OS default', language_strings=language_strings) -%}
+
+    <div
+        title="{{ reset_str }}"
+        class="theme-resetter"
+        role="button"
+        aria-hidden="true"
+        aria-label="{{ reset_str }}">
+    </div>
+
 </li>

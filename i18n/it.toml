@@ -26,6 +26,7 @@ language_selection = "Selezione della lingua"
 toggle_mode = "Passa alla modalità $MODE"  # $MODE will be replaced by a value (or both) below.
 dark = "scuro"
 light = "chiaro"
+reset_mode = "Reimposta la modalità alle impostazioni predefinite del sistema operativo"
 
 # Post metadata.
 draft = "BOZZA"

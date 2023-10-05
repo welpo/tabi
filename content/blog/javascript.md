@@ -1,7 +1,7 @@
 +++
 title = "No mandatory JavaScript"
 date = 2023-01-06
-updated = 2023-09-01
+updated = 2023-10-06
 description = "JavaScript is only used when HTML and CSS aren't enough."
 
 [taxonomies]
@@ -16,7 +16,7 @@ This theme has no mandatory JavaScript. Optionally, it can load a minimal amount
 
 ## Globally enabled settings
 
-- The **light/dark mode switch** can be enabled by setting `theme_switcher = true` in the `[extra]` section of your `config.toml` (~900 bytes of JavaScript).
+- The **light/dark mode switch** can be enabled by setting `theme_switcher = true` in the `[extra]` section of your `config.toml` (~1KB of JavaScript).
 
 - **E-mail decoding** (~400 bytes). To protect against spambots scraping your e-mail from your website, you can set `encode_plaintext_email = true`. If your site is on a public repository, for extra protection, consider setting your `email` as a base64-encoded string[^1] directly.
 

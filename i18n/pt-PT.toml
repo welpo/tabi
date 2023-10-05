@@ -26,6 +26,7 @@ language_selection = "Seleção de idioma"
 toggle_mode = "Alternar para o modo $MODE"  # $MODE will be replaced by a value (or both) below.
 dark = "escuro"
 light = "claro"
+reset_mode = "Repor o modo para o padrão do SO"
 
 # Post metadata.
 draft = "RASCUNHO"
