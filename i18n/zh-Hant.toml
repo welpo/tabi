@@ -26,6 +26,7 @@ language_selection = "語言選擇"  # Machine translated.
 toggle_mode = "切換到$MODE模式"  # $MODE will be replaced by a value (or both) below. Machine translated.
 dark = "暗"  # Machine translated.
 light = "亮"  # Machine translated.
+reset_mode = "重置為操作系統預設模式"  # Machine translated.
 
 # Post metadata.
 draft = "草稿"

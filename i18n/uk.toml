@@ -30,6 +30,7 @@ language_selection = "Вибір мови"
 toggle_mode = "Перемкнути в режим $MODE"  # $MODE will be replaced by a value (or both) below.
 dark = "темний"
 light = "світлий"
+reset_mode = "Скинути режим до типових параметрів ОС"
 
 # Post metadata.
 draft = "ЧЕРНЕТКА"

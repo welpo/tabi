@@ -30,6 +30,7 @@ language_selection = "Sprachauswahl"
 toggle_mode = "Wechsle in den $MODE Modus"  # $MODE will be replaced by a value (or both) below.
 dark = "dunkel"
 light = "hell"
+reset_mode = "Modus auf Betriebssystemstandard zurücksetzen"
 
 # Post metadata.
 draft = "ENTWURF"

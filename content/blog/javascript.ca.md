@@ -1,7 +1,7 @@
 +++
 title = "Sense JavaScript obligatori"
 date = 2023-01-06
-updated = 2023-09-01
+updated = 2023-10-06
 description = "JavaScript només s'utilitza quan HTML i CSS no són suficients."
 
 [taxonomies]
@@ -16,8 +16,8 @@ Aquest tema no requereix JavaScript obligatori. Opcionalment, pot carregar una q
 
 ## Opcions habilitades globalment
 
-- L'**interruptor de mode clar/fosc** es pot habilitar configurant `theme_switcher = true` a la secció `[extra]` del teu `config.toml` (~900 bytes de JavaScript).
-  
+- L'**interruptor de mode clar/fosc** es pot habilitar configurant `theme_switcher = true` a la secció `[extra]` del teu `config.toml` (~1KB de JavaScript).
+
 - **Decodificació de correu electrònic** (~400 bytes). Per protegir contra robots de correu brossa, pots configurar `encode_plaintext_email = true`. Si el teu lloc web està en un repositori públic, considera utilitzar el teu `email` com una cadena codificada en base64[^1].
 
 ## Opcions que es poden sobreescriure de forma jeràrquica
