@@ -28,6 +28,11 @@ dark = "oscuro"
 light = "claro"
 reset_mode = "Restablecer modo a configuración predeterminada del SO"
 
+# Quick navigation buttons.
+toggle_toc = "Mostrar/ocultar la tabla de contenidos"
+go_to_top = "Ir al inicio de la página"
+go_to_comments = "Ir a la sección de comentarios"
+
 # Post metadata.
 draft = "BORRADOR"
 min_read = "min de lectura"

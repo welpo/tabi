@@ -32,6 +32,11 @@ dark = "暗い"
 light = "明るい"
 reset_mode = "モードをOSデフォルトにリセット"
 
+# Quick navigation buttons.
+toggle_toc = "目次を切り替え"
+go_to_top = "ページの先頭へ"
+go_to_comments = "コメントセクションへ"
+
 # Post metadata.
 draft = "ドラフト"
 min_read = "読了時間（分）"

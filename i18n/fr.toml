@@ -32,6 +32,11 @@ dark = "sombre"
 light = "clair"
 reset_mode = "Réinitialiser le mode aux paramètres par défaut du système"
 
+# Quick navigation buttons.
+toggle_toc = "Afficher/Masquer la table des matières"
+go_to_top = "Aller en haut de la page"
+go_to_comments = "Aller à la section des commentaires"
+
 # Post metadata.
 draft = "BROUILLON"
 min_read = "min de lecture"

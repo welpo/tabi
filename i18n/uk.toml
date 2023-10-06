@@ -32,6 +32,11 @@ dark = "темний"
 light = "світлий"
 reset_mode = "Скинути режим до типових параметрів ОС"
 
+# Quick navigation buttons.
+toggle_toc = "Показати/Сховати зміст"
+go_to_top = "Перейти на початок сторінки"
+go_to_comments = "Перейти до коментарів"
+
 # Post metadata.
 draft = "ЧЕРНЕТКА"
 min_read = "хв. читання"

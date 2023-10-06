@@ -30,6 +30,11 @@ dark = "अंधेरा"
 light = "रोशनी"
 reset_mode = "मोड को ओएस डिफ़ॉल्ट पर रीसेट करें"
 
+# Quick navigation buttons.
+toggle_toc = "विषय-सूची टॉगल करें"
+go_to_top = "पृष्ठ के शीर्ष पर जाएं"
+go_to_comments = "टिप्पणी अनुभाग में जाएं"
+
 # Post metadata.
 draft = "मसौदा"
 min_read = "मिनट पठन समय"

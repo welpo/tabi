@@ -28,6 +28,11 @@ dark = "тёмный"
 light = "светлый"
 reset_mode = "Сбросить режим к настройкам ОС по умолчанию"
 
+# Quick navigation buttons.
+toggle_toc = "Показать/Скрыть оглавление"
+go_to_top = "Перейти в начало страницы"
+go_to_comments = "Перейти к комментариям"
+
 # Post metadata.
 draft = "ЧЕРНОВИК"
 min_read = "мин чтения"

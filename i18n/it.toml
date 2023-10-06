@@ -28,6 +28,11 @@ dark = "scuro"
 light = "chiaro"
 reset_mode = "Reimposta la modalità alle impostazioni predefinite del sistema operativo"
 
+# Quick navigation buttons.
+toggle_toc = "Attiva/Disattiva indice"
+go_to_top = "Vai in cima alla pagina"
+go_to_comments = "Vai alla sezione commenti"
+
 # Post metadata.
 draft = "BOZZA"
 min_read = "min di lettura"

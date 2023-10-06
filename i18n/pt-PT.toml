@@ -28,6 +28,11 @@ dark = "escuro"
 light = "claro"
 reset_mode = "Repor o modo para o padrão do SO"
 
+# Quick navigation buttons.
+toggle_toc = "Alternar Índice"
+go_to_top = "Ir para o topo da página"
+go_to_comments = "Ir para a seção de comentários"
+
 # Post metadata.
 draft = "RASCUNHO"
 min_read = "min de leitura"

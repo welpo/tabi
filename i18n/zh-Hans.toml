@@ -28,6 +28,11 @@ dark = "暗"  # Machine translated.
 light = "亮"  # Machine translated.
 reset_mode = "重置为操作系统默认模式"  # Machine translated.
 
+# Quick navigation buttons.
+toggle_toc = "切换目录"  # Machine translated.
+go_to_top = "返回页面顶部"  # Machine translated.
+go_to_comments = "转到评论区"  # Machine translated.
+
 # Post metadata.
 draft = "草稿"
 min_read = "分钟阅读"

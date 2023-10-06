@@ -32,6 +32,11 @@ dark = "어두운"
 light = "밝은"
 reset_mode = "모드를 OS 기본값으로 재설정"
 
+# Quick navigation buttons.
+toggle_toc = "목차 토글"
+go_to_top = "페이지 상단으로"
+go_to_comments = "댓글 섹션으로"
+
 # Post metadata.
 draft = "임시 저장"
 min_read = "분 읽기"

@@ -28,6 +28,11 @@ dark = "obscur"
 light = "clar"
 reset_mode = "Restableix el mode als valors predeterminats del sistema"
 
+# Quick navigation buttons.
+toggle_toc = "Mostrar/ocultar la taula de continguts"
+go_to_top = "Vés a l'inici de la pàgina"
+go_to_comments = "Vés a la secció de comentaris"
+
 # Post metadata.
 draft = "ESBORRANY"
 min_read = "min de lectura"

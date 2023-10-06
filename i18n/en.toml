@@ -28,6 +28,11 @@ dark = "dark"
 light = "light"
 reset_mode = "Reset mode to OS default"
 
+# Quick navigation buttons.
+toggle_toc = "Toggle Table of Contents"
+go_to_top = "Go to the top of the page"
+go_to_comments = "Go to the comments section"
+
 # Post metadata.
 draft = "DRAFT"
 min_read = "min read"

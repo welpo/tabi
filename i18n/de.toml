@@ -32,6 +32,11 @@ dark = "dunkel"
 light = "hell"
 reset_mode = "Modus auf Betriebssystemstandard zurücksetzen"
 
+# Quick navigation buttons.
+toggle_toc = "Inhaltsverzeichnis ein-/ausblenden"
+go_to_top = "Zum Seitenanfang"
+go_to_comments = "Zum Kommentarbereich"
+
 # Post metadata.
 draft = "ENTWURF"
 min_read = "min. lesedauer"
