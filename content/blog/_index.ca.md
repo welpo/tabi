@@ -7,5 +7,5 @@ template = "section.html"
 insert_anchor_links = "left"
 
 [extra]
-social_media_card = "img/social_cards/ca_blog.jpg"
+social_media_card = "blog/social_cards/ca_blog.jpg"
 +++
