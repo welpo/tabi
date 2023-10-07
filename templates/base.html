@@ -6,7 +6,7 @@
 {% import "macros/table_of_contents.html" as macros_toc %}
 {% import "macros/translate.html" as macros_translate %}
 
-{# Load the internationalisation data for the current language from 
+{# Load the internationalisation data for the current language from
 the .toml files in the user's '/i18n' folder, falling back to the theme's.
 This variable will hold all the text strings for the language #}
 {%- set language_strings = load_data(path="i18n/" ~ lang ~ '.toml', required=false) -%}

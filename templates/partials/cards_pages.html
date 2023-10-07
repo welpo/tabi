@@ -11,7 +11,7 @@
         {%- endif -%}
 
         {% set target_url = page.extra.link_to | default(value=page.permalink) %}
-        
+
         <a rel="{{ rel_attributes }}" {{ blank_target }} href="{{ target_url }}">
             {% if page.extra.local_image %}
                 {% set meta = get_image_metadata(path=page.extra.local_image, allow_missing=true) %}

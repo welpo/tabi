@@ -98,7 +98,7 @@
 
         {# Optional table of contents below the header #}
         {% if page.toc and macros_settings::evaluate_setting_priority(setting="toc", page=page, default_global_value=false) == "true" %}
-            {{ macros_toc::toc(page=page, header=true, language_strings=language_strings) }} 
+            {{ macros_toc::toc(page=page, header=true, language_strings=language_strings) }}
         {% endif %}
 
         <section class="body">

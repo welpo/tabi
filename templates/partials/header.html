@@ -16,7 +16,7 @@
     {# Feed #}
     <link rel="alternate" type="application/atom+xml" title="{{ config.title | safe }}" href="{{ get_url(path="atom.xml",
         trailing_slash=false) }}">
-    
+
     {# CSS #}
     {# Load subset of glyphs for header. Avoids flashing issue in Firefox #}
     {% if config.extra.custom_subset and config.extra.custom_subset == true %}
@@ -49,7 +49,7 @@
     {%- for stylesheet in stylesheets %}
         <link rel="stylesheet" href="{{ get_url(path=stylesheet, cachebust=true) | safe }}" />
     {%- endfor %}
-    
+
     <meta name="color-scheme" content="{%- if config.extra.theme_switcher -%}light dark{%- elif config.extra.default_theme -%}{{config.extra.default_theme}}{%- else -%}light{%- endif -%}" />
 
     {%- if config.extra.browser_theme_color and config.extra.browser_theme_color is iterable -%}
@@ -90,10 +90,10 @@
         {# Try to construct the image path relative to the current page #}
         {% set colocated_path = page.colocated_path | default(value="") %}
         {% set file_path = colocated_path ~ social_media_card %}
-        
+
         {# Fetch metadata to verify image existence at the relative path #}
         {%- set meta = get_image_metadata(path=file_path, allow_missing=true) -%}
-        
+
         {# Check if relative path exists, else try absolute path #}
         {% if meta %}
             {% set final_path = file_path %}
@@ -107,7 +107,7 @@
                 {{ throw(message="Could not get metadata for the specified social media card image in page " ~ page.path ~ ". Attempted relative path: '" ~ file_path ~ "' and absolute path: '" ~ social_media_card ~ "'. Ensure the file exists at one of these locations.") }}
             {% endif %}
         {% endif %}
-        
+
         {# Generate the social media meta tags #}
         <meta property="og:image" content="{{ get_url(path=final_path, cachebust=true) }}" />
         <meta property="og:image:width" content="{{ meta.width }}" />
@@ -131,7 +131,7 @@
             {%- set canonical_url = current_url | replace(from=config.base_url, to=config.extra.base_canonical_url) -%}
         {%- endif -%}
     {%- endif -%}
-    
+
     {# Add canonical URL, if set #}
     {%- if canonical_url -%}
         <link rel="canonical" href="{{ canonical_url }}" />
@@ -139,7 +139,7 @@
     {%- elif current_url -%}
         <meta property="og:url" content="{{ current_url }}" />
     {%- endif -%}
-    
+
     <meta property="og:site_name" content="{{ config.title }}">
 
     {%- include "partials/content_security_policy.html" -%}

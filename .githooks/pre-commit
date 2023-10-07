@@ -74,12 +74,12 @@ function generate_and_commit_card {
         echo "Failed to update social media card for $file"
         exit 1
     }
-    
+
     git add "$social_media_card" || {
         echo "Failed to add social media card $social_media_card"
         exit 1
     }
-    
+
     git add "$file" || {
         echo "Failed to add $file"
         exit 1
@@ -103,13 +103,13 @@ function is_minified() {
         echo "Either terser or uglifyjs is not installed. Skipping minification check."
         return 0
     fi
-    
+
     # Original file size.
     local original_size=$(wc -c < "$file")
-    
+
     # File size after compression with terser.
     local terser_size=$(terser --compress --mangle -- "$file" | wc -c)
-    
+
     # File size after compression with uglifyjs.
     local uglifyjs_size=$(uglifyjs --compress --mangle -- "$file" | wc -c)
 
@@ -117,7 +117,7 @@ function is_minified() {
     if (( original_size <= terser_size && original_size <= uglifyjs_size )); then
         return 0
     fi
-    
+
     # If the file isn't as small as it can be, suggest the better compressor in the error message
     if (( terser_size < uglifyjs_size )); then
         error_exit "Minified JS file $file isn't as small as it can be! Try using terser for better compression."

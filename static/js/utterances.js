@@ -1,7 +1,7 @@
 function setUtterancesTheme(newTheme) {
     // Get the frame with class "utterances-frame".
     const frame = document.querySelector(".utterances-frame");
-    
+
     if (frame) {
         // If the iframe exists, send a message to set the theme.
         frame.contentWindow.postMessage(

@@ -14,7 +14,7 @@
             {%- set section_item = get_section(path=section_path ~ "_index.md") %}
         {%- else %}
             {%- set section_item = get_section(path=section_path ~ "_index." ~ lang ~ ".md") %}
-        {%- endif %}  
+        {%- endif %}
 
         {% for year, posts in
         section_item.pages | group_by(attribute="year") %} {% if posts | length > 0

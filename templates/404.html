@@ -10,7 +10,7 @@
         &nbsp;{{ macros_translate::translate(key="translation_missing", default="or hasn't been translated into your language yet", force_lang=language_name, language_strings=language_strings) }}{{ macros_translate::translate(key="full_stop", default=".", force_lang=language_name, language_strings=language_strings) }}
     {%- else %}.
     {%- endif %}
-    {{ macros_translate::translate(key="check_url", default="Check the URL for errors or", force_lang=language_name, language_strings=language_strings) }} 
+    {{ macros_translate::translate(key="check_url", default="Check the URL for errors or", force_lang=language_name, language_strings=language_strings) }}
     <a href="{{ config.base_url }}{% if language_name != config.default_language %}/{{ language_name }}{% endif %}/">
     {{ macros_translate::translate(key="go_home", default="go back to the homepage", force_lang=language_name, language_strings=language_strings) }}</a>{{ macros_translate::translate(key="full_stop", default=".", force_lang=language_name, language_strings=language_strings) }}</p>
 {% endmacro %}

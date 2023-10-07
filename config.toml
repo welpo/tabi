@@ -63,7 +63,7 @@ default_theme = "light"
 # All other skins have optimal contrast.
 skin = ""
 
-# Set browser theme colour. Can be a single colour or [light, dark]. 
+# Set browser theme colour. Can be a single colour or [light, dark].
 # Note: Bright colors may be ignored in dark mode.
 # More details: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color
 browser_theme_color = "#087e96"

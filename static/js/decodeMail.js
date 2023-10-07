@@ -9,10 +9,10 @@
             // See https://en.wikipedia.org/wiki/Email_address#Internationalization
             // Code below adapted from Jackie Han: https://stackoverflow.com/a/64752311
             const byteString = atob(encodedString);
-            
+
             // Convert byteString to an array of char codes.
             const charCodes = [...byteString].map(char => char.charCodeAt(0));
-            
+
             // Use TypedArray.prototype.set() to copy the char codes into a Uint8Array.
             const bytes = new Uint8Array(charCodes.length);
             bytes.set(charCodes);

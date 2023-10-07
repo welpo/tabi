@@ -8,27 +8,27 @@
         data-goatcounter="{{ self_hosted_url ~ '/count' }}"
         src="{{ self_hosted_url ~ '/count.js' }}"
     {% else %}
-        data-goatcounter="https://{{ analytics_id }}.goatcounter.com/count" 
+        data-goatcounter="https://{{ analytics_id }}.goatcounter.com/count"
         src="https://gc.zgo.at/count.js"
         {% endif %}
     ></script>
 
 {% elif analytics_service == "umami" %}
-    <script async defer 
+    <script async defer
     {% if self_hosted_url %}
-        data-website-id="{{ analytics_id }}" 
+        data-website-id="{{ analytics_id }}"
         src="{{ self_hosted_url ~ '/umami.js' }}"
     {% else %}
-        data-website-id="{{ analytics_id }}" 
+        data-website-id="{{ analytics_id }}"
         src="https://analytics.eu.umami.is/script.js"
     {% endif %}
     data-do-not-track="true">
     </script>
 
     {% elif analytics_service == "plausible" %}
-    <script 
-        defer 
-        data-domain="{{ analytics_id }}" 
+    <script
+        defer
+        data-domain="{{ analytics_id }}"
         src="{% if self_hosted_url %}{{ self_hosted_url ~ '/js/plausible.js' }}{% else %}https://plausible.io/js/script.js{% endif %}"
     ></script>
 

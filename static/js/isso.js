@@ -56,7 +56,7 @@ function loadIsso(commentsDiv) {
     script.setAttribute('data-isso-vote', voting);
     script.setAttribute('data-isso-page-author-hashes', hashes);
     script.setAttribute('data-isso-css', 'false');
-    
+
     // Set the id and data-isso-id of the Isso thread.
     const section = document.createElement('section');
     section.id = 'isso-thread';
