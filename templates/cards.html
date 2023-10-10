@@ -8,6 +8,10 @@
     {{ macros_page_header::page_header(title=section.title) }}
 
     <main>
+        {% if section.content -%}
+            <div id="page-content">{{ section.content | safe }}</div>
+        {% endif %}
+
         {%- if paginator %}
             {%- set show_pages = paginator.pages -%}
         {% else %}
