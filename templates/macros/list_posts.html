@@ -11,12 +11,14 @@
                 <section class="bloglist-row bottom-divider">
             {% endif %}
 
-            {% if post.date %}
-                <div class="date">
-                    {{ macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) }}
-                </div>
-            {% endif %}
-
+            <ul class="bloglist-meta">
+                {% if post.date %}
+                <li class="date">{{ macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) }}</li>
+                {% endif %}
+                {% if post.draft %}
+                <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
+                {% endif %}
+            </ul>
             <div class="bloglist-content">
                 <h2 class="bloglist-title">
                     <a href="{{ post.permalink }}">{{ post.title }}</a>

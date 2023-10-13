@@ -9,11 +9,21 @@
     background-color: var(--navbar-color);
     padding: 2.5rem 0;
 
-    .date {
+    .bloglist-meta {
+        padding: 0;
         width: 13.5rem;
         color: var(--meta-color);
         font-weight: 300;
         font-size: 0.9rem;
+
+        li {
+            list-style-type: none;
+        }
+
+        li.draft-label {
+            width: fit-content;
+            line-height: 1.2rem;
+        }
     }
 
     .bloglist-tags {
@@ -66,14 +76,19 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 2rem 0;
-    }
 
-    .date {
-        margin-bottom: 0;
-        width: 100%;
-    }
+        .bloglist-meta {
+            margin-bottom: 0;
+            width: 100%;
 
-    .bloglist-content {
-        width: 100%;
+            li {
+                display: inline;
+                margin-right: 0.3rem;
+            }
+        }
+
+        .bloglist-content {
+            width: 100%;
+        }
     }
 }
