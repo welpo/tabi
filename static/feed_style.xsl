@@ -51,9 +51,9 @@
             <div class="bloglist-container">
               <xsl:for-each select="/atom:feed/atom:entry">
                 <section class="bloglist-row bottom-divider">
-                  <div class="date">
-                    <xsl:value-of select="substring(atom:published, 0, 11)"/>
-                  </div>
+                  <ul class="bloglist-meta">
+                    <li class="date"><xsl:value-of select="substring(atom:published, 0, 11)"/></li>
+                  </ul>
                   <div class="bloglist-content">
                     <div class="bloglist-title">
                       <a>
