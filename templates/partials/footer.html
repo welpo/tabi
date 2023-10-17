@@ -118,4 +118,9 @@
     {%- if email_needs_decoding -%}
         <script src="{{ get_url(path='js/decodeMail.min.js') }}" async></script>
     {%- endif -%}
+
+    {# Load accessibility JavaScript #}
+    {%- if config.extra.accessibility_javascript -%}
+        <script defer src="{{ get_url(path='js/accessibility.min.js') }}"></script>
+    {%- endif -%}
 </footer>

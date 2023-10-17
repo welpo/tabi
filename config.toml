@@ -96,6 +96,9 @@ show_remote_changes = true  # Defaults to true.
 # Show a link to the repository of the site, right next to the "Powered by Zola & tabi" text.
 show_remote_source = true  # Defaults to true.
 
+# Load JavaScript to improve accessibility.
+accessibility_javascript = true
+
 # Add a "copy" button to codeblocks (loads ~700 bytes of JavaScript).
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 copy_button = true
