@@ -20,7 +20,7 @@
         <div class="translated">
             <blockquote>
                 <p>{{ open_quote ~ translated ~ close_quote }}</p>
-                {% if author %}<p> — {{ author }}{% endif %} <label for="toggle-{{ random_id }}" class="quote-label quote-label-original">
+                <p>{% if author %}— {{ author }}{% endif %} <label for="toggle-{{ random_id }}" class="quote-label quote-label-original">
                     ({{- macros_translate::translate(key="show_original_quote", default="Show original quote", language_strings=language_strings) -}})
                 </label></p>
             </blockquote>
@@ -28,7 +28,7 @@
         <div class="original">
             <blockquote>
                 <p>{{ open_quote ~ original ~ close_quote }}</p>
-                {% if author %}<p> — {{ author }}{% endif %} <label for="toggle-{{ random_id }}" class="quote-label quote-label-translate">
+                <p>{% if author %}— {{ author }}{% endif %} <label for="toggle-{{ random_id }}" class="quote-label quote-label-translate">
                     ({{- macros_translate::translate(key="show_translation", default="Show translation", language_strings=language_strings) -}})
                 </label></p>
             </blockquote>
