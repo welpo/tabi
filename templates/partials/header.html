@@ -62,11 +62,11 @@
     {%- endif -%}
 
     {%- if page.description %}
-        <meta name="description" content="{{ page.description | striptags | safe }}" />
-        <meta property="og:description" content="{{ page.description | striptags | safe }}" />
+        <meta name="description" content="{{ page.description }}" />
+        <meta property="og:description" content="{{ page.description }}" />
     {%- elif section.description %}
-        <meta name="description" content="{{ section.description | striptags | safe }}" />
-        <meta property="og:description" content="{{ section.description | striptags | safe }}" />
+        <meta name="description" content="{{ section.description }}" />
+        <meta property="og:description" content="{{ section.description }}" />
     {%- elif page.summary %}
         <meta name="description" content="{{ page.summary | striptags | safe | trim_end_matches(pat=".") }}…" />
         <meta property="og:description" content="{{ page.summary | striptags | safe | trim_end_matches(pat=".") }}…" />

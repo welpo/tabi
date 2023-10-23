@@ -67,7 +67,7 @@
         {% if page.summary -%}
             <summary type="html">{{ page.summary | striptags | safe | trim_end_matches(pat=".") }}…</summary>
         {% elif page.description -%}
-            <summary type="html">{{ page.description | striptags | safe }}</summary>
+            <summary type="html">{{ page.description }}</summary>
         {% endif -%}
     </entry>
     {%- endfor %}

@@ -34,7 +34,7 @@
 
                 <div class="description">
                     {% if post.description %}
-                        <p>{{ post.description | striptags | safe }}</p>
+                        <p>{{ post.description }}</p>
                     {% elif post.summary %}
                         <p>{{ post.summary | striptags | safe | trim_end_matches(pat=".") }}…</p>
                     {% endif %}
