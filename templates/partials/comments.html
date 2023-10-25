@@ -66,8 +66,9 @@
 {% elif comment_system == "isso" %}
     data-endpoint-url="{{ config.extra.isso.endpoint_url }}"
     {% if config.extra.isso.page_id_is_slug %}
-        data-isso-id="{{ page.slug }}"
-        data-title="{{ page.slug }}"
+    {%- set default_lang_url = current_path | replace(from='/' ~ lang ~ '/', to = '/') -%}
+        data-isso-id="{{ default_lang_url }}"
+        data-title="{{ default_lang_url }}"
     {% endif %}
     {% if config.extra.isso.lang  %}
         data-page-language="{{ config.extra.isso.lang }}"
