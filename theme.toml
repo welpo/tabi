@@ -262,7 +262,7 @@ allowed_domains = [
 # enabled_for_all_posts = false  # Enables Isso on all posts. It can be enabled on individual posts by setting `isso = true` in the [extra] section of a post's front matter.
 # automatic_loading = true  # If set to false, a "Load comments" button will be shown.
 # endpoint_url = ""  # Accepts relative paths like "/comments/" or "/isso/", as well as full urls like "https://example.com/comments/". Include the trailing slash.
-# page_id_is_slug = true  # If true, it will use the post's filename (slug) as id; this is the only way to share comments between languages. If false, it will use the entire url as id.
+# page_id_is_slug = true  # If true, it will use the relative path for the default language as id; this is the only way to share comments between languages. If false, it will use the entire url as id.
 # lang = ""  # Leave blank to match the page's language.
 # max_comments_top = "inf"  # Number of top level comments to show by default. If some comments are not shown, an “X Hidden” link is shown.
 # max_comments_nested = "5"  # Number of nested comments to show by default. If some comments are not shown, an “X Hidden” link is shown.
