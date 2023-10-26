@@ -96,7 +96,7 @@
                             {% set copyright = config.extra.copyright_translations[lang] %}
                         {%- endif -%}
                     {%- endif -%}
-                    <p>{{ copyright | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
+                    <p>{{ copyright | replace(from="$TITLE", to=config.title) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
                 {%- endif -%}
 
                 {# Shows "Powered by Zola & tabi" notice #}

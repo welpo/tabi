@@ -544,10 +544,10 @@ footer_menu = [
 Per afegir una menció sobre els drets d'autor al teu lloc web, configura `copyright`:
 
 ```toml
-copyright = "© $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
+copyright = "$TITLE © $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
 ```
 
-`$CURRENT_YEAR` es substituirà per l'any actual i `$SEPARATOR` es substituirà per la [variable `separator`](#separador-personalitzat). El text es processarà en Markdown. Per exemple:
+`$TITLE` es substituirà per el títol (variable `config.title`), `$CURRENT_YEAR` es substituirà per l'any actual i `$SEPARATOR` es substituirà per la [variable `separator`](#separador-personalitzat). El text es processarà en Markdown. Per exemple:
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copyright_light.webp", dark_src="blog/mastering-tabi-settings/img/copyright_dark.webp" alt="Secció de drets d'autor", full_width=true) }}
 
@@ -557,7 +557,7 @@ Si tens un lloc multilingüe i vols establir diferents notificacions de drets d'
 2. Afegeix una traducció a `copyright_translations` per a l'idioma esperat (que coincideix amb la variable `lang`) de la manera següent:
 
 ```toml
-copyright_translations.es = "© $CURRENT_YEAR Your Name $SEPARATOR A menos que se indique lo contrario, el contenido de este sitio web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
+copyright_translations.es = "$TITLE © $CURRENT_YEAR Your Name $SEPARATOR A menos que se indique lo contrario, el contenido de este sitio web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
 ```
 
 ---

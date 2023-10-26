@@ -546,10 +546,10 @@ footer_menu = [
 To add a copyright notice to your site, set `copyright`:
 
 ```toml
-copyright = "© $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
+copyright = "$TITLE © $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
 ```
 
-`$CURRENT_YEAR` will be replaced by the current year, and `$SEPARATOR` will be replaced by the [`separator` variable](#custom-separator). Markdown is rendered. The example above:
+`$TITLE` will be replaced by the title (`config.title` variable), `$CURRENT_YEAR` will be replaced by the current year, and `$SEPARATOR` will be replaced by the [`separator` variable](#custom-separator). Markdown is rendered. The example above:
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copyright_light.webp", dark_src="blog/mastering-tabi-settings/img/copyright_dark.webp" alt="Copyright section", full_width=true) }}
 
@@ -559,7 +559,7 @@ If you have a multilingual site and want to set different copyright notices for 
 2. Add a translation to `copyright_translations` for the expected language (matching the `lang` variable) as follow:
 
 ```toml
-copyright_translations.es = "© $CURRENT_YEAR Your Name $SEPARATOR A menos que se indique lo contrario, el contenido de este sitio web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
+copyright_translations.es = "$TITLE © $CURRENT_YEAR Your Name $SEPARATOR A menos que se indique lo contrario, el contenido de este sitio web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
 ```
 
 ---
