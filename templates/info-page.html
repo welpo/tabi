@@ -8,7 +8,9 @@
 
 <div id="page-content">
     <main>
-        {{ page.content | safe }}
+        {# The replace pattern is used to enable arbitrary locations for the Table of Contents #}
+        {# This is Philipp Oppermann's workaround: https://github.com/getzola/zola/issues/584#issuecomment-474329637 #}
+        {{ page.content | replace(from="<!-- toc -->", to=macros_toc::toc(page=page, header=false, language_strings=language_strings)) | safe }}
     </main>
 </div>
 
