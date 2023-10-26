@@ -554,7 +554,11 @@ copyright = "© $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the c
 Si tens un lloc multilingüe i vols establir diferents notificacions de drets d'autor per a diferents idiomes, pots:
 
 1. Configura `translate_copyright = true` a `config.toml`.
-2. Afegeix una clau `copyright` als arxius `i18n`. Consulta la [documentació](/ca/blog/faq-languages/#com-puc-personalitzar-o-sobreescriure-una-cadena-de-text-específica-al-meu-lloc-web).
+2. Afegeix una traducció a `copyright_translations` per a l'idioma esperat (que coincideix amb la variable `lang`) de la manera següent:
+
+```toml
+copyright_translations.es = "© $CURRENT_YEAR Your Name $SEPARATOR A menos que se indique lo contrario, el contenido de este sitio web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
+```
 
 ---
 

@@ -89,12 +89,14 @@
                 {# Shows optional Copyright notice #}
                 {%- if config.extra.copyright -%}
                     {% set current_year = now() | date(format="%Y") %}
+                    {% set copyright = config.extra.copyright %}
                     {# Translate the copyright if set in the config #}
                     {%- if config.extra.translate_copyright -%}
-                        <p>{{ macros_translate::translate(key="copyright", default=config.extra.copyright, language_strings=language_strings) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
-                    {%- else -%}
-                        <p>{{ config.extra.copyright | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
+                        {%- if lang in config.extra.copyright_translations -%}
+                            {% set copyright = config.extra.copyright_translations[lang] %}
+                        {%- endif -%}
                     {%- endif -%}
+                    <p>{{ copyright | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
                 {%- endif -%}
 
                 {# Shows "Powered by Zola & tabi" notice #}

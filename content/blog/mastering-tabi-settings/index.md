@@ -556,7 +556,11 @@ copyright = "© $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the c
 If you have a multilingual site and want to set different copyright notices for different languages, you can:
 
 1. Set `translate_copyright = true` in `config.toml`.
-2. Add a `copyright` key to the `i18n` files. See the [documentation](/blog/faq-languages/#how-do-i-customise-or-override-a-specific-text-string-on-my-website).
+2. Add a translation to `copyright_translations` for the expected language (matching the `lang` variable) as follow:
+
+```toml
+copyright_translations.es = "© $CURRENT_YEAR Your Name $SEPARATOR A menos que se indique lo contrario, el contenido de este sitio web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
+```
 
 ---
 
