@@ -90,13 +90,21 @@
                 {%- if config.extra.copyright -%}
                     {% set current_year = now() | date(format="%Y") %}
                     {% set copyright = config.extra.copyright %}
-                    {# Translate the copyright if set in the config #}
-                    {%- if config.extra.translate_copyright -%}
+
+                    {# Try to look for a language-specific copyright notice in the new config setup #}
+                    {%- if config.extra.copyright_translations -%}
                         {%- if lang in config.extra.copyright_translations -%}
                             {% set copyright = config.extra.copyright_translations[lang] %}
                         {%- endif -%}
+                    {%- elif config.extra.translate_copyright -%}
+                        {# Old way to translate the copyright through toml files #}
+                        {# When the feature is removed, uncomment below to throw a descriptive error #}
+                        {# {{ throw(message="ERROR: The 'translate_copyright' feature has been deprecated. Please use 'copyright_translations' in the config.toml. See the documentation: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copyright") }} #}
+                        {% set copyright = macros_translate::translate(key="copyright", default=config.extra.copyright, language_strings=language_strings) %}
                     {%- endif -%}
-                    <p>{{ copyright | replace(from="$TITLE", to=config.title) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
+
+                    {# Render the copyright notice, replacing the variables #}
+                    <p>{{ copyright | replace(from="$AUTHOR", to=config.author) | replace(from="$TITLE", to=config.title) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
                 {%- endif -%}
 
                 {# Shows "Powered by Zola & tabi" notice #}

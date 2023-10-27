@@ -542,20 +542,22 @@ footer_menu = [
 Para añadir una mención sobre los derechos de autor a tu sitio web, configura `copyright`:
 
 ```toml
-copyright = "$TITLE © $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
+copyright = "© $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
 ```
 
-`$TITLE` se reemplazará por el título (variable `config.title`), `$CURRENT_YEAR` se reemplazará por el año actual y `$SEPARATOR` se reemplazará por la [variable `separator`](#separador-personalizado). Se procesará el texto en Markdown. Por ejemplo:
+- `$TITLE` será reemplazado por la variable `title` configurada en `config.toml`
+- `$CURRENT_YEAR` será reemplazado por el año actual
+- `$AUTHOR` será reemplazado por la variable `author`
+- `$SEPARATOR` será reemplazado por la [variable `separator`](#separador-personalizado).
+
+Se procesará el texto en Markdown. Por ejemplo, la configuració de arriba:
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copyright_light.webp", dark_src="blog/mastering-tabi-settings/img/copyright_dark.webp" alt="Sección de derechos de autor", full_width=true) }}
 
-Si tienes un sitio multilingüe y deseas establecer diferentes notificaciones de derechos de autor para diferentes idiomas, puedes:
-
-1. Configura `translate_copyright = true` en `config.toml`.
-2. Añade una traducción en `copyright_translations` para el idioma esperado (que coincida con la variable `lang`) de la siguiente manera:
+Si tienes un sitio multilingüe y deseas establecer diferentes notificaciones de derechos de autor para diferentes idiomas, añade la traducción correspondiente a `copyright_translations.{código_de_idioma}` para cada idioma que quieras dar soporte. El código de idioma debe coincidir con el [código de idioma de tabi](https://welpo.github.io/tabi/es/blog/faq-languages/#que-son-estos-codigos-de-dos-letras). Por ejemplo:
 
 ```toml
-copyright_translations.es = "$TITLE © $CURRENT_YEAR Your Name $SEPARATOR A menos que se indique lo contrario, el contenido de este sitio web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
+copyright_translations.es = "© $CURRENT_YEAR $AUTHOR $SEPARATOR A menos que se indique lo contrario, el contenido de esta web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
 ```
 
 ---

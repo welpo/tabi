@@ -544,20 +544,22 @@ footer_menu = [
 Per afegir una menció sobre els drets d'autor al teu lloc web, configura `copyright`:
 
 ```toml
-copyright = "$TITLE © $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
+copyright = "© $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
 ```
 
-`$TITLE` es substituirà per el títol (variable `config.title`), `$CURRENT_YEAR` es substituirà per l'any actual i `$SEPARATOR` es substituirà per la [variable `separator`](#separador-personalitzat). El text es processarà en Markdown. Per exemple:
+- `$TITLE` serà reemplaçat per la variable `title` configurada a `config.toml`
+- `$CURRENT_YEAR` serà reemplaçat per l'any actual
+- `$AUTHOR` serà reemplaçat per la variable `author`
+- `$SEPARATOR` serà reemplaçat per la [variable `separator`](#separador-personalitzat).
+
+El text es processarà en Markdown. Per exemple, la configuració d'adalt:
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copyright_light.webp", dark_src="blog/mastering-tabi-settings/img/copyright_dark.webp" alt="Secció de drets d'autor", full_width=true) }}
 
-Si tens un lloc multilingüe i vols establir diferents notificacions de drets d'autor per a diferents idiomes, pots:
-
-1. Configura `translate_copyright = true` a `config.toml`.
-2. Afegeix una traducció a `copyright_translations` per a l'idioma esperat (que coincideix amb la variable `lang`) de la manera següent:
+Si tens un lloc multilingüe i vols establir diferents notificacions de drets d'autor per a diferents idiomes,afegeix la traducció corresponent a `copyright_translations.{codi_d'idioma}` per a cada idioma que vulguis donar suport. El codi de llengua ha de coincidir amb el [codi de llengua de tabi](https://welpo.github.io/tabi/ca/blog/faq-languages/#que-son-aquests-codis-de-dues-lletres). Per exemple, pel castellà:
 
 ```toml
-copyright_translations.es = "$TITLE © $CURRENT_YEAR Your Name $SEPARATOR A menos que se indique lo contrario, el contenido de este sitio web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
+copyright_translations.es = "© $CURRENT_YEAR $AUTHOR $SEPARATOR A menos que se indique lo contrario, el contenido de esta web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
 ```
 
 ---
