@@ -46,6 +46,7 @@
         {% endfor %}
     </tbody>
 </table> #}
+{# {{ __tera_context }} #}
 {# End debugging #}
 
 <main>
@@ -107,33 +108,21 @@
             {{ page.content | replace(from="<!-- toc -->", to=macros_toc::toc(page=page, header=false, language_strings=language_strings)) | safe }}
         </section>
 
-        {# Check if comments are enabled #}
-        {% set giscus_enabled = config.extra.giscus.enabled_for_all_posts or page.extra.giscus %}
-        {% set utterances_enabled = config.extra.utterances.enabled_for_all_posts or page.extra.utterances %}
-        {% set hyvortalk_enabled = config.extra.hyvortalk.enabled_for_all_posts or page.extra.hyvortalk %}
-        {% set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso %}
-
-        {# Ensure only one comment system is enabled #}
-        {# Counter for enabled comment systems #}
+        {# Check if comments are enabled, checking that they are not disabled on the specific page #}
+        {% set systems = ["giscus", "utterances", "hyvortalk", "isso"] %}
         {% set enabled_systems = 0 %}
+        {% set comment_system = "" %}
 
-        {# Check and count the enabled comment systems #}
-        {% if giscus_enabled %}
-            {% set comment_system = "giscus" %}
-            {% set enabled_systems = enabled_systems + 1 %}
-        {% endif %}
-        {% if utterances_enabled %}
-            {% set comment_system = "utterances" %}
-            {% set enabled_systems = enabled_systems + 1 %}
-        {% endif %}
-        {% if hyvortalk_enabled %}
-            {% set comment_system = "hyvortalk" %}
-            {% set enabled_systems = enabled_systems + 1 %}
-        {% endif %}
-        {% if isso_enabled %}
-            {% set comment_system = "isso" %}
-            {% set enabled_systems = enabled_systems + 1 %}
-        {% endif %}
+        {% for system in systems %}
+            {% set global_enabled = config.extra[system].enabled_for_all_posts | default(value=false) %}
+            {% set page_enabled = page.extra[system] | default(value=global_enabled) %}
+            {% set is_enabled = global_enabled and page_enabled != false or page_enabled == true %}
+
+            {% if is_enabled %}
+                {% set_global comment_system = system %}
+                {% set_global enabled_systems = enabled_systems + 1 %}
+            {% endif %}
+        {% endfor %}
 
         {# Ensure only one comment system is enabled #}
         {% if enabled_systems > 1 %}

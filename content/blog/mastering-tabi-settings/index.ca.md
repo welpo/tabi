@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2023-10-05
+updated = 2023-10-27
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -453,6 +453,8 @@ Per defecte, el feed Atom només conté el resum o descripció de les teves publ
 Per activar els comentaris en una pàgina, establert el nom del sistema com a `true` al front matter. Per exemple, `utterances = true`.
 
 Si vols activar els comentaris de forma global, pots fer-ho establint `enabled_for_all_posts = true` a la secció apropiada del teu `config.toml` (per exemple, a `[extra.giscus]`).
+
+Si has activat un sistema de forma global i vols desactivar-lo per a una pàgina específica, pots fer-ho establint el nom del sistema com a `false` al front matter. Per exemple, `utterances = false`.
 
 Llegeix la [documentació](/ca/blog/comments/) per a més informació sobre els sistemes disponibles i la seva configuració.
 

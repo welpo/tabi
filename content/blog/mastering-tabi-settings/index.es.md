@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2023-10-05
+updated = 2023-10-27
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -451,6 +451,8 @@ Por defecto, el feed Atom solo contiene el resumen/descripción de tus publicaci
 Para activar los comentarios en una página, establece el nombre del sistema como `true` en el front matter. Por ejemplo, `utterances = true`.
 
 Si quieres activar los comentarios de forma global, puedes hacerlo estableciendo `enabled_for_all_posts = true` en la sección apropiada de tu `config.toml` (por ejemplo, en `[extra.giscus]`).
+
+Si has activado un sistema globalmente, pero quieres desactivarlo en una página específica, puedes hacerlo estableciendo el nombre del sistema como `false` en el front matter. Por ejemplo, `utterances = false`.
 
 Lee la [documentación](/es/blog/comments/) para obtener más información sobre los sistemas disponibles y su configuración.
 

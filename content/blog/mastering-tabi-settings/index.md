@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2023-10-05
+updated = 2023-10-27
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -455,6 +455,8 @@ By default, the Atom feed only contains the summary/description of your posts. Y
 To enable comments on an individual page, set the name of the system you want to enable to `true` in the front matter. For example, `utterances = true`.
 
 To enable a system globally (on all pages), set `enabled_for_all_posts = true` in the correct section of your `config.toml` (e.g. inside `[extra.giscus]`).
+
+If you have enabled a system globally, but want to disable it on a specific page, set the name of the system to `false` in the front matter of that page. For example, `utterances = false`.
 
 Read [the docs](/blog/comments/) for more information on the available systems and their setup.
 
