@@ -167,7 +167,7 @@ full_content_in_feed = false
 # Protect against spambots:
 # 1. Use base64 for email (convert at https://www.base64encode.org/ or `printf 'your@email.com' | base64`).
 # 2. Or, set 'encode_plaintext_email' to true for auto-encoding (only protects on site, not in public repos).
-email = "bWFpbEBleGFtcGxlLmNvbQ=="  # base64 encoded version of "mail@example.com"
+email = "dGFiaUBvc2MuZ2FyZGVu"
 # Decoding requires ~400 bytes of JavaScript. If JS is disabled, the email won't be displayed.
 encode_plaintext_email = true  # Setting is ignored if email is already encoded.
 

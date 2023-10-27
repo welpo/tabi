@@ -14,7 +14,7 @@ We welcome contributions in many forms, including:
 - Documentation improvements;
 - UI/UX suggestions.
 
-If you're not sure how to contribute or need help with something, please don't hesitate to reach out via the [issue tracker](https://github.com/welpo/tabi/issues) or [mail](mailto:hi@welpo.ooo?subject=[GitHub]%20tabi).
+If you're not sure how to contribute or need help with something, please don't hesitate to reach out via the [issue tracker](https://github.com/welpo/tabi/issues) or [mail](mailto:tabi@osc.garden?subject=[GitHub]%20tabi).
 
 ## How to submit a pull request?
 
