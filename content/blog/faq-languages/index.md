@@ -1,6 +1,7 @@
 +++
 title = "Lost in Translation? Not with tabi's Multilingual Capabilities"
 date = 2023-09-12
+updated = 2023-10-27
 description = "Master the art of serving a global audience through tabi's built-in multilingual features. Learn how to change the default language, add multilingual support, and contribute your own translations."
 
 [taxonomies]
@@ -58,7 +59,7 @@ Zola automatically generates URLs for each non-default language like this: `{bas
 
 tabi facilitates the navigation between languages by adding a language switcher to the navigation bar (only shown when there's more than one language enabled).
 
-If you [scroll up](#) to the navigation bar, you'll see the language switcher (the globe icon). Hovering over it will display a dropdown with the available languages. Clicking on a language's name will take you to the same page in that language.
+If you [scroll up](#) to the navigation bar, you'll see the language switcher (the globe icon). Clicking on it will display a dropdown with the available languages. Clicking on a language's name will take you to the same page in that language.
 
 If a specific page is not available in a language, tabi will display a 404 page with the text:
 

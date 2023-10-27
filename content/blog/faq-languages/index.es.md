@@ -1,6 +1,7 @@
 +++
 title = "¿Lost in Translation? Explora las capacidades multilingües de tabi"
 date = 2023-09-12
+updated = 2023-10-27
 description = "Descubre cómo tabi te ayuda a conectar con una audiencia global gracias a sus funciones multilingües. Aprende a cambiar el idioma por defecto, añadir más idiomas y aportar tus propias traducciones."
 
 [taxonomies]
@@ -58,7 +59,7 @@ Zola genera automáticamente URLs para cada idioma que no sea el predeterminado 
 
 tabi facilita la navegación entre idiomas añadiendo un conmutador de idioma en la barra de navegación (que sólo se muestra cuando hay más de un idioma habilitado).
 
-Si [subes](#) a la barra de navegación, verás el conmutador de idioma. Al pasar el cursor sobre él, se mostrará un desplegable con los idiomas disponibles. Si haces clic en el nombre de un idioma, te llevará a la misma página en ese idioma.
+Si [subes](#) a la barra de navegación, verás el conmutador de idioma. Al hacer clic sobre él, se mostrará un desplegable con los idiomas disponibles. Si haces clic en el nombre de un idioma, te llevará a la misma página en ese idioma.
 
 Si una página específica no está disponible en un idioma, tabi mostrará una página 404 con el texto:
 
