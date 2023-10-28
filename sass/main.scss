@@ -50,6 +50,7 @@
     --normal-layout-width: 600px;
     --medium-layout-width: 400px;
     --small-layout-width: 200px;
+    --paragraph-spacing: max(2.3vmin, 24px);
 
     --sans-serif-font: 'Inter', Helvetica, Arial, sans-serif;
     --serif-font: 'Source Serif', 'Georgia', serif;
@@ -150,6 +151,16 @@ article {
         margin-left: -$base-margin;
         max-width: calc(100% + 2*$base-margin);
     }
+
+    li {
+        p:not(:last-child) {
+            margin-bottom: 0;
+        }
+
+        p + :last-child {
+            margin-bottom: var(--paragraph-spacing);
+        }
+    }
 }
 
 .section-title {
@@ -227,7 +238,7 @@ h5 {
 
 p {
     margin-top: 0.4rem;
-    margin-bottom: max(2.3vmin, 24px);
+    margin-bottom: var(--paragraph-spacing);
     font-size: 1em;
     line-height: 2rem;
 }
