@@ -20,7 +20,7 @@
     </str:translations>
 
     {#- Load extra CSS (skin) if set in config.toml -#}
-    {%- if config.extra.skin and config.extra.skin != "teal" -%}
+    {%- if config.extra.skin -%}
         <link rel="extra-stylesheet" href="{{ get_url(path='skins/' ~ config.extra.skin ~ '.css', cachebust=true) | safe }}" />
     {%- endif -%}
 

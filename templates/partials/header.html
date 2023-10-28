@@ -41,7 +41,7 @@
     {%- endif -%}
 
     {# Load extra CSS for custom skin #}
-    {%- if config.extra.skin and config.extra.skin != "teal" -%}
+    {%- if config.extra.skin -%}
         {%- set stylesheets = stylesheets | concat(with='skins/' ~ config.extra.skin ~ '.css') -%}
     {%- endif -%}
 
