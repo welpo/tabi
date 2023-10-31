@@ -183,9 +183,9 @@ socials = [
 # Extra menu to show on the footer, below socials section.
 footer_menu = [
     {url = "about", name = "about", trailing_slash = true},
-    # {url = "privacy", name = "privacy", trailing_slash = true},
+    {url = "privacy", name = "privacy", trailing_slash = true},
+    {url = "https://tabi-stats.osc.garden", name = "site_statistics", trailing_slash = true},
     {url = "sitemap.xml", name = "sitemap", trailing_slash = false},
-    # {url = "https://example.com", name = "external link", trailing_slash = true},
 ]
 
 # Enable a copyright notice for the footer, shown between socials and the "Powered by" text.
@@ -221,7 +221,7 @@ custom_subset = true
 [extra.analytics]
 # Specify which analytics service you want to use.
 # Supported options: ["goatcounter", "umami", "plausible"]
-# service = "umami"
+service = "goatcounter"
 
 # Unique identifier for tracking.
 # For GoatCounter, this is the code you choose during signup.
@@ -235,7 +235,7 @@ custom_subset = true
 # For Umami: Base URL like "https://umami.example.com"
 # For Plausible: Base URL like "https://plausible.example.com"
 # Leave this field empty if you're using the service's default hosting.
-# self_hosted_url = ""
+self_hosted_url = "https://tabi-stats.osc.garden"
 
 # giscus support for comments. https://giscus.app
 # Setup instructions: https://welpo.github.io/tabi/blog/comments/#setup

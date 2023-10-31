@@ -15,6 +15,7 @@ projects = "projets"
 about = "à propos"
 contact = "contact"
 privacy = "politique de confidentialité"
+site_statistics = "statistiques du site"
 sitemap = "plan du site"
 
 # Navigation.

@@ -15,6 +15,7 @@ projects = "プロジェクト"
 about = "自己紹介"
 contact = "お問い合わせ"
 privacy = "プライバシーポリシー"
+site_statistics = "サイト統計"
 sitemap = "サイトマップ"
 
 # Navigation.
