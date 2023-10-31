@@ -11,6 +11,7 @@ projects = "проекты"
 about = "обо мне"
 contact = "контакт"
 privacy = "политика конфиденциальности"
+site_statistics = "статистика сайта"
 sitemap = "карта сайта"
 
 # Navigation.

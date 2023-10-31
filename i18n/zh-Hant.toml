@@ -11,6 +11,7 @@ projects = "專案"
 about = "關於"
 contact = "聯絡方式"  # Machine translated.
 privacy = "隱私政策"  # Machine translated.
+site_statistics = "網站統計"  # Machine translated.
 sitemap = "網站地圖"  # Machine translated.
 
 # Navigation.
