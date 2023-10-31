@@ -68,20 +68,16 @@
                         <li>
                             {%- set trailing_slash = menu.trailing_slash | default(value=true) -%}
 
-                            {%- set url_map = menu.url | split(pat=":") %}
-
                             {%- if menu.url == "sitemap.xml" -%}
                                 {%- set url = get_url(path=menu.url, trailing_slash=trailing_slash) -%}
-                            {%- else -%}
-                                {%- if "https" in url_map or "http" in url_map -%}
-                                    {%- if menu.trailing_slash -%}
-                                        {%- set url = menu.url ~ "/" -%}
-                                    {%- else -%}
-                                        {%- set url = menu.url -%}
-                                    {%- endif -%}
+                            {%- elif menu.url is starting_with("http") -%}
+                                {%- if menu.trailing_slash -%}
+                                    {%- set url = menu.url ~ "/" -%}
                                 {%- else -%}
-                                    {%- set url = get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) -%}
+                                    {%- set url = menu.url -%}
                                 {%- endif -%}
+                            {%- else -%}
+                                {%- set url = get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) -%}
                             {%- endif -%}
 
                             <a class="nav-links no-hover-padding" href="{{ url }}">
