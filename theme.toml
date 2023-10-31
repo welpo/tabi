@@ -164,6 +164,7 @@ encode_plaintext_email = true  # Setting is ignored if email is already encoded.
 #     {url = "about", name = "about", trailing_slash = true},
 #     {url = "privacy", name = "privacy", trailing_slash = true},
 #     {url = "sitemap.xml", name = "sitemap", trailing_slash = false},
+#     {url = "https://example.com", name = "external link", trailing_slash = true},
 # ]
 
 # Enable a copyright notice for the footer, shown between socials and the "Powered by" text.

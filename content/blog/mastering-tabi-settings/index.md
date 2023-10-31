@@ -536,6 +536,7 @@ footer_menu = [
     {url = "about", name = "about", trailing_slash = true},
     {url = "privacy", name = "privacy", trailing_slash = true},
     {url = "sitemap.xml", name = "sitemap", trailing_slash = false},
+    {url = "https://example.com", name = "external link", trailing_slash = true},
 ]
 ```
 

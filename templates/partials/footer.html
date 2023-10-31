@@ -70,6 +70,12 @@
 
                             {%- if menu.url == "sitemap.xml" -%}
                                 {%- set url = get_url(path=menu.url, trailing_slash=trailing_slash) -%}
+                            {%- elif menu.url is starting_with("http") -%}
+                                {%- if menu.trailing_slash -%}
+                                    {%- set url = menu.url ~ "/" -%}
+                                {%- else -%}
+                                    {%- set url = menu.url -%}
+                                {%- endif -%}
                             {%- else -%}
                                 {%- set url = get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) -%}
                             {%- endif -%}
