@@ -88,6 +88,8 @@
             <small>
                 {# Shows optional Copyright notice #}
                 {%- if config.extra.copyright -%}
+                    {% set author = config.author | default(value="") %}
+                    {% set title = config.title | default(value="") %}
                     {% set current_year = now() | date(format="%Y") %}
                     {% set copyright = config.extra.copyright %}
 
@@ -104,7 +106,7 @@
                     {%- endif -%}
 
                     {# Render the copyright notice, replacing the variables #}
-                    <p>{{ copyright | replace(from="$AUTHOR", to=config.author) | replace(from="$TITLE", to=config.title) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
+                    <p>{{ copyright | replace(from="$AUTHOR", to=author) | replace(from="$TITLE", to=title) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
                 {%- endif -%}
 
                 {# Shows "Powered by Zola & tabi" notice #}
