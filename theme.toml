@@ -168,14 +168,17 @@ encode_plaintext_email = true  # Setting is ignored if email is already encoded.
 # ]
 
 # Enable a copyright notice for the footer, shown between socials and the "Powered by" text.
-# You can use $CURRENT_YEAR to automatically insert the current year.
+# $TITLE will be replaced by the website's title.
+# $CURRENT_YEAR will be replaced by the current year.
+# $AUTHOR will be replaced by the `author` variable.
 # $SEPARATOR will be replaced by the `separator` variable.
 # Markdown is supported (links, emphasis, etc).
-# copyright = "© $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
+# copyright = "$TITLE © $CURRENT_YEAR $AUTHOR $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
 
 # For multi-language sites, you can set a different copyright for each language.
-# If this is set to true, ensure you have a `copyright` translation for each language.
-translate_copyright = false
+# The old way of setting `translated_copyright = true` and using i18n files is deprecated.
+# If a translation is missing for language, the `copyright` value will be used.
+# copyright_translations.es = "$TITLE © $CURRENT_YEAR $AUTHOR $SEPARATOR A menos que se indique lo contrario, el contenido de esta web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
 
 # Custom security headers. What urls should your website be able to connect to?
 # You need to specify the CSP and the URLs associated with the directive.

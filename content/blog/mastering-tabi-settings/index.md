@@ -552,14 +552,22 @@ To add a copyright notice to your site, set `copyright`:
 copyright = "© $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
 ```
 
-`$CURRENT_YEAR` will be replaced by the current year, and `$SEPARATOR` will be replaced by the [`separator` variable](#custom-separator). Markdown is rendered. The example above:
+You can use the following variables:
+
+- `$TITLE` will be replaced by `title` variable set in `config.toml`
+- `$CURRENT_YEAR` will be replaced by the current year
+- `$AUTHOR` will be replaced by the `author` variable
+- `$SEPARATOR` will be replaced by the [`separator` variable](#custom-separator)
+
+Markdown is rendered. The example above:
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copyright_light.webp", dark_src="blog/mastering-tabi-settings/img/copyright_dark.webp" alt="Copyright section", full_width=true) }}
 
-If you have a multilingual site and want to set different copyright notices for different languages, you can:
+If you have a multilingual site and want to set different copyright notices for different languages, you can add the corresponding translation to `copyright_translations.{language_code}` for each language you want to support. The language code must match [tabi's language code](https://welpo.github.io/tabi/blog/faq-languages/#what-are-these-two-letter-codes). For example, for Spanish:
 
-1. Set `translate_copyright = true` in `config.toml`.
-2. Add a `copyright` key to the `i18n` files. See the [documentation](/blog/faq-languages/#how-do-i-customise-or-override-a-specific-text-string-on-my-website).
+```toml
+copyright_translations.es = "© $CURRENT_YEAR $AUTHOR $SEPARATOR A menos que se indique lo contrario, el contenido de esta web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)."
+```
 
 ---
 

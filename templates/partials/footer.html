@@ -92,16 +92,7 @@
 
         <div class="credits">
             <small>
-                {# Shows optional Copyright notice #}
-                {%- if config.extra.copyright -%}
-                    {% set current_year = now() | date(format="%Y") %}
-                    {# Translate the copyright if set in the config #}
-                    {%- if config.extra.translate_copyright -%}
-                        <p>{{ macros_translate::translate(key="copyright", default=config.extra.copyright, language_strings=language_strings) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
-                    {%- else -%}
-                        <p>{{ config.extra.copyright | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
-                    {%- endif -%}
-                {%- endif -%}
+                {% include "partials/copyright.html" %}
 
                 {# Shows "Powered by Zola & tabi" notice #}
                 {{ macros_translate::translate(key="powered_by", default="Powered by", language_strings=language_strings) }}

@@ -1,0 +1,41 @@
+{%- if config.extra.copyright -%}
+    {% set copyright = config.extra.copyright %}
+    {# Try to look for a language-specific copyright notice in the new config setup #}
+    {%- if config.extra.copyright_translations -%}
+        {%- if lang in config.extra.copyright_translations -%}
+            {% set copyright = config.extra.copyright_translations[lang] %}
+        {%- endif -%}
+    {%- elif config.extra.translate_copyright -%}
+        {# Old way to translate the copyright through toml files #}
+        {# When the feature is removed, uncomment below to throw a descriptive error #}
+        {# {{ throw(message="ERROR: The 'translate_copyright' feature has been deprecated. Please set 'copyright_translations' in config.toml. See the documentation: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copyright") }} #}
+        {% set copyright = macros_translate::translate(key="copyright", default=config.extra.copyright, language_strings=language_strings) %}
+    {%- endif -%}
+
+    {# Check for missing variables in the notice #}
+    {% set copyright_placeholders = ["$AUTHOR", "$TITLE"] %}
+    {% set missing_vars = [] %}
+    {% for placeholder in copyright_placeholders %}
+        {% if placeholder in copyright %}
+            {# Attempt to retrieve the corresponding variable by trimming the $ sign and converting to lowercase #}
+            {% set var_name = placeholder | replace(from="$", to="") | lower %}
+            {% if not config[var_name] %}
+                {# Append the variable name to the list of missing variables #}
+                {% set_global missing_vars = missing_vars | concat(with=var_name) %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+    {% if missing_vars | length > 0 %}
+        {% set missing_vars_str = missing_vars | join(sep=", ") %}
+        {{ throw(message="ERROR: The following variables are included in `copyright` but have not been set in the config.toml: " ~ missing_vars_str) }}
+    {% endif %}
+
+    {# At this point, we know that all variables needed defined, so we can safely override the missing ones #}
+    {% set author = config.author | default(value="") %}
+    {% set title = config.title | default(value="") %}
+
+    {# Render the copyright notice, replacing the variables #}
+    {% set current_year = now() | date(format="%Y") %}
+    <p>{{ copyright | replace(from="$AUTHOR", to=author) | replace(from="$TITLE", to=title) | replace(from="$CURRENT_YEAR", to=current_year) | replace(from="$SEPARATOR", to=separator) | markdown | safe }}</p>
+{%- endif -%}
