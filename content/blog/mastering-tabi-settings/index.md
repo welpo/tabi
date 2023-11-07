@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2023-10-27
+updated = 2023-11-05
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
