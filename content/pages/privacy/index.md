@@ -2,6 +2,7 @@
 title = "Privacy Policy"
 path = "privacy"
 date = 2023-10-31
+updated = 2023-11-07
 +++
 
 This privacy policy outlines how we collect and process your data on this website.
@@ -29,8 +30,9 @@ For website improvement, the following non-personal data is collected:
 - **Language**: the language your browser is set to.
 - **Screen size**: the dimensions of your device's screen.
 - **Time**: when you accessed the site.
+- **Browsing session**: a temporary identification code generated from your IP address, browser information, and a random number. This is used to recognize a browsing session for 8 hours. After that time, the code is deleted from memory and is not stored anywhere.
 
-We do not track unique visitors, and we do not track how long you stay on the site or where you go after you leave.
+We do not track unique visitors across sessions, and we do not track how long you stay on the site or where you go after you leave.
 
 ## How do we collect this data?
 
@@ -48,7 +50,7 @@ The data sent to GitHub is used to display your comment on the site.
 
 The non personal data is used to generate statistics about the site, such as the number of visitors per day, or the most popular pages and referrers. This data is used to improve this demo site and the tabi theme. You can see the statistics generated from this data on the [public stats page](https://tabi-stats.osc.garden/).
 
-All data collected is publically available, either in the form of comments or statistics.
+All data collected is publicly available, either in the form of comments or statistics.
 
 We do not use the data for any other purpose.
 
@@ -89,7 +91,7 @@ This website contains links to other websites. This privacy policy applies only 
 
 ## Changes to the privacy policy
 
-We keep this privacy policy under regular review and place any updates on this web page. This privacy policy was last updated on 2023-10-31.
+We keep this privacy policy under regular review and place any updates on this web page. You can check the date this privacy policy was updated, as well as the history of changes under the page title.
 
 ## How to contact us
 

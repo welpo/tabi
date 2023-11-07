@@ -2,6 +2,7 @@
 title = "Política de privacidad"
 path = "/es/privacy"
 date = 2023-10-31
+updated = 2023-11-07
 +++
 
 Esta política de privacidad describe cómo recopilamos y procesamos tus datos en este sitio web.
@@ -29,8 +30,9 @@ Para mejorar el sitio web, se recopila la siguiente información no personal:
 - **Idioma**: el idioma configurado en tu navegador.
 - **Tamaño de pantalla**: las dimensiones de la pantalla de tu dispositivo.
 - **Fecha y hora**: cuándo accedes al sitio.
+- **Sesión de navegación**: un código de identificación temporal generado a partir de tu dirección IP, información del navegador y un número aleatorio. Este código se utiliza para reconocer la sesión de navegación durante 8 horas. Después de ese tiempo, el código se elimina de la memoria y no se almacena en ningún lugar.
 
-No rastreamos visitantes únicos ni el tiempo que permaneces en el sitio o a dónde vas después de salir.
+No rastreamos visitantes únicos a través de sesiones, ni el tiempo que permaneces en el sitio o a dónde vas después de salir.
 
 ## ¿Cómo recopilamos estos datos?
 
@@ -89,7 +91,7 @@ Este sitio web contiene enlaces a otros sitios web. Esta política de privacidad
 
 ## Cambios en la política de privacidad
 
-Mantenemos esta política de privacidad bajo revisión regular y colocamos cualquier actualización en esta página web. Esta política de privacidad se actualizó por última vez el 2023-10-31.
+Mantenemos esta política de privacidad bajo revisión regular y colocamos cualquier actualización en esta página web. Puedes consultar la fecha de actualización de esta política de privacidad, así como el historial de cambios bajo el título de la página.
 
 ## Cómo contactarnos
 
