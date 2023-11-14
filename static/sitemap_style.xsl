@@ -4,12 +4,15 @@
         xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9">
     <xsl:output method="html" encoding="UTF-8" indent="yes" />
 
+    <!-- The base URL is assumed to be the first URL in the sitemap. -->
+    <xsl:variable name="baseUrl" select="(sitemap:urlset/sitemap:url)[1]/sitemap:loc"/>
+
     <xsl:template match="/sitemap:urlset">
         <html>
             <head>
                 <title>Sitemap</title>
-                <link rel="stylesheet" href="/main.css"/>
-                <script src="/js/sortTable.min.js" defer="defer"></script>
+                <link rel="stylesheet" href="{$baseUrl}main.css"/>
+                <script src="{$baseUrl}js/sortTable.min.js" defer="defer"></script>
             </head>
             <body>
                 <div class="full-width">
