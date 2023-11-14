@@ -25,6 +25,8 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
 - [X] Code syntax highlighting with colours based on [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - [X] [KaTeX](https://katex.org/) support for mathematical notation.
+- [X] [Stylized and human readable Atom feed](https://welpo.github.io/tabi/atom.xml).
+- [X] [Stylized and human readable sitemap](https://welpo.github.io/tabi/sitemap.xml).
 - [X] [Mail encoding](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#encoded-email) for spam protection.
 - [X] All JavaScript can be [fully disabled](https://welpo.github.io/tabi/blog/javascript/).
 - [X] [Customizable Table of Contents](https://welpo.github.io/tabi/blog/toc/).
@@ -40,7 +42,6 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] Responsive design.
 - [X] [Projects page](https://welpo.github.io/tabi/projects/).
 - [X] [Archive page](https://welpo.github.io/tabi/archive/).
-- [X] [Stylized feed](https://welpo.github.io/tabi/atom.xml).
 - [X] [Social links](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-icons).
 - [X] [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 
