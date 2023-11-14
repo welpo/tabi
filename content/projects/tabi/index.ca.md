@@ -26,7 +26,9 @@ social_media_card = "social_cards/ca_projects_tabi.jpg"
 - Suport per a [comentaris usant giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/ca/blog/comments/).
 - Tot el JavaScript es pot [deshabilitar completament](https://welpo.github.io/tabi/ca/blog/javascript/).
 - [Codificació de correu](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#correu-electronic-codificat) per a protecció contra spam.
+- [Mapa del lloc estilitzat i llegible per humans](https://welpo.github.io/tabi/sitemap.xml).
 - [Capçaleres de seguretat personalitzables](https://welpo.github.io/tabi/ca/blog/security/).
+- [Feed Atom estilitzat i llegible per humans](https://welpo.github.io/tabi/ca/atom.xml).
 - [Enllaços de retrocés per a notes al peu](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#enllacos-de-retorn-a-les-notes-a-peu-de-pagina).
 - [Taula de continguts personalitzable](https://welpo.github.io/tabi/ca/blog/toc/).
 - [Avís de drets d'autor personalitzat](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#copyright).
@@ -41,7 +43,6 @@ social_media_card = "social_cards/ca_projects_tabi.jpg"
 - Suport de [KaTeX](https://katex.org/).
 - [Enllaços socials](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#icones-de-xarxes-socials).
 - [Pàgina d'arxiu](https://welpo.github.io/tabi/ca/archive/).
-- [Feed estilitzat](https://welpo.github.io/tabi/ca/atom.xml).
 - [Etiquetes](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#etiquetes).
 
 ## Pràctiques de desenvolupament

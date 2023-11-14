@@ -26,6 +26,8 @@ social_media_card = "social_cards/projects_tabi.jpg"
 - Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
 - Code syntax highlighting with colours based on [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - [KaTeX](https://katex.org/) support for mathematical notation.
+- [Stylized and human readable Atom feed](https://welpo.github.io/tabi/atom.xml).
+- [Stylized and human readable sitemap](https://welpo.github.io/tabi/sitemap.xml).
 - [Mail encoding](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#encoded-email) for spam protection.
 - All JavaScript can be [fully disabled](https://welpo.github.io/tabi/blog/javascript/).
 - [Customizable Table of Contents](https://welpo.github.io/tabi/blog/toc/).
@@ -41,7 +43,6 @@ social_media_card = "social_cards/projects_tabi.jpg"
 - Responsive design.
 - [Projects page](https://welpo.github.io/tabi/projects/).
 - [Archive page](https://welpo.github.io/tabi/archive/).
-- [Stylized feed](https://welpo.github.io/tabi/atom.xml).
 - [Social links](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-icons).
 - [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 
