@@ -6,17 +6,21 @@
 
     <!-- The base URL is assumed to be the first URL in the sitemap. -->
     <xsl:variable name="baseUrl" select="(sitemap:urlset/sitemap:url)[1]/sitemap:loc"/>
+    <!-- Remove http[s]:// -->
+    <xsl:variable name="baseUrlWithoutProtocol" select="substring-after($baseUrl, '://')"/>
+    <!-- Remove trailing slash -->
+    <xsl:variable name="clean_base_url" select="substring-before($baseUrlWithoutProtocol, '/')"/>
 
     <xsl:template match="/sitemap:urlset">
         <html>
             <head>
-                <title>Sitemap</title>
+                <title>Sitemap • <xsl:value-of select="$clean_base_url"/></title>
                 <link rel="stylesheet" href="{$baseUrl}main.css"/>
                 <script src="{$baseUrl}js/sortTable.min.js" defer="defer"></script>
             </head>
             <body>
                 <div class="full-width">
-                    <h1>Sitemap</h1>
+                    <h1>Sitemap of <xsl:value-of select="$clean_base_url"/></h1>
                     <p>Number of URLs: <xsl:value-of select="count(sitemap:url)"/></p>
                     <table id="sitemapTable" class="sitemap-table" aria-label="URLs on the site and their last modification dates">
                         <thead>
