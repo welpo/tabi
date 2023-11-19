@@ -118,3 +118,9 @@
         display: none !important;
     }
 }
+
+@media print {
+    #button-container {
+        display: none;
+    }
+}
