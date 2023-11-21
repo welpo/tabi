@@ -5,7 +5,6 @@ const themeResetter = document.querySelector(".theme-resetter");
 // Retrieve theme from either the localStorage or the data-theme attribute on the document element.
 let currentTheme = localStorage.getItem("theme") || document.documentElement.getAttribute('data-theme');
 
-// Function to set theme.
 function setTheme(theme, saveToLocalStorage = false) {
     document.documentElement.setAttribute("data-theme", theme);
     currentTheme = theme;
@@ -30,9 +29,7 @@ function setTheme(theme, saveToLocalStorage = false) {
 }
 
 function resetTheme() {
-    const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const defaultTheme = isSystemDark ? "dark" : "light";
-    setTheme(defaultTheme);
+    setTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 }
 
 // Function to switch between dark and light themes.
