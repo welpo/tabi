@@ -9,7 +9,7 @@
 <div class="tag-cloud">
     <ul class="tags">
         {%- for term in terms -%}
-            <li class="tags-item" id "{{ term.name }}"><a href="{{ term.permalink | safe }}">
+            <li class="tags-item"><a href="{{ term.permalink | safe }}">
                 {{ term.name }}</a>
                 – {{ term.pages | length }}{%- if term.pages | length == 1 %}
                 {# Only one post. Singular. #}
