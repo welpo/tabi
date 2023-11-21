@@ -166,3 +166,7 @@ hr {
     overflow: hidden;
     white-space: nowrap;
 }
+
+details summary {
+    cursor: pointer;
+}
