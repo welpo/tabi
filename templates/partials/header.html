@@ -20,11 +20,11 @@
     {# CSS #}
     {# Load subset of glyphs for header. Avoids flashing issue in Firefox #}
     {% if config.extra.custom_subset and config.extra.custom_subset == true %}
-        <link rel="stylesheet" href={{ get_url(path="custom_subset.css" , cachebust=true) }}>
+        <link rel="stylesheet" href="{{ get_url(path="custom_subset.css" , cachebust=true) }}">
     {% elif lang == 'en' %}
-        <link rel="stylesheet" href={{ get_url(path="inter_subset_en.css", cachebust=true ) }}>
+        <link rel="stylesheet" href="{{ get_url(path="inter_subset_en.css", cachebust=true ) }}">
     {% elif lang == 'es' %}
-        <link rel="stylesheet" href={{ get_url(path="inter_subset_es.css", cachebust=true ) }}>
+        <link rel="stylesheet" href="{{ get_url(path="inter_subset_es.css", cachebust=true ) }}">
     {% endif %}
 
     {# Define array of CSS files to load. main.css is always loaded. #}
