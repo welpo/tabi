@@ -44,15 +44,12 @@ taxonomies = [{name = "tags", feed = true}]
 # https://welpo.github.io/tabi/blog/mastering-tabi-settings/
 
 # Enable JavaScript theme toggler to allow users to switch between dark/light mode.
-# Also enables automatic switching based on user's OS-level theme settings.
 # If disabled, your site will only use the theme specified in the `default_theme` variable.
 theme_switcher = true
 
-# This setting determines the default theme ("light" or "dark").
-# If you wish to use only a dark or light theme, disable the `theme_switcher` above and set this variable.
-# If `theme_switcher` is enabled, this will be the theme that is visible to users who have JavaScript disabled.
-# Defaults to "light", if unset.
-default_theme = "light"
+# This setting determines the default theme on load ("light" or "dark").
+# To default to the user's OS-level theme, leave it empty or unset.
+default_theme = ""
 
 # Choose the colourscheme (skin) for the theme. Default is "teal".
 # Skin available: blue, lavender, mint, red, sakura, teal, monochrome, lowcontrast_orange, lowcontrast_peach, lowcontrast_pink, indigo_ingot, evangelion

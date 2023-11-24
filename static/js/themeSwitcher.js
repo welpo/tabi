@@ -1,60 +1,54 @@
 // Get the theme switcher button elements.
 const themeSwitcher = document.querySelector(".theme-switcher");
 const themeResetter = document.querySelector(".theme-resetter");
+const defaultTheme = document.documentElement.getAttribute('data-default-theme');
 
-// Retrieve theme from either the localStorage or the data-theme attribute on the document element.
-let currentTheme = localStorage.getItem("theme") || document.documentElement.getAttribute('data-theme');
+function getSystemThemePreference() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+// Determine the initial theme.
+let currentTheme = localStorage.getItem("theme") || document.documentElement.getAttribute('data-theme') || getSystemThemePreference();
 
 function setTheme(theme, saveToLocalStorage = false) {
     document.documentElement.setAttribute("data-theme", theme);
     currentTheme = theme;
-    let togglePressed = theme === "dark" ? "true" : "false";
-    themeSwitcher.setAttribute("aria-pressed", togglePressed);
+    themeSwitcher.setAttribute("aria-pressed", theme === "dark");
 
     if (saveToLocalStorage) {
         localStorage.setItem("theme", theme);
         themeResetter.classList.add("has-custom-theme");
-        themeResetter.setAttribute("aria-hidden", "false");
     } else {
         localStorage.removeItem("theme");
         themeResetter.classList.remove("has-custom-theme");
-        themeResetter.setAttribute("aria-hidden", "true");
     }
 
     // Dispatch a custom event for comment systems.
-    const event = new CustomEvent("themeChanged", {
-        detail: { theme: theme }
-    });
-    window.dispatchEvent(event);
+    window.dispatchEvent(new CustomEvent("themeChanged", { detail: { theme } }));
 }
 
 function resetTheme() {
-    setTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    setTheme(defaultTheme || getSystemThemePreference());
 }
 
 // Function to switch between dark and light themes.
 function switchTheme() {
-    // Set the new theme based on the current theme.
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    setTheme(newTheme, true); // Save the theme to localStorage when the user changes it.
+    setTheme(currentTheme === "dark" ? "light" : "dark", true);
 }
 
 // Initialize the theme switcher button.
-themeSwitcher.addEventListener("click", switchTheme, false);
-themeResetter.addEventListener("click", resetTheme, false);
+themeSwitcher.addEventListener("click", switchTheme);
+themeResetter.addEventListener("click", resetTheme);
 
-themeSwitcher.setAttribute("role", "button");
-let togglePressed = currentTheme === "dark" ? "true" : "false";
-themeSwitcher.setAttribute("aria-pressed", togglePressed);
+// Update the theme based on system preference if necessary.
+if (!defaultTheme) {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
+        setTheme(e.matches ? "dark" : "light");
+    });
+}
 
-// Update the theme based on system preference if the user hasn't manually changed the theme.
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
-    const newTheme = e.matches ? "dark" : "light";
-    setTheme(newTheme);
-});
-
+// Set initial ARIA attribute and custom theme class.
+themeSwitcher.setAttribute("aria-pressed", currentTheme === "dark");
 if (localStorage.getItem("theme")) {
     themeResetter.classList.add("has-custom-theme");
-} else {
-    themeResetter.classList.remove("has-custom-theme");
 }

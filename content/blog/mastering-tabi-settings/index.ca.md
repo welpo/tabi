@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2023-11-05
+updated = 2023-11-24
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -102,9 +102,7 @@ El commutador de mode clar i fosc (la icona de lluna/sol a la cantonada superior
 |:------:|:------:|:-------------:|:---------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |        ❌        |         ❌          |
 
-El mode predeterminat es pot especificar amb la variable `default_theme`, que accepta `"dark"` o `"light"`. Per defecte és `"light"`.
-
-**Nota**: el mode predeterminat només s'usa quan el commutador de mode està desactivat, ja sigui perquè s'ha configurat com a `false` a `config.toml` o perquè un usuari ha deshabilitat JavaScript.
+El mode predeterminat es pot especificar amb la variable `default_theme`, que accepta `"dark"` o `"light"`. Si no s'especifica, el mode predeterminat és el mode del sistema.
 
 ### Skin personalitzada
 

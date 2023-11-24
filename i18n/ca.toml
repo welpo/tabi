@@ -27,7 +27,7 @@ language_selection = "Selecció d'idioma"
 toggle_mode = "Canvia el mode $MODE"  # $MODE will be replaced by a value (or both) below.
 dark = "obscur"
 light = "clar"
-reset_mode = "Restableix el mode als valors predeterminats del sistema"
+reset_mode = "Restableix el mode al valor predeterminat"
 
 # Quick navigation buttons.
 toggle_toc = "Mostrar/ocultar la taula de continguts"

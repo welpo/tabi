@@ -27,7 +27,7 @@ language_selection = "Выбор языка"
 toggle_mode = "Переключить на режим $MODE"  # $MODE will be replaced by a value (or both) below.
 dark = "тёмный"
 light = "светлый"
-reset_mode = "Сбросить режим к настройкам ОС по умолчанию"
+reset_mode = "Сбросить режим к стандартным настройкам сайта"
 
 # Quick navigation buttons.
 toggle_toc = "Показать/Скрыть оглавление"

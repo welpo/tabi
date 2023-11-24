@@ -1,7 +1,7 @@
 +++
 title = "Customise tabi with skins and a default theme"
 date = 2023-08-09
-updated = 2023-10-07
+updated = 2023-11-24
 description = "Learn how to customise tabi using skins and setting a default theme, making your site uniquely yours."
 
 [taxonomies]
@@ -17,6 +17,8 @@ tabi can be customised in two ways: by setting the default theme (dark or light)
 
 ## Default theme
 
+Use `default_theme = "dark"` to set the dark theme as the default, or `default_theme = "light"` to set the light theme as the default.
+
 To permanently set your site to either the dark or light theme, you need to disable the theme switcher in `config.toml` and set your preferred theme as the `default_theme`.
 
 For example, to have a permanent dark theme:
@@ -26,8 +28,6 @@ For example, to have a permanent dark theme:
 theme_switcher = false
 default_theme = "dark"
 ```
-
-If your theme switcher is enabled, the `default_theme` will only be used as fallback, in case a visitor has JavaScript disabled.
 
 ## Skins
 

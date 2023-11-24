@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2023-11-05
+updated = 2023-11-24
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -102,9 +102,7 @@ The light and dark mode switcher (the moon/sun icon on the top right) can be ena
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
 
-The default theme can be specified with the `default_theme` variable, which accepts either `"dark"` or `"light"`. Defaults to `"light"`.
-
-**Note**: the default theme is only used when the theme switcher is disabled, either because it's set to `false` in the config or because a user has JavaScript disabled.
+The default theme can be specified with the `default_theme` variable, which accepts either `"dark"` or `"light"`. If you don't set it, the default theme will be the one set in the user's browser.
 
 ### Custom Skins
 
