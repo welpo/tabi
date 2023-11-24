@@ -31,7 +31,7 @@ language_selection = "言語選択"
 toggle_mode = "$MODE モードに切り替え"  # $MODE will be replaced by a value (or both) below.
 dark = "暗い"
 light = "明るい"
-reset_mode = "モードをOSデフォルトにリセット"
+reset_mode = "モードをサイトのデフォルトにリセット"
 
 # Quick navigation buttons.
 toggle_toc = "目次を切り替え"

@@ -1,7 +1,7 @@
 +++
 title = "Personalitza el color de tabi i el tema per defecte"
 date = 2023-08-09
-updated = 2023-10-07
+updated = 2023-11-24
 description = "Aprèn a personalitzar tabi fent servir skins i establint un tema per defecte, aconseguint un aspecte únic."
 
 [taxonomies]
@@ -17,6 +17,8 @@ tabi pot ser personalitzat de dues maneres: establint el tema per defecte (fosc 
 
 ## Tema per defecte
 
+Utilitza `default_theme = "dark"` per establir el tema fosc com a predeterminat, o `default_theme = "light"` per establir el tema clar com a predeterminat.
+
 Per configurar permanentment el teu lloc en el tema fosc o clar, necessites desactivar el `theme_switcher` a `config.toml` i establir el teu tema preferit (`light` o `dark`) a `default_theme`.
 
 Per exemple, per tenir un tema fosc permanent:
@@ -26,8 +28,6 @@ Per exemple, per tenir un tema fosc permanent:
 theme_switcher = false
 default_theme = "dark"
 ```
-
-Si el teu interruptor de mode clar/fosc està activat, el `default_theme` només s'utilitzarà com a reserva, en cas que un visitant tingui JavaScript desactivat.
 
 ## Skins
 

@@ -1,7 +1,7 @@
 +++
 title = "Personaliza el color de tabi y el tema predeterminado"
 date = 2023-08-09
-updated = 2023-10-07
+updated = 2023-11-24
 description = "Aprende a personalizar tabi usando skins y estableciendo un tema predeterminado, haciendo que tu sitio sea único."
 
 [taxonomies]
@@ -17,6 +17,8 @@ tabi puede ser personalizado de dos maneras: estableciendo el tema predeterminad
 
 ## Tema predeterminado
 
+Usa `default_theme = "dark"` para establecer el tema oscuro como predeterminado, o `default_theme = "light"` para establecer el tema claro como predeterminado.
+
 Para configurar permanentemente tu sitio en el tema oscuro o claro, necesitas desactivar el `theme_switcher` en `config.toml` y establecer tu tema preferido (`light` o `dark`) como el `default_theme`.
 
 Por ejemplo, para tener un tema oscuro permanente:
@@ -26,8 +28,6 @@ Por ejemplo, para tener un tema oscuro permanente:
 theme_switcher = false
 default_theme = "dark"
 ```
-
-Si tu interruptor de modo claro/oscuro está activado, el `default_theme` sólo se usará como respaldo, en caso de que un visitante tenga JavaScript desactivado.
 
 ## Skins
 

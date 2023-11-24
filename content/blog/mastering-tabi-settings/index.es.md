@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2023-11-05
+updated = 2023-11-24
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -100,9 +100,7 @@ El interruptor de modo claro y oscuro (el icono de luna/sol en la esquina superi
 |:------:|:-------:|:-------------:|:---------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |        ❌        |         ❌          |
 
-El tema predeterminado puede especificarse con la variable `default_theme`, que acepta `"dark"` o `"light"`. Por defecto es `"light"`.
-
-**Nota**: el tema predeterminado solo se usa cuando el interruptor de tema está desactivado, ya sea porque se ha configurado como `false` en el config o porque un usuario ha deshabilitado JavaScript.
+El tema predeterminado puede especificarse con la variable `default_theme`, que acepta `"dark"` o `"light"`. Si no lo especificas, el tema predeterminado será el tema del sistema.
 
 ### Pieles personalizadas
 

@@ -1,17 +1,22 @@
 (function () {
-    // Get the current theme from the browser's local storage.
-    // This allows the user's theme preference to persist across sessions.
-    const currentTheme = localStorage.getItem('theme');
+    // Get the default theme from the HTML data-theme attribute.
+    const defaultTheme = document.documentElement.getAttribute('data-theme');
 
-    // Check if the current theme is stored in local storage.
-    if (currentTheme) {
-        // If a theme is found in local storage, apply it to the document.
-        document.documentElement.setAttribute('data-theme', currentTheme);
+    // Set the data-default-theme attribute only if defaultTheme is not null.
+    if (defaultTheme) {
+        document.documentElement.setAttribute('data-default-theme', defaultTheme);
+    }
+
+    // Attempt to retrieve the current theme from the browser's local storage.
+    const storedTheme = localStorage.getItem('theme');
+
+    if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme);
+    } else if (defaultTheme) {
+        document.documentElement.setAttribute('data-theme', defaultTheme);
     } else {
-        // If no theme is found in local storage, determine if the user's system prefers a dark color scheme.
+        // If no theme is found in local storage and no default theme is set, use user's system preference.
         const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        // Set the document's theme attribute to match the system preference.
         document.documentElement.setAttribute('data-theme', isSystemDark ? 'dark' : 'light');
     }
 })();

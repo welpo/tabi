@@ -29,7 +29,7 @@ language_selection = "भाषा चयन"
 toggle_mode = "$MODE मोड में टॉगल करें"  # $MODE will be replaced by a value (or both) below.
 dark = "अंधेरा"
 light = "रोशनी"
-reset_mode = "मोड को ओएस डिफ़ॉल्ट पर रीसेट करें"
+reset_mode = "मोड को साइट डिफ़ॉल्ट पर रीसेट करें"
 
 # Quick navigation buttons.
 toggle_toc = "विषय-सूची टॉगल करें"

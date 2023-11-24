@@ -27,7 +27,8 @@ language_selection = "语言选择"  # Machine translated.
 toggle_mode = "切换到$MODE模式"  # $MODE will be replaced by a value (or both) below. Machine translated.
 dark = "暗"  # Machine translated.
 light = "亮"  # Machine translated.
-reset_mode = "重置为操作系统默认模式"  # Machine translated.
+reset_mode = "将模式重置为网站默认值"  # Machine translated.
+
 
 # Quick navigation buttons.
 toggle_toc = "切换目录"  # Machine translated.

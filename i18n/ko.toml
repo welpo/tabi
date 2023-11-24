@@ -31,7 +31,7 @@ language_selection = "언어 선택"
 toggle_mode = "$MODE 모드로 전환"  # $MODE will be replaced by a value (or both) below.
 dark = "어두운"
 light = "밝은"
-reset_mode = "모드를 OS 기본값으로 재설정"
+reset_mode = "모드를 사이트 기본값으로 재설정"
 
 # Quick navigation buttons.
 toggle_toc = "목차 토글"

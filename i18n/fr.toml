@@ -31,7 +31,7 @@ language_selection = "Sélection de la langue"
 toggle_mode = "Basculer en mode $MODE"  # $MODE will be replaced by a value (or both) below.
 dark = "sombre"
 light = "clair"
-reset_mode = "Réinitialiser le mode aux paramètres par défaut du système"
+reset_mode = "Réinitialiser le mode aux paramètres par défaut"
 
 # Quick navigation buttons.
 toggle_toc = "Afficher/Masquer la table des matières"
