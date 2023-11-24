@@ -2,18 +2,36 @@
 {# allowing individual interactive elements (like toggles) to function correctly. #}
 {# This avoids conflicts when multiple instances of the shortcode are used. #}
 {%- set random_id = get_random(end=100000) -%}
-{%- set default_meta = get_image_metadata(path=default_src, allow_missing=true) -%}
-{%- set toggled_meta = get_image_metadata(path=toggled_src, allow_missing=true) -%}
+{%- set colocated_path = page.colocated_path | default(value="") -%}
+{%- set relative_default_path = colocated_path ~ default_src -%}
+{%- set relative_toggled_path = colocated_path ~ toggled_src -%}
+
+{%- set default_meta = get_image_metadata(path=relative_default_path, allow_missing=true) -%}
+{%- if not default_meta -%}
+    {%- set default_meta = get_image_metadata(path=default_src, allow_missing=true) -%}
+    {%- set default_image_path = default_src -%}
+{%- else -%}
+    {%- set default_image_path = relative_default_path -%}
+{%- endif -%}
+
+{%- set toggled_meta = get_image_metadata(path=relative_toggled_path, allow_missing=true) -%}
+{%- if not toggled_meta -%}
+    {%- set toggled_meta = get_image_metadata(path=toggled_src, allow_missing=true) -%}
+    {%- set toggled_image_path = toggled_src -%}
+{%- else -%}
+    {%- set toggled_image_path = relative_toggled_path -%}
+{%- endif -%}
+
 {%- set lazy_loading = lazy_loading | default(value=true) -%}
 
 <div class="image-toggler-container {% if full_width | default(value=false) %}full-width{% endif %}">
     <input type="checkbox" id="toggle-img-{{ random_id }}" class="image-toggler-toggle">
     <label for="toggle-img-{{ random_id }}" class="image-label">
         <div class="image-default">
-            <img src="{{ get_url(path=default_src) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if default_alt %} alt="{{ default_alt }}"{% endif %}{% if default_meta.width %} width="{{ default_meta.width }}"{% endif %}{% if default_meta.height %} height="{{ default_meta.height }}"{% endif %}>
+            <img src="{{ get_url(path=default_image_path) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if default_alt %} alt="{{ default_alt }}"{% endif %}{% if default_meta.width %} width="{{ default_meta.width }}"{% endif %}{% if default_meta.height %} height="{{ default_meta.height }}"{% endif %}>
         </div>
         <div class="image-toggled">
-            <img src="{{ get_url(path=toggled_src) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if toggled_alt %} alt="{{ toggled_alt }}"{% endif %}{% if toggled_meta.width %} width="{{ toggled_meta.width }}"{% endif %}{% if toggled_meta.height %} height="{{ toggled_meta.height }}"{% endif %}>
+            <img src="{{ get_url(path=toggled_image_path) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if toggled_alt %} alt="{{ toggled_alt }}"{% endif %}{% if toggled_meta.width %} width="{{ toggled_meta.width }}"{% endif %}{% if toggled_meta.height %} height="{{ toggled_meta.height }}"{% endif %}>
         </div>
     </label>
 </div>

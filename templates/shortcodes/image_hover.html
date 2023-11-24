@@ -1,12 +1,30 @@
-{%- set default_meta = get_image_metadata(path=default_src, allow_missing=true) -%}
-{%- set hovered_meta = get_image_metadata(path=hovered_src, allow_missing=true) -%}
+{%- set colocated_path = page.colocated_path | default(value="") -%}
+{%- set relative_default_path = colocated_path ~ default_src -%}
+{%- set relative_hovered_path = colocated_path ~ hovered_src -%}
+
+{%- set default_meta = get_image_metadata(path=relative_default_path, allow_missing=true) -%}
+{%- if not default_meta -%}
+    {%- set default_meta = get_image_metadata(path=default_src, allow_missing=true) -%}
+    {%- set default_image_path = default_src -%}
+{%- else -%}
+    {%- set default_image_path = relative_default_path -%}
+{%- endif -%}
+
+{%- set hovered_meta = get_image_metadata(path=relative_hovered_path, allow_missing=true) -%}
+{%- if not hovered_meta -%}
+    {%- set hovered_meta = get_image_metadata(path=hovered_src, allow_missing=true) -%}
+    {%- set hovered_image_path = hovered_src -%}
+{%- else -%}
+    {%- set hovered_image_path = relative_hovered_path -%}
+{%- endif -%}
+
 {%- set lazy_loading = lazy_loading | default(value=true) -%}
 
 <div class="image-hover-container{% if full_width | default(value=false) %} full-width{% endif %}">
     <div class="image-default">
-        <img src="{{ get_url(path=default_src) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if hovered_alt %} alt="{{ default_alt }}"{% endif %}{% if default_meta.width %} width="{{ default_meta.width }}"{% endif %}{% if default_meta.height %} height="{{ default_meta.height }}"{% endif %}>
+        <img src="{{ get_url(path=default_image_path) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if default_alt %} alt="{{ default_alt }}"{% endif %}{% if default_meta.width %} width="{{ default_meta.width }}"{% endif %}{% if default_meta.height %} height="{{ default_meta.height }}"{% endif %}>
     </div>
     <div class="image-hovered">
-        <img src="{{ get_url(path=hovered_src) }}"{% if hovered_alt %} alt="{{ hovered_alt }}"{% endif %}{% if hovered_meta.width %} width="{{ hovered_meta.width }}"{% endif %}{% if hovered_meta.height %} height="{{ hovered_meta.height }}"{% endif %}>
+        <img src="{{ get_url(path=hovered_image_path) }}"{% if hovered_alt %} alt="{{ hovered_alt }}"{% endif %}{% if hovered_meta.width %} width="{{ hovered_meta.width }}"{% endif %}{% if hovered_meta.height %} height="{{ hovered_meta.height }}"{% endif %}>
     </div>
 </div>

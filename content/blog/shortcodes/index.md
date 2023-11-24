@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2023-08-26
+updated = 2023-11-24
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -18,63 +18,65 @@ social_media_card = "social_cards/blog_shortcodes.jpg"
 
 **Note**: all image shortcodes have two optional parameters: `full_width`, which defaults to `false` (see [below](#full-width-image)), and `lazy_loading`, which defaults to `true`.
 
+**Note 2**: as of commit XXX, all image shortcodes support relative paths in the `src` parameter.
+
 ### Dual theme images
 
 Useful if you want to use a different image for the light and dark themes:
 
-{{ dual_theme_image(light_src="blog/shortcodes/img/paris_day.webp", dark_src="blog/shortcodes/img/paris_night.webp" alt="The Eiffel tower") }}
+{{ dual_theme_image(light_src="img/paris_day.webp", dark_src="img/paris_night.webp" alt="The Eiffel tower") }}
 
 #### Usage
 ```
-{{/* dual_theme_image(light_src="blog/shortcodes/img/paris_day.webp", dark_src="blog/shortcodes/img/paris_night.webp" alt="The Eiffel tower") */}}
+{{/* dual_theme_image(light_src="img/paris_day.webp", dark_src="img/paris_night.webp" alt="The Eiffel tower") */}}
 ```
 
 ### Invertible image
 
 Good for graphs, line drawings, diagrams… Inverts the colours of the image. The source image will be used for the light theme.
 
-{{ invertible_image(src="blog/shortcodes/img/graph.webp", alt="Invertible graph") }}
+{{ invertible_image(src="img/graph.webp", alt="Invertible graph") }}
 
 #### Usage
 
 ```
-{{/* invertible_image(src="blog/shortcodes/img/graph.webp", alt="Invertible graph") */}}
+{{/* invertible_image(src="img/graph.webp", alt="Invertible graph") */}}
 ```
 
 ### Dimmable image
 
 Images with too much brightness or contrast can be jarring against a dark background. Here's an example of a photograph that dims when the dark theme is active.
 
-{{ dimmable_image(src="blog/shortcodes/img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") }}
+{{ dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") }}
 
 #### Usage
 
 ```
-{{/* dimmable_image(src="blog/shortcodes/img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") */}}
+{{/* dimmable_image(src="img/desert_by_oskerwyld.webp", alt="Photograph of a desert, heavenly sky") */}}
 ```
 
 ### Swap image on hover
 
 Povides an interaction where the image displayed changes as the user hovers over it. Useful for before-after comparisons, for example.
 
-{{ image_hover(default_src="blog/shortcodes/img/edited.webp", hovered_src="blog/shortcodes/img/raw.webp", default_alt="Edited picture", hovered_alt="Original shot") }}
+{{ image_hover(default_src="img/edited.webp", hovered_src="img/raw.webp", default_alt="Edited picture", hovered_alt="Original shot") }}
 
 #### Usage
 
 ```
-{{/* image_hover(default_src="blog/shortcodes/img/before.webp", hovered_src="blog/shortcodes/img/after.webp", default_alt="Edited picture", hovered_alt="Original shot") */}}
+{{/* image_hover(default_src="img/before.webp", hovered_src="img/after.webp", default_alt="Edited picture", hovered_alt="Original shot") */}}
 ```
 
 ### Interactive image toggle
 
 Display an image and switch to a different one on click. Ideal for highlighting differences or drawing attention to details.
 
-{{ image_toggler(default_src="blog/shortcodes/img/mojave_day.webp", toggled_src="blog/shortcodes/img/mojave_night.webp", default_alt="Mojave during the day", toggled_alt="Mojave at night") }}
+{{ image_toggler(default_src="img/mojave_day.webp", toggled_src="img/mojave_night.webp", default_alt="Mojave during the day", toggled_alt="Mojave at night") }}
 
 #### Usage
 
 ```
-{{/* image_toggler(default_src="blog/shortcodes/img/mojave_day.webp", toggled_src="blog/shortcodes/img/mojave_night.webp", default_alt="Mojave during the day", toggled_alt="Mojave at night") */}}
+{{/* image_toggler(default_src="img/mojave_day.webp", toggled_src="img/mojave_night.webp", default_alt="Mojave during the day", toggled_alt="Mojave at night") */}}
 ```
 
 ### Full-width image
@@ -83,12 +85,12 @@ The image will expand to match the width of the header, which is usually wider t
 
 All other image shortcodes can be made into full-width by setting the optional parameter `full_width` to `true`.
 
-{{ full_width_image(src="blog/shortcodes/img/amsterdam_by_oskerwyld.webp", alt="Photograph of a canal in Amsterdam") }}
+{{ full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Photograph of a canal in Amsterdam") }}
 
 #### Usage
 
 ```
-{{/* full_width_image(src="blog/shortcodes/img/amsterdam_by_oskerwyld.webp", alt="Photograph of a canal in Amsterdam") */}}
+{{/* full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Photograph of a canal in Amsterdam") */}}
 ```
 
 ## Text shortcodes
