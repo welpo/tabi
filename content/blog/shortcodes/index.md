@@ -18,7 +18,7 @@ social_media_card = "social_cards/blog_shortcodes.jpg"
 
 **Note**: all image shortcodes have two optional parameters: `full_width`, which defaults to `false` (see [below](#full-width-image)), and `lazy_loading`, which defaults to `true`.
 
-**Note 2**: as of commit XXX, all image shortcodes support relative paths in the `src` parameter.
+**Note 2**: as of [PR #222](https://github.com/welpo/tabi/pull/222) (commit [7796162](https://github.com/welpo/tabi/commit/7796162e378cacb9b4d6129f95138121224714f1)), all image shortcodes support relative paths in the `src` parameter.
 
 ### Dual theme images
 

@@ -18,7 +18,7 @@ social_media_card = "social_cards/es_blog_shortcodes.jpg"
 
 **Nota**: todos los shortcodes de imagen tienen dos parámetros opcionales: `full_width`, que tiene como valor predeterminado `false` (ver [más abajo](#imagen-a-ancho-completo)), y `lazy_loading`, que tiene como valor predeterminado `true`.
 
-**Nota 2**: a partir del commit XXX, todos los shortcodes de imágenes admiten rutas relativas en el parámetro `src`.
+**Nota 2**: a partir del [PR #222](https://github.com/welpo/tabi/pull/222) (commit [7796162](https://github.com/welpo/tabi/commit/7796162e378cacb9b4d6129f95138121224714f1)), todos los shortcodes de imágenes admiten rutas relativas en el parámetro `src`.
 
 ### Imágenes de doble tema
 
