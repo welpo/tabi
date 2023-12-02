@@ -78,20 +78,17 @@ a:hover {
     color: var(--hover-color);
 }
 
-a:not(.no-hover-padding)::before {
+a:not(.no-hover-padding):hover::after {
+    display: inline-block;
     position: absolute;
     top: 0;
     right: -0.15em;
     bottom: 0;
     left: -0.15em;
-    opacity: 0;
     z-index: -1;
     background-color: var(--primary-color);
+    max-width: 105%;  // This fixes multi-line links (see #225)
     content: "";
-}
-
-a:not(.no-hover-padding):hover::before {
-    opacity: 1;
 }
 
 @media screen and (max-width: 600px) {
