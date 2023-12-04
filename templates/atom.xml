@@ -1,4 +1,5 @@
 {%- import "macros/translate.html" as macros_translate -%}
+{%- import "macros/settings.html" as macros_settings -%}
 {#- Load the internationalisation data -#}
 {%- set language_strings = load_data(path="i18n/" ~ lang ~ '.toml', required=false) -%}
 {%- if not language_strings -%}
@@ -44,6 +45,9 @@
     <updated>{{ last_updated | date(format="%+") }}</updated>
     <id>{{ feed_url | safe }}</id>
     {%- for page in pages %}
+    {%- if macros_settings::evaluate_setting_priority(setting="hide_from_feed", page=page, default_global_value=false) == "true" -%}
+        {%- continue -%}
+    {%- endif -%}
     <entry xml:lang="{{ page.lang }}">
         <title>{{ page.title }}</title>
         <published>{{ page.date | date(format="%+") }}</published>

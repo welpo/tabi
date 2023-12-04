@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2023-11-24
+updated = 2023-12-04
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -441,6 +441,14 @@ Per obtenir més informació, incloent instruccions sobre com crear un subconjun
 |   ❌   |   ❌   |      ✅       |         ❌          |         ❌          |
 
 Per defecte, el feed Atom només conté el resum o descripció de les teves publicacions. Pots incloure el contingut complet de les publicacions establint `full_content_in_feed = true` a `config.toml`.
+
+### Amagar contingut del feed
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
+
+Pots amagar pàgines específiques o seccions senceres del feed amb `hide_from_feed = true`.
 
 ### Comentaris {#afegir-comentaris}
 
