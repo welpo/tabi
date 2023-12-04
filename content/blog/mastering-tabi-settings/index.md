@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2023-11-24
+updated = 2023-12-04
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -443,6 +443,14 @@ For more information, including instructions on how to create a custom subset, s
 |  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
 
 By default, the Atom feed only contains the summary/description of your posts. You can include the entire posts' content by setting `full_content_in_feed = true` in `config.toml`.
+
+### Hiding Content from Feed
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
+
+You can hide specific pages or entire sections from your feed by setting `hide_from_feed = true`.
 
 ### Comments {#adding-comments}
 
