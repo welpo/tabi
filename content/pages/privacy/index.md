@@ -2,7 +2,7 @@
 title = "Privacy Policy"
 path = "privacy"
 date = 2023-10-31
-updated = 2023-11-07
+updated = 2023-12-07
 +++
 
 This privacy policy outlines how we collect and process your data on this website.
@@ -58,7 +58,7 @@ We do not use the data for any other purpose.
 
 The comments data is not stored by Giscus, as specified in their [privacy policy](https://github.com/giscus/giscus/blob/main/PRIVACY-POLICY.md#what-data-do-we-collect). The data is stored on GitHub servers. See the [GitHub's privacy policy](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).
 
-The analytics data is stored on a server hosted by [Oracle Cloud](https://cloud.oracle.com/). The server is located in Amsterdam, The Netherlands.
+The analytics data is stored on a server hosted by [Vultr](https://www.vultr.com/). The server is located in Paris, France.
 
 The server follows industry best practices for security, including automatic security updates, a strict Content Security Policy, a firewall, key-based SSH access, etc.
 

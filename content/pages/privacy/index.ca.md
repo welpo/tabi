@@ -2,7 +2,7 @@
 title = "Política de privacitat"
 path = "/ca/privacy"
 date = 2023-10-31
-updated = 2023-11-07
+updated = 2023-12-07
 +++
 
 Aquesta política de privacitat detalla com recollim i processem les teves dades en aquest lloc web.
@@ -58,7 +58,7 @@ No utilitzem les dades per cap altre propòsit.
 
 Les dades dels comentaris no s'emmagatzemen per Giscus, tal com s'especifica a la seva [política de privacitat](https://github.com/giscus/giscus/blob/main/PRIVACY-POLICY.md#what-data-do-we-collect). Les dades s'emmagatzemen als servidors de GitHub. Vegeu la [política de privacitat de GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).
 
-Les dades d'anàlisis s'emmagatzemen en un servidor allotjat per [Oracle Cloud](https://cloud.oracle.com/). El servidor es troba a Àmsterdam, Països Baixos.
+Les dades d'anàlisis s'emmagatzemen en un servidor allotjat per [Vultr](https://www.vultr.com/). El servidor es troba a París, França.
 
 El servidor segueix les millors pràctiques de la indústria per a la seguretat, incloent actualitzacions de seguretat automàtiques, una política de seguretat de contingut estricta, un tallafocs, accés SSH basat en claus, etc.
 

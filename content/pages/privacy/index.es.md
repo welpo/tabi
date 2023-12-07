@@ -2,7 +2,7 @@
 title = "Política de privacidad"
 path = "/es/privacy"
 date = 2023-10-31
-updated = 2023-11-07
+updated = 2023-12-07
 +++
 
 Esta política de privacidad describe cómo recopilamos y procesamos tus datos en este sitio web.
@@ -58,7 +58,7 @@ No utilizamos los datos para ningún otro propósito.
 
 Los datos de los comentarios no son almacenados por Giscus, como se especifica en su [política de privacidad](https://github.com/giscus/giscus/blob/main/PRIVACY-POLICY.md#what-data-do-we-collect). Los datos se almacenan en servidores de GitHub. Consulta la [política de privacidad de GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).
 
-Los datos de análisis se almacenan en un servidor alojado por [Oracle Cloud](https://cloud.oracle.com/). El servidor está ubicado en Amsterdam, Países Bajos.
+Los datos de análisis se almacenan en un servidor alojado por [Vultr](https://www.vultr.com/). El servidor está ubicado en París, Francia.
 
 El servidor sigue las mejores prácticas de la industria en cuanto a seguridad, incluidas actualizaciones de seguridad automáticas, una estricta Política de Seguridad de Contenido, un cortafuegos, acceso SSH basado en clave, etc.
 
