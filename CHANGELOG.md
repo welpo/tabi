@@ -1,0 +1,481 @@
+# Changelog
+
+Welcome to the changelog for tabi. This document aims to provide a comprehensive list of all notable changes made to the project, organised chronologically by release version.
+
+We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
+
+## [1.0.0] - 2023-12-29
+
+### ✨ Features
+
+- Add Nostr icon
+- Support hiding pages and sections ([#227](https://github.com/welpo/tabi/issues/227))
+- Add Google Scholar icon
+- [**‼️BREAKING‼️**] Respect `theme_default` when JS is enabled ([#224](https://github.com/welpo/tabi/issues/224))
+- Allow relative paths for image shortcodes ([#222](https://github.com/welpo/tabi/issues/222))
+- Cachebust custom font subset
+- Improve clickability cue by adding pointer cursor to details summary
+- Mention baseurl in header & title
+- Add XML styling ([#221](https://github.com/welpo/tabi/issues/221))
+- Set copyright translations outside toml files & enhance $VARs ([#215](https://github.com/welpo/tabi/issues/215))
+- Allow page override of global system ([#216](https://github.com/welpo/tabi/issues/216))
+- Enable arbitrary ToC location
+- Display draft status in post list ([#203](https://github.com/welpo/tabi/issues/203))
+- Render markdown content ([#201](https://github.com/welpo/tabi/issues/201))
+- Translate quick navigation buttons' titles
+- Add theme reset button ([#198](https://github.com/welpo/tabi/issues/198))
+- Add configurable footer menu ([#197](https://github.com/welpo/tabi/issues/197))
+- Support privacy-respecting analytics ([#193](https://github.com/welpo/tabi/issues/193))
+- Improve robustness checking commands
+- Add Matrix icon
+- Add description support for sections ([#179](https://github.com/welpo/tabi/issues/179))
+- Add support for canonical URLs ([#168](https://github.com/welpo/tabi/issues/168))
+- Allow customising section for archive
+- Add `full_content_in_feed` option ([#164](https://github.com/welpo/tabi/issues/164))
+- Support relative paths ([#163](https://github.com/welpo/tabi/issues/163))
+- Add X icon
+- Allow internal project links ([#157](https://github.com/welpo/tabi/issues/157))
+- Style redirect page ([#156](https://github.com/welpo/tabi/issues/156))
+- Support multilingual meta tags in sections
+- Add img_alt attribute for customisable alt text ([#153](https://github.com/welpo/tabi/issues/153))
+- Introduce info-page template ([#147](https://github.com/welpo/tabi/issues/147))
+- Overhaul translation system & add languages ([#145](https://github.com/welpo/tabi/issues/145))
+- Add `browser_theme_color` config option ([#143](https://github.com/welpo/tabi/issues/143))
+- Add `invert_title_order` config option ([#142](https://github.com/welpo/tabi/issues/142))
+- Implement setting hierarchy for ToC
+- Add support for twitter:image
+- Allow missing author
+- Add support for social media cards ([#130](https://github.com/welpo/tabi/issues/130))
+- Add hierarchy-based setting overrides ([#128](https://github.com/welpo/tabi/issues/128))
+- Allow hiding the read time indication on pages ([#124](https://github.com/welpo/tabi/issues/124))
+- Respect `external_links_…` config ([#126](https://github.com/welpo/tabi/issues/126))
+- Add dynamic stylesheet loading ([#118](https://github.com/welpo/tabi/issues/118))
+- Add lazy loading ([#116](https://github.com/welpo/tabi/issues/116))
+- Add ToC button ([#115](https://github.com/welpo/tabi/issues/115))
+- Add spoiler shortcode ([#113](https://github.com/welpo/tabi/issues/113))
+- Replace "$SEPARATOR" to `separator`
+- Add configurable copyright notice ([#112](https://github.com/welpo/tabi/issues/112))
+- Sync config.toml and theme.toml [extra]
+- Add link to remote repository ([#111](https://github.com/welpo/tabi/issues/111))
+- Add link to remote repository
+- Add base64 encoded email protection ([#110](https://github.com/welpo/tabi/issues/110))
+- Add base64 encoded email protection
+- Show which JS compressor is best
+- Check for JS minification
+- Avoid commiting drafts
+- Add pre-commit hook
+- Add support for remote codeberg repositories
+- Add link to commit history on updated articles ([#109](https://github.com/welpo/tabi/issues/109))
+- Overhaul Table of Contents ([#108](https://github.com/welpo/tabi/issues/108))
+- Enhance Table of Contents
+- Add `toc_levels` to control ToC depth
+- Add wide container shortcode ([#107](https://github.com/welpo/tabi/issues/107))
+- Add wide container shortcode
+- Add `rel=me` attribute to social links
+- Introduce skins to customise the theme ([#105](https://github.com/welpo/tabi/issues/105))
+- Add pointer cursor to image toggler
+- Add 2 interactive image shortcodes
+- Add 2 interactive image shortcodes
+- Allow setting default theme
+- Allow setting the default theme
+- Hide button if JS is disabled
+- Global/individual toggle for KaTeX and copy button
+- Add backlinks to footnotes ([#101](https://github.com/welpo/tabi/issues/101))
+- Optional trailing slash in menu links
+- Add JavaScript notice for comments
+- Add support for Isso comments
+- Add support for Isso comments
+- Add support for Hyvor Talk comments
+- Add support for Hyvor Talk comments
+- Add quick navigation buttons
+- Add quick navigation buttons
+- Add support for giscus & utterances comments
+- Add support for giscus and utterances
+- Add support for giscus & utterances comments
+- Add utterances support
+- Add copy button to code blocks
+- Add copy button to code blocks
+- Add basic copy button to codeblocks
+- Add full-width image option to shortcodes 
+- Add full-width image option to shortcodes
+- Custom feed content and style
+- Style xml feed
+- Use page description as summary
+- Add custom quotation marks for multilingual quotes
+- Add multilingual quote shortcode
+- Allow using emojis as favicon
+- Include layout features in font subset
+- Add multi-language support
+- Update image path retrieval and dimensions in shortcodes
+- Add KaTeX support
+- Make JS light/dark toggle optional
+- Use github pages for live preview
+- Allow dual date-format (short/long)
+- Allow dual date-format (short/long)
+- Add 'Last updated' extra tag
+- Add 'Last updated' extra tag
+- Add dual image support for switching themes
+- Add dual image support for switching themes
+- Use custom separator from config in meta & title
+- Allow customizable secure headers (CSP)
+- Display word count when hovering over read time
+- Responsive (and centered) images
+- Clean js code
+- Add dimmable-image shortcode for dark theme
+- Change default theme to OS setting
+- Showcase invertable image
+- Showcase invertable image
+- Add Archive page to features.
+- Remove Archive from TODO
+- Add archive screen
+- Change markdown description style
+- Set Table of Contents per page, not globally
+- Add markdown support to index page
+
+### 🐛 Bug Fixes
+
+- Fix overlapping background change
+- Prevent background overflow on link hover ([#226](https://github.com/welpo/tabi/issues/226))
+- Add quotes to custom subset links
+- Correct self-closing script tag
+- Match functionality of minified and non-minified files
+- Use the base url for JS/CSS loading
+- Fix external link redirection in footer ([#219](https://github.com/welpo/tabi/issues/219))
+- Load `teal` if set in config
+- Proper nested lists spacing ([#218](https://github.com/welpo/tabi/issues/218))
+- Fix malformed URLs in Isso mails ([#211](https://github.com/welpo/tabi/issues/211))
+- Correct 'of' translation
+- Remove unnecessary description filters
+- Open <p> regardless of attribution
+- Add line-height to .section-title ([#205](https://github.com/welpo/tabi/issues/205))
+- Set proper date class ([#207](https://github.com/welpo/tabi/issues/207))
+- Limit width of toc ([#204](https://github.com/welpo/tabi/issues/204))
+- Make goatcounter use https ([#195](https://github.com/welpo/tabi/issues/195))
+- Switch from ID to class selector for initialisation ([#196](https://github.com/welpo/tabi/issues/196))
+- Properly translate aria-label ([#192](https://github.com/welpo/tabi/issues/192))
+- Fix extension woff -> woff2
+- Prevent videos from overflowing container ([#185](https://github.com/welpo/tabi/issues/185))
+- Remove unused self-closing tags ([#176](https://github.com/welpo/tabi/issues/176))
+- Use English by default in atom.xml ([#167](https://github.com/welpo/tabi/issues/167))
+- Remove safe filter; allow content & summary ([#165](https://github.com/welpo/tabi/issues/165))
+- Actually set maxCommentsNested
+- Check if translations exist while building tags ([#159](https://github.com/welpo/tabi/issues/159))
+- Allow live reload when zola is in `serve` mode ([#144](https://github.com/welpo/tabi/issues/144))
+- Don't fail if custom_subset absent ([#132](https://github.com/welpo/tabi/issues/132))
+- Use `get_url` for favicon
+- Allow missing image & correct spacing ([#123](https://github.com/welpo/tabi/issues/123))
+- Actually use `short_date_format` ([#119](https://github.com/welpo/tabi/issues/119))
+- Remove extra space between "tabi" and separator
+- Url to "Visit Website"
+- `is_draft` returning opposite value
+- Check proper `toc_ignore_pattern`
+- Move `default_language` to proper section
+- Remove flex display on full-width elements
+- Improve contrast on `code` within links on hover
+- Draft margin
+- Add missing images for new shortcodes
+- Set proper color-scheme meta
+- Remove extra newlines in final html
+- Align text to left codeblocks with line numbers
+- Correct CSS path for GitHub pages
+- Path to main.css
+- Use relative path to main.css
+- Multilingual issues in feeds and 'nav.html'
+- Load English stylesheet as fallback
+- Multilingual issues in feeds and 'nav.html'
+- Properly initialise `currentTheme`
+- Use proper meta descriptions
+- Escape HTML in feed summary
+- Ensure codeblock header visibility on iOS
+- Properly check for `theme_switcher` setting
+- Remove leading slash from css href
+- Remove leading slash from xsl href
+- Set svg max-height only for social icons
+- Generate random id for multilingual quotes
+- Proper URL for multilingual rss/atom feeds
+- Mention translations in 404 if there's more than 1 language
+- Show language switcher if there's more than 1 language
+- Avoid empty dates when long_date_format is empty
+- Remove extra backtick
+- Remove flashing from header text (Firefox)
+- Remove flash when navigating in dark-mode
+- Only load script when themeswitcher is enabled
+- Handle missing image metadata gracefully
+- Set proper scope to transparent hover for anchor
+- Remove double equals in updated field
+- Fix screenshot path
+- Clarify requirements for A+ Observatory score
+- Clarify requirements for A+ Observatory score
+- Enable github pages
+- Use personal access token
+- Update token
+- Remove header link background change on hover
+- Remove horizontall scroll on mobile
+- Remove newlines around `<title>` from source code
+- Remove h1 permalinkbackground on hover
+- Rename sun icon reference
+- Set main image path relative to base_url
+- Override font-size for home subtitle <p>
+- Close div class"tags-item"
+- Remove double bottom-boder/div on Archive
+- Add end-of-file newline
+- _archive import typo
+- Capitalise Archive title
+- Set aspect-ratio on banner-home-ig
+- Make navbar width and margin same as content
+- Add end-of-file newline
+- Add end-of-file newline
+- Consistent date format & remove invalid <time> tags
+- Remove duplicated meta description
+- Remove space in atom url
+- Update theme screenshot in /projects
+- Set consistent padding between nav and main content
+- Improve responsiveness of home banner
+- Ensure text remains visible during webfont load
+- Working live url
+- Alt text for moon/sun icons (theme switcher)
+- Trailing space in front of nav-links
+- Nav-links hover style
+- Syntax highlighting
+
+### 💄 Styling
+
+- Reduce emoji size for compatibility
+- Hide navigation buttons on print view
+- Split error statement from solution ([#213](https://github.com/welpo/tabi/issues/213))
+- Fix whitespace issues
+- Update icon to be lighter ([#173](https://github.com/welpo/tabi/issues/173))
+- Add border-radius and cleaner shadow
+- Slightly increase bold weight
+- Reduce bold text font weight on sans-serif
+- Harmonise highlight colour
+- Set border radius to inline code
+- Change syntax highlighting theme & text size ([#131](https://github.com/welpo/tabi/issues/131))
+- Add "…" when using summary with `<!-- more -->`
+- Add "…" when using summary with `<!-- more -->`
+- Reduce max-height for ToC
+- Align buttons and input & cleanup
+- Use divider-color for <hr> & remove border-color
+- Clean isso styles & use CSS variables
+- Stylise scrollbar based on site's color scheme
+- Unhide scrollbars
+- Cleaner shadow
+- Standardise posts' summary & description
+- Set transparent bg for code in table headers
+- Adjust font styles for <details> and <summary>
+- Keep top/bottom element's margin in `full-width`
+- Retain element's spacing within `full-width`
+- Reset margin & padding for children of `.full-width`
+- Use theme variable for table borders
+- Remove dark primary colour variable
+- Redesign block quotes
+- Improve footnotes and `<hr>` styling
+- Center all table text
+- Remove figure & img max height
+- Increase body left/right margins
+- Hide horizontal scrollbar in codeblocks
+- Darken codeblock highlight colour
+- Increase spacing in archive
+- Reduce bold font-weight
+- Add codeblock background colours
+- Round tables borders
+- Redesign code block header
+- Remove newlines around summary
+- Smaller title and "Recent Posts" text
+- Add styling to infobox
+- Add title suffix & reduce RSS icon size
+- Add `padding-top` class
+- Rename "atom/rss feed" to "feed"
+- Standarise margin in projects and archive
+- Set custom header anchor
+- Add dash to toggle identifier
+- Center wrapped menu items
+- Widen article body; less reading saccades
+- Widen article body; less reading saccades
+- Round down code font-size
+- Standarise font rendering across browsers
+- Reduce header-content margin in mobile
+- Increase margin between posts and year
+- Move padding from post-time to listing-item
+- Improve mobile date display and title spacing
+- Standarise font rendering across browsers
+- Prevent header anchor selection
+- Update project images
+- Update project images
+- Greater resolution
+- Add link to project images
+- Use shadow instead of border for cards
+- Set a minimum value for paragraph spacing
+- Use theme's primary colour for table headers
+- Narrower article content for blog posts
+- Change default long date format
+- Reduce text/background contrast
+- Darken background for inline code (dark theme)
+- Update anchor links
+- Hide anchor links on small screens
+- Promise I will never go blonde like Kanye️
+- Increase content bottom margin in small screens
+- Smaller socials; add Zola & tabi mention
+- Smaller socials; add Zola & tabi mention
+- Remove round borders on tables for consistency
+- Fix invisible url on hover in projects
+- Use day-month format
+- Decrease margin between date and post title
+- Wrap post description in `<p>`
+- Major redesign
+- Increase margin between anchor and header
+- Redesign post listing and other minor changes
+- Remove transitions
+- Redesign tag pages
+- Increase date opacity
+- Remove "home" from navigation
+- List tags redesign
+- Use cards/boxes for tag list
+- List all posts per tag
+- Set style for figure & figure captions
+- Increase iframe margins
+- Center and enlarge iframes (embeds)
+- Update footnote styling
+- Resize headers
+- Increase margins before content & after ToC
+- Reduce font size for meta in cards
+- Reduce font-size and increase line-height in article-title
+- Revert background back to pure white
+- Change colourscheme. improve cohesion and accesibility
+- Mention all table colours change, not just header
+- Showcase tables & invertable images
+- Center tables; colour headers; round borders
+- Set tab to 4 spaces; remove newlines
+- Use Cascadia Code as code font
+- Move quote author to quote block
+- Default light mode
+- Move main image to static path
+- Remove border from images
+- Default light mode
+- Increase contrast and saturation
+- Smaller home image; different circle crop
+- Set local main image; no border-radius
+- Reduce headers' size
+- Change posts' dates to show off Archive
+- Larger section titles
+- Change switcher margin and width/height to rem
+- Increase padding between navs
+- Set consistent underline in headers
+- Set equal padding on social icons
+- Increase padding between navs
+- Add styles for archive screen
+- Change various font sizes and date format
+- Update screenshots and minor changes
+
+### 📝 Documentation
+
+- Link commit and PR for relative image paths
+- Use GoatCounter sessions
+- Fix language switcher description
+- Add 'Sites Using tabi' section
+- Mention IETF BCP 47 codes
+- Remove bullet points from tabi features
+- Add guide to all of tabi's features ([#169](https://github.com/welpo/tabi/issues/169))
+- Improve phrasing/translation
+- Fix broken code block
+- Clarify default short date format
+- Add link to Table of Contents documentation ([#121](https://github.com/welpo/tabi/issues/121))
+- Remove redundancy in minified error
+- Update link to multilanguage lines in config
+- Update link to multilanguage lines in config
+- Add ToC and quick navigation buttons
+- Clarify the 2 possible paths for custom skins
+- Add link to skins showcase/documentation
+- Fix skins docs link
+- Improve Code tags example
+- Add Isso comments mention
+- Update [extra] settings
+- Update link to multilanguage lines in config
+- Suggest editing language feed stylesheet
+- Mention support for Isso comments
+- Add code type to codeblock
+- Add Hyvor Talk comments mention
+- Support Hyvor Talk comments
+- Remove `updated` date from examples
+- Update for Hyvor Talk support
+- Remove first header
+- Update link to multilanguage lines in config
+- Fix mention of "Load comments" button
+- Add code language to bash code blocks
+- Remove `updated` date from example
+- Improve KaTeX documentation
+- Set proper `updated` date
+- Translate 'Usage' header
+- Mention stylized feed
+- Add default author
+- Remove atom feed filter in script
+- Update URL to multilanguage lines in config
+- Remove unnecessary date
+- Add feature request template
+- Create bug report issue template
+- Update URL to multilanguage lines in config
+- Mention Zola version requirement
+- Add quotation marks to quotes
+- Add config info for multilingual sites
+- Update screenshots
+- Include layout features in font subset
+- Rephrase last sentence
+- Rephrase description
+- Update URL
+- Update inspiration
+- Use full URLs for images for Zola theme page
+- Add `data:` to CSP to load local svg
+- Stylise KaTeX
+- Acknowledge abridge's inspiration
+- Update theme's description
+- Update screenshots
+- Mention responsive design
+- Lowercase 'tabi'
+- Minor changes to installation instructions
+- Clarify installation instructions
+- Mention perfect Lighthouse score
+- Update `nani` image
+- Update projects
+- Update description
+- Update description, demo URL, author info, and extra
+- Update screenshot
+- Replace "last lines" to "last directive"
+- Use hierarchical headings
+- Update inspiration
+- Set consistent paths for imgs
+- Change 'Usage' section styling
+- Add closing shortcode tag to references()
+- Improve punctuation
+- Add Contributing guidelines
+- Add code of conduct
+- Replace `test` tag with `showcase`
+- Use markdown to showcase theme's capabilities
+- Add internetVin's blog as inspiration
+- Js size has grown :(
+- Change the codeblock example
+- Add license
+
+### ♻️ Refactor
+
+- Remove unnecessary id attribute
+- Turn macros into partials & sort CSS ([#146](https://github.com/welpo/tabi/issues/146))
+- Switch from `@import` to `@use`
+- Translate xsl stylesheets
+- Combine and reorder media queries
+- Remove Yahoo Media RSS reference
+- Restructure template
+- Remove mention of translations for single language sites
+- Rename katex minified css
+- Rename minified KaTeX css
+- Remove metadata in project files
+- Improve code format; set tabs = 4 spaces
+- Remove useless css
+- Remove useless lines
+- Remove unused `section_title` variable
+- Move blog posts to `blog` section
+- Remove 403 page
+- Move blog posts `blog` section
+- Remove extra last_updated date
+- Show word count as reading time tooltip
+
+<!-- generated by git-cliff -->
