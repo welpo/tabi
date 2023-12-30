@@ -1,4 +1,4 @@
-.tag-cloud {
+#tag-cloud {
     margin-top: 4vmin;
 
     ul {
@@ -8,6 +8,34 @@
     }
 
     .tags-item {
-        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@mixin column-count($count) {
+    -webkit-column-count: $count;
+    -moz-column-count: $count;
+    column-count: $count;
+}
+
+.two-columns ul {
+    @include column-count(2);
+}
+
+.three-columns ul {
+    @include column-count(3);
+}
+
+@media (max-width: 1000px) {
+    .three-columns ul {
+        @include column-count(2);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .two-columns ul,
+    .three-columns ul {
+        @include column-count(1);
     }
 }

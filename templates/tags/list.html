@@ -6,7 +6,8 @@
 
 {{ macros_page_header::page_header(title=title)}}
 
-<div class="tag-cloud">
+{% set tag_count = terms | length %}
+<div id="tag-cloud" class="{% if tag_count > 16 %}three-columns{% elif tag_count > 8 %}two-columns{% endif %}">
     <ul class="tags">
         {%- for term in terms -%}
             <li class="tags-item">
