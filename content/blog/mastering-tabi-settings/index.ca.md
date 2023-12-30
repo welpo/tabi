@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2023-12-04
+updated = 2023-12-30
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -141,6 +141,20 @@ El color del tema del navegador és el color que apareix a la barra de pestanyes
 Pots establir-ho a `config.toml` com a `browser_theme_colour = "#087e96"`. Si vols diferents colors per als modes clar/obscur, pots establir un conjunt de colors amb `browser_theme_colour = ["#ffffff", "#000000"]`. El primer color és per al mode clar, el segon per al fosc.
 
 Aquesta variable accepta qualsevol color CSS vàlid, així que pots utilitzar paraules clau (per exemple, `blue`), codis hexadecimals (per exemple, `#087e96`) o valors RGB/HSL (per exemple, `rgb(8, 126, 150)`).
+
+### Etiquetes compactes
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:-----------------:|:--------------------:|
+|   ❌   |   ❌   |      ✅       |         ❌        |          ❌          |
+
+Per defecte, la [pàgina d'etiquetes](/tags) mostra les etiquetes com:
+
+[NomEtiqueta](#) — n entrada[es]
+
+Establir `compact_tags = true` les mostrarà com:
+
+[NomEtiqueta](#) <sup>n</sup>
 
 ---
 
