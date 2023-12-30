@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2023-12-04
+updated = 2023-12-30
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -141,6 +141,20 @@ The browser theme colour is the colour that appears in the browser's tab bar:
 You can set it in `config.toml` like `browser_theme_colour = "#087e96"`. If you'd like different colours for dark/light mode, you can set an array of colours with `browser_theme_colour = ["#ffffff", "#000000"]`. The first colour will be used for light mode, the second for dark mode.
 
 This variable accepts any valid CSS colour, so you can use keywords (e.g. `blue`), hex codes (e.g. `#087e96`) or RGB/HSL values (e.g. `rgb(8, 126, 150)`).
+
+### Compact Tags
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
+
+By default, the [tags page](/tags) displays tags as:
+
+[TagName](#) — n post[s]
+
+Setting `compact_tags = true` will display them as:
+
+[TagName](#) <sup>n</sup>
 
 ---
 
