@@ -12,7 +12,7 @@ assignees: ''
 ## Environment
 
 Zola version: 
-tabi commit: 
+tabi version or commit: 
 
 ## Expected Behavior
 Tell us what should have happened.
