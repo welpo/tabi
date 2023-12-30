@@ -18,15 +18,33 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 # https://keats.github.io/tera/docs/#introduction
 body = """
 {% if version %}\
-    ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+    {% if previous.version %}\
+        ## [{{ version | trim_start_matches(pat="v") }}](<REPO>/compare/{{ previous.version }}..{{ version }}) - {{ timestamp | date(format="%Y-%m-%d") }}
+    {% else %}\
+        ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+    {% endif %}\
 {% else %}\
     ## [unreleased]
 {% endif %}\
+
+{% macro commit(commit) -%}
+    - {% if commit.scope %}*({{ commit.scope }})* {% endif %}{% if commit.breaking %}[**‼️BREAKING‼️**] {% endif %}\
+        {{ commit.message | upper_first }} - ([{{ commit.id | truncate(length=7, end="") }}](<REPO>/commit/{{ commit.id }}))\
+{% endmacro -%}
+
 {% for group, commits in commits | group_by(attribute="group") %}
-    ### {{ group | striptags | trim }}
-    {% for commit in commits %}
-        - {% if commit.breaking %}[**‼️BREAKING‼️**] {% endif %}{{ commit.message | upper_first }}\
-    {% endfor %}
+    ### {{ group | striptags | trim | upper_first }}
+    {% for commit in commits
+    | filter(attribute="scope")
+    | sort(attribute="scope") %}
+        {{ self::commit(commit=commit) }}
+    {%- endfor -%}
+    {% raw %}\n{% endraw %}\
+    {%- for commit in commits %}
+        {%- if not commit.scope -%}
+            {{ self::commit(commit=commit) }}
+        {% endif -%}
+    {% endfor -%}
 {% endfor %}\n
 """
 # remove the leading and trailing whitespace from the template
@@ -37,7 +55,7 @@ footer = """
 """
 # postprocessors
 postprocessors = [
-  # { pattern = '<REPO>', replace = "https://github.com/orhun/git-cliff" }, # replace repository URL
+  { pattern = '<REPO>', replace = "https://github.com/welpo/tabi" }, # replace repository URL
 ]
 
 [git]
@@ -49,8 +67,6 @@ filter_unconventional = true
 split_commits = false
 # regex for preprocessing the commit messages
 commit_preprocessors = [
-  # Hyperlink bare commit hashes like "abcd1234" in commit logs, with short commit hash as description.
-  { pattern = "([ \\n])(([a-f0-9]{7})[a-f0-9]*)", replace = "${1}commit # [${3}](https://github.com/welpo/tabi/commit/${2})" },
   # Replace the issue number with the link.
   { pattern = "\\(#([0-9]+)\\)", replace = "([#${1}](https://github.com/welpo/tabi/issues/${1}))" },
   # Remove trailing whitespace.
