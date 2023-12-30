@@ -151,10 +151,13 @@ fi
 # Get the newly added and modified files.
 all_changed_files=$(git diff --cached --name-only --diff-filter=AM)
 
+script_name=$(basename "$0")
 # Loop through all newly added or modified files.
 for file in $all_changed_files; do
-    # Ignore this script.
-    if [[ "$file" == "$0" ]]; then
+    file_name=$(basename "$file")
+
+    # Ignore this script and the changelog.
+    if [[ "$file_name" == "$script_name" ]] || [[ "$file_name" == "CHANGELOG.md" ]]; then
         continue
     fi
 
