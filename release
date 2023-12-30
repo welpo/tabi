@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Bash script to prepare a release using git-cliff.
+# Inspired by https://github.com/orhun/git-cliff/blob/main/release.sh
+
+if [ "$#" -ne 1 ]; then
+    echo "A version tag is required."
+    echo "Example: bash $0 1.5.0"
+    exit 1
+fi
+
+VERSION_TAG=$1
+
+# Update CHANGELOG.
+git cliff --tag "$VERSION_TAG" -o CHANGELOG.md
+
+# Add all changes and commit.
+git add -A
+git commit -m "🔖 chore(release): prepare for $VERSION_TAG"
+
+# Template for the tag description.
+export GIT_CLIFF_TEMPLATE="\
+    {% for group, commits in commits | group_by(attribute=\"group\") %}\
+    {{ group | striptags | trim | upper_first }}\
+    {% for commit in commits %}\
+        - {% if commit.breaking %}(**‼️BREAKING‼️**) {% endif %}{{ commit.message | upper_first }} ({{ commit.id | truncate(length=7, end=\"\") }})\
+    {% endfor %}\
+    {% endfor %}"
+
+# Generate the tag description.
+changelog=$(git cliff --tag "$VERSION_TAG" --unreleased --strip all)
+
+# Create a signed and annotated tag.
+git tag -s -a "$VERSION_TAG" -m "Release $VERSION_TAG" -m "$changelog"
+
+echo "Most recent commit:"
+git log -1
+echo
+echo "Information for tag $VERSION_TAG:"
+git show $VERSION_TAG
+echo
+
+echo "Release $VERSION_TAG is ready. Don't forget to push the changes and the tag:"
+echo "git push && git push --tags"
