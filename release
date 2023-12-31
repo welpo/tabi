@@ -2,13 +2,24 @@
 # Bash script to prepare a release using git-cliff.
 # Inspired by https://github.com/orhun/git-cliff/blob/main/release.sh
 
-if [ "$#" -ne 1 ]; then
-    echo "A version tag is required."
-    echo "Example: bash $0 1.5.0"
-    exit 1
-fi
+# Check if a version tag is provided.
+if [ "$#" -eq 1 ]; then
+    VERSION_TAG=$1
+else
+    # After git-cliff version 1.4.0 it should be possible to run `git cliff --bumped-version`.
+    suggested_version=$(git cliff --unreleased --bump --context | jq -r .[0].version)
+    echo -n "No version tag provided. git-cliff suggests $suggested_version. Proceed? [Y/n] "
+    read user_input
 
-VERSION_TAG=$1
+    # Check if input is empty or a variation of "yes".
+    if [[ -z "$user_input" || "$user_input" =~ ^[Yy](es)?$ ]]; then
+        echo "Proceeding with version $suggested_version."
+        VERSION_TAG=$suggested_version
+    else
+        echo "Release preparation cancelled."
+        exit 1
+    fi
+fi
 
 # Update CHANGELOG.
 git cliff --tag "$VERSION_TAG" -o CHANGELOG.md
