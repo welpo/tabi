@@ -1,20 +1,19 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2023-12-30
+updated = 2023-12-31
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
 tags = ["showcase", "tutorial", "FAQ"]
 
 [extra]
-giscus = true
 footnote_backlinks = true
 quick_navigation_buttons = true
 social_media_card = "social_cards/blog_mastering_tabi_settings.jpg"
 +++
 
-This aims to be a comprehensive guide to every setting in tabi. If you have any questions, feel free to ask in the [comments below](#comments) or [open an issue on GitHub](https://github.com/welpo/tabi/issues/new).
+This aims to be a comprehensive guide to every setting in tabi. If you have any questions, feel free to [open an issue on GitHub](https://github.com/welpo/tabi/issues/new) or [start a discussion](https://github.com/welpo/tabi/discussions).
 
 <details>
     <summary><b>Table of Contents</b></summary>

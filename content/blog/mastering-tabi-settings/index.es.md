@@ -1,20 +1,19 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2023-12-30
+updated = 2023-12-31
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
 tags = ["funcionalidad", "tutorial", "preguntas frecuentes"]
 
 [extra]
-giscus = true
 footnote_backlinks = true
 quick_navigation_buttons = true
 social_media_card = "social_cards/es_blog_mastering_tabi_settings.jpg"
 +++
 
-Esta es la guía completa sobre la configuración en tabi. Si tienes alguna pregunta, puedes usar los [comentarios](#comments) al final de esta página o [abrir un issue en GitHub](https://github.com/welpo/tabi/issues/new).
+Esta es la guía completa sobre la configuración en tabi. Si tienes alguna pregunta, puedes [abrir un issue en GitHub](https://github.com/welpo/tabi/issues/new) o [inciar una discusión](https://github.com/welpo/tabi/discussions).
 
 <details>
     <summary><b>Tabla de contenido</b></summary>
