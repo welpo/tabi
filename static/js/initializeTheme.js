@@ -17,6 +17,9 @@
     } else {
         // If no theme is found in local storage and no default theme is set, use user's system preference.
         const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.setAttribute('data-theme', isSystemDark ? 'dark' : 'light');
+        document.documentElement.setAttribute(
+            'data-theme',
+            isSystemDark ? 'dark' : 'light'
+        );
     }
 })();

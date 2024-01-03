@@ -1,6 +1,6 @@
 // Select the table and table headers.
-var table = document.querySelector("#sitemapTable");
-var headers = Array.from(table.querySelectorAll("th"));
+var table = document.querySelector('#sitemapTable');
+var headers = Array.from(table.querySelectorAll('th'));
 
 // Create and append the live region for accessibility announcements.
 var liveRegion = document.createElement('div');
@@ -37,11 +37,11 @@ function initializeHeaders() {
         header.sortDirection = 'asc'; // Default sort direction.
         var sortAttribute = index === 0 ? 'ascending' : 'none';
         header.setAttribute('aria-sort', sortAttribute);
-        header.addEventListener("click", function () {
+        header.addEventListener('click', function () {
             sortTable(index);
         });
-        header.addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") {
+        header.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 sortTable(index);
             }
@@ -51,14 +51,15 @@ function initializeHeaders() {
 
 function announceSort(header, direction) {
     var columnTitle = header.querySelector('.columntitle').textContent;
-    liveRegion.textContent = 'Column ' + columnTitle + ' is now sorted in ' + direction + ' order';
+    liveRegion.textContent =
+        'Column ' + columnTitle + ' is now sorted in ' + direction + ' order';
 }
 
 function sortTable(index) {
     var header = headers[index];
     var direction = header.sortDirection === 'asc' ? 'desc' : 'asc';
-    var tbody = table.querySelector("tbody");
-    var rows = Array.from(tbody.querySelectorAll("tr"));
+    var tbody = table.querySelector('tbody');
+    var rows = Array.from(tbody.querySelectorAll('tr'));
     sortRows(rows, index, direction);
     refreshTableBody(tbody, rows);
     updateHeaderAttributes(header, direction);
@@ -67,9 +68,11 @@ function sortTable(index) {
 
 function sortRows(rows, index, direction) {
     rows.sort(function (rowA, rowB) {
-        var cellA = rowA.querySelectorAll("td")[index].textContent;
-        var cellB = rowB.querySelectorAll("td")[index].textContent;
-        return direction === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+        var cellA = rowA.querySelectorAll('td')[index].textContent;
+        var cellB = rowB.querySelectorAll('td')[index].textContent;
+        return direction === 'asc'
+            ? cellA.localeCompare(cellB)
+            : cellB.localeCompare(cellA);
     });
 }
 
@@ -96,7 +99,10 @@ function updateHeaderAttributes(header, direction) {
 // Update screen reader text for sorting.
 function updateAnnounceText(header) {
     var span = header.querySelector('.visually-hidden');
-    span.textContent = 'Click to sort in ' + (header.sortDirection === 'asc' ? 'descending' : 'ascending') + ' order';
+    span.textContent =
+        'Click to sort in ' +
+        (header.sortDirection === 'asc' ? 'descending' : 'ascending') +
+        ' order';
 }
 
 // Add text for screen readers regarding sort order.
