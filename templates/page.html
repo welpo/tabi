@@ -61,12 +61,12 @@
             {% endif %}
 
             {% if page.date %}
-                <li>{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</li>
+                <li>{{ macros_format_date::format_date(date=page.date, short=false, language_strings=language_strings) }}</li>
             {% endif %}
 
             {# page settings override config settings #}
             {% if macros_settings::evaluate_setting_priority(setting="show_reading_time", page=page, default_global_value=true) == "true" %}
-                {{ separator }} <li title="{{ page.word_count }} {{ macros_translate::translate(key="words", default="words", language_strings=language_strings) }}">{{ page.reading_time }}&nbsp;{{ macros_translate::translate(key="min_read", default="min read", language_strings=language_strings) }}</li>
+                {{ separator }} <li title="{{ page.word_count }} {{ macros_translate::translate(key="words", default="words", language_strings=language_strings) }}">{{ macros_translate::translate(key="min_read_pre", default="", language_strings=language_strings) }}{{ page.reading_time }}&nbsp;{{ macros_translate::translate(key="min_read", default="min read", language_strings=language_strings) }}</li>
             {% endif %}
 
             {%- if page.taxonomies and page.taxonomies.tags -%}
@@ -81,7 +81,7 @@
             {%- endif -%}
 
             {% if page.updated %}
-                </ul><ul class="meta last-updated"><li>{{ macros_translate::translate(key="last_updated_on", default="Last updated on", language_strings=language_strings) }} {{ macros_format_date::format_date(date=page.updated, short=true, language_strings=language_strings) }}</li>
+                </ul><ul class="meta last-updated"><li>{{ macros_translate::translate(key="last_updated_on", default="Last updated on", language_strings=language_strings) }} {{ macros_format_date::format_date(date=page.updated, short=false, language_strings=language_strings) }}</li>
                 {# Show link to remote changes if enabled #}
                 {% if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" %}
                     {{ separator }}

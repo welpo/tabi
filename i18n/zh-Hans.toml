@@ -1,6 +1,8 @@
 language_name = "简体中文"  # Shown in language picker for multi-language sites.
 date_locale = "zh_CN"
 full_stop = "。"  # Used at the end of a sentence.
+long_date_format = "%Y年 %b%d日"
+short_date_format = "%b%d日"
 
 # Menu items.
 # Should match the names in config.extra.menu and config.extra.footer_menu.
@@ -16,8 +18,9 @@ sitemap = "站点地图"  # Machine translated.
 
 # Navigation.
 read_more = "阅读全文"
-post = "文章"
-posts = "文章"  # Plural of "post".
+post_pre = "共计"
+post = "篇文章"
+posts = "篇文章"  # Plural of "post".
 prev = "上一页"  # As in "Previous" page.
 next = "下一页"  # As in "Next" page.
 of = "/"  # E.g. Page 1 "of" 3
@@ -37,10 +40,11 @@ go_to_comments = "转到评论区"  # Machine translated.
 
 # Post metadata.
 draft = "草稿"
-min_read = "分钟阅读"
+min_read_pre = "读完本文约需"
+min_read = "分钟"
 words = "字"
 last_updated_on = "最后更新于"
-see_changes = "修改纪录"
+see_changes = "修改记录"
 
 # Post body.
 table_of_contents = "目录"
@@ -75,3 +79,7 @@ close_quotation_mark = "」"
 about_feeds = "这是Web Feed，又称为Atom Feed，把现在的网址复制到新闻阅读器即可订阅本站文章。造访「About Feeds」来了解更多资讯。"
 visit_the_site = "造访网站"
 recent_posts = "近期文章"
+
+showcase = "示例"
+tutorial = "教程"
+tabi_doc = "tabi文档"

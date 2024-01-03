@@ -1,0 +1,32 @@
+:root {
+    --primary-color: #cf4813; //落霞红 #f03f24; // 胭脂红 #894276; // 芓紫 #7e1671 ;// 魏紫 //#f1939c; // Contrast ratio: 4.52:1.
+    --primary-background-color: #353434; 
+}
+
+[data-theme='dark'] {
+    --primary-color:  #f2cac9; // 淡绯 // #815c94 ; // 蕈紫 #806d9e ;// 槿紫 #c04851; // Contrast ratio: 4.63:1.
+    --primary-background-color: #353434; 
+}
+
+/* 定义滚动条的颜色 */
+//  chrome
+*::-webkit-scrollbar {
+    // width: 10px;
+    // height: 10px;
+    background: var(--primary-background-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+code::-webkit-scrollbar-track {
+    background: var(--primary-background-color);
+    border-radius: 5px;
+}
+
+// for firefox
+* {
+    scrollbar-color: var(--primary-color) var(--primary-background-color);
+  }

@@ -14,7 +14,8 @@
                 {% if config.extra.compact_tags %}
                     {# Shows the number of posts per tag as a superscript #}
                     <a href="{{ term.permalink | safe }}"
-                       aria-label="{{ term.name }} – 
+                       aria-label="{{ term.name }} &nbsp;– &nbsp;
+                       {{- macros_translate::translate(key="post_pre", default="", language_strings=language_strings) -}}&nbsp;
                         {{ term.pages | length }} 
                         {% if term.pages | length == 1 -%}
                             {{- macros_translate::translate(key="post", default="post", language_strings=language_strings) -}}
@@ -26,7 +27,9 @@
                 {% else %}
                     <a href="{{ term.permalink | safe }}">
                         {{ term.name }}</a>
-                        – {{ term.pages | length }}{%- if term.pages | length == 1 %}
+                        &nbsp;– &nbsp;
+                        {{- macros_translate::translate(key="post_pre", default="", language_strings=language_strings) -}}&nbsp;
+                         {{ term.pages | length }}{%- if term.pages | length == 1 %}
                         {# Only one post. Singular. #}
                             {{- macros_translate::translate(key="post", default="post", language_strings=language_strings) -}}
                         {% elif term.pages | length > 1 %}

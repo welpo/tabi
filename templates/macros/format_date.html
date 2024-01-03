@@ -2,6 +2,8 @@
 
 {# Set locale #}
 {% set date_locale = macros_translate::translate(key="date_locale", default="en_GB", language_strings=language_strings) %}
+{% set long_date_format = macros_translate::translate(key="long_date_format", default="en_GB", language_strings=language_strings) %}
+{% set short_date_format = macros_translate::translate(key="short_date_format", default="en_GB", language_strings=language_strings) %}
 
 {% if config.extra.short_date_format and short %}
     {{ date | date(format=config.extra.short_date_format, locale=date_locale) }}
@@ -34,9 +36,9 @@
     {% endif %}
 {% else %}
     {% if short %}
-        {{ date | date(format="%-d %b %Y", locale=date_locale) }}
+        {{ date | date(format=short_date_format, locale=date_locale) }}
     {% else %}
-        {{ date | date(format="%d %b %Y", locale=date_locale) }}
+        {{ date | date(format=long_date_format, locale=date_locale) }}
     {% endif %}
 {% endif %}
 

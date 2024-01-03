@@ -13,7 +13,7 @@
 
             <ul class="bloglist-meta">
                 {% if post.date %}
-                <li class="date">{{ macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) }}</li>
+                <li> {{ macros_format_date::format_date(date=post.updated, short=false, language_strings=language_strings) }}</li>
                 {% endif %}
                 {% if post.draft %}
                 <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
