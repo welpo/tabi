@@ -1,6 +1,6 @@
 function setUtterancesTheme(newTheme) {
     // Get the frame with class "utterances-frame".
-    const frame = document.querySelector(".utterances-frame");
+    const frame = document.querySelector('.utterances-frame');
 
     if (frame) {
         // If the iframe exists, send a message to set the theme.
@@ -34,7 +34,8 @@ function initUtterances() {
         script.setAttribute('label', label);
 
         // Set the initial theme.
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const currentTheme =
+            document.documentElement.getAttribute('data-theme') || 'light';
         const selectedTheme = currentTheme === 'dark' ? darkTheme : lightTheme;
         script.setAttribute('theme', selectedTheme);
 
@@ -51,7 +52,8 @@ function initUtterances() {
         // Listen for themeChanged event to update the theme.
         window.addEventListener('themeChanged', (event) => {
             // Determine the new theme based on the event detail.
-            const selectedTheme = event.detail.theme === 'dark' ? darkTheme : lightTheme;
+            const selectedTheme =
+                event.detail.theme === 'dark' ? darkTheme : lightTheme;
             // Set the new theme.
             setUtterancesTheme(selectedTheme);
         });

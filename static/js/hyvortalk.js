@@ -25,7 +25,8 @@ function initHyvorTalk() {
         comments.setAttribute('page-author', pageAuthor);
 
         // Choose the correct theme based on the current theme of the document.
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const currentTheme =
+            document.documentElement.getAttribute('data-theme') || 'light';
         comments.setAttribute('colors', currentTheme);
 
         // Add the Hyvor Talk comments tag to the div.

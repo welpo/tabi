@@ -11,16 +11,16 @@
             const byteString = atob(encodedString);
 
             // Convert byteString to an array of char codes.
-            const charCodes = [...byteString].map(char => char.charCodeAt(0));
+            const charCodes = [...byteString].map((char) => char.charCodeAt(0));
 
             // Use TypedArray.prototype.set() to copy the char codes into a Uint8Array.
             const bytes = new Uint8Array(charCodes.length);
             bytes.set(charCodes);
 
-            const decoder = new TextDecoder("utf-8");
+            const decoder = new TextDecoder('utf-8');
             return decoder.decode(bytes);
         } catch (e) {
-            console.error("Failed to decode Base64 string: ", e);
+            console.error('Failed to decode Base64 string: ', e);
             return null;
         }
     }

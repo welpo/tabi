@@ -4,13 +4,13 @@ function initIsso() {
     const commentsDiv = document.querySelector('.comments');
     if (commentsDiv) {
         // Get the lazy-loading setting from the div.
-        const lazyLoading = commentsDiv.getAttribute('data-lazy-loading') === "true";
+        const lazyLoading = commentsDiv.getAttribute('data-lazy-loading') === 'true';
 
         // If lazy-loading is enabled, create an Intersection Observer and use it.
         if (lazyLoading) {
-            const observer = new IntersectionObserver(entries => {
+            const observer = new IntersectionObserver((entries) => {
                 // Loop over the entries.
-                entries.forEach(entry => {
+                entries.forEach((entry) => {
                     // If the element is in the viewport, initialize Isso.
                     if (entry.isIntersecting) {
                         loadIsso(commentsDiv);

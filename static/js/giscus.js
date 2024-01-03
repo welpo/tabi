@@ -55,7 +55,8 @@ function initGiscus() {
         }
 
         // Choose the correct theme based on the current theme of the document.
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const currentTheme =
+            document.documentElement.getAttribute('data-theme') || 'light';
         const selectedTheme = currentTheme === 'dark' ? darkTheme : lightTheme;
         script.setAttribute('data-theme', selectedTheme);
 
@@ -69,7 +70,8 @@ function initGiscus() {
 
         // Listen for theme changes and update the Giscus theme when they occur.
         window.addEventListener('themeChanged', (event) => {
-            const selectedTheme = event.detail.theme === 'dark' ? darkTheme : lightTheme;
+            const selectedTheme =
+                event.detail.theme === 'dark' ? darkTheme : lightTheme;
             setGiscusTheme(selectedTheme);
         });
     }
