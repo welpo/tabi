@@ -26,7 +26,7 @@ If you're not sure how to contribute or need help with something, please don't h
 
 While we don't enforce a strict coding style, we appreciate it when contributions follow the existing code style of the project (e.g. indenting with 4 spaces). This makes the codebase easier to read and maintain. If you are making significant changes or additions, please try to maintain consistency with the current coding patterns and idioms.
 
-For JavaScript files, you can use [Biome](https://biomejs.dev/) to format your code.
+For JavaScript files, we use [Prettier](https://prettier.io/) to format the code.
 
 The CSS properties are sorted following [Concentric-CSS](https://github.com/brandon-rhodes/Concentric-CSS). If you use VSCode, the [Sort CSS](https://marketplace.visualstudio.com/items?itemName=piyushsarkar.sort-css-properties) extension makes this super easy.
 
