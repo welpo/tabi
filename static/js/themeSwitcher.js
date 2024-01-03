@@ -57,3 +57,18 @@ themeSwitcher.setAttribute('aria-pressed', currentTheme === 'dark');
 if (localStorage.getItem('theme')) {
     themeResetter.classList.add('has-custom-theme');
 }
+
+// Function to handle keydown event on theme toggler buttons.
+function handleThemeTogglerKeydown(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        if (event.target === themeSwitcher) {
+            switchTheme();
+        } else if (event.target === themeResetter) {
+            resetTheme();
+        }
+    }
+}
+
+themeSwitcher.addEventListener('keydown', handleThemeTogglerKeydown);
+themeResetter.addEventListener('keydown', handleThemeTogglerKeydown);
