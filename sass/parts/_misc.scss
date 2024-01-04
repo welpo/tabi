@@ -167,3 +167,28 @@ hr {
 details summary {
     cursor: pointer;
 }
+
+.article-navigation {
+    display: flex;
+    margin-top: 2rem;
+    border-top: var(--divider-color) solid 0.5px;
+    padding-top: 2rem;
+
+    div:first-child {
+        flex: 1;
+        text-align: left;
+    }
+
+    div:last-child {
+        flex: 1;
+        text-align: right;
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+
+        div {
+            text-align: center !important;
+        }
+    }
+}
