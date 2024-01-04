@@ -401,6 +401,18 @@ Activa l'índex de continguts just sota del títol i metadades de l'article amb 
 
 Per saber més sobre com personalitzar-ho, consulta [la documentació sobre la Taula de continguts](/ca/blog/toc/).
 
+### Enllaços als articles anterior i següent
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:--------------------:|:--------------------:|
+|   ✅   |   ✅   |      ✅       |          ✅          |         ❌          |
+
+Mostra enllaços als articles anterior i següent a la part inferior dels posts. Es veu així:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp", dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp", alt="Enllaços als articles anterior i següent", full_width=true) }}
+
+Per activar aquesta funció, estableix `show_previous_next_article_links = true`.
+
 ### Enllaços de retorn a les notes a peu de pàgina
 
 | Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |

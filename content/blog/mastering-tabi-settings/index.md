@@ -403,6 +403,18 @@ Enable the table of contents right below the post's title and metadata with `toc
 
 Read more about the table of contents and how to customise it by reading [the docs](/blog/toc/).
 
+### Previous and Next Article Links
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
+
+Displays links to the previous and next articles at the bottom of posts. It looks like this:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp", dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp" alt="Previous and next article links", full_width=true) }}
+
+To activate this feature, set `show_previous_next_article_links = true`.
+
 ### Footnote Backlinks
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |

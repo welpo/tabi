@@ -109,6 +109,10 @@ footnote_backlinks = false
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 katex = false
 
+# Show links to previous and next articles at the bottom of posts.
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+show_previous_next_article_links = false
+
 # Quick navigation buttons.
 # Adds "go up" and "go to comments" buttons on the bottom right (hidden for mobile).
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy

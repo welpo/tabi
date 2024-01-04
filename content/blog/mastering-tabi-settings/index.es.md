@@ -399,6 +399,18 @@ Habilita el índice de contenidos justo debajo del título y metadatos del artí
 
 Para saber más sobre cómo personalizarlo, consulta [la documentación sobre la Tabla de contenido](/es/blog/toc/).
 
+### Enlace a los artículos anterior y siguiente
+
+| Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:------------------:|:-------------------:|
+|   ✅   |   ✅   |      ✅       |         ✅         |         ❌         |
+
+Muestra enlaces a los artículos anterior y siguiente en la parte inferior de los posts. Se ve así:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp", dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp", alt="Enlaces a los artículos anterior y siguiente", full_width=true) }}
+
+Para activar esta función, configura `show_previous_next_article_links = true`.
+
 ### Enlaces de retorno en notas al pie
 
 | Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
