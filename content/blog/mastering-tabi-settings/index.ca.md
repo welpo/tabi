@@ -235,16 +235,27 @@ Quan un usuari faci clic a la imatge o al títol d'un projecte, serà portat a l
 
 La pàgina del projecte individual es renderitza amb la plantilla predeterminada, tret que estableixis una altra, per exemple, `template = "info-page.html"`.
 
-### Archivo
+### Arxiu
 
-Agregar una página de archivo es similar a agregar una página de proyectos. Puedes crear un directorio en `content/archive/`. Allí, puedes crear un archivo `_index.md` con el siguiente bloque de metadatos:
+Afegir una pàgina d'arxiu és similar a afegir una pàgina de projectes. Pots crear un directori a `content/archive/`. Allà, pots crear un fitxer `_index.md` amb el següent encapçalament:
 
 ```toml
-title = "Archivo"
+title = "Arxiu"
 template = "archive.html"
 ```
 
-De forma predeterminada, el archivo listará las publicaciones ubicadas en `/blog/`. Si deseas cambiar esto, puedes establecer `section_path = "/otra-ruta/"` en la sección `[extra]` del archivo `_index.md`. Asegúrate de incluir la barra inclinada al final.
+Per defecte, l'arxiu llistarà les publicacions situades a `blog/`. Per personalitzar això, pots modificar la secció `[extra]` de l'arxiu `_index.md`:
+
+- **Per a un sol directori**: Estableix `section_path = "directori/"` per llistar publicacions d'un directori específic. Assegura't d'incloure la barra inclinada al final.
+
+- **Per a múltiples directoris**: Si vols agregar publicacions de diversos directoris, especifica la llista a `section_path`. Per exemple:
+
+  ```toml
+  [extra]
+  section_path = ["blog/", "notes/", "camí-tres/"]
+  ```
+
+**Nota**: la pàgina d'arxiu només llistarà publicacions que tinguin una data al seu encapçalament.
 
 ### Etiquetes
 
