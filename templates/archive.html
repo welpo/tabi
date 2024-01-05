@@ -9,16 +9,24 @@
 
 <div class="archive">
     <ul class="list-with-title">
-        {%- set section_path = section.extra.section_path | default(value="blog/") -%}
-        {%- if lang == config.default_language %}
-            {%- set section_item = get_section(path=section_path ~ "_index.md") %}
-        {%- else %}
-            {%- set section_item = get_section(path=section_path ~ "_index." ~ lang ~ ".md") %}
+        {%- set source_paths = section.extra.section_path | default(value="blog/") -%}
+        {%- if source_paths is iterable -%}
+            {%- set paths = source_paths -%}
+        {%- else -%}
+            {%- set paths = [source_paths] -%}
         {%- endif %}
+        {%- set all_posts = [] -%}
+        {%- for path in paths -%}
+            {%- if lang == config.default_language %}
+                {%- set section_item = get_section(path=path ~ "_index.md") -%}
+            {%- else %}
+                {%- set section_item = get_section(path=path ~ "_index." ~ lang ~ ".md") -%}
+            {%- endif %}
+            {%- set_global all_posts = all_posts | concat(with=section_item.pages) -%}
+        {%- endfor %}
 
-        {% for year, posts in
-        section_item.pages | group_by(attribute="year") %} {% if posts | length > 0
-        %}
+        {% for year, posts in all_posts | group_by(attribute="year") %}
+        {% if posts | length > 0 %}
         <li>
             <h2 class="listing-title">{{ year }}</h2>
             <ul class="listing">
@@ -29,13 +37,13 @@
                             {{ post.date | date(format="%d %b", locale=date_locale) }}
                         </span>
                     </div>
-                    <a href="{{ post.permalink }}" title="{{ post.title }}"
-                        >{{ post.title }}</a>
+                    <a href="{{ post.permalink }}" title="{{ post.title }}">{{ post.title }}</a>
                 </li>
                 {% endfor %}
             </ul>
-            {% endif %} {% endfor %}
         </li>
+        {% endif %}
+        {% endfor %}
     </ul>
 </div>
 

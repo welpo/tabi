@@ -235,14 +235,25 @@ La página del proyecto individual se renderiza con la plantilla predeterminada,
 
 ### Archivo
 
-Agregar una página de archivo es similar a agregar una página de proyectos. Puedes crear un directorio en `content/archive/`. Allí, puedes crear un archivo `_index.md` con el siguiente bloque de metadatos:
+Agregar una página de archivo es similar a agregar una página de proyectos. Puedes crear un directorio en `content/archive/`. Allí, puedes crear un archivo `_index.md` con el siguiente encabezado:
 
 ```toml
 title = "Archivo"
 template = "archive.html"
 ```
 
-De forma predeterminada, el archivo listará las publicaciones ubicadas en `/blog/`. Si deseas cambiar esto, puedes establecer `section_path = "/otra-ruta/"` en la sección `[extra]` del archivo `_index.md`. Asegúrate de incluir la barra inclinada al final.
+Por defecto, el archivo mostrará las publicaciones ubicadas en `blog/`. Para personalizar esto, puedes modificar la sección `[extra]` del archivo `_index.md`:
+
+- **Para una sola ruta**: Establece `section_path = "tu-ruta/"` para listar publicaciones de un directorio específico. Asegúrate de incluir la barra inclinada al final.
+
+- **Para múltiples rutas**: Si deseas agregar publicaciones de varios directorios, `section_path` puede especificarse como una lista de rutas. Por ejemplo:
+
+  ```toml
+  [extra]
+  section_path = ["blog/", "notas/", "ruta-tres/"]
+  ```
+
+**Nota**: la página de Archivo sólo listará publicaciones con fecha.
 
 ### Etiquetas
 

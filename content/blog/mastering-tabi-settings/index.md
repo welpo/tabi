@@ -244,7 +244,18 @@ title = "Archive"
 template = "archive.html"
 ```
 
-By default, the archive will list posts located in `/blog/`. If you'd like to change this, you can set `section_path = "/another-path/"` in the `[extra]` section of the `_index.md` file. Make sure to include the trailing slash.
+By default, the archive will list posts located in `blog/`. To customise this, you can modify the `[extra]` section of the `_index.md` file:
+
+- **For a single source path**: Set `section_path = "your-path/"` to list posts from a specific directory. Make sure to include the trailing slash.
+
+- **For multiple source paths**: If you want to aggregate posts from various directories, `section_path` can be specified as a list of paths. For example:
+
+  ```toml
+  [extra]
+  section_path = ["blog/", "notes/", "path-three/"]
+  ```
+
+**Note**: the Archive page will only list posts that have a date in their front matter.
 
 ### Tags
 
