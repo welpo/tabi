@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2023-12-31
+updated = 2024-01-05
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -135,9 +135,9 @@ stylesheets = ["css/custom.css", "css/another.css"]
 
 The browser theme colour is the colour that appears in the browser's tab bar:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/browser_theme_colour_light.webp", dark_src="blog/mastering-tabi-settings/img/browser_theme_colour_dark.webp" alt="tabi with a coloured browser theme") }}
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/browser_theme_color_light.webp", dark_src="blog/mastering-tabi-settings/img/browser_theme_color_dark.webp" alt="tabi with a coloured browser theme") }}
 
-You can set it in `config.toml` like `browser_theme_colour = "#087e96"`. If you'd like different colours for dark/light mode, you can set an array of colours with `browser_theme_colour = ["#ffffff", "#000000"]`. The first colour will be used for light mode, the second for dark mode.
+You can set it in `config.toml` like `browser_theme_color = "#087e96"`. If you'd like different colours for dark/light mode, you can set an array of colours with `browser_theme_color = ["#ffffff", "#000000"]`. The first colour will be used for light mode, the second for dark mode.
 
 This variable accepts any valid CSS colour, so you can use keywords (e.g. `blue`), hex codes (e.g. `#087e96`) or RGB/HSL values (e.g. `rgb(8, 126, 150)`).
 

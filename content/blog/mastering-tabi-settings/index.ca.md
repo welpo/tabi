@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2023-12-31
+updated = 2024-01-05
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -135,9 +135,9 @@ stylesheets = ["css/custom.css", "css/another.css"]
 
 El color del tema del navegador és el color que apareix a la barra de pestanyes del navegador:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/browser_theme_colour_light.webp", dark_src="blog/mastering-tabi-settings/img/browser_theme_colour_dark.webp" alt="pestanyes amb un tema de navegador de color") }}
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/browser_theme_color_light.webp", dark_src="blog/mastering-tabi-settings/img/browser_theme_color_dark.webp" alt="pestanyes amb un tema de navegador de color") }}
 
-Pots establir-ho a `config.toml` com a `browser_theme_colour = "#087e96"`. Si vols diferents colors per als modes clar/obscur, pots establir un conjunt de colors amb `browser_theme_colour = ["#ffffff", "#000000"]`. El primer color és per al mode clar, el segon per al fosc.
+Pots establir-ho a `config.toml` com a `browser_theme_color = "#087e96"`. Si vols diferents colors per als modes clar/obscur, pots establir un conjunt de colors amb `browser_theme_color = ["#ffffff", "#000000"]`. El primer color és per al mode clar, el segon per al fosc.
 
 Aquesta variable accepta qualsevol color CSS vàlid, així que pots utilitzar paraules clau (per exemple, `blue`), codis hexadecimals (per exemple, `#087e96`) o valors RGB/HSL (per exemple, `rgb(8, 126, 150)`).
 
