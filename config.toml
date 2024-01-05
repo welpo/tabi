@@ -115,7 +115,7 @@ show_previous_next_article_links = false
 
 # Whether the navigation for previous/next article should match the full width of the site (same as the navigation bar at the top) or the article width.
 # To match the navigation bar at the top, set it to true.
-previous_next_article_links_full_width = false
+previous_next_article_links_full_width = true
 
 # Quick navigation buttons.
 # Adds "go up" and "go to comments" buttons on the bottom right (hidden for mobile).
