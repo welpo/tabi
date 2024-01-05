@@ -415,6 +415,10 @@ Displays links to the previous and next articles at the bottom of posts. It look
 
 To activate this feature, set `show_previous_next_article_links = true`.
 
+By default, this navigation section will have the full width of the site (same as the navigation bar at the top). To make it narrower, matching the article width, set `previous_next_article_links_full_width = false`.
+
+This setting also follows the hierarchy.
+
 ### Footnote Backlinks
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |

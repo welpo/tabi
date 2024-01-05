@@ -411,6 +411,10 @@ Muestra enlaces a los artículos anterior y siguiente en la parte inferior de lo
 
 Para activar esta función, configura `show_previous_next_article_links = true`.
 
+Por defecto, esta sección de navegación tendrá el ancho completo del sitio (igual que la barra de navegación de la parte superior). Para hacerla más estrecha, coincidiendo con el ancho del artículo, establece `previous_next_article_links_full_width = false`.
+
+Esta opción también sigue la jerarquía.
+
 ### Enlaces de retorno en notas al pie
 
 | Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |

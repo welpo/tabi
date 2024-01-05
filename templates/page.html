@@ -23,6 +23,7 @@
     "show_remote_changes",
     "toc",
     "show_previous_next_article_links",
+    "previous_next_article_links_full_width",
 ] %}
 
 <table>
@@ -132,7 +133,10 @@
 
         {% if macros_settings::evaluate_setting_priority(setting="show_previous_next_article_links", page=page, default_global_value=true) == "true" %}
             {%- if page.lower or page.higher -%}
-            <nav class="full-width article-navigation">
+                {% if macros_settings::evaluate_setting_priority(setting="previous_next_article_links_full_width", page=page, default_global_value=true) == "true" %}
+                    {%- set full_width_class = "full-width" -%}
+                {% endif %}
+            <nav class="{{ full_width_class | default(value="") }} article-navigation">
                 <div>
                 {%- if page.lower -%}
                 <a href="{{ page.lower.permalink | safe }}">&#8249; {{ page.lower.title | truncate(length=100) }}</a>
@@ -147,6 +151,7 @@
             {%- endif -%}
         {%- endif -%}
 
+        {# Comments #}
         {% if comment_system %}
             {% include "partials/comments.html" %}
         {% endif %}

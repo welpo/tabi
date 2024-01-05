@@ -413,6 +413,10 @@ Mostra enllaços als articles anterior i següent a la part inferior dels posts.
 
 Per activar aquesta funció, estableix `show_previous_next_article_links = true`.
 
+Per defecte, aquesta secció de navegació tindrà l'amplada completa del lloc (igual que la barra de navegació de la part superior). Per fer-la més estreta, coincidint amb l'amplada de l'article, configura `previous_next_article_links_full_width = false`.
+
+Aquesta configuració també segueix la jerarquia.
+
 ### Enllaços de retorn a les notes a peu de pàgina
 
 | Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
