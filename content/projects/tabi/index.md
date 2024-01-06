@@ -17,7 +17,7 @@ social_media_card = "social_cards/projects_tabi.jpg"
 
 ## Features
 
-- [Set any language as default](https://welpo.github.io/tabi/blog/faq-languages/#how-do-i-set-a-default-language-for-my-site). Set your base site to Chinese, Spanish, French, Hindi… or any [other supported language](/i18n). The theme's interface will be translated accordingly.
+- [Set any language as default](https://welpo.github.io/tabi/blog/faq-languages/#how-do-i-set-a-default-language-for-my-site). Set your base site to Chinese, Spanish, French, Hindi… or any [other supported language](https://welpo.github.io/tabi/blog/faq-languages/#what-languages-does-tabi-support). The theme's interface will be translated accordingly.
 - [Integration with remote repositories](https://welpo.github.io/tabi/mastering-tabi-settings/#git-repository-integration) on GitHub, GitLab, Gitea & Codeberg for commit history and showing the site source.
 - Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
 - Thorough documentation. See [Mastering tabi Settings: A Comprehensive Guide](https://welpo.github.io/tabi/blog/mastering-tabi-settings/).
