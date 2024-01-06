@@ -1,7 +1,7 @@
 +++
 title = "Lost in Translation? Not with tabi's Multilingual Capabilities"
 date = 2023-09-12
-updated = 2023-10-27
+updated = 2024-01-06
 description = "Master the art of serving a global audience through tabi's built-in multilingual features. Learn how to change the default language, add multilingual support, and contribute your own translations."
 
 [taxonomies]
@@ -25,6 +25,7 @@ tabi supports the following languages:
 
 - Catalan
 - Chinese (Simplified)
+- Chinese (Traditional)
 - English
 - French
 - German
