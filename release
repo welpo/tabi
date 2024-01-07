@@ -30,11 +30,23 @@ git commit -m "🔖 chore(release): prepare for $VERSION_TAG"
 
 # Template for the tag description.
 export GIT_CLIFF_TEMPLATE="\
-    {% for group, commits in commits | group_by(attribute=\"group\") %}\
-    {{ group | striptags | trim | upper_first }}\
-    {% for commit in commits %}\
-        - {% if commit.breaking %}(**‼️BREAKING‼️**) {% endif %}{{ commit.message | upper_first }} ({{ commit.id | truncate(length=7, end=\"\") }})\
-    {% endfor %}\
+    {%- set breaking_header_shown = false -%}
+    {% for commit in commits -%}
+        {%- if commit.breaking and not breaking_header_shown %}
+            💥 BREAKING CHANGES 💥
+            {% set_global breaking_header_shown = true -%}
+        {%- endif %}
+        {%- if commit.breaking %}
+            - {{ commit.message | upper_first }} ({{ commit.id | truncate(length=7, end=\"\") }})\
+        {% endif -%}
+    {% endfor %}
+    {% for group, group_commits in commits | group_by(attribute=\"group\") %}
+        {{ group | striptags | trim | upper_first }}
+        {% for commit in group_commits -%}
+            {%- if not commit.breaking %}
+                - {{ commit.message | upper_first }} ({{ commit.id | truncate(length=7, end=\"\") }})\
+            {%- endif %}
+        {%- endfor %}
     {% endfor %}"
 
 # Generate the tag description.

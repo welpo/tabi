@@ -4,7 +4,37 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
-## [1.0.0] - 2023-12-29
+## unreleased
+
+### ✨ Features
+
+- *(archive)* Allow multiple sources in Archive ([#249](https://github.com/welpo/tabi/issues/249)) - ([b518e13](https://github.com/welpo/tabi/commit/b518e13c5db66a3d255fe5802d6386ce47c7f6b0))
+- *(socials)* Add Keybase icon ([#231](https://github.com/welpo/tabi/issues/231)) - ([58da40b](https://github.com/welpo/tabi/commit/58da40bdc014e2c970a6cd77d0a02234879983aa))
+- *(tags)* Dynamically adjust tag list columns based on tag count ([#233](https://github.com/welpo/tabi/issues/233)) - ([9fc45f2](https://github.com/welpo/tabi/commit/9fc45f288d12ab0d0e54b58d151673b62706fd81))
+- *(tags)* Add `compact_tags` option ([#232](https://github.com/welpo/tabi/issues/232)) - ([d257e02](https://github.com/welpo/tabi/commit/d257e022eaa455cadb31710b5ac56b4a4f3f9321))
+- Adjust width of prev/next link section ([#248](https://github.com/welpo/tabi/issues/248)) - ([d50a85b](https://github.com/welpo/tabi/commit/d50a85b5bc46a9144d678bb0f0e3034516b07bcb))
+- Add previous/next article navigation ([#246](https://github.com/welpo/tabi/issues/246)) - ([dac6bfc](https://github.com/welpo/tabi/commit/dac6bfc024d48e90a60e5b2697fd659ddb10e60c))
+- Add taxonomy list & single term templates ([#239](https://github.com/welpo/tabi/issues/239)) - ([39fc4ec](https://github.com/welpo/tabi/commit/39fc4ece612f009f1151bf5496d1d987c1b2e115))
+
+### 🐛 Bug Fixes
+
+- *(i18n)* Localise date in single taxonomy listing - ([0aef23b](https://github.com/welpo/tabi/commit/0aef23b3703ddedeff080525cbdede94451e7817))
+
+### 📝 Documentation
+
+- *(mastering-tabi)* Fix `browser_theme_color` spelling - ([e2baa36](https://github.com/welpo/tabi/commit/e2baa36ddc229e2a6a4519d312045a5b89669b0d))
+- *(mastering-tabi)* Favour GitHub discussions over comment section - ([cd2cbf3](https://github.com/welpo/tabi/commit/cd2cbf36fa6cc4eafff925c7907ce2598227a88c))
+
+### ♻️ Refactor
+
+- Format JS with Prettier ([#240](https://github.com/welpo/tabi/issues/240)) - ([b6a89e6](https://github.com/welpo/tabi/commit/b6a89e63700e27534df2226d2b8bd6063a03cf26))
+
+## 1.0.0 - 2023-12-29
+
+### 💥 BREAKING CHANGES 💥
+
+- *(theme-switcher)* Respect `theme_default` when JS is enabled ([#224](https://github.com/welpo/tabi/issues/224)) - ([bf31f7f](https://github.com/welpo/tabi/commit/bf31f7ff47cd06fb98cfe7ac78fba7b050eb778b))
+
 
 ### ✨ Features
 
@@ -53,7 +83,7 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - *(socials)* Add Nostr icon - ([79af568](https://github.com/welpo/tabi/commit/79af5680784fe0d16644d8102863725d5bb909e5))
 - *(socials)* Add Google Scholar icon - ([dd76c18](https://github.com/welpo/tabi/commit/dd76c18faa8633713832fafe3dcf1a8b05ed0335))
 - *(templates)* Introduce info-page template ([#147](https://github.com/welpo/tabi/issues/147)) - ([6f269ee](https://github.com/welpo/tabi/commit/6f269eee4af079966f7b7912370be884e83e5de5))
-- *(theme-switcher)* [**‼️BREAKING‼️**] Respect `theme_default` when JS is enabled ([#224](https://github.com/welpo/tabi/issues/224)) - ([bf31f7f](https://github.com/welpo/tabi/commit/bf31f7ff47cd06fb98cfe7ac78fba7b050eb778b))
+- *(theme-switcher)* [**💥BREAKING💥**] Respect `theme_default` when JS is enabled ([#224](https://github.com/welpo/tabi/issues/224)) - ([bf31f7f](https://github.com/welpo/tabi/commit/bf31f7ff47cd06fb98cfe7ac78fba7b050eb778b))
 - *(theme-switcher)* Add theme reset button ([#198](https://github.com/welpo/tabi/issues/198)) - ([afbf401](https://github.com/welpo/tabi/commit/afbf4017e2c5cfde14e9f53bf72466b675ad05bc))
 - *(theme-switcher)* Hide button if JS is disabled - ([113a7f4](https://github.com/welpo/tabi/commit/113a7f4e5d4efd87646f8c26f81b7754ea7f41e2))
 - *(title)* Add `invert_title_order` config option ([#142](https://github.com/welpo/tabi/issues/142)) - ([9acaba6](https://github.com/welpo/tabi/commit/9acaba6e35c0b8438f069820380035af7bbb27b8))
@@ -121,16 +151,16 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - Display word count when hovering over read time - ([d9cd64e](https://github.com/welpo/tabi/commit/d9cd64e5a40c154c89d91b8b649348bcabfafb71))
 - Responsive (and centered) images - ([9242fa4](https://github.com/welpo/tabi/commit/9242fa4389cd2ce418c2074aa00afc8107e753d0))
 - Clean js code - ([2f80b0b](https://github.com/welpo/tabi/commit/2f80b0b5ad481d53d5621f84bffd3415fc078672))
-- Add dimmable-image shortcode for dark theme - ([174a37e](https://github.com/welpo/tabi/commit/174a37e221dc0b38eb1160bbf320c7b03b73d901))
 - Change default theme to OS setting - ([26ad170](https://github.com/welpo/tabi/commit/26ad170d9fee316fb3eb131cc664cd1eed9e1cfe))
+- Add dimmable-image shortcode for dark theme - ([174a37e](https://github.com/welpo/tabi/commit/174a37e221dc0b38eb1160bbf320c7b03b73d901))
 - Showcase invertable image - ([0bae051](https://github.com/welpo/tabi/commit/0bae0515ec4579e26a827dba907f890198df01eb))
 - Showcase invertable image - ([2f4695d](https://github.com/welpo/tabi/commit/2f4695dd0bcec55357f1c8829fbdf5aee8d76f9a))
 - Add Archive page to features. - ([999861b](https://github.com/welpo/tabi/commit/999861ba583706b63e73fb7f675bedacaaf5bce4))
 - Remove Archive from TODO - ([559c97d](https://github.com/welpo/tabi/commit/559c97d1f3a6f2e1da760ccb6adb5a20b5fe5b44))
 - Add archive screen - ([3434cbc](https://github.com/welpo/tabi/commit/3434cbc92630d7a60963f51990216facd586e546))
 - Change markdown description style - ([c29697c](https://github.com/welpo/tabi/commit/c29697c4212d59588b75013c473790cd97445164))
-- Set Table of Contents per page, not globally - ([32d4a93](https://github.com/welpo/tabi/commit/32d4a9358ce14c9dce687520e7c58cb93d07a7b6))
 - Add markdown support to index page - ([c6ec7c7](https://github.com/welpo/tabi/commit/c6ec7c750588562c3a14c1ee0f2a7d00f467bbd6))
+- Set Table of Contents per page, not globally - ([32d4a93](https://github.com/welpo/tabi/commit/32d4a9358ce14c9dce687520e7c58cb93d07a7b6))
 
 ### 🐛 Bug Fixes
 
@@ -221,6 +251,7 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - Add end-of-file newline - ([099f094](https://github.com/welpo/tabi/commit/099f094f317b84b5748a9a83796fabfb29dafc7f))
 - _archive import typo - ([55d928a](https://github.com/welpo/tabi/commit/55d928a3d59279eb5c54c861c293de3714342c48))
 - Capitalise Archive title - ([31f70ff](https://github.com/welpo/tabi/commit/31f70fffafd0a0adc0cae41368bbfbd25fb27880))
+- Update theme screenshot in /projects - ([32ca1d3](https://github.com/welpo/tabi/commit/32ca1d3e9e8823ec05a629addbdcead5b54e2a18))
 - Set aspect-ratio on banner-home-ig - ([c6c8379](https://github.com/welpo/tabi/commit/c6c83797bff349ee0d12972264b98de0f48ea1f8))
 - Make navbar width and margin same as content - ([1c1e124](https://github.com/welpo/tabi/commit/1c1e124115a1188ee9669451e5400d2873eee558))
 - Add end-of-file newline - ([2cef2e5](https://github.com/welpo/tabi/commit/2cef2e5502c871d5bafde2296882a2de96bc8ca6))
@@ -228,7 +259,6 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - Consistent date format & remove invalid <time> tags - ([1242b90](https://github.com/welpo/tabi/commit/1242b909a28250459b6f89d4670454ce934b0b24))
 - Remove duplicated meta description - ([4cef13a](https://github.com/welpo/tabi/commit/4cef13a7dd473e91a6875a0037b3e282f5460571))
 - Remove space in atom url - ([3f4259d](https://github.com/welpo/tabi/commit/3f4259d3f4669de110dea2f5b5d42b8341e72b57))
-- Update theme screenshot in /projects - ([32ca1d3](https://github.com/welpo/tabi/commit/32ca1d3e9e8823ec05a629addbdcead5b54e2a18))
 - Set consistent padding between nav and main content - ([6a4620a](https://github.com/welpo/tabi/commit/6a4620a33b1c468e4e0bbbe7fc4eca140decdc62))
 - Improve responsiveness of home banner - ([1f11e84](https://github.com/welpo/tabi/commit/1f11e8480ef33427f5e3f74a8660a584817fa695))
 - Ensure text remains visible during webfont load - ([4d57e09](https://github.com/welpo/tabi/commit/4d57e097d1b84ad5099fd9cdf39f905458a67d17))
@@ -275,11 +305,11 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - Increase body left/right margins - ([b76f9bb](https://github.com/welpo/tabi/commit/b76f9bbf44228c046e0221580033a8c388fa4a07))
 - Hide horizontal scrollbar in codeblocks - ([d7b0191](https://github.com/welpo/tabi/commit/d7b01914f843b5904b06572d7921f8ebaebd77d9))
 - Darken codeblock highlight colour - ([fcc2caf](https://github.com/welpo/tabi/commit/fcc2cafcdcfd5eb14df2208829c33404feb9ae7a))
-- Increase spacing in archive - ([d1e51f5](https://github.com/welpo/tabi/commit/d1e51f5866086426890c687c6135a3bf1d7bbcde))
 - Reduce bold font-weight - ([f5603ac](https://github.com/welpo/tabi/commit/f5603acbdb8968126deb3818af2cef018ed79b75))
 - Add codeblock background colours - ([8415535](https://github.com/welpo/tabi/commit/8415535e1337a00c9b23e524ade3734d94fc0965))
 - Round tables borders - ([7c3463c](https://github.com/welpo/tabi/commit/7c3463c0fe1539a56202f1b36da951156a931552))
 - Redesign code block header - ([700037a](https://github.com/welpo/tabi/commit/700037afe5e3d7e74faef4776ef158f3af34fc02))
+- Increase spacing in archive - ([d1e51f5](https://github.com/welpo/tabi/commit/d1e51f5866086426890c687c6135a3bf1d7bbcde))
 - Remove newlines around summary - ([67173f2](https://github.com/welpo/tabi/commit/67173f27cdfe440126a47a4fced93e01f92d53c3))
 - Smaller title and "Recent Posts" text - ([eb8f630](https://github.com/welpo/tabi/commit/eb8f630fde1fecc04c067832283f7a16c945184a))
 - Add styling to infobox - ([0494a54](https://github.com/welpo/tabi/commit/0494a54f574b7983d4fe4bef073f730bb899787e))
@@ -289,9 +319,9 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - Standarise margin in projects and archive - ([da38822](https://github.com/welpo/tabi/commit/da3882294c6b6a04e8d2f8f91c6412ead4496d3d))
 - Set custom header anchor - ([5bdb804](https://github.com/welpo/tabi/commit/5bdb8045a6a517cd1ce5be945d555faea0b84922))
 - Add dash to toggle identifier - ([c47198f](https://github.com/welpo/tabi/commit/c47198facf72abf7c2a1b84ac4a9a8adaa4c1272))
+- Widen article body; less reading saccades - ([cfef1f6](https://github.com/welpo/tabi/commit/cfef1f65d79c41ba4be26cbd8683be53c874ff6f))
 - Center wrapped menu items - ([5d91a0d](https://github.com/welpo/tabi/commit/5d91a0dcacd0eca6f7ce6d24e421f9c40b85bdf2))
 - Widen article body; less reading saccades - ([00c7d15](https://github.com/welpo/tabi/commit/00c7d153c61b18c6d3a11b6f8958464b44747e54))
-- Widen article body; less reading saccades - ([cfef1f6](https://github.com/welpo/tabi/commit/cfef1f65d79c41ba4be26cbd8683be53c874ff6f))
 - Round down code font-size - ([4af487e](https://github.com/welpo/tabi/commit/4af487ecedb71f98cb0ec1e2b38c11def7029973))
 - Standarise font rendering across browsers - ([67aad3e](https://github.com/welpo/tabi/commit/67aad3ef74472b40f878f7475a782e411cb75fdf))
 - Reduce header-content margin in mobile - ([3275e8a](https://github.com/welpo/tabi/commit/3275e8a5092cfd46b424f6e071c4d5412d66ff34))
@@ -358,12 +388,12 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - Reduce headers' size - ([978af11](https://github.com/welpo/tabi/commit/978af11495face1127dc30946989ecac78257207))
 - Change posts' dates to show off Archive - ([fcc7a31](https://github.com/welpo/tabi/commit/fcc7a3127030ebcab12524647886530aacf3dbac))
 - Larger section titles - ([4fe8643](https://github.com/welpo/tabi/commit/4fe8643a1a54837fd0aff85f0092ea6b4c1bd430))
+- Add styles for archive screen - ([19caf3f](https://github.com/welpo/tabi/commit/19caf3fab117121e6d7e168cb4f189e44ae1f038))
 - Change switcher margin and width/height to rem - ([9637e05](https://github.com/welpo/tabi/commit/9637e053c3779db7f24ea66d2738892bdd00d012))
 - Increase padding between navs - ([973e0f7](https://github.com/welpo/tabi/commit/973e0f76f8ae0bb23a40e8099f72efd1e1c16115))
 - Set consistent underline in headers - ([fa781db](https://github.com/welpo/tabi/commit/fa781db0e4f10d05117f35218b74d36b4605187f))
 - Set equal padding on social icons - ([b8e372c](https://github.com/welpo/tabi/commit/b8e372c733a1052f41b90c9a115ba5bc44f3b8b8))
 - Increase padding between navs - ([fcb8db4](https://github.com/welpo/tabi/commit/fcb8db43a60fd485927211e7c747186db5a7324d))
-- Add styles for archive screen - ([19caf3f](https://github.com/welpo/tabi/commit/19caf3fab117121e6d7e168cb4f189e44ae1f038))
 - Change various font sizes and date format - ([06dae7a](https://github.com/welpo/tabi/commit/06dae7a71172be63fe93a65319827e9e687c6a63))
 - Update screenshots and minor changes - ([a3ff46b](https://github.com/welpo/tabi/commit/a3ff46be97d2792cfddb826911c97257ec7f3789))
 

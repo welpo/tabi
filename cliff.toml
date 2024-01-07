@@ -21,16 +21,30 @@ body = """
     {% if previous.version %}\
         ## [{{ version | trim_start_matches(pat="v") }}](<REPO>/compare/{{ previous.version }}..{{ version }}) - {{ timestamp | date(format="%Y-%m-%d") }}
     {% else %}\
-        ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+        ## {{ version | trim_start_matches(pat="v") }} - {{ timestamp | date(format="%Y-%m-%d") }}
     {% endif %}\
 {% else %}\
-    ## [unreleased]
+    ## unreleased
 {% endif %}\
 
-{% macro commit(commit) -%}
-    - {% if commit.scope %}*({{ commit.scope }})* {% endif %}{% if commit.breaking %}[**‼️BREAKING‼️**] {% endif %}\
+{% macro commit(commit, in_breaking_section=false) -%}
+    - {% if commit.scope %}*({{ commit.scope }})* {% endif %}{% if commit.breaking and not in_breaking_section %}[**‼️BREAKING‼️**] {% endif %}\
         {{ commit.message | upper_first }} - ([{{ commit.id | truncate(length=7, end="") }}](<REPO>/commit/{{ commit.id }}))\
 {% endmacro -%}
+
+{%- set breaking_header_shown = false -%}
+{% for commit in commits -%}
+    {% if commit.breaking and not breaking_header_shown -%}
+        {% raw %}\n### 💥 BREAKING CHANGES 💥\n{% endraw %}
+        {% set_global breaking_header_shown = true %}
+    {%- endif -%}
+    {%- if commit.breaking -%}
+        {{ self::commit(commit=commit, in_breaking_section=true) }}
+    {% endif -%}
+{%- endfor -%}
+{%- if breaking_header_shown == true -%}
+    {% raw %}\n{% endraw %}\
+{%- endif -%}
 
 {% for group, commits in commits | group_by(attribute="group") %}
     ### {{ group | striptags | trim | upper_first }}
@@ -47,6 +61,7 @@ body = """
     {% endfor -%}
 {% endfor %}\n
 """
+
 # remove the leading and trailing whitespace from the template
 trim = true
 # changelog footer
