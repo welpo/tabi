@@ -1,6 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="{{ config.base_url | safe }}">
 
     {# Site title #}
     <title>{%- include "partials/title.html" -%}</title>
@@ -153,6 +154,32 @@
 
     {%- if config.extra.analytics.service -%}
         {%- include "partials/analytics.html" -%}
+    {%- endif -%}
+
+    {# Search #}
+    {%- if config.build_search_index -%}
+        {%- if config.search.index_format -%}
+            {%- set search_index_format = config.search.index_format -%}
+        {%- elif config.extra.index_format -%}
+            {# Necessary to support Zola 0.17.X, as it doesn't have access to config.search.index_format #}
+            {# See: https://github.com/getzola/zola/issues/2165 #}
+            {%- set search_index_format = config.extra.index_format -%}
+        {%- else -%}
+            {%- set search_index_format = "elasticlunr_json" -%}
+        {%- endif -%}
+
+        {%- if search_index_format == "elasticlunr_javascript" -%}
+            <script defer src="{{ get_url(path='search_index.' ~ lang ~ '.js', cachebust=true) | safe }}"></script>
+        {%- endif -%}
+
+        {# Main search script #}
+        <script defer src="{{ get_url(path='js/searchElasticlunr.min.js', cachebust=true) | safe }}"></script>
+
+        {# Support correct stemming and stop word filtering in non-English search #}
+        {%- if lang != "en" -%}
+            <script defer src="{{ get_url(path='js/lunr/lunrStemmerSupport.min.js') | safe }}"></script>
+            <script defer src="{{ get_url(path='js/lunr/lunr.' ~ lang ~ '.min.js') | safe }}"></script>
+        {%- endif -%}
     {%- endif -%}
 
 </head>

@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-01-05
+updated = 2024-01-07
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -31,6 +31,57 @@ tabi has a hierarchy that allows you to customise your site at different levels.
 In all cases, tabi's settings are set in the `[extra]` section.
 
 For settings which follow this hierarchy, the value set on a page overrides the value for a section, which overrides the global value. In short: the more specific the setting, the higher priority it has, or `page > section > config.toml`.
+
+---
+
+## Search
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❌  |   ❌    |      ✅       |         ❌        |         ✅          |
+
+tabi supports accessible, local multi-lingual search with [Elasticlunr](http://elasticlunr.com/). To enable it, you need to:
+
+1. Set a `default_language` in `config.toml`.
+2. Set `build_search_index = true`.
+3. Optionally, configure the `[search]`.
+
+Here's an example configuration:
+
+```toml
+base_url = "https://example.com"
+default_language = "en"
+build_search_index = true
+
+[search]
+index_format = "elasticlunr_json" # Or the less efficient "elasticlunr_javascript".
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+```
+
+**Note**: for Chinese/Japanese search support, you need to use a [custom Zola build](https://github.com/getzola/zola/blob/master/Cargo.toml#L54-L55).
+
+### Considerations for Zola 0.17.X Users
+
+Zola 0.17.X doesn't provide access to the `search.index_format` variable ([bug report](https://github.com/getzola/zola/issues/2165)). When using tabi, this variable defaults to the more efficient JSON index. However, due to [another bug](https://github.com/getzola/zola/issues/2193) fixed in 0.18.0, the JSON index for multi-language sites is not generated correctly.
+
+Users with Zola versions prior to 0.18.0 who want to use the JavaScript index need to set the `index_format` variable in two places:
+
+```toml
+[search]
+index_format = "elasticlunr_javascript"
+
+[extra]
+index_format = "elasticlunr_javascript"
+```
+
+This ensures tabi loads the right files. We recommend upgrading to Zola 0.18.0 or later for optimal functionality.
+
+### Implementation Details
+
+For technical details about the search implementation in tabi, including when the index loads, accessibility features, and other specifics, see the [Pull Request #250](https://github.com/welpo/tabi/pull/250).
 
 ---
 

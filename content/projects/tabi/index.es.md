@@ -25,6 +25,7 @@ social_media_card = "social_cards/es_projects_tabi.jpg"
 - Resaltado de sintaxis de código con colores basados en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - Soporte para [comentarios usando giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/es/blog/comments/).
 - Todo el JavaScript se puede [deshabilitar completamente](https://welpo.github.io/tabi/es/blog/javascript/).
+- [Búsqueda local](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#busqueda) con una interfaz accesible y multilingüe.
 - [Codificación de correo](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#encoded-email) para protección contra spam.
 - [Mapa de sitio web estilizado y legible por humanos](https://welpo.github.io/tabi/sitemap.xml).
 - [Feed de Atom estilizado y legible por humanos](https://welpo.github.io/tabi/es/atom.xml).

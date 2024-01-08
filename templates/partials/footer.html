@@ -115,4 +115,9 @@
     {%- if email_needs_decoding -%}
         <script src="{{ get_url(path='js/decodeMail.min.js') }}" async></script>
     {%- endif -%}
+
+    {# Modal structure for search #}
+    {%- if config.build_search_index -%}
+    {% include "partials/search_modal.html" %}
+    {%- endif -%}
 </footer>

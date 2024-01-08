@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-01-05
+updated = 2024-01-07
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -31,6 +31,57 @@ tabi té una jerarquia que permet personalitzar el teu lloc a diferents nivells.
 En tots els casos, les opcions de tabi es configuren a la secció `[extra]`.
 
 Per a les configuracions que segueixen aquesta jerarquia, el valor establert a una pàgina reemplaça el valor d'una secció, que al seu torn reemplaça el valor global. En resum: com més específica sigui la configuració, més prioritat tindrà, o `pàgina > secció > config.toml`.
+
+---
+
+## Cerca
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:--------------------:|:--------------------:|
+|   ❌   |   ❌   |       ✅      |          ❌          |          ✅          |
+
+tabi permet cerca local accessible i multilingüe amb [Elasticlunr](http://elasticlunr.com/). Per activar-la, necessites:
+
+1. Establir un `default_language` a `config.toml`.
+2. Establir `build_search_index = true`.
+3. Opcionalment, configurar la secció `[search]`.
+
+Per exemple:
+
+```toml
+base_url = "https://example.com"
+default_language = "en"
+build_search_index = true
+
+[search]
+index_format = "elasticlunr_json" # O el menys eficient "elasticlunr_javascript".
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+```
+
+**Nota**: per suport de cerca en Xinès/Japonès, necessites utilitzar una [build personalitzada de Zola](https://github.com/getzola/zola/blob/master/Cargo.toml#L54-L55). Addicionalment, actualment no hi ha suport per a la cerca en català.
+
+### Consideracions per a usuaris de Zola 0.17.X
+
+Zola 0.17.X no proporciona accés a la variable `search.index_format` ([informe del bug](https://github.com/getzola/zola/issues/2165)). En utilitzar tabi, s'assumeix l'ús de l'índex JSON, que és més eficient. No obstant això, a causa d'[un altre bug](https://github.com/getzola/zola/issues/2193) solucionat en 0.18.0, l'índex JSON per a llocs multilingües no es genera correctament.
+
+Els usuaris amb versions de Zola anteriors a 0.18.0 que vulguin utilitzar l'índex JavaScript necessiten establir la variable `index_format` a dos llocs:
+
+```toml
+[search]
+index_format = "elasticlunr_javascript"
+
+[extra]
+index_format = "elasticlunr_javascript"
+```
+
+Això assegura que tabi carregui els arxius correctes. Recomanem actualitzar a Zola 0.18.0 o posterior per a una funcionalitat òptima.
+
+### Detalls d'implementació
+
+Per a detalls tècnics sobre la implementació de la cerca, incloent quan es carrega l'índex, característiques d'accessibilitat i altres detalls, consulta el [Pull Request #250](https://github.com/welpo/tabi/pull/250).
 
 ---
 

@@ -1,7 +1,7 @@
 +++
 title = "Sin JavaScript obligatorio"
 date = 2023-01-06
-updated = 2023-10-06
+updated = 2024-01-07
 description = "JavaScript solo se utiliza cuando HTML y CSS no son suficientes."
 
 [taxonomies]
@@ -15,6 +15,8 @@ social_media_card = "social_cards/es_blog_javascript.jpg"
 Este tema no requiere JavaScript de manera obligatoria. Opcionalmente, puede cargar una cantidad mínima de JavaScript para añadir algunas características que son imposibles de lograr con solo HTML y CSS.
 
 ## Opciones habilitadas globalmente
+
+- [**Búsqueda**](@/blog/mastering-tabi-settings/index.es.md#busqueda). Habilitada estableciendo un idioma por defecto y `build_search_index = true` en la sección principal de `config.toml`. (~23KB de JavaScript)
 
 - El **interruptor de modo claro/oscuro** puede habilitarse configurando `theme_switcher = true` en la sección `[extra]` de tu `config.toml` (~1KB de JavaScript).
 

@@ -5,6 +5,7 @@ author = "welpo"
 generate_feed = true
 compile_sass = true
 minify_html = true
+build_search_index = true
 
 # To translate the entire theme, there must be a file with the same ISO 639-1
 # (or IETF BCP 47) Code in the `i18n` folder of your site or the tabi theme
@@ -14,6 +15,22 @@ minify_html = true
 default_language = "en"
 
 taxonomies = [{name = "tags", feed = true}]
+
+[search]
+# Whether to include the title of the page/section in the index.
+include_title = true
+# Whether to include the description of the page/section in the index.
+include_description = true
+# Whether to include the path of the page/section in the index.
+include_path = true
+# Whether to include the rendered content of the page/section in the index.
+include_content = true
+# At which character to truncate the content to. Useful if you have a lot of pages and the index would
+# become too big to load on the site. Defaults to not being set.
+# truncate_content_length = 100
+# Wether to produce the search index as a javascript file or as a JSON file.
+# Accepted value "elasticlunr_javascript" or "elasticlunr_json".
+index_format = "elasticlunr_json"
 
 [markdown]
 highlight_code = true
@@ -30,6 +47,7 @@ generate_feed = true
 compile_sass = true
 minify_html = true
 taxonomies = [{name = "tags", feed = true}]
+build_search_index = true
 
 [languages.ca]
 title = "~/tabi"
@@ -42,6 +60,13 @@ taxonomies = [{name = "tags", feed = true}]
 [extra]
 # Check out the documentation (or the comments below) to learn how to customise tabi:
 # https://welpo.github.io/tabi/blog/mastering-tabi-settings/
+
+# Search index format.
+# For Zola 0.17.X users only.
+# This MUST MATCH the setting in [search].index_format.
+# Example: If [search].index_format is "elasticlunr_javascript", set:
+# index_format = "elasticlunr_javascript"
+# index_format = ""
 
 # Enable JavaScript theme toggler to allow users to switch between dark/light mode.
 # If disabled, your site will only use the theme specified in the `default_theme` variable.
