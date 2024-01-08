@@ -22,6 +22,13 @@ homepage = "https://osc.garden"
 # Check out the documentation (or the comments below) to learn how to customise tabi:
 # https://welpo.github.io/tabi/blog/mastering-tabi-settings/
 
+# Search index format.
+# For Zola 0.17.X users only.
+# This MUST MATCH the setting in [search].index_format.
+# Example: If [search].index_format is "elasticlunr_javascript", set:
+# index_format = "elasticlunr_javascript" here.
+# index_format = ""
+
 # Enable JavaScript theme toggler to allow users to switch between dark/light mode.
 # If disabled, your site will only use the theme specified in the `default_theme` variable.
 theme_switcher = true

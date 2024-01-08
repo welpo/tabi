@@ -1,7 +1,7 @@
 +++
 title = "Sense JavaScript obligatori"
 date = 2023-01-06
-updated = 2023-10-06
+updated = 2024-01-07
 description = "JavaScript només s'utilitza quan HTML i CSS no són suficients."
 
 [taxonomies]
@@ -15,6 +15,8 @@ social_media_card = "social_cards/ca_blog_javascript.jpg"
 Aquest tema no requereix JavaScript obligatori. Opcionalment, pot carregar una quantitat mínima per afegir algunes característiques que són impossibles d'aconseguir amb HTML i CSS.
 
 ## Opcions habilitades globalment
+
+- [**Cerca**](@/blog/mastering-tabi-settings/index.ca.md#cerca). Activada establint un idioma per defecte i `build_search_index = true` a la secció principal de `config.toml`. (~23KB de JavaScript)
 
 - L'**interruptor de mode clar/fosc** es pot habilitar configurant `theme_switcher = true` a la secció `[extra]` del teu `config.toml` (~1KB de JavaScript).
 

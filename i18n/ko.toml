@@ -18,6 +18,13 @@ privacy = "개인정보 처리방침"
 site_statistics = "사이트 통계"
 sitemap = "사이트맵"
 
+# Search.
+search = "검색"
+search_icon_title = "클릭하거나 $SHORTCUT을 눌러 검색 열기"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "검색 지우기"  # Title of the X icon next to search input.
+result = "결과"  # "1 result"
+results = "결과"  # "3 results" (also used for 0 results).
+
 # Navigation.
 read_more = "더 읽기"
 post = "게시물"

@@ -14,6 +14,13 @@ privacy = "隱私政策"  # Machine translated.
 site_statistics = "網站統計"  # Machine translated.
 sitemap = "網站地圖"  # Machine translated.
 
+# Search.
+search = "搜尋"
+search_icon_title = "點擊或按 $SHORTCUT 來開啟搜尋"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "清除搜尋"  # Title of the X icon next to search input.
+result = "結果"  # "1 result"
+results = "結果"  # "3 results" (also used for 0 results).
+
 # Navigation.
 read_more = "閱讀全文"
 post = "文章"

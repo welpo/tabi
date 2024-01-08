@@ -168,6 +168,18 @@ details summary {
     cursor: pointer;
 }
 
+.interactive-icon {
+    cursor: pointer;
+
+    path {
+        fill: var(--text-color);
+    }
+
+    :hover path {
+        fill: var(--meta-color);
+    }
+}
+
 .article-navigation {
     display: flex;
     margin-top: 2rem;

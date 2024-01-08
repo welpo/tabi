@@ -18,6 +18,13 @@ privacy = "プライバシーポリシー"
 site_statistics = "サイト統計"
 sitemap = "サイトマップ"
 
+# Search.
+search = "検索"
+search_icon_title = "$SHORTCUTを押すか、クリックして検索を開く"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "検索をクリア"  # Title of the X icon next to search input.
+result = "結果"  # "1 result"
+results = "結果"  # "3 results" (also used for 0 results).
+
 # Navigation.
 read_more = "続きを読む"
 post = "投稿"

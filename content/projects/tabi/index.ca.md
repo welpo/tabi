@@ -24,6 +24,7 @@ social_media_card = "social_cards/ca_projects_tabi.jpg"
 - Puntuació perfecta en Lighthouse (Rendiment, Accessibilitat, Millors Pràctiques i SEO).
 - Ressaltat de sintaxi de codi amb colors basats en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - Suport per a [comentaris usant giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/ca/blog/comments/).
+- [Cerca local](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#cerca) amb una interfície accessible i multilingüe.
 - Tot el JavaScript es pot [deshabilitar completament](https://welpo.github.io/tabi/ca/blog/javascript/).
 - [Codificació de correu](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#correu-electronic-codificat) per a protecció contra spam.
 - [Mapa del lloc estilitzat i llegible per humans](https://welpo.github.io/tabi/sitemap.xml).

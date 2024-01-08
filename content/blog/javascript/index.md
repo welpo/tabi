@@ -1,7 +1,7 @@
 +++
 title = "No mandatory JavaScript"
 date = 2023-01-06
-updated = 2023-10-06
+updated = 2024-01-07
 description = "JavaScript is only used when HTML and CSS aren't enough."
 
 [taxonomies]
@@ -15,6 +15,8 @@ social_media_card = "social_cards/blog_javascript.jpg"
 This theme has no mandatory JavaScript. Optionally, it can load a minimal amount to add some features that are impossible to achieve with HTML and CSS.
 
 ## Globally enabled settings
+
+- [**Search**](@/blog/mastering-tabi-settings/index.md#search). Enabled by setting a default language and `build_search_index = true` on the main section of `config.toml`. (~23KB of JavaScript)
 
 - The **light/dark mode switch** can be enabled by setting `theme_switcher = true` in the `[extra]` section of your `config.toml` (~1KB of JavaScript).
 

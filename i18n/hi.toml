@@ -16,6 +16,13 @@ privacy = "गोपनीयता नीति"
 site_statistics = "साइट सांख्यिकी"
 sitemap = "साइटमैप"
 
+# Search.
+search = "खोजें"
+search_icon_title = "$SHORTCUT दबाएँ या क्लिक करें खोज खोलने के लिए"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "खोज साफ करें"  # Title of the X icon next to search input.
+result = "परिणाम"  # "1 result"
+results = "परिणाम"  # "3 results" (also used for 0 results).
+
 # Navigation.
 read_more = "और पढ़ें"
 post = "पोस्ट"

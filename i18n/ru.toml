@@ -14,6 +14,13 @@ privacy = "политика конфиденциальности"
 site_statistics = "статистика сайта"
 sitemap = "карта сайта"
 
+# Search.
+search = "Поиск"
+search_icon_title = "Нажмите или используйте $SHORTCUT для открытия поиска"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "Очистить поиск"  # Title of the X icon next to search input.
+result = "результат"  # "1 result"
+results = "результаты"  # "3 results" (also used for 0 results).
+
 # Navigation.
 read_more = "Читать далее"
 post = "пост"

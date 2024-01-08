@@ -14,6 +14,13 @@ privacy = "política de privadesa"
 site_statistics = "estadístiques del lloc"
 sitemap = "mapa del lloc"
 
+# Search.
+search = "Cercar"
+search_icon_title = "Fes clic o prem $SHORTCUT per obrir la cerca"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "Esborrar cerca"  # Title of the X icon next to search input.
+result = "resultat"  # "1 result"
+results = "resultats"  # "3 results" (also used for 0 results).
+
 # Navigation.
 read_more = "Llegir més"
 post = "entrada"

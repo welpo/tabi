@@ -14,6 +14,13 @@ privacy = "política de privacidade"
 site_statistics = "estatísticas do site"
 sitemap = "mapa do site"
 
+# Search.
+search = "Pesquisar"
+search_icon_title = "Clique ou pressione $SHORTCUT para abrir a pesquisa"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "Limpar pesquisa"  # Title of the X icon next to search input.
+result = "resultado"  # "1 result"
+results = "resultados"  # "3 results" (also used for 0 results).
+
 # Navigation.
 read_more = "Ler mais"
 post = "publicação"
