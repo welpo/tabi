@@ -1,7 +1,7 @@
 +++
 title = "¿Lost in Translation? Explora las capacidades multilingües de tabi"
 date = 2023-09-12
-updated = 2023-10-27
+updated = 2024-01-11
 description = "Descubre cómo tabi te ayuda a conectar con una audiencia global gracias a sus funciones multilingües. Aprende a cambiar el idioma por defecto, añadir más idiomas y aportar tus propias traducciones."
 
 [taxonomies]
@@ -51,7 +51,7 @@ title = "~/tabi"
 default_language = "zh"
 ```
 
-tabi se traducirá a ese idioma, si está soportado.
+Si el valor de `default_language` coincide con el nombre de un archivo TOML en el [directorio `i18n`](https://github.com/welpo/tabi/tree/main/i18n), todos los textos de tabi se traducirán a ese idioma.
 
 ## ¿Cómo gestiona tabi el soporte multilingüe?
 

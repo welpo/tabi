@@ -1,7 +1,7 @@
 +++
 title = "Lost in Translation? Explora les capacitats multilingües de tabi"
 date = 2023-09-12
-updated = 2023-10-27
+updated = 2024-01-11
 description = "Descobreix com tabi t'ajuda a connectar amb una audiència global gràcies a les seves funcions multilingües. Aprèn a canviar la llengua per defecte, afegir més llengües i aportar les teves pròpies traduccions."
 
 [taxonomies]
@@ -51,7 +51,7 @@ title = "~/tabi"
 default_language = "zh"
 ```
 
-tabi es traduirà a aquesta llengua, si està suportada.
+Si el valor de `default_language` coincideix amb el nom d'un fitxer TOML al [directori `i18n`](https://github.com/welpo/tabi/tree/main/i18n), tots els textos de tabi es traduiran a aquest idioma.
 
 ## Com gestiona tabi el suport multilingüe?
 
@@ -104,7 +104,7 @@ Assegura't de copiar tot el fitxer per a aquest idioma primer, o el tema utilitz
 
 ## Què passa si falta una traducció o està incompleta?
 
-Si una cadena no es troba en el fitxer d'idioma, tabi recorrerà a la cadena predeterminada en català.
+Si una cadena no es troba en el fitxer d'idioma, tabi utilitzarà a la cadena predeterminada en anglès.
 
 ## El meu idioma no està suportat. Puc contribuir amb una traducció?
 

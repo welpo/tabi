@@ -1,7 +1,7 @@
 +++
 title = "Lost in Translation? Not with tabi's Multilingual Capabilities"
 date = 2023-09-12
-updated = 2024-01-06
+updated = 2024-01-11
 description = "Master the art of serving a global audience through tabi's built-in multilingual features. Learn how to change the default language, add multilingual support, and contribute your own translations."
 
 [taxonomies]
@@ -49,10 +49,10 @@ For instance, if you want (Simplified) Chinese to be the primary language, simpl
 ```toml, hl_lines=03
 base_url = "https://welpo.github.io/tabi"
 title = "~/tabi"
-default_language = "zh"
+default_language = "zh-Hans"
 ```
 
-All of tabi's text strings will be translated to that language, if supported.
+If the value of `default_language` matches the name of a TOML file in the [`i18n` directory](https://github.com/welpo/tabi/tree/main/i18n), all of tabi's text strings will be translated to that language.
 
 ## How does tabi handle multilingual support?
 
