@@ -42,8 +42,8 @@ export GIT_CLIFF_TEMPLATE="\
     {% endfor %}
     {% for group, group_commits in commits | group_by(attribute=\"group\") %}
         {{ group | striptags | trim | upper_first }}
-        {% for commit in group_commits -%}
-            - {{ commit.message | upper_first }} ({{ commit.id | truncate(length=7, end=\"\") }})\
+        {% for commit in group_commits %}
+            - {% if commit.breaking %}[**‼️BREAKING‼️**] {% endif %}{{ commit.message | upper_first }} ({{ commit.id | truncate(length=7, end=\"\") }})\
         {%- endfor %}
     {% endfor %}"
 

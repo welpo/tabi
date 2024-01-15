@@ -39,7 +39,7 @@ body = """
         {% set_global breaking_header_shown = true %}
     {%- endif -%}
     {%- if commit.breaking -%}
-        {{ self::commit(commit=commit, in_breaking_section=true) }}
+        {{ self::commit(commit=commit, in_breaking_section=true) -}}
     {% endif -%}
 {%- endfor -%}
 {%- if breaking_header_shown == true -%}
