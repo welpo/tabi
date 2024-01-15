@@ -62,3 +62,17 @@ echo
 
 echo "Release $VERSION_TAG is ready. Don't forget to push the changes and the tag:"
 echo "git push && git push --tags"
+echo
+echo "Once that's done, you should see your tag on GitHub:"
+
+remote_url=$(git remote get-url origin)
+
+# Check if the URL is in SSH format (git@).
+if [[ "$remote_url" == git@github.com:* ]]; then
+    https_url="https://github.com/${remote_url#git@github.com:}"
+    https_url="${https_url%.git}"
+else
+    https_url="${remote_url%.git}"
+fi
+
+echo "${https_url}/tags"
