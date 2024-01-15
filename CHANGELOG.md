@@ -4,7 +4,11 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
-## unreleased
+## [2.0.0](https://github.com/welpo/tabi/compare/v1.0.0..v2.0.0) - 2024-01-15
+
+### 💥 BREAKING CHANGES 💥
+
+- *(i18n)* Force config.toml copyright translation ([#255](https://github.com/welpo/tabi/issues/255)) - ([9f39b7f](https://github.com/welpo/tabi/commit/9f39b7fe47721eb7aaea04d8b9ee66b557b7eabf))- *(home-banner)* Force proper header.img path ([#254](https://github.com/welpo/tabi/issues/254)) - ([1a1a7f7](https://github.com/welpo/tabi/commit/1a1a7f79f2c278f4f6e9bfefe7c73089533b2eaf))
 
 ### ✨ Features
 
@@ -12,16 +16,19 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - *(socials)* Add Keybase icon ([#231](https://github.com/welpo/tabi/issues/231)) - ([58da40b](https://github.com/welpo/tabi/commit/58da40bdc014e2c970a6cd77d0a02234879983aa))
 - *(tags)* Dynamically adjust tag list columns based on tag count ([#233](https://github.com/welpo/tabi/issues/233)) - ([9fc45f2](https://github.com/welpo/tabi/commit/9fc45f288d12ab0d0e54b58d151673b62706fd81))
 - *(tags)* Add `compact_tags` option ([#232](https://github.com/welpo/tabi/issues/232)) - ([d257e02](https://github.com/welpo/tabi/commit/d257e022eaa455cadb31710b5ac56b4a4f3f9321))
+- Add search functionality ([#250](https://github.com/welpo/tabi/issues/250)) - ([906bc9d](https://github.com/welpo/tabi/commit/906bc9dec09328dc41cee516a20babd09494f1dd))
 - Adjust width of prev/next link section ([#248](https://github.com/welpo/tabi/issues/248)) - ([d50a85b](https://github.com/welpo/tabi/commit/d50a85b5bc46a9144d678bb0f0e3034516b07bcb))
 - Add previous/next article navigation ([#246](https://github.com/welpo/tabi/issues/246)) - ([dac6bfc](https://github.com/welpo/tabi/commit/dac6bfc024d48e90a60e5b2697fd659ddb10e60c))
 - Add taxonomy list & single term templates ([#239](https://github.com/welpo/tabi/issues/239)) - ([39fc4ec](https://github.com/welpo/tabi/commit/39fc4ece612f009f1151bf5496d1d987c1b2e115))
 
 ### 🐛 Bug Fixes
 
+- *(archive)* Group multi-sourced posts by year - ([2c8a21d](https://github.com/welpo/tabi/commit/2c8a21d558f5f6b3a208a3caf9a88b01c92ca0e1))
 - *(i18n)* Localise date in single taxonomy listing - ([0aef23b](https://github.com/welpo/tabi/commit/0aef23b3703ddedeff080525cbdede94451e7817))
 
 ### 📝 Documentation
 
+- *(faq-languages)* Clarify setting default language - ([c4e5a65](https://github.com/welpo/tabi/commit/c4e5a65908431188c0b95038ac10bd0d4a1cff8d))
 - *(mastering-tabi)* Fix `browser_theme_color` spelling - ([e2baa36](https://github.com/welpo/tabi/commit/e2baa36ddc229e2a6a4519d312045a5b89669b0d))
 - *(mastering-tabi)* Favour GitHub discussions over comment section - ([cd2cbf3](https://github.com/welpo/tabi/commit/cd2cbf36fa6cc4eafff925c7907ce2598227a88c))
 
@@ -29,12 +36,16 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 
 - Format JS with Prettier ([#240](https://github.com/welpo/tabi/issues/240)) - ([b6a89e6](https://github.com/welpo/tabi/commit/b6a89e63700e27534df2226d2b8bd6063a03cf26))
 
+### 🗑️ Deprecations
+
+- *(home-banner)* [**‼️BREAKING‼️**] Force proper header.img path ([#254](https://github.com/welpo/tabi/issues/254)) - ([1a1a7f7](https://github.com/welpo/tabi/commit/1a1a7f79f2c278f4f6e9bfefe7c73089533b2eaf))
+- *(i18n)* [**‼️BREAKING‼️**] Force config.toml copyright translation ([#255](https://github.com/welpo/tabi/issues/255)) - ([9f39b7f](https://github.com/welpo/tabi/commit/9f39b7fe47721eb7aaea04d8b9ee66b557b7eabf))
+
 ## 1.0.0 - 2023-12-29
 
 ### 💥 BREAKING CHANGES 💥
 
 - *(theme-switcher)* Respect `theme_default` when JS is enabled ([#224](https://github.com/welpo/tabi/issues/224)) - ([bf31f7f](https://github.com/welpo/tabi/commit/bf31f7ff47cd06fb98cfe7ac78fba7b050eb778b))
-
 
 ### ✨ Features
 
@@ -83,7 +94,7 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - *(socials)* Add Nostr icon - ([79af568](https://github.com/welpo/tabi/commit/79af5680784fe0d16644d8102863725d5bb909e5))
 - *(socials)* Add Google Scholar icon - ([dd76c18](https://github.com/welpo/tabi/commit/dd76c18faa8633713832fafe3dcf1a8b05ed0335))
 - *(templates)* Introduce info-page template ([#147](https://github.com/welpo/tabi/issues/147)) - ([6f269ee](https://github.com/welpo/tabi/commit/6f269eee4af079966f7b7912370be884e83e5de5))
-- *(theme-switcher)* [**💥BREAKING💥**] Respect `theme_default` when JS is enabled ([#224](https://github.com/welpo/tabi/issues/224)) - ([bf31f7f](https://github.com/welpo/tabi/commit/bf31f7ff47cd06fb98cfe7ac78fba7b050eb778b))
+- *(theme-switcher)* [**‼️BREAKING‼️**] Respect `theme_default` when JS is enabled ([#224](https://github.com/welpo/tabi/issues/224)) - ([bf31f7f](https://github.com/welpo/tabi/commit/bf31f7ff47cd06fb98cfe7ac78fba7b050eb778b))
 - *(theme-switcher)* Add theme reset button ([#198](https://github.com/welpo/tabi/issues/198)) - ([afbf401](https://github.com/welpo/tabi/commit/afbf4017e2c5cfde14e9f53bf72466b675ad05bc))
 - *(theme-switcher)* Hide button if JS is disabled - ([113a7f4](https://github.com/welpo/tabi/commit/113a7f4e5d4efd87646f8c26f81b7754ea7f41e2))
 - *(title)* Add `invert_title_order` config option ([#142](https://github.com/welpo/tabi/issues/142)) - ([9acaba6](https://github.com/welpo/tabi/commit/9acaba6e35c0b8438f069820380035af7bbb27b8))
