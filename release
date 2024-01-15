@@ -37,18 +37,18 @@ export GIT_CLIFF_TEMPLATE="\
             {% set_global breaking_header_shown = true -%}
         {%- endif %}
         {%- if commit.breaking %}
-            - {{ commit.message | upper_first }} ({{ commit.id | truncate(length=7, end=\"\") }})\
+            - {{ commit.message | upper_first -}}
         {% endif -%}
     {% endfor %}
     {% for group, group_commits in commits | group_by(attribute=\"group\") %}
         {{ group | striptags | trim | upper_first }}
         {% for commit in group_commits %}
-            - {% if commit.breaking %}[**‼️BREAKING‼️**] {% endif %}{{ commit.message | upper_first }} ({{ commit.id | truncate(length=7, end=\"\") }})\
+            - {% if commit.breaking %}[‼️BREAKING‼️] {% endif %}{{ commit.message | upper_first }}
         {%- endfor %}
     {% endfor %}"
 
 # Generate the tag description.
-changelog=$(git cliff --tag "$VERSION_TAG" --unreleased --strip all)
+changelog=$(git cliff --config cliff-tag.toml --tag "$VERSION_TAG" --unreleased --strip all)
 
 # Create a signed and annotated tag.
 git tag -s -a "$VERSION_TAG" -m "Release $VERSION_TAG" -m "$changelog"
