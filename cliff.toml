@@ -36,9 +36,9 @@ body = """
 {% for commit in commits -%}
     {% if commit.breaking and not breaking_header_shown -%}
         {% raw %}\n### 💥 BREAKING CHANGES 💥\n{% endraw %}
-        {% set_global breaking_header_shown = true %}
+        {%- set_global breaking_header_shown = true -%}
     {%- endif -%}
-    {%- if commit.breaking -%}
+    {%- if commit.breaking %}
         {{ self::commit(commit=commit, in_breaking_section=true) -}}
     {% endif -%}
 {%- endfor -%}

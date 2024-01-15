@@ -8,7 +8,8 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 
 ### 💥 BREAKING CHANGES 💥
 
-- *(i18n)* Force config.toml copyright translation ([#255](https://github.com/welpo/tabi/issues/255)) - ([9f39b7f](https://github.com/welpo/tabi/commit/9f39b7fe47721eb7aaea04d8b9ee66b557b7eabf))- *(home-banner)* Force proper header.img path ([#254](https://github.com/welpo/tabi/issues/254)) - ([1a1a7f7](https://github.com/welpo/tabi/commit/1a1a7f79f2c278f4f6e9bfefe7c73089533b2eaf))
+- *(i18n)* Force config.toml copyright translation ([#255](https://github.com/welpo/tabi/issues/255)) - ([9f39b7f](https://github.com/welpo/tabi/commit/9f39b7fe47721eb7aaea04d8b9ee66b557b7eabf))
+- *(home-banner)* Force proper header.img path ([#254](https://github.com/welpo/tabi/issues/254)) - ([1a1a7f7](https://github.com/welpo/tabi/commit/1a1a7f79f2c278f4f6e9bfefe7c73089533b2eaf))
 
 ### ✨ Features
 
