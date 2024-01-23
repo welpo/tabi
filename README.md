@@ -94,7 +94,15 @@ theme = "tabi"
 title = "Your Site Title"
 ```
 
-4. Create a `content/_index.md` file with the following content:
+4. Configure code block highlighting in your `config.toml`:
+
+```toml
+[markdown]
+highlight_code = true
+highlight_theme = "css"
+```
+
+5. Create a `content/_index.md` file with the following content:
 
 ```
 +++
@@ -111,7 +119,7 @@ If you want to serve your blog posts from a different path, such as `blog/`, add
 section_path = "blog/_index.md"
 ```
 
-5. If you want an introduction section (see screenshot above), add these lines to `content/_index.md`:
+6. If you want an introduction section (see screenshot above), add these lines to `content/_index.md`:
 
 ```
 [extra]
@@ -120,7 +128,7 @@ header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Your Nam
 
 The content outside the front matter will be rendered between the header title and the posts listing. In the screenshot above, it's the text that reads "tabi is a fast, lightweight, and modern Zola theme…".
 
-6. If you want a multilingual site, you will need to set up each language. In `config.toml`, set the title and taxonomies for each language, like:
+7. If you want a multilingual site, you will need to set up each language. In `config.toml`, set the title and taxonomies for each language, like:
 
 ```toml
 [languages.es]
