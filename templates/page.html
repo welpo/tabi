@@ -139,20 +139,24 @@
                 {% if macros_settings::evaluate_setting_priority(setting="invert_previous_next_article_links", page=page, default_global_value=true) == "true" %}
                     {% if page.higher %}
                         {% set article_links_left_side_link = page.higher.permalink %}
-                        {% set article_links_left_side_title = prev_label ~ " - " ~ page.higher.title %}
+                        {% set article_links_left_side_label = prev_label %}
+                        {% set article_links_left_side_title = page.higher.title %}
                     {% endif %}
                     {% if page.lower %}
                         {% set article_links_right_side_link = page.lower.permalink %}
-                        {% set article_links_right_side_title = next_label ~ " - " ~ page.lower.title %}
+                        {% set article_links_right_side_label = next_label %}
+                        {% set article_links_right_side_title = page.lower.title %}
                     {% endif %}
                 {% else %}
                     {% if page.lower %}
                         {% set article_links_left_side_link = page.lower.permalink %}
-                        {% set article_links_left_side_title = next_label ~ " - " ~ page.lower.title %}
+                        {% set article_links_left_side_label = next_label %}
+                        {% set article_links_left_side_title = page.lower.title %}
                     {% endif %}
                     {% if page.higher %}
                         {% set article_links_right_side_link = page.higher.permalink %}
-                        {% set article_links_right_side_title = prev_label ~ " - " ~ page.higher.title %}
+                        {% set article_links_right_side_label = prev_label %}
+                        {% set article_links_right_side_title = page.higher.title %}
                     {% endif %}
                 {% endif %}
                 {% if macros_settings::evaluate_setting_priority(setting="previous_next_article_links_full_width", page=page, default_global_value=true) == "true" %}
@@ -160,13 +164,15 @@
                 {% endif %}
             <nav class="{{ full_width_class | default(value="") }} article-navigation">
                 <div>
-                {%- if article_links_left_side_link and article_links_left_side_title -%}
-                <a href="{{ article_links_left_side_link | safe }}" aria-label="{{ article_links_left_side_title | truncate(length=100) }}">← {{ article_links_left_side_title | truncate(length=100) }}</a>
+                {%- if article_links_left_side_link and article_links_left_side_label and article_links_left_side_title -%}
+                <a href="{{ article_links_left_side_link | safe }}" aria-label="{{ article_links_left_side_label }}" aria-describedby="article_links_left_side_title">← {{ article_links_left_side_label }}</a>
+                <p id="article_links_left_side_title">{{ article_links_left_side_title | truncate(length=100) }}</p>
                 {%- endif -%}
                 </div>
                 <div>
-                {%- if article_links_right_side_link and article_links_right_side_title -%}
-                <a href="{{ article_links_right_side_link | safe }}" aria-label="{{ article_links_right_side_title | truncate(length=100) }}">{{ article_links_right_side_title | truncate(length=100) }} →</a>
+                {%- if article_links_right_side_link and article_links_right_side_label and article_links_right_side_title -%}
+                <a href="{{ article_links_right_side_link | safe }}" aria-label="{{ article_links_right_side_label }}" aria-describedby="article_links_right_side_title">{{ article_links_right_side_label }} →</a>
+                <p id="article_links_right_side_title">{{ article_links_right_side_title | truncate(length=100) }}</p>
                 {%- endif -%}
                 </div>
             </nav>
