@@ -138,25 +138,25 @@
                 {% set prev_label = macros_translate::translate(key="prev", default="Prev", language_strings=language_strings) %}
                 {% if macros_settings::evaluate_setting_priority(setting="invert_previous_next_article_links", page=page, default_global_value=true) == "true" %}
                     {% if page.higher %}
-                        {% set article_links_left_side_link = page.higher.permalink %}
-                        {% set article_links_left_side_label = prev_label %}
-                        {% set article_links_left_side_title = page.higher.title %}
+                        {% set left_link = page.higher.permalink %}
+                        {% set left_label = prev_label %}
+                        {% set left_title = page.higher.title %}
                     {% endif %}
                     {% if page.lower %}
-                        {% set article_links_right_side_link = page.lower.permalink %}
-                        {% set article_links_right_side_label = next_label %}
-                        {% set article_links_right_side_title = page.lower.title %}
+                        {% set right_link = page.lower.permalink %}
+                        {% set right_label = next_label %}
+                        {% set right_title = page.lower.title %}
                     {% endif %}
                 {% else %}
                     {% if page.lower %}
-                        {% set article_links_left_side_link = page.lower.permalink %}
-                        {% set article_links_left_side_label = next_label %}
-                        {% set article_links_left_side_title = page.lower.title %}
+                        {% set left_link = page.lower.permalink %}
+                        {% set left_label = next_label %}
+                        {% set left_title = page.lower.title %}
                     {% endif %}
                     {% if page.higher %}
-                        {% set article_links_right_side_link = page.higher.permalink %}
-                        {% set article_links_right_side_label = prev_label %}
-                        {% set article_links_right_side_title = page.higher.title %}
+                        {% set right_link = page.higher.permalink %}
+                        {% set right_label = prev_label %}
+                        {% set right_title = page.higher.title %}
                     {% endif %}
                 {% endif %}
                 {% if macros_settings::evaluate_setting_priority(setting="previous_next_article_links_full_width", page=page, default_global_value=true) == "true" %}
@@ -164,15 +164,15 @@
                 {% endif %}
             <nav class="{{ full_width_class | default(value="") }} article-navigation">
                 <div>
-                {%- if article_links_left_side_link and article_links_left_side_label and article_links_left_side_title -%}
-                <a href="{{ article_links_left_side_link | safe }}" aria-label="{{ article_links_left_side_label }}" aria-describedby="article_links_left_side_title">← {{ article_links_left_side_label }}</a>
-                <p aria-hidden="true" id="article_links_left_side_title">{{ article_links_left_side_title | truncate(length=100, end="…") }}</p>
+                {%- if left_link and left_label and left_title -%}
+                <a href="{{ left_link | safe }}" aria-label="{{ left_label }}" aria-describedby="left_title">← {{ left_label }}</a>
+                <p aria-hidden="true" id="left_title">{{ left_title | truncate(length=100, end="…") }}</p>
                 {%- endif -%}
                 </div>
                 <div>
-                {%- if article_links_right_side_link and article_links_right_side_label and article_links_right_side_title -%}
-                <a href="{{ article_links_right_side_link | safe }}" aria-label="{{ article_links_right_side_label }}" aria-describedby="article_links_right_side_title">{{ article_links_right_side_label }} →</a>
-                <p aria-hidden="true" id="article_links_right_side_title">{{ article_links_right_side_title | truncate(length=100, end="…") }}</p>
+                {%- if right_link and right_label and right_title -%}
+                <a href="{{ right_link | safe }}" aria-label="{{ right_label }}" aria-describedby="right_title">{{ right_label }} →</a>
+                <p aria-hidden="true" id="right_title">{{ right_title | truncate(length=100, end="…") }}</p>
                 {%- endif -%}
                 </div>
             </nav>
