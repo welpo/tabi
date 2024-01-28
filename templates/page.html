@@ -139,12 +139,12 @@
             <nav class="{{ full_width_class | default(value="") }} article-navigation">
                 <div>
                 {%- if page.lower -%}
-                <a href="{{ page.lower.permalink | safe }}">&#8249; {{ page.lower.title | truncate(length=100) }}</a>
+                <a href="{{ page.lower.permalink | safe }}">← {{ page.lower.title | truncate(length=100) }}</a>
                 {%- endif -%}
                 </div>
                 <div>
                 {%- if page.higher -%}
-                <a href="{{ page.higher.permalink | safe }}"> {{ page.higher.title | truncate(length=100) }} &#8250;</a>
+                <a href="{{ page.higher.permalink | safe }}"> {{ page.higher.title | truncate(length=100) }} →</a>
                 {%- endif -%}
                 </div>
             </nav>
