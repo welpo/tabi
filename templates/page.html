@@ -23,6 +23,7 @@
     "show_remote_changes",
     "toc",
     "show_previous_next_article_links",
+    "invert_previous_next_article_links",
     "previous_next_article_links_full_width",
 ] %}
 
@@ -133,18 +134,45 @@
 
         {% if macros_settings::evaluate_setting_priority(setting="show_previous_next_article_links", page=page, default_global_value=true) == "true" %}
             {%- if page.lower or page.higher -%}
+                {% set next_label = macros_translate::translate(key="next", default="Next", language_strings=language_strings) %}
+                {% set prev_label = macros_translate::translate(key="prev", default="Prev", language_strings=language_strings) %}
+                {% if macros_settings::evaluate_setting_priority(setting="invert_previous_next_article_links", page=page, default_global_value=true) == "true" %}
+                    {% if page.higher %}
+                        {% set left_link = page.higher.permalink %}
+                        {% set left_label = prev_label %}
+                        {% set left_title = page.higher.title %}
+                    {% endif %}
+                    {% if page.lower %}
+                        {% set right_link = page.lower.permalink %}
+                        {% set right_label = next_label %}
+                        {% set right_title = page.lower.title %}
+                    {% endif %}
+                {% else %}
+                    {% if page.lower %}
+                        {% set left_link = page.lower.permalink %}
+                        {% set left_label = next_label %}
+                        {% set left_title = page.lower.title %}
+                    {% endif %}
+                    {% if page.higher %}
+                        {% set right_link = page.higher.permalink %}
+                        {% set right_label = prev_label %}
+                        {% set right_title = page.higher.title %}
+                    {% endif %}
+                {% endif %}
                 {% if macros_settings::evaluate_setting_priority(setting="previous_next_article_links_full_width", page=page, default_global_value=true) == "true" %}
                     {%- set full_width_class = "full-width" -%}
                 {% endif %}
             <nav class="{{ full_width_class | default(value="") }} article-navigation">
                 <div>
-                {%- if page.lower -%}
-                <a href="{{ page.lower.permalink | safe }}">&#8249; {{ page.lower.title | truncate(length=100) }}</a>
+                {%- if left_link and left_label and left_title -%}
+                <a href="{{ left_link | safe }}" aria-label="{{ left_label }}" aria-describedby="left_title">← {{ left_label }}</a>
+                <p aria-hidden="true" id="left_title">{{ left_title | truncate(length=100, end="…") }}</p>
                 {%- endif -%}
                 </div>
                 <div>
-                {%- if page.higher -%}
-                <a href="{{ page.higher.permalink | safe }}"> {{ page.higher.title | truncate(length=100) }} &#8250;</a>
+                {%- if right_link and right_label and right_title -%}
+                <a href="{{ right_link | safe }}" aria-label="{{ right_label }}" aria-describedby="right_title">{{ right_label }} →</a>
+                <p aria-hidden="true" id="right_title">{{ right_title | truncate(length=100, end="…") }}</p>
                 {%- endif -%}
                 </div>
             </nav>

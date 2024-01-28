@@ -196,6 +196,14 @@ details summary {
         text-align: right;
     }
 
+    div p {
+        color: var(--meta-color);
+        font-weight: 300;
+        line-height: 1.2rem;
+        font-family: var(--sans-serif-font);
+        letter-spacing: -0.4px;
+    }
+
     @media (max-width: 600px) {
         flex-direction: column;
 
