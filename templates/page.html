@@ -166,13 +166,13 @@
                 <div>
                 {%- if article_links_left_side_link and article_links_left_side_label and article_links_left_side_title -%}
                 <a href="{{ article_links_left_side_link | safe }}" aria-label="{{ article_links_left_side_label }}" aria-describedby="article_links_left_side_title">← {{ article_links_left_side_label }}</a>
-                <p id="article_links_left_side_title">{{ article_links_left_side_title | truncate(length=100, end="…") }}</p>
+                <p aria-hidden="true" id="article_links_left_side_title">{{ article_links_left_side_title | truncate(length=100, end="…") }}</p>
                 {%- endif -%}
                 </div>
                 <div>
                 {%- if article_links_right_side_link and article_links_right_side_label and article_links_right_side_title -%}
                 <a href="{{ article_links_right_side_link | safe }}" aria-label="{{ article_links_right_side_label }}" aria-describedby="article_links_right_side_title">{{ article_links_right_side_label }} →</a>
-                <p id="article_links_right_side_title">{{ article_links_right_side_title | truncate(length=100, end="…") }}</p>
+                <p aria-hidden="true" id="article_links_right_side_title">{{ article_links_right_side_title | truncate(length=100, end="…") }}</p>
                 {%- endif -%}
                 </div>
             </nav>
