@@ -483,7 +483,7 @@ To reverse the order (next articles on the right and previous articles on the le
 By default, this navigation section will have the full width of the site (same as the navigation bar at the top).
 To make it narrower, matching the article width, set `previous_next_article_links_full_width = false`.
 
-All those settings also follows the hierarchy.
+All of these settings follow the hierarchy.
 
 ### Footnote Backlinks
 
