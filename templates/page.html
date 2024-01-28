@@ -134,23 +134,25 @@
 
         {% if macros_settings::evaluate_setting_priority(setting="show_previous_next_article_links", page=page, default_global_value=true) == "true" %}
             {%- if page.lower or page.higher -%}
+                {% set next_label = macros_translate::translate(key="next", default="Next", language_strings=language_strings) %}
+                {% set prev_label = macros_translate::translate(key="prev", default="Prev", language_strings=language_strings) %}
                 {% if macros_settings::evaluate_setting_priority(setting="invert_previous_next_article_links", page=page, default_global_value=true) == "true" %}
                     {% if page.higher %}
                         {% set article_links_left_side_link = page.higher.permalink %}
-                        {% set article_links_left_side_title = page.higher.title %}
+                        {% set article_links_left_side_title = prev_label ~ " - " ~ page.higher.title %}
                     {% endif %}
                     {% if page.lower %}
                         {% set article_links_right_side_link = page.lower.permalink %}
-                        {% set article_links_right_side_title = page.lower.title %}
+                        {% set article_links_right_side_title = next_label ~ " - " ~ page.lower.title %}
                     {% endif %}
                 {% else %}
                     {% if page.lower %}
                         {% set article_links_left_side_link = page.lower.permalink %}
-                        {% set article_links_left_side_title = page.lower.title %}
+                        {% set article_links_left_side_title = next_label ~ " - " ~ page.lower.title %}
                     {% endif %}
                     {% if page.higher %}
                         {% set article_links_right_side_link = page.higher.permalink %}
-                        {% set article_links_right_side_title = page.higher.title %}
+                        {% set article_links_right_side_title = prev_label ~ " - " ~ page.higher.title %}
                     {% endif %}
                 {% endif %}
                 {% if macros_settings::evaluate_setting_priority(setting="previous_next_article_links_full_width", page=page, default_global_value=true) == "true" %}
