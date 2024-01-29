@@ -4,6 +4,16 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.1.0](https://github.com/welpo/tabi/compare/v2.0.0..v2.1.0) - 2024-01-29
+
+### ✨ Features
+
+- Allow inverting previous/next article links ([#261](https://github.com/welpo/tabi/issues/261)) - ([b011f58](https://github.com/welpo/tabi/commit/b011f58da6cc5e973d9a5a416bea998b93fed2e4))
+
+### 📝 Documentation
+
+- *(README)* Add CSS code block setup in required config - ([c9d6b62](https://github.com/welpo/tabi/commit/c9d6b629078f70f4392818a17a4a7ac6b11c0480))
+
 ## [2.0.0](https://github.com/welpo/tabi/compare/v1.0.0..v2.0.0) - 2024-01-15
 
 ### 💥 BREAKING CHANGES 💥
