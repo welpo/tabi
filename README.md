@@ -48,6 +48,8 @@ tabi has a perfect score on Google's Lighthouse audit:
 
 ## Quick start
 
+⚠️ **Note**: to facilitate updates, it's better to install tabi as a submodule or to clone it into your project (read below).
+
 Once you have installed Zola 0.17.0 or newer:
 
 ```bash
