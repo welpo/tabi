@@ -3,6 +3,8 @@
 {% set self_hosted_url = config.extra.analytics.self_hosted_url | default(value="") %}
 
 {% if analytics_service == "goatcounter" %}
+    {# Prevent non-demo sites from using the demo analytics account #}
+    {% if self_hosted_url == "https://tabi-stats.osc.garden" and config.base_url == "https://welpo.github.io/tabi" or self_hosted_url != "https://tabi-stats.osc.garden" %}
     <script async
     {% if self_hosted_url %}
         data-goatcounter="{{ self_hosted_url ~ '/count' }}"
@@ -12,6 +14,7 @@
         src="https://gc.zgo.at/count.js"
         {% endif %}
     ></script>
+    {% endif %}
 
 {% elif analytics_service == "umami" %}
     <script async defer
