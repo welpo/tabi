@@ -46,20 +46,6 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] [Social links](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-icons).
 - [X] [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 
-## Quick start
-
-⚠️ **Note**: to facilitate updates, it's better to install tabi as a submodule or to clone it into your project (read below).
-
-Once you have installed Zola 0.17.0 or newer:
-
-```bash
-git clone https://github.com/welpo/tabi.git
-cd tabi
-zola serve
-```
-
-Open http://127.0.0.1:1111 in the browser.
-
 ## Installation
 
 To add tabi to you existing Zola site:
