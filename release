@@ -92,19 +92,11 @@ export GIT_CLIFF__CHANGELOG__BODY=$(cat <<'EOF'
 EOF
 )
 
-# Same as cliff.toml, except we don't replace issue number with a link (which aren't clickable on tag descriptions).
-export GIT_CLIFF__GIT__PREPROCESSORS=$(cat <<'EOF'
-# Remove trailing whitespace.
-{ pattern = ' +$', replace = "" },
-# Replace multiple spaces with a single space.
-{ pattern = ' +', replace = " " },
-# Remove gitmoji, both actual UTF emoji and :emoji:
-{ pattern = ' *(:\w+:|[\p{Emoji_Presentation}\p{Extended_Pictographic}\u{200D}]) *', replace = "" }
-EOF
-)
-
 # Generate the tag description.
 changelog=$(git cliff --tag "$VERSION_TAG" --unreleased --strip all)
+
+# Undo the pre_processing that adds PR links.
+changelog=$(echo "$changelog" | sed -E 's/\[\#([0-9]+)\]\(https:\/\/github\.com\/welpo\/[^\/]+\/issues\/([0-9]+)\)/#\1/g')
 
 # Create a signed and annotated tag.
 git tag -s -a "$VERSION_TAG" -m "Release $VERSION_TAG" -m "$changelog"
