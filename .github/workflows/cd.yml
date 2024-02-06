@@ -1,0 +1,35 @@
+name: Continuous Deployment
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  deploy:
+    name: Deploy and release
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate the changelog
+        uses: orhun/git-cliff-action@main
+        id: git-cliff
+        with:
+          config: cliff.toml
+          args: --latest --strip all
+        env:
+          OUTPUT: CHANGES.md
+
+      - name: Create GitHub release
+        run: |
+          gh release create ${{ github.ref_name }} \
+            --title "Release ${{ github.ref_name }}" \
+            --notes "${{ steps.git-cliff.outputs.content }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -3,6 +3,12 @@
 # Inspired by https://github.com/orhun/git-cliff/blob/main/release.sh
 set -eu
 
+# Check for a clean working directory.
+if [ -n "$(git status --porcelain)" ]; then
+    echo "Your working directory is dirty. Commit or stash your changes before running this script."
+    exit 1
+fi
+
 # Check if a version tag is provided.
 if [ "$#" -eq 1 ]; then
     VERSION_TAG=$1
@@ -109,12 +115,8 @@ git show $VERSION_TAG
 echo
 
 echo "Release $VERSION_TAG is ready. Don't forget to push the changes and the tag:"
-echo "git push && git push --tags"
-echo
-echo "Once that's done, you should see your tag on GitHub:"
 
 remote_url=$(git remote get-url origin)
-
 # Check if the URL is in SSH format (git@).
 if [[ "$remote_url" == git@github.com:* ]]; then
     https_url="https://github.com/${remote_url#git@github.com:}"
@@ -123,4 +125,4 @@ else
     https_url="${remote_url%.git}"
 fi
 
-echo "${https_url}/tags"
+echo "git push && git push --tags && open ${https_url}/tags"
