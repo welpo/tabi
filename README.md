@@ -1,3 +1,21 @@
+<p align="center">
+    <a href="CONTRIBUTING.md#pull-requests">
+        <img src="https://img.shields.io/badge/PRs-welcome-0?style=flat-square&labelColor=202b2d&color=087e96" alt="PRs welcome"></a>
+    <a href="https://github.com/welpo/tabi/graphs/contributors">
+        <img src="https://img.shields.io/github/contributors/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Contributors"></a>
+    <a href="https://github.com/welpo/tabi/forks">
+        <img src="https://img.shields.io/github/forks/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Forks"></a>
+    <a hfref="https://github.com/welpo/tabi/commits/main/">
+        <img src="https://img.shields.io/github/last-commit/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Last commit"></a>
+    <br>
+    <a href="https://github.com/welpo/tabi/releases">
+        <img src="https://img.shields.io/github/v/release/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Latest release"></a>
+    <a href="https://welpo.github.io/tabi/blog/mastering-tabi-settings/">
+        <img src="https://img.shields.io/website?url=https%3A%2F%2Fwelpo.github.io%2Ftabi&style=flat-square&label=docs&labelColor=202b2d&color=087e96" alt="Documentation"></a>
+    <a href="https://github.com/welpo/tabi/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="License"></a>
+</p>
+
 # tabi
 
 A fast, lightweight, and modern [Zola](https://www.getzola.org) theme with multi-language support. It aims to be a personal page and home to blog posts.
