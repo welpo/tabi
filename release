@@ -3,6 +3,8 @@
 # Inspired by https://github.com/orhun/git-cliff/blob/main/release.sh
 set -eu
 
+VERSION_FORMAT="^v[0-9]+\.[0-9]+\.[0-9]+$"
+
 # Check for a clean working directory.
 if [ -n "$(git status --porcelain)" ]; then
     echo "Your working directory is dirty. Commit or stash your changes before running this script."
@@ -27,6 +29,15 @@ else
         exit 1
     fi
 fi
+
+# Verify that the version tag matches the expected format.
+if ! [[ $VERSION_TAG =~ $VERSION_FORMAT ]]; then
+    echo "Version tag $VERSION_TAG does not match the expected format ${VERSION_FORMAT}."
+    exit 1
+fi
+
+echo "Preparing release ${VERSION_TAG}…"
+echo
 
 # Update CHANGELOG.
 git cliff --tag "$VERSION_TAG" -o CHANGELOG.md
