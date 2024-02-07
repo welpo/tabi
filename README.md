@@ -24,7 +24,7 @@ See a live preview (and the theme's documentation) [here](https://welpo.github.i
 
 Explore the [Sites Using tabi section](#sites-using-tabi) to see real-world applications.
 
-> tabi (旅): Journey.
+> tabi (旅, /<span title="/t/: 't' in 'sty'">t</span><span title="/ɐ/: a sound between 'a' in 'sofa' and 'u' in 'nut'">ɐ</span><span title="/ˈ/: primary stress mark, indicating that the following syllable is pronounced with greater emphasis">ˈ</span><span title="/b/: 'b' in 'cab'">b</span><span title="/i/: 'i' in 'fleece'">i</span>/): Journey.
 
 ![tabi](https://github.com/welpo/tabi/raw/main/light_dark_screenshot.png)
 
