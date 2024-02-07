@@ -16,11 +16,55 @@ We welcome contributions in many forms, including:
 
 If you're not sure how to contribute or need help with something, please don't hesitate to reach out via the [issue tracker](https://github.com/welpo/tabi/issues) or [mail](mailto:tabi@osc.garden?subject=[GitHub]%20tabi).
 
-## How to submit a pull request?
+## Pull Requests
 
-- Follow the [GitHub flow](https://guides.github.com/introduction/flow/).
-- Follow the [Conventional Commits Specification](https://www.conventionalcommits.org/en/v1.0.0/).
-- Use [gitmoji](https://gitmoji.dev/) – it's fun! 🫶
+Working on your first Pull Request? You can learn how from this free video series:
+
+[**How to Contribute to an Open Source Project on GitHub**](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
+
+Please make sure the following is done when submitting a pull request:
+
+1. **Keep your PR small**. Small pull requests are much easier to review and more likely to get merged. Make sure the PR does only one thing, otherwise please split it.
+2. **Use descriptive titles**. It is recommended to follow this [commit message style](#conventional-commit-messages).
+3. **Test your changes**. Make sure to test different configurations that might affect your changes.
+4. **Fill the PR template**. The template will guide you through the process of submitting a PR.
+
+### Conventional Commit Messages with Gitmoji
+
+See how a minor change to your commit message style can make you a better programmer.
+
+Format: `<gitmoji> <type>(<scope>): <description>`
+
+`<gitmoji>` is an emoji from the [gitmoji](https://gitmoji.dev/) list. It makes it easier to visually scan the commit history and quickly grasp the purpose of changes.
+
+`<scope>` is optional. If your change affects a specific part of the codebase, consider adding the scope. Scopes should be brief but recognizable, e.g. `config`, `gitmoji`, or `cli`.
+
+The various types of commits:
+
+- `feat`: a new API or behaviour **for the end user**.
+- `fix`: a bug fix **for the end user**.
+- `style`: changes to the visual appearance of the theme, e.g. CSS, fonts, images…
+- `docs`: a change to the website or other Markdown documents.
+- `refactor`: a change to code that doesn't change behaviour, e.g. splitting files, renaming internal variables, improving code style…
+- `chore`: upgrading dependencies, releasing new versions… Chores that are **regularly done** for maintenance purposes.
+- `misc`: anything else that doesn't change production code, yet is not `test` or `chore`. e.g. updating GitHub actions workflow.
+
+The commits within your PR don't need to follow this convention (we'll [squash them](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests)). However, the PR title should be in this format. If you're not sure about the title, don't worry, we'll help you fix it. Your code is more important than conventions!
+
+Example:
+
+```text
+🐛 fix(i18n): localise date in single taxonomy listing
+^  ^-^^----^  ^--------------------------------------^
+|  |  |       |
+|  |  |       +-> Description in imperative and lowercase.
+|  |  |
+|  |  +-> The scope of the change.
+|  |
+|  +-------> Type: see above for the list we use.
+|
++----------> A valid gitmoji.
+```
 
 ## Coding Style Guidelines
 
