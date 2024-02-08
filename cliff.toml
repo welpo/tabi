@@ -89,7 +89,7 @@ commit_preprocessors = [
     # Replace multiple spaces with a single space.
     { pattern = ' +', replace = " " },
     # Remove gitmoji, both actual UTF emoji and :emoji:
-    { pattern = ' *(:\w+:|[\p{Emoji_Presentation}\p{Extended_Pictographic}\u{200D}]) *', replace = "" },
+    { pattern = ' *(:\w+:|[\p{Emoji_Presentation}\p{Extended_Pictographic}](?:\u{FE0F})?\u{200D}?) *', replace = "" },
 ]
 # regex for parsing and grouping commits
 commit_parsers = [
@@ -100,6 +100,7 @@ commit_parsers = [
     { message = "^refactor", group = "<!-- 4 -->♻️ Refactor" },
     { message = "^test", group = "<!-- 5 -->✅ Testing" },
     { message = "^misc", group = "<!-- 6 -->🔧 Miscellaneous tasks" },
+    { message = "^deprecate", group = "<!-- 7 -->🗑️️ Deprecations" },
     { message = "^chore", skip = true },
 ]
 # protect breaking changes from being skipped due to matching a skipping commit_parser
