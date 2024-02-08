@@ -2,47 +2,56 @@
 # Config: https://sumi.rs/docs/configuration
 # Rules: https://sumi.rs/docs/rules
 
-# Suppress progress messages.
+# Suppresses progress messages.
 quiet = false
 
-# Shows the parsed commit message post-linting. See 'format' for options.
+# Displays parsed commit message.
 display = true
 
-# Output format for the parsed commit message. Options: "cli", "json", "table", "toml".
+# Sets display format: cli, json, table, toml.
 format = "cli"
 
-# Process each non-empty line in the commit message as an individual commit.
+# Processes each non-empty line as an individual commit.
 split_lines = false
 
-# Rule: include one valid Gitmoji: https://gitmoji.dev/
+# Rule: Include one valid Gitmoji.
+# See https://gitmoji.dev/.
 gitmoji = true
 
-# Rule: commit description must start with the specified case. Options: "any", "lower", "upper".
+# Rule: Description must start with the specified case.
+# Options: 'any', 'lower', 'upper'.
 description_case = "lower"
 
-# Rule: use the imperative mood in the description (e.g. "Fix bug" instead of "Fixed bug").
+# Rule: Use the imperative mood in the description.
+# Example: 'Fix bug' instead of 'Fixed bug'.
 imperative = true
 
-# Rule: do not end commit header with a period.
+# Rule: Do not end commit header with a period.
 no_period = true
 
-# Rule: limit the header to the specified length. A value of 0 disables this rule.
+# Rule: Header length limit.
+# A value of 0 disables the rule.
 max_header_length = 55
 
-# Rule: wrap the body at the specified length. A value of 0 disables this rule.
+# Rule: Body line length limit.
+# A value of 0 disables the rule.
 max_body_length = 80
 
-# Rule: disallow leading/trailing whitespace and consecutive spaces.
+# Rule: No leading, trailing, or consecutive spaces.
 whitespace = true
 
-# Rule: follow Conventional Commits format: https://www.conventionalcommits.org/
+# Rule: Follow Conventional Commits format.
+# See https://www.conventionalcommits.org/.
 conventional = true
 
-# Rule: only allow the specified commit scopes. Example: ["docs", "cli"]. An empty list allows any scope.
+# Rule: List of allowed commit scopes.
+# An empty list allows all scopes. Example: ["docs", "cli"].
 scopes_allowed = []
 
-# Rule: only allow the specified commit types. Example: ["feat", "fix"]. An empty list allows any type.
-types_allowed = ["feat", "fix", "docs", "refactor", "chore", "misc", "style"]
+# Rule: List of allowed commit types.
+# An empty list allows all types. Example: ["feat", "fix", "docs"].
+types_allowed = ["feat", "fix", "docs", "refactor", "test", "chore", "misc", "style"]
 
-# Rule: commit header must match the specified (regex) pattern. Example: '^JIRA-\d+:'
+# Rule: Header must match regex pattern.
+# Example: '^JIRA-\d+:'.
 header_pattern = '^([\p{Emoji_Presentation}\p{Extended_Pictographic}\u{200D}])' # The first character must be an emoji.
