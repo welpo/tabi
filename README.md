@@ -14,6 +14,8 @@
         <img src="https://img.shields.io/website?url=https%3A%2F%2Fwelpo.github.io%2Ftabi&style=flat-square&label=docs&labelColor=202b2d&color=087e96" alt="Documentation"></a>
     <a href="https://github.com/welpo/tabi/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="License"></a>
+    <a href="https://github.com/welpo/git-sumi">
+        <img src="https://img.shields.io/badge/clean_commits-git--sumi-0?style=flat-square&labelColor=202b2d&color=087e96" alt="Clean commits"></a>
 </p>
 
 # tabi
