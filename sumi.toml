@@ -54,4 +54,4 @@ types_allowed = ["feat", "fix", "docs", "refactor", "test", "chore", "misc", "st
 
 # Rule: Header must match regex pattern.
 # Example: '^JIRA-\d+:'.
-header_pattern = '^([\p{Emoji_Presentation}\p{Extended_Pictographic}\u{200D}])' # The first character must be an emoji.
+header_pattern = '^[\p{Emoji_Presentation}\p{Extended_Pictographic}\u{200D}] \w' # The first character must be an emoji.
