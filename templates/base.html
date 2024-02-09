@@ -13,6 +13,7 @@ This variable will hold all the text strings for the language #}
 {%- if not language_strings -%}
     {%- set language_strings = load_data(path="themes/tabi/i18n/" ~ lang ~ ".toml", required=false) -%}
 {%- endif -%}
+{% set_global rtl_langs = ["ar","arc","az","dv","ff","he","ku","nqo","fa","rhg","syc","ur"] %}
 
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ This variable will hold all the text strings for the language #}
 
 {% include "partials/header.html" %}
 
-<body>
+<body {% if lang in rtl_langs %} dir="rtl" {% endif %}>
     {% include "partials/nav.html" %}
     <div class="content">
 
