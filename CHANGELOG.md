@@ -4,6 +4,37 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.2.0](https://github.com/welpo/tabi/compare/v2.1.0..v2.2.0) - 2024-02-10
+
+### ✨ Features
+
+- *(i18n)* Add Right-to-left script support ([#262](https://github.com/welpo/tabi/issues/262)) - ([1d55a29](https://github.com/welpo/tabi/commit/1d55a2963d2b930ebf9cfd392f1cdbc5419b6990))
+
+### 🐛 Bug fixes
+
+- *(tags)* Arabic tags stuck together ([#264](https://github.com/welpo/tabi/issues/264)) - ([afc8244](https://github.com/welpo/tabi/commit/afc82449fa86f2c244def42c64ea85d9942dd6e1))
+
+### 📝 Documentation
+
+- *(README)* Add git-sumi badge - ([8b5a131](https://github.com/welpo/tabi/commit/8b5a131001cbb29656ab2339cafa777938353ea3))
+- *(README)* Add IPA notation for pronunciation - ([f7c0de4](https://github.com/welpo/tabi/commit/f7c0de412daf32f14374e282863c6f7be651e0c8))
+- *(README)* Add project badges - ([bcde187](https://github.com/welpo/tabi/commit/bcde187f73a278cb534282204f9aa183cec2ec0a))
+- *(README)* Remove quick start section - ([1382b44](https://github.com/welpo/tabi/commit/1382b44c182827a5757b7aaf50b1f036ccda12b4))
+- *(README)* Recommend installing tabi as a submodule or cloning it - ([a05170c](https://github.com/welpo/tabi/commit/a05170c6895ad7f7e8d71a482e6ea9efaa69030e))
+- *(contributing)* Enrich PR information - ([28d0f70](https://github.com/welpo/tabi/commit/28d0f70e18c392b0c57cc0e818ee1b763aa0137e))
+
+### 🔧 Miscellaneous tasks
+
+- *(CHANGELOG)* Improve emoji pattern - ([1bb3c91](https://github.com/welpo/tabi/commit/1bb3c91b91585bb6317ed0d82e6d0c0fbc36e0b6))
+- *(CI)* Update git-sumi config - ([1e468f4](https://github.com/welpo/tabi/commit/1e468f4acb9d671c630d4a13e2b6e11dce13ed78))
+- *(CI)* Use git-sumi hook to lint commit messages - ([71f09a8](https://github.com/welpo/tabi/commit/71f09a81b0c190d69e28a6c122b559560fc72a26))
+- *(CI)* Fix links in tag description - ([7cc74d1](https://github.com/welpo/tabi/commit/7cc74d1fd9fe10d671c240029660c0164e821db5))
+- *(git-sumi)* Require a space after the gitmoji - ([119533b](https://github.com/welpo/tabi/commit/119533b176da6bb182b1349eacc049bea85c2bac))
+- *(release)* Verify version tag format on release - ([fcf16a4](https://github.com/welpo/tabi/commit/fcf16a457eac2f6daa15c9e7159713e2c78de709))
+- Use git-sumi to lint commit messages - ([c193d4d](https://github.com/welpo/tabi/commit/c193d4d4e898def908ff923958ccab7af4023664))
+- Update changelog sections - ([0e6c5c2](https://github.com/welpo/tabi/commit/0e6c5c269177712ae58649fe24662b407315d3f1))
+- Add continuous deployment workflow - ([9b8b139](https://github.com/welpo/tabi/commit/9b8b1396cfaeefd61050cdf49bf81f01977e5899))
+
 ## [2.1.0](https://github.com/welpo/tabi/compare/v2.0.0..v2.1.0) - 2024-01-29
 
 ### ✨ Features
