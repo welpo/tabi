@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="{/atom:feed/atom:link[@rel='extra-stylesheet']/@href}" />
 
       </head>
-     <body dir="auto">
+      <body dir="auto">
         <div class="content">
           <main>
             <div class="info-box">
