@@ -42,7 +42,7 @@
               <xsl:attribute name="href">
                 <xsl:value-of select="/atom:feed/atom:link[2]/@href"/>
               </xsl:attribute>
-            <xsl:value-of select="/atom:feed/str:translations/str:visit_the_site" /> →</a><p></p>
+            <xsl:value-of select="/atom:feed/str:translations/str:visit_the_site" />&#160;<span class="arrow">→</span></a><p></p>
             </section>
 
             <div class="padding-top listing-title bottom-divider">

@@ -212,3 +212,14 @@ details summary {
         }
     }
 }
+
+:dir(rtl) .arrow {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+// This for the arrows that point to a corner, (e.g. '↗', '↘', '↙', '↖')
+:dir(rtl) .arrow-corner {
+    display: inline-block;
+    transform: rotate(270deg);
+}

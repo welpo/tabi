@@ -39,14 +39,14 @@
                         <p>{{ post.summary | striptags | safe | trim_end_matches(pat=".") }}…</p>
                     {% endif %}
                 </div>
-                <a class="readmore" href={{ post.permalink }}>{{ macros_translate::translate(key="read_more", default="Read more", language_strings=language_strings) }}&nbsp;→</a>
+                <a class="readmore" href={{ post.permalink }}>{{ macros_translate::translate(key="read_more", default="Read more", language_strings=language_strings) }}&nbsp;<span class="arrow">→</span></a>
             </div>
         </section>
     {% endif %}
         {% if not loop.last %}
             {% if loop.index == max %}
                 <div class="all-posts">
-                    <a href="{{ get_url(path="blog", lang=lang) }}/">{{ macros_translate::translate(key="all_posts", default="All posts", language_strings=language_strings) }}&nbsp;⟶</a>
+                    <a href="{{ get_url(path="blog", lang=lang) }}/">{{ macros_translate::translate(key="all_posts", default="All posts", language_strings=language_strings) }}&nbsp;<span class="arrow">⟶</span></a>
                 </div>
             {% endif %}
         {% endif %}
