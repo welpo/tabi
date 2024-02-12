@@ -1,3 +1,8 @@
+# Proof of concept for pluralisation:
+one_read_minute = "$MINUTES min read"
+many_read_minute = "$MINUTES min read (plural; it's the same)"
+
+
 language_name = "English"  # Shown in language picker for multi-language sites.
 date_locale = "en_GB"
 full_stop = "."  # Used at the end of a sentence.

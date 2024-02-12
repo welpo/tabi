@@ -1,3 +1,9 @@
+# Proof of concept for pluralisation:
+one_read_minute = "دقيقة واحدة"
+two_read_minute = "دقيقتان"
+few_read_minute = "$MINUTES دقائق"
+many_read_minute = "$MINUTES دقيقة"
+
 # Hello, the Arabic language has many pronouns and words, and each word indicates a different meaning,
 # unlike the English language, in which, on the other hand, the word can refer to a person and a group.
 # This translation is for individual use, if you are a company or organization, I have put a comment in

@@ -12,6 +12,43 @@
 {%- endif -%}
 
 {# Debugging #}
+{%- set count = 11 -%} {# Replace this to test #}
+{%- set base_key = "read_minute" -%}
+{%- set prefix = macros_pluralize::pluralize(lang=lang, number=count) -%}
+{%- set full_key = prefix ~ base_key -%}
+{%- set translated_key = macros_translate::translate(key=full_key, language_strings=language_strings, default="couldn't find the string") -%}
+{%- set processed_key = translated_key | replace(from="$MINUTES", to=count | as_str) -%}
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>count</code></td>
+            <td>{{ count }}</td>
+            <td>The number of minutes used for testing.</td>
+        </tr>
+        <tr>
+            <td><code>full_key</code></td>
+            <td>{{ full_key }}</td>
+            <td>Constructed key for fetching the translation.</td>
+        </tr>
+        <tr>
+            <td><code>translated_key</code></td>
+            <td>{{ translated_key }}</td>
+            <td>The raw translation fetched using <code>full_key</code>.</td>
+        </tr>
+        <tr>
+            <td><code>processed_key</code></td>
+            <td>{{ processed_key }}</td>
+            <td>The final translation after replacing <code>$MINUTES</code> with the actual count.</td>
+        </tr>
+    </tbody>
+</table>
 {# {% set last_ancestor = page.ancestors | slice(start=-1) %}
 {% set current_section = get_section(path=last_ancestor.0) %}
 

@@ -1,0 +1,32 @@
+{% macro pluralize(language="en", number) %}
+    {%- set key_prefix = "" -%}
+    {%- if language == "ar" -%}
+        {# Arabic-specific pluralization rules #}
+        {%- set modulo = number % 100 -%}
+        {%- if number > 100 -%}
+            {%- if modulo == 0 or modulo == 1 or modulo == 2 -%}
+                {%- set key_prefix = "special_" -%} {# Sixth form for numbers above 100 ending with 0, 1, or 2 #}
+            {%- endif -%}
+        {%- elif number == 0 -%}
+            {%- set key_prefix = "zero_" -%} {# First form for 0 #}
+        {%- elif number == 1 -%}
+            {%- set key_prefix = "one_" -%} {# Second form for 1 #}
+        {%- elif number == 2 -%}
+            {%- set key_prefix = "two_" -%} {# Third form for 2 #}
+        {%- elif modulo >= 3 and modulo <= 10 -%}
+            {%- set key_prefix = "few_" -%} {# Fourth form for numbers ending 3-10 #}
+        {%- elif modulo >= 11 and modulo <= 99 -%}
+            {%- set key_prefix = "many_" -%} {# Fifth form for numbers ending 11-99 #}
+        {%- else -%}
+            {%- set key_prefix = "other_" -%} {# Catch-all for any other cases #}
+        {%- endif -%}
+    {%- else -%}
+        {# Default pluralization logic for languages other than Arabic #}
+        {%- if number == 1 -%}
+            {%- set key_prefix = "one_" -%}
+        {%- else -%}
+            {%- set key_prefix = "many_" -%}
+        {%- endif -%}
+    {%- endif -%}
+    {{- key_prefix -}}
+{% endmacro %}
