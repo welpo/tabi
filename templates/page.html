@@ -14,7 +14,7 @@
 {# Debugging #}
 {%- set count = 11 -%} {# Replace this to test #}
 {%- set base_key = "read_minute" -%}
-{%- set prefix = macros_pluralize::pluralize(lang=lang, number=count) -%}
+{%- set prefix = macros_pluralize::pluralize(language=lang, number=count) -%}
 {%- set full_key = prefix ~ base_key -%}
 {%- set translated_key = macros_translate::translate(key=full_key, language_strings=language_strings, default="couldn't find the string") -%}
 {%- set processed_key = translated_key | replace(from="$MINUTES", to=count | as_str) -%}

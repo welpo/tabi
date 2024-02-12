@@ -1,4 +1,4 @@
-{% macro pluralize(language="en", number) %}
+{% macro pluralize(language, number) %}
     {%- set key_prefix = "" -%}
     {%- if language == "ar" -%}
         {# Arabic-specific pluralization rules #}
