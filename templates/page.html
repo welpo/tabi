@@ -88,7 +88,7 @@
                 {# Show link to remote changes if enabled #}
                 {% if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" %}
                     {{ separator }}
-                    <li><a href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}<small> ↗</small></a></li>
+                    <li><a href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}<small> <span class="arrow-corner">↗</span></small></a></li>
                 {% endif %}
             {% endif %}
         </ul>
@@ -165,13 +165,13 @@
             <nav class="{{ full_width_class | default(value="") }} article-navigation">
                 <div>
                 {%- if left_link and left_label and left_title -%}
-                <a href="{{ left_link | safe }}" aria-label="{{ left_label }}" aria-describedby="left_title">← {{ left_label }}</a>
+                <a href="{{ left_link | safe }}" aria-label="{{ left_label }}" aria-describedby="left_title"><span class="arrow"> ←</span>{{ left_label }}</a>
                 <p aria-hidden="true" id="left_title">{{ left_title | truncate(length=100, end="…") }}</p>
                 {%- endif -%}
                 </div>
                 <div>
                 {%- if right_link and right_label and right_title -%}
-                <a href="{{ right_link | safe }}" aria-label="{{ right_label }}" aria-describedby="right_title">{{ right_label }} →</a>
+                <a href="{{ right_link | safe }}" aria-label="{{ right_label }}" aria-describedby="right_title">{{ right_label }}<span class="arrow"> →</span></a>
                 <p aria-hidden="true" id="right_title">{{ right_title | truncate(length=100, end="…") }}</p>
                 {%- endif -%}
                 </div>
