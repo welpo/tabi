@@ -213,6 +213,16 @@ details summary {
     }
 }
 
+:dir(rtl) .article-navigation {
+    div:first-child {
+        text-align: right;
+    }
+
+    div:last-child {
+        text-align: left;
+    }
+}
+
 :dir(rtl) .arrow {
     display: inline-block;
     transform: rotate(180deg);
