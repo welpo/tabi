@@ -1,9 +1,3 @@
-# Proof of concept for pluralisation:
-one_read_minute = "دقيقة واحدة"
-two_read_minute = "دقيقتان"
-few_read_minute = "$MINUTES دقائق"
-many_read_minute = "$MINUTES دقيقة"
-
 # Hello, the Arabic language has many pronouns and words, and each word indicates a different meaning,
 # unlike the English language, in which, on the other hand, the word can refer to a person and a group.
 # This translation is for individual use, if you are a company or organization, I have put a comment in
@@ -54,7 +48,11 @@ go_to_comments = "انتقل إلى التعليقات"
 
 # Post metadata.
 draft = "مسودة"
-min_read = "دقيقة متوقعة للقراءة"
+one_min_read = "دقيقة واحدة"
+two_min_read = "دقيقتان"
+few_min_read = "$NUMBER دقائق"
+many_min_read = "$NUMBER دقيقة"
+# TODO: words needs to use $NUMBER and pluralize the string.
 words = "كلمة"
 last_updated_on = "آخر تحديث كان في"
 see_changes = "الإطلاع على التغييرات"
