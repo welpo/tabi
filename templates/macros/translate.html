@@ -1,7 +1,7 @@
 {% macro translate(key, number=-1, language_strings="", default="") %}
     {%- set key_prefix = "" -%}
 
-    {# All languages have `zero_` and `one_` prefix #}
+    {# `zero_` and `one_` are common cases. We handle "many" (plural) later, after language-specific pluralization #}
     {%- if number == 0 -%}
         {%- set key_prefix = "zero_" -%}
     {%- elif number == 1 -%}
