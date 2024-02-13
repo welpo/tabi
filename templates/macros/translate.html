@@ -28,7 +28,7 @@
 
     {# Translated string #}
     {%- set final_key = key_prefix ~ key -%}
-    {%- set translated_text = language_strings[final_key] | default(value=final_key) | safe -%}
+    {%- set translated_text = language_strings[final_key] | default(value=default) | safe -%}
 
     {# Replace $NUMBER with the number #}
     {%- if number != -1 -%}
