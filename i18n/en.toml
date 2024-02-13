@@ -1,8 +1,3 @@
-# Proof of concept for pluralisation:
-one_read_minute = "$MINUTES min read"
-many_read_minute = "$MINUTES min read (plural; it's the same)"
-
-
 language_name = "English"  # Shown in language picker for multi-language sites.
 date_locale = "en_GB"
 full_stop = "."  # Used at the end of a sentence.
@@ -48,8 +43,10 @@ go_to_comments = "Go to the comments section"
 
 # Post metadata.
 draft = "DRAFT"
-min_read = "min read"
-words = "words"
+one_min_read = "$NUMBER min read"
+many_min_read = "$NUMBER min read"
+one_word = "$NUMBER word"
+many_word = "$NUMBER words"
 last_updated_on = "Last updated on"
 see_changes = "See changes"
 

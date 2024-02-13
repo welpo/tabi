@@ -43,8 +43,10 @@ go_to_comments = "Ir a la sección de comentarios"
 
 # Post metadata.
 draft = "BORRADOR"
-min_read = "min de lectura"
-words = "palabras"
+one_min_read = "$NUMBER min de lectura"
+many_min_read = "$NUMBER min de lectura"
+one_word = "$NUMBER palabra"
+many_word = "$NUMBER palabras"
 last_updated_on = "Última actualización el"
 see_changes = "Ver cambios"
 
