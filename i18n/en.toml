@@ -19,13 +19,12 @@ search = "Search"
 search_icon_title = "Click or press $SHORTCUT to open search"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
 clear_search = "Clear search"  # Title of the X icon next to search input.
 zero_results = "No results found"
-one_results = "1 result"  # "1 result"
-many_results = "$NUMBER results"   # "3 results"
+one_results = "$NUMBER result"  # "1 result"
+many_results = "$NUMBER results"  # "3 results"
 
 # Navigation.
 read_more = "Read more"
-zero_posts = "No posts"
-one_posts = "1 post"
+one_posts = "$NUMBER post"
 many_posts = "$NUMBER posts"  # "3 posts"
 prev = "Prev"  # As in "Previous" page.
 next = "Next"  # As in "Next" page.
@@ -45,12 +44,12 @@ go_to_comments = "Go to the comments section"
 
 # Post metadata.
 draft = "DRAFT"
-zero_min_read = "Less than a minute read"
-one_min_read = "1 min read" # "1 min read"
-many_min_read = "$NUMBER min read" # "3 min read"
+zero_min_read = "<1 min read"
+one_min_read = "$NUMBER min read"
+many_min_read = "$NUMBER min read"
 zero_words = "No words"
-one_words = "1 word" # "1 word"
-many_words = "$NUMBER words" # "3 words"
+one_words = "$NUMBER word"
+many_words = "$NUMBER words"
 last_updated_on = "Last updated on"
 see_changes = "See changes"
 
