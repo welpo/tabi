@@ -1,15 +1,18 @@
-{% macro translate(key, number="", language_strings="", default="") %}
+{% macro translate(key, number=-1, language_strings="", default="") %}
     {%- set key_prefix = "" -%}
 
+    {# All languages have `zero_` and `one_` prefix #}
+    {%- if number == 0 -%}
+        {%- set key_prefix = "zero_" -%}
+    {%- elif number == 1 -%}
+        {%- set key_prefix = "one_" -%}
+    {%- endif -%}
+
     {# Pluralization #}
-    {%- if number == 0 or number -%}
+    {%- if number != -1 and key_prefix == "" -%}
         {%- if lang == "ar" -%}
             {%- set modulo = number % 100 -%}
-            {%- if number == 0 -%}
-                {%- set key_prefix = "zero_" -%}
-            {%- elif number == 1 -%}
-                {%- set key_prefix = "one_" -%}
-            {%- elif number == 2 -%}
+            {%- if number == 2 -%}
                 {%- set key_prefix = "two_" -%}
             {%- elif modulo >= 3 and modulo <= 10 -%}
                 {%- set key_prefix = "few_" -%}
@@ -18,22 +21,17 @@
             {%- endif -%}
         {%- else -%}
             {# Default pluralization #}
-            {%- if number == 1 -%}
-                {%- set key_prefix = "one_" -%}
-            {%- else -%}
-                {%- set key_prefix = "many_" -%}
-            {%- endif -%}
+            {# Zero and one are already handled #}
+            {%- set key_prefix = "many_" -%}
         {%- endif -%}
-        {%- set final_key = key_prefix ~ key -%}
-    {%- else -%}
-        {%- set final_key = key -%}
     {%- endif -%}
 
     {# Translated string #}
-    {%- set translated_text = language_strings[final_key] | default(value=default) | safe -%}
+    {%- set final_key = key_prefix ~ key -%}
+    {%- set translated_text = language_strings[final_key] | default(value=final_key) | safe -%}
 
     {# Replace $NUMBER with the number #}
-    {%- if number == 0 or number -%}
+    {%- if number != -1 -%}
         {%- set translated_text = translated_text | replace(from="$NUMBER", to=number | as_str) -%}
     {%- endif -%}
     {{- translated_text -}}
