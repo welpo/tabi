@@ -99,7 +99,7 @@
 
             {# page settings override config settings #}
             {% if macros_settings::evaluate_setting_priority(setting="show_reading_time", page=page, default_global_value=true) == "true" %}
-                {{ separator }} <li title="{{ macros_translate::translate(key="word", number=page.word_count, default=page.word_count ~ " words", language_strings=language_strings) }}">{{ macros_translate::translate(key="min_read", number=page.reading_time, default=page.reading_time ~ " min read", language_strings=language_strings) }}</li>
+                {{ separator }} <li title="{{ macros_translate::translate(key="words", number=page.word_count, default=page.word_count ~ " words", language_strings=language_strings) }}">{{ macros_translate::translate(key="min_read", number=page.reading_time, default=page.reading_time ~ " min read", language_strings=language_strings) }}</li>
             {% endif %}
 
             {%- if page.taxonomies and page.taxonomies.tags -%}

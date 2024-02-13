@@ -15,24 +15,14 @@
                     {# Shows the number of posts per tag as a superscript #}
                     <a href="{{ term.permalink | safe }}"
                        aria-label="{{ term.name }} – 
-                        {{ term.pages | length }} 
-                        {% if term.pages | length == 1 -%}
-                            {{- macros_translate::translate(key="post", default="post", language_strings=language_strings) -}}
-                        {%- else -%}
-                            {{- macros_translate::translate(key="posts", default="posts", language_strings=language_strings) -}}
-                        {%- endif -%}">
-                        {{ term.name }}
+                    {{- macros_translate::translate(key="posts", number=length, default="posts", language_strings=language_strings) -}}
+                    {{ term.name }}
                     </a> <sup>{{ term.pages | length }}</sup>
                 {% else %}
                     <a href="{{ term.permalink | safe }}">
                         {{ term.name }}</a>
-                        – {{ term.pages | length }}{%- if term.pages | length == 1 %}
-                        {# Only one post. Singular. #}
-                            {{- macros_translate::translate(key="post", default="post", language_strings=language_strings) -}}
-                        {% elif term.pages | length > 1 %}
-                        {# More than one post per tag. Plural. #}
-                            {{- macros_translate::translate(key="posts", default="posts", language_strings=language_strings) -}}
-                        {%- endif -%}
+                        – {{ term.pages | length }}
+                        {{- macros_translate::translate(key="posts", number=length, default="posts", language_strings=language_strings) -}}
                 {% endif %}
             </li>
         {%- endfor -%}
