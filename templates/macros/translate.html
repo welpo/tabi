@@ -1,14 +1,14 @@
 {% macro translate(key, number=-1, language_strings="", default="") %}
     {%- set key_prefix = "" -%}
 
-    {# `zero_` and `one_` are common cases. We handle "many" (plural) later, after language-specific pluralization #}
+    {#- `zero_` and `one_` are common cases. We handle "many" (plural) later, after language-specific pluralization -#}
     {%- if number == 0 -%}
         {%- set key_prefix = "zero_" -%}
     {%- elif number == 1 -%}
         {%- set key_prefix = "one_" -%}
     {%- endif -%}
 
-    {# Pluralization #}
+    {#- Pluralization -#}
     {%- if number != -1 and key_prefix == "" -%}
         {%- if lang == "ar" -%}
             {%- set modulo = number % 100 -%}
@@ -20,17 +20,17 @@
                 {%- set key_prefix = "many_" -%}
             {%- endif -%}
         {%- else -%}
-            {# Default pluralization #}
-            {# Zero and one are already handled #}
+            {#- Default pluralization -#}
+            {#- Zero and one are already handled -#}
             {%- set key_prefix = "many_" -%}
         {%- endif -%}
     {%- endif -%}
 
-    {# Translated string #}
+    {#- Translated string -#}
     {%- set final_key = key_prefix ~ key -%}
     {%- set translated_text = language_strings[final_key] | default(value=default) | safe -%}
 
-    {# Replace $NUMBER with the number #}
+    {#- Replace $NUMBER with the number -#}
     {%- if number != -1 -%}
         {%- set translated_text = translated_text | replace(from="$NUMBER", to=number | as_str) -%}
     {%- endif -%}
