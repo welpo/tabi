@@ -11,12 +11,13 @@
     <ul class="tags">
         {%- for term in terms -%}
             <li class="tags-item">
+                {%- set number_of_posts = term.pages | length -%}
                 {% if config.extra.compact_tags %}
                     {# Shows the number of posts per tag as a superscript #}
                     <a href="{{ term.permalink | safe }}"
-                       aria-label="{{ term.name }} – 
-                        {{ term.pages | length }} 
-                        {{- macros_translate::translate(key="posts", number=length, default="posts", language_strings=language_strings) -}}
+                       aria-label="{{ term.name }} –
+                        {{ term.pages | length }}
+                        {{- macros_translate::translate(key="posts", number=number_of_posts, default=number_of_posts ~ " posts", language_strings=language_strings) -}}
                     ">
                         {{ term.name }}
                     </a> <sup>{{ term.pages | length }}</sup>
@@ -24,7 +25,7 @@
                     <a href="{{ term.permalink | safe }}">
                         {{ term.name }} </a>
                         <span> – </span>
-                        {{- macros_translate::translate(key="posts", number=term.pages | length, default="posts", language_strings=language_strings) -}}
+                        {{- macros_translate::translate(key="posts", number=number_of_posts, default=number_of_posts ~ " posts", language_strings=language_strings) -}}
                 {% endif %}
             </li>
         {%- endfor -%}
