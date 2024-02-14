@@ -15,15 +15,15 @@
             </div>
         </div>
         <div id="results-container">
-            <!-- 
-                #TODO(@welpo): This the javascript section I think
-                    so I'll leave it for you to handle.
-                #NOTE(@welpo): The `key` is "results" for all
-                    (take a look at `i18n/en.toml` in the `results` section)
-            -->
             <div id="results-info">
-                <span id="n-results">0</span>&nbsp;<span id="result-text-singular">{{ macros_translate::translate(key='result', default='result', language_strings=language_strings) }}</span>
-                <span id="result-text-plural">{{ macros_translate::translate(key='results', default='results', language_strings=language_strings) }}</span>
+                {#- Add the strings here so JavaScript can grab them -#}
+                {#- These are used in all languages -#}
+                <span id="zero_results"> {{ macros_translate::translate(key='results', number=0, default='No results', language_strings=language_strings, replace=false) }}</span>
+                <span id="one_results"> {{ macros_translate::translate(key='results', number=1, default='1 result', language_strings=language_strings, replace=false) }}</span>
+                <span id="many_results"> {{ macros_translate::translate(key='results', number=11, default='$NUMBER results', language_strings=language_strings, replace=false) }}</span>
+                {#- Strings for specific languages -#}
+                <span id="two_results"> {{ macros_translate::translate(key='results', number=2, default='$NUMBER results', language_strings=language_strings, replace=false) }}</span>
+                <span id="few_results"> {{ macros_translate::translate(key='results', number=2, default='$NUMBER results', language_strings=language_strings, replace=false) }}</span>
             </div>
         <div id="results" role="listbox"></div>
     </div>
