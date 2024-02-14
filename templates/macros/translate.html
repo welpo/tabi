@@ -1,4 +1,4 @@
-{% macro translate(key, number=-1, language_strings="", default="") %}
+{% macro translate(key, number=-1, language_strings="", default="", replace=true) %}
     {%- set slavic_plural_languages = ["uk", "be", "bs", "hr", "ru", "sr"] -%}
 
     {%- set key_prefix = "" -%}
@@ -10,6 +10,9 @@
     {%- endif -%}
 
     {#- Pluralization -#}
+    {#- NOTE: If the logic for pluralization is modified, it needs to be replicated on the JavaScript search -#}
+    {#- Files: static/js/searchElasticlunr.js and its minified version at static/js/searchElasticlunr.min.js -#}
+    {#- Function name: getPluralizationKey -#}
     {%- if number != -1 and key_prefix == "" -%}
         {#- Arabic -#}
         {%- if lang == "ar" -%}
@@ -27,11 +30,11 @@
             {%- set modulo100 = number % 100 -%}
             {%- if modulo10 == 1 and modulo100 != 11 -%}
                 {%- set key_prefix = "one_" -%}
-            {%- elif modulo10 >= 2 and modulo10 <= 4 and not modulo100 >= 12 and not modulo100 <= 14 -%}
-                {%- if modulo100 < 12 or modulo100 > 14 -%}
-                    {%- set key_prefix = "few_" -%}
-                {%- else -%}
+            {%- elif modulo10 >= 2 and modulo10 <= 4 -%}
+                {%- if modulo100 >= 12 and modulo100 <= 14 -%}
                     {%- set key_prefix = "many_" -%}
+                {%- else -%}
+                    {%- set key_prefix = "few_" -%}
                 {%- endif -%}
             {%- else -%}
                 {%- set key_prefix = "many_" -%}
@@ -48,7 +51,7 @@
     {%- set translated_text = language_strings[final_key] | default(value=default) | safe -%}
 
     {#- Replace $NUMBER with the number -#}
-    {%- if number != -1 -%}
+    {%- if replace -%}
         {%- set translated_text = translated_text | replace(from="$NUMBER", to=number | as_str) -%}
     {%- endif -%}
     {{- translated_text -}}
