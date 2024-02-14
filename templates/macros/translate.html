@@ -1,6 +1,7 @@
 {% macro translate(key, number=-1, language_strings="", default="") %}
-    {%- set key_prefix = "" -%}
+    {%- set slavic_plural_languages = ["uk", "be", "bs", "hr", "ru", "sr"] -%}
 
+    {%- set key_prefix = "" -%}
     {#- `zero_` and `one_` are common cases. We handle "many" (plural) later, after language-specific pluralization -#}
     {%- if number == 0 -%}
         {%- set key_prefix = "zero_" -%}
@@ -10,12 +11,28 @@
 
     {#- Pluralization -#}
     {%- if number != -1 and key_prefix == "" -%}
+        {#- Arabic -#}
         {%- if lang == "ar" -%}
             {%- set modulo = number % 100 -%}
             {%- if number == 2 -%}
                 {%- set key_prefix = "two_" -%}
             {%- elif modulo >= 3 and modulo <= 10 -%}
                 {%- set key_prefix = "few_" -%}
+            {%- else -%}
+                {%- set key_prefix = "many_" -%}
+            {%- endif -%}
+        {#- Slavic languages like Russian or Ukrainian -#}
+        {%- elif lang in slavic_plural_languages -%}
+            {%- set modulo10 = number % 10 -%}
+            {%- set modulo100 = number % 100 -%}
+            {%- if modulo10 == 1 and modulo100 != 11 -%}
+                {%- set key_prefix = "one_" -%}
+            {%- elif modulo10 >= 2 and modulo10 <= 4 and not modulo100 >= 12 and not modulo100 <= 14 -%}
+                {%- if modulo100 < 12 or modulo100 > 14 -%}
+                    {%- set key_prefix = "few_" -%}
+                {%- else -%}
+                    {%- set key_prefix = "many_" -%}
+                {%- endif -%}
             {%- else -%}
                 {%- set key_prefix = "many_" -%}
             {%- endif -%}
