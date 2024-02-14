@@ -24,6 +24,7 @@ tabi simplifica el procés de creació de llocs web multilingües perquè puguis
 tabi admet les següents llengües:
 
 - Alemany
+- Àrab
 - Anglès
 - Català
 - Coreà

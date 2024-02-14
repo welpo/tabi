@@ -23,6 +23,7 @@ To broaden your reach to a global audience, tabi streamlines the process of buil
 
 tabi supports the following languages:
 
+- Arabic
 - Catalan
 - Chinese (Simplified)
 - Chinese (Traditional)

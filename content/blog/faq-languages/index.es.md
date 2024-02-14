@@ -24,6 +24,7 @@ tabi simplifica el proceso de crear sitios web multilingües para que puedas con
 tabi admite los siguientes idiomas:
 
 - Alemán
+- Árabe
 - Catalán
 - Chino (Simplificado)
 - Coreano
