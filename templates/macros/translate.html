@@ -1,3 +1,20 @@
+{#- Dynamically selects the appropriate translation key based on the provided `number` and `lang` context.
+If a `number` is provided, the macro will attempt to pluralize the translation key based on the language's rules.
+
+Parameters:
+- `key`: The base key for the translation string, matching the i18n files. Example: `results` to get `zero_results`, `one_results`, `many_results`, etc.
+- `number`: Optional. The numerical value associated with the key.
+- `language_strings`: A dictionary containing the translation strings.
+- `default`: A default string to use if no translation is found for the key.
+- `replace`: Optional. If `true`, the macro will replace the `$NUMBER` placeholder in the translation string with the provided `number`.
+
+The macro supports special pluralization rules for:
+- Arabic (`ar`): Has unique forms for zero, one, two, few, and many.
+- Slavic languages: Pluralization depends on the last digit of the number, with exceptions for numbers ending in 11-14.
+
+NOTE: If the logic for pluralization is modified, it needs to be replicated on the JavaScript search.
+Files: static/js/searchElasticlunr.js and its minified version at static/js/searchElasticlunr.min.js
+Function name: getPluralizationKey -#}
 {% macro translate(key, number=-1, language_strings="", default="", replace=true) %}
     {%- set slavic_plural_languages = ["uk", "be", "bs", "hr", "ru", "sr"] -%}
 
@@ -10,9 +27,6 @@
     {%- endif -%}
 
     {#- Pluralization -#}
-    {#- NOTE: If the logic for pluralization is modified, it needs to be replicated on the JavaScript search -#}
-    {#- Files: static/js/searchElasticlunr.js and its minified version at static/js/searchElasticlunr.min.js -#}
-    {#- Function name: getPluralizationKey -#}
     {%- if number != -1 and key_prefix == "" -%}
         {#- Arabic -#}
         {%- if lang == "ar" -%}
