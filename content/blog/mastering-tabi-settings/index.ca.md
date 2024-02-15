@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-01-07
+updated = 2024-02-15
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -587,9 +587,7 @@ Un exemple de configuració per a GoatCounter no auto-allotjada seria:
 service = "goatcounter"
 id = "tabi"
 self_hosted_url = ""
-
-
----
+```
 
 ## Icones al peu de pàgina
 
