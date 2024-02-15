@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2023-11-24
+updated = 2024-02-16
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -19,6 +19,8 @@ social_media_card = "social_cards/ca_blog_shortcodes.jpg"
 **Nota**: tots els shortcodes d'imatge tenen dos paràmetres opcionals: `full_width`, que té com a valor predeterminat `false` (vegeu [a sota](#imatge-d-amplada-completa)), i `lazy_loading`, que té com a valor predeterminat `true`.
 
 **Nota 2**: a partir del [PR #222](https://github.com/welpo/tabi/pull/222) (commit [7796162](https://github.com/welpo/tabi/commit/7796162e378cacb9b4d6129f95138121224714f1)), tots els shortcodes d'imatges suporten rutes relatives pel paràmetre `src`.
+
+**Nota 3**: a partir del [PR #280](https://github.com/welpo/tabi/pull/280), tots els shortcodes d'imatges admeten imatges remotes pel paràmetre `src`.
 
 ### Imatges per a temes duals
 
