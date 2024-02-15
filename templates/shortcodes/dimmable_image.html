@@ -1,21 +1,26 @@
-{%- set colocated_path = page.colocated_path | default(value="") -%}
-{%- set relative_path = colocated_path ~ src -%}
-{%- set meta = get_image_metadata(path=relative_path, allow_missing=true) -%}
-
-{#- Fallback to absolute path if relative path doesn't work -#}
-{%- if not meta -%}
-    {%- set meta = get_image_metadata(path=src, allow_missing=true) -%}
-    {%- set image_path = src -%}
+{#- Determine image path based on whether the src is remote or local -#}
+{%- if src is starting_with("http") -%}
+    {%- set image_url = src -%}
 {%- else -%}
-    {%- set image_path = relative_path -%}
+    {%- set colocated_path = page.colocated_path | default(value="") -%}
+    {%- set relative_path = colocated_path ~ src -%}
+    {%- set meta = get_image_metadata(path=relative_path, allow_missing=true) -%}
+
+    {#- Fallback to absolute path if relative path doesn't work -#}
+    {%- if not meta -%}
+        {%- set meta = get_image_metadata(path=src, allow_missing=true) -%}
+        {%- set image_url = get_url(path=src) -%}
+    {%- else -%}
+        {%- set image_url = get_url(path=relative_path) -%}
+    {%- endif -%}
 {%- endif -%}
 
 {%- set lazy_loading = lazy_loading | default(value=true) -%}
 
-{%- if full_width | default(value=false) -%}
+{%- if full_width -%}
     <div class="full-width">
 {%- endif -%}
-<img class="dimmable-image" src="{{ get_url(path=image_path) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if meta.width %} width="{{ meta.width }}"{% endif %}{% if meta.height %} height="{{ meta.height }}" {% endif %}/>
-{%- if full_width | default(value=false) -%}
+<img class="dimmable-image" src="{{ image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if meta.width %} width="{{ meta.width }}"{% endif %}{% if meta.height %} height="{{ meta.height }}" {% endif %}/>
+{%- if full_width -%}
     </div>
 {%- endif -%}

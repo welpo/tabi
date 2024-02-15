@@ -1,30 +1,37 @@
 {%- set colocated_path = page.colocated_path | default(value="") -%}
-{%- set relative_light_path = colocated_path ~ light_src -%}
-{%- set relative_dark_path = colocated_path ~ dark_src -%}
-
-{%- set light_meta = get_image_metadata(path=relative_light_path, allow_missing=true) -%}
-{%- if not light_meta -%}
-    {%- set light_meta = get_image_metadata(path=light_src, allow_missing=true) -%}
-    {%- set light_image_path = light_src -%}
-{%- else -%}
-    {%- set light_image_path = relative_light_path -%}
-{%- endif -%}
-
-{%- set dark_meta = get_image_metadata(path=relative_dark_path, allow_missing=true) -%}
-{%- if not dark_meta -%}
-    {%- set dark_meta = get_image_metadata(path=dark_src, allow_missing=true) -%}
-    {%- set dark_image_path = dark_src -%}
-{%- else -%}
-    {%- set dark_image_path = relative_dark_path -%}
-{%- endif -%}
-
 {%- set lazy_loading = lazy_loading | default(value=true) -%}
 
-{%- if full_width | default(value=false) -%}
+{# Handling for light mode image #}
+{%- if light_src is starting_with("http") -%}
+    {%- set light_image_url = light_src -%}
+{%- else -%}
+    {%- set relative_light_path = colocated_path ~ light_src -%}
+    {%- set light_meta = get_image_metadata(path=relative_light_path, allow_missing=true) -%}
+    {%- if not light_meta -%}
+        {%- set light_image_url = get_url(path=light_src) -%}
+    {%- else -%}
+        {%- set light_image_url = get_url(path=relative_light_path) -%}
+    {%- endif -%}
+{%- endif -%}
+
+{# Handling for dark mode image #}
+{%- if dark_src is starting_with("http") -%}
+    {%- set dark_image_url = dark_src -%}
+{%- else -%}
+    {%- set relative_dark_path = colocated_path ~ dark_src -%}
+    {%- set dark_meta = get_image_metadata(path=relative_dark_path, allow_missing=true) -%}
+    {%- if not dark_meta -%}
+        {%- set dark_image_url = get_url(path=dark_src) -%}
+    {%- else -%}
+        {%- set dark_image_url = get_url(path=relative_dark_path) -%}
+    {%- endif -%}
+{%- endif -%}
+
+{%- if full_width -%}
     <div class="full-width">
 {%- endif -%}
-<img src="{{ get_url(path=light_image_path) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if light_meta.width %} width="{{ light_meta.width }}"{% endif %}{% if light_meta.height %} height="{{ light_meta.height }}" {% endif %} class="img-light">
-<img src="{{ get_url(path=dark_image_path) }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if dark_meta.width %} width="{{ dark_meta.width }}"{% endif %}{% if dark_meta.height %} height="{{ dark_meta.height }}" {% endif %} class="img-dark">
-{%- if full_width | default(value=false) -%}
+<img src="{{ light_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if light_meta.width %} width="{{ light_meta.width }}"{% endif %}{% if light_meta.height %} height="{{ light_meta.height }}" {% endif %} class="img-light">
+<img src="{{ dark_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if dark_meta.width %} width="{{ dark_meta.width }}"{% endif %}{% if dark_meta.height %} height="{{ dark_meta.height }}" {% endif %} class="img-dark">
+{%- if full_width -%}
     </div>
 {%- endif -%}

@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2023-11-24
+updated = 2024-02-16
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -19,6 +19,8 @@ social_media_card = "social_cards/es_blog_shortcodes.jpg"
 **Nota**: todos los shortcodes de imagen tienen dos parámetros opcionales: `full_width`, que tiene como valor predeterminado `false` (ver [más abajo](#imagen-a-ancho-completo)), y `lazy_loading`, que tiene como valor predeterminado `true`.
 
 **Nota 2**: a partir del [PR #222](https://github.com/welpo/tabi/pull/222) (commit [7796162](https://github.com/welpo/tabi/commit/7796162e378cacb9b4d6129f95138121224714f1)), todos los shortcodes de imágenes admiten rutas relativas en el parámetro `src`.
+
+**Nota 3**: a partir del [PR #280](https://github.com/welpo/tabi/pull/280), todos los shortcodes de imágenes admiten imágenes remotas en el parámetro `src`.
 
 ### Imágenes de doble tema
 

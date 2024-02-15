@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2023-11-24
+updated = 2024-02-16
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -19,6 +19,8 @@ social_media_card = "social_cards/blog_shortcodes.jpg"
 **Note**: all image shortcodes have two optional parameters: `full_width`, which defaults to `false` (see [below](#full-width-image)), and `lazy_loading`, which defaults to `true`.
 
 **Note 2**: as of [PR #222](https://github.com/welpo/tabi/pull/222) (commit [7796162](https://github.com/welpo/tabi/commit/7796162e378cacb9b4d6129f95138121224714f1)), all image shortcodes support relative paths in the `src` parameter.
+
+**Note 3**: as of [PR #280](https://github.com/welpo/tabi/pull/280), all image shortcodes support remote images in the `src` parameter.
 
 ### Dual theme images
 
