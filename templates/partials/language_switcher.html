@@ -27,7 +27,7 @@
                     {#- Check if the current language is the default language -#}
                     {#- If it is, append the language code to the base URL -#}
                 {%- elif lang == config.default_language -%}
-                    <a role="menuitem" lang="{{ lcode }}" aria-label="{{ language_name }}" href="{{ config.base_url }}/{{ lcode }}{{ current_path | default(value=" /") | safe }}">{{ language_name }}</a>
+                    <a role="menuitem" lang="{{ lcode }}" aria-label="{{ language_name }}" href="{{ config.base_url }}/{{ lcode }}{{ current_path | default(value="/") | safe }}">{{ language_name }}</a>
                 {%- else -%}
                     {#- If it's not, replace the current language code in the URL with the new one -#}
                     <a role="menuitem" lang="{{ lcode }}" aria-label="{{ language_name }}" href="{{ current_url | replace(from='/' ~ lang ~ '/', to='/' ~ lcode ~ '/') }}">{{ language_name }}</a>
