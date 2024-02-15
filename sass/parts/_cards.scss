@@ -8,8 +8,8 @@
 }
 
 .card {
-    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 1rem;
     background: var(--bg-2);
     min-height: 100px;
     overflow: hidden;
@@ -17,6 +17,7 @@
 
 .card-info {
     padding: 0 24px 24px 24px;
+    text-align: center;
 }
 
 .card-title {
