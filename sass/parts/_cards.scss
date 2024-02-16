@@ -5,38 +5,46 @@
     gap: 24px;
     margin-top: 4vmin;
     padding: 12px 0;
-}
 
-.card {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    border-radius: 1rem;
-    background: var(--bg-2);
-    min-height: 100px;
-    overflow: hidden;
-}
+    .card {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        border-radius: 1rem;
+        background: var(--bg-2);
+        min-height: 100px;
+        overflow: hidden;
 
-.card-info {
-    padding: 0 24px 24px 24px;
-    text-align: center;
-}
+        &:hover {
+            background-color: var(--primary-color);
+        }
 
-.card-title {
-    margin-top: 0.7em;
-}
+        &:hover .card-description {
+            color: var(--hover-color);
+        }
 
-.card-image {
-    border: unset;
-    width: 100%;
-}
+        .card-info {
+            padding: 0 24px 24px;
+            text-align: center;
+        }
 
-.card-image-placeholder {
-    width: 100%;
-    height: 12px;
-}
+        .card-title {
+            margin-top: 0.7em;
+        }
 
-.card-description {
-    margin-top: 0.5em;
-    overflow: hidden;
+        .card-image {
+            width: 100%;
+        }
+
+        .card-image-placeholder {
+            width: 100%;
+            height: 12px;
+        }
+
+        .card-description {
+            margin-top: 0.5em;
+            overflow: hidden;
+            color: var(--text-color);
+        }
+    }
 }
 
 @media all and (max-width: 720px) {
