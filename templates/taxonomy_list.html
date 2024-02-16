@@ -14,15 +14,17 @@
                 {% if config.extra.compact_tags %}
                     {# Shows the number of posts per tag as a superscript #}
                     <a href="{{ term.permalink | safe }}"
-                       aria-label="{{ term.name }} – 
-                    {{- macros_translate::translate(key="posts", number=length, default="posts", language_strings=language_strings) -}}
-                    {{ term.name }}
-                    </a> <sup>{{ term.pages | length }}</sup>
+                       aria-label="{{ term.name }} –
+                        {{ term.pages | length }}
+                        {{- macros_translate::translate(key="posts", number=number_of_posts, default="$NUMBER posts", language_strings=language_strings) -}}
+                    ">
+                        {{ term.name }}
+                    </a> <sup>{{ number_of_posts }}</sup>
                 {% else %}
                     <a href="{{ term.permalink | safe }}">
-                        {{ term.name }}</a>
-                        – {{ term.pages | length }}
-                        {{- macros_translate::translate(key="posts", number=length, default="posts", language_strings=language_strings) -}}
+                        {{ term.name }} </a>
+                    <span> – </span>
+                    {{- macros_translate::translate(key="posts", number=number_of_posts, default="$NUMBER posts", language_strings=language_strings) -}}
                 {% endif %}
             </li>
         {%- endfor -%}

@@ -17,15 +17,15 @@
                     <a href="{{ term.permalink | safe }}"
                        aria-label="{{ term.name }} –
                         {{ term.pages | length }}
-                        {{- macros_translate::translate(key="posts", number=number_of_posts, default=number_of_posts ~ " posts", language_strings=language_strings) -}}
+                        {{- macros_translate::translate(key="posts", number=number_of_posts, default="$NUMBER posts", language_strings=language_strings) -}}
                     ">
                         {{ term.name }}
-                    </a> <sup>{{ term.pages | length }}</sup>
+                    </a> <sup>{{ number_of_posts }}</sup>
                 {% else %}
                     <a href="{{ term.permalink | safe }}">
                         {{ term.name }} </a>
-                        <span> – </span>
-                        {{- macros_translate::translate(key="posts", number=number_of_posts, default=number_of_posts ~ " posts", language_strings=language_strings) -}}
+                    <span> – </span>
+                    {{- macros_translate::translate(key="posts", number=number_of_posts, default="$NUMBER posts", language_strings=language_strings) -}}
                 {% endif %}
             </li>
         {%- endfor -%}
