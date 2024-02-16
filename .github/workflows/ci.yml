@@ -17,16 +17,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Zola Build
+        uses: shalzz/zola-deploy-action@v0.18.0
+        env:
+          BUILD_ONLY: true
+
       - name: Zola Check
         uses: shalzz/zola-deploy-action@v0.18.0
         env:
           BUILD_ONLY: true
           CHECK_LINKS: true
-
-      - name: Zola Build
-        uses: shalzz/zola-deploy-action@v0.18.0
-        env:
-          BUILD_ONLY: true
 
   build_and_deploy:
     name: Build and Deploy on Main Push
