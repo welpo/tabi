@@ -11,6 +11,7 @@
     <ul class="tags">
         {%- for term in terms -%}
             <li class="tags-item">
+                {%- set number_of_posts = term.pages | length -%}
                 {% if config.extra.compact_tags %}
                     {# Shows the number of posts per tag as a superscript #}
                     <a href="{{ term.permalink | safe }}"
