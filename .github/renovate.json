@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":automergeMinor", ":disableDependencyDashboard"],
+  "commitMessageAction": "chore(deps): update",
+  "commitMessagePrefix": "⬆️",
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "updateTypes": ["pin"],
+      "commitMessagePrefix": "📌"
+    },
+    {
+      "updateTypes": ["major", "minor", "patch", "digest", "bump"],
+      "commitMessagePrefix": "⬆️"
+    },
+    {
+      "updateTypes": ["rollback"],
+      "commitMessagePrefix": "⬇️"
+    }
+  ]
+}
