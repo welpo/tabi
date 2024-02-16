@@ -1,0 +1,44 @@
+name: Build Site
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check_and_build_pr:
+    name: Check and Build for Pull Requests
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Zola Check
+        uses: shalzz/zola-deploy-action@v0.18.0
+        env:
+          BUILD_ONLY: true
+          CHECK_LINKS: true
+
+      - name: Zola Build
+        uses: shalzz/zola-deploy-action@v0.18.0
+        env:
+          BUILD_ONLY: true
+
+  build_and_deploy:
+    name: Build and Deploy on Main Push
+    runs-on: ubuntu-22.04
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build and Deploy
+        uses: shalzz/zola-deploy-action@v0.18.0
+        env:
+          PAGES_BRANCH: gh-pages
+          TOKEN: ${{ secrets.TOKEN }}
+          BUILD_THEMES: false
