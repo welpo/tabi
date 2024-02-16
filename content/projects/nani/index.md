@@ -1,15 +1,17 @@
 +++
 title = "nani"
 description = "Bash script to create public URLs from files or text on remote servers."
-weight = 3
+weight = 50
 
 [extra]
-local_image = "projects/nani/nani.webp"
+local_image = "projects/nani/nani_logo.webp"
 canonical_url = "https://osc.garden/projects/tabi/"
 social_media_card = "social_cards/projects_nani.jpg"
 +++
 
 If you're working on a remote server, you know that sharing files with others can often involve multiple steps. `nani` is a Bash script designed to streamline this process. By executing a single command, you can convert local files or URLs into accessible links, allowing for easier sharing right from your server.
+
+[![nani logo](nani_logo.webp)](https://github.com/welpo/nani/)
 
 #### [View on GitHub](https://github.com/welpo/nani) {.centered-text}
 
@@ -24,19 +26,19 @@ If you're working on a remote server, you know that sharing files with others ca
 1. Place `nani` in a directory within your PATH.
 2. Make the script executable.
 
-For detailed installation steps, [read the full documentation](https://github.com/welpo/nani#install).
+For detailed installation steps, [read the full documentation](https://github.com/welpo/nani#-install).
 
 ## Usage
 
 ```bash
-nani Path/To/picture.png
+$ nani Path/To/picture.png
 https://example.com/nani/hjRGLZB.png
 ```
 
 **Share a directory keeping its original name**:
 
 ```bash
-nani -o Path/To/Directory
+$ nani -o Path/To/Directory
 https://example.com/nani/Directory.zip
 ```
 

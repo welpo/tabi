@@ -1,7 +1,7 @@
 +++
 title = "tabi"
 description = "Un tema de Zola ràpid, lleuger i modern amb suport multilingüe."
-weight = 1
+weight = 30
 
 [extra]
 local_image = "projects/tabi/tabi.webp"
@@ -11,13 +11,13 @@ social_media_card = "social_cards/ca_projects_tabi.jpg"
 
 [**tabi**](https://github.com/welpo/tabi) és un tema modern i ric en funcionalitat per a [Zola](https://www.getzola.org/), un generador de llocs web estàtics molt ràpid.
 
-{{ full_width_image(src="projects/tabi/light_dark_tabi.webp", alt="Modes clar i fosc de tabi") }}
+{{ full_width_image(src="light_dark_tabi.webp", alt="Modes clar i fosc de tabi") }}
 
-#### [Veure a GitHub](https://github.com/welpo/tabi) {.centered-text}
+#### [Veure a GitHub](https://github.com/welpo/tabi) • [Demo i documentación](https://welpo.github.io/tabi/ca/) {.centered-text}
 
 ## Característiques
 
-- [Estableix qualsevol idioma com a predeterminat](https://welpo.github.io/tabi/ca/blog/faq-languages/#com-estableixo-la-llengua-predeterminada-del-meu-lloc). Configura el teu lloc en xinès, espanyol, francès, hindi… o qualsevol [altre idioma compatible](https://github.com/welpo/tabi/tree/main/i18n). La interfície del tema es traduirà en conseqüència.
+- [Estableix qualsevol idioma com a predeterminat](https://welpo.github.io/tabi/ca/blog/faq-languages/#com-estableixo-la-llengua-predeterminada-del-meu-lloc). Configura el teu lloc en xinès, espanyol, francès, hindi… o qualsevol [altre idioma compatible](https://welpo.github.io/tabi/ca/blog/faq-languages/#quines-llengues-admet-tabi). La interfície del tema es traduirà en conseqüència.
 - [Integració amb repositoris remots](https://welpo.github.io/tabi/ca/mastering-tabi-settings/#integracio-amb-repositoris-git) a GitHub, GitLab, Gitea i Codeberg per a l'historial de commits i mostrar el codi font del lloc.
 - Temes clars i foscos. S'adapta a la configuració del sistema operatiu, amb un interruptor a la barra de navegació.
 - [Suport multilingüe complet](https://welpo.github.io/tabi/ca/blog/faq-languages/#com-gestiona-tabi-el-suport-multilingue). Afegeix tants idiomes com vulguis i deixa que els teus usuaris triin amb el selector d'idioma.
@@ -49,11 +49,8 @@ social_media_card = "social_cards/ca_projects_tabi.jpg"
 ## Pràctiques de desenvolupament
 
 - **[Conventional Commits](https://www.conventionalcommits.org) i [Gitmoji](https://gitmoji.dev/)**: els missatges de commit segueixen formats estandarditzats per facilitar la llegibilitat.
-
 - **Seguiment d'incidències**: cada error o nova funcionalitat té el seu propi tiquet, que s'enllaça amb els commits de codi i PRs o problemes relacionats.
-
 - **Comentaris detallats**: els tiquets es documenten amb imatges, vídeos i descripcions detallades per facilitar una comunicació i resolució de problemes efectives.
-
 - **Referències creuades**: enllacem tots els tiquets amb els commits de codi, pull requests o problemes relacionats per a una traçabilitat completa.
 
 ## Evolució del projecte

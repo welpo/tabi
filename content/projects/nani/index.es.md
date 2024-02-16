@@ -1,24 +1,24 @@
 +++
 title = "nani"
 description = "Script Bash para crear URLs públicas a partir de archivos o texto en servidores remotos."
-weight = 3
+weight = 50
 
 [extra]
-local_image = "projects/nani/nani.webp"
+local_image = "projects/nani/nani_logo.webp"
 canonical_url = "https://osc.garden/es/projects/tabi/"
 social_media_card = "social_cards/es_projects_nani.jpg"
 +++
 
 Si trabajas en un servidor remoto, sabrás que compartir archivos con otras personas puede ser un proceso tedioso. `nani` es un script en Bash diseñado para simplificar esta tarea. Con un solo comando, puedes convertir archivos locales en enlaces públicos, facilitando el proceso de compartir directamente desde tu servidor.
 
+[![nani logo](nani_logo.webp)](https://github.com/welpo/nani/)
+
 #### [Ver en GitHub](https://github.com/welpo/nani) {.centered-text}
 
 ## Características clave
 
 - **Todo tipo de archivos**: maneja directorios, archivos FLAC, archivos de texto e incluso URLs a vídeos.
-
 - **Personalizable**: adapta los ajustes editando el script o un archivo de configuración.
-
 - **Notificaciones**: notificaciones en el escritorio e integración con el portapapeles para una mejor experiencia.
 
 ## Inicio rápido
@@ -26,19 +26,19 @@ Si trabajas en un servidor remoto, sabrás que compartir archivos con otras pers
 1. Coloca `nani` en un directorio dentro de tu PATH.
 2. Haz el script ejecutable.
 
-Para pasos de instalación más detallados, [consulta la documentación completa](https://github.com/welpo/nani#install).
+Para pasos de instalación más detallados, [consulta la documentación completa](https://github.com/welpo/nani#-install).
 
 ## Uso
 
 ```bash
-nani Ruta/A/foto.png
+$ nani Ruta/A/foto.png
 https://example.com/nani/hjRGLZB.png
 ```
 
 Compartir un directorio manteniendo su nombre original:
 
 ```bash
-nani -o Ruta/A/Directorio
+$ nani -o Ruta/A/Directorio
 https://example.com/nani/Directorio.zip
 ```
 

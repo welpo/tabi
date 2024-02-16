@@ -1,19 +1,18 @@
 +++
 title = "tabi"
-description = "A fast, lightweight, and modern Zola theme with multi-language support."
-weight = 1
+description = "A feature-rich modern Zola theme with first-class multi-language support."
+weight = 30
 
 [extra]
 local_image = "projects/tabi/tabi.webp"
-canonical_url = "https://osc.garden/projects/tabi/"
 social_media_card = "social_cards/projects_tabi.jpg"
 +++
 
 [**tabi**](https://github.com/welpo/tabi) is a modern, feature-rich theme for [Zola](https://www.getzola.org/), a fast static site generator.
 
-{{ full_width_image(src="projects/tabi/light_dark_tabi.webp", alt="tabi light and dark mode") }}
+{{ full_width_image(src="https://cdn.jsdelivr.net/gh/welpo/tabi@main/light_dark_screenshot.png", alt="tabi light and dark mode") }}
 
-#### [View on GitHub](https://github.com/welpo/tabi) {.centered-text}
+#### [View on GitHub](https://github.com/welpo/tabi) • [Demo & Documentation](https://welpo.github.io/tabi/) {.centered-text}
 
 ## Features
 
@@ -50,11 +49,8 @@ social_media_card = "social_cards/projects_tabi.jpg"
 ## Development Practices
 
 - **[Conventional Commits](https://www.conventionalcommits.org) & [Gitmoji](https://gitmoji.dev/)**: Commit messages follow standardised formats to enhance readability.
-
 - **Issue Tracking**: Each bug or new feature has its dedicated ticket, which is linked to any consequent code commits and related PRs or issues.
-
 - **Comprehensive Commentary**: Tickets are documented with images, videos, and detailed descriptions to facilitate effective communication and problem-solving.
-
 - **Cross-Referencing**: We link all tickets to the relevant code commits, pull requests, or related issues for complete traceability.
 
 ## Project Evolution
