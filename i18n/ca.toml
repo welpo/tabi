@@ -18,13 +18,14 @@ sitemap = "mapa del lloc"
 search = "Cercar"
 search_icon_title = "Fes clic o prem $SHORTCUT per obrir la cerca"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
 clear_search = "Esborrar cerca"  # Title of the X icon next to search input.
-result = "resultat"  # "1 result"
-results = "resultats"  # "3 results" (also used for 0 results).
+zero_results = "No s'han trobat resultats"
+one_results = "$NUMBER resultat"  # "1 result"
+many_results = "$NUMBER resultats"  # "3 results"
 
 # Navigation.
 read_more = "Llegir més"
-post = "entrada"
-posts = "entrades"  # Plural of "post".
+one_posts = "$NUMBER entrada"
+many_posts = "$NUMBER entrades"
 prev = "Anterior"  # As in "Previous" page.
 next = "Següent"  # As in "Next" page.
 of = "de"  # E.g. Page 1 "of" 3
@@ -43,8 +44,12 @@ go_to_comments = "Vés a la secció de comentaris"
 
 # Post metadata.
 draft = "ESBORRANY"
-min_read = "min de lectura"
-words = "paraules"
+zero_min_read = "<1 min de lectura"
+one_min_read = "$NUMBER min de lectura"
+many_min_read = "$NUMBER mins de lectura"
+zero_words = "Cap paraula"
+one_words = "$NUMBER paraula"
+many_words = "$NUMBER paraules"
 last_updated_on = "Última actualizació el"
 see_changes = "Veure canvis"
 

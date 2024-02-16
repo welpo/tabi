@@ -18,13 +18,14 @@ sitemap = "mapa do site"
 search = "Pesquisar"
 search_icon_title = "Clique ou pressione $SHORTCUT para abrir a pesquisa"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
 clear_search = "Limpar pesquisa"  # Title of the X icon next to search input.
-result = "resultado"  # "1 result"
-results = "resultados"  # "3 results" (also used for 0 results).
+zero_results = "Nenhum resultado encontrado"
+one_results = "$NUMBER resultado"  # "1 result"
+many_results = "$NUMBER resultados"  # "3 results"
 
 # Navigation.
 read_more = "Ler mais"
-post = "publicação"
-posts = "publicações"  # Plural of "post".
+one_posts = "$NUMBER publicação"
+many_posts = "$NUMBER publicações"
 prev = "Anterior"  # As in "Previous" page.
 next = "Seguinte"  # As in "Next" page.
 of = "de"  # E.g. Page 1 "of" 3
@@ -43,8 +44,12 @@ go_to_comments = "Ir para a seção de comentários"
 
 # Post metadata.
 draft = "RASCUNHO"
-min_read = "min de leitura"
-words = "palavras"
+zero_min_read = "<1 min de leitura"
+one_min_read = "$NUMBER min de leitura"
+many_min_read = "$NUMBER mins de leitura"
+zero_words = "Nenhuma palavra"
+one_words = "$NUMBER palavra"
+many_words = "$NUMBER palavras"
 last_updated_on = "Última atualização em"
 see_changes = "Ver alterações"
 

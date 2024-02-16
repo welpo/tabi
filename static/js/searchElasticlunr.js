@@ -2575,13 +2575,28 @@ window.onload = function () {
         return;
     }
 
-    const results = document.getElementById('results');
+    const lang = document.documentElement.lang;
     const searchInput = document.getElementById('searchInput');
     const searchModal = document.getElementById('searchModal');
     const searchButton = document.getElementById('search-button');
-    const nResultsSpan = document.getElementById('n-results');
     const clearSearchButton = document.getElementById('clear-search');
     const resultsContainer = document.getElementById('results-container');
+    const results = document.getElementById('results');
+    // Get all spans holding the translated strings, even if they are only used on one language.
+    const zeroResultsSpan = document.getElementById('zero_results');
+    const oneResultsSpan = document.getElementById('one_results');
+    const twoResultsSpan = document.getElementById('two_results');
+    const fewResultsSpan = document.getElementById('few_results');
+    const manyResultsSpan = document.getElementById('many_results');
+
+    // Static mapping of keys to spans.
+    const resultSpans = {
+        zero_results: zeroResultsSpan,
+        one_results: oneResultsSpan,
+        two_results: twoResultsSpan,
+        few_results: fewResultsSpan,
+        many_results: manyResultsSpan,
+    };
 
     // Replace $SHORTCUT in search icon title with actual OS-specific shortcut.
     function getShortcut() {
@@ -2658,7 +2673,6 @@ window.onload = function () {
     function clearSearch() {
         searchInput.value = '';
         results.innerHTML = '';
-        nResultsSpan.textContent = '0';
         resultsContainer.style.display = 'none';
         searchInput.removeAttribute('aria-activedescendant');
     }
@@ -3006,19 +3020,66 @@ window.onload = function () {
     );
 
     function updateResultText(count) {
-        const nResultsSpan = document.getElementById('n-results');
-        nResultsSpan.textContent = count.toString();
+        // Determine the correct pluralization key based on count and language.
+        const pluralizationKey = getPluralizationKey(count, lang);
 
-        const singular = document.getElementById('result-text-singular');
-        const plural = document.getElementById('result-text-plural');
+        // Hide all result text spans.
+        Object.values(resultSpans).forEach((span) => {
+            if (span) span.style.display = 'none';
+        });
 
-        if (count === 1) {
-            singular.style.display = 'inline';
-            plural.style.display = 'none';
-        } else {
-            singular.style.display = 'none';
-            plural.style.display = 'inline';
+        // Show the relevant result text span, replacing $NUMBER with the actual count.
+        const activeSpan = resultSpans[pluralizationKey];
+        if (activeSpan) {
+            activeSpan.style.display = 'inline';
+            activeSpan.textContent = activeSpan.textContent.replace(
+                '$NUMBER',
+                count.toString()
+            );
         }
+    }
+
+    function getPluralizationKey(count, lang) {
+        let key = '';
+        const slavicLangs = ['uk', 'be', 'bs', 'hr', 'ru', 'sr'];
+
+        // Common cases: zero, one.
+        if (count === 0) {
+            key = 'zero_results';
+        } else if (count === 1) {
+            key = 'one_results';
+        } else {
+            // Arabic.
+            if (lang === 'ar') {
+                let modulo = count % 100;
+                if (count === 2) {
+                    key = 'two_results';
+                } else if (modulo >= 3 && modulo <= 10) {
+                    key = 'few_results';
+                } else {
+                    key = 'many_results';
+                }
+            } else if (slavicLangs.includes(lang)) {
+                // Slavic languages.
+                let modulo10 = count % 10;
+                let modulo100 = count % 100;
+                if (modulo10 === 1 && modulo100 !== 11) {
+                    key = 'one_results';
+                } else if (
+                    modulo10 >= 2 &&
+                    modulo10 <= 4 &&
+                    !(modulo100 >= 12 && modulo100 <= 14)
+                ) {
+                    key = 'few_results';
+                } else {
+                    key = 'many_results';
+                }
+            } else {
+                key = 'many_results'; // Default plural.
+            }
+        }
+
+        return key;
     }
 
     function setupTouchEvents() {

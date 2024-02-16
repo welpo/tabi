@@ -20,13 +20,14 @@ sitemap = "साइटमैप"
 search = "खोजें"
 search_icon_title = "$SHORTCUT दबाएँ या क्लिक करें खोज खोलने के लिए"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
 clear_search = "खोज साफ करें"  # Title of the X icon next to search input.
-result = "परिणाम"  # "1 result"
-results = "परिणाम"  # "3 results" (also used for 0 results).
+zero_results = "कोई परिणाम नहीं मिला"
+one_results = "$NUMBER परिणाम"  # "1 result"
+many_results = "$NUMBER परिणाम"  # "3 results"
 
 # Navigation.
 read_more = "और पढ़ें"
-post = "पोस्ट"
-posts = "पोस्ट्स"  # Plural of "post".
+one_posts = "$NUMBER पोस्ट"
+many_posts = "$NUMBER पोस्ट्स"
 prev = "पिछला"  # As in "Previous" page.
 next = "अगला"  # As in "Next" page.
 of = "का"  # E.g. Page 1 "of" 3
@@ -45,8 +46,12 @@ go_to_comments = "टिप्पणी अनुभाग में जाए�
 
 # Post metadata.
 draft = "मसौदा"
-min_read = "मिनट पठन समय"
-words = "शब्द"
+zero_min_read = "कम से कम 1 मिनट पठन समय"
+one_min_read = "$NUMBER मिनट पठन समय"
+many_min_read = "$NUMBER मिनट पठन समय"
+zero_words = "कोई शब्द नहीं"
+one_words = "$NUMBER शब्द"
+many_words = "$NUMBER शब्द"
 last_updated_on = "आखिरी अपडेट"
 see_changes = "बदलाव देखें"
 

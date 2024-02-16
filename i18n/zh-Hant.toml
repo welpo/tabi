@@ -18,13 +18,14 @@ sitemap = "網站地圖"  # Machine translated.
 search = "搜尋"
 search_icon_title = "點擊或按 $SHORTCUT 來開啟搜尋"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
 clear_search = "清除搜尋"  # Title of the X icon next to search input.
-result = "結果"  # "1 result"
-results = "結果"  # "3 results" (also used for 0 results).
+zero_results = "沒有找到結果"
+one_results = "$NUMBER 個結果"
+many_results = "$NUMBER 個結果"
 
 # Navigation.
 read_more = "閱讀全文"
-post = "文章"
-posts = "文章"  # Plural of "post".
+one_posts = "$NUMBER 篇文章"
+many_posts = "$NUMBER 篇文章"
 prev = "上一頁"  # As in "Previous" page.
 next = "下一頁"  # As in "Next" page.
 of = "/"  # E.g. Page 1 "of" 3
@@ -43,8 +44,12 @@ go_to_comments = "轉到評論區"  # Machine translated.
 
 # Post metadata.
 draft = "草稿"
-min_read = "分鐘閱讀"
-words = "字"
+zero_min_read = "少於1分鐘閱讀"
+one_min_read = "$NUMBER 分鐘閱讀"
+many_min_read = "$NUMBER 分鐘閱讀"
+zero_words = "沒有字"
+one_words = "$NUMBER 字"
+many_words = "$NUMBER 字"
 last_updated_on = "最後更新於"
 see_changes = "修改紀錄"
 

@@ -2,6 +2,10 @@ language_name = "Русский"  # Shown in language picker for multi-language 
 date_locale = "ru_RU"
 full-stop = "."  # Used at the end of a sentence.
 
+# Note on pluralization prefixes:
+# - few_: for numbers ending in 2-4, except 12-14, in genitive singular.
+# - many_: for all others, including 5-9, 0, and teens (11-14), in genitive plural.
+
 # Menu items.
 # Should match the names in config.extra.menu and config.extra.footer_menu.
 blog = "блог"
@@ -18,13 +22,17 @@ sitemap = "карта сайта"
 search = "Поиск"
 search_icon_title = "Нажмите или используйте $SHORTCUT для открытия поиска"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
 clear_search = "Очистить поиск"  # Title of the X icon next to search input.
-result = "результат"  # "1 result"
-results = "результаты"  # "3 results" (also used for 0 results).
+zero_results = "Нет результатов"
+one_results = "$NUMBER результат"
+few_results = "$NUMBER результата"  # 2, 3, 4 but not 12-14
+many_results = "$NUMBER результатов"  # 5-9, 0, 11-14, and others
 
 # Navigation.
 read_more = "Читать далее"
 post = "пост"
-posts = "посты"  # Plural of "post".
+one_posts = "$NUMBER пост"
+few_posts = "$NUMBER поста"  # 2, 3, 4 but not 12-14
+many_posts = "$NUMBER постов"  # 5-9, 0, 11-14, and others
 prev = "Пред."  # As in "Previous" page.
 next = "След."  # As in "Next" page.
 of = "из"  # E.g. Page 1 "of" 3
@@ -43,8 +51,14 @@ go_to_comments = "Перейти к комментариям"
 
 # Post metadata.
 draft = "ЧЕРНОВИК"
-min_read = "мин чтения"
-words = "слова"
+zero_min_read = "<1 мин чтения"
+one_min_read = "$NUMBER мин чтения"
+few_min_read = "$NUMBER мин чтения"  # 2, 3, 4 but not 12-14
+many_min_read = "$NUMBER мин чтения"  # 5-9, 0, 11-14, and others
+zero_words = "Нет слов"
+one_words = "$NUMBER слово"
+few_words = "$NUMBER слова"  # 2, 3, 4 but not 12-14
+many_words = "$NUMBER слов"  # 5-9, 0, 11-14, and others
 last_updated_on = "Последнее обновление"
 see_changes = "Смотреть изменения"
 

@@ -12,9 +12,9 @@ full_stop = "."  # Used at the end of a sentence.
 blog = "التدوينات"
 archive = "الأرشيف"
 tags = "الوسوم"
-projects = "مشاريعي" # Change this to "المشاريع" if the site is for an organization.
-about = "عني" # Change this to "عنا" or "من نحن" if the site is for an organization.
-contact = "تواصل معي" # Change this to "تواصل معنا" if the site is for an organization.
+projects = "مشاريعي"  #Change this to "المشاريع" if the site is for an organization.
+about = "عني"  #Change this to "عنا" or "من نحن" if the site is for an organization.
+contact = "تواصل معي"  #Change this to "تواصل معنا" if the site is for an organization.
 privacy = "الخصوصية"
 site_statistics = "إحصائيات المدونة"
 sitemap = "خريطة المدونة"
@@ -23,13 +23,18 @@ sitemap = "خريطة المدونة"
 search = "بحث"
 search_icon_title = "أنقر هنا أو اضغط $SHORTCUT لفتح البحث"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
 clear_search = "مسح البحث"
-result = "نتيجة"  # "1 result"
-results = "نتائج"   # "3 results" (also used for 0 results).
+zero_results = "لم يتم العثور على نتائج"  #No search results.
+one_results = "تم العثور على نتيجة واحدة"  # One search result.
+two_results = "تم العثور على نتيجتين"  # Two search results.
+few_results = "تم العثور على $NUMBER نتائج"  # for 3 to 10 search results.
+many_results = "تم العثور على $NUMBER نتيجة"  # 11 or more search results.
 
 # Navigation.
 read_more = "إقرأ المزيد"
-post = "تدوينة"
-posts = "تدوينات"  # Plural of "post".
+one_posts = "تدوينة واحدة"  #One blog post.
+two_posts = "تدوينتين"  #Two blog posts.
+few_posts = "$NUMBER تدوينات"  #3 to 10 blog posts.
+many_posts = "$NUMBER تدوينة"  #11 or more blog posts.
 prev = "السابق"  # As in "Previous" page.
 next = "التالي"  # As in "Next" page.
 of = "من"  # E.g. Page 1 "of" 3
@@ -48,8 +53,18 @@ go_to_comments = "انتقل إلى التعليقات"
 
 # Post metadata.
 draft = "مسودة"
-min_read = "دقيقة متوقعة للقراءة"
-words = "كلمة"
+zero_min_read = "الوقت المتوقع للقراءة: أقل من دقيقة"  #Less than one minute read.
+one_min_read = "الوقت المتوقع للقراءة: دقيقة واحدة"  #One minute read.
+two_min_read = "الوقت المتوقع للقراءة: دقيقتان"  #Two minutes read.
+few_min_read = "الوقت المتوقع للقراءة: $NUMBER دقائق"  #3 to 10 minutes read.
+many_min_read = "الوقت المتوقع للقراءة: $NUMBER دقيقة"  #11 or more minutes read.
+
+zero_words = "لا توجد كلمات"  # No words.
+one_words = "كلمة واحدة"  # One word.
+two_words = "كلمتين"  # Two words.
+few_words = "$NUMBER كلمات"  # 3 to 10 words.
+many_words = "$NUMBER كلمة"  # 11 or more words.
+
 last_updated_on = "آخر تحديث كان في"
 see_changes = "الإطلاع على التغييرات"
 

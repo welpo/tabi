@@ -2,6 +2,11 @@
 # If you would like to help correct errors or improve the translation,
 # please open an issue or submit a pull request.
 # https://github.com/welpo/tabi
+
+# Note on pluralization prefixes:
+# - few_: for numbers ending in 2-4, except 12-14, in genitive singular.
+# - many_: for all others, including 5-9, 0, and teens (11-14), in genitive plural.
+
 language_name = "Українська"  # Shown in language picker for multi-language sites.
 date_locale = "uk_UA"
 full-stop = "."  # Used at the end of a sentence.
@@ -22,13 +27,16 @@ sitemap = "карта сайту"
 search = "Пошук"
 search_icon_title = "Натисніть або використовуйте $SHORTCUT, щоб відкрити пошук"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
 clear_search = "Очистити пошук"  # Title of the X icon next to search input.
-result = "результат"  # "1 result"
-results = "результати"  # "3 results" (also used for 0 results).
+zero_results = "Немає результатів"
+one_results = "$NUMBER результат"
+few_results = "$NUMBER результати"
+many_results = "$NUMBER результатів"
 
 # Navigation.
 read_more = "Читати далі"
-post = "пост"
-posts = "пости"  # Plural of "post".
+one_posts = "$NUMBER пост"
+few_posts = "$NUMBER пости"  # 2, 3, 4 but not 12-14
+many_posts = "$NUMBER постів"  # 5-9, 0, 11-14, and others
 prev = "Попер."  # As in "Previous" page.
 next = "Наст."  # As in "Next" page.
 of = "з"  # E.g. Page 1 "of" 3
@@ -47,8 +55,14 @@ go_to_comments = "Перейти до коментарів"
 
 # Post metadata.
 draft = "ЧЕРНЕТКА"
-min_read = "хв. читання"
-words = "слова"
+zero_min_read = "<1 хв. читання"
+one_min_read = "$NUMBER хв. читання"
+few_min_read = "$NUMBER хв. читання"  # 2, 3, 4 but not 12-14
+many_min_read = "$NUMBER хв. читання"  # 5-9, 0, 11-14, and others
+zero_words = "Без слів"
+one_words = "$NUMBER слово"
+few_words = "$NUMBER слова"  # 2, 3, 4 but not 12-14
+many_words = "$NUMBER слів"  # 5-9, 0, 11-14, and others
 last_updated_on = "Останнє оновлення"
 see_changes = "Переглянути зміни"
 

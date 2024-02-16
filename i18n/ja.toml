@@ -22,13 +22,14 @@ sitemap = "サイトマップ"
 search = "検索"
 search_icon_title = "$SHORTCUTを押すか、クリックして検索を開く"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
 clear_search = "検索をクリア"  # Title of the X icon next to search input.
-result = "結果"  # "1 result"
-results = "結果"  # "3 results" (also used for 0 results).
+zero_results = "結果が見つかりません"
+one_results = "$NUMBER 結果"  # "1 result"
+many_results = "$NUMBER 結果"  # "3 results"
 
 # Navigation.
 read_more = "続きを読む"
-post = "投稿"
-posts = "投稿一覧"  # Plural of "post".
+one_posts = "$NUMBER 投稿"
+many_posts = "$NUMBER 投稿"
 prev = "前"  # As in "Previous" page.
 next = "次"  # As in "Next" page.
 of = "中"  # E.g. Page 1 "of" 3
@@ -47,8 +48,12 @@ go_to_comments = "コメントセクションへ"
 
 # Post metadata.
 draft = "ドラフト"
-min_read = "読了時間（分）"
-words = "単語数"
+zero_min_read = "1分未満の読了時間"
+one_min_read = "$NUMBER 分の読了時間"
+many_min_read = "$NUMBER 分の読了時間"
+zero_words = "単語数ゼロ"
+one_words = "$NUMBER 単語"
+many_words = "$NUMBER 単語"
 last_updated_on = "最終更新日"
 see_changes = "変更を見る"
 

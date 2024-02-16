@@ -22,13 +22,14 @@ sitemap = "seitenübersicht"
 search = "Suchen"
 search_icon_title = "Klicken oder $SHORTCUT drücken, um die Suche zu öffnen"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
 clear_search = "Suche löschen"  # Title of the X icon next to search input.
-result = "ergebnis"  # "1 result"
-results = "ergebnisse"  # "3 results" (also used for 0 results).
+zero_results = "Keine Ergebnisse gefunden"
+one_results = "$NUMBER Ergebnis"  # "1 result"
+many_results = "$NUMBER Ergebnisse"  # "3 results"
 
 # Navigation.
 read_more = "Weiterlesen"
-post = "beitrag"
-posts = "beiträge"  # Plural of "post".
+one_posts = "$NUMBER Beitrag"
+many_posts = "$NUMBER Beiträge"
 prev = "Vorherig"  # As in "Previous" page.
 next = "Nächst"  # As in "Next" page.
 of = "von"  # E.g. Page 1 "of" 3
@@ -47,8 +48,12 @@ go_to_comments = "Zum Kommentarbereich"
 
 # Post metadata.
 draft = "ENTWURF"
-min_read = "min. lesedauer"
-words = "wörter"
+zero_min_read = "weniger als 1 Min. Lesezeit"
+one_min_read = "$NUMBER Min. Lesezeit"
+many_min_read = "$NUMBER Min. Lesezeit"
+zero_words = "Keine Wörter"
+one_words = "$NUMBER Wort"
+many_words = "$NUMBER Wörter"
 last_updated_on = "Zuletzt aktualisiert am"
 see_changes = "Änderungen anzeigen"
 
