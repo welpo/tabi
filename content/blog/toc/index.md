@@ -1,7 +1,7 @@
 +++
 title = "Table of Contents"
 date = 2022-11-01
-updated = 2023-09-08
+updated = 2024-02-16
 description = "A post showcasing the optional Table of Contents and its options."
 
 [taxonomies]
@@ -85,7 +85,7 @@ Keep your readers in mind when setting the `toc_levels`. While it can be temptin
 
 You might want to hide certain headers. For example, if your article has many Figures or Tables, they might clutter the ToC. You can hide specific headers in the ToC with the `toc_ignore_pattern` variable.
 
-This variable expects a regular expression (regex), as it's using Tera's [matching](https://tera.netlify.app/docs/#matching) test. The `toc_ignore_pattern` is tested against the text of the header, excluding the `#` character(s). For example, for the header `### Further reading`, the text `Further reading` would be checked against.
+This variable expects a regular expression (regex), as it's using Tera's [matching](https://keats.github.io/tera/docs/#matching) test. The `toc_ignore_pattern` is tested against the text of the header, excluding the `#` character(s). For example, for the header `### Further reading`, the text `Further reading` would be checked against.
 
 Here are some example values for `toc_ignore_pattern` along with the headers they can hide:
 

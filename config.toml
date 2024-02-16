@@ -39,6 +39,9 @@ smart_punctuation = true
 
 [link_checker]
 internal_level = "warn"
+skip_anchor_prefixes = [
+    "https://github.com/",
+]
 
 [languages.es]
 title = "~/tabi"

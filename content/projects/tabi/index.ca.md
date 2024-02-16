@@ -18,7 +18,7 @@ social_media_card = "social_cards/ca_projects_tabi.jpg"
 ## Característiques
 
 - [Estableix qualsevol idioma com a predeterminat](https://welpo.github.io/tabi/ca/blog/faq-languages/#com-estableixo-la-llengua-predeterminada-del-meu-lloc). Configura el teu lloc en xinès, espanyol, francès, hindi… o qualsevol [altre idioma compatible](https://welpo.github.io/tabi/ca/blog/faq-languages/#quines-llengues-admet-tabi). La interfície del tema es traduirà en conseqüència.
-- [Integració amb repositoris remots](https://welpo.github.io/tabi/ca/mastering-tabi-settings/#integracio-amb-repositoris-git) a GitHub, GitLab, Gitea i Codeberg per a l'historial de commits i mostrar el codi font del lloc.
+- [Integració amb repositoris remots](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings#integracio-amb-repositoris-git) a GitHub, GitLab, Gitea i Codeberg per a l'historial de commits i mostrar el codi font del lloc.
 - Temes clars i foscos. S'adapta a la configuració del sistema operatiu, amb un interruptor a la barra de navegació.
 - [Suport multilingüe complet](https://welpo.github.io/tabi/ca/blog/faq-languages/#com-gestiona-tabi-el-suport-multilingue). Afegeix tants idiomes com vulguis i deixa que els teus usuaris triin amb el selector d'idioma.
 - Puntuació perfecta en Lighthouse (Rendiment, Accessibilitat, Millors Pràctiques i SEO).

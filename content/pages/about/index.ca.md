@@ -16,7 +16,7 @@ Busques instruccions detallades o consells sobre com utilitzar **tabi**? Les sec
 
 ## Característiques
 
-**tabi** ofereix suport per a [diversos idiomes](https://welpo.github.io/tabi/ca/blog/faq-languages/), [aparença personalitzable](https://welpo.github.io/tabi/ca/blog/customise-tabi/), [integració de comentaris](https://welpo.github.io/tabi/blog/comments/), i molt més, tot amb un enfocament en el rendiment ([tot el JavaScript és opcional](https://welpo.github.io/ca/tabi/blog/javascript/)) i la [seguretat](https://welpo.github.io/ca/tabi/blog/security/).
+**tabi** ofereix suport per a [diversos idiomes](https://welpo.github.io/tabi/ca/blog/faq-languages/), [aparença personalitzable](https://welpo.github.io/tabi/ca/blog/customise-tabi/), [integració de comentaris](https://welpo.github.io/tabi/blog/comments/), i molt més, tot amb un enfocament en el rendiment ([tot el JavaScript és opcional](https://welpo.github.io/tabi/ca/blog/javascript/)) i la [seguretat](https://welpo.github.io/tabi/ca/blog/security/).
 
 ## Contribucions
 

@@ -1,7 +1,7 @@
 +++
 title = "Tabla de contenido"
 date = 2022-11-01
-updated = 2023-09-08
+updated = 2024-02-16
 description = "Una publicación que muestra la tabla de contenido opcional así como su configuración."
 
 [taxonomies]
@@ -86,7 +86,7 @@ Ten en cuenta a tus lectores al establecer `toc_levels`. Aunque puede ser tentad
 
 Es posible que quieras ocultar ciertos encabezados. Por ejemplo, si tu artículo tiene muchas Figuras o Tablas, éstas podrían saturar la TdC. Puedes ocultar encabezados específicos en la TdC configurando la variable `toc_ignore_pattern` en la sección `[extra]` del front matter de tu post.
 
-Esta variable espera una expresión regular (regex), ya que utiliza el test [matching](https://tera.netlify.app/docs/#matching) de Tera. El `toc_ignore_pattern` se prueba contra el texto del encabezado. Por ejemplo, para el encabezado `### Lectura adicional`, sólo el texto `Lectura adicional` se usaría para comprobar si concuerda con el patrón.
+Esta variable espera una expresión regular (regex), ya que utiliza el test [matching](https://keats.github.io/tera/docs/#matching) de Tera. El `toc_ignore_pattern` se prueba contra el texto del encabezado. Por ejemplo, para el encabezado `### Lectura adicional`, sólo el texto `Lectura adicional` se usaría para comprobar si concuerda con el patrón.
 
 Aquí tienes algunos valores de ejemplo para `toc_ignore_pattern` junto con los encabezados que ocultarían:
 
