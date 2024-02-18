@@ -5,6 +5,10 @@
 # Configuration options are organized into tables and keys.
 # See documentation for more information on available options.
 
+[remote.github]
+owner = "welpo"
+repo = "tabi"
+
 [changelog]
 # changelog header
 header = """
@@ -17,9 +21,12 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 # template for the changelog body
 # https://keats.github.io/tera/docs/#introduction
 body = """
+{%- macro remote_url() -%}
+  https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}
+{%- endmacro -%}
 {% if version %}\
     {% if previous.version %}\
-        ## [{{ version | trim_start_matches(pat="v") }}](<REPO>/compare/{{ previous.version }}..{{ version }}) - {{ timestamp | date(format="%Y-%m-%d") }}
+        ## [{{ version | trim_start_matches(pat="v") }}]({{ self::remote_url() }}/compare/{{ previous.version }}..{{ version }}) - {{ timestamp | date(format="%Y-%m-%d") }}
     {% else %}\
         ## {{ version | trim_start_matches(pat="v") }} - {{ timestamp | date(format="%Y-%m-%d") }}
     {% endif %}\
@@ -29,7 +36,14 @@ body = """
 
 {% macro commit(commit, in_breaking_section=false) -%}
     - {% if commit.scope %}*({{ commit.scope }})* {% endif %}{% if commit.breaking and not in_breaking_section %}[**‼️BREAKING‼️**] {% endif %}\
-        {{ commit.message | upper_first }} - ([{{ commit.id | truncate(length=7, end="") }}](<REPO>/commit/{{ commit.id }}))\
+        {{ commit.message | upper_first }}\
+        {% if not commit.github.pr_number %} ([{{ commit.id | truncate(length=7, end="") }}]({{ self::remote_url() }}/commit/{{ commit.id }})){%- endif -%}{% if commit.github.username %} by @{{ commit.github.username }} \
+        {%- set co_authors = commit.footers | filter(attribute="token", value="Co-authored-by") | map(attribute="value") -%}
+        {%- set number_of_co_authors = co_authors | length -%}
+        {%- for co_author in co_authors -%}
+            {%- if not loop.last %}, {% else %} and {% endif %}@{{ co_author | split(pat=" <") | first | trim }}
+        {%- endfor -%}
+        {%- endif -%}
 {% endmacro -%}
 
 {%- set breaking_header_shown = false -%}
@@ -59,7 +73,19 @@ body = """
             {{ self::commit(commit=commit) }}
         {% endif -%}
     {% endfor -%}
-{% endfor %}\n
+{% endfor %}
+
+{%- if github.contributors | filter(attribute="is_first_time", value=true) | length != 0 -%}
+  {% raw %}\n{% endraw %}### 👥 New contributors
+  {% raw -%}\n{% endraw -%}
+{%- endif %}\
+{% for contributor in github.contributors | filter(attribute="is_first_time", value=true) %}
+  🫶 @{{ contributor.username }} made their first contribution
+    {%- if contributor.pr_number %} in \
+      [#{{ contributor.pr_number }}]({{ self::remote_url() }}/pull/{{ contributor.pr_number }}) \
+    {%- endif %}
+{% endfor %}
+{% raw -%}\n{% endraw -%}
 """
 
 # remove the leading and trailing whitespace from the template
@@ -70,7 +96,7 @@ footer = """
 """
 # postprocessors
 postprocessors = [
-    { pattern = '<REPO>', replace = "https://github.com/welpo/tabi" }, # replace repository URL
+    { pattern = " @([a-zA-Z0-9](?:[a-zA-Z0-9]+-?)*[a-zA-Z0-9])", replace = " [@$1](https://github.com/$1)"}, # add link to GitHub usernames
 ]
 
 [git]

@@ -15,8 +15,7 @@ fi
 if [ "$#" -eq 1 ]; then
     VERSION_TAG=$1
 else
-    # After git-cliff version 1.4.0 it should be possible to run `git cliff --bumped-version`.
-    suggested_version=$(git cliff --unreleased --bump --context | jq -r .[0].version)
+    suggested_version=$(git cliff --bumped-version)
     echo -n "No version tag provided. git-cliff suggests $suggested_version. Proceed? [Y/n] "
     read user_input
 
@@ -46,74 +45,21 @@ git cliff --tag "$VERSION_TAG" -o CHANGELOG.md
 git add -A
 git commit -m "🔖 chore(release): prepare for $VERSION_TAG"
 
-# Template for the tag description.
-export GIT_CLIFF_TEMPLATE="\
-    {%- set breaking_header_shown = false -%}
-    {% for commit in commits -%}
-        {%- if commit.breaking and not breaking_header_shown %}
-            💥 BREAKING CHANGES 💥
-            {% set_global breaking_header_shown = true -%}
-        {%- endif %}
-        {%- if commit.breaking %}
-            - {{ commit.message | upper_first -}}
-        {% endif -%}
-    {% endfor %}
-    {% for group, group_commits in commits | group_by(attribute=\"group\") %}
-        {{ group | striptags | trim | upper_first }}
-        {% for commit in group_commits %}
-            - {% if commit.breaking %}[‼️BREAKING‼️] {% endif %}{{ commit.message | upper_first }}
-        {%- endfor %}
-    {% endfor %}"
-
-# Cleaner template for the tag description.
-export GIT_CLIFF__CHANGELOG__BODY=$(cat <<'EOF'
-{% if version %}\
-    ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
-{% else %}\
-    ## unreleased
-{% endif %}\
-
-{% macro commit(commit, in_breaking_section=false) -%}
-    - {% if commit.scope %}*({{ commit.scope }})* {% endif %}{% if commit.breaking and not in_breaking_section %}[**‼️BREAKING‼️**] {% endif %}\
-        {{ commit.message | upper_first }} - ({{ commit.id | truncate(length=7, end="") }})\
-{% endmacro -%}
-
-{%- set breaking_header_shown = false -%}
-{% for commit in commits -%}
-    {% if commit.breaking and not breaking_header_shown -%}
-        {% raw %}\n### 💥 BREAKING CHANGES 💥\n{% endraw %}
-        {% set_global breaking_header_shown = true %}
-    {%- endif -%}
-    {%- if commit.breaking -%}
-        {{ self::commit(commit=commit, in_breaking_section=true) -}}
-    {% endif -%}
-{%- endfor -%}
-{%- if breaking_header_shown == true -%}
-    {% raw %}\n{% endraw %}\
-{%- endif -%}
-
-{% for group, commits in commits | group_by(attribute="group") %}
-    ### {{ group | striptags | trim | upper_first }}
-    {% for commit in commits
-    | filter(attribute="scope")
-    | sort(attribute="scope") %}
-        {{ self::commit(commit=commit) }}
-    {%- endfor -%}
-    {% raw %}\n{% endraw %}\
-    {%- for commit in commits %}
-        {%- if not commit.scope -%}
-            {{ self::commit(commit=commit) }}
-        {% endif -%}
-    {% endfor -%}
-{% endfor %}\n
-EOF
-)
 
 # Generate the tag description.
 changelog=$(git cliff --tag "$VERSION_TAG" --unreleased --strip all)
 
-# Undo the pre_processing that adds PR links.
+# Clean up tag's changelog; tag descriptions don't support markdown.
+# Remove PR links.
 changelog=$(echo "$changelog" | sed -E 's/\[\#([0-9]+)\]\(https:\/\/github\.com\/welpo\/[^\/]+\/issues\/([0-9]+)\)/#\1/g')
+# Remove commit links.
+changelog=$(echo "$changelog" | sed -E 's/\[([0-9a-f]+)\]\(https:\/\/github\.com\/welpo\/[^\/]+\/commit\/([0-9a-f]+)\)/\1/g')
+# Remove scopes.
+changelog=$(echo "$changelog" | sed -E 's/\*\(([^)]+)\)\* //g')
+# Remove @author links, leaving just the username.
+changelog=$(echo "$changelog" | sed -E 's/\[\@([a-zA-Z0-9_]+)\]\(https:\/\/github\.com\/[a-zA-Z0-9_]+\)/@\1/g')
+# Remove markdown headers.
+changelog=$(echo "$changelog" | sed -E 's/^#+ //g')
 
 # Create a signed and annotated tag.
 git tag -s -a "$VERSION_TAG" -m "Release $VERSION_TAG" -m "$changelog"
