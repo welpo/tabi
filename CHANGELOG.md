@@ -4,6 +4,46 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.3.0](https://github.com/welpo/tabi/compare/v2.2.0..v2.3.0) - 2024-02-19
+
+### ✨ Features
+
+- *(i18n)* Implement pluralization logic ([#277](https://github.com/welpo/tabi/issues/277)) by [@TheAwiteb](https://github.com/TheAwiteb) and [@welpo](https://github.com/welpo)
+- *(i18n)* Add Arabic language ([#265](https://github.com/welpo/tabi/issues/265)) by [@TheAwiteb](https://github.com/TheAwiteb)
+- *(shortcodes)* Support URLs for image source ([#280](https://github.com/welpo/tabi/issues/280)) by [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(404)* Fix broken language selection from 404 page ([90def02](https://github.com/welpo/tabi/commit/90def02dd7d54e62cbfe8f4e78b6e1e198b631be)) by [@welpo](https://github.com/welpo)
+- *(article-navigation)* Adjust spacing for RTL ([#275](https://github.com/welpo/tabi/issues/275)) by [@welpo](https://github.com/welpo)
+- *(i18n)* Reverse arrows in RTL languages ([#272](https://github.com/welpo/tabi/issues/272)) by [@TheAwiteb](https://github.com/TheAwiteb) and [@welpo](https://github.com/welpo)
+- *(i18n)* Fix header anchor for RTL ([#270](https://github.com/welpo/tabi/issues/270)) by [@TheAwiteb](https://github.com/TheAwiteb) and [@welpo](https://github.com/welpo)
+- *(i18n)* Atom feed page direction for RTL langs ([#268](https://github.com/welpo/tabi/issues/268)) by [@TheAwiteb](https://github.com/TheAwiteb) and [@welpo](https://github.com/welpo)
+
+### 💄 Styling
+
+- *(projects)* Set entire card as link target ([22d4d68](https://github.com/welpo/tabi/commit/22d4d68a690239dfe664e8513eaaf15b525e45ec)) by [@welpo](https://github.com/welpo)
+- *(projects)* Minor redesign ([#278](https://github.com/welpo/tabi/issues/278)) by [@welpo](https://github.com/welpo)
+
+### 📝 Documentation
+
+- *(i18n)* Add Arabic to list of supported languages ([e5442fa](https://github.com/welpo/tabi/commit/e5442fa29f32f9c1294d980df692b1ce096ce3fc)) by [@welpo](https://github.com/welpo)
+- *(mastering-tabi)* Fix unclosed codeblock ([274c414](https://github.com/welpo/tabi/commit/274c4146b2dd04c6ca188c096002a02d4b073273)) by [@welpo](https://github.com/welpo)
+- Fix various broken links ([6efe2ee](https://github.com/welpo/tabi/commit/6efe2ee57db4202fb0898b12e1f5e952e97ddc3a)) by [@welpo](https://github.com/welpo)
+- Update tabi screenshots ([238487b](https://github.com/welpo/tabi/commit/238487b4b2d7e04c8176d35d69e4925dc4b98d9c)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(CI)* Build before checking links ([daef403](https://github.com/welpo/tabi/commit/daef40338ccf03250da2ec2b4382d644f277e4b4)) by [@welpo](https://github.com/welpo)
+- *(CI)* Improve CI to check and build for PRs ([262fcd9](https://github.com/welpo/tabi/commit/262fcd95f18e90dca17522ce2de4f07df6febedd)) by [@welpo](https://github.com/welpo)
+- *(demo)* Update projects section ([d543560](https://github.com/welpo/tabi/commit/d543560431e1ddd4624a684e5e8cca7f11ea0b7f)) by [@welpo](https://github.com/welpo)
+- *(git-sumi)* Improve emoji matching ([e373482](https://github.com/welpo/tabi/commit/e3734829460d4f93643e7d8fc4a33670f5bb9c6e)) by [@welpo](https://github.com/welpo)
+- *(link_checker)* Skip vultr.com links ([0158097](https://github.com/welpo/tabi/commit/0158097594f1d19653f2b68c4fedf802342aa8ad)) by [@welpo](https://github.com/welpo)
+- *(projects)* Load git-sumi demo from its repo ([7b13798](https://github.com/welpo/tabi/commit/7b13798a68110d1da63870ea95230ece84526a8b)) by [@welpo](https://github.com/welpo)
+- *(release)* Remove link comparison ([e2358f7](https://github.com/welpo/tabi/commit/e2358f7edfc2944e34bc59cbe4b1cbff64412f21))
+- *(release)* Update CHANGELOG format ([5b5d1fa](https://github.com/welpo/tabi/commit/5b5d1fa592b72b50e1fccf172d9245a9e087bfd3)) by [@welpo](https://github.com/welpo)
+- Add renovate config ([3672a94](https://github.com/welpo/tabi/commit/3672a94e863a44e88b1ec0e1896ac6ef38833ef7)) by [@welpo](https://github.com/welpo)
+
 ## [2.2.0](https://github.com/welpo/tabi/compare/v2.1.0..v2.2.0) - 2024-02-10
 
 ### ✨ Features
