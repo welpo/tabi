@@ -40,7 +40,7 @@ echo
 
 # Update CHANGELOG.
 git cliff --tag "$VERSION_TAG" -o CHANGELOG.md
-sed -i.bak -e 's/ @\([a-zA-Z0-9]\([-a-zA-Z0-9]*[a-zA-Z0-9]\)\?\)/ [@\1](https:\/\/github.com\/\1)/g' CHANGELOG.md && rm CHANGELOG.md.bak
+sed -E 's/@([a-zA-Z0-9_-]+)/[@\1](https:\/\/github.com\/\1)/g' CHANGELOG.md > CHANGELOG.tmp && mv CHANGELOG.tmp CHANGELOG.md
 
 # Add all changes and commit.
 git add -A
