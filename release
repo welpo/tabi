@@ -60,6 +60,8 @@ changelog=$(echo "$changelog" | sed -E 's/\*\(([^)]+)\)\* //g')
 changelog=$(echo "$changelog" | sed -E 's/\[\@([a-zA-Z0-9_]+)\]\(https:\/\/github\.com\/[a-zA-Z0-9_]+\)/@\1/g')
 # Remove markdown headers.
 changelog=$(echo "$changelog" | sed -E 's/^#+ //g')
+# Remove version comparison lines.
+changelog=$(echo "$changelog" | sed '/https:\/\/github\.com\/.*\/compare\/.*/d')
 
 # Create a signed and annotated tag.
 git tag -s -a "$VERSION_TAG" -m "Release $VERSION_TAG" -m "$changelog"
