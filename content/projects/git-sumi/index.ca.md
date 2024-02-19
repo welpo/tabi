@@ -12,7 +12,7 @@ canonical_url = "https://osc.garden/ca/projects/git-sumi/"
 **git-sumi** és un linter de missatges de commit no opinat escrit en Rust. És una eina flexible per complir els teus estàndards de missatges de commit, facilitant missatges consistents i fàcilment automatitzables.
 
 {% wide_container() %}
-<video controls src="git-sumi demo.mp4" title="demo de git-sumi"></video>
+<video controls src="https://cdn.jsdelivr.net/gh/welpo/git-sumi@main/assets/git-sumi_demo.mp4" title="demo de git-sumi"></video>
 {% end %}
 
 #### [GitHub](https://github.com/welpo/git-sumi) • [Lloc web](https://sumi.rs/) • [Documentació](https://sumi.rs/docs/) {.centered-text}
