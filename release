@@ -40,6 +40,7 @@ echo
 
 # Update CHANGELOG.
 git cliff --tag "$VERSION_TAG" -o CHANGELOG.md
+sed -i.bak -e 's/ @\([a-zA-Z0-9]\([-a-zA-Z0-9]*[a-zA-Z0-9]\)\?\)/ [@\1](https:\/\/github.com\/\1)/g' CHANGELOG.md && rm CHANGELOG.md.bak
 
 # Add all changes and commit.
 git add -A
@@ -56,8 +57,6 @@ changelog=$(echo "$changelog" | sed -E 's/\[\#([0-9]+)\]\(https:\/\/github\.com\
 changelog=$(echo "$changelog" | sed -E 's/\[([0-9a-f]+)\]\(https:\/\/github\.com\/welpo\/[^\/]+\/commit\/([0-9a-f]+)\)/\1/g')
 # Remove scopes.
 changelog=$(echo "$changelog" | sed -E 's/\*\(([^)]+)\)\* //g')
-# Remove @author links, leaving just the username.
-changelog=$(echo "$changelog" | sed -E 's/\[\@([a-zA-Z0-9_]+)\]\(https:\/\/github\.com\/[a-zA-Z0-9_]+\)/@\1/g')
 # Remove markdown headers.
 changelog=$(echo "$changelog" | sed -E 's/^#+ //g')
 # Remove version comparison lines.

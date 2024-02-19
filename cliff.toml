@@ -96,7 +96,7 @@ footer = """
 """
 # postprocessors
 postprocessors = [
-    { pattern = " @([a-zA-Z0-9](?:[a-zA-Z0-9]+-?)*[a-zA-Z0-9])", replace = " [@$1](https://github.com/$1)"}, # add link to GitHub usernames
+    # { pattern = " @([a-zA-Z0-9](?:[a-zA-Z0-9]+-?)*[a-zA-Z0-9])", replace = " [@$1](https://github.com/$1)"}, # add link to GitHub usernames (done in release script instead)
 ]
 
 [git]

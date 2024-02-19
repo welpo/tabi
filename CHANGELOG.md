@@ -40,7 +40,7 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - *(git-sumi)* Improve emoji matching ([e373482](https://github.com/welpo/tabi/commit/e3734829460d4f93643e7d8fc4a33670f5bb9c6e)) by [@welpo](https://github.com/welpo)
 - *(link_checker)* Skip vultr.com links ([0158097](https://github.com/welpo/tabi/commit/0158097594f1d19653f2b68c4fedf802342aa8ad)) by [@welpo](https://github.com/welpo)
 - *(projects)* Load git-sumi demo from its repo ([7b13798](https://github.com/welpo/tabi/commit/7b13798a68110d1da63870ea95230ece84526a8b)) by [@welpo](https://github.com/welpo)
-- *(release)* Remove link comparison ([e2358f7](https://github.com/welpo/tabi/commit/e2358f7edfc2944e34bc59cbe4b1cbff64412f21))
+- *(release)* Remove link comparison ([e2358f7](https://github.com/welpo/tabi/commit/e2358f7edfc2944e34bc59cbe4b1cbff64412f21)) by [@welpo](https://github.com/welpo)
 - *(release)* Update CHANGELOG format ([5b5d1fa](https://github.com/welpo/tabi/commit/5b5d1fa592b72b50e1fccf172d9245a9e087bfd3)) by [@welpo](https://github.com/welpo)
 - Add renovate config ([3672a94](https://github.com/welpo/tabi/commit/3672a94e863a44e88b1ec0e1896ac6ef38833ef7)) by [@welpo](https://github.com/welpo)
 
