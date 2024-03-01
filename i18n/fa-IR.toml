@@ -84,6 +84,6 @@ close_quotation_mark = "»"
 # Translations for stylised Atom feed.
 # https://welpo.github.io/tabi/atom.xml
 # Must contain "About Feeds"; it will become a link.
-about_feeds = "این یک فید وب است، همچنین به عنوان یک فید Atom شناخته می‌شود. با کپی کردن URL از نوار آدرس به خواننده اخباری خود مشترک شوید. برای یادگیری بیشتر و شروع به کار بروید به درباره فیدها. این رایگان است."
+about_feeds = "این یک فید وب است، همچنین به عنوان یک فید Atom شناخته می‌شود. با کپی کردن URL از نوار آدرس به خواننده اخباری خود مشترک شوید. برای یادگیری بیشتر و شروع به کار بروید به About Feeds. این رایگان است."
 visit_the_site = "بازدید از وب‌سایت"
 recent_posts = "مطالب اخیر"
