@@ -1,7 +1,7 @@
 +++
 title = "Lost in Translation? Explora les capacitats multilingües de tabi"
 date = 2023-09-12
-updated = 2024-01-11
+updated = 2024-03-01
 description = "Descobreix com tabi t'ajuda a connectar amb una audiència global gràcies a les seves funcions multilingües. Aprèn a canviar la llengua per defecte, afegir més llengües i aportar les teves pròpies traduccions."
 
 [taxonomies]
@@ -33,6 +33,7 @@ tabi admet les següents llengües:
 - Hindi
 - Italià
 - Japonès
+- Persa
 - Portuguès (Europeu)
 - Rus
 - Ucraïnès
