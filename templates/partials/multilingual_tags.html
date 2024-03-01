@@ -1,51 +1,29 @@
-{%- if section.relative_path -%}
-    {%- set base_path = section.relative_path-%}
-{%- elif page.relative_path -%}
-    {%- set base_path = page.relative_path -%}
+{%- if section.translations -%}
+    {%- set current_translations = section.translations -%}
+{%- elif page.translations -%}
+    {%- set current_translations = page.translations -%}
 {%- endif -%}
-{%- if base_path -%}
-    {# Get the base filename by stripping out any language code and '.md' suffix #}
-    {%- set base_filename = base_path | replace(from=".md", to="") | replace(from="." ~ lang, to="") -%}
-    {# Loop through all available languages in config #}
-    {%- for lcode, ldetails in config.languages -%}
-        {%- set translated_filename = base_filename -%}
 
-        {# If the language is not the default language, append the language code to the base filename #}
-        {%- if lcode != config.default_language -%}
-            {%- set translated_filename = base_filename ~ "." ~ lcode -%}
+{%- if current_translations -%}
+
+    {%- for translation in current_translations -%}
+        {%- set lcode = translation.lang | default(value = config.default_language) -%}
+
+        {#- Dynamically load the language strings for each language -#}
+        {%- set other_language_strings = load_data(path="i18n/" ~ lcode ~ ".toml", required=false) -%}
+        {%- if not other_language_strings -%}
+            {%- set other_language_strings = load_data(path="themes/tabi/i18n/" ~ lcode ~ ".toml", required=false) -%}
         {%- endif -%}
-        {%- set translated_filename = translated_filename ~ ".md" -%}
+        <meta property="og:locale:alternate" content="{{ macros_translate::translate(key="date_locale", default="en_GB", language_strings=other_language_strings) }}" />
 
-        {# Check if the translated page or section exists #}
-        {%- set translation_exists = load_data(path=translated_filename, required=false) -%}
-
-        {# Get the page #}
-        {%- if translation_exists -%}
-            {%- if page.relative_path -%}
-                {%- set translated_page = get_page(path=translated_filename, metadata_only=true) -%}
-            {%- else -%}
-                {%- set translated_page = get_section(path=translated_filename, metadata_only=true) -%}
-            {%- endif -%}
+        {# Construct href for hreflang #}
+        {%- set href = translation.permalink -%}
+        {%- if lcode == config.default_language -%}
+            {%- set href = href | replace(from='/' ~ lang ~ '/', to = '/') -%}
+        {%- else -%}
+            {%- set href = href | replace(from='/' ~ lang ~ '/', to='/' ~ lcode ~ '/') -%}
         {%- endif -%}
-
-        {# Create the og:locale and hreflang tags if the translated page exists #}
-        {%- if translated_page -%}
-
-            {#- Dynamically load the language strings for each language -#}
-            {%- set other_language_strings = load_data(path="i18n/" ~ lcode ~ ".toml", required=false) -%}
-            {%- if not other_language_strings -%}
-                {%- set other_language_strings = load_data(path="themes/tabi/i18n/" ~ lcode ~ ".toml", required=false) -%}
-            {%- endif -%}
-            <meta property="og:locale:alternate" content="{{ macros_translate::translate(key="date_locale", default="en_GB", language_strings=other_language_strings) }}" />
-
-            {# Construct href for hreflang #}
-            {%- set href = translated_page.permalink | default(value=translated_page.url) -%}
-            {%- if lcode == config.default_language -%}
-                {%- set href = href | replace(from='/' ~ lang ~ '/', to = '/') -%}
-            {%- else -%}
-                {%- set href = href | replace(from='/' ~ lang ~ '/', to='/' ~ lcode ~ '/') -%}
-            {%- endif -%}
-            <link rel="alternate" hreflang="{{ lcode }}" href="{{ href | safe }}" />
-        {%- endif -%}
+        <link rel="alternate" hreflang="{{ lcode }}" href="{{ href | safe }}" />
     {%- endfor -%}
+
 {%- endif -%}
