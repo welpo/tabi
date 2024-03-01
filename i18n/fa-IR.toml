@@ -1,0 +1,89 @@
+language_name = "فارسی"  # Shown in language picker for multi-language sites.
+date_locale = "fa-IR"
+full_stop = "."  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu and config.extra.footer_menu.
+blog = "وبلاگ"
+archive = "آرشیو"
+tags = "برچسب‌ها"
+projects = "پروژه‌ها"
+about = "درباره"
+contact = "تماس"
+privacy = "سیاست حفظ حریم خصوصی"
+site_statistics = "آمار سایت"
+sitemap = "نقشه سایت"
+
+# Search.
+search = "جستجو"
+search_icon_title = "برای باز کردن جستجو کلیک کنید یا $SHORTCUT را فشار دهید"   # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "پاک کردن جستجو"  # Title of the X icon next to search input.
+zero_results = "بدون نتیجه"
+one_results = "$NUMBER نتیجه"   # "1 result"
+many_results = "$NUMBER نتیجه"  # "3 results"
+
+# Navigation.
+read_more = "ادامه مطلب"
+one_posts = "$NUMBER مطلب"
+many_posts = "$NUMBER مطلب"  # "3 posts"
+prev = "قبلی"   # As in "Previous" page.
+next = "بعدی"   # As in "Next" page.
+of = "از"  # E.g. Page 1 "of" 3
+all_posts = "همه مطالب"
+all_tags = "همه برچسب‌ها"
+language_selection = "انتخاب زبان"
+toggle_mode = "تغییر حالت $MODE"  # $MODE will be replaced by a value (or both) below.
+dark = "تیره"
+light = "روشن"
+reset_mode = "بازنشانی حالت به حالت پیش‌فرض"
+
+
+# Quick navigation buttons.
+toggle_toc = "تغییر جدول محتوا"
+go_to_top = "رفتن به بالای صفحه"
+go_to_comments = "رفتن به بخش نظرات"
+
+# Post metadata.
+draft = "پیش‌نویس"
+zero_min_read = "خواندن کمتر از ۱ دقیقه"
+one_min_read = "خواندن $NUMBER دقیقه"
+many_min_read = "خواندن $NUMBER دقیقه"
+zero_words = "هیچ کلمه‌ای"
+one_words = "$NUMBER کلمه"
+many_words = "$NUMBER کلمه"
+last_updated_on = "آخرین به‌روزرسانی در"
+see_changes = "مشاهده تغییرات"
+
+# Post body.
+table_of_contents = "فهرست مطالب"
+load_comments = "بارگذاری نظرات"
+
+# Copy code block button.
+copied = "کپی شد!"
+copy_code_to_clipboard = "کپی کد به کلیپ‌بورد"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "قدرت گرفته از"
+and = "و"
+site_source = "منبع سایت"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "صفحه‌ای که درخواست کرده‌اید به نظر می‌رسد از دست رفته است"
+translation_missing = "یا هنوز به زبان شما ترجمه نشده است"
+check_url = "آدرس اینترنتی را بررسی کنید و یا"
+go_home = "به صفحه اصلی برگردید"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "نقل قول اصلی را نشان بده"
+show_translation = "ترجمه را نشان بده"
+open_quotation_mark = "«"
+close_quotation_mark = "»"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "این یک فید وب است، همچنین به عنوان یک فید Atom شناخته می‌شود. با کپی کردن URL از نوار آدرس به خواننده اخباری خود مشترک شوید. برای یادگیری بیشتر و شروع به کار بروید به درباره فیدها. این رایگان است."
+visit_the_site = "بازدید از وب‌سایت"
+recent_posts = "مطالب اخیر"
