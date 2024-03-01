@@ -1,5 +1,5 @@
 language_name = "فارسی"  # Shown in language picker for multi-language sites.
-date_locale = "fa"
+date_locale = "fa_IR"
 full_stop = "."  # Used at the end of a sentence.
 
 # Menu items.
