@@ -52,7 +52,7 @@ changelog=$(git cliff --tag "$VERSION_TAG" --unreleased --strip all)
 
 # Clean up tag's changelog; tag descriptions don't support markdown.
 # Remove PR links.
-changelog=$(echo "$changelog" | sed -E 's/\[\#([0-9]+)\]\(https:\/\/github\.com\/welpo\/[^\/]+\/issues\/([0-9]+)\)/#\1/g')
+changelog=$(echo "$changelog" | sed -E 's/\[\#([0-9]+)\]\(https:\/\/github\.com\/welpo\/[^\/]+\/(issues|pull)\/([0-9]+)\)/#\1/g')
 # Remove commit links.
 changelog=$(echo "$changelog" | sed -E 's/\[([0-9a-f]+)\]\(https:\/\/github\.com\/welpo\/[^\/]+\/commit\/([0-9a-f]+)\)/\1/g')
 # Remove scopes.
