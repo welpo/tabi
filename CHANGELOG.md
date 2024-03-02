@@ -4,6 +4,27 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.4.0](https://github.com/welpo/tabi/compare/v2.3.0..v2.4.0) - 2024-03-02
+
+### ✨ Features
+
+- *(i18n)* Add Persian language ([#283](https://github.com/welpo/tabi/issues/283)) by [@mehr32](https://github.com/mehr32) and [@welpo](https://github.com/welpo)
+- *(socials)* Add Signal icon ([4aaa234](https://github.com/welpo/tabi/commit/4aaa2346d0c10ef0322b0033358812520e2137af)) by [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- Allow translated drafts ([#282](https://github.com/welpo/tabi/issues/282)) by [@Smtbook](https://github.com/Smtbook) and [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(CI)* Update git-cliff's github integration ([2ede035](https://github.com/welpo/tabi/commit/2ede03550aa1ce2d2c17063fff3d5a676c3ea2be)) by [@welpo](https://github.com/welpo)
+- *(release)* Fix cross-compatibility of sed command ([0192b3e](https://github.com/welpo/tabi/commit/0192b3ed9f6df26f28320fd771f445bb74750812)) by [@welpo](https://github.com/welpo)
+- *(release)* Add author link only on full changelog ([8de049a](https://github.com/welpo/tabi/commit/8de049a2b588b7e3b1d09ed361bb28ee2ea65af4)) by [@welpo](https://github.com/welpo)
+
+### 👥 New contributors
+
+🫶 [@mehr32](https://github.com/mehr32) made their first contribution in [#283](https://github.com/welpo/tabi/pull/283)
+
 ## [2.3.0](https://github.com/welpo/tabi/compare/v2.2.0..v2.3.0) - 2024-02-19
 
 ### ✨ Features
@@ -629,7 +650,7 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - Co-locate images ([#200](https://github.com/welpo/tabi/issues/200)) by [@welpo](https://github.com/welpo)
 - Turn macros into partials & sort CSS ([#146](https://github.com/welpo/tabi/issues/146)) by [@welpo](https://github.com/welpo)
 - Use `get_url` for social icons ([d0babd5](https://github.com/welpo/tabi/commit/d0babd5db1717efb3822c0741612b5100e04bca9)) by [@welpo](https://github.com/welpo)
-- Switch from `@import` to `@use` ([a799732](https://github.com/welpo/tabi/commit/a79973239892122f744d7c7e231a53abea46f780)) by [@welpo](https://github.com/welpo)
+- Switch from `[@import](https://github.com/import)` to `[@use](https://github.com/use)` ([a799732](https://github.com/welpo/tabi/commit/a79973239892122f744d7c7e231a53abea46f780)) by [@welpo](https://github.com/welpo)
 - Further minify theme initialization ([92e6af1](https://github.com/welpo/tabi/commit/92e6af1d5865c0e3bca8bd89082a0a0bb26b5062)) by [@welpo](https://github.com/welpo)
 - Improve stylised feed translations & consolidate XSL/CSS loading ([#98](https://github.com/welpo/tabi/issues/98)) by [@welpo](https://github.com/welpo)
 - Translate xsl stylesheets ([7ed295d](https://github.com/welpo/tabi/commit/7ed295db3aa003595a14a21b6c24c03bdbfeea0f)) by [@welpo](https://github.com/welpo)
