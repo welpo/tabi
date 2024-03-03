@@ -2,9 +2,9 @@
 # If you would like to help correct errors or improve the translation,
 # please open an issue or submit a pull request.
 # https://github.com/welpo/tabi
-language_name = "Français"  # Shown in language picker for multi-language sites.
+language_name = "Français" # Shown in language picker for multi-language sites.
 date_locale = "fr_FR"
-full_stop = "."  # Used at the end of a sentence.
+full_stop = "."            # Used at the end of a sentence.
 
 # Menu items.
 # Should match the names in config.extra.menu and config.extra.footer_menu.
@@ -20,26 +20,26 @@ sitemap = "plan du site"
 
 # Search.
 search = "Rechercher"
-search_icon_title = "Cliquez ou appuyez sur $SHORTCUT pour ouvrir la recherche"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
-clear_search = "Effacer la recherche"  # Title of the X icon next to search input.
+search_icon_title = "Cliquez ou appuyez sur $SHORTCUT pour ouvrir la recherche" # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "Effacer la recherche"                                           # Title of the X icon next to search input.
 zero_results = "Aucun résultat trouvé"
-one_results = "$NUMBER résultat"  # "1 result"
-many_results = "$NUMBER résultats"  # "3 results"
+one_results = "$NUMBER résultat"                                                # "1 result"
+many_results = "$NUMBER résultats"                                              # "3 results"
 
 # Navigation.
 read_more = "Lire plus"
 one_posts = "$NUMBER article"
 many_posts = "$NUMBER articles"
-prev = "Précédent"  # As in "Previous" page.
-next = "Suivant"  # As in "Next" page.
-of = "de"  # E.g. Page 1 "of" 3
+prev = "Précédent"                                          # As in "Previous" page.
+next = "Suivant"                                            # As in "Next" page.
+of = "sur"                                                  # E.g. Page 1 "of" 3
 all_posts = "Tous les articles"
 all_tags = "Toutes les étiquettes"
 language_selection = "Sélection de la langue"
-toggle_mode = "Basculer en mode $MODE"  # $MODE will be replaced by a value (or both) below.
+toggle_mode = "Basculer en mode $MODE"                      # $MODE will be replaced by a value (or both) below.
 dark = "sombre"
 light = "clair"
-reset_mode = "Réinitialiser le mode aux paramètres par défaut"
+reset_mode = "Réinitialiser le mode aux valeurs par défaut"
 
 # Quick navigation buttons.
 toggle_toc = "Afficher/Masquer la table des matières"
@@ -62,8 +62,8 @@ table_of_contents = "Table des matières"
 load_comments = "Afficher les commentaires"
 
 # Copy code block button.
-copied = "Copié!"
-copy_code_to_clipboard = "Copier le code dans le presse-papiers"
+copied = "Copié !"
+copy_code_to_clipboard = "Copier le code dans le presse-papier"
 
 # Footer: Powered by Zola and tabi.
 powered_by = "Propulsé par"
@@ -72,9 +72,9 @@ site_source = "Code du site"
 
 # 404 error.
 # https://welpo.github.io/tabi/404.html
-page_missing = "La page que vous avez demandée semble ne pas exister"
+page_missing = "La page que vous avez demandée semble être manquante"
 translation_missing = "ou n'a pas encore été traduite dans votre langue"
-check_url = "Vérifiez l'URL pour des erreurs ou"
+check_url = "Vérifiez que l'URL ne contient pas d'erreur ou"
 go_home = "retournez à la page d'accueil"
 
 # For multilingual quote shortcode.
@@ -87,6 +87,6 @@ close_quotation_mark = "»"
 # Translations for stylised Atom feed.
 # https://welpo.github.io/tabi/atom.xml
 # Must contain "About Feeds"; it will become a link.
-about_feeds = "Ceci est un flux web, également connu sous le nom de flux Atom. Abonnez-vous en copiant l'URL de la barre d'adresse dans votre lecteur de nouvelles. Visitez About Feeds pour en savoir plus et commencer. C'est gratuit."
+about_feeds = "Ceci est un flux web, également connu sous le nom de flux Atom. Abonnez-vous en copiant l'URL de la barre d'adresse dans votre lecteur de nouvelles. Visitez About Feeds pour en savoir plus et commencez. C'est gratuit."
 visit_the_site = "Visitez le site web"
 recent_posts = "Articles récents"
