@@ -143,7 +143,9 @@
 
     <meta property="og:site_name" content="{{ config.title }}">
 
-    {%- include "partials/content_security_policy.html" -%}
+    {%- if macros_settings::evaluate_setting_priority(setting="enable_csp", page=page | default(value=""), section=section | default(value=""), default_global_value="true") == "true" -%}
+        {%- include "partials/content_security_policy.html" -%}
+    {%- endif -%}
 
     {%- if config.extra.theme_switcher and config.extra.theme_switcher == true -%}
         {# If JavaScript is disabled, hide the button. #}

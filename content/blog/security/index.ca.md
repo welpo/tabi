@@ -1,7 +1,7 @@
 +++
 title = "Seguretat per defecte"
 date = 2023-02-22
-updated = 2023-09-29
+updated = 2024-03-15
 description = "tabi té una Política de Seguretat de Contingut (CSP) fàcilment personalitzable amb valors segurs per defecte. Obtingues tranquil·litat i un A+ en l'Observatori de Mozilla."
 
 [taxonomies]
@@ -29,6 +29,8 @@ allowed_domains = [
 La llista `allowed_domains` especifica les URLs a les quals el lloc web hauria de poder connectar-se, i cada domini de la llista està associat amb una directiva CSP com `frame-src`, `connect-src` o `script-src`. El fitxer `templates/partials/header.html` genera dinàmicament la capçalera CSP basant-se en aquesta llista.
 
 Aquesta funcionalitat permet personalitzar fàcilment les capçaleres de seguretat del lloc web per permetre casos d'ús específics, com ara inserir vídeos de YouTube, carregar scripts o tipografies remotes ([no recomanat](https://www.albertovarela.net/blog/2022/11/stop-using-google-fonts/)).
+
+Pots desactivar les capçaleres (permitint-ho tot) en una pàgina, secció, o globalment configurant `enable_csp = false` en el front matter o en el fitxer `config.toml`.
 
 **Nota**: [habilitar els comentaris](@/blog/comments/index.ca.md) o [les analítiques](@/blog/mastering-tabi-settings/index.ca.md#analisi-web) automàticament permet scripts/frames/estils/connexions en funció del servei habilitat.
 
