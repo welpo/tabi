@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-01-07
+updated = 2024-03-15
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -753,6 +753,8 @@ allowed_domains = [
     { directive = "frame-src", domains = ["player.vimeo.com", "https://www.youtube-nocookie.com"] },
 ]
 ```
+
+This feature is enabled by default. To disable it (and allow all connections), set `enable_csp = false` on a page, section or globally. The `enable_csp` setting follows the [hierarchy](#settings-hierarchy).
 
 See the [CSP documentation page](/blog/security/) for more information.
 

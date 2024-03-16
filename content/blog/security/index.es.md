@@ -1,7 +1,7 @@
 +++
 title = "Seguro por defecto"
 date = 2023-02-22
-updated = 2023-09-29
+updated = 2024-03-15
 description = "tabi tiene una Política de Seguridad de Contenido (CSP) fácilmente personalizable con configuraciones seguras. Obtén tranquilidad y una calificación de A+ en Mozilla Observatory."
 
 [taxonomies]
@@ -29,6 +29,8 @@ allowed_domains = [
 La lista `allowed_domains` especifica las URL a las que el sitio web debería poder conectarse, y cada dominio de la lista se asocia con una directiva CSP como `frame-src`, `connect-src` o `script-src`. El archivo `templates/partials/header.html` genera dinámicamente la cabecera CSP en función de esta lista.
 
 Esta función permite personalizar fácilmente las cabeceras de seguridad del sitio web para permitir casos de uso específicos, como la incrustación de videos de YouTube, la carga de scripts o  fuentes remotas ([no recomendado](https://www.albertovarela.net/blog/2022/11/stop-using-google-fonts/)).
+
+Puedes desactivar las cabeceras (permitiendo todo) en una página, sección, o globalmente configurando `enable_csp = false` en el front matter o en el archivo `config.toml`.
 
 **Nota**: [habilitar los comentarios](@/blog/comments/index.es.md) o [las analíticas](@/blog/mastering-tabi-settings/index.es.md#analisis-web) automáticamente permite scripts/frames/estilos/conexiones en función del servicio habilitado.
 
