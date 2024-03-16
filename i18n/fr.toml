@@ -1,10 +1,6 @@
-# This has been machine translated.
-# If you would like to help correct errors or improve the translation,
-# please open an issue or submit a pull request.
-# https://github.com/welpo/tabi
-language_name = "Français" # Shown in language picker for multi-language sites.
+language_name = "Français"  # Shown in language picker for multi-language sites.
 date_locale = "fr_FR"
-full_stop = "."            # Used at the end of a sentence.
+full_stop = "."  # Used at the end of a sentence.
 
 # Menu items.
 # Should match the names in config.extra.menu and config.extra.footer_menu.
@@ -20,23 +16,23 @@ sitemap = "plan du site"
 
 # Search.
 search = "Rechercher"
-search_icon_title = "Cliquez ou appuyez sur $SHORTCUT pour ouvrir la recherche" # $SHORTCUT will be replaced with the actual keyboard shortcut.
-clear_search = "Effacer la recherche"                                           # Title of the X icon next to search input.
+search_icon_title = "Cliquez ou appuyez sur $SHORTCUT pour ouvrir la recherche"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "Effacer la recherche"  # Title of the X icon next to search input.
 zero_results = "Aucun résultat trouvé"
-one_results = "$NUMBER résultat"                                                # "1 result"
-many_results = "$NUMBER résultats"                                              # "3 results"
+one_results = "$NUMBER résultat"  # "1 result"
+many_results = "$NUMBER résultats"  # "3 results"
 
 # Navigation.
 read_more = "Lire plus"
 one_posts = "$NUMBER article"
 many_posts = "$NUMBER articles"
-prev = "Précédent"                                          # As in "Previous" page.
-next = "Suivant"                                            # As in "Next" page.
-of = "sur"                                                  # E.g. Page 1 "of" 3
+prev = "Précédent"  # As in "Previous" page.
+next = "Suivant"  # As in "Next" page.
+of = "sur"  # E.g. Page 1 "of" 3
 all_posts = "Tous les articles"
 all_tags = "Toutes les étiquettes"
 language_selection = "Sélection de la langue"
-toggle_mode = "Basculer en mode $MODE"                      # $MODE will be replaced by a value (or both) below.
+toggle_mode = "Basculer en mode $MODE"  # $MODE will be replaced by a value (or both) below.
 dark = "sombre"
 light = "clair"
 reset_mode = "Réinitialiser le mode aux valeurs par défaut"
