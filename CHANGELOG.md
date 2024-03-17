@@ -4,6 +4,29 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.5.0](https://github.com/welpo/tabi/compare/v2.4.0..v2.5.0) - 2024-03-17
+
+### ✨ Features
+
+- Allow disabling CSP, following the hierarchy ([5e0cbdd](https://github.com/welpo/tabi/commit/5e0cbdd67dbe4c17d635040959133edcc5066aff)) by [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(i18n)* Improve FR translations and correct typos ([#284](https://github.com/welpo/tabi/issues/284)) by [@be-next](https://github.com/be-next)
+
+### ♻️ Refactor
+
+- Set visibility hidden in "hidden" class ([8537bbc](https://github.com/welpo/tabi/commit/8537bbc10ef7a142128f8d471ee19814cb0d904c)) by [@welpo](https://github.com/welpo)
+- Correct invalid attributes in search input ([d825bef](https://github.com/welpo/tabi/commit/d825bef73065c7343ec952f938f7d4a17b4e363e)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(release)* Replace both pull and issue links ([e951e95](https://github.com/welpo/tabi/commit/e951e951102249707a4c899f0d194b781c3466d2)) by [@welpo](https://github.com/welpo)
+
+### 👥 New contributors
+
+🫶 [@be-next](https://github.com/be-next) made their first contribution in [#284](https://github.com/welpo/tabi/pull/284)
+
 ## [2.4.0](https://github.com/welpo/tabi/compare/v2.3.0..v2.4.0) - 2024-03-02
 
 ### ✨ Features
