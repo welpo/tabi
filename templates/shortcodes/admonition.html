@@ -1,0 +1,10 @@
+{%- set type = type | default(value="info") -%}
+{%- set title = title | default(value=type | upper) -%}
+
+<div class="admonition {{ type }}">
+    <div class="admonition-icon"></div>
+    <div class="admonition-content">
+        <strong class="admonition-title">{{ title | safe }}</strong>
+        {{ text | markdown | safe }}
+    </div>
+</div>
