@@ -4,6 +4,16 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.6.0](https://github.com/welpo/tabi/compare/v2.5.0..v2.6.0) - 2024-03-21
+
+### ✨ Features
+
+- *(shortcodes)* Add admonition shortcode ([#285](https://github.com/welpo/tabi/issues/285)) ([d016229](https://github.com/welpo/tabi/commit/d0162291d961734c3e5f115348655f5755b8aa54)) by [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(feed)* Fix "Visit website" link with skin config ([#286](https://github.com/welpo/tabi/issues/286)) by [@be-next](https://github.com/be-next)
+
 ## [2.5.0](https://github.com/welpo/tabi/compare/v2.4.0..v2.5.0) - 2024-03-17
 
 ### ✨ Features
@@ -22,10 +32,6 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 ### 🔧 Miscellaneous tasks
 
 - *(release)* Replace both pull and issue links ([e951e95](https://github.com/welpo/tabi/commit/e951e951102249707a4c899f0d194b781c3466d2)) by [@welpo](https://github.com/welpo)
-
-### 👥 New contributors
-
-🫶 [@be-next](https://github.com/be-next) made their first contribution in [#284](https://github.com/welpo/tabi/pull/284)
 
 ## [2.4.0](https://github.com/welpo/tabi/compare/v2.3.0..v2.4.0) - 2024-03-02
 
