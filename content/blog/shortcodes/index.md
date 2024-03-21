@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-02-16
+updated = 2024-03-20
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -96,6 +96,30 @@ All other image shortcodes can be made into full-width by setting the optional p
 ```
 
 ## Text shortcodes
+
+### Admonitions
+
+Bring attention to information with these admonition shortcodes. They come in five `type`s: `note`, `tip`, `info`, `warning`, and `danger`.
+
+{{ admonition(type="note", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+
+{{ admonition(type="tip", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+
+{{ admonition(type="info", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+
+{{ admonition(type="warning", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+
+{{ admonition(type="danger", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+
+You can set a custom title with the `title` parameter:
+
+{{ admonition(type="note", title="Custom title", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+
+#### Usage
+
+```
+{{/* admonition(type="info", title="Optional custom title", text="Something.") */}}
+```
 
 ### Multilingual quotes
 
