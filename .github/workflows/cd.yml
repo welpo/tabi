@@ -31,6 +31,6 @@ jobs:
         run: |
           gh release create ${{ github.ref_name }} \
             --title "Release ${{ github.ref_name }}" \
-            --notes "${{ steps.git-cliff.outputs.content }}"
+            --notes-file CHANGES.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
