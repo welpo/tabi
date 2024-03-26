@@ -4,11 +4,23 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.6.2](https://github.com/welpo/tabi/compare/v2.6.1..v2.6.2) - 2024-03-26
+
+### 💄 Styling
+
+- *(shortcodes)* Use colourful admonition icons ([e965694](https://github.com/welpo/tabi/commit/e965694cdf1c588d40e167ec98961a854e2236d0)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(projects)* List Streaming Royalties Calculator ([ad289f1](https://github.com/welpo/tabi/commit/ad289f1d2caaf7781a011d610e46bd7de41e7f33)) by [@welpo](https://github.com/welpo)
+- Update nani logo ([ce1a98e](https://github.com/welpo/tabi/commit/ce1a98ed93ad38214f6455ba262289a3969cbf52)) by [@welpo](https://github.com/welpo)
+- Compress dōteki & git-sumi social media cards ([ec6ba01](https://github.com/welpo/tabi/commit/ec6ba01bbcbeecc684e2bfb49c5e1f7fac847aa5)) by [@welpo](https://github.com/welpo)
+
 ## [2.6.1](https://github.com/welpo/tabi/compare/v2.6.0..v2.6.1) - 2024-03-21
 
 ### 🔧 Miscellaneous tasks
 
-- *(CI)* Use CHANGES.md for GitHub release notes ([38f3aaf](https://github.com/welpo/tabi/commit/38f3aafdd8a34ae5452ae9bb879881b807e5a7b4))
+- *(CI)* Use CHANGES.md for GitHub release notes ([38f3aaf](https://github.com/welpo/tabi/commit/38f3aafdd8a34ae5452ae9bb879881b807e5a7b4)) by [@welpo](https://github.com/welpo)
 
 ## [2.6.0](https://github.com/welpo/tabi/compare/v2.5.0..v2.6.0) - 2024-03-21
 
