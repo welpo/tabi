@@ -1,0 +1,88 @@
+language_name = "Dutch"  # Shown in language picker for multi-language sites.
+date_locale = "nl_NL" #nl_BE can also be used for Flemish
+full_stop = "."  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu and config.extra.footer_menu.
+blog = "blog"
+archive = "archief"
+tags = "labels"
+projects = "projecten"
+about = "over ons"
+contact = "contact"
+privacy = "privacybeleid"
+site_statistics = "website statistieken"
+sitemap = "sitemap" # Not sure how to translate this one
+
+# Search.
+search = "Zoeken"
+search_icon_title = "Klik of druk op $SHORTCUT om de zoekopdracht te openen"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "Verwijder zoekopdracht"  # Title of the X icon next to search input.
+zero_results = "Geen resultaten"
+one_results = "$NUMBER resultaat"  # "1 result"
+many_results = "$NUMBER resultaten"  # "3 results"
+
+# Navigation.
+read_more = "Lees meer"
+one_posts = "$NUMBER bericht" # "1 post"
+many_posts = "$NUMBER berichten"  # "3 posts"
+prev = "Vorige"  # As in "Previous" page. - Vorige pagina
+next = "Volgende"  # As in "Next" page. - Volgende pagina
+of = "van"  # E.g. Page 1 "of" 3 
+all_posts = "Alle berichten"
+all_tags = "Alle labels"
+language_selection = "Selecteer taal"
+toggle_mode = "Schakel de $MODE-modus in"  # $MODE will be replaced by a value (or both) below.
+dark = "donker"
+light = "licht"
+reset_mode = "Reset de modus naar de standaardwaarde"
+
+# Quick navigation buttons.
+toggle_toc = "Schakel inhoudsopgave in of uit"
+go_to_top = "Ga naar de bovenkant van de pagina"
+go_to_comments = "Ga naar opmerkingen"
+
+# Post metadata.
+draft = "VOORLOPIGE VERSIE"
+zero_min_read = "<1 minuut lezen"
+one_min_read = "$NUMBER minuut lezen"
+many_min_read = "$NUMBER minuten lezen"
+zero_words = "Geen woorden"
+one_words = "$NUMBER woord"
+many_words = "$NUMBER woorden"
+last_updated_on = "Laatst geupdate op"
+see_changes = "Zie wijzigingen"
+
+# Post body.
+table_of_contents = "Inhoudsopgave"
+load_comments = "Laad opmerkingen"
+
+# Copy code block button.
+copied = "Gekopieerd!"
+copy_code_to_clipboard = "Kopieer code naar klembord"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "Aangedreven door"
+and = "&"
+site_source = "Sitebron"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "Het lijkt erop dat de door u opgevraagde pagina ontbreekt"
+translation_missing = "of het is nog niet in jouw taal vertaald"
+check_url = "Controleer de URL op fouten of"
+go_home = "ga terug naar de startpagina"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "Toon origineel citaat"
+show_translation = "Vertaling tonen"
+open_quotation_mark = "“"
+close_quotation_mark = "”"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "Dit is een webfeed, ook wel Atom-feed genoemd. Abonneer u door de URL uit de adresbalk naar uw nieuwslezer te kopiëren. Ga naar About Feeds voor meer informatie en om aan de slag te gaan. Het is gratis."
+visit_the_site = "Bezoek website"
+recent_posts = "Recente berichten"
