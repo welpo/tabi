@@ -12,7 +12,7 @@ about = "over ons"
 contact = "contact"
 privacy = "privacybeleid"
 site_statistics = "website statistieken"
-sitemap = "sitemap" # Not sure how to translate this one
+sitemap = "sitemap"
 
 # Search.
 search = "Zoeken"
@@ -28,7 +28,7 @@ one_posts = "$NUMBER bericht" # "1 post"
 many_posts = "$NUMBER berichten"  # "3 posts"
 prev = "Vorige"  # As in "Previous" page. - Vorige pagina
 next = "Volgende"  # As in "Next" page. - Volgende pagina
-of = "van"  # E.g. Page 1 "of" 3 
+of = "van"  # E.g. Page 1 "of" 3
 all_posts = "Alle berichten"
 all_tags = "Alle labels"
 language_selection = "Selecteer taal"
