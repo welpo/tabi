@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-03-15
+updated = 2024-04-23
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -99,6 +99,8 @@ La [pàgina principal](/) d'aquesta demo té una capçalera amb una imatge, un t
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/header_light.webp", dark_src="blog/mastering-tabi-settings/img/header_dark.webp", alt="Capçalera de la pàgina principal") }}
 
+#### Capçalera
+
 Per configurar la imatge i el títol, pots utilitzar la variable `header` al front matter de l'arxiu `_index.md` de la secció. Per exemple:
 
 ```toml
@@ -107,6 +109,8 @@ header = {title = "Hola! Soc tabi~", img = "img/main.webp", img_alt = "Óscar Fe
 ```
 
 La descripció és contingut Markdown normal, escrit fora del front matter.
+
+#### Mostrant publicacions recents
 
 Si vols mostrar publicacions a la pàgina principal, primer necessites decidir si la seva ruta serà `/` o quelcom diferent, com ara `/blog/`.
 
@@ -137,6 +141,21 @@ max_posts = 4
 Fixa't que si configures `section_path`, no cal que configuris `paginate_by`. Pots establir `max_posts` per determinar el nombre de publicacions que vols mostrar a la pàgina principal.
 
 El `title` és el títol que apareix a sobre de les publicacions.
+
+#### Llistat de Projectes
+
+Pots mostrar una selecció de projectes a la teva pàgina principal. Per fer això, primer necessitaràs configurar el directori `projects`.
+
+Un cop fet això, configura la ruta als projectes a la secció `[extra]` del teu fitxer `_index.md`:
+
+```toml
+[extra]
+projects_path = "projects/_index.md"
+```
+
+Això mostrarà els 3 projectes de major prioritat (amb menor pes; el mateix ordre que a Projectes). Per mostrar més o menys projectes, configura `max_projects` a `[extra]`.
+
+Per defecte, la secció de projectes es mostrarà a la part inferior de la pàgina principal, sota les publicacions. Si prefereixes mostrar-la a la part superior, configura `show_projects_first = true`.
 
 ### Commutador de mode clar i fosc
 

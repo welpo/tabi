@@ -8,6 +8,9 @@ template = "section.html"
 header = {title = "¡Hola! Soy tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, el autor de tabi" }
 section_path = "blog/_index.es.md"
 max_posts = 4
+projects_path = "projects/_index.es.md"
+max_projects = 3
+show_projects_first = false
 social_media_card = "social_cards/es.jpg"
 +++
 
