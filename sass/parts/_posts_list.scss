@@ -72,6 +72,18 @@
     font-size: 1.3rem;
 }
 
+#all-projects {
+    margin-top: 2rem;
+}
+
+.posts-first #featured-projects {
+    margin-top: 4rem;
+}
+
+.projects-first #all-projects {
+    margin-bottom: 4rem;
+}
+
 @media only screen and (max-width: 1100px) {
     .bloglist-row {
         flex-direction: column;

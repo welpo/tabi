@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-03-15
+updated = 2024-04-23
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -99,6 +99,8 @@ La [página principal](/) de esta demo tiene un encabezado con una imagen, un t�
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/header_light.webp", dark_src="blog/mastering-tabi-settings/img/header_dark.webp", alt="Encabezado de la página principal") }}
 
+#### Cabecera
+
 Para configurar la imagen y el título, puedes usar la variable `header` en el front matter del archivo `_index.md` de la sección. Por ejemplo:
 
 ```toml
@@ -107,6 +109,8 @@ header = {title = "¡Hola! Soy tabi~", img = "blog/mastering-tabi-settings/img/m
 ```
 
 La descripción es contenido Markdown normal, escrito fuera del front matter.
+
+#### Mostrando publicaciones recientes
 
 Si deseas mostrar publicaciones en la página principal, primero necesitas decidir si su ruta será `/` o algo como `/blog`.
 
@@ -137,6 +141,21 @@ max_posts = 4
 Fíjate que si configuras `section_path`, no necesitas configurar `paginate_by`. Puedes establecer `max_posts` para determinar el número de publicaciones que deseas mostrar en la página principal.
 
 El `title` es el encabezado que aparece sobre las publicaciones.
+
+#### Listado de proyectos
+
+Puedes mostrar una selección de proyectos en tu página principal. Para hacer esto, primero necesitarás configurar el directorio `projects`.
+
+Una vez hecho esto, configura la ruta a los proyectos en la sección `[extra]` de tu archivo `_index.md`:
+
+```toml
+[extra]
+projects_path = "projects/_index.md"
+```
+
+Esto mostrará los 3 proyectos de mayor prioridad (con menor peso; el mismo orden que en Proyectos). Para mostrar más o menos proyectos, puedes establecer `max_projects` en `[extra]`.
+
+Por defecto, la sección de proyectos se mostrará en la parte inferior de la página principal, bajo los posts. Si prefieres que aparezca en la parte superior, establece `show_projects_first = true`.
 
 ### Interruptor de modo claro y oscuro
 

@@ -1,6 +1,11 @@
 {%- set rel_attributes = macros_rel_attributes::rel_attributes() | trim -%}
+{%- set max_projects = max_projects | default(value=999999) -%}
 <div class="cards">
     {%- for page in show_pages %}
+        {# Used only in main page #}
+        {% if loop.index > max_projects %}
+            {% break %}
+        {% endif %}
         {# Determine which URL to use, default is page.permalink #}
         {%- if page.extra.link_to and config.markdown.external_links_target_blank -%}
             {%- set blank_target = "target=_blank" -%}

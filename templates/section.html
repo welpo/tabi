@@ -2,7 +2,18 @@
 
 {% block main_content %}
 
-<main>
+{%- set show_projects_first = section.extra.show_projects_first | default(value=false) -%}
+{%- if show_projects_first -%}
+    {%- set first_section = "projects" -%}
+{%- else -%}
+    {%- set first_section = "posts" -%}
+{%- endif -%}
+
+<main class={{ first_section }}-first>
+{%- if section.extra.header %}
+    {%- include "partials/home_banner.html" -%}
+{% endif -%}
+
 {% if section.extra.section_path -%}
     {% set extra_section = get_section(path=section.extra.section_path) %}
 {% endif -%}
@@ -13,28 +24,13 @@
     {% set path = section.path %}
 {% endif -%}
 
-{%- if section.extra.header %}
-    {%- include "partials/home_banner.html" -%}
-{% endif -%}
-
-<div class="list">
-    <div>
-        {{ macros_page_header::page_header(title=section.title) }}
-    </div>
-
-    {%- if paginator %}
-        {%- set pages = paginator.pages -%}
-    {% else %}
-        {%- set pages = extra_section.pages -%}
-    {% endif -%}
-
-	{% set max = section.extra.max_posts | default(value=999999) %}
-    {{ macros_list_posts::list_posts(posts=pages, max=max, language_strings=language_strings, section_path=path) }}
-</div>
+{%- if show_projects_first -%}
+    {%- include "partials/main_page_projects_list.html" -%}
+    {%- include "partials/main_page_posts_list.html" -%}
+{%- else -%}
+    {%- include "partials/main_page_posts_list.html" -%}
+    {%- include "partials/main_page_projects_list.html" -%}
+{%- endif -%}
 </main>
-
-{% if paginator %}
-    {%- include "partials/paginate.html" -%}
-{% endif %}
 
 {% endblock main_content %}

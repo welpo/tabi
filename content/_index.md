@@ -8,6 +8,9 @@ template = "section.html"
 header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, the theme's author" }
 section_path = "blog/_index.md"
 max_posts = 4
+projects_path = "projects/_index.md"
+max_projects = 3
+show_projects_first = false
 social_media_card = "social_cards/index.jpg"
 +++
 

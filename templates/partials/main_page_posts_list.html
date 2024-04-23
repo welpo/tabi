@@ -1,0 +1,18 @@
+<div class="list">
+    <div>
+        {{ macros_page_header::page_header(title=section.title) }}
+    </div>
+
+    {%- if paginator %}
+        {%- set pages = paginator.pages -%}
+    {% else %}
+        {%- set pages = extra_section.pages -%}
+    {% endif -%}
+
+	{% set max_posts = section.extra.max_posts | default(value=999999) %}
+    {{ macros_list_posts::list_posts(posts=pages, max=max_posts, language_strings=language_strings, section_path=path) }}
+</div>
+
+{% if paginator %}
+    {%- include "partials/paginate.html" -%}
+{% endif %}

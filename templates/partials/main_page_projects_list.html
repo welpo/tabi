@@ -1,0 +1,17 @@
+{% if section.extra.projects_path %}
+    {%- set projects_section = get_section(path=section.extra.projects_path) -%}
+    {%- if projects_section -%}
+        <div id="featured-projects" class="list">
+            {{ macros_page_header::page_header(title=macros_translate::translate(key="featured_projects", default="Featured projects", language_strings=language_strings)) }}
+        </div>
+        {%- set show_pages = projects_section.pages -%}
+        {%- set max_projects = section.extra.max_projects | default(value=3) -%}
+        {%- include "partials/cards_pages.html" -%}
+    {%- endif -%}
+    {%- if show_pages | length > max_projects -%}
+        <div class="all-posts {{ first_section }}-first" id="all-projects">
+            <a href="{{ get_url(path=projects_section.path, lang=lang) }}/">{{ macros_translate::translate(key="all_projects", default="All projects", language_strings=language_strings) }}&nbsp;<span class="arrow">⟶</span></a>
+        </div>
+    {%- endif -%}
+    </div>
+{% endif %}
