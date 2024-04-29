@@ -4,6 +4,29 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.8.0](https://github.com/welpo/tabi/compare/v2.7.0..v2.8.0) - 2024-04-29
+
+### ✨ Features
+
+- Allow showcasing featured projects on homepage ([#297](https://github.com/welpo/tabi/issues/297)) by [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(CSP)* Add Umami API URLs to CSP ([#301](https://github.com/welpo/tabi/issues/301)) by [@arichtman](https://github.com/arichtman)
+- Align projects and posts properly ([69094d6](https://github.com/welpo/tabi/commit/69094d633579a1ea4bee1fcadd77e1511d4020ca)) by [@welpo](https://github.com/welpo)
+
+### 📝 Documentation
+
+- *(README)* Add arichtman blog to showcase ([#298](https://github.com/welpo/tabi/issues/298)) by [@arichtman](https://github.com/arichtman)
+
+### ♻️ Refactor
+
+- *(search)* Close unclosed div ([b6b48cc](https://github.com/welpo/tabi/commit/b6b48cc3b4a2ad17c2ee331664b0b2c9f1fcecc2)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(README)* Remove sites no longer using tabi ([ba5acca](https://github.com/welpo/tabi/commit/ba5acca7340a940092a9be196302b01441617720)) by [@welpo](https://github.com/welpo)
+
 ## [2.7.0](https://github.com/welpo/tabi/compare/v2.6.1..v2.7.0) - 2024-04-18
 
 ### ✨ Features
@@ -206,10 +229,6 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 
 - *(home-banner)* [**‼️BREAKING‼️**] Force proper header.img path ([#254](https://github.com/welpo/tabi/issues/254)) by [@welpo](https://github.com/welpo)
 - *(i18n)* [**‼️BREAKING‼️**] Force config.toml copyright translation ([#255](https://github.com/welpo/tabi/issues/255)) ([9f39b7f](https://github.com/welpo/tabi/commit/9f39b7fe47721eb7aaea04d8b9ee66b557b7eabf)) by [@welpo](https://github.com/welpo)
-
-### 👥 New contributors
-
-🫶 [@arichtman](https://github.com/arichtman) made their first contribution in [#231](https://github.com/welpo/tabi/pull/231)
 
 ## 1.0.0 - 2023-12-29
 
