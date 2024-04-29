@@ -26,7 +26,7 @@ content="default-src 'self'
                 {%- set connect_src = connect_src ~ " gc.zgo.at" -%}
             {%- elif config.extra.analytics.service == "umami" -%}
                 {%- set script_src = script_src ~ " analytics.eu.umami.is" -%}
-                {%- set connect_src = connect_src ~ " analytics.eu.umami.is" -%}
+                {%- set connect_src = connect_src ~ " api-gateway-eu.umami.dev" ~ " api-gateway-us.umami.dev" ~ " analytics.eu.umami.is" -%}
             {%- elif config.extra.analytics.service == "plausible" -%}
                 {%- set script_src = script_src ~ " plausible.io" -%}
                 {%- set connect_src = connect_src ~ " plausible.io" -%}
