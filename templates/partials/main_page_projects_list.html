@@ -9,7 +9,7 @@
         {%- include "partials/cards_pages.html" -%}
     {%- endif -%}
     {%- if show_pages | length > max_projects -%}
-        <div class="all-posts {{ first_section }}-first" id="all-projects">
+        <div class="all-posts" id="all-projects">
             <a href="{{ get_url(path=projects_section.path, lang=lang) }}/">{{ macros_translate::translate(key="all_projects", default="All projects", language_strings=language_strings) }}&nbsp;<span class="arrow">⟶</span></a>
         </div>
     {%- endif -%}
