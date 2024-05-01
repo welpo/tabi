@@ -4,6 +4,12 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.8.1](https://github.com/welpo/tabi/compare/v2.8.0..v2.8.1) - 2024-05-01
+
+### 🐛 Bug fixes
+
+- Ensure spacing when all projects are shown ([50123c0](https://github.com/welpo/tabi/commit/50123c09ef7ee544d812a58a607d8a1e92369c4f)) by [@welpo](https://github.com/welpo)
+
 ## [2.8.0](https://github.com/welpo/tabi/compare/v2.7.0..v2.8.0) - 2024-04-29
 
 ### ✨ Features
