@@ -1,0 +1,7 @@
+{#- load_data uses different arguments based on whether it's a remote or local file -#}
+{%- if src is starting_with("http") -%}
+    {%- set response = load_data(url=src, format="plain") -%}
+{%- else -%}
+    {%- set response = load_data(path=src, format="plain") -%}
+{%- endif -%}
+{{- response | trim_end | safe -}}
