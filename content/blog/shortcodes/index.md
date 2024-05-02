@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-03-20
+updated = 2024-05-02
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -96,6 +96,32 @@ All other image shortcodes can be made into full-width by setting the optional p
 ```
 
 ## Text shortcodes
+
+### Remote text
+
+Embed text from a remote URL or a local file.
+
+**Important**:
+
+- **Remote VS local files**: If `src` starts with "http", it will be treated as a remote file. Otherwise, it assumes a local file path.
+- **Files access**: As it uses Zola's [`load_data`](https://www.getzola.org/documentation/templates/overview/#load-data), local files must be inside the Zola directory—see [File searching logic](https://www.getzola.org/documentation/templates/overview/#file-searching-logic).
+- **Code block formatting**: To display the text as a code block, you must manually add the Markdown code fences (backticks) and, optionally, specify the programming language for syntax highlighting.
+
+#### Usage
+
+Embedding a remote Python script within a code block with syntax highlighting:
+
+````
+```python
+{{/* remote_text(src="https://example.com/script.py") */}}
+```
+````
+
+Displaying text from a local file:
+
+```
+{{/* remote_text(src="path/to/file.txt") */}}
+```
 
 ### Admonitions
 
