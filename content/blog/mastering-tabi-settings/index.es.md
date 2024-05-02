@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-04-23
+updated = 2024-05-02
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -699,6 +699,14 @@ Puedes activar o desactivar el tiempo estimado de lectura de un artículo con `s
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/see_changes_light.webp", dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Título del artículo y metadatos, mostrando un enlace «Ver cambios»") }}
 
 Dado que sigue [la jerarquía](#jerarquia-de-configuracion), puedes activarlo o desactivarlo para páginas o secciones específicas. Por ejemplo, esta demo desactiva `show_reading_time = false` en la sección [proyectos](https://welpo.github.io/tabi/es/projects/) en el archivo [`_index.md`](https://github.com/welpo/tabi/blob/main/content/projects/_index.es.md?plain=1), por lo que sus publicaciones individuales no muestran el tiempo de lectura.
+
+### Mostrar la fecha
+
+| Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:------------------:|:-------------------:|
+|   ✅   |   ✅    |      ✅       |         ✅          |         ❌          |
+
+Por defecto, la fecha se muestra debajo del título de la publicación. Puedes ocultarla con `show_date = false`. Esta configuración sigue [la jerarquía](#jerarquia-de-configuracion).
 
 ### Formato de fecha
 

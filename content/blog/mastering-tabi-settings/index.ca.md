@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-04-23
+updated = 2024-05-02
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -697,6 +697,14 @@ Pots activar o desactivar el temps estimat de lectura d'un article amb `show_rea
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/see_changes_light.webp", dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Títol de l'article i metadades, mostrant un enllaç «Veure canvis»") }}
 
 Com que segueix [la jerarquia](#jerarquia-de-configuracio), pots activar-lo o desactivar-lo per a pàgines o seccions específiques. Per exemple, aquesta demo desactiva `show_reading_time = false` a la secció [projectes](https://welpo.github.io/tabi/ca/projects/) a l'arxiu [`_index.md`](https://github.com/welpo/tabi/blob/main/content/projects/_index.es.md?plain=1), de manera que les seves publicacions individuals no mostren el temps de lectura.
+
+### Mostrar la data
+
+| Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:--------------------:|:-------------------:|
+|   ✅   |   ✅   |      ✅       |         ✅           |         ❌          |
+
+Per defecte, la data es mostra sota el títol de la publicació. Pots amagar-la amb `show_date = false`. Aquest ajust segueix [la jerarquia](#jerarquia-de-configuracio).
 
 ### Format de data
 
