@@ -20,6 +20,7 @@
     "katex",
     "quick_navigation_buttons",
     "show_reading_time",
+    "show_date",
     "show_remote_changes",
     "toc",
     "show_previous_next_article_links",
@@ -64,17 +65,20 @@
                 <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
             {% endif %}
 
-            {% if page.date %}
+            {# page settings override config settings #}
+            {% if page.date and macros_settings::evaluate_setting_priority(setting="show_date", page=page, default_global_value=true) == "true" %}
                 <li>{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</li>
+                {#- Variable to keep track of whether we've shown a section, to avoid separators as the first element -#}
+                {%- set previous_visible = true -%}
             {% endif %}
 
-            {# page settings override config settings #}
             {% if macros_settings::evaluate_setting_priority(setting="show_reading_time", page=page, default_global_value=true) == "true" %}
-                {{ separator }} <li title="{{ macros_translate::translate(key="words", number=page.word_count, default="$NUMBER words", language_strings=language_strings) }}">{{ macros_translate::translate(key="min_read", number=page.reading_time, default="$NUMBER min read", language_strings=language_strings) }}</li>
+                {%- if previous_visible -%}{{ separator }}&nbsp;{%- endif -%}<li title="{{ macros_translate::translate(key="words", number=page.word_count, default="$NUMBER words", language_strings=language_strings) }}">{{ macros_translate::translate(key="min_read", number=page.reading_time, default="$NUMBER min read", language_strings=language_strings) }}</li>
+                {%- set previous_visible = true -%}
             {% endif %}
 
             {%- if page.taxonomies and page.taxonomies.tags -%}
-                {{ separator }}&nbsp;<li>{{- macros_translate::translate(key="tags", default="tags", language_strings=language_strings) | capitalize -}}:&nbsp;</li>
+                {%- if previous_visible -%}&nbsp;{{ separator }}&nbsp;{%- endif -%}<li>{{- macros_translate::translate(key="tags", default="tags", language_strings=language_strings) | capitalize -}}:&nbsp;</li>
                 {%- for tag in page.taxonomies.tags -%}
                     <li><a href={{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}>{{ tag }}</a>
                     {%- if not loop.last -%}
@@ -82,13 +86,14 @@
                     {%- endif -%}
                     </li>
                 {%- endfor -%}
+                {%- set previous_visible = true -%}
             {%- endif -%}
 
             {% if page.updated %}
                 </ul><ul class="meta last-updated"><li>{{ macros_translate::translate(key="last_updated_on", default="Last updated on", language_strings=language_strings) }} {{ macros_format_date::format_date(date=page.updated, short=true, language_strings=language_strings) }}</li>
                 {# Show link to remote changes if enabled #}
                 {% if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" %}
-                    {{ separator }}
+                    {%- if previous_visible -%}{{ separator }}&nbsp;{%- endif -%}
                     <li><a href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}<small>&nbsp;<span class="arrow-corner">↗</span></small></a></li>
                 {% endif %}
             {% endif %}

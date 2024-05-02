@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-04-23
+updated = 2024-05-02
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -704,6 +704,14 @@ You can enable or hide the reading time of a post with `show_reading_time`. If y
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/see_changes_light.webp", dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Post title and metadata, showing a 'See changes' link") }}
 
 Since it follows [the hierarchy](#settings-hierarchy), you can enable it or hide it for specific pages or sections. For example, this demo sets `show_reading_time = false` in the [projects](https://welpo.github.io/tabi/projects/) section's [`_index.md`](https://github.com/welpo/tabi/blob/main/content/projects/_index.md?plain=1), so their individual posts don't show the reading time.
+
+### Show Date
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
+
+By default, the date is shown below the post title. You can hide it with `show_date = false`. This setting follows [the hierarchy](#settings-hierarchy).
 
 ### Date Format
 
