@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-05-02
+updated = 2024-05-03
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -526,6 +526,14 @@ Cuando hagas clic en un enlace de retorno (la flecha ↩), te llevará de vuelta
 Establecer `copy_button = true` añadirá un pequeño botón de copiar en la parte superior derecha de los bloques de código, como este:
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp", dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp", alt="Botón de copiar en bloques de código", full_width=true) }}
+
+### Mostrar ruta/URL en bloques de código
+
+| Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:---------------:|:-------------------:|
+|   ✅   |   ✅    |      ✅       |        ✅       |         ✅          |
+
+Establece `add_src_to_code_block = true` para habilitar el uso del [shortcode `add_src_to_code_block`](@/blog/shortcodes/index.md#show-source-or-path).
 
 ### Soporte para KaTeX
 

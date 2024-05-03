@@ -47,6 +47,11 @@
     <script defer src="{{ get_url(path='js/copyCodeToClipboard.min.js', trailing_slash=false) | safe }}"></script>
 {%- endif -%}
 
+{# JavaScript to use the "Show source or path" on code blocks shortcode: https://welpo.github.io/tabi/blog/shortcodes/#show-source-or-path #}
+{%- if macros_settings::evaluate_setting_priority(setting="add_src_to_code_block", page=page, default_global_value=false) == "true" -%}
+    <script defer src="{{ get_url(path='js/addSrcToCodeBlock.min.js', trailing_slash=false) | safe }}"></script>
+{%- endif -%}
+
 {# Add backlinks to footnotes #}
 {%- if macros_settings::evaluate_setting_priority(setting="footnote_backlinks", page=page, default_global_value=false) == "true" -%}
     <script defer src="{{ get_url(path='js/footnoteBacklinks.min.js', trailing_slash=false | safe )}}"></script>

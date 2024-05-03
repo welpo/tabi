@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-05-02
+updated = 2024-05-03
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -529,6 +529,14 @@ When you click on a backlink (the arrow ↩), it will take you back to the text 
 Setting `copy_button = true` will add a small copy button to the top right of code blocks, like this:
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp", dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp" alt="Copy button on code blocks", full_width=true) }}
+
+### Source/Path on Code Blocks
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ✅  |   ✅    |      ✅       |         ✅        |         ✅          |
+
+Setting `add_src_to_code_block = true` enables the use of the [`add_src_to_code_block` shortcode](@/blog/shortcodes/index.md#show-source-or-path).
 
 ### KaTeX Support
 

@@ -1,7 +1,7 @@
 +++
 title = "No mandatory JavaScript"
 date = 2023-01-06
-updated = 2024-01-07
+updated = 2024-05-03
 description = "JavaScript is only used when HTML and CSS aren't enough."
 
 [taxonomies]
@@ -28,6 +28,7 @@ The following settings can be specified for posts, sections and globally, follow
 
 - [**KaTeX support**](@/blog/markdown/index.md#katex). Enabled by setting `katex = true` (274 KB).
 - [**One-click copy of code blocks**](@/blog/markdown/index.md#code-block). Enabled by setting `copy_button = true`. (~700 bytes)
+- [**Showing source (path or URL) in code blocks**](@/blog/shortcodes/index.md#show-source-or-path). Enabled by setting `add_src_to_code_block = true`. (~300 bytes)
 - [**Footnote backlinks**](@/blog/markdown/index.md#1). Enabled by setting `footnote_backlinks = true` (~500 bytes).
 
 To specify these settings:

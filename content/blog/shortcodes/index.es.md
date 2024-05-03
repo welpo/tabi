@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2024-05-02
+updated = 2024-05-03
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -11,6 +11,7 @@ tags = ["funcionalidad", "shortcodes"]
 toc = true
 toc_levels = 2
 quick_navigation_buttons = true
+add_src_to_code_block = true
 social_media_card = "social_cards/es_blog_shortcodes.jpg"
 +++
 
@@ -95,6 +96,33 @@ Todos los otros shortcodes de imágenes pueden usar el ancho completo asignando 
 ```
 {{/* full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Fotografía de un canal en Ámsterdam") */}}
 ```
+
+## Shortcodes de código
+
+### Mostrar ruta o URL
+
+Muestra una ruta o URL en el siguiente bloque de código encontrado. Si comienza con "http", se convertirá en un enlace. Particularmente útil cuando se usa junto con el [shortcode de texto remot](#texto-remoto).
+
+{{ add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") }}
+
+```.gitignore
+{{ remote_text(src="https://raw.githubusercontent.com/welpo/doteki/main/.gitignore") }}
+```
+
+{{ admonition(type="warning", title="IMPORTANT", text="Esta característica requiere JavaScript. Para habilitarla, configura `add_src_to_code_block = true` en la sección `[extra]` de tu página, sección, o `config.toml`.") }}
+
+#### Uso
+
+````
+{{/* add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") */}}
+
+```.gitignore
+__pycache__/
+*coverage*
+.vscode/
+dist/
+```
+````
 
 ## Shortcodes de texto
 

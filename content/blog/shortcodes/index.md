@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-05-02
+updated = 2024-05-03
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -11,6 +11,7 @@ tags = ["showcase", "shortcodes"]
 toc = true
 toc_levels = 2
 quick_navigation_buttons = true
+add_src_to_code_block = true
 social_media_card = "social_cards/blog_shortcodes.jpg"
 +++
 
@@ -95,11 +96,38 @@ All other image shortcodes can be made into full-width by setting the optional p
 {{/* full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Photograph of a canal in Amsterdam") */}}
 ```
 
+## Code shortcodes
+
+### Show source or path
+
+Display a path or URL on the next code block found. If it starts with "http", it will become a link. Particularly useful when used in conjunction with the [remote text shortcode](#remote-text).
+
+{{ add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") }}
+
+```.gitignore
+{{ remote_text(src="https://raw.githubusercontent.com/welpo/doteki/main/.gitignore") }}
+```
+
+{{ admonition(type="warning", title="IMPORTANT", text="This feature requires JavaScript. To enable it, set `add_src_to_code_block = true` on the `[extra]` section of your page, section, or `config.toml`.") }}
+
+#### Usage
+
+````
+{{/* add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") */}}
+
+```.gitignore
+__pycache__/
+*coverage*
+.vscode/
+dist/
+```
+````
+
 ## Text shortcodes
 
 ### Remote text
 
-Embed text from a remote URL or a local file.
+Embed text from a remote URL or a local file. To display the path or URL on the code block, see the [show source or path shortcode](#show-source-or-path).
 
 **Important**:
 

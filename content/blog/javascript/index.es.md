@@ -1,7 +1,7 @@
 +++
 title = "Sin JavaScript obligatorio"
 date = 2023-01-06
-updated = 2024-01-07
+updated = 2024-05-03
 description = "JavaScript solo se utiliza cuando HTML y CSS no son suficientes."
 
 [taxonomies]
@@ -28,6 +28,7 @@ Las siguientes opciones pueden especificarse para publicaciones, secciones y a n
 
 - [**Soporte de KaTeX**](@/blog/markdown/index.es.md#katex). Habilitado al configurar `katex = true` (274 KB).
 - [**Copia de bloques de código con un solo clic**](@/blog/markdown/index.es.md#bloque-de-codigo). Habilitado al configurar `copy_button = true` (~700 bytes).
+- [**Mostrar ruta/URL en bloques de código**](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url). Se activa configurando `add_src_to_code_block = true`. (~400 bytes)
 - [**Enlaces de retorno de notas al pie**](@/blog/markdown/index.es.md#1). Habilitado al configurar `footnote_backlinks = true` (~500 bytes).
 
 Para especificar estas opciones:
