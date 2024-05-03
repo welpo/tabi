@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-05-02
+updated = 2024-05-03
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -526,6 +526,14 @@ Quan facis clic en un enllaç de retorn (la fletxa ↩), et portarà de tornada 
 Establir `copy_button = true` afegirà un petit botó de copiar a la part superior dreta dels blocs de codi, com aquest:
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp", dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp", alt="Botó de copiar en blocs de codi", full_width=true) }}
+
+### Mostrar ruta/URL en blocs de codi
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:---------------:|:-------------------:|
+|   ✅   |   ✅    |      ✅       |        ✅       |         ✅          |
+
+Estableix `add_src_to_code_block = true` per habilitar l'ús del [shortcode `add_src_to_code_block`](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url).
 
 ### Suport per a KaTeX
 
