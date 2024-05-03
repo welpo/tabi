@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (sourceUrl.startsWith('http')) {
                     sourceElement.href = sourceUrl;
                 }
-                codeElement.appendChild(sourceElement);
+                codeElement.prepend(sourceElement);
             }
         }
     });
