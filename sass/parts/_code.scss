@@ -86,7 +86,7 @@ pre {
             right: 1.3rem;
             padding-top: 0.3rem;
             padding-right: 1.3rem;
-            max-width: 80%;
+            max-width: calc(100% - 14em);
             height: 0.9rem;
             overflow: hidden;
             color: var(--hover-color);
