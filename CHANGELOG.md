@@ -4,6 +4,19 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.9.0](https://github.com/welpo/tabi/compare/v2.8.1..v2.9.0) - 2024-05-11
+
+### ✨ Features
+
+- *(shortcodes)* Add remote_text shortcode ([#305](https://github.com/welpo/tabi/issues/305)) by [@welpo](https://github.com/welpo)
+- Enable adding URL/path to code blocks ([#307](https://github.com/welpo/tabi/issues/307)) ([b70efd1](https://github.com/welpo/tabi/commit/b70efd1642db11b060665ecf6d1bf0f11e3ffd06)) by [@welpo](https://github.com/welpo)
+- Add option to display/hide date in metadata ([#306](https://github.com/welpo/tabi/issues/306)) by [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(add_src_to_code_block)* Avoid overlapping text ([f081a92](https://github.com/welpo/tabi/commit/f081a92f5939e141b6dbd7afe8ad1a9519d47f30)) by [@welpo](https://github.com/welpo)
+- *(analytics)* Allow Umami through CSP ([#310](https://github.com/welpo/tabi/issues/310)) by [@arichtman](https://github.com/arichtman)
+
 ## [2.8.1](https://github.com/welpo/tabi/compare/v2.8.0..v2.8.1) - 2024-05-01
 
 ### 🐛 Bug fixes
