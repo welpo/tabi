@@ -2,7 +2,7 @@
 title = "Privacy Policy"
 path = "privacy"
 date = 2023-10-31
-updated = 2023-12-07
+updated = 2024-05-12
 +++
 
 This privacy policy outlines how we collect and process your data on this website.
@@ -27,7 +27,6 @@ For website improvement, the following non-personal data is collected:
 - **Requested URL**: the specific page you visited.
 - **User-Agent**: identifies the browser and operating system you use (e.g. "Safari 17.0, Mac OS X").
 - **Country name**: the country you are visiting from, determined by your IP address.
-- **Language**: the language your browser is set to.
 - **Screen size**: the dimensions of your device's screen.
 - **Time**: when you accessed the site.
 - **Browsing session**: a temporary identification code generated from your IP address, browser information, and a random number. This is used to recognize a browsing session for 8 hours. After that time, the code is deleted from memory and is not stored anywhere.

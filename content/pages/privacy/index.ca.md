@@ -2,7 +2,7 @@
 title = "Política de privacitat"
 path = "/ca/privacy"
 date = 2023-10-31
-updated = 2023-12-07
+updated = 2024-05-12
 +++
 
 Aquesta política de privacitat detalla com recollim i processem les teves dades en aquest lloc web.
@@ -27,7 +27,6 @@ Per a la millora del lloc web, es recullen les dades no personals següents:
 - **URL sol·licitat**: la pàgina específica que visites.
 - **Agent d'usuari**: identifica el navegador i el sistema operatiu que utilitzes (per exemple, "Safari 17.0, Mac OS X").
 - **Nom del país**: el país des d'on estàs visitant, determinat per la teva adreça IP.
-- **Idioma**: l'idioma configurat al teu navegador.
 - **Mida de pantalla**: les dimensions de la pantalla del teu dispositiu.
 - **Data i hora**: quan accedeixes al lloc.
 - **Sessió de navegació**: un codi d'identificació temporal generat a partir de la adreça IP, informació del navegador i un número aleatori. Aquest s'utilitza per reconèixer la sessió de navegació durant 8 hores. Passat aquest temps, el codi s'esborra de la memòria i no s'emmagatzema enlloc.

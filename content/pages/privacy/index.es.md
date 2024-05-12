@@ -2,7 +2,7 @@
 title = "Política de privacidad"
 path = "/es/privacy"
 date = 2023-10-31
-updated = 2023-12-07
+updated = 2024-05-12
 +++
 
 Esta política de privacidad describe cómo recopilamos y procesamos tus datos en este sitio web.
@@ -27,7 +27,6 @@ Para mejorar el sitio web, se recopila la siguiente información no personal:
 - **URL solicitado**: la página específica que visitas.
 - **Agente de usuario**: identifica el navegador y el sistema operativo que utilizas (por ejemplo, "Safari 17.0, Mac OS X").
 - **Nombre del país**: el país desde el que estás visitando, determinado por tu dirección IP.
-- **Idioma**: el idioma configurado en tu navegador.
 - **Tamaño de pantalla**: las dimensiones de la pantalla de tu dispositivo.
 - **Fecha y hora**: cuándo accedes al sitio.
 - **Sesión de navegación**: un código de identificación temporal generado a partir de tu dirección IP, información del navegador y un número aleatorio. Este código se utiliza para reconocer la sesión de navegación durante 8 horas. Después de ese tiempo, el código se elimina de la memoria y no se almacena en ningún lugar.
