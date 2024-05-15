@@ -20,6 +20,11 @@ img {
     height: auto;
 }
 
+img.inline {
+    display: inline;
+    vertical-align: middle;
+}
+
 figure h4 {
     margin: 0;
     margin-bottom: 1em;
