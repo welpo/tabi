@@ -37,11 +37,21 @@ figure h4::before {
 
 .img-dark {
     display: none;
+    &.inline{
+        display: none;
+    }
+}
+
+.img-light.inline {
+    display: inline;
 }
 
 [data-theme="dark"] {
     .img-dark {
         display: block;
+        &.inline {
+            display: inline;
+        }
     }
 
     .img-light {

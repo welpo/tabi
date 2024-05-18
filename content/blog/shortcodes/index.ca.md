@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2024-05-03
+updated = 2024-05-18
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -17,11 +17,13 @@ social_media_card = "social_cards/ca_blog_shortcodes.jpg"
 
 ## Shortcodes d'imatge
 
-**Nota**: tots els shortcodes d'imatge tenen dos paràmetres opcionals: `full_width`, que té com a valor predeterminat `false` (vegeu [a sota](#imatge-d-amplada-completa)), i `lazy_loading`, que té com a valor predeterminat `true`.
+Tots els shortcodes d'imatge admeten rutes absolutes, rutes relatives, i fonts remotes en el paràmetre `src`.
 
-**Nota 2**: a partir del [PR #222](https://github.com/welpo/tabi/pull/222) (commit [7796162](https://github.com/welpo/tabi/commit/7796162e378cacb9b4d6129f95138121224714f1)), tots els shortcodes d'imatges suporten rutes relatives pel paràmetre `src`.
+Tots els shortcodes d'imatge tenen tres paràmetres opcionals:
 
-**Nota 3**: a partir del [PR #280](https://github.com/welpo/tabi/pull/280), tots els shortcodes d'imatges admeten imatges remotes pel paràmetre `src`.
+- `inline`. Valor predeterminat: `false`. Si s'estableix a `true`, la imatge es mostrarà en línia amb el text.
+- `full_width`. Valor predeterminat: `false` (vegeu [a sota](#imatge-d-amplada-completa)).
+- `lazy_loading`. Valor predeterminat: `true`.
 
 ### Imatges per a temes duals
 

@@ -1,5 +1,13 @@
 {%- set colocated_path = page.colocated_path | default(value="") -%}
 {%- set lazy_loading = lazy_loading | default(value=true) -%}
+{%- set inline = inline | default(value=false) -%}
+
+{%- set light_class_list = "img-light" -%}
+{%- set dark_class_list = "img-dark" -%}
+{%- if inline -%}
+    {%- set light_class_list = light_class_list ~ " inline" -%}
+    {%- set dark_class_list = dark_class_list ~ " inline" -%}
+{%- endif -%}
 
 {# Handling for light mode image #}
 {%- if light_src is starting_with("http") -%}
@@ -30,8 +38,8 @@
 {%- if full_width -%}
     <div class="full-width">
 {%- endif -%}
-<img src="{{ light_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if light_meta.width %} width="{{ light_meta.width }}"{% endif %}{% if light_meta.height %} height="{{ light_meta.height }}" {% endif %} class="img-light">
-<img src="{{ dark_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if dark_meta.width %} width="{{ dark_meta.width }}"{% endif %}{% if dark_meta.height %} height="{{ dark_meta.height }}" {% endif %} class="img-dark">
+<img class="{{ light_class_list }}" src="{{ light_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if light_meta.width %} width="{{ light_meta.width }}"{% endif %}{% if light_meta.height %} height="{{ light_meta.height }}" {% endif %}>
+<img class="{{ dark_class_list }}" src="{{ dark_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if dark_meta.width %} width="{{ dark_meta.width }}"{% endif %}{% if dark_meta.height %} height="{{ dark_meta.height }}" {% endif %}>
 {%- if full_width -%}
     </div>
 {%- endif -%}
