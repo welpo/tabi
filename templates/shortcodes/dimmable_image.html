@@ -17,10 +17,15 @@
 
 {%- set lazy_loading = lazy_loading | default(value=true) -%}
 
+{%- set class_list = "dimmable-image" -%}
+{%- if inline -%}
+    {%- set class_list = class_list ~ " inline" -%}
+{%- endif -%}
+
 {%- if full_width -%}
     <div class="full-width">
 {%- endif -%}
-<img class="dimmable-image" src="{{ image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if meta.width %} width="{{ meta.width }}"{% endif %}{% if meta.height %} height="{{ meta.height }}" {% endif %}/>
+<img class="{{ class_list }}" src="{{ image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if meta.width %} width="{{ meta.width }}"{% endif %}{% if meta.height %} height="{{ meta.height }}" {% endif %}/>
 {%- if full_width -%}
     </div>
 {%- endif -%}

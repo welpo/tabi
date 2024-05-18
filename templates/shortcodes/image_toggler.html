@@ -4,6 +4,19 @@
 {%- set random_id = get_random(end=100000) -%}
 {%- set colocated_path = page.colocated_path | default(value="") -%}
 {%- set lazy_loading = lazy_loading | default(value=true) -%}
+{%- set inline = inline | default(value=false) -%}
+
+{#- Determine the class for the images -#}
+{#- Necessary for inline images -#}
+{%- set tag = "div" -%}
+{%- if inline -%}
+    {%- set tag = "span" -%}
+{%- endif -%}
+
+{%- set img_class_list = "" -%}
+{%- if inline -%}
+    {%- set img_class_list = img_class_list ~ " inline" -%}
+{%- endif -%}
 
 {# Direct or relative URL handling for default image #}
 {%- if default_src is starting_with("http") -%}
@@ -31,14 +44,14 @@
     {%- endif -%}
 {%- endif -%}
 
-<div class="image-toggler-container {% if full_width %}full-width{% endif %}">
+<{{ tag }} class="image-toggler-container {% if full_width %}full-width{% endif %}">
     <input type="checkbox" id="toggle-img-{{ random_id }}" class="image-toggler-toggle">
     <label for="toggle-img-{{ random_id }}" class="image-label">
-        <div class="image-default">
-            <img src="{{ default_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if default_alt %} alt="{{ default_alt }}"{% endif %}{% if default_meta.width %} width="{{ default_meta.width }}"{% endif %}{% if default_meta.height %} height="{{ default_meta.height }}"{% endif %}>
-        </div>
-        <div class="image-toggled">
-            <img src="{{ toggled_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if toggled_alt %} alt="{{ toggled_alt }}"{% endif %}{% if toggled_meta.width %} width="{{ toggled_meta.width }}"{% endif %}{% if toggled_meta.height %} height="{{ toggled_meta.height }}"{% endif %}>
-        </div>
+        <{{ tag }} class="image-default">
+            <img class="{{ img_class_list }}" src="{{ default_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if default_alt %} alt="{{ default_alt }}"{% endif %}{% if default_meta.width %} width="{{ default_meta.width }}"{% endif %}{% if default_meta.height %} height="{{ default_meta.height }}"{% endif %}>
+        </{{ tag }}>
+        <{{ tag }} class="image-toggled">
+            <img class="{{ img_class_list }}" src="{{ toggled_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if toggled_alt %} alt="{{ toggled_alt }}"{% endif %}{% if toggled_meta.width %} width="{{ toggled_meta.width }}"{% endif %}{% if toggled_meta.height %} height="{{ toggled_meta.height }}"{% endif %}>
+        </{{ tag }}>
     </label>
-</div>
+</{{ tag }}>
