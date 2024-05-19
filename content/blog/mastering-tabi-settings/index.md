@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-05-03
+updated = 2024-05-19
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -125,7 +125,7 @@ paginate_by = 5
 header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, the theme's author" }
 ```
 
-If you'd rather serve the posts from `/blog`, you can set `section_path = "/blog"` in the `[extra]` section. This is the setup or this demo:
+If you'd rather serve the posts from `/blog`, you can set `section_path = "/blog"` in the `[extra]` section. This is the setup of this demo:
 
 ```toml
 title = "Latest posts"
