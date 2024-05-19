@@ -9,7 +9,11 @@
     {%- set first_section = "posts" -%}
 {%- endif -%}
 
-<main class={{ first_section }}-first>
+{%- if section.extra.section_path or paginator and projects_path -%}
+    {%- set more_than_one_section_shown = true -%}
+{%- endif -%}
+
+<main {% if more_than_one_section_shown %}class="{{ first_section }}-first"{% endif %}>
 {%- if section.extra.header %}
     {%- include "partials/home_banner.html" -%}
 {% endif -%}
