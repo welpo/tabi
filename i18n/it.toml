@@ -45,6 +45,9 @@ go_to_top = "Vai in cima alla pagina"
 go_to_comments = "Vai alla sezione commenti"
 
 # Post metadata.
+by_author = "Di $AUTHOR"  # $AUTHOR will be replaced by the author(s).
+author_separator = ", "  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = " e "  # For multiple authors. Ensure spacing where necessary.
 draft = "BOZZA"
 zero_min_read = "<1 min di lettura"
 one_min_read = "$NUMBER min di lettura"

@@ -56,6 +56,9 @@ go_to_top = "Перейти на початок сторінки"
 go_to_comments = "Перейти до коментарів"
 
 # Post metadata.
+by_author = "Від $AUTHOR"  # $AUTHOR will be replaced by the author(s).
+author_separator = ", "  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = " і "  # For multiple authors. Ensure spacing where necessary.
 draft = "ЧЕРНЕТКА"
 zero_min_read = "<1 хв. читання"
 one_min_read = "$NUMBER хв. читання"

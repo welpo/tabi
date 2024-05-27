@@ -52,6 +52,9 @@ go_to_top = "Перейти в начало страницы"
 go_to_comments = "Перейти к комментариям"
 
 # Post metadata.
+by_author = "От $AUTHOR"  # $AUTHOR will be replaced by the author(s).
+author_separator = ", "  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = " и "  # For multiple authors. Ensure spacing where necessary.
 draft = "ЧЕРНОВИК"
 zero_min_read = "<1 мин чтения"
 one_min_read = "$NUMBER мин чтения"

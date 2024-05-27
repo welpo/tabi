@@ -45,6 +45,9 @@ go_to_top = "Ga naar de bovenkant van de pagina"
 go_to_comments = "Ga naar opmerkingen"
 
 # Post metadata.
+by_author = "Door $AUTHOR"  # $AUTHOR will be replaced by the author(s).
+author_separator = ", "  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = " en "  # For multiple authors. Ensure spacing where necessary.
 draft = "VOORLOPIGE VERSIE"
 zero_min_read = "<1 minuut lezen"
 one_min_read = "$NUMBER minuut lezen"

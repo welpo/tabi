@@ -45,6 +45,9 @@ go_to_top = "返回頁面頂部"  # Machine translated.
 go_to_comments = "轉到評論區"  # Machine translated.
 
 # Post metadata.
+by_author = "由$AUTHOR"  # $AUTHOR will be replaced by the author(s).
+author_separator = "、"  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = "和"  # For multiple authors. Ensure spacing where necessary.
 draft = "草稿"
 zero_min_read = "少於1分鐘閱讀"
 one_min_read = "$NUMBER 分鐘閱讀"

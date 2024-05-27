@@ -49,6 +49,9 @@ go_to_top = "ページの先頭へ"
 go_to_comments = "コメントセクションへ"
 
 # Post metadata.
+by_author = "$AUTHOR によって"  # $AUTHOR will be replaced by the author(s).
+author_separator = "、"  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = "と"  # For multiple authors. Ensure spacing where necessary.
 draft = "ドラフト"
 zero_min_read = "1分未満の読了時間"
 one_min_read = "$NUMBER 分の読了時間"

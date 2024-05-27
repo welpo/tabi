@@ -46,6 +46,9 @@ go_to_top = "رفتن به بالای صفحه"
 go_to_comments = "رفتن به بخش نظرات"
 
 # Post metadata.
+by_author = "توسط $AUTHOR"  # $AUTHOR will be replaced by the author(s).
+author_separator = "، "  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = " و "  # For multiple authors. Ensure spacing where necessary.
 draft = "پیش‌نویس"
 zero_min_read = "خواندن کمتر از ۱ دقیقه"
 one_min_read = "خواندن $NUMBER دقیقه"
