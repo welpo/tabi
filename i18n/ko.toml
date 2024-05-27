@@ -49,6 +49,9 @@ go_to_top = "페이지 상단으로"
 go_to_comments = "댓글 섹션으로"
 
 # Post metadata.
+by_author = "$AUTHOR 작성"  # $AUTHOR will be replaced by the author(s).
+author_separator = "、"  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = "와"  # For multiple authors. Ensure spacing where necessary.
 draft = "임시 저장"
 zero_min_read = "1분 미만 읽기"
 one_min_read = "$NUMBER 분 읽기"

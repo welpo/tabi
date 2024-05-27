@@ -45,6 +45,9 @@ go_to_top = "Ir al inicio de la página"
 go_to_comments = "Ir a la sección de comentarios"
 
 # Post metadata.
+by_author = "Por $AUTHOR"  # $AUTHOR will be replaced by the author(s).
+author_separator = ", "  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = " y "  # For multiple authors. Ensure spacing where necessary.
 draft = "BORRADOR"
 zero_min_read = "<1 min de lectura"
 one_min_read = "$NUMBER min de lectura"

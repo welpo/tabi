@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-05-03
+updated = 2024-05-25
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -695,6 +695,16 @@ copyright_translations.es = "© $CURRENT_YEAR $AUTHOR $SEPARATOR A menos que se 
 ---
 
 ## Metadatos
+
+### Mostrar autoría
+
+| Página | Sección | `config.toml` | Respeta jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|   ✅   |   ✅    |      ✅       |         ✅        |         ❌          |
+
+Para mostrar la autoría de un artículo, usa `show_author = true`.
+
+Esto mostrará lxs autorxs establecidxs en la variable `authors = []` en el front matter del artículo. Si esto no está disponible, se usará `author = ""` en `config.toml`.
 
 ### Tiempo de lectura
 

@@ -45,6 +45,9 @@ go_to_top = "Vés a l'inici de la pàgina"
 go_to_comments = "Vés a la secció de comentaris"
 
 # Post metadata.
+by_author = "Per $AUTHOR"  # $AUTHOR will be replaced by the author(s).
+author_separator = ", "  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = " i "  # For multiple authors. Ensure spacing where necessary.
 draft = "ESBORRANY"
 zero_min_read = "<1 min de lectura"
 one_min_read = "$NUMBER min de lectura"

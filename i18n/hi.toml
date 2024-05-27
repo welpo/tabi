@@ -47,6 +47,9 @@ go_to_top = "पृष्ठ के शीर्ष पर जाएं"
 go_to_comments = "टिप्पणी अनुभाग में जाएं"
 
 # Post metadata.
+by_author = "$AUTHOR द्वारा"  # $AUTHOR will be replaced by the author(s).
+author_separator = ", "  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = " और "  # For multiple authors. Ensure spacing where necessary.
 draft = "मसौदा"
 zero_min_read = "कम से कम 1 मिनट पठन समय"
 one_min_read = "$NUMBER मिनट पठन समय"

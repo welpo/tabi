@@ -1,43 +1,43 @@
-{% macro format_date(date, short, language_strings="") %}
+{%- macro format_date(date, short, language_strings="") -%}
 
-{# Set locale #}
-{% set date_locale = macros_translate::translate(key="date_locale", default="en_GB", language_strings=language_strings) %}
+{#- Set locale -#}
+{%- set date_locale = macros_translate::translate(key="date_locale", default="en_GB", language_strings=language_strings) -%}
 
-{% if config.extra.short_date_format and short %}
+{%- if config.extra.short_date_format and short -%}
     {{ date | date(format=config.extra.short_date_format, locale=date_locale) }}
-{% elif config.extra.long_date_format and not short %}
+{%- elif config.extra.long_date_format and not short -%}
     {{ date | date(format=config.extra.long_date_format, locale=date_locale) }}
-{% elif not config.extra.short_date_format and date_locale == "en_GB" %}
-    {% set day = date | date(format='%-d') | int %}
+{%- elif not config.extra.short_date_format and date_locale == "en_GB" -%}
+    {%- set day = date | date(format='%-d') | int -%}
 
-    {% if day in [11, 12, 13] %}
-        {% set suffix = "th" %}
-    {% else %}
-        {% set last_digit = day % 10 %}
-        {% if last_digit == 1 %}
-            {% set suffix = "st" %}
-        {% elif last_digit == 2 %}
-            {% set suffix = "nd" %}
-        {% elif last_digit == 3 %}
-            {% set suffix = "rd" %}
-        {% else %}
-            {% set suffix = "th" %}
-        {% endif %}
-    {% endif %}
+    {%- if day in [11, 12, 13] -%}
+        {%- set suffix = "th" -%}
+    {%- else -%}
+        {%- set last_digit = day % 10 -%}
+        {%- if last_digit == 1 -%}
+            {%- set suffix = "st" -%}
+        {%- elif last_digit == 2 -%}
+            {%- set suffix = "nd" -%}
+        {%- elif last_digit == 3 -%}
+            {%- set suffix = "rd" -%}
+        {%- else -%}
+            {%- set suffix = "th" -%}
+        {%- endif -%}
+    {%- endif -%}
 
-    {# Return the date. #}
+    {#- Return the date. -#}
     {{ date | date(format="%-d") }}{{ suffix }}
-    {% if short == true %}
-        {{ date | date(format="%b %Y") }}
-    {% else %}
-        {{ date | date(format="%B %Y") }}
-    {% endif %}
-{% else %}
-    {% if short %}
+    {%- if short == true -%}
+        {{ date | date(format=" %b %Y") }}
+    {%- else -%}
+        {{ date | date(format=" %B %Y") }}
+    {%- endif -%}
+{%- else -%}
+    {%- if short -%}
         {{ date | date(format="%-d %b %Y", locale=date_locale) }}
-    {% else %}
+    {%- else -%}
         {{ date | date(format="%d %b %Y", locale=date_locale) }}
-    {% endif %}
-{% endif %}
+    {%- endif -%}
+{%- endif -%}
 
-{% endmacro %}
+{%- endmacro -%}
