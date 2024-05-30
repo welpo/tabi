@@ -4,6 +4,42 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.10.0](https://github.com/welpo/tabi/compare/v2.9.0..v2.10.0) - 2024-05-30
+
+### ✨ Features
+
+- *(homepage)* Allow hiding posts listing ([#317](https://github.com/welpo/tabi/issues/317)) by [@welpo](https://github.com/welpo)
+- *(shortcodes)* Add inline option to image shortcodes ([#315](https://github.com/welpo/tabi/issues/315)) by [@welpo](https://github.com/welpo)
+- Add option to show author in post metadata ([#322](https://github.com/welpo/tabi/issues/322)) by [@welpo](https://github.com/welpo)
+- Add inline image CSS class ([6a4f424](https://github.com/welpo/tabi/commit/6a4f4244e0ae16127f207680061fa4dcb1c782dd)) by [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(footer)* Allow showing only email/feed icons ([aef49bb](https://github.com/welpo/tabi/commit/aef49bb2251c95e1fb70f05f149ecc8af7184145)) by [@welpo](https://github.com/welpo)
+- Allow quotation in page summary ([22925ca](https://github.com/welpo/tabi/commit/22925caf060d122630c02437c5fc73bc6b82e457)) by [@welpo](https://github.com/welpo)
+
+### 💄 Styling
+
+- Increase font size of h1 ([94b3b1d](https://github.com/welpo/tabi/commit/94b3b1d8045753187044174a4d127fdc94608923)) by [@welpo](https://github.com/welpo)
+
+### 📝 Documentation
+
+- *(mastering tabi)* Fix typo ([349663f](https://github.com/welpo/tabi/commit/349663f28fc61bb19beec8ba8d42d5724c062bee)) by [@welpo](https://github.com/welpo)
+- CSP requirements to use built-in syntax highlighting ([3b0d7e5](https://github.com/welpo/tabi/commit/3b0d7e5a668aa087af512f0ecb204acf61723a63)) by [@welpo](https://github.com/welpo)
+
+### ♻️ Refactor
+
+- Improve settings hierarchy performance ([#325](https://github.com/welpo/tabi/issues/325)) by [@faassen](https://github.com/faassen)
+
+### 🔧 Miscellaneous tasks
+
+- *(analytics)* Stop collecting Language data ([1894d55](https://github.com/welpo/tabi/commit/1894d550bcbd8b664c3865576aa65abd0b1db0c3)) by [@welpo](https://github.com/welpo)
+- Update nani logo ([#323](https://github.com/welpo/tabi/issues/323)) by [@faassen](https://github.com/faassen)
+
+### 👥 New contributors
+
+🫶 [@faassen](https://github.com/faassen) made their first contribution in [#325](https://github.com/welpo/tabi/pull/325)
+
 ## [2.9.0](https://github.com/welpo/tabi/compare/v2.8.1..v2.9.0) - 2024-05-11
 
 ### ✨ Features
