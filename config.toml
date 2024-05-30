@@ -34,6 +34,7 @@ index_format = "elasticlunr_json"
 
 [markdown]
 highlight_code = true
+# To use a Zola built-in theme, CSP needs to allow unsafe-inline for style-src.
 highlight_theme = "css"
 smart_punctuation = true
 
@@ -266,6 +267,7 @@ footer_menu = [
 # Default directive is self.
 # Default config, allows for https remote images and embedding YouTube and Vimeo content.
 # This configuration (along with the right webserver settings) gets an A+ in Mozilla's Observatory: https://observatory.mozilla.org
+# Note: to use a Zola built-in syntax highlighting theme, allow unsafe-inline for style-src.
 allowed_domains = [
     { directive = "font-src", domains = ["'self'", "data:"] },
     { directive = "img-src", domains = ["'self'", "https://*", "data:"] },

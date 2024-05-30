@@ -221,6 +221,7 @@ encode_plaintext_email = true  # Setting is ignored if email is already encoded.
 # Default directive is self.
 # Default config, allows for https remote images and embedding YouTube and Vimeo content.
 # This configuration (along with the right webserver settings) gets an A+ in Mozilla's Observatory: https://observatory.mozilla.org
+# Note: to use a Zola built-in syntax highlighting theme, allow unsafe-inline for style-src.
 allowed_domains = [
     { directive = "font-src", domains = ["'self'", "data:"] },
     { directive = "img-src", domains = ["'self'", "https://*", "data:"] },

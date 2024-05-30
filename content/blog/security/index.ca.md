@@ -1,7 +1,7 @@
 +++
 title = "Seguretat per defecte"
 date = 2023-02-22
-updated = 2024-03-15
+updated = 2024-05-30
 description = "tabi té una Política de Seguretat de Contingut (CSP) fàcilment personalitzable amb valors segurs per defecte. Obtingues tranquil·litat i un A+ en l'Observatori de Mozilla."
 
 [taxonomies]
@@ -32,6 +32,13 @@ Aquesta funcionalitat permet personalitzar fàcilment les capçaleres de seguret
 
 Pots desactivar les capçaleres (permitint-ho tot) en una pàgina, secció, o globalment configurant `enable_csp = false` en el front matter o en el fitxer `config.toml`.
 
-**Nota**: [habilitar els comentaris](@/blog/comments/index.ca.md) o [les analítiques](@/blog/mastering-tabi-settings/index.ca.md#analisi-web) automàticament permet scripts/frames/estils/connexions en funció del servei habilitat.
+**Notas**:
+
+- [Habilitar els comentaris](@/blog/comments/index.ca.md) o [les analítiques](@/blog/mastering-tabi-settings/index.ca.md#analisi-web) automàticament permet scripts/frames/estils/connexions en funció del servei habilitat.
+- Per utilitzar un [tema de resaltat de sintaxis integrat a Zola](https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting), has de permetre `unsafe-inline` a la directiva `style-src`:
+
+    ```
+    { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
+    ```
 
 [^1]: Requereix una configuració adequada del servidor web (p. ex., redirigir el trànsit HTTP a HTTPS).
