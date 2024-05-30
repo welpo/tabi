@@ -36,7 +36,7 @@
                     {% if post.description %}
                         <p>{{ post.description }}</p>
                     {% elif post.summary %}
-                        <p>{{ post.summary | striptags | safe | trim_end_matches(pat=".") }}…</p>
+                        <p>{{ post.summary | striptags | trim_end_matches(pat=".") | safe }}…</p>
                     {% endif %}
                 </div>
                 <a class="readmore" href={{ post.permalink }}>{{ macros_translate::translate(key="read_more", default="Read more", language_strings=language_strings) }}&nbsp;<span class="arrow">→</span></a>

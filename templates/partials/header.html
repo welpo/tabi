@@ -69,8 +69,8 @@
         <meta name="description" content="{{ section.description }}" />
         <meta property="og:description" content="{{ section.description }}" />
     {%- elif page.summary %}
-        <meta name="description" content="{{ page.summary | striptags | safe | trim_end_matches(pat=".") }}…" />
-        <meta property="og:description" content="{{ page.summary | striptags | safe | trim_end_matches(pat=".") }}…" />
+        <meta name="description" content="{{ page.summary | striptags | trim_end_matches(pat=".") | safe }}…" />
+        <meta property="og:description" content="{{ page.summary | striptags | trim_end_matches(pat=".") | safe }}…" />
     {%- else %}
         <meta name="description" content="{{ config.description }}" />
         <meta property="og:description" content="{{ config.description }}" />
