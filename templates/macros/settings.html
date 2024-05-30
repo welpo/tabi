@@ -16,7 +16,7 @@ Parameters:
 {%- elif page -%}
     {#- Retrieve last ancestor to determine current section, if applicable -#}
     {%- set last_ancestor = page.ancestors | slice(start=-1) %}
-    {%- set current_section = get_section(path=last_ancestor.0) %}
+    {%- set current_section = get_section(path=last_ancestor.0, metadata_only=true) %}
 {%- endif -%}
 
 {%- set priority_order = [
