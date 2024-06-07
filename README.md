@@ -152,7 +152,22 @@ This configuration allows the language switcher to take the user to the translat
 
 To learn more about multilingual support, see the [Frequently Asked Questions](https://welpo.github.io/tabi/blog/faq-languages/).
 
-## Sites Using tabi
+### Updating tabi
+
+If you added the theme as a git submodule, run:
+
+```bash
+git submodule update --recursive --remote
+```
+
+If you cloned it:
+
+```bash
+cd themes/tabi
+git pull
+```
+
+## Sites using tabi
 
 | Website | Creator | Description  | Site Source   |
 | - | - | - | - |
