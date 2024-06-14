@@ -145,6 +145,15 @@ show_reading_time = true
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 show_date = true
 
+# There are three options to display dates on the bloglist. The bloglist is used on the frontpage and the blog site.
+# Use one of the three options.
+# Shows the "Last updated on" date
+# bloglist_date = "updated"
+# Shows the creation date
+bloglist_date = "date"
+# Shows both dates
+# bloglist_date = "both"
+
 # Adds backlinks to footnotes (loads ~500 bytes of JavaScripts).
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 footnote_backlinks = false
