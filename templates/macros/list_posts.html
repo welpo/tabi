@@ -14,8 +14,8 @@
             {% endif %}
 
             <ul class="bloglist-meta">
-                {%- set show_date = post.date and config.extra.post_listing_date == "date" or config.extra.post_listing_date == "both" -%}
-                {%- set show_updated = post.updated and config.extra.post_listing_date == "updated" or config.extra.post_listing_date == "both" -%}
+                {%- set show_date = post.date and config.extra.post_listing_date == "date" or post.date and config.extra.post_listing_date == "both" -%}
+                {%- set show_updated = post.updated and config.extra.post_listing_date == "updated" or post.updated and config.extra.post_listing_date == "both" -%}
 
                 {%- if show_date or show_updated -%}
                     {%- if show_date -%}
