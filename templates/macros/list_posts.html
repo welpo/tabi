@@ -12,10 +12,10 @@
             {% endif %}
 
             <ul class="bloglist-meta">
-                {% if post.date and config.extra.bloglist_date == "date" or config.extra.bloglist_date == "both" %}
+                {% if post.date and config.extra.post_listing_date == "date" or config.extra.post_listing_date == "both" %}
                     <li class="date">{{ macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) }}</li>
                 {% endif %}
-                {% if post.updated and config.extra.bloglist_date == "updated" or config.extra.bloglist_date == "both" %}
+                {% if post.updated and config.extra.post_listing_date == "updated" or config.extra.post_listing_date == "both" %}
                     <li class="date">{{ macros_translate::translate(key="last_updated_on", default="Last updated on", language_strings=language_strings) }} {{ macros_format_date::format_date(date=post.updated, short=false, language_strings=language_strings) }}</li>
                 {% endif %}
 
