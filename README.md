@@ -127,6 +127,8 @@ If you want to serve your blog posts from a different path, such as `blog/`, add
 section_path = "blog/_index.md"
 ```
 
+**Note**: use the full path to the section's `_index.md` file. Simply using `section_path = "blog/"` will not work.
+
 6. If you want an introduction section (see screenshot above), add these lines to `content/_index.md`:
 
 ```
