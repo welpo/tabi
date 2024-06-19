@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-05-25
+updated = 2024-06-19
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -638,7 +638,15 @@ socials = [
 ]
 ```
 
-Los iconos provienen de Font Awesome. Para ver una lista de todos los iconos disponibles, echa un vistazo al [directorio `static/social_icons`](https://github.com/welpo/tabi/tree/main/static/social_icons).
+Para ver una lista de todos los iconos integrados, echa un vistazo al directorio [`static/social_icons` en GitHub](https://github.com/welpo/tabi/tree/main/static/social_icons).
+
+¿Echas en falta algún icono? Si crees que sería una buena adición a tabi, no dudes en [abrir un issue](https://github.com/welpo/tabi/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=) o enviar un pull request ([ejemplo](https://github.com/welpo/tabi/pull/333)).
+
+Para usar un icono personalizado, puedes añadirlo al directorio `static/social_icons` de tu sitio. Por ejemplo, si añades `custom.svg`, puedes referenciarlo así:
+
+```
+{ name = "custom", url = "https://example.com", icon = "custom" }
+```
 
 ### Icono de feed
 

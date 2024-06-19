@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-05-27
+updated = 2024-06-19
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -641,7 +641,15 @@ socials = [
 ]
 ```
 
-The icons are from Font Awesome. To see a list of all the available icons, take a look at the [`static/social_icons` directory](https://github.com/welpo/tabi/tree/main/static/social_icons).
+To see a list of all the built-in icons, take a look at the [`static/social_icons` directory on GitHub](https://github.com/welpo/tabi/tree/main/static/social_icons).
+
+Missing an icon? If you think it would be a good addition to tabi, feel free to [open an issue](https://github.com/welpo/tabi/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=) or submit a pull request ([example](https://github.com/welpo/tabi/pull/333)).
+
+To use a custom icon, you can add it to your site's `static/social_icons` directory. For example, if you add `custom.svg`, you can reference it like this:
+
+```
+{ name = "custom", url = "https://example.com", icon = "custom" }
+```
 
 ### Feed Icon
 

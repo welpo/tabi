@@ -231,7 +231,9 @@ email = "dGFiaUBvc2MuZ2FyZGVu"
 # Decoding requires ~400 bytes of JavaScript. If JS is disabled, the email won't be displayed.
 encode_plaintext_email = true  # Setting is ignored if email is already encoded.
 
-# The icons available can be found in "social_icons" in the "static" folder.
+# Social media links for the footer.
+# Built-in icons: https://github.com/welpo/tabi/tree/main/static/social_icons
+# To use a custom icon, add it to your site's `static/social_icons` directory.
 socials = [
     { name = "github", url = "https://github.com/welpo/", icon = "github" },
     { name = "soundcloud", url = "https://soundcloud.com/oskerwyld", icon = "soundcloud" },
