@@ -13,9 +13,8 @@
         <nav class="socials nav-navs">
             {%- if config.extra.socials or config.extra.email %}
                 <ul>
-                    {%- if config.generate_feed and config.extra.feed_icon -%}
-                    <li>
-                        <a class="nav-links no-hover-padding social" rel="{{ rel_attributes }}" {{ blank_target }} href={{ get_url(path=config.feed_filename, lang=lang, trailing_slash=false) | safe }}>
+                    {%- if config.feed_filenames and config.feed_filenames | length > 0 -%}
+                        <a class="nav-links no-hover-padding social" rel="{{ rel_attributes }}" {{ blank_target }} href="{{ get_url(path=config.feed_filenames[0], lang=lang, trailing_slash=false) | safe }}">
                         <img alt="feed" title="feed" src="{{ get_url(path='/social_icons/rss.svg') }}">
                         </a>
                     </li>

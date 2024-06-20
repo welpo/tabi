@@ -2,7 +2,8 @@ base_url = "https://welpo.github.io/tabi"
 title = "~/tabi"
 description = "tabi is a fast, lightweight, and modern Zola theme with multi-language support, optional JavaScript, and a perfect Lighthouse score."
 author = "welpo"
-generate_feed = true
+generate_feeds = true
+feed_filenames = ["atom.xml"]
 compile_sass = true
 minify_html = true
 build_search_index = true
@@ -50,18 +51,14 @@ skip_anchor_prefixes = [
 [languages.es]
 title = "~/tabi"
 description = "tabi es un tema de Zola rápido, liviano y moderno con JavaScript opcional y una puntuación perfecta en Lighthouse."
-generate_feed = true
-compile_sass = true
-minify_html = true
+generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
 build_search_index = true
 
 [languages.ca]
 title = "~/tabi"
 description = "tabi és un tema de Zola ràpid, lleuger i modern amb JavaScript opcional i una puntuació perfecta a Lighthouse."
-generate_feed = true
-compile_sass = true
-minify_html = true
+generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
 
 [extra]
