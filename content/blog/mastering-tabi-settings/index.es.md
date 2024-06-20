@@ -142,6 +142,14 @@ Fíjate que si configuras `section_path`, no necesitas configurar `paginate_by`.
 
 El `title` es el encabezado que aparece sobre las publicaciones.
 
+##### Mostrar la fecha de los artículos en el listado
+
+Por defecto, cuando se listan los artículos, se muestra la fecha de creación. Puedes configurar qué fecha(s) mostrar usando la opción `post_listing_date`. Configuraciones disponibles:
+
+- `date`: Muestra solo la fecha de publicación original del artículo (opción por defecto).
+- `updated`: Muestra solo la fecha de la última actualización del artículo.
+- `both`: Muestra tanto la fecha de publicación original como la fecha de la última actualización.
+
 #### Listado de proyectos
 
 Puedes mostrar una selección de proyectos en tu página principal. Para hacer esto, primero necesitarás configurar el directorio `projects`.
