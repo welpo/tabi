@@ -25,6 +25,9 @@
 
 .admonition-content {
     flex: 1;
+    strong {
+        font-weight: 580;
+    }
 }
 
 .admonition-icon {
