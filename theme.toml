@@ -171,6 +171,7 @@ menu = [
 ]
 
 # The RSS icon will be shown if (1) it's enabled and (2) the following variable is set to true.
+# Note for Zola 0.19.X users: when `feed_filenames` has two filenames, only the first one will be linked in the footer.
 feed_icon = true
 
 # Show the full post content in the Atom feed.

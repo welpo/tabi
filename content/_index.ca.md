@@ -1,5 +1,4 @@
 +++
-path = "/"
 title = "Publicacions recents"
 sort_by = "date"
 template = "section.html"

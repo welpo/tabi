@@ -51,8 +51,6 @@ skip_anchor_prefixes = [
 title = "~/tabi"
 description = "tabi es un tema de Zola rápido, liviano y moderno con JavaScript opcional y una puntuación perfecta en Lighthouse."
 generate_feed = true
-compile_sass = true
-minify_html = true
 taxonomies = [{name = "tags", feed = true}]
 build_search_index = true
 
@@ -60,8 +58,6 @@ build_search_index = true
 title = "~/tabi"
 description = "tabi és un tema de Zola ràpid, lleuger i modern amb JavaScript opcional i una puntuació perfecta a Lighthouse."
 generate_feed = true
-compile_sass = true
-minify_html = true
 taxonomies = [{name = "tags", feed = true}]
 
 [extra]
@@ -217,6 +213,7 @@ menu = [
 ]
 
 # The RSS icon will be shown if (1) it's enabled and (2) the following variable is set to true.
+# Note for Zola 0.19.X users: when `feed_filenames` has two filenames, only the first one will be linked in the footer.
 feed_icon = true
 
 # Show the full post content in the Atom feed.

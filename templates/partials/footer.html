@@ -13,9 +13,14 @@
         <nav class="socials nav-navs">
             {%- if config.extra.socials or config.extra.email %}
                 <ul>
-                    {%- if config.generate_feed and config.extra.feed_icon -%}
+                    {# Feed icon #}
+                    {# Zola 0.19.0 uses `generate_feeds`. Prior versions use `generate_feed` #}
+                    {% set generate_feed = config.generate_feeds | default(value=config.generate_feed) %}
+                    {% set feed_url = config.feed_filenames[0] | default(value=(config.feed_filename)) %}
+
+                    {%- if generate_feed and config.extra.feed_icon and feed_url -%}
                     <li>
-                        <a class="nav-links no-hover-padding social" rel="{{ rel_attributes }}" {{ blank_target }} href={{ get_url(path=config.feed_filename, lang=lang, trailing_slash=false) | safe }}>
+                        <a class="nav-links no-hover-padding social" rel="{{ rel_attributes }}" {{ blank_target }} href={{ get_url(path=feed_url, lang=lang, trailing_slash=false) | safe }}>
                         <img alt="feed" title="feed" src="{{ get_url(path='/social_icons/rss.svg') }}">
                         </a>
                     </li>

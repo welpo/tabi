@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-06-19
+updated = 2024-06-22
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -658,6 +658,8 @@ To use a custom icon, you can add it to your site's `static/social_icons` direct
 |  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
 
 You can add a link to your RSS/Atom feed to the footer with `feed_icon = true`.
+
+Note for Zola 0.19.X users: when there are two filenames in `feed_filenames`, only the first one will be linked in the footer.
 
 ### Footer Menu
 

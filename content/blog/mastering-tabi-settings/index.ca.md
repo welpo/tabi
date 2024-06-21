@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-06-19
+updated = 2024-06-22
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -653,6 +653,8 @@ Per utilitzar una icona personalitzada, pots afegir-la al directori `static/soci
 |   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
 
 Pots afegir un enllaç al teu feed RSS/Atom al peu de pàgina amb `feed_icon = true`.
+
+Nota pels usuaris de Zola 0.19.X: quan hi ha dos noms de fitxer a `feed_filenames`, només s'enllaçarà el primer al peu de pàgina.
 
 #### Menú de peu de pàgina
 
