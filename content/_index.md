@@ -1,5 +1,4 @@
 +++
-paginate_path = "/"
 title = "Latest posts"
 sort_by = "date"
 template = "section.html"
