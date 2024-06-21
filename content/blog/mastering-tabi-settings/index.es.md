@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-06-19
+updated = 2024-06-22
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -655,6 +655,8 @@ Para usar un icono personalizado, puedes añadirlo al directorio `static/social_
 |   ❌   |   ❌    |      ✅       |         ❌        |         ❌          |
 
 Puedes añadir un enlace a tu feed RSS/Atom en el pie de página con `feed_icon = true`.
+
+Nota para usuarios de Zola 0.19.X: cuando hay dos nombres de archivo en `feed_filenames`, solo se enlazará el primero en el pie de página.
 
 ### Menú de pie de página
 
