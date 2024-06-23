@@ -159,7 +159,7 @@ To learn more about multilingual support, see the [Frequently Asked Questions](h
 If you added the theme as a git submodule, run:
 
 ```bash
-git submodule update --recursive --remote
+git submodule update --remote themes/tabi
 ```
 
 If you cloned it:
