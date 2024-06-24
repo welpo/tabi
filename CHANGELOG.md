@@ -4,6 +4,36 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.11.0](https://github.com/welpo/tabi/compare/v2.10.0..v2.11.0) - 2024-06-24
+
+### ✨ Features
+
+- *(socials)* Add bluesky icon ([#333](https://github.com/welpo/tabi/issues/333)) by [@gacallea](https://github.com/gacallea)
+- Allow HTML tags in multilingual quote author ([be7628a](https://github.com/welpo/tabi/commit/be7628aeaa573b69739a2751e93d77da0b587124)) by [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(footer)* Show feed icon on Zola 0.19.0 ([#336](https://github.com/welpo/tabi/issues/336)) by [@welpo](https://github.com/welpo)
+
+### 💄 Styling
+
+- *(admonitions)* Reduce thickness of strong tag ([faa9633](https://github.com/welpo/tabi/commit/faa963353170f42ab2b05b2a35aae1431ff5c319)) by [@welpo](https://github.com/welpo)
+
+### 📝 Documentation
+
+- *(README)* Fix command to update tabi submodule ([7a3380c](https://github.com/welpo/tabi/commit/7a3380c467d3bf77cfa1d9548a0b063964d73f37)) by [@welpo](https://github.com/welpo)
+- *(README)* Clarify section_path format ([7d38628](https://github.com/welpo/tabi/commit/7d386283ff808576a7149a96223be3564984d783)) by [@welpo](https://github.com/welpo)
+- *(README)* Add commands to update the theme ([4a47e0a](https://github.com/welpo/tabi/commit/4a47e0ad2375a9b160ab0424719f04702653970d)) by [@welpo](https://github.com/welpo)
+- Explain how to use custom social icons ([5ae629d](https://github.com/welpo/tabi/commit/5ae629d171d12ed262d4862da65e7e8c8a21d87a)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(pre-commit hook)* Handle filenames with spaces ([448250f](https://github.com/welpo/tabi/commit/448250ff571d442d4608e0d7a8550c66cbe1bc2b)) by [@welpo](https://github.com/welpo)
+
+### 👥 New contributors
+
+🫶 [@gacallea](https://github.com/gacallea) made their first contribution in [#333](https://github.com/welpo/tabi/pull/333)
+
 ## [2.10.0](https://github.com/welpo/tabi/compare/v2.9.0..v2.10.0) - 2024-05-30
 
 ### ✨ Features
