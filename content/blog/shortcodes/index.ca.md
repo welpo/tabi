@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2024-05-18
+updated = 2024-06-27
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -167,14 +167,14 @@ Destaca informació amb aquests shortcodes. Hi ha cinc tipus (`type`): `note`, `
 
 {{ admonition(type="danger", text="Contingut amb **sintaxi** *Markdown*. Consulta [aquesta `api`](#).") }}
 
-Pots personalitzar el títol amb el paràmetre `title`:
+Pots canviar el `title` i la `icon` de l'advertència. Ambdós paràmetres accepten text i per defecte coincideixen amb el tipus d'advertència. `icon` pot ser qualsevol dels tipus d'advertència disponibles.
 
-{{ admonition(type="info", title="Título personalizado", text="Contingut amb **sintaxi** *Markdown*. Consulta [aquesta `api`](#).") }}
+{{ admonition(type="note", icon="tip", title="Títol i icona personalitzats", text="Contingut amb **sintaxi** *Markdown*. Consulta [aquesta `api`](#).") }}
 
 #### Ús
 
 ```
-{{/* admonition(type="info", title="Títol opcional", text="Quelcom.") */}}
+{{/* admonition(type="danger", icon="tip", title="Un consell important", text="Mantingues-te hidratat") */}}
 ```
 
 ### Cites multillenguatge
