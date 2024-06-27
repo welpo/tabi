@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-06-22
+updated = 2024-06-27
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -325,7 +325,10 @@ Per defecte, l'arxiu llistarà les publicacions situades a `blog/`. Per personal
   section_path = ["blog/", "notes/", "camí-tres/"]
   ```
 
-**Nota**: la pàgina d'arxiu només llistarà publicacions que tinguin una data al seu encapçalament.
+**Nota**:
+
+- La pàgina d'arxiu només llistarà publicacions amb data.
+- L'ordre de les publicacions ve determinada per la variable `sort_by` de les seccions arxivades. Aquesta demo utilitza `sort_by = "date"` en `blog/_index.md`.
 
 ### Etiquetes
 

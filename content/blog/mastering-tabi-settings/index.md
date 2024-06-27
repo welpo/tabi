@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-06-22
+updated = 2024-06-27
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -325,7 +325,10 @@ By default, the archive will list posts located in `blog/`. To customise this, y
   section_path = ["blog/", "notes/", "path-three/"]
   ```
 
-**Note**: the Archive page will only list posts that have a date in their front matter.
+**Notes**:
+
+- the Archive page will only list posts that have a date in their front matter.
+- Post sorting is determined by the `sort_by` variable of the sections you are archiving. This demo uses `sort_by = "date"` set in the `blog/_index.md`.
 
 ### Tags
 
