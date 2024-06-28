@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-06-27
+updated = 2024-06-28
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -184,6 +184,18 @@ Las pieles de tabi cambian el color principal del sitio. Puedes configurar la pi
 {{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="piel lavender en modo claro", toggled_alt="piel lavender en modo oscuro", full_width=true) }}
 
 Explora las pieles disponibles y aprende cómo crear la tuya propia consultando [la documentación](/es/blog/customise-tabi/#skins).
+
+### Fuente sans serif (paloseco)
+
+| Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:---------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |        ❌        |         ❌          |
+
+tabi utiliza una fuente serif para los párrafos de los artículos (la que estás viendo ahora). Puedes cambiar a una fuente sans serif (la que ves en los encabezados/menú) en todo tu sitio configurando `override_serif_with_sans = true` en `config.toml`.
+
+Haz clic en la imagen para comparar las fuentes:
+
+{{ image_toggler(default_src="blog/mastering-tabi-settings/img/serif.webp", toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp", default_alt="Fuente serif", toggled_alt="Fuente sans-serif", full_width=true) }}
 
 ### Estilos CSS personalizados
 

@@ -131,6 +131,10 @@ body {
     max-width: var(--max-layout-width);
 }
 
+.use-sans-serif {
+    --serif-font: var(--sans-serif-font);
+}
+
 article {
     $base-margin: 6rem;
     margin: 0 auto;
