@@ -29,6 +29,10 @@ homepage = "https://osc.garden"
 # index_format = "elasticlunr_javascript" here.
 # index_format = ""
 
+# Use sans-serif font everywhere.
+# By default, the serif font is only used in articles.
+override_serif_with_sans = false
+
 # Enable JavaScript theme toggler to allow users to switch between dark/light mode.
 # If disabled, your site will only use the theme specified in the `default_theme` variable.
 theme_switcher = true

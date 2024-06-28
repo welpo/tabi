@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-06-27
+updated = 2024-06-28
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -184,6 +184,18 @@ Les skins («pells») de tabi canvien el color principal del lloc web. Pots conf
 {{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="pell lavender en mode clar", toggled_alt="pell lavender en mode fosc", full_width=true) }}
 
 Explora les skins disponibles i aprèn com crear la teva pròpia consultant [la documentació](/ca/blog/customise-tabi/#skins).
+
+### Font sans serif (pal sec)
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:---------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |        ❌        |         ❌          |
+
+tabi utilitza una font serif per als paràgrafs dels articles (la que estàs veient ara). Pots canviar a una font sans-serif (la que veus als encapçalaments/menú) a tot el teu lloc configurant `override_serif_with_sans = true` a `config.toml`.
+
+Fes clic a la imatge a continuació per comparar les fonts:
+
+{{ image_toggler(default_src="blog/mastering-tabi-settings/img/serif.webp", toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp", default_alt="Font serif", toggled_alt="Font sans-serif", full_width=true) }}
 
 ### Estils CSS personalitzats
 

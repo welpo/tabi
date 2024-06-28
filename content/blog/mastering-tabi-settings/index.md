@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-06-27
+updated = 2024-06-28
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -184,6 +184,18 @@ tabi's skins change the main colour of the site. You can set the skin in `config
 {{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="lavender skin in light mode", toggled_alt="lavender skin in dark mode", full_width=true) }}
 
 Explore the available skins and learn how to create your own reading [the documentation](/blog/customise-tabi/#skins).
+
+### Sans-serif Font
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
+
+tabi uses a serif font for article paragraphs (the one you're seeing now). You can switch to using a sans-serif font (the one on the headers/menu) throughout your entire site by setting `override_serif_with_sans = true` in your `config.toml`.
+
+Click on the image below to compare the two looks:
+
+{{ image_toggler(default_src="blog/mastering-tabi-settings/img/serif.webp", toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp", default_alt="Serif font", toggled_alt="Sans-serif font", full_width=true) }}
 
 ### Custom CSS
 
