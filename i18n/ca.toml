@@ -55,7 +55,7 @@ many_min_read = "$NUMBER mins de lectura"
 zero_words = "Cap paraula"
 one_words = "$NUMBER paraula"
 many_words = "$NUMBER paraules"
-last_updated_on = "Última actualizació el"
+last_updated_on = "Actualitzat el $DATE"
 see_changes = "Veure canvis"
 
 # Post body.

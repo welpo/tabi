@@ -57,7 +57,7 @@ many_min_read = "$NUMBER मिनट पठन समय"
 zero_words = "कोई शब्द नहीं"
 one_words = "$NUMBER शब्द"
 many_words = "$NUMBER शब्द"
-last_updated_on = "आखिरी अपडेट"
+last_updated_on = "$DATE को अपडेट किया गया"
 see_changes = "बदलाव देखें"
 
 # Post body.

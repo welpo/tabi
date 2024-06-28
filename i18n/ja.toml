@@ -59,7 +59,7 @@ many_min_read = "$NUMBER 分の読了時間"
 zero_words = "単語数ゼロ"
 one_words = "$NUMBER 単語"
 many_words = "$NUMBER 単語"
-last_updated_on = "最終更新日"
+last_updated_on = "$DATE に更新"
 see_changes = "変更を見る"
 
 # Post body.

@@ -64,7 +64,7 @@ zero_words = "Нет слов"
 one_words = "$NUMBER слово"
 few_words = "$NUMBER слова"  # 2, 3, 4 but not 12-14
 many_words = "$NUMBER слов"  # 5-9, 0, 11-14, and others
-last_updated_on = "Последнее обновление"
+last_updated_on = "Обновлено $DATE"
 see_changes = "Смотреть изменения"
 
 # Post body.

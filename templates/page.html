@@ -121,7 +121,10 @@
 
             {#- Last updated on -#}
             {% if page.updated %}
-                </ul><ul class="meta last-updated"><li>{{ macros_translate::translate(key="last_updated_on", default="Last updated on", language_strings=language_strings) }} {{ macros_format_date::format_date(date=page.updated, short=true, language_strings=language_strings) }}</li>
+                {%- set last_updated_str = macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -%}
+                {%- set formatted_date = macros_format_date::format_date(date=page.updated, short=true, language_strings=language_strings) -%}
+                {%- set updated_str = last_updated_str | replace(from="$DATE", to=formatted_date) -%}
+                </ul><ul class="meta last-updated"><li>{{ updated_str }}</li>
                 {# Show link to remote changes if enabled #}
                 {% if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" %}
                     {%- if previous_visible -%}{{ separator }}&nbsp;{%- endif -%}
