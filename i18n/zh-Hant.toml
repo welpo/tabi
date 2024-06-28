@@ -55,7 +55,7 @@ many_min_read = "$NUMBER 分鐘閱讀"
 zero_words = "沒有字"
 one_words = "$NUMBER 字"
 many_words = "$NUMBER 字"
-last_updated_on = "最後更新於"
+last_updated_on = "更新於 $DATE"
 see_changes = "修改紀錄"
 
 # Post body.

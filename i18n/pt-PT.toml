@@ -55,7 +55,7 @@ many_min_read = "$NUMBER mins de leitura"
 zero_words = "Nenhuma palavra"
 one_words = "$NUMBER palavra"
 many_words = "$NUMBER palavras"
-last_updated_on = "Última atualização em"
+last_updated_on = "Atualizado em $DATE"
 see_changes = "Ver alterações"
 
 # Post body.

@@ -56,7 +56,7 @@ many_min_read = "خواندن $NUMBER دقیقه"
 zero_words = "هیچ کلمه‌ای"
 one_words = "$NUMBER کلمه"
 many_words = "$NUMBER کلمه"
-last_updated_on = "آخرین به‌روزرسانی در"
+last_updated_on = "آخرین به‌روزرسانی در $DATE"
 see_changes = "مشاهده تغییرات"
 
 # Post body.

@@ -70,7 +70,7 @@ two_words = "كلمتين"  # Two words.
 few_words = "$NUMBER كلمات"  # 3 to 10 words.
 many_words = "$NUMBER كلمة"  # 11 or more words.
 
-last_updated_on = "آخر تحديث كان في"
+last_updated_on = "تم التحديث في $DATE"
 see_changes = "الإطلاع على التغييرات"
 
 # Post body.
