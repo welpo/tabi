@@ -225,6 +225,15 @@ Establecer `compact_tags = true` mostrará las mismas de este modo:
 
 [NombreEtiqueta](#) <sup>n</sup>
 
+### Orden de las etiquetas
+
+| Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:---------------:|:-------------------:|
+|   ❌   |   ❌    |      ✅       |        ❌        |         ❌          |
+
+Por defecto, la [página de etiquetas](/es/tags) ordena las etiquetas alfabéticamente, dada la configuración predeterminada de `tag_sorting = "name"`.
+Si configuras `tag_sorting = "frequency"`, se ordenarán según el número de publicaciones (de mayor a menor).
+
 ---
 
 ## Integración con repositorios Git
