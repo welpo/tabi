@@ -4,6 +4,27 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.12.0](https://github.com/welpo/tabi/compare/v2.11.0..v2.12.0) - 2024-06-29
+
+### ✨ Features
+
+- *(admonitions)* Allow swapping admonition icons ([#340](https://github.com/welpo/tabi/issues/340)) by [@welpo](https://github.com/welpo)
+- *(socials)* Add Debian icon ([82ecbc1](https://github.com/welpo/tabi/commit/82ecbc145489bf4415d7a3500be85191524d1b53)) by [@welpo](https://github.com/welpo)
+- Allow sorting tags based on post count ([#344](https://github.com/welpo/tabi/issues/344)) by [@metaleap](https://github.com/metaleap) and [@welpo](https://github.com/welpo)
+- Add option to use sans-serif font everywhere ([a907f56](https://github.com/welpo/tabi/commit/a907f56bd568378b099c0706fa4c92d7102b1688)) by [@welpo](https://github.com/welpo)
+
+### 📝 Documentation
+
+- *(mastering tabi)* Clarify post sorting in Archive ([c9c8ed8](https://github.com/welpo/tabi/commit/c9c8ed84a00136469a53d30b6e694b6cb845c5fa)) by [@welpo](https://github.com/welpo)
+
+### ♻️ Refactor
+
+- Improve "Last updated on" format ([#342](https://github.com/welpo/tabi/issues/342)) by [@welpo](https://github.com/welpo)
+
+### 👥 New contributors
+
+🫶 [@metaleap](https://github.com/metaleap) made their first contribution in [#344](https://github.com/welpo/tabi/pull/344)
+
 ## [2.11.0](https://github.com/welpo/tabi/compare/v2.10.0..v2.11.0) - 2024-06-24
 
 ### ✨ Features
