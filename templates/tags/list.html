@@ -7,6 +7,9 @@
 {{ macros_page_header::page_header(title=title)}}
 
 {% set tag_count = terms | length %}
+{% if config.extra.tag_sorting == "frequency" %}
+    {% set terms = terms | sort(attribute="pages") | reverse %}
+{% endif %}
 <div id="tag-cloud" class="{% if tag_count > 16 %}three-columns{% elif tag_count > 8 %}two-columns{% endif %}">
     <ul class="tags">
         {%- for term in terms -%}
