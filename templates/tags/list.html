@@ -9,6 +9,8 @@
 {% set tag_count = terms | length %}
 {% if config.extra.tag_sorting == "frequency" %}
     {% set terms = terms | sort(attribute="pages") | reverse %}
+{% elif config.extra.tag_sorting != "name" %}
+    {{ throw (message="Invalid tag_sorting option: " ~ config.extra.tag_sorting ~ ". Valid options are 'name' and 'frequency'.") }}
 {% endif %}
 <div id="tag-cloud" class="{% if tag_count > 16 %}three-columns{% elif tag_count > 8 %}two-columns{% endif %}">
     <ul class="tags">
