@@ -237,6 +237,16 @@ Setting `compact_tags = true` will display them as:
 
 [TagName](#) <sup>n</sup>
 
+### Tags Sorting
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
+
+By default, the [tags page](/tags) sorts tags alphabetically, given the default setting of `tag_sorting = "name"`.
+
+Setting `tag_sorting = "frequency"` will sort them by number-of-posts (descending).
+
 ---
 
 ## Git Repository Integration

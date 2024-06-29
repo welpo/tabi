@@ -229,13 +229,22 @@ Aquesta variable accepta qualsevol color CSS vàlid, així que pots utilitzar pa
 |:------:|:------:|:-------------:|:-----------------:|:--------------------:|
 |   ❌   |   ❌   |      ✅       |         ❌        |          ❌          |
 
-Per defecte, la [pàgina d'etiquetes](/tags) mostra les etiquetes com:
+Per defecte, la [pàgina d'etiquetes](/ca/tags) mostra les etiquetes com:
 
 [NomEtiqueta](#) — n entrada[es]
 
 Establir `compact_tags = true` les mostrarà com:
 
 [NomEtiqueta](#) <sup>n</sup>
+
+### Ordre de les etiquetes
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:-----------------:|:--------------------:|
+|   ❌   |   ❌   |      ✅       |         ❌        |          ❌          |
+
+Per defecte, la [pàgina d'etiquetes](/ca/tags) ordena les etiquetes alfabèticament, donada la configuració predeterminada de `tag_sorting = "name"`.
+Si configures `tag_sorting = "frequency"`, s'ordenaran segons el nombre de publicacions (de més a menys).
 
 ---
 

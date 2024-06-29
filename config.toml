@@ -192,6 +192,11 @@ separator = "•"
 # Compact: tag_name^n (superscript number)
 compact_tags = false
 
+# How tags are sorted in a Tags listing based on templates/tags/list.html.
+# "name" for alphabetical, "frequency" for descending count of posts.
+# Default: "name".
+tag_sorting = "name"
+
 # Invert the order of the site title and page title in the browser tab.
 # Example: true => "Blog • ~/tabi", false => "~/tabi • Blog"
 invert_title_order = false
