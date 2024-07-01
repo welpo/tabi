@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-06-28
+updated = 2024-07-01
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -530,6 +530,8 @@ To make it narrower, matching the article width, set `previous_next_article_link
 All of these settings follow the hierarchy.
 
 ### Footnote Backlinks
+
+{{ admonition(type="warning", title="DEPRECATION WARNING", text="Zola v0.19.0 and later can do this natively. Set `bottom_footnotes = true` in your config's `[markdown]` section.") }}
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|

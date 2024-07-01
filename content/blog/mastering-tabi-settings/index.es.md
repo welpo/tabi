@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-06-28
+updated = 2024-07-01
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -526,6 +526,8 @@ Por defecto, esta sección de navegación tendrá el ancho completo del sitio (i
 Todas estas configuraciones siguen la jerarquía.
 
 ### Enlaces de retorno en notas al pie
+
+{{ admonition(type="warning", title="ADVERTENCIA DE DEPRECACIÓN", text="Zola v0.19.0 y posterior puede hacer esto de forma nativa. Establece `bottom_footnotes = true` en la sección `[markdown]` de tu configuración.") }}
 
 | Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
 |:------:|:-------:|:-------------:|:---------------:|:-------------------:|

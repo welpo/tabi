@@ -1,7 +1,7 @@
 +++
 title = "Sense JavaScript obligatori"
 date = 2023-01-06
-updated = 2024-05-03
+updated = 2024-07-01
 description = "JavaScript només s'utilitza quan HTML i CSS no són suficients."
 
 [taxonomies]
@@ -29,7 +29,6 @@ Les següents opcions es poden especificar per a publicacions, seccions i global
 - [**Suport de KaTeX**](@/blog/markdown/index.ca.md#katex). Habilitat configurant `katex = true` (274 KB).
 - [**Còpia de blocs de codi amb un sol clic**](@/blog/markdown/index.ca.md#bloc-de-codi). Habilitada configurant `copy_button = true`. (~700 bytes)
 - [**Mostrar ruta/URL a blocs de codi**](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url). S'activa configurant `add_src_to_code_block = true`. (~400 bytes)
-- [**Enllaços de retorn per a notes a peu de pàgina**](@/blog/markdown/index.ca.md#1). Habilitats configurant `footnote_backlinks = true` (~500 bytes).
 
 Per especificar aquestes opcions:
 

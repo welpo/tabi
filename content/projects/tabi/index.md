@@ -38,7 +38,6 @@ social_media_card = "social_cards/projects_tabi.jpg"
 - [Custom canonical URLs](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#canonical-url).
 - [Customizable skins](https://welpo.github.io/tabi/blog/customise-tabi/).
 - [Custom shortcodes](https://welpo.github.io/tabi/blog/shortcodes/).
-- [Footnote backlinks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#footnote-backlinks).
 - [Social media cards](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards).
 - Responsive design.
 - [Projects page](https://welpo.github.io/tabi/projects/).

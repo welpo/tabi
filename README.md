@@ -58,7 +58,6 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] [Custom canonical URLs](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#canonical-url).
 - [X] [Custom shortcodes](https://welpo.github.io/tabi/blog/shortcodes/).
 - [X] [Customizable skins](https://welpo.github.io/tabi/blog/customise-tabi/).
-- [X] [Footnote backlinks](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#footnote-backlinks).
 - [X] [Social media cards](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards).
 - [X] Responsive design.
 - [X] [Projects page](https://welpo.github.io/tabi/projects/).
