@@ -87,7 +87,7 @@ Per a detalls tècnics sobre la implementació de la cerca, incloent quan es car
 
 ## Suport multilingüe
 
-tabi ofereix suport multilingüe complet per al teu lloc Zola, des de configurar un idioma predeterminat fins a afegir tots els que vulguis. Consulta les [preguntes freqüents sobre idiomes](/ca/blog/faq-languages/) per a més informació.
+tabi ofereix suport multilingüe complet per al teu lloc Zola, des de configurar un idioma predeterminat fins a afegir tots els que vulguis. Consulta les [preguntes freqüents sobre idiomes](@/blog/faq-languages/index.ca.md) per a més informació.
 
 ---
 
@@ -504,7 +504,7 @@ Per activar-los, estableix `quick_navigation_buttons = true`.
 
 Activa l'índex de continguts just sota del títol i metadades de l'article amb `toc = true`.
 
-Per saber més sobre com personalitzar-ho, consulta [la documentació sobre la Taula de continguts](/ca/blog/toc/).
+Per saber més sobre com personalitzar-ho, consulta [la documentació sobre la Taula de continguts](@/blog/toc/index.ca.md).
 
 ### Enllaços als articles anterior i següent
 
@@ -577,7 +577,7 @@ Les tipus de lletra personalitzades causen parpalleig del text en Firefox. Per r
 
 Pots crear un subconjunt personalitzat adaptat al teu lloc, guardar-lo com a `static/custom_subset.css`, i fer que es carregui amb `custom_subset = true`.
 
-Per obtenir més informació, incloent instruccions sobre com crear un subconjunt personalitzat, consulta la [documentació](/ca/blog/custom-font-subset/).
+Per obtenir més informació, incloent instruccions sobre com crear un subconjunt personalitzat, consulta la [documentació](@/blog/custom-font-subset/index.ca.md).
 
 ### Contingut complet al feed
 
@@ -607,7 +607,7 @@ Si vols activar els comentaris de forma global, pots fer-ho establint `enabled_f
 
 Si has activat un sistema de forma global i vols desactivar-lo per a una pàgina específica, pots fer-ho establint el nom del sistema com a `false` al front matter. Per exemple, `utterances = false`.
 
-Llegeix la [documentació](/ca/blog/comments/) per a més informació sobre els sistemes disponibles i la seva configuració.
+Llegeix la [documentació](@/blog/comments/index.ca.md) per a més informació sobre els sistemes disponibles i la seva configuració.
 
 ### Anàlisi web
 
@@ -830,7 +830,7 @@ allowed_domains = [
 
 Aquesta opció està habilitada per defecte. Per desactivar-la per una pàgina, secció o globalment, estableix `enable_csp = false`. La configuració de `enable_csp` segueix la jerarquia.
 
-Per a més informació, consulta la [pàgina de documentació de CSP](/ca/blog/security/).
+Per a més informació, consulta la [pàgina de documentació de CSP](@/blog/security/index.ca.md).
 
 ---
 

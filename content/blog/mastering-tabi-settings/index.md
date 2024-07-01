@@ -87,7 +87,7 @@ For technical details about the search implementation in tabi, including when th
 
 ## Multilingual Support
 
-tabi offers comprehensive multilingual support for your Zola site, from setting a default language to adding as many as you wish. Refer to the [multilingual FAQ](blog/faq-languages/) for more information.
+tabi offers comprehensive multilingual support for your Zola site, from setting a default language to adding as many as you wish. Refer to the [multilingual FAQ](@/blog/faq-languages/index.md) for more information.
 
 ---
 
@@ -507,7 +507,7 @@ To enable them, set `quick_navigation_buttons = true`.
 
 Enable the table of contents right below the post's title and metadata with `toc = true`.
 
-Read more about the table of contents and how to customise it by reading [the docs](/blog/toc/).
+Read more about the table of contents and how to customise it by reading [the docs](@/blog/toc/index.md).
 
 ### Previous and Next Article Links
 
@@ -581,7 +581,7 @@ Custom fonts cause flashing text in Firefox. To amend this, tabi loads a subset 
 
 You can create a custom subset tailored to your site, save it as `static/custom_subset.css`, and have it load with `custom_subset = true`.
 
-For more information, including instructions on how to create a custom subset, see the [docs](/blog/custom-font-subset/).
+For more information, including instructions on how to create a custom subset, see the [docs](@/blog/custom-font-subset/index.md).
 
 ### Full Content in Feed
 
@@ -611,7 +611,7 @@ To enable a system globally (on all pages), set `enabled_for_all_posts = true` i
 
 If you have enabled a system globally, but want to disable it on a specific page, set the name of the system to `false` in the front matter of that page. For example, `utterances = false`.
 
-Read [the docs](/blog/comments/) for more information on the available systems and their setup.
+Read [the docs](@/blog/comments/index.md) for more information on the available systems and their setup.
 
 ### Analytics
 
@@ -772,7 +772,7 @@ By default, the date is shown below the post title. You can hide it with `show_d
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
 
-tabi has two date formats: `long_date_format` and `short_date_format`. The short format is used in a post's metadata, while the long format is used when listing posts (i.e. on the [blog section](/blog/) or the [main page](/)).
+tabi has two date formats: `long_date_format` and `short_date_format`. The short format is used in a post's metadata, while the long format is used when listing posts (i.e. on the [blog section](@/blog/_index.md) or the [main page](@/_index.md)).
 
 The default is "6th July 2049" for both formats in English. For other languages, the defaut is `"%d %B %Y"` for the long format and `"%-d %b %Y"` for the short format.
 
@@ -836,7 +836,7 @@ allowed_domains = [
 
 This feature is enabled by default. To disable it (and allow all connections), set `enable_csp = false` on a page, section or globally. The `enable_csp` setting follows the [hierarchy](#settings-hierarchy).
 
-See the [CSP documentation page](/blog/security/) for more information.
+See the [CSP documentation page](@/blog/security/index.md) for more information.
 
 ---
 

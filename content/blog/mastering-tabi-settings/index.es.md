@@ -87,7 +87,7 @@ Para detalles técnicos sobre la implementación de la búsqueda en tabi, incluy
 
 ## Soporte multilingüe
 
-tabi ofrece soporte multilingüe completo para tu sitio Zola, desde configurar un idioma predeterminado hasta añadir todos los que desees. Consulta la [preguntas frecuentes sobre idiomas](/es/blog/faq-languages/) para más información.
+tabi ofrece soporte multilingüe completo para tu sitio Zola, desde configurar un idioma predeterminado hasta añadir todos los que desees. Consulta la [preguntas frecuentes sobre idiomas](@/blog/faq-languages/index.es.md) para más información.
 
 ---
 
@@ -504,7 +504,7 @@ Para activarlos, establece `quick_navigation_buttons = true`.
 
 Habilita el índice de contenidos justo debajo del título y metadatos del artículo con `toc = true`.
 
-Para saber más sobre cómo personalizarlo, consulta [la documentación sobre la Tabla de contenido](/es/blog/toc/).
+Para saber más sobre cómo personalizarlo, consulta [la documentación sobre la Tabla de contenido](@/blog/toc/index.es.md).
 
 ### Enlace a los artículos anterior y siguiente
 
@@ -577,7 +577,7 @@ Las fuentes personalizadas causan parpadeo del texto en Firefox. Para solucionar
 
 Puedes crear un subconjunto personalizado adaptado a tu sitio, guardarlo como `static/custom_subset.css`, y hacer que se cargue con `custom_subset = true`.
 
-Para obtener más información, incluyendo instrucciones sobre cómo crear un subconjunto personalizado, consulta la [documentación](/es/blog/custom-font-subset/).
+Para obtener más información, incluyendo instrucciones sobre cómo crear un subconjunto personalizado, consulta la [documentación](@/blog/custom-font-subset/index.es.md).
 
 ### Contenido completo en el feed
 
@@ -607,7 +607,7 @@ Si quieres activar los comentarios de forma global, puedes hacerlo estableciendo
 
 Si has activado un sistema globalmente, pero quieres desactivarlo en una página específica, puedes hacerlo estableciendo el nombre del sistema como `false` en el front matter. Por ejemplo, `utterances = false`.
 
-Lee la [documentación](/es/blog/comments/) para obtener más información sobre los sistemas disponibles y su configuración.
+Lee la [documentación](@/blog/comments/index.es.md) para obtener más información sobre los sistemas disponibles y su configuración.
 
 ### Análisis web
 
@@ -830,7 +830,7 @@ allowed_domains = [
 
 Esta función está habilitada por defecto. Para deshabilitarla (y permitir todo), configura `enable_csp = false` en una página, sección o globalmente. La opción `enable_csp` sigue [la jerarquía](#jerarquia-de-configuracion).
 
-Para obtener más información, consulta la [página de documentación de CSP](/es/blog/security/).
+Para obtener más información, consulta la [página de documentación de CSP](@/blog/security/index.es.md).
 
 ---
 
