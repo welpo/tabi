@@ -8,7 +8,6 @@ description = "JavaScript solo se utiliza cuando HTML y CSS no son suficientes."
 tags = ["funcionalidad", "tutorial"]
 
 [extra]
-footnote_backlinks = true
 social_media_card = "social_cards/es_blog_javascript.jpg"
 +++
 
@@ -41,7 +40,5 @@ Para especificar estas opciones:
 - [**Comentarios**](@/blog/comments/index.es.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) o Isso (1KB) pueden habilitarse globalmente configurando `enabled_for_all_posts = true` en la sección apropiada de tu `config.toml` (`[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` o `[extra.isso]`). Para habilitar comentarios en publicaciones individuales, configura el nombre del sistema `= true` (por ejemplo, `hyvortalk = true`) en el front matter de la publicación.
 
 Aparte de eso, es un tema rápido con HTML y CSS que funciona con JavaScript deshabilitado. Justo como debería ser (la mayoría de) la web :-)
-
----
 
 [^1]: Para codificar tu correo electrónico en base64 puedes usar [herramientas en línea](https://www.base64encode.org/) o, en tu terminal, ejecutar: `printf 'mail@example.com' | base64`.

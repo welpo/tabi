@@ -8,7 +8,6 @@ description = "JavaScript is only used when HTML and CSS aren't enough."
 tags = ["showcase", "tutorial"]
 
 [extra]
-footnote_backlinks = true
 social_media_card = "social_cards/blog_javascript.jpg"
 +++
 
@@ -41,7 +40,5 @@ To specify these settings:
 - [**Comments**](@/blog/comments/index.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) or Isso (1KB) can be globally enabled by setting `enabled_for_all_posts = true` in the right section of your  `config.toml` (i.e. `[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` or `[extra.isso]`). To enable comments on individual posts, set the name of the system `= true` (e.g. `hyvortalk = true`) in the post's front matter.
 
 Other than that, it's a fast theme with HTML and CSS which works with JavaScript disabled. Just the way (most of) the web should be :-)
-
----
 
 [^1]: To encode your email in base64 you can use [online tools](https://www.base64encode.org/) or, on your terminal, run: `printf 'mail@example.com' | base64`.

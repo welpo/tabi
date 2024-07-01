@@ -9,7 +9,6 @@ tags = ["markdown", "funcionalitat"]
 
 [extra]
 katex = true
-footnote_backlinks = true
 social_media_card = "social_cards/ca_blog_markdown.jpg"
 +++
 
@@ -69,7 +68,5 @@ A Rust, declares una variable mutable amb `let mut x = 5;`, mentre que a Python,
 > «La vida, perquè sigui vida, s'ha de viure a poc a poc…»
 >
 > — Mercè Rodoreda, La plaça del Diamant
-
-<hr>
 
 [^1]: I aquí tens un exemple de nota a peu de pàgina!

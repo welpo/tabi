@@ -8,7 +8,6 @@ description = "Discover the many ways you can customise your tabi site."
 tags = ["showcase", "tutorial", "FAQ"]
 
 [extra]
-footnote_backlinks = true
 quick_navigation_buttons = true
 social_media_card = "social_cards/blog_mastering_tabi_settings.jpg"
 +++
@@ -839,8 +838,6 @@ allowed_domains = [
 This feature is enabled by default. To disable it (and allow all connections), set `enable_csp = false` on a page, section or globally. The `enable_csp` setting follows the [hierarchy](#settings-hierarchy).
 
 See the [CSP documentation page](@/blog/security/index.md) for more information.
-
----
 
 [^1]: If you're using a remote Git repository, you might want to automate the process of updating the `updated` field. Here's a guide for that: [Zola Git Pre-Commit Hook: Updating Post Dates](https://osc.garden/blog/zola-date-git-hook/).
 

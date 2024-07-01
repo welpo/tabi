@@ -9,7 +9,6 @@ tags = ["markdown", "funcionalidad"]
 
 [extra]
 katex = true
-footnote_backlinks = true
 social_media_card = "social_cards/es_blog_markdown.jpg"
 +++
 
@@ -69,7 +68,5 @@ En Rust, declaras una variable mutable con `let mut x = 5;`, mientras que en Pyt
 > «A mí me sobra el cuerpo, Orfeo, me sobra el cuerpo porque me falta alma.»
 >
 > — Miguel de Unamuno, Niebla
-
-<hr>
 
 [^1]: ¡Y aquí tienes un ejemplo de una nota al pie de página!

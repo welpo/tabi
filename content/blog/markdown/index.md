@@ -9,7 +9,6 @@ tags = ["markdown", "showcase"]
 
 [extra]
 katex = true
-footnote_backlinks = true
 social_media_card = "social_cards/blog_markdown.jpg"
 +++
 
@@ -69,7 +68,5 @@ In Rust, you declare a mutable variable with `let mut x = 5;`, whereas in Python
 > "We're all hurtling towards death. Yet here we are, for the moment, alive. Each of us knowing we're going to die. Each of us secretly believing we won't."
 >
 > — Charlie Kaufman, Synecdoche, New York
-
-<hr>
 
 [^1]: And here's an example of a footnote!
