@@ -3013,6 +3013,24 @@ window.onload = function () {
                 }
             });
 
+            results.addEventListener('click', function(event) {
+                const clickedElement = event.target.closest('a');
+                if (clickedElement) {
+                    const clickedHref = clickedElement.getAttribute('href');
+                    const currentPageUrl = window.location.href;
+
+                    // Normalise URLs by removing the text fragment and trailing slash.
+                    const normalizeUrl = (url) => url.split('#')[0].replace(/\/$/, '');
+
+                    // Check if the clicked link matches the current page.
+                    // If using Ctrl+click or Cmd+click, don't close the modal.
+                    if (normalizeUrl(clickedHref) === normalizeUrl(currentPageUrl) &&
+                        !event.ctrlKey && !event.metaKey) {
+                        closeModal();
+                    }
+                }
+            });
+
             // Add touch events to the results.
             setupTouchEvents();
         },
