@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://welpo.github.io/tabi/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="ca" xml:base="https:&#x2F;&#x2F;welpo.github.io&#x2F;tabi">
+    <str:translations xmlns:str="https://github.com/welpo/tabi">
+        <str:about_feeds>Aquest és un canal web, també conegut com a canal Atom. Subscriu-te copiant l&#x27;URL de la barra d&#x27;adreces al teu lector de notícies. Visita About Feeds per aprendre més i començar. És gratuït.</str:about_feeds>
+        <str:visit_the_site>Visita la web</str:visit_the_site>
+        <str:recent_posts>Publicacions recents</str:recent_posts>
+    </str:translations><title>~/tabi - markdown</title>
+        <subtitle>tabi és un tema de Zola ràpid, lleuger i modern amb JavaScript opcional i una puntuació perfecta a Lighthouse.</subtitle>
+    <link href="https://welpo.github.io/tabi/ca/tags/markdown/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://welpo.github.io/tabi/ca/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-02-16T00:00:00+00:00</updated>
+    <id>https://welpo.github.io/tabi/ca/tags/markdown/atom.xml</id><entry xml:lang="ca">
+        <title>Exemples de Markdown</title>
+        <published>2023-01-31T00:00:00+00:00</published>
+        <updated>2023-09-01T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/ca/blog/markdown/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/ca/blog/markdown/</id>
+        <summary type="html">Aquesta publicació mostra alguns exemples de format en Markdown, incloent-hi una taula, blocs de codi i etiquetes, citacions, taules i notes a peu de pàgina.</summary>
+        </entry><entry xml:lang="ca">
+        <title>Taula de contingut</title>
+        <published>2022-11-01T00:00:00+00:00</published>
+        <updated>2024-02-16T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/ca/blog/toc/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/ca/blog/toc/</id>
+        <summary type="html">Una publicació que mostra la taula de contingut opcional i la seva configuració.</summary>
+        </entry>
+</feed>
