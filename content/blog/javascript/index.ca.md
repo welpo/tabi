@@ -8,7 +8,6 @@ description = "JavaScript només s'utilitza quan HTML i CSS no són suficients."
 tags = ["funcionalitat", "tutorial"]
 
 [extra]
-footnote_backlinks = true
 social_media_card = "social_cards/ca_blog_javascript.jpg"
 +++
 
@@ -41,7 +40,5 @@ Per especificar aquestes opcions:
 - [**Comentaris**](@/blog/comments/index.ca.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) o Isso (1KB) es poden habilitar globalment configurant `enabled_for_all_posts = true` a la secció apropiada del teu `config.toml` (`[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` o `[extra.isso]`). Per habilitar comentaris en publicacions individuals, configura el nom del sistema `= true` (per exemple, `hyvortalk = true`) al front matter del post.
 
 A part d'això, és un tema ràpid amb HTML i CSS que funciona sense JavaScript. Just com hauria de ser (la majoria de) la web :-)
-
----
 
 [^1]: Per codificar el teu correu en base64 pots utilitzar [eines en línia](https://www.base64encode.org/) o, al terminal, executa: `printf 'mail@example.com' | base64`.

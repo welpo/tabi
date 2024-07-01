@@ -8,7 +8,6 @@ description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 tags = ["funcionalidad", "tutorial", "preguntas frecuentes"]
 
 [extra]
-footnote_backlinks = true
 quick_navigation_buttons = true
 social_media_card = "social_cards/es_blog_mastering_tabi_settings.jpg"
 +++
@@ -833,8 +832,6 @@ allowed_domains = [
 Esta función está habilitada por defecto. Para deshabilitarla (y permitir todo), configura `enable_csp = false` en una página, sección o globalmente. La opción `enable_csp` sigue [la jerarquía](#jerarquia-de-configuracion).
 
 Para obtener más información, consulta la [página de documentación de CSP](@/blog/security/index.es.md).
-
----
 
 [^1]: Si estás utilizando un repositorio Git remoto, es posible que quieras automatizar el proceso de actualización del campo `updated`. Aquí tienes una guía para eso: [Zola Git Hook: actualizando las fechas de las publicaciones](https://osc.garden/es/blog/zola-date-git-hook/).
 
