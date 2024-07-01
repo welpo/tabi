@@ -142,6 +142,14 @@ Fixa't que si configures `section_path`, no cal que configuris `paginate_by`. Po
 
 El `title` és el títol que apareix a sobre de les publicacions.
 
+##### Mostrar la data dels articles al llistat
+
+Per defecte, quan es llisten els articles, es mostra la data de creació. Pots configurar quina(es) data(es) mostrar utilitzant l'opció `post_listing_date`. Configuracions disponibles:
+
+- `date`: Mostra només la data de publicació original de l'article (opció per defecte).
+- `updated`: Mostra només la data de l'última actualització de l'article.
+- `both`: Mostra tant la data de publicació original com la data de l'última actualització.
+
 #### Llistat de Projectes
 
 Pots mostrar una selecció de projectes a la teva pàgina principal. Per fer això, primer necessitaràs configurar el directori `projects`.
