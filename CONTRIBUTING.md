@@ -97,7 +97,7 @@ The pre-commit githook performs the following actions:
 
 - **Front Matter in Markdown Files**: Automatically updates the "updated" field in the front matter of `.md` files.
 - **PNG Compression**: Compresses PNG files using either [`oxipng`](https://github.com/shssoichiro/oxipng) or [`optipng`](https://optipng.sourceforge.net/), whichever is available on your system.
-- **Font Subsetting**: Runs `subset_font` if `config.toml` has been modified.
+- **Font Selection**: Runs `subset_font` if `config.toml` has been modified.
 
 #### Commit Checks
 
