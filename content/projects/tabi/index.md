@@ -25,6 +25,7 @@ social_media_card = "social_cards/projects_tabi.jpg"
 - Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
 - Code syntax highlighting with colours based on [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - [Local search](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#search) with an accessible, multi-lingual interface.
+- [Custom Twitter card](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards) and automatic Open Graph tags.
 - [KaTeX](https://katex.org/) support for mathematical notation.
 - [Stylized and human readable Atom feed](https://welpo.github.io/tabi/atom.xml).
 - [Stylized and human readable sitemap](https://welpo.github.io/tabi/sitemap.xml).
