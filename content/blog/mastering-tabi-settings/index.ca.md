@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-07-01
+updated = 2024-07-04
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -445,7 +445,7 @@ Per exemple, si configures `base_canonical_url = "https://example.com"`, l'URL c
 
 Les targetes per a xarxes socials són les imatges que es mostren quan comparteixes un enllaç a les xarxes socials:
 
-![Una captura de pantalla de WhatsApp mostrant un enllaç amb una targeta per a xarxes socials](/blog/mastering-tabi-settings/img/with_social_media_card.webp)
+{{ dimmable_image(src="img/with_social_media_card.webp", alt="Una captura de pantalla de WhatsApp mostrant un enllaç amb una targeta per a xarxes socials") }}
 
 Pots establir la imatge per a xarxes socials amb `social_media_card = "img/social_media_card.png"`.
 

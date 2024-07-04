@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-07-01
+updated = 2024-07-04
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -446,7 +446,7 @@ For example, if you set `base_canonical_url = "https://example.com"`, the canoni
 
 Social media cards are the images that are displayed when you share a link on social media:
 
-![A screenshot of WhatsApp showing a link with a social media card](/blog/mastering-tabi-settings/img/with_social_media_card.webp)
+{{ dimmable_image(src="img/with_social_media_card.webp", alt="A screenshot of WhatsApp showing a link with a social media card") }}
 
 You can set the social media image with `social_media_card = "img/social_media_card.png"`.
 

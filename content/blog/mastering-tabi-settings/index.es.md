@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-07-01
+updated = 2024-07-04
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -445,7 +445,7 @@ Por ejemplo, si configuras `base_canonical_url = "https://example.com"`, la URL 
 
 Las tarjetas para redes sociales son las imágenes que se muestran cuando compartes un enlace en redes sociales:
 
-![Una captura de pantalla de WhatsApp mostrando un enlace con una tarjeta para redes sociales](/blog/mastering-tabi-settings/img/with_social_media_card.webp)
+{{ dimmable_image(src="img/with_social_media_card.webp", alt="Una captura de pantalla de WhatsApp mostrando un enlace con una tarjeta para redes sociales") }}
 
 Puedes establecer la imagen para redes sociales con `social_media_card = "img/social_media_card.png"`.
 
