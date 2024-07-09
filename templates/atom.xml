@@ -18,6 +18,9 @@
         <str:recent_posts>
             {{- macros_translate::translate(key="recent_posts", default="Recent posts", language_strings=language_strings) -}}
         </str:recent_posts>
+        <str:last_updated_on>
+            {{- macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -}}
+        </str:last_updated_on>
     </str:translations>
 
     {#- Load extra CSS (skin) if set in config.toml -#}
@@ -34,6 +37,7 @@
         <subtitle>{{ config.description }}</subtitle>
     {%- endif %}
     <link href="{{ feed_url | safe }}" rel="self" type="application/atom+xml"/>
+    <post_listing_date>{{ config.extra.post_listing_date | default(value="date") }}</post_listing_date>
     <link href="
         {%- if section -%}
             {{ section.permalink | escape_xml | safe }}

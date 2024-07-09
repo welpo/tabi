@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-07-04
+updated = 2024-07-09
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -140,6 +140,14 @@ max_posts = 4
 Fixa't que si configures `section_path`, no cal que configuris `paginate_by`. Pots establir `max_posts` per determinar el nombre de publicacions que vols mostrar a la pàgina principal.
 
 El `title` és el títol que apareix a sobre de les publicacions.
+
+##### Mostrar la data dels articles al llistat
+
+Per defecte, quan es llisten els articles, es mostra la data de creació. Pots configurar quina(es) data(es) mostrar utilitzant l'opció `post_listing_date`. Configuracions disponibles:
+
+- `date`: Mostra només la data de publicació original de l'article (opció per defecte).
+- `updated`: Mostra només la data de l'última actualització de l'article.
+- `both`: Mostra tant la data de publicació original com la data de l'última actualització.
 
 #### Llistat de Projectes
 
