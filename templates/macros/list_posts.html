@@ -14,8 +14,14 @@
             {% endif %}
 
             <ul class="bloglist-meta">
-                {%- set show_date = post.date and config.extra.post_listing_date == "date" or post.date and config.extra.post_listing_date == "both" -%}
-                {%- set show_updated = post.updated and config.extra.post_listing_date == "updated" or post.updated and config.extra.post_listing_date == "both" -%}
+                {%- set allowed_post_listing_dates = ["date", "updated", "both"] -%}
+                {%- set post_listing_date = config.extra.post_listing_date | default(value="date") -%}
+                {%- if post_listing_date not in allowed_post_listing_dates -%}
+                    {{ throw(message="ERROR: Invalid value for config.extra.post_listing_date. Allowed values are 'date', 'updated', or 'both'.") }}
+                {%- endif -%}
+
+                {%- set show_date = post.date and post_listing_date == "date" or post.date and post_listing_date == "both" -%}
+                {%- set show_updated = post.updated and post_listing_date == "updated" or post.updated and post_listing_date == "both" -%}
 
                 {%- if show_date or show_updated -%}
                     {%- if show_date -%}
