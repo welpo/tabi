@@ -54,12 +54,22 @@
               <xsl:for-each select="/atom:feed/atom:entry">
                 <section class="bloglist-row bottom-divider">
                   <ul class="bloglist-meta">
-                    <xsl:if test="$post_listing_date = 'date' or $post_listing_date = 'both'">
+                    <xsl:variable name="show_date" select="$post_listing_date = 'date' or $post_listing_date = 'both'"/>
+                    <xsl:variable name="show_updated" select="$post_listing_date = 'updated' or $post_listing_date = 'both'"/>
+
+                    <xsl:if test="$show_date">
                       <li class="date">
                         <xsl:value-of select="substring(atom:published, 0, 11)"/>
                       </li>
                     </xsl:if>
-                    <xsl:if test="$post_listing_date = 'updated' or $post_listing_date = 'both'">
+
+                    <xsl:if test="$show_date and $show_updated">
+                      <li class="mobile-only">
+                        <xsl:value-of select="/atom:feed/str:translations/str:separator"/>
+                      </li>
+                    </xsl:if>
+
+                    <xsl:if test="$show_updated">
                       <li class="date">
                         <xsl:variable name="update_string" select="/atom:feed/str:translations/str:last_updated_on"/>
                         <xsl:variable name="update_date" select="substring(atom:updated, 0, 11)"/>

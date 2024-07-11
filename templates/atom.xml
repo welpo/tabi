@@ -9,6 +9,9 @@
 <?xml-stylesheet href="{{ get_url(path='/feed_style.xsl', trailing_slash=false) | safe }}" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="{{ lang }}" xml:base="{{ config.base_url }}">
     <str:translations xmlns:str="https://github.com/welpo/tabi">
+        <str:separator>
+            {{  config.extra.separator | default(value="•") }}
+        </str:separator>
         <str:about_feeds>
             {{- macros_translate::translate(key="about_feeds", default="This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader", language_strings=language_strings) -}}
         </str:about_feeds>
