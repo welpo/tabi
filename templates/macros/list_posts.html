@@ -1,5 +1,7 @@
 {% macro list_posts(posts, max, language_strings="", section_path="blog") %}
 
+{%- set separator = config.extra.separator | default(value="•") -%}
+
 <div class="bloglist-container">
     {% for post in posts %}
         {% if loop.index <= max %}
@@ -12,9 +14,30 @@
             {% endif %}
 
             <ul class="bloglist-meta">
-                {% if post.date %}
-                <li class="date">{{ macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) }}</li>
-                {% endif %}
+                {%- set allowed_post_listing_dates = ["date", "updated", "both"] -%}
+                {%- set post_listing_date = config.extra.post_listing_date | default(value="date") -%}
+                {%- if post_listing_date not in allowed_post_listing_dates -%}
+                    {{ throw(message="ERROR: Invalid value for config.extra.post_listing_date. Allowed values are 'date', 'updated', or 'both'.") }}
+                {%- endif -%}
+
+                {%- set show_date = post.date and post_listing_date == "date" or post.date and post_listing_date == "both" -%}
+                {%- set show_updated = post.updated and post_listing_date == "updated" or post.updated and post_listing_date == "both" -%}
+
+                {%- if show_date or show_updated -%}
+                    {%- if show_date -%}
+                        <li class="date">{{- macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) -}}</li>
+                    {%- endif -%}
+                    {%- if show_date and show_updated -%}
+                        <li class="mobile-only">{{- separator -}}</li>
+                    {%- endif -%}
+                    {%- if show_updated -%}
+                        {%- set last_updated_str = macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -%}
+                        {%- set formatted_date = macros_format_date::format_date(date=post.updated, short=true, language_strings=language_strings) -%}
+                        {%- set updated_str = last_updated_str | replace(from="$DATE", to=formatted_date) -%}
+                        <li class="date">{{ updated_str }}</li>
+                    {%- endif -%}
+                {%- endif -%}
+
                 {% if post.draft %}
                 <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
                 {% endif %}

@@ -276,6 +276,10 @@ video {
     margin-bottom: 2rem;
 }
 
+.mobile-only {
+    display: none;
+}
+
 @media only screen and (max-width: 1000px) {
     .content {
         max-width: var(--normal-layout-width);
@@ -291,6 +295,10 @@ video {
         margin-left: 0;
         max-width: none;
         overflow-x: auto;
+    }
+
+    .mobile-only {
+        display: block;
     }
 }
 

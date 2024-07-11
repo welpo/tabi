@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-07-04
+updated = 2024-07-09
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -140,6 +140,14 @@ max_posts = 4
 Notice how if you set `section_path`, you don't need to set `paginate_by`. You can set `max_posts` to the determine the number of posts you want to show on the main page.
 
 The `title` is the header that appears above the posts.
+
+##### Display the Date of Posts in Listing
+
+By default, when listing posts, the date of post creation is shown. You can configure which date(s) to display using the `post_listing_date` option. Available settings:
+
+- `date`: Show only the original date of the post (default).
+- `updated`: Show only the last updated date of the post.
+- `both`: Show both the original date and the last updated date.
 
 #### Listing Projects
 

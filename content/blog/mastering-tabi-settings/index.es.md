@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-07-04
+updated = 2024-07-09
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -140,6 +140,14 @@ max_posts = 4
 Fíjate que si configuras `section_path`, no necesitas configurar `paginate_by`. Puedes establecer `max_posts` para determinar el número de publicaciones que deseas mostrar en la página principal.
 
 El `title` es el encabezado que aparece sobre las publicaciones.
+
+##### Mostrar la fecha de los artículos en el listado
+
+Por defecto, cuando se listan los artículos, se muestra la fecha de creación. Puedes configurar qué fecha(s) mostrar usando la opción `post_listing_date`. Configuraciones disponibles:
+
+- `date`: Muestra solo la fecha de publicación original del artículo (opción por defecto).
+- `updated`: Muestra solo la fecha de la última actualización del artículo.
+- `both`: Muestra tanto la fecha de publicación original como la fecha de la última actualización.
 
 #### Listado de proyectos
 
