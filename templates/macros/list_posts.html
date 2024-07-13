@@ -20,7 +20,7 @@
                     {{ throw(message="ERROR: Invalid value for config.extra.post_listing_date. Allowed values are 'date', 'updated', or 'both'.") }}
                 {%- endif -%}
 
-                {%- set show_date = post.date and post_listing_date == "date" or post.date and post_listing_date == "both" -%}
+                {%- set show_date = post.date and post_listing_date == "date" or post.date and post_listing_date == "both" or post.date and post_listing_date == "updated" and not post.updated -%}
                 {%- set show_updated = post.updated and post_listing_date == "updated" or post.updated and post_listing_date == "both" -%}
 
                 {%- if show_date or show_updated -%}
