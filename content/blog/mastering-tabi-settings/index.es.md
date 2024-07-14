@@ -146,7 +146,7 @@ El `title` es el encabezado que aparece sobre las publicaciones.
 Por defecto, cuando se listan los artículos, se muestra la fecha de creación. Puedes configurar qué fecha(s) mostrar usando la opción `post_listing_date`. Configuraciones disponibles:
 
 - `date`: Muestra solo la fecha de publicación original del artículo (opción por defecto).
-- `updated`: Muestra solo la fecha de la última actualización del artículo.
+- `updated`: Muestra solo la fecha de la última actualización del artículo. Si no hay fecha de actualización, muestra la fecha de publicación original.
 - `both`: Muestra tanto la fecha de publicación original como la fecha de la última actualización.
 
 #### Listado de proyectos
