@@ -148,7 +148,7 @@ show_date = true
 
 # Determines how dates are displayed in the post listing (e.g. front page or /blog). Options:
 # "date" - Show only the original date of the post (default if unset).
-# "updated" - Show only the last updated date of the post.
+# "updated" - Show only the last updated date of the post. If there is no last updated date, it shows the original date.
 # "both" - Show both the original date and the last updated date.
 post_listing_date = "date"
 

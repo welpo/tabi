@@ -146,8 +146,12 @@ The `title` is the header that appears above the posts.
 By default, when listing posts, the date of post creation is shown. You can configure which date(s) to display using the `post_listing_date` option. Available settings:
 
 - `date`: Show only the original date of the post (default).
-- `updated`: Show only the last updated date of the post.
+- `updated`: Show only the last updated date of the post. If there is no last updated date, it shows the original date.
 - `both`: Show both the original date and the last updated date.
+
+```toml
+post_listing_date = "date"
+```
 
 #### Listing Projects
 
