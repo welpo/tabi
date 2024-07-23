@@ -4,6 +4,9 @@
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+      <xsl:attribute name="data-theme">
+        <xsl:value-of select="/atom:feed/str:translations/str:default_theme"/>
+      </xsl:attribute>
       <head>
         <title>
           <xsl:value-of select="/atom:feed/atom:title"/> • Feed

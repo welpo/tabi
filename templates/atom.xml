@@ -24,6 +24,9 @@
         <str:last_updated_on>
             {{- macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -}}
         </str:last_updated_on>
+        <str:default_theme>
+            {{- config.extra.default_theme | default(value="") -}}
+        </str:default_theme>
     </str:translations>
 
     {#- Load extra CSS (skin) if set in config.toml -#}

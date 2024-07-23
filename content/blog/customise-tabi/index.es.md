@@ -19,6 +19,8 @@ tabi puede ser personalizado de dos maneras: estableciendo el tema predeterminad
 
 Usa `default_theme = "dark"` para establecer el tema oscuro como predeterminado, o `default_theme = "light"` para establecer el tema claro como predeterminado.
 
+Establecer `default_theme = ""` (o no especificar la variable) seguirá las preferencias del sistema del usuario (modo claro u oscuro).
+
 Para configurar permanentemente tu sitio en el tema oscuro o claro, necesitas desactivar el `theme_switcher` en `config.toml` y establecer tu tema preferido (`light` o `dark`) como el `default_theme`.
 
 Por ejemplo, para tener un tema oscuro permanente:
