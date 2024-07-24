@@ -4,6 +4,40 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.13.0](https://github.com/welpo/tabi/compare/v2.12.0..v2.13.0) - 2024-07-24
+
+### ✨ Features
+
+- Follow user OS theme with JS disabled ([#357](https://github.com/welpo/tabi/issues/357)) by [@welpo](https://github.com/welpo)
+- Add date visibility options to post list ([#330](https://github.com/welpo/tabi/issues/330)) by [@sam9032](https://github.com/sam9032) and [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(header)* Render feed links based on config ([#358](https://github.com/welpo/tabi/issues/358)) by [@welpo](https://github.com/welpo)
+- *(post_listing_date)* Show original date for unedited articles ([#355](https://github.com/welpo/tabi/issues/355)) by [@sam9032](https://github.com/sam9032)
+- *(search)* Close modal when clicking current page result ([#350](https://github.com/welpo/tabi/issues/350)) by [@welpo](https://github.com/welpo)
+
+### 💄 Styling
+
+- *(error)* Enhance visibility of Zola errors ([#359](https://github.com/welpo/tabi/issues/359)) by [@welpo](https://github.com/welpo)
+- Match footnote backlinks size on Zola v0.19 ([0f18ac2](https://github.com/welpo/tabi/commit/0f18ac264df8b9766c4d431dfd37f5f5799f3834)) by [@welpo](https://github.com/welpo)
+
+### 📝 Documentation
+
+- *(mastering tabi)* Fix broken image ([1111631](https://github.com/welpo/tabi/commit/1111631325e3ebf8ae3a2f6cd18492cfc5aa44c2)) by [@welpo](https://github.com/welpo)
+- Mention custom Twitter card & automatic OG tags ([fbb81f9](https://github.com/welpo/tabi/commit/fbb81f976433d93ee3787f4a9d5c6c3049f815a2)) by [@welpo](https://github.com/welpo)
+- Deprecate JS footnote backlinks ([ced0cb4](https://github.com/welpo/tabi/commit/ced0cb43b6b4b4f6fba583990e428ddedbf52af3)) by [@welpo](https://github.com/welpo)
+- Fix broken internal links ([4145364](https://github.com/welpo/tabi/commit/4145364e085929ae9c09ccb908a0bae77a0b7520)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(release)* Add error handling function ([9585843](https://github.com/welpo/tabi/commit/9585843b14131843775e41df67fe9cc60c95a2ea))
+- *(release)* Ensure local repository is in good state ([617a940](https://github.com/welpo/tabi/commit/617a940cf823917bc86df5f05350236c40560dc0))
+
+### 👥 New contributors
+
+🫶 [@sam9032](https://github.com/sam9032) made their first contribution in [#355](https://github.com/welpo/tabi/pull/355)
+
 ## [2.12.0](https://github.com/welpo/tabi/compare/v2.11.0..v2.12.0) - 2024-06-29
 
 ### ✨ Features
