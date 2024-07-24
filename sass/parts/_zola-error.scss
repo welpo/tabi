@@ -1,5 +1,5 @@
 // Styles Zola error messages. See https://github.com/welpo/tabi/pull/359
-body > div:last-child > div:last-child {
+body > div:last-child > div:last-child[style]:not([class]):not([id]) {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -14,13 +14,13 @@ body > div:last-child > div:last-child {
     max-width: 80%;
 }
 
-body > div:last-child > div:last-child p {
+body > div:last-child > div:last-child[style]:not([class]):not([id]) > p[style]:first-child {
     margin: 0;
     color: var(--admonition-danger-border);
     font-weight: bold;
 }
 
-body > div:last-child > div:last-child pre {
+body > div:last-child > div:last-child[style]:not([class]):not([id]) > pre[style]:last-child {
     margin-bottom: 0;
     background-color: var(--admonition-danger-code);
     padding: 10px;
