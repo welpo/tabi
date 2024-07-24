@@ -19,6 +19,8 @@ tabi can be customised in two ways: by setting the default theme (dark or light)
 
 Use `default_theme = "dark"` to set the dark theme as the default, or `default_theme = "light"` to set the light theme as the default.
 
+Setting `default_theme = ""` (or commenting out the variable) will follow the user's system preference (light or dark mode).
+
 To permanently set your site to either the dark or light theme, you need to disable the theme switcher in `config.toml` and set your preferred theme as the `default_theme`.
 
 For example, to have a permanent dark theme:

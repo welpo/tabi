@@ -19,6 +19,8 @@ tabi pot ser personalitzat de dues maneres: establint el tema per defecte (fosc 
 
 Utilitza `default_theme = "dark"` per establir el tema fosc com a predeterminat, o `default_theme = "light"` per establir el tema clar com a predeterminat.
 
+Establir `default_theme = ""` (o comentar la variable) seguirà la preferència del sistema de l'usuari (mode clar o fosc).
+
 Per configurar permanentment el teu lloc en el tema fosc o clar, necessites desactivar el `theme_switcher` a `config.toml` i establir el teu tema preferit (`light` o `dark`) a `default_theme`.
 
 Per exemple, per tenir un tema fosc permanent:

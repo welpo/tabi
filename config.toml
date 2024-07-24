@@ -77,11 +77,11 @@ taxonomies = [{name = "tags", feed = true}]
 override_serif_with_sans = false
 
 # Enable JavaScript theme toggler to allow users to switch between dark/light mode.
-# If disabled, your site will only use the theme specified in the `default_theme` variable.
+# If disabled, your site will use the theme specified in the `default_theme` variable.
 theme_switcher = true
 
 # This setting determines the default theme on load ("light" or "dark").
-# To default to the user's OS-level theme, leave it empty or unset.
+# To follow the user's OS theme, leave it empty or unset.
 default_theme = ""
 
 # Choose the colourscheme (skin) for the theme. Default is "teal".
