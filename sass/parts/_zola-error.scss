@@ -1,0 +1,28 @@
+// Styles Zola error messages. See https://github.com/welpo/tabi/pull/359
+body > div:last-child > div:last-child {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border: 2px solid var(--admonition-danger-border);
+    border-radius: 5px;
+    background-color: var(--admonition-danger-bg);
+    padding: 15px;
+    width: fit-content;
+    max-width: 80%;
+}
+
+body > div:last-child > div:last-child p {
+    margin: 0;
+    color: var(--admonition-danger-border);
+    font-weight: bold;
+}
+
+body > div:last-child > div:last-child pre {
+    margin-bottom: 0;
+    background-color: var(--admonition-danger-code);
+    padding: 10px;
+    overflow-x: auto;
+}
