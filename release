@@ -5,10 +5,14 @@ set -eu
 
 VERSION_FORMAT="^v[0-9]+\.[0-9]+\.[0-9]+$"
 
+exit_with_message() {
+    echo "$1" >&2
+    exit 1
+}
+
 # Check for a clean working directory.
 if [ -n "$(git status --porcelain)" ]; then
-    echo "Your working directory is dirty. Commit or stash your changes before running this script."
-    exit 1
+    exit_with_message "Your working directory is dirty. Commit or stash your changes before running this script."
 fi
 
 # Ensure the local repository is up-to-date.
@@ -16,21 +20,18 @@ echo "Updating local repository…"
 git fetch origin
 git_status=$(git status -uno)
 if echo "$git_status" | grep -q "Your branch is behind"; then
-    echo "Your local branch is behind the remote. Please pull the latest changes before running this script."
-    exit 1
+    exit_with_message "Your local branch is behind the remote. Pull the latest changes before running this script."
 elif echo "$git_status" | grep -q "Your branch is ahead"; then
-    echo "Your local branch is ahead of the remote. Attempting to push changes..."
-    if git push --dry-run 2>&1 | grep -q "Everything up-to-date"; then
+    echo "Your local branch is ahead of the remote. Checking if local changes can be pushed…"
+    if git push --dry-run &> /dev/null; then
         echo "Local changes can be pushed without conflicts. Proceeding with the release."
     else
-        echo "Unable to push local changes. Please resolve any conflicts before running this script."
-        exit 1
+        exit_with_message "Unable to push local changes. Resolve any conflicts before running this script."
     fi
 elif ! echo "$git_status" | grep -q "Your branch is up to date"; then
-    echo "Unable to determine if branch is up to date. Please check your git status manually."
-    exit 1
+    exit_with_message "Unable to determine if branch is up to date. Check your git status manually."
 fi
-echo "Local repository is ready for release preparation."
+echo "Local repository is ready for release."
 
 # Check if a version tag is provided.
 if [ "$#" -eq 1 ]; then
@@ -45,15 +46,13 @@ else
         echo "Proceeding with version $suggested_version."
         VERSION_TAG=$suggested_version
     else
-        echo "Release preparation cancelled."
-        exit 1
+        exit_with_message "Release preparation cancelled."
     fi
 fi
 
 # Verify that the version tag matches the expected format.
 if ! [[ $VERSION_TAG =~ $VERSION_FORMAT ]]; then
-    echo "Version tag $VERSION_TAG does not match the expected format ${VERSION_FORMAT}."
-    exit 1
+    exit_with_message "Version tag $VERSION_TAG does not match the expected format ${VERSION_FORMAT}."
 fi
 
 echo "Preparing release ${VERSION_TAG}…"
