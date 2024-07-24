@@ -10,6 +10,13 @@ exit_with_message() {
     exit 1
 }
 
+# Run only from default branch.
+default_branch=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+if [ "$current_branch" != "$default_branch" ]; then
+    exit_with_message "Not on $default_branch branch. Switch to $default_branch before running this script."
+fi
+
 # Check for a clean working directory.
 if [ -n "$(git status --porcelain)" ]; then
     exit_with_message "Your working directory is dirty. Commit or stash your changes before running this script."
