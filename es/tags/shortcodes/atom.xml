@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://welpo.github.io/tabi/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="es" xml:base="https:&#x2F;&#x2F;welpo.github.io&#x2F;tabi">
+    <str:translations xmlns:str="https://github.com/welpo/tabi">
+        <str:separator>
+            •
+        </str:separator>
+        <str:about_feeds>Esta es una fuente web, también conocida como fuente Atom. Suscríbete copiando la URL de la barra de direcciones en tu lector de noticias. Visita About Feeds para aprender más y empezar. Es gratis. </str:about_feeds>
+        <str:visit_the_site>Visita la web</str:visit_the_site>
+        <str:recent_posts>Publicaciones recientes</str:recent_posts>
+        <str:last_updated_on>Actualizado el $DATE</str:last_updated_on>
+        <str:default_theme></str:default_theme>
+    </str:translations><title>~/tabi - shortcodes</title>
+        <subtitle>tabi es un tema de Zola rápido, liviano y moderno con JavaScript opcional y una puntuación perfecta en Lighthouse.</subtitle>
+    <link href="https://welpo.github.io/tabi/es/tags/shortcodes/atom.xml" rel="self" type="application/atom+xml"/>
+    <post_listing_date>date</post_listing_date>
+    <link href="https://welpo.github.io/tabi/es/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-06-27T00:00:00+00:00</updated>
+    <id>https://welpo.github.io/tabi/es/tags/shortcodes/atom.xml</id><entry xml:lang="es">
+        <title>Shortcodes personalizados</title>
+        <published>2023-02-19T00:00:00+00:00</published>
+        <updated>2024-06-27T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/shortcodes/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/shortcodes/</id>
+        <summary type="html">Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más.</summary>
+        </entry>
+</feed>
