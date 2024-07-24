@@ -14,9 +14,25 @@
         <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">{{ config.extra.favicon_emoji }}</text></svg>'>
     {% endif %}
 
-    {# Feed #}
-    <link rel="alternate" type="application/atom+xml" title="{{ config.title | safe }}" href="{{ get_url(path="atom.xml",
-        trailing_slash=false) }}">
+    {# Feeds #}
+    {% if config.generate_feeds | default(value=config.generate_feed) %}
+        {% if config.feed_filenames %}
+            {# Zola 0.19 and newer #}
+            {% for feed in config.feed_filenames %}
+                {% if feed == "atom.xml" %}
+                    <link rel="alternate" type="application/atom+xml" title="{{ config.title | safe }} - Atom Feed" href="{{ get_url(path=feed, trailing_slash=false) | safe }}">
+                {% elif feed == "rss.xml" %}
+                    <link rel="alternate" type="application/rss+xml" title="{{ config.title | safe }} - RSS Feed" href="{{ get_url(path=feed, trailing_slash=false) | safe }}">
+                {% else %}
+                    <link rel="alternate" href="{{ get_url(path=feed, trailing_slash=false) | safe }}">
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {# Older Zola versions #}
+            {% set feed_url = config.feed_filename | default(value="atom.xml") %}
+            <link rel="alternate" type="application/atom+xml" title="{{ config.title | safe }}" href="{{ get_url(path=feed_url, trailing_slash=false) | safe }}">
+        {% endif %}
+    {% endif %}
 
     {# CSS #}
     {# Load subset of glyphs for header. Avoids flashing issue in Firefox #}
