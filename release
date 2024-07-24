@@ -11,6 +11,27 @@ if [ -n "$(git status --porcelain)" ]; then
     exit 1
 fi
 
+# Ensure the local repository is up-to-date.
+echo "Updating local repository…"
+git fetch origin
+git_status=$(git status -uno)
+if echo "$git_status" | grep -q "Your branch is behind"; then
+    echo "Your local branch is behind the remote. Please pull the latest changes before running this script."
+    exit 1
+elif echo "$git_status" | grep -q "Your branch is ahead"; then
+    echo "Your local branch is ahead of the remote. Attempting to push changes..."
+    if git push --dry-run 2>&1 | grep -q "Everything up-to-date"; then
+        echo "Local changes can be pushed without conflicts. Proceeding with the release."
+    else
+        echo "Unable to push local changes. Please resolve any conflicts before running this script."
+        exit 1
+    fi
+elif ! echo "$git_status" | grep -q "Your branch is up to date"; then
+    echo "Unable to determine if branch is up to date. Please check your git status manually."
+    exit 1
+fi
+echo "Local repository is ready for release preparation."
+
 # Check if a version tag is provided.
 if [ "$#" -eq 1 ]; then
     VERSION_TAG=$1
