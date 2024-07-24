@@ -21,6 +21,7 @@
 @use 'parts/_table.scss';
 @use 'parts/_tags.scss';
 @use 'parts/_theme-switch.scss';
+@use 'parts/_zola-error.scss';
 
 @font-face {
     src: local('Inter'),
