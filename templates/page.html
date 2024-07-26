@@ -167,11 +167,6 @@
             {% endif %}
         {% endfor %}
 
-        {# Ensure only one comment system is enabled #}
-        {% if enabled_systems > 1 %}
-            {{ throw(message="ERROR: Multiple comment systems have been enabled for the same page. Check your config.toml and individual page settings to ensure only one comment system is activated at a time.") }}
-        {% endif %}
-
         {% if macros_settings::evaluate_setting_priority(setting="show_previous_next_article_links", page=page, default_global_value=true) == "true" %}
             {%- if page.lower or page.higher -%}
                 {% set next_label = macros_translate::translate(key="next", default="Next", language_strings=language_strings) %}
@@ -218,6 +213,11 @@
             </nav>
             {%- endif -%}
         {%- endif -%}
+
+        {# Ensure only one comment system is enabled #}
+        {% if enabled_systems > 1 %}
+            {{ throw(message="ERROR: Multiple comment systems have been enabled for the same page. Check your config.toml and individual page settings to ensure only one comment system is activated at a time.") }}
+        {% endif %}
 
         {# Comments #}
         {% if comment_system %}
