@@ -64,6 +64,7 @@ load_comments = "Afficher les commentaires"
 
 # Serie.
 serie = "SERIE"
+serie_posts = "Articles de la série :"
 page_of_a_serie = "Cet article fait partie de la série : "
 
 # Copy code block button.

@@ -11,16 +11,20 @@
     {%- include "partials/home_banner.html" -%}
 {% endif -%}
 
-    <div id="posts-list">
+    <article>
         <div>
             <span class="title-label">{{ macros_translate::translate(key="serie", default="SERIE", language_strings=language_strings) }}</span>
             {{ macros_page_header::page_header(title=section.title) }}
         </div>
 
-        <div class="bottom-divider">
+        <section class="body">
             {{ section.content | safe }}
+        </section>
+    </article>
+    <div id="posts-list">
+        <div class="serielist-title bottom-divider">
+            {{ macros_translate::translate(key="serie_posts", default="Serie's posts:", language_strings=language_strings) }}
         </div>
-
         <div class="serielist-container">
             {% for post in section.pages | reverse %}
                 {% if loop.last %}
