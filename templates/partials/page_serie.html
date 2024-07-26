@@ -1,0 +1,48 @@
+{# We have to retrieve the first section having the `extra.serie` parameter set to true #}
+{# As a serie might be a transparent section in order to mix up its article with the one of the section just above or the root, #}
+{# there is no other way but to compute the potential path of each section related to the page and look for the first one being a serie #}
+{%- set current_path = [] -%}
+{%- set section_paths = [] -%}
+{%- for path in page.relative_path | split(pat="/") | slice(end=-1) -%}
+    {%- set_global current_path = current_path | concat(with=path) -%}
+    {%- set section_path = current_path | concat(with="_index.md") | join(sep="/") -%}
+    {%- set_global section_paths = section_paths | concat(with=section_path) -%}
+{%- endfor -%}
+{# We identify the closest serie of the page, if any #}
+{%- for section_path in section_paths | reverse -%}
+    {%- set section_file_exists = load_data(path=section_path, required=false) -%}
+    {%- if section_file_exists -%}
+        {%- set section = get_section(path=section_path,lang=lang) -%}
+        {%- if "serie" in section.extra and section.extra.serie -%}
+            {%- set_global serie_section = section -%}
+            {%- break -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- if serie_section -%}
+    {%- set page_of_a_serie = macros_translate::translate(key="page_of_a_serie", default="This article is part of the serie: ", language_strings=language_strings) -%}
+    {%- if macros_settings::evaluate_setting_priority(setting="serie_page_description", page=page, section=serie_section, default_global_value="none") == "full" -%}
+        <details class="page-serie">
+            <summary>
+            {{ page_of_a_serie }}<a href="{{ serie_section.permalink | safe }}" aria_label="{{ serie_section.title | safe }}">{{ serie_section.title }}</a>
+            </summary>
+            {{ serie_section.description | safe }}
+        {%- set ordered_serie_pages = serie_section.pages | reverse -%}
+            <nav>
+    						<ol>
+    					  {%- for serie_page in ordered_serie_pages -%}
+    					      {%- if serie_page.relative_path == page.relative_path -%}
+    								<li>{{ serie_page.title }}</li>
+    								{%- else -%}
+    								<li><a href="{{ serie_page.permalink | safe }}" aria-label="{{ serie_page.title | safe }}">{{ serie_page.title }}</a></li>
+    					      {%- endif -%}
+    					  {%- endfor -%}
+    						</ol>
+            </nav>
+        </details>
+    {%- else -%}
+        <div class="page-serie">
+            {{ page_of_a_serie }}<a href="{{ serie_section.permalink | safe }}" aria_label="{{ serie_section.title | safe }}">{{ serie_section.title }}</a>
+        </div>
+		{%- endif -%}
+{%- endif -%}

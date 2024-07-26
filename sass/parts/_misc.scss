@@ -238,3 +238,30 @@ details summary {
     display: inline-block;
     transform: rotate(270deg);
 }
+
+.page-serie {
+    display: inline-block;
+    position: relative;
+
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--primary-color);
+    border-left-width: 0.3rem;
+    border-radius: 10px;
+    padding: 1rem;
+
+    font-family: var(--serif-font);
+
+    summary::marker {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+
+        font-family: var(--serif-font);
+    }
+
+    ol {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

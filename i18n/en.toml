@@ -62,6 +62,9 @@ see_changes = "See changes"
 table_of_contents = "Table of Contents"
 load_comments = "Load comments"
 
+# Serie.
+page_of_a_serie = "This article is part of the serie: "
+
 # Copy code block button.
 copied = "Copied!"
 copy_code_to_clipboard = "Copy code to clipboard"
