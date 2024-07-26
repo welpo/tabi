@@ -41,6 +41,15 @@ ul {
     padding-bottom: 8px;
 }
 
+.title-label {
+    margin-right: 0.3rem;
+    background-color: var(--primary-color);
+    padding: 2px 4px;
+    color: var(--hover-color);
+    font-size: 1rem;
+    vertical-align: top;
+}
+
 .bottom-divider {
     border-bottom: var(--divider-color) solid 0.5px;
 }

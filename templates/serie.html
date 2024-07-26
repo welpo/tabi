@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+{% if paginator %}
+    {{ throw (message="Pagination not supported for series: '" ~ section.relative_path ~ "'.") }}
+{% endif %}
+
+<main>
+{%- if section.extra.header %}
+    {%- include "partials/home_banner.html" -%}
+{% endif -%}
+
+    <div id="posts-list">
+        <div>
+            <span class="title-label">{{ macros_translate::translate(key="serie", default="SERIE", language_strings=language_strings) }}</span>
+            {{ macros_page_header::page_header(title=section.title) }}
+        </div>
+
+        <div class="bottom-divider">
+            {{ section.content | safe }}
+        </div>
+
+        <div class="serielist-container">
+            {% for post in section.pages | reverse %}
+                {% if loop.last %}
+                <section class="serielist-row">
+                {% else %}
+                <section class="serielist-row bottom-divider">
+                {% endif %}
+
+                    <ul class="serielist-meta">
+                        {{ loop.index }}
+                        {% if post.draft %}
+                        <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
+                        {% endif %}
+                    </ul>
+                </section>
+                {% if loop.last %}
+                <section class="serielist-row">
+                {% else %}
+                <section class="serielist-row bottom-divider">
+                {% endif %}
+                    <div class="serielist-content">
+                        <h2 class="serielist-title">
+                            <a href="{{ post.permalink }}">{{ post.title }}</a>
+                        </h2>
+
+                        <div class="description">
+                            {% if post.description %}
+                                <p>{{ post.description }}</p>
+                            {% elif post.summary %}
+                                <p>{{ post.summary | striptags | trim_end_matches(pat=".") | safe }}…</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </section>
+            {% endfor %}
+        </div>
+    </div>
+
+</main>
+
+{% endblock main_content %}

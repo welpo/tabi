@@ -63,6 +63,7 @@ table_of_contents = "Table of Contents"
 load_comments = "Load comments"
 
 # Serie.
+serie = "SERIE"
 page_of_a_serie = "This article is part of the serie: "
 
 # Copy code block button.
