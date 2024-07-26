@@ -64,6 +64,7 @@ load_comments = "Load comments"
 
 # Serie.
 serie = "SERIE"
+serie_go_to_posts = "Go to serie's posts"
 serie_posts = "Serie's posts:"
 page_of_a_serie = "This article is part of the serie: "
 

@@ -12,8 +12,12 @@
 {% endif -%}
 
     <article>
-        <div>
+        <div id="serie-title">
             <span class="title-label">{{ macros_translate::translate(key="serie", default="SERIE", language_strings=language_strings) }}</span>
+            {%- set serie_go_to_posts = macros_translate::translate(key="serie_go_to_posts", default="Go to serie's posts", language_strings=language_strings) -%}
+            <a id="go-to-button" href="#posts-list" class="no-hover-padding" title="{{ serie_go_to_posts }}">
+                {{ serie_go_to_posts }}
+            </a>
             {{ macros_page_header::page_header(title=section.title) }}
         </div>
 
