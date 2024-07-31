@@ -41,6 +41,15 @@ ul {
     padding-bottom: 8px;
 }
 
+.title-label {
+    margin-right: 0.3rem;
+    background-color: var(--primary-color);
+    padding: 2px 4px;
+    color: var(--hover-color);
+    font-size: 1rem;
+    vertical-align: top;
+}
+
 .bottom-divider {
     border-bottom: var(--divider-color) solid 0.5px;
 }
@@ -237,4 +246,31 @@ details summary {
 :dir(rtl) .arrow-corner {
     display: inline-block;
     transform: rotate(270deg);
+}
+
+.series-page {
+    display: inline-block;
+    position: relative;
+
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--primary-color);
+    border-left-width: 0.3rem;
+    border-radius: 10px;
+    padding: 1rem;
+
+    font-family: var(--serif-font);
+
+    summary::marker {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+
+        font-family: var(--serif-font);
+    }
+
+    ol {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 }

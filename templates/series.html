@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+{% if paginator %}
+    {{ throw (message="Pagination not supported for series: '" ~ section.relative_path ~ "'.") }}
+{% endif %}
+
+<main>
+{%- if section.extra.header %}
+    {%- include "partials/home_banner.html" -%}
+{% endif -%}
+
+    <article>
+        <div id="series-title">
+            <span class="title-label">{{ macros_translate::translate(key="series", default="SERIES", language_strings=language_strings) }}</span>
+            {%- set jump_to_series_posts = macros_translate::translate(key="series_jump_to_posts", default="Jump to posts", language_strings=language_strings) -%}
+            <a id="jump-to-posts-button" href="#posts-list" class="no-hover-padding" title="{{ jump_to_series_posts }}">
+                {{ jump_to_series_posts }}
+            </a>
+            {{ macros_page_header::page_header(title=section.title) }}
+        </div>
+
+        <section class="body">
+            {{ section.content | safe }}
+        </section>
+    </article>
+    <div id="posts-list">
+        <div class="serieslist-title bottom-divider">
+            {{ macros_translate::translate(key="series_posts", default="Series' posts:", language_strings=language_strings) }}
+        </div>
+        <div class="serieslist-container">
+            {% for post in section.pages | reverse %}
+                {% if loop.last %}
+                <section class="serieslist-row">
+                {% else %}
+                <section class="serieslist-row bottom-divider">
+                {% endif %}
+
+                    <ul class="serieslist-meta">
+                        {{ loop.index }}
+                        {% if post.draft %}
+                        <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
+                        {% endif %}
+                    </ul>
+                </section>
+                {% if loop.last %}
+                <section class="serieslist-row">
+                {% else %}
+                <section class="serieslist-row bottom-divider">
+                {% endif %}
+                    <div class="serieslist-content">
+                        <h2 class="serieslist-title">
+                            <a href="{{ post.permalink }}">{{ post.title }}</a>
+                        </h2>
+
+                        <div class="description">
+                            {% if post.description %}
+                                <p>{{ post.description }}</p>
+                            {% elif post.summary %}
+                                <p>{{ post.summary | striptags | trim_end_matches(pat=".") | safe }}…</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </section>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+{%- include "partials/extra_features.html" -%}
+
+{% endblock main_content %}
