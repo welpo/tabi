@@ -62,11 +62,11 @@ see_changes = "See changes"
 table_of_contents = "Table of Contents"
 load_comments = "Load comments"
 
-# Serie.
-serie = "SERIE"
-serie_go_to_posts = "Go to serie's posts"
-serie_posts = "Serie's posts:"
-page_of_a_serie = "This article is part of the serie: "
+# Series.
+series = "SERIES"
+series_go_to_posts = "Go to series' posts"
+series_posts = "Series' posts:"
+page_of_a_series = "This article is part of the series: "
 
 # Copy code block button.
 copied = "Copied!"

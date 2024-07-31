@@ -1,15 +1,13 @@
 +++
-title = "How to deal with series"
-template = "serie.html"
-sort_by = "date"
+title = "Second article of the series"
+date = 2023-09-15
+description = "This is the second article of the series."
 
-description = "This serie is about demoing how does serie works."
-
-transparent = true
+[taxonomies]
+tags = ["showcase", "tutorial", "FAQ"]
 
 [extra]
-serie = true
-serie_page_description = "full"
+series_page_description = "none"
 +++
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

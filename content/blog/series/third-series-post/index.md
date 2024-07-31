@@ -1,13 +1,12 @@
 +++
-title = "Second article of the serie"
-date = 2023-09-15
-description = "This is the second article of the serie."
+title = "Third article of the series"
+date = 2024-07-28
+description = "This is the third article of the series."
 
 [taxonomies]
 tags = ["showcase", "tutorial", "FAQ"]
 
 [extra]
-serie_page_description = "none"
 +++
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

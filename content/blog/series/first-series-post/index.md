@@ -1,7 +1,7 @@
 +++
-title = "Third article of the serie"
-date = 2024-07-28
-description = "This is the third article of the serie."
+title = "First article of the series"
+date = 2023-08-01
+description = "This is the first article of the series."
 
 [taxonomies]
 tags = ["showcase", "tutorial", "FAQ"]

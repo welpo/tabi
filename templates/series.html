@@ -12,11 +12,11 @@
 {% endif -%}
 
     <article>
-        <div id="serie-title">
-            <span class="title-label">{{ macros_translate::translate(key="serie", default="SERIE", language_strings=language_strings) }}</span>
-            {%- set serie_go_to_posts = macros_translate::translate(key="serie_go_to_posts", default="Go to serie's posts", language_strings=language_strings) -%}
-            <a id="go-to-button" href="#posts-list" class="no-hover-padding" title="{{ serie_go_to_posts }}">
-                {{ serie_go_to_posts }}
+        <div id="series-title">
+            <span class="title-label">{{ macros_translate::translate(key="series", default="SERIES", language_strings=language_strings) }}</span>
+            {%- set series_go_to_posts = macros_translate::translate(key="series_go_to_posts", default="Go to series' posts", language_strings=language_strings) -%}
+            <a id="go-to-button" href="#posts-list" class="no-hover-padding" title="{{ series_go_to_posts }}">
+                {{ series_go_to_posts }}
             </a>
             {{ macros_page_header::page_header(title=section.title) }}
         </div>
@@ -26,18 +26,18 @@
         </section>
     </article>
     <div id="posts-list">
-        <div class="serielist-title bottom-divider">
-            {{ macros_translate::translate(key="serie_posts", default="Serie's posts:", language_strings=language_strings) }}
+        <div class="serieslist-title bottom-divider">
+            {{ macros_translate::translate(key="series_posts", default="Series' posts:", language_strings=language_strings) }}
         </div>
-        <div class="serielist-container">
+        <div class="serieslist-container">
             {% for post in section.pages | reverse %}
                 {% if loop.last %}
-                <section class="serielist-row">
+                <section class="serieslist-row">
                 {% else %}
-                <section class="serielist-row bottom-divider">
+                <section class="serieslist-row bottom-divider">
                 {% endif %}
 
-                    <ul class="serielist-meta">
+                    <ul class="serieslist-meta">
                         {{ loop.index }}
                         {% if post.draft %}
                         <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
@@ -45,12 +45,12 @@
                     </ul>
                 </section>
                 {% if loop.last %}
-                <section class="serielist-row">
+                <section class="serieslist-row">
                 {% else %}
-                <section class="serielist-row bottom-divider">
+                <section class="serieslist-row bottom-divider">
                 {% endif %}
-                    <div class="serielist-content">
-                        <h2 class="serielist-title">
+                    <div class="serieslist-content">
+                        <h2 class="serieslist-title">
                             <a href="{{ post.permalink }}">{{ post.title }}</a>
                         </h2>
 

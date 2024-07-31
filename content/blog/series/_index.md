@@ -1,12 +1,15 @@
 +++
-title = "First article of the serie"
-date = 2023-08-01
-description = "This is the first article of the serie."
+title = "How to deal with series"
+template = "series.html"
+sort_by = "date"
 
-[taxonomies]
-tags = ["showcase", "tutorial", "FAQ"]
+description = "This serie is about demoing how does series works."
+
+transparent = true
 
 [extra]
+series = true
+series_page_description = "full"
 +++
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

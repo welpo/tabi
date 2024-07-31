@@ -68,28 +68,28 @@
     }
 }
 
-#serie-title {
+#series-title {
     #go-to-button {
         float: right;
     }
 }
 
-.serielist-title {
+.serieslist-title {
     font-size: 1.2rem;
 }
 
-.serielist-container {
+.serieslist-container {
     display: grid;
     grid-template-columns: 1fr 8fr;
 }
 
-.serielist-row {
+.serieslist-row {
     display: flex;
     align-items: flex-start;
     background-color: var(--navbar-color);
     padding: 1rem 0;
 
-    .serielist-meta {
+    .serieslist-meta {
         margin-right: 0.7rem;
         padding: 0;
         color: var(--meta-color);
@@ -106,10 +106,10 @@
         }
     }
 
-    .serielist-content {
+    .serieslist-content {
         flex: 1;
 
-        .serielist-title {
+        .serieslist-title {
             margin: 0;
             font-weight: bold;
             font-size: 1.2em;
