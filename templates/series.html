@@ -14,9 +14,9 @@
     <article>
         <div id="series-title">
             <span class="title-label">{{ macros_translate::translate(key="series", default="SERIES", language_strings=language_strings) }}</span>
-            {%- set series_go_to_posts = macros_translate::translate(key="series_go_to_posts", default="Go to series' posts", language_strings=language_strings) -%}
-            <a id="go-to-button" href="#posts-list" class="no-hover-padding" title="{{ series_go_to_posts }}">
-                {{ series_go_to_posts }}
+            {%- set jump_to_series_posts = macros_translate::translate(key="series_jump_to_posts", default="Jump to posts", language_strings=language_strings) -%}
+            <a id="jump-to-posts-button" href="#posts-list" class="no-hover-padding" title="{{ jump_to_series_posts }}">
+                {{ jump_to_series_posts }}
             </a>
             {{ macros_page_header::page_header(title=section.title) }}
         </div>

@@ -64,7 +64,7 @@ load_comments = "Afficher les commentaires"
 
 # Series.
 series = "SERIE"
-series_go_to_posts = "Aller aux articles de la série"
+series_jump_to_posts = "Aller aux articles"
 series_posts = "Articles de la série :"
 page_of_a_series = "Cet article fait partie de la série : "
 
