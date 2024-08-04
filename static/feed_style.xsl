@@ -60,8 +60,8 @@
             <xsl:variable name="post_listing_date" select="/atom:feed/tabi:metadata/tabi:post_listing_date"/>
             <div class="bloglist-container">
               <xsl:for-each select="/atom:feed/atom:entry">
-                <section class="bloglist-row bottom-divider">
-                  <ul class="bloglist-meta">
+                <section class="bloglist-meta bottom-divider">
+                  <ul>
                     <xsl:variable name="show_date" select="$post_listing_date = 'date' or $post_listing_date = 'both'"/>
                     <xsl:variable name="show_updated" select="$post_listing_date = 'updated' or $post_listing_date = 'both'"/>
 
@@ -87,7 +87,9 @@
                       </li>
                     </xsl:if>
                   </ul>
-                  <div class="bloglist-content">
+                </section>
+                <section class="bloglist-content bottom-divider">
+                  <div>
                     <div class="bloglist-title">
                       <a>
                         <xsl:attribute name="href">
