@@ -1,4 +1,4 @@
-{% if paginator %}
+{% if paginator and paginator.number_pagers > 1 %}
     <ul class="pagination">
         {% if paginator.previous %}
             <li class="page-item page-prev">
