@@ -6,14 +6,15 @@
     {% for post in posts %}
         {% if loop.index <= max %}
             {% if loop.index == max %}
-                <section class="bloglist-row">
+                {% set bottom_divider = false %}
             {% elif loop.last %}
-                <section class="bloglist-row">
+                {% set bottom_divider = false %}
             {% else %}
-                <section class="bloglist-row bottom-divider">
+                {% set bottom_divider = true %}
             {% endif %}
 
-            <ul class="bloglist-meta">
+        <section class="bloglist-meta {% if bottom_divider -%}bottom-divider{%- endif -%}">
+            <ul>
                 {%- set allowed_post_listing_dates = ["date", "updated", "both"] -%}
                 {%- set post_listing_date = config.extra.post_listing_date | default(value="date") -%}
                 {%- if post_listing_date not in allowed_post_listing_dates -%}
@@ -42,7 +43,9 @@
                 <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
                 {% endif %}
             </ul>
-            <div class="bloglist-content">
+        </section>
+        <section class="bloglist-content {% if bottom_divider -%}bottom-divider{%- endif -%}">
+            <div>
                 <h2 class="bloglist-title">
                     <a href="{{ post.permalink }}">{{ post.title }}</a>
                 </h2>
