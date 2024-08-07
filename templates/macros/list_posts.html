@@ -1,4 +1,9 @@
-{% macro list_posts(posts, max, language_strings="", section_path="blog") %}
+{# `metadata` can be "dates", "indexes" or both (e.g. "dates indexes" or "indexes dates"). #}
+{# If both, the order doesn't matter and indexes will always be displayed before dates. #}
+{# It would also work with arrays (e.g. ["dates"] or ["indexes"] or even ["indexes","dates"]). #}
+{# Nevertheless, arrays cannot be used as a default value for a macro parameter in Tera (see https://github.com/Keats/tera/issues/710). #}
+{# `paginator` is only used to compute indexes metadata and can be let empty otherwise. #}
+{% macro list_posts(posts, max, metadata="dates", language_strings="", section_path="blog", paginator="") %}
 
 {%- set separator = config.extra.separator | default(value="•") -%}
 
@@ -15,27 +20,46 @@
 
         <section class="bloglist-meta {% if bottom_divider -%}bottom-divider{%- endif -%}">
             <ul>
-                {%- set allowed_post_listing_dates = ["date", "updated", "both"] -%}
-                {%- set post_listing_date = config.extra.post_listing_date | default(value="date") -%}
-                {%- if post_listing_date not in allowed_post_listing_dates -%}
-                    {{ throw(message="ERROR: Invalid value for config.extra.post_listing_date. Allowed values are 'date', 'updated', or 'both'.") }}
+                {%- if "indexes" in metadata -%}
+                    {%- set post_index = loop.index -%}
+                    {%- set nb_posts = posts | length -%}
+                    {# in case we have a pager, the index has been computed for the current page. #}
+                    {%- if paginator -%}
+                        {%- set nb_posts = paginator.total_pages -%}
+                        {%- set number_of_other_pages = paginator.current_index - 1 -%}
+                        {%- set posts_per_page = paginator.paginate_by -%}
+                        {%- set posts_in_other_pages = number_of_other_pages * posts_per_page -%}
+                        {%- set post_index = posts_in_other_pages + post_index -%}
+                    {%- endif -%}
+                    {%- if macros_settings::evaluate_setting_priority(setting="post_listing_index_reversed", page=section, default_global_value=false) == "true" -%}
+                        {# index starts at 1 instead of 0 #}
+                        {%- set post_index = nb_posts + 1 - post_index -%}
+                    {%- endif -%}
+                    <li class="index-label">{{ post_index }}</li>
                 {%- endif -%}
-
-                {%- set show_date = post.date and post_listing_date == "date" or post.date and post_listing_date == "both" or post.date and post_listing_date == "updated" and not post.updated -%}
-                {%- set show_updated = post.updated and post_listing_date == "updated" or post.updated and post_listing_date == "both" -%}
-
-                {%- if show_date or show_updated -%}
-                    {%- if show_date -%}
-                        <li class="date">{{- macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) -}}</li>
+                {%- if "dates" in metadata -%}
+                    {%- set allowed_post_listing_dates = ["date", "updated", "both"] -%}
+                    {%- set post_listing_date = config.extra.post_listing_date | default(value="date") -%}
+                    {%- if post_listing_date not in allowed_post_listing_dates -%}
+                        {{ throw(message="ERROR: Invalid value for config.extra.post_listing_date. Allowed values are 'date', 'updated', or 'both'.") }}
                     {%- endif -%}
-                    {%- if show_date and show_updated -%}
-                        <li class="mobile-only">{{- separator -}}</li>
-                    {%- endif -%}
-                    {%- if show_updated -%}
-                        {%- set last_updated_str = macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -%}
-                        {%- set formatted_date = macros_format_date::format_date(date=post.updated, short=true, language_strings=language_strings) -%}
-                        {%- set updated_str = last_updated_str | replace(from="$DATE", to=formatted_date) -%}
-                        <li class="date">{{ updated_str }}</li>
+
+                    {%- set show_date = post.date and post_listing_date == "date" or post.date and post_listing_date == "both" or post.date and post_listing_date == "updated" and not post.updated -%}
+                    {%- set show_updated = post.updated and post_listing_date == "updated" or post.updated and post_listing_date == "both" -%}
+
+                    {%- if show_date or show_updated -%}
+                        {%- if show_date -%}
+                            <li class="date">{{- macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) -}}</li>
+                        {%- endif -%}
+                        {%- if show_date and show_updated -%}
+                            <li class="mobile-only">{{- separator -}}</li>
+                        {%- endif -%}
+                        {%- if show_updated -%}
+                            {%- set last_updated_str = macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -%}
+                            {%- set formatted_date = macros_format_date::format_date(date=post.updated, short=true, language_strings=language_strings) -%}
+                            {%- set updated_str = last_updated_str | replace(from="$DATE", to=formatted_date) -%}
+                            <li class="date">{{ updated_str }}</li>
+                        {%- endif -%}
                     {%- endif -%}
                 {%- endif -%}
 
