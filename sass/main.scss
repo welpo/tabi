@@ -190,7 +190,7 @@ article {
     }
 }
 
-.section-title {
+.section-title, .seriesposts-title {
     display: block;
     margin: 0;
     margin-top: -0.15em;
@@ -198,6 +198,10 @@ article {
     font-weight: 550;
     font-size: 2.2em;
     line-height: 1.2em;
+}
+
+.seriesposts-title {
+    font-size: 1.5em;
 }
 
 .last-updated {
