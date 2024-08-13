@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-07-09
+updated = 2024-08-13
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -523,7 +523,7 @@ Mostra enllaços als articles anterior i següent a la part inferior dels posts.
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp", dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp", alt="Enllaços als articles anterior i següent", full_width=true) }}
 
-Per activar aquesta funció, estableix `show_previous_next_article_links = true`.
+Per activar aquesta funció, estableix `show_previous_next_article_links = true` i assegura't que la secció té un valor `sort_by` (per exemple `sort_by = "date"`).
 
 Per defecte, els articles següents estaran al costat esquerre de la pàgina i els articles anteriors al costat dret.
 Per invertir l'ordre (articles següents al costat dret i articles anteriors al costat esquerre), configura `invert_previous_next_article_links = true`.

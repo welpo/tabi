@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-07-09
+updated = 2024-08-13
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -530,7 +530,7 @@ Displays links to the previous and next articles at the bottom of posts. It look
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp", dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp" alt="Previous and next article links", full_width=true) }}
 
-To activate this feature, set `show_previous_next_article_links = true`.
+To activate this feature, set `show_previous_next_article_links = true` and ensure your section has a `sort_by` value (e.g. `sort_by = "date"`).
 
 By default, next articles will be on the left side of the page and previous articles will be on the right side.
 To reverse the order (next articles on the right and previous articles on the left), set `invert_previous_next_article_links = true`.

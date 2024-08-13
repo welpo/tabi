@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-07-09
+updated = 2024-08-13
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -523,7 +523,7 @@ Muestra enlaces a los artículos anterior y siguiente en la parte inferior de lo
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp", dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp", alt="Enlaces a los artículos anterior y siguiente", full_width=true) }}
 
-Para activar esta función, configura `show_previous_next_article_links = true`.
+Para activar esta función, configura `show_previous_next_article_links = true` y asegúrate de que tu sección tiene `sort_by` (por ejemplo, `sort_by = "date"`).
 
 Por defecto, los artículos siguientes estarán en el lado izquierdo de la página y los artículos anteriores en el lado derecho.
 Para invertir el orden (artículos siguientes en el lado derecho y artículos anteriores en el lado izquierdo), establece `invert_previous_next_article_links = true`.
