@@ -28,6 +28,7 @@ tabi supports the following languages:
 - Chinese (Simplified)
 - Chinese (Traditional)
 - English
+- Estonian
 - French
 - German
 - Hindi
