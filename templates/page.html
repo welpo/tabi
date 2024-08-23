@@ -110,7 +110,7 @@
             {%- if page.taxonomies and page.taxonomies.tags -%}
                 {%- if previous_visible -%}&nbsp;{{ separator }}&nbsp;{%- endif -%}<li>{{- macros_translate::translate(key="tags", default="tags", language_strings=language_strings) | capitalize -}}:&nbsp;</li>
                 {%- for tag in page.taxonomies.tags -%}
-                    <li><a href={{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}>{{ tag }}</a>
+                    <li><a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
                     {%- if not loop.last -%}
                         ,&nbsp;
                     {%- endif -%}
