@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2024-06-27
+updated = 2024-08-28
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -12,8 +12,84 @@ toc = true
 toc_levels = 2
 quick_navigation_buttons = true
 add_src_to_code_block = true
+mermaid = true
 social_media_card = "social_cards/es_blog_shortcodes.jpg"
 +++
+
+## Shortcodes de diagramas
+
+### Diagramas de Mermaid
+
+[Mermaid](https://github.com/mermaid-js/mermaid) es una herramienta de diagramación y gráficos que usa texto y código para generar diagramas. Admite diagramas de flujo, diagramas de secuencia, gráficos de Gantt y más.
+
+Para incluir un diagrama Mermaid en tu publicación, sigue estos dos pasos:
+
+1. Establece `mermaid = true` en la sección `[extra]` del front matter de tu página, sección o `config.toml`. Esto cargará el JavaScript necesario para renderizar los diagramas.
+
+2. Usa el shortcode `mermaid()` para definir tu diagrama. Por ejemplo:
+
+```plaintext
+{%/* mermaid() */%}
+classDiagram
+    class DistorsionesCognitivas {
+        +PensamientoTodoONada()
+        +Sobregeneralizacion()
+        +FiltroMental()
+        +SacarConclusionesPrecipitadas()
+    }
+    class PensamientoTodoONada {
+        +VerEnExtremos()
+    }
+    class Sobregeneralizacion {
+        +GeneralizarDeUnicoEjemplo()
+    }
+    class FiltroMental {
+        +EnfocarseEnNegativo()
+    }
+    class SacarConclusionesPrecipitadas {
+        +HacerSuposiciones()
+    }
+    DistorsionesCognitivas *-- PensamientoTodoONada
+    DistorsionesCognitivas *-- Sobregeneralizacion
+    DistorsionesCognitivas *-- FiltroMental
+    DistorsionesCognitivas *-- SacarConclusionesPrecipitadas
+{%/* end */%}
+```
+
+El diagrama se renderizará así:
+
+{% mermaid() %}
+classDiagram
+    class DistorsionesCognitivas {
+        +PensamientoTodoONada()
+        +Sobregeneralizacion()
+        +FiltroMental()
+        +SacarConclusionesPrecipitadas()
+    }
+    class PensamientoTodoONada {
+        +VerEnExtremos()
+    }
+    class Sobregeneralizacion {
+        +GeneralizarDeUnicoEjemplo()
+    }
+    class FiltroMental {
+        +EnfocarseEnNegativo()
+    }
+    class SacarConclusionesPrecipitadas {
+        +HacerSuposiciones()
+    }
+    DistorsionesCognitivas *-- PensamientoTodoONada
+    DistorsionesCognitivas *-- Sobregeneralizacion
+    DistorsionesCognitivas *-- FiltroMental
+    DistorsionesCognitivas *-- SacarConclusionesPrecipitadas
+{% end %}
+
+El shortcode de Mermaid admite dos parámetros:
+
+- `invertible`: Si se establece en `true` (por defecto), el diagrama se invertirá en modo oscuro, igual que las [imágenes invertibles](#imagen-invertible).
+- `full_width`: Permite que el diagrama ocupe el ancho del encabezado. Mira [imagen a ancho completo](#imagen-a-ancho-completo).
+
+{{ admonition(type="tip", title="CONSEJO", text="Puedes usar el [editor de Mermaid](https://mermaid.live/) para crear y previsualizar tus diagramas.") }}
 
 ## Shortcodes de imagen
 

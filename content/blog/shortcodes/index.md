@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-06-27
+updated = 2024-08-28
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -12,8 +12,84 @@ toc = true
 toc_levels = 2
 quick_navigation_buttons = true
 add_src_to_code_block = true
+mermaid = true
 social_media_card = "social_cards/blog_shortcodes.jpg"
 +++
+
+## Diagram shortcode
+
+### Mermaid diagrams
+
+[Mermaid](https://github.com/mermaid-js/mermaid) is a a diagramming and charting tool that uses text and code to generate diagrams. It supports flowcharts, sequence diagrams, Gantt charts, and more.
+
+To include a Mermaid diagram in your post, there are two steps:
+
+1. Set `mermaid = true` in the `[extra]` section of the front matter of your page, section or `config.toml`. This will load the JavaScript needed to render the diagrams.
+
+2. Use the `mermaid()` shortcode to define your diagram in your posts. For example:
+
+```plaintext
+{%/* mermaid() */%}
+classDiagram
+    class CognitiveDistortions {
+        +AllOrNothingThinking()
+        +Overgeneralization()
+        +MentalFilter()
+        +JumpingToConclusions()
+    }
+    class AllOrNothingThinking {
+        +SeeInExtremes()
+    }
+    class Overgeneralization {
+        +GeneralizeFromSingle()
+    }
+    class MentalFilter {
+        +FocusOnNegative()
+    }
+    class JumpingToConclusions {
+        +MakeAssumptions()
+    }
+    CognitiveDistortions *-- AllOrNothingThinking
+    CognitiveDistortions *-- Overgeneralization
+    CognitiveDistortions *-- MentalFilter
+    CognitiveDistortions *-- JumpingToConclusions
+{%/* end */%}
+```
+
+The diagram will be rendered as follows:
+
+{% mermaid() %}
+classDiagram
+    class CognitiveDistortions {
+        +AllOrNothingThinking()
+        +Overgeneralization()
+        +MentalFilter()
+        +JumpingToConclusions()
+    }
+    class AllOrNothingThinking {
+        +SeeInExtremes()
+    }
+    class Overgeneralization {
+        +GeneralizeFromSingle()
+    }
+    class MentalFilter {
+        +FocusOnNegative()
+    }
+    class JumpingToConclusions {
+        +MakeAssumptions()
+    }
+    CognitiveDistortions *-- AllOrNothingThinking
+    CognitiveDistortions *-- Overgeneralization
+    CognitiveDistortions *-- MentalFilter
+    CognitiveDistortions *-- JumpingToConclusions
+{% end %}
+
+The Mermaid shortcode supports two parameters:
+
+- `invertible`: If set to `true` (default), the diagram will be inverted in dark mode, just like [invertible images](#invertible-image).
+- `full_width`: Allows the diagram to take up the width of the header. See [full-width image](#full-width-image).
+
+{{ admonition(type="tip", text="You can use the [Mermaid Live Editor](https://mermaid.live/) to create and preview your diagrams.") }}
 
 ## Image shortcodes
 

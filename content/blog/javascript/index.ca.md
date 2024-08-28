@@ -1,7 +1,7 @@
 +++
 title = "Sense JavaScript obligatori"
 date = 2023-01-06
-updated = 2024-07-01
+updated = 2024-08-28
 description = "JavaScript només s'utilitza quan HTML i CSS no són suficients."
 
 [taxonomies]
@@ -26,6 +26,7 @@ Aquest tema no requereix JavaScript obligatori. Opcionalment, pot carregar una q
 Les següents opcions es poden especificar per a publicacions, seccions i globalment, seguint la jerarquia de `pàgina > secció > config.toml`:
 
 - [**Suport de KaTeX**](@/blog/markdown/index.ca.md#katex). Habilitat configurant `katex = true` (274 KB).
+- [**Diagrames de Mermaid**](@/blog/shortcodes/index.ca.md#diagrames-de-mermaid). Habilitat configurant `mermaid = true` (~2.5 MB).
 - [**Còpia de blocs de codi amb un sol clic**](@/blog/markdown/index.ca.md#bloc-de-codi). Habilitada configurant `copy_button = true`. (~700 bytes)
 - [**Mostrar ruta/URL a blocs de codi**](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url). S'activa configurant `add_src_to_code_block = true`. (~400 bytes)
 

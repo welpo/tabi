@@ -7,6 +7,10 @@ content="default-src 'self'
     {%- set giscus_enabled = config.extra.giscus.enabled_for_all_posts or page.extra.giscus -%}
     {%- set hyvortalk_enabled = config.extra.hyvortalk.enabled_for_all_posts or page.extra.hyvortalk -%}
     {%- set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso -%}
+    {%- if page -%}
+        {%- set mermaid_enabled = macros_settings::evaluate_setting_priority(setting="mermaid", page=page, default_global_value=false) == "true" -%}
+    {%- endif -%}
+    {%- set serve_local_mermaid = config.extra.serve_local_mermaid | default(value=true) -%}
 
     {#- Initialise a base script-src directive -#}
     {%- set script_src = "script-src 'self'" -%}
@@ -46,6 +50,10 @@ content="default-src 'self'
         {%- set script_src = script_src ~ " " ~ " utteranc.es" -%}
     {%- endif -%}
 
+    {%- if mermaid_enabled and not serve_local_mermaid -%}
+        {%- set script_src = script_src ~ " " ~ " cdn.jsdelivr.net" -%}
+    {%- endif -%}
+
     {#- Append WebSocket for Zola serve mode -#}
     {%- if config.mode == "serve" -%}
         {%- set connect_src = connect_src ~ " ws:" -%}
@@ -67,8 +75,13 @@ content="default-src 'self'
         {#- Handle directives that are not connect-src -#}
         {{ domain.directive }} {{ domain.domains | join(sep=' ') -}}
 
-        {%- if utterances_enabled or hyvortalk_enabled -%}
-            {%- if domain.directive == "style-src" %} 'unsafe-inline'
+        {%- if domain.directive == "style-src" -%}
+            {%- if utterances_enabled or hyvortalk_enabled or mermaid_enabled %} 'unsafe-inline'
+            {%- endif -%}
+        {%- endif -%}
+
+        {%- if domain.directive == "font-src" -%}
+            {%- if mermaid_enabled %} 'self'
             {%- endif -%}
         {%- endif -%}
 

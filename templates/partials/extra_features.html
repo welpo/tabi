@@ -35,6 +35,15 @@
     <script defer src="{{ get_url(path='js/katex.min.js', trailing_slash=false) | safe }}"></script>
 {%- endif -%}
 
+{# Load mermaid.js #}
+{%- if macros_settings::evaluate_setting_priority(setting="mermaid", page=page, default_global_value=false) == "true" -%}
+    {%- if config.extra.serve_local_mermaid | default(value=true) -%}
+        <script defer src="{{ get_url(path='js/mermaid.min.js', trailing_slash=false) | safe }}"></script>
+    {%- else -%}
+        <script defer src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+    {%- endif -%}
+{%- endif -%}
+
 {# Add copy button to code blocks #}
 {%- if macros_settings::evaluate_setting_priority(setting="copy_button", page=page, default_global_value=true) == "true" -%}
     {#- Add hidden HTML elements with the translated strings for the button's interactions -#}
