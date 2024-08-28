@@ -22,6 +22,7 @@ social_media_card = "social_cards/es_projects_tabi.jpg"
 - [Soporte multilingüe completo](https://welpo.github.io/tabi/es/blog/faq-languages/#como-gestiona-tabi-el-soporte-multilingue). Añade tantos idiomas como desees y deja que tus usuarios elijan con un selector de idioma.
 - Temas claros y oscuros. Se adapta a la configuración del sistema operativo, con un interruptor en la barra de navegación.
 - Puntuación perfecta en Lighthouse (Rendimiento, Accesibilidad, Mejores Prácticas y SEO).
+- Soporte para [diagramas de Mermaid](https://welpo.github.io/tabi/es/blog/shortcodes/#diagramas-de-mermaid) para crear diagramas y gráficos con texto.
 - Resaltado de sintaxis de código con colores basados en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - Soporte para [comentarios usando giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/es/blog/comments/).
 - Todo el JavaScript se puede [deshabilitar completamente](https://welpo.github.io/tabi/es/blog/javascript/).

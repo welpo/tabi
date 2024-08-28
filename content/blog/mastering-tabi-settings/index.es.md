@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-08-13
+updated = 2024-08-28
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -575,6 +575,18 @@ Establece `add_src_to_code_block = true` para habilitar el uso del [shortcode `a
 |   ✅   |   ✅    |      ✅       |        ✅       |         ✅          |
 
 KaTeX es una biblioteca JavaScript rápida y fácil de usar para la representación de matemáticas TeX en la web. Puedes habilitarlo con `katex = true`. Mira cómo se ve en tabi [aquí](/es/blog/markdown/#katex).
+
+### Soporte para Mermaid
+
+| Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:----------------:|:-------------------:|
+|   ✅   |    ✅   |      ✅       |        ✅        |         ✅          |
+
+[Mermaid](https://github.com/mermaid-js/mermaid) es una herramienta de diagramación y gráficos basada en JavaScript. Puedes activarla con `mermaid = true`.
+
+Por defecto, la biblioteca Mermaid se sirve localmente. Si prefieres usar un CDN, establece `serve_local_mermaid = false` en `config.toml`. El uso de un CDN servirá la versión más reciente de Mermaid; la opción local servirá la versión incluida con tabi.
+
+Consulta la [documentación de Mermaid](@/blog/shortcodes/index.es.md#diagramas-de-mermaid) para instrucciones de uso y ejemplos.
 
 ### Subconjunto de fuente personalizada
 

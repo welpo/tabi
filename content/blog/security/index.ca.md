@@ -1,7 +1,7 @@
 +++
 title = "Seguretat per defecte"
 date = 2023-02-22
-updated = 2024-05-30
+updated = 2024-08-28
 description = "tabi té una Política de Seguretat de Contingut (CSP) fàcilment personalitzable amb valors segurs per defecte. Obtingues tranquil·litat i un A+ en l'Observatori de Mozilla."
 
 [taxonomies]
@@ -34,7 +34,7 @@ Pots desactivar les capçaleres (permitint-ho tot) en una pàgina, secció, o gl
 
 **Notas**:
 
-- [Habilitar els comentaris](@/blog/comments/index.ca.md) o [les analítiques](@/blog/mastering-tabi-settings/index.ca.md#analisi-web) automàticament permet scripts/frames/estils/connexions en funció del servei habilitat.
+- [Habilitar els comentaris](@/blog/comments/index.ca.md), [les analítiques](@/blog/mastering-tabi-settings/index.ca.md#analisi-web), o [els diagrames de mermaid](@/blog/shortcodes/index.ca.md#diagrames-de-mermaid) permet automàticament els scripts/frames/estils/conexions pertinents.
 - Per utilitzar un [tema de resaltat de sintaxis integrat a Zola](https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting), has de permetre `unsafe-inline` a la directiva `style-src`:
 
     ```

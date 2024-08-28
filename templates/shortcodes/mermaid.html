@@ -1,0 +1,8 @@
+{% set invertible = invertible | default(value=true) %}
+{% set full_width = full_width | default(value=false) %}
+<noscript>
+    <strong>⚠️ JavaScript is required to render the diagram.</strong>
+</noscript>
+<pre class="mermaid{% if invertible %} invertible-image{% endif %}{% if full_width %} full-width{% endif %}">
+    {{ body | safe }}
+</pre>

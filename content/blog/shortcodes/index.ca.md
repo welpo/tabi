@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2024-06-27
+updated = 2024-08-28
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -12,8 +12,84 @@ toc = true
 toc_levels = 2
 quick_navigation_buttons = true
 add_src_to_code_block = true
+mermaid = true
 social_media_card = "social_cards/ca_blog_shortcodes.jpg"
 +++
+
+## Shortcodes de diagrames
+
+### Diagrames de Mermaid
+
+[Mermaid](https://github.com/mermaid-js/mermaid) és una eina de diagramació i gràfics que utilitza text i codi per generar diagrames. Admet diagrames de flux, diagrames de seqüència, gràfics de Gantt i més.
+
+Per incloure un diagrama Mermaid a la teva publicació, cal fer dues coses:
+
+1. Estableix `mermaid = true` a la secció `[extra]` del front matter de la teva pàgina, secció o `config.toml`. Això carregarà el JavaScript necessari per renderitzar els diagrames.
+
+2. Utilitza el shortcode `mermaid()` per definir el teu diagrama. Per exemple:
+
+```plaintext
+{%/* mermaid() */%}
+classDiagram
+    class DistorsionsCognitives {
+        +PensamentTotORes()
+        +Sobregeneralitzacio()
+        +FiltreMental()
+        +TreureConclusionsPrecipitades()
+    }
+    class PensamentTotORes {
+        +VeureEnExtrems()
+    }
+    class Sobregeneralitzacio {
+        +GeneralitzarDUnic()
+    }
+    class FiltreMental {
+        +EnfocarseEnNegatiu()
+    }
+    class TreureConclusionsPrecipitades {
+        +FerSuposicions()
+    }
+    DistorsionsCognitives *-- PensamentTotORes
+    DistorsionsCognitives *-- Sobregeneralitzacio
+    DistorsionsCognitives *-- FiltreMental
+    DistorsionsCognitives *-- TreureConclusionsPrecipitades
+{%/* end */%}
+```
+
+El diagrama es renderitzarà així:
+
+{% mermaid() %}
+classDiagram
+    class DistorsionsCognitives {
+        +PensamentTotORes()
+        +Sobregeneralitzacio()
+        +FiltreMental()
+        +TreureConclusionsPrecipitades()
+    }
+    class PensamentTotORes {
+        +VeureEnExtrems()
+    }
+    class Sobregeneralitzacio {
+        +GeneralitzarDUnic()
+    }
+    class FiltreMental {
+        +EnfocarseEnNegatiu()
+    }
+    class TreureConclusionsPrecipitades {
+        +FerSuposicions()
+    }
+    DistorsionsCognitives *-- PensamentTotORes
+    DistorsionsCognitives *-- Sobregeneralitzacio
+    DistorsionsCognitives *-- FiltreMental
+    DistorsionsCognitives *-- TreureConclusionsPrecipitades
+{% end %}
+
+El shortcode de Mermaid admet dos paràmetres:
+
+- `invertible`: Si s'estableix a `true` (per defecte), el diagrama invertirà els seus colors en mode fosc, igual que les [imatges invertibles](#imatge-invertible).
+- `full_width`: Permet que el diagrama ocupi l'amplada de la capçalera. Mira [imatge d'amplada completa](#imatge-d-amplada-completa).
+
+{{ admonition(type="tip", title="CONSELL", text="Empra l'[editor de Mermaid](https://mermaid.live/) per crear i previsualitzar els teus diagrames.") }}
 
 ## Shortcodes d'imatge
 

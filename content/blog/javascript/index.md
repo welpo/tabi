@@ -1,7 +1,7 @@
 +++
 title = "No mandatory JavaScript"
 date = 2023-01-06
-updated = 2024-07-01
+updated = 2024-08-28
 description = "JavaScript is only used when HTML and CSS aren't enough."
 
 [taxonomies]
@@ -26,6 +26,7 @@ This theme has no mandatory JavaScript. Optionally, it can load a minimal amount
 The following settings can be specified for posts, sections and globally, following the hierarchy of `page > section > config.toml`:
 
 - [**KaTeX support**](@/blog/markdown/index.md#katex). Enabled by setting `katex = true` (274 KB).
+- [**Mermaid diagrams**](@/blog/shortcodes/index.md#mermaid-diagrams). Enabled by setting `mermaid = true` (~2.5 MB).
 - [**One-click copy of code blocks**](@/blog/markdown/index.md#code-block). Enabled by setting `copy_button = true`. (~700 bytes)
 - [**Showing source (path or URL) in code blocks**](@/blog/shortcodes/index.md#show-source-or-path). Enabled by setting `add_src_to_code_block = true`. (~300 bytes)
 

@@ -119,6 +119,16 @@ footnote_backlinks = false
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 katex = false
 
+# Enable Mermaid diagrams for all posts.
+# Loads ~2.5MB of JavaScript.
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+mermaid = false
+
+# Serve Mermaid JavaScript locally. Version bundled with tabi.
+# If set to false, it will load the latest version from JSDelivr.
+# Only relevant when `mermaid = true`.
+serve_local_mermaid = true
+
 # Show links to previous and next articles at the bottom of posts.
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 show_previous_next_article_links = false
