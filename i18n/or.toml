@@ -1,0 +1,93 @@
+language_name = "Odia"  # Shown in language picker for multi-language sites.
+date_locale = "or_IN"
+full_stop = "।"  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu and config.extra.footer_menu.
+blog = "ବ୍ଲଗ"
+archive = "ଆର୍କାଇଭ"
+tags = "ଟ୍ୟାଗଗୁଡ଼ିକ"
+projects = "ପ୍ରକଳ୍ପଗୁଡ଼ିକ"
+about = "ବାବଦରେ"
+contact = "ଯୋଗାଯୋଗ"
+privacy = "ଗୋପନୀୟତା ନୀତି"
+site_statistics = "ସାଇଟ ପରିସଂଖ୍ୟାନ"
+sitemap = "ସାଇଟମ୍ୟାପ"
+
+# Search.
+search = "ଖୋଜନ୍ତୁ"
+search_icon_title = "ଖୋଜିବାକୁ $SHORTCUT କୁ ଚିପନ୍ତୁ କିମ୍ବା କ୍ଲିକ କରନ୍ତୁ"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "ଖୋଜା ସଫା କରନ୍ତୁ"  # Title of the X icon next to search input.
+zero_results = "କିଛି ମିଳିଲା ନାହିଁ"
+one_results = "$NUMBER ପରିଣାମ"  # "1 result"
+many_results = "$NUMBER ପରିଣାମଗୁଡ଼ିକ"  # "3 results"
+
+# Navigation.
+read_more = "ଆହୁରି ପଢ଼ନ୍ତୁ"
+one_posts = "$NUMBER ପୋଷ୍ଟ"
+many_posts = "$NUMBER ପୋଷ୍ଟଗୁଡ଼ିକ"  # "3 posts"
+prev = "ପୂର୍ବ"  # As in "Previous" page.
+next = "ପର"  # As in "Next" page.
+of = "ର"  # E.g. Page 1 "of" 3
+all_posts = "ସମସ୍ତ ପୋଷ୍ଟଗୁଡ଼ିକ"
+all_tags = "ସମସ୍ତ ଟ୍ୟାଗଗୁଡ଼ିକ"
+all_projects = "ସମସ୍ତ ପ୍ରକଳ୍ପଗୁଡ଼ିକ"
+featured_projects = "ବିଶେଷ ପ୍ରକଳ୍ପଗୁଡ଼ିକ"
+language_selection = "ଭାଷା ଚୟନ"
+toggle_mode = "$MODE ଟଗଲ କରନ୍ତୁ"  # $MODE will be replaced by a value (or both) below.
+dark = "ଅନ୍ଧାର"
+light = "ଆଲୋକ"
+reset_mode = "ସାଇଟର ମୂଳ ମୋଡକୁ ଆଣନ୍ତୁ"
+
+# Quick navigation buttons.
+toggle_toc = "ସୂଚୀପତ୍ର ଟଗଲ କରନ୍ତୁ"
+go_to_top = "ପୃଷ୍ଠାର ଶୀର୍ଷକୁ ଯାଆନ୍ତୁ"
+go_to_comments = "ମତାମତ ବିଭାଗକୁ ଯାଆନ୍ତୁ"
+
+# Post metadata.
+by_author = "$AUTHOR ଙ୍କ ଦ୍ୱାରା"  # $AUTHOR will be replaced by the author(s).
+author_separator = ", "  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = " ଏବଂ "  # For multiple authors. Ensure spacing where necessary.
+draft = "ଡ୍ରାଫ୍ଟ"
+zero_min_read = "<୧ ମିନିଟ ପଢ଼ିବା ସମୟ"
+one_min_read = "$NUMBER ମିନିଟ ପଢ଼ିବା ସମୟ"
+many_min_read = "$NUMBER ମିନିଟ ପଢ଼ିବା ସମୟ"
+zero_words = "କୌଣସି ଶବ୍ଦ ନାହିଁ "
+one_words = "$NUMBER ଶବ୍ଦ"
+many_words = "$NUMBER ଶବ୍ଦଗୁଡ଼ିକ"
+last_updated_on = "$DATE ଦିନ ଅଦ୍ୟତନ ହୋଇଥିଲା"
+see_changes = "ପରିବର୍ତ୍ତନଗୁଡ଼ିକୁ ଦେଖନ୍ତୁ"
+
+# Post body.
+table_of_contents = "ସୂଚୀପତ୍ର"
+load_comments = "ମତାମତ ଲୋଡ କରନ୍ତୁ"
+
+# Copy code block button.
+copied = "କପି ହେଲା!"
+copy_code_to_clipboard = "କ୍ଲିପବୋର୍ଡକୁ କପି କରନ୍ତୁ"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "ଚାଳିତ ଦ୍ୱାରା"
+and = "ଏବଂ"
+site_source = "ସାଇଟ ଉତ୍ସ"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "ଆପଣ ଯେଉଁ ପୃଷ୍ଠାଟିକୁ ଅନୁରୋଧ କରିଥିଲେ ତାହା ନାହିଁ"
+translation_missing = "କିମ୍ବା ଆପଣଙ୍କର ଭାଷାକୁ ଏପର୍ଯ୍ୟନ୍ତ ଅନୁବାଦିତ ହୋଇନାହିଁ"
+check_url = "ତୃଟିଗୁଡ଼ିକ ପାଇଁ URL କୁ ଦେଖନ୍ତୁ କିମ୍ବା"
+go_home = "ମୂଳ ପୃଷ୍ଠାକୁ ଫେରିଯାଆନ୍ତୁ"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "ମୂଳ ଉଦ୍ଧୃତ ଦେଖାନ୍ତୁ"
+show_translation = "ଅନୁବାଦ ଦେଖାନ୍ତୁ"
+open_quotation_mark = "“"
+close_quotation_mark = "”"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "ଏହା ଏକ ୱେବ୍ ଫିଡ୍, ଯାହାକୁ ଆଟମ୍ ଫିଡ୍ ମଧ୍ୟ କୁହାଯାଏ। ଠିକଣା ବାରରୁ URL କୁ ଆପଣଙ୍କ ନ୍ୟୁଜ୍ ରିଡରରେ କପି କରି ସବ୍ସ୍କ୍ରାଇବ୍ କରନ୍ତୁ। ଅଧିକ ଜାଣିବା ଏବଂ ଆରମ୍ଭ କରିବାକୁ ଫିଡ୍ ବିଷୟରେ ଯାଆନ୍ତୁ। ଏହା ମାଗଣା ଅଟେ ।"
+visit_the_site = "ୱେବସାଇଟକୁ ଯାଆନ୍ତୁ"
+recent_posts = "ସାମ୍ପ୍ରତିକ ପୋଷ୍ଟଗୁଡିକ"
