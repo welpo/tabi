@@ -34,6 +34,7 @@ tabi admet les següents llengües:
 - Hindi
 - Italià
 - Japonès
+- Odia
 - Persa
 - Portuguès (Europeu)
 - Rus

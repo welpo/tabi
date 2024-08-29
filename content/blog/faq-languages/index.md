@@ -35,6 +35,7 @@ tabi supports the following languages:
 - Italian
 - Japanese
 - Korean
+- Odia
 - Persian
 - Portuguese (European)
 - Russian
