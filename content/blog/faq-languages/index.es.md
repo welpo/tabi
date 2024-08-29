@@ -35,6 +35,7 @@ tabi admite los siguientes idiomas:
 - Inglés
 - Italiano
 - Japonés
+- Odia
 - Persa
 - Portugués (Europeo)
 - Ruso
