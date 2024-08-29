@@ -1,4 +1,4 @@
-language_name = "Odia"  # Shown in language picker for multi-language sites.
+language_name = "ଓଡ଼ିଆ"  # Shown in language picker for multi-language sites.
 date_locale = "or_IN"
 full_stop = "।"  # Used at the end of a sentence.
 
@@ -88,6 +88,6 @@ close_quotation_mark = "”"
 # Translations for stylised Atom feed.
 # https://welpo.github.io/tabi/atom.xml
 # Must contain "About Feeds"; it will become a link.
-about_feeds = "ଏହା ଏକ ୱେବ୍ ଫିଡ୍, ଯାହାକୁ ଆଟମ୍ ଫିଡ୍ ମଧ୍ୟ କୁହାଯାଏ। ଠିକଣା ବାରରୁ URL କୁ ଆପଣଙ୍କ ନ୍ୟୁଜ୍ ରିଡରରେ କପି କରି ସବ୍ସ୍କ୍ରାଇବ୍ କରନ୍ତୁ। ଅଧିକ ଜାଣିବା ଏବଂ ଆରମ୍ଭ କରିବାକୁ ଫିଡ୍ ବିଷୟରେ ଯାଆନ୍ତୁ। ଏହା ମାଗଣା ଅଟେ ।"
+about_feeds = "ଏହା ଏକ ୱେବ୍ ଫିଡ୍, ଯାହାକୁ ଆଟମ୍ ଫିଡ୍ ମଧ୍ୟ କୁହାଯାଏ। ଠିକଣା ବାରରୁ URL କୁ ଆପଣଙ୍କ ନ୍ୟୁଜ୍ ରିଡରରେ କପି କରି ସବ୍ସ୍କ୍ରାଇବ୍ କରନ୍ତୁ। ଅଧିକ ଜାଣିବା ଏବଂ ଆରମ୍ଭ କରିବାକୁ About Feeds ଯାଆନ୍ତୁ। ଏହା ମାଗଣା ଅଟେ ।"
 visit_the_site = "ୱେବସାଇଟକୁ ଯାଆନ୍ତୁ"
 recent_posts = "ସାମ୍ପ୍ରତିକ ପୋଷ୍ଟଗୁଡିକ"
