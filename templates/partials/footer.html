@@ -21,7 +21,7 @@
                     {%- if generate_feed and config.extra.feed_icon and feed_url -%}
                     <li>
                         <a class="nav-links no-hover-padding social" rel="{{ rel_attributes }}" {{ blank_target }} href="{{ get_url(path=feed_url, lang=lang, trailing_slash=false) | safe }}">
-                        <img alt="feed" title="feed" src="{{ get_url(path='/social_icons/rss.svg') }}">
+                        <img loading="lazy" alt="feed" title="feed" src="{{ get_url(path='/social_icons/rss.svg') }}">
                         </a>
                     </li>
                     {%- endif -%}
@@ -48,7 +48,7 @@
                             {%- else -%}
                                 <a class="nav-links no-hover-padding social" href="mailto:{{ config.extra.email | safe }}">
                             {%- endif -%}
-                                <img alt="email" title="email" src="{{ get_url(path='social_icons/email.svg') }}">
+                                <img loading="lazy" alt="email" title="email" src="{{ get_url(path='social_icons/email.svg') }}">
                             </a>
                         </li>
                     {%- endif -%}
@@ -57,7 +57,7 @@
                         {% for social in config.extra.socials %}
                             <li>
                                 <a class="nav-links no-hover-padding social" rel="{{ rel_attributes }} me" {{ blank_target }} href="{{ social.url | safe }}">
-                                    <img alt="{{ social.name }}" title="{{ social.name }}" src="{{ get_url(path='social_icons/' ~ social.icon ~ '.svg') }}">
+                                    <img loading="lazy" alt="{{ social.name }}" title="{{ social.name }}" src="{{ get_url(path='social_icons/' ~ social.icon ~ '.svg') }}">
                                 </a>
                             </li>
                         {% endfor %}
