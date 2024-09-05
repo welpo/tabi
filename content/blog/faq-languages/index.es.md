@@ -1,7 +1,7 @@
 +++
 title = "¿Lost in Translation? Explora las capacidades multilingües de tabi"
 date = 2023-09-12
-updated = 2024-03-01
+updated = 2024-08-18
 description = "Descubre cómo tabi te ayuda a conectar con una audiencia global gracias a sus funciones multilingües. Aprende a cambiar el idioma por defecto, añadir más idiomas y aportar tus propias traducciones."
 
 [taxonomies]
@@ -29,11 +29,13 @@ tabi admite los siguientes idiomas:
 - Chino (Simplificado)
 - Coreano
 - Español
+- Estonio
 - Francés
 - Hindi
 - Inglés
 - Italiano
 - Japonés
+- Odia
 - Persa
 - Portugués (Europeo)
 - Ruso

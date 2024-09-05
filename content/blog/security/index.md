@@ -1,7 +1,7 @@
 +++
 title = "Secure by default"
 date = 2023-02-22
-updated = 2024-05-30
+updated = 2024-08-28
 description = "tabi has an easily customizable Content Security Policy (CSP) with safe defaults. Get peace of mind and an A+ on Mozilla Observatory."
 
 [taxonomies]
@@ -34,7 +34,7 @@ You can disable the CSP (allowing all connections) on a page, section, or global
 
 **Notes**:
 
-- [Enabling comments](@/blog/comments/index.md) or [analytics](@/blog/mastering-tabi-settings/index.md#analytics) automatically allows scripts/frames/styles/connections as needed from the respective services.
+- [Enabling comments](@/blog/comments/index.md), [analytics](@/blog/mastering-tabi-settings/index.md#analytics), or [mermaid diagrams](@/blog/shortcodes/index.md#mermaid-diagrams) automatically allows scripts/frames/styles/connections as needed.
 - To use a [Zola built-in syntax highlighting theme](https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting), you need to allow `unsafe-inline` in the `style-src` directive:
 
     ```

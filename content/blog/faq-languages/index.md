@@ -28,12 +28,14 @@ tabi supports the following languages:
 - Chinese (Simplified)
 - Chinese (Traditional)
 - English
+- Estonian
 - French
 - German
 - Hindi
 - Italian
 - Japanese
 - Korean
+- Odia
 - Persian
 - Portuguese (European)
 - Russian

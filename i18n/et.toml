@@ -1,0 +1,93 @@
+language_name = "Eesti"  # Shown in language picker for multi-language sites.
+date_locale = "et_EE"
+full_stop = "."  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu and config.extra.footer_menu.
+blog = "blogi"
+archive = "arhiiv"
+tags = "sildid"
+projects = "projektid"
+about = "minust"
+contact = "kontakt"
+privacy = "privaatsuspoliitika"
+site_statistics = "saidi statistika"
+sitemap = "saidikaart"
+
+# Search.
+search = "Otsing"
+search_icon_title = "Otsingu avamiseks klõpsake või vajutage $SHORTCUT"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "Tühjenda otsing"  # Title of the X icon next to search input.
+zero_results = "Tulemusi pole"
+one_results = "$NUMBER tulemus"  # "1 result"
+many_results = "$NUMBER tulemust"  # "3 results"
+
+# Navigation.
+read_more = "Loe edasi"
+one_posts = "$NUMBER postitus"
+many_posts = "$NUMBER postitust"  # "3 posts"
+prev = "Eelmine"  # As in "Previous" page.
+next = "Järgmine"  # As in "Next" page.
+of = "/"  # E.g. Page 1 "of" 3
+all_posts = "Kõik postitused"
+all_tags = "Kõik sildid"
+all_projects = "Kõik projektid"
+featured_projects = "Esiletõstetud projektid"
+language_selection = "Keele valik"
+toggle_mode = "Lülita $MODE režiim"  # $MODE will be replaced by a value (or both) below.
+dark = "tume"
+light = "hele"
+reset_mode = "Lähtesta vaikerežiim"
+
+# Quick navigation buttons.
+toggle_toc = "Sisukorra kuvamine/peitmine"
+go_to_top = "Mine lehe ülaossa"
+go_to_comments = "Mine kommentaaride juurde"
+
+# Post metadata.
+by_author = "Autor: $AUTHOR"  # $AUTHOR will be replaced by the author(s).
+author_separator = ", "  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = " ja "  # For multiple authors. Ensure spacing where necessary.
+draft = "MUSTAND"
+zero_min_read = "Lugemisaeg <1 min"
+one_min_read = "Lugemisaeg $NUMBER min"
+many_min_read = "Lugemisaeg $NUMBER min"
+zero_words = "Sõnu pole"
+one_words = "$NUMBER sõna"
+many_words = "$NUMBER sõna"
+last_updated_on = "Uuendatud $DATE"
+see_changes = "Vaata muudatusi"
+
+# Post body.
+table_of_contents = "Sisukord"
+load_comments = "Lae kommentaarid"
+
+# Copy code block button.
+copied = "Kopeeritud!"
+copy_code_to_clipboard = "Kopeeri kood lõikelauale"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "Toetab"
+and = "ja"
+site_source = "Saidi lähtekood"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "Tundub, et otsitud lehte ei leitud"
+translation_missing = "või pole seda veel teie keelde tõlgitud"
+check_url = "Kontrollige URL-i vigade suhtes või"
+go_home = "minge tagasi avalehele"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "Näita originaaltsitaati"
+show_translation = "Näita tõlget"
+open_quotation_mark = "“"
+close_quotation_mark = "”"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "See on veebivoog, tuntud ka kui Atom-voog. Tellimiseks kopeerige URL aadressiribalt oma uudistelugerisse. Külastage About Feeds lehte, et õppida ja alustada. See on tasuta."
+visit_the_site = "Külasta veebisaiti"
+recent_posts = "Viimased postitused"

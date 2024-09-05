@@ -1,7 +1,7 @@
 +++
 title = "Sin JavaScript obligatorio"
 date = 2023-01-06
-updated = 2024-07-01
+updated = 2024-08-28
 description = "JavaScript solo se utiliza cuando HTML y CSS no son suficientes."
 
 [taxonomies]
@@ -26,6 +26,7 @@ Este tema no requiere JavaScript de manera obligatoria. Opcionalmente, puede car
 Las siguientes opciones pueden especificarse para publicaciones, secciones y a nivel global, siguiendo la jerarquía de `página > sección > config.toml`:
 
 - [**Soporte de KaTeX**](@/blog/markdown/index.es.md#katex). Habilitado al configurar `katex = true` (274 KB).
+- [**Diagramas de Mermaid**](@/blog/shortcodes/index.es.md#diagramas-de-mermaid). Habilitado al configurar `mermaid = true` (~2.5 MB).
 - [**Copia de bloques de código con un solo clic**](@/blog/markdown/index.es.md#bloque-de-codigo). Habilitado al configurar `copy_button = true` (~700 bytes).
 - [**Mostrar ruta/URL en bloques de código**](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url). Se activa configurando `add_src_to_code_block = true`. (~400 bytes)
 

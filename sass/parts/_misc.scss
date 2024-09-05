@@ -62,8 +62,8 @@ ul {
 
 blockquote {
     margin: 0;
-    border-left: 0.3rem solid var(--primary-color);
-    padding-left: 1em;
+    border-inline-start: 0.3rem solid var(--primary-color);
+    padding-inline-start: 1em;
 }
 
 a {
@@ -237,4 +237,12 @@ details summary {
 :dir(rtl) .arrow-corner {
     display: inline-block;
     transform: rotate(270deg);
+}
+
+.mermaid p {
+    font-family: var(--sans-serif-font) !important;
+}
+
+.mermaid .node .label {
+    max-width: none !important;
 }

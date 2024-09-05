@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-08-13
+updated = 2024-08-28
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -583,6 +583,18 @@ Setting `add_src_to_code_block = true` enables the use of the [`add_src_to_code_
 |  ✅  |   ✅    |      ✅       |         ✅        |         ✅          |
 
 KaTeX is a fast, easy-to-use JavaScript library for TeX math rendering on the web. You can enable it with `katex = true`. See what it looks like in tabi [here](/blog/markdown/#katex).
+
+### Mermaid Support
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ✅  |    ✅    |      ✅       |         ✅         |         ✅          |
+
+[Mermaid](https://github.com/mermaid-js/mermaid) is a JavaScript-based diagramming and charting tool. You can enable it with `mermaid = true`.
+
+By default, the Mermaid library is served locally. If you prefer to use a CDN, set `serve_local_mermaid = false` in `config.toml`. Using a CDN will serve the latest version of Mermaid; the local option will serve the version bundled with tabi.
+
+See the [Mermaid documentation](@/blog/shortcodes/index.md#mermaid-diagrams) for usage instructions and examples.
 
 ### Custom Font Subset
 
