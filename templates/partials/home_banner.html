@@ -7,14 +7,15 @@
         </section>
     </div>
     {%- if header.img -%}
-        {%- if header.img is containing("$BASE_URL") -%}
-            {# Conversion no longer supported in favour of proper path. #}
-            {{ throw(message="ERROR: The image path for the header should not contain '$BASE_URL'. Please remove it and use the proper image path.") }}
-        {%- else -%}
-            {%- set image_path = get_url(path=header.img, trailing_slash=false) | safe -%}
-        {%- endif -%}
-        <div id="image-container-home">
-            <img fetchpriority="high" alt="{{ header.img_alt | default(value="the owner") }}" id="banner-home-img" src="{{ image_path }}" />
-        </div>
+    {%- if header.img is containing("$BASE_URL") -%}
+    {# Conversion no longer supported in favour of proper path. #}
+    {{ throw(message="ERROR: The image path for the header should not contain '$BASE_URL'. Please remove it and use the proper image path.") }}
+    {%- else -%}
+    {%- set image_path = get_url(path=header.img, trailing_slash=false) | safe -%}
+    {%- endif -%}
+    <div id="image-container-home">
+        {% set meta = get_image_metadata(path=header.img, allow_missing=true) %}
+        <img fetchpriority="high" alt="{{ header.img_alt | default(value="the owner") }}" id="banner-home-img" src="{{ image_path }}" {% if meta.width %}width="{{ meta.width }}" {% endif %} {% if meta.height %}height="{{ meta.height }}" {% endif %} />
+    </div>
     {%- endif -%}
 </div>
