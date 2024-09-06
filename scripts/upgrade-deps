@@ -1,0 +1,349 @@
+#!/usr/bin/env bash
+set -eu
+
+MERMAID_DIR="static/js"
+MERMAID_FILE="mermaid.min.js"
+MERMAID_PATH="${MERMAID_DIR}/${MERMAID_FILE}"
+KATEX_JS_DIR="static/js"
+KATEX_CSS_DIR="static"
+KATEX_FONTS_DIR="static/fonts/KaTeX"
+KATEX_JS_FILE="katex.min.js"
+KATEX_CSS_FILE="katex.min.css"
+KATEX_JS_PATH="${KATEX_JS_DIR}/${KATEX_JS_FILE}"
+KATEX_CSS_PATH="${KATEX_CSS_DIR}/${KATEX_CSS_FILE}"
+UGLIFY_ITERATIONS=5
+CURL_RETRIES=3
+
+cleanup() {
+    rm -rf "$TEMP_DIR"
+}
+
+exit_with_message() {
+    echo "$1" >&2
+    exit 1
+}
+
+print_usage() {
+    echo "Usage: $0 [options]"
+    echo "Options:"
+    echo "  --mermaid   Upgrade Mermaid.js"
+    echo "  --katex     Upgrade KaTeX"
+    echo "  --all       Upgrade all dependencies (default)"
+    echo "  --help      Display this help message"
+}
+
+check_dependency() {
+    if ! command -v "$1" &> /dev/null; then
+        exit_with_message "$1 is required but not installed."
+    fi
+}
+
+curl_with_retry() {
+    local url="$1"
+    local output="$2"
+    local retries="$CURL_RETRIES"
+    local wait_time=5
+
+    while [ $retries -gt 0 ]; do
+        if curl -L "$url" -o "$output"; then
+            return 0
+        else
+            echo "Curl failed. Retrying in $wait_time seconds…"
+            sleep $wait_time
+            retries=$((retries - 1))
+            wait_time=$((wait_time * 2))
+        fi
+    done
+
+    echo "Failed to download after $CURL_RETRIES attempts." >&2
+    return 1
+}
+
+get_latest_version_jsdelivr() {
+    local package="$1"
+    local temp_file="${TEMP_DIR}/jsdelivr_response.json"
+    if curl_with_retry "https://data.jsdelivr.com/v1/package/npm/${package}" "$temp_file"; then
+        jq -r '.tags.latest' "$temp_file"
+    else
+        return 1
+    fi
+}
+
+get_latest_version_github() {
+    local repo="$1"
+    local temp_file="${TEMP_DIR}/github_response.json"
+    if curl_with_retry "https://api.github.com/repos/${repo}/releases/latest" "$temp_file"; then
+        jq -r '.tag_name' "$temp_file" | sed -E 's/^v?//'
+    else
+        return 1
+    fi
+}
+
+compare_md5() {
+    local new_file="$1"
+    local current_file="$2"
+    local new_md5=$(md5sum "$new_file" | awk '{ print $1 }')
+
+    if [ -f "$current_file" ]; then
+        local current_md5=$(md5sum "$current_file" | awk '{ print $1 }')
+        if [ "$new_md5" = "$current_md5" ]; then
+            echo "same"
+        else
+            echo "different"
+        fi
+    else
+        echo "new"
+    fi
+}
+
+uglify_file() {
+    local file="$1"
+    local iterations="$2"
+
+    for i in $(seq 1 "$iterations"); do
+        echo "Running UglifyJS iteration $i"
+        uglifyjs --compress --mangle -- "$file" > "${file}.tmp"
+        mv "${file}.tmp" "$file"
+    done
+}
+
+generate_commit_message() {
+    local template="$1"
+    local version="$2"
+    echo "${template//\{VERSION\}/${version}}"
+}
+
+
+safe_file_manipulation() {
+    local file="$1"
+    local manipulation_command="$2"
+    local temp_file="${file}.tmp"
+    awk "${manipulation_command}" "$file" > "$temp_file"
+    mv "$temp_file" "$file"
+}
+
+append_autorender_extension() {
+    local file="$1"
+    # Auto-render Extension (https://katex.org/docs/autorender) with a slight modification to add `$` inline delimiters.
+    local extension_code='
+,function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("katex")):"function"==typeof define&&define.amd?define(["katex"],t):"object"==typeof exports?exports.renderMathInElement=t(require("katex")):e.renderMathInElement=t(e.katex)}("undefined"!=typeof self?self:this,function(e){return function(){"use strict";var t={771:function(t){t.exports=e}},$={};function r(e){var _=$[e];if(void 0!==_)return _.exports;var n=$[e]={exports:{}};return t[e](n,n.exports,r),n.exports}r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,{a:t}),t},r.d=function(e,t){for(var $ in t)r.o(t,$)&&!r.o(e,$)&&Object.defineProperty(e,$,{enumerable:!0,get:t[$]})},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)};var _,n,a,i,o,s,l,h,m={};return r.d(m,{default:function(){return h}}),_=r(771),n=r.n(_),a=function(e,t,$){for(var r=$,_=0,n=e.length;r<t.length;){var a=t[r];if(_<=0&&t.slice(r,r+n)===e)return r;"\\"===a?r++:"{"===a?_++:"}"===a&&_--,r++}return -1},i=/^\\begin{/,o=function(e,t){for(var $,r=[],_=RegExp("("+t.map(function(e){return e.left.replace(/[-/\\^$*+?.()|[\]{}]/g,"\\$&")}).join("|")+")");-1!==($=e.search(_));){$>0&&(r.push({type:"text",data:e.slice(0,$)}),e=e.slice($));var n=t.findIndex(function(t){return e.startsWith(t.left)});if(-1===($=a(t[n].right,e,t[n].left.length)))break;var o=e.slice(0,$+t[n].right.length),s=i.test(o)?o:e.slice(t[n].left.length,$);r.push({type:"math",data:s,rawData:o,display:t[n].display}),e=e.slice($+t[n].right.length)}return""!==e&&r.push({type:"text",data:e}),r},s=function(e,t){var $=o(e,t.delimiters);if(1===$.length&&"text"===$[0].type)return null;for(var r=document.createDocumentFragment(),_=0;_<$.length;_++)if("text"===$[_].type)r.appendChild(document.createTextNode($[_].data));else{var a=document.createElement("span"),i=$[_].data;t.displayMode=$[_].display;try{t.preProcess&&(i=t.preProcess(i)),n().render(i,a,t)}catch(s){if(!(s instanceof n().ParseError))throw s;t.errorCallback("KaTeX auto-render: Failed to parse `"+$[_].data+"` with ",s),r.appendChild(document.createTextNode($[_].rawData));continue}r.appendChild(a)}return r},l=function e(t,$){for(var r=0;r<t.childNodes.length;r++){var _=t.childNodes[r];if(3===_.nodeType){for(var n=_.textContent,a=_.nextSibling,i=0;a&&a.nodeType===Node.TEXT_NODE;)n+=a.textContent,a=a.nextSibling,i++;var o=s(n,$);if(o){for(var l=0;l<i;l++)_.nextSibling.remove();r+=o.childNodes.length-1,t.replaceChild(o,_)}else r+=i}else 1===_.nodeType&&function(){var t=" "+_.className+" ";-1===$.ignoredTags.indexOf(_.nodeName.toLowerCase())&&$.ignoredClasses.every(function(e){return -1===t.indexOf(" "+e+" ")})&&e(_,$)}()}},h=function(e,t){if(!e)throw Error("No element provided to render");var $={};for(var r in t)t.hasOwnProperty(r)&&($[r]=t[r]);$.delimiters=$.delimiters||[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\begin{equation}",right:"\\end{equation}",display:!0},{left:"\\begin{align}",right:"\\end{align}",display:!0},{left:"\\begin{alignat}",right:"\\end{alignat}",display:!0},{left:"\\begin{gather}",right:"\\end{gather}",display:!0},{left:"\\begin{CD}",right:"\\end{CD}",display:!0},{left:"\\[",right:"\\]",display:!0}],$.ignoredTags=$.ignoredTags||["script","noscript","style","textarea","pre","code","option"],$.ignoredClasses=$.ignoredClasses||[],$.errorCallback=$.errorCallback||console.error,$.macros=$.macros||{},l(e,$)},m=m.default}()}),document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body)})
+'
+    safe_file_manipulation "$file" '{gsub(/;$/,""); print $0}'
+    echo "$extension_code" >> "$file"
+    echo ";" >> "$file"
+}
+
+modify_katex_css() {
+    local file="$1"
+    safe_file_manipulation "$file" '{gsub(/url\(fonts\/KaTeX/, "url(fonts/KaTeX/KaTeX"); print $0}'
+}
+
+upgrade_mermaid() {
+    if [ ! -d "$MERMAID_DIR" ]; then
+        exit_with_message "Directory ${MERMAID_DIR} does not exist. Are you running this script from the root of the repository?"
+    fi
+
+    local commit_msg_template=$(cat << EOM
+⬆️ chore(deps): upgrade mermaid to v{VERSION}
+
+Changelog: https://github.com/mermaid-js/mermaid/releases/tag/mermaid%40{VERSION}
+
+Source: https://cdn.jsdelivr.net/npm/mermaid@{VERSION}/dist/mermaid.min.js
+EOM
+)
+
+    local latest_version=$(get_latest_version_jsdelivr "mermaid" || get_latest_version_github "mermaid-js/mermaid")
+
+    if [ -z "$latest_version" ]; then
+        exit_with_message "Unable to determine the latest Mermaid.js version."
+    fi
+
+    echo "Latest Mermaid.js version: ${latest_version}"
+
+    local download_url="https://cdn.jsdelivr.net/npm/mermaid@${latest_version}/dist/mermaid.min.js"
+    if ! curl_with_retry "${download_url}" "${TEMP_DIR}/${MERMAID_FILE}"; then
+        exit_with_message "Failed to download Mermaid.js"
+    fi
+
+    uglify_file "${TEMP_DIR}/${MERMAID_FILE}" "$UGLIFY_ITERATIONS"
+    local comparison_result=$(compare_md5 "${TEMP_DIR}/${MERMAID_FILE}" "${MERMAID_PATH}")
+
+    case "$comparison_result" in
+        "same")
+            echo "Mermaid: New version is the same as current version. No update needed."
+            return 0
+            ;;
+        "different")
+            echo "Mermaid: New version differs from current version. Proceeding with update."
+            mv "${TEMP_DIR}/${MERMAID_FILE}" "${MERMAID_PATH}"
+            ;;
+        "new")
+            echo "Mermaid: Creating new file: ${MERMAID_PATH}"
+            mv "${TEMP_DIR}/${MERMAID_FILE}" "${MERMAID_PATH}"
+            ;;
+    esac
+
+    echo "Mermaid.js updated and minified successfully!"
+    echo "Preparing to commit changes…"
+    git add "${MERMAID_PATH}"
+    local commit_msg=$(generate_commit_message "$commit_msg_template" "$latest_version")
+    git commit -m "${commit_msg}"
+
+    echo "Most recent commit:"
+    git log -1
+}
+
+upgrade_katex() {
+    if [ ! -d "$KATEX_JS_DIR" ] || [ ! -d "$KATEX_CSS_DIR" ]; then
+        exit_with_message "KaTeX directories do not exist. Are you running this script from the root of the repository?"
+    fi
+
+    local commit_msg_template=$(cat << EOM
+⬆️ chore(deps): upgrade KaTeX to v{VERSION}
+
+Changelog: https://github.com/KaTeX/KaTeX/releases/tag/v{VERSION}
+
+Source: https://github.com/KaTeX/KaTeX/releases/download/v{VERSION}/katex.tar.gz
+EOM
+)
+
+    local latest_version=$(get_latest_version_github "KaTeX/KaTeX")
+
+    if [ -z "$latest_version" ]; then
+        exit_with_message "Unable to determine the latest KaTeX version."
+    fi
+
+    echo "Latest KaTeX version: ${latest_version}"
+
+    local download_url="https://github.com/KaTeX/KaTeX/releases/download/v${latest_version}/katex.tar.gz"
+    if ! curl_with_retry "${download_url}" "${TEMP_DIR}/katex.tar.gz"; then
+        exit_with_message "Failed to download KaTeX"
+    fi
+
+    tar -xzf "${TEMP_DIR}/katex.tar.gz" -C "${TEMP_DIR}"
+
+    # JS.
+    cp "${TEMP_DIR}/katex/katex.min.js" "${TEMP_DIR}/${KATEX_JS_FILE}"
+    append_autorender_extension "${TEMP_DIR}/${KATEX_JS_FILE}"
+    uglify_file "${TEMP_DIR}/${KATEX_JS_FILE}" "$UGLIFY_ITERATIONS"
+    local js_comparison_result=$(compare_md5 "${TEMP_DIR}/${KATEX_JS_FILE}" "${KATEX_JS_PATH}")
+
+    # CSS.
+    cp "${TEMP_DIR}/katex/katex.min.css" "${TEMP_DIR}/${KATEX_CSS_FILE}"
+    modify_katex_css "${TEMP_DIR}/${KATEX_CSS_FILE}"
+    local css_comparison_result=$(compare_md5 "${TEMP_DIR}/${KATEX_CSS_FILE}" "${KATEX_CSS_PATH}")
+
+    if [ "$js_comparison_result" = "same" ] && [ "$css_comparison_result" = "same" ]; then
+        echo "KaTeX: New version is the same as current version. No update needed."
+        return 0
+    fi
+
+    local changes_made=false
+    if [ "$js_comparison_result" != "same" ]; then
+        echo "KaTeX JS: New version differs from current version. Proceeding with update."
+        mv "${TEMP_DIR}/${KATEX_JS_FILE}" "${KATEX_JS_PATH}"
+        changes_made=true
+    fi
+
+    if [ "$css_comparison_result" != "same" ]; then
+        echo "KaTeX CSS: New version differs from current version. Proceeding with update."
+        mv "${TEMP_DIR}/${KATEX_CSS_FILE}" "${KATEX_CSS_PATH}"
+        changes_made=true
+    fi
+
+    rm -rf "${KATEX_FONTS_DIR}"
+    mkdir -p "${KATEX_FONTS_DIR}"
+    cp -r "${TEMP_DIR}/katex/fonts"/* "${KATEX_FONTS_DIR}/"
+
+    if [ "$changes_made" = false ]; then
+        echo "No changes detected in KaTeX files. Skipping commit."
+        return 0
+    fi
+
+    echo "KaTeX updated successfully!"
+    echo "Preparing to commit changes…"
+    git add "${KATEX_JS_PATH}" "${KATEX_CSS_PATH}" "${KATEX_FONTS_DIR}"
+    local commit_msg=$(generate_commit_message "$commit_msg_template" "$latest_version")
+    git commit -m "${commit_msg}"
+
+    echo "Most recent commit:"
+    git log -1
+}
+
+main() {
+    local upgrade_mermaid=false
+    local upgrade_katex=false
+    # No args = default to upgrading all dependencies.
+    if [ $# -eq 0 ]; then
+        upgrade_mermaid=true
+        upgrade_katex=true
+    else
+        while [[ $# -gt 0 ]]; do
+            case $1 in
+                --mermaid)
+                    upgrade_mermaid=true
+                    shift
+                    ;;
+                --katex)
+                    upgrade_katex=true
+                    shift
+                    ;;
+                --all)
+                    upgrade_mermaid=true
+                    upgrade_katex=true
+                    shift
+                    ;;
+                --help)
+                    print_usage
+                    exit 0
+                    ;;
+                *)
+                    echo "Unknown option: $1"
+                    print_usage
+                    exit 1
+                    ;;
+            esac
+        done
+    fi
+
+    check_dependency "jq"
+    check_dependency "uglifyjs"
+    check_dependency "curl"
+    check_dependency "git"
+    check_dependency "sed"
+    check_dependency "awk"
+    check_dependency "md5sum"
+    check_dependency "tar"
+    TEMP_DIR=$(mktemp -d)
+    trap cleanup EXIT
+
+
+    if ! git diff --cached --quiet; then
+        exit_with_message "There are staged changes. Unstage them before running this script."
+    fi
+
+    echo "Updating local repository…"
+    git fetch origin
+    local git_status=$(git status -uno)
+    if echo "$git_status" | grep -q "Your branch is behind"; then
+        exit_with_message "Your local branch is behind the remote. Pull the latest changes before running this script."
+    elif echo "$git_status" | grep -q "Your branch is ahead"; then
+        echo "Your local branch is ahead of the remote. Checking if local changes can be pushed…"
+        if ! git push --dry-run &> /dev/null; then
+            exit_with_message "Unable to push local changes. Resolve any conflicts before running this script."
+        fi
+    elif ! echo "$git_status" | grep -q "Your branch is up to date"; then
+        exit_with_message "Unable to determine if branch is up to date. Check your git status manually."
+    fi
+    echo "Local repository is ready."
+
+    if [ "$upgrade_mermaid" = true ]; then
+        upgrade_mermaid
+    fi
+
+    if [ "$upgrade_katex" = true ]; then
+        upgrade_katex
+    fi
+}
+
+main "$@"
