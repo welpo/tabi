@@ -15,7 +15,6 @@
                                 {{ macros_translate::translate(key=menu.name, default=menu.name, language_strings=language_strings) }}
                                 </a>
                                 <link rel="prefetch" href="{{ get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) }}" />
-                                <link rel="prerender" href="{{ get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) }}" />
                             </li>
                         {% endfor %}
                     {%- endif -%}
