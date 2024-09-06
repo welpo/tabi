@@ -6,6 +6,12 @@
     {# Site title #}
     <title>{%- include "partials/title.html" -%}</title>
 
+    {# Headshot Preload #}
+    {% if section.extra.header %}
+    {%- set image_path = get_url(path=section.extra.header.img, trailing_slash=false) | safe -%}
+        <link rel="preload" as="image" href="{{ image_path }}">
+    {%- endif -%}
+
     {# Favicon #}
     {% if config.extra.favicon %}
         <link rel="icon" type="image/png" href="{{ get_url(path=config.extra.favicon) }}"/>
