@@ -134,9 +134,14 @@
         </ul>
 
         {% if page.extra.tldr %}
-            <div class="tldr">
-                <h3>TL;DR:</h3>
-                <p>{{ page.extra.tldr }}</p>
+            <div class="admonition note">
+                <div class="admonition-icon admonition-icon-note"></div>
+                <div class="admonition-content">
+                    <strong class="admonition-title">
+                        <span title="Too long; didn't read (summary)">TL;DR</span>
+                    </strong>
+                    <p>{{ page.extra.tldr | markdown | safe }}</p>
+                </div>
             </div>
         {% endif %}
 
