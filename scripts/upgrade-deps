@@ -90,10 +90,12 @@ get_local_katex_version() {
 compare_md5() {
     local new_file="$1"
     local current_file="$2"
-    local new_md5=$(md5sum "$new_file" | awk '{ print $1 }')
+    local new_md5
+    new_md5=$(md5sum "$new_file" | awk '{ print $1 }')
 
     if [ -f "$current_file" ]; then
-        local current_md5=$(md5sum "$current_file" | awk '{ print $1 }')
+        local current_md5
+        current_md5=$(md5sum "$current_file" | awk '{ print $1 }')
         if [ "$new_md5" = "$current_md5" ]; then
             echo "same"
         else
@@ -153,7 +155,8 @@ upgrade_mermaid() {
         exit_with_message "Directory ${MERMAID_DIR} does not exist. Are you running this script from the root of the repository?"
     fi
 
-    local commit_msg_template=$(cat << EOM
+    local commit_msg_template
+    commit_msg_template=$(cat << EOM
 ⬆️ chore(deps): upgrade mermaid to v{VERSION}
 
 Changelog: https://github.com/mermaid-js/mermaid/releases/tag/mermaid%40{VERSION}
@@ -162,12 +165,14 @@ Source: https://cdn.jsdelivr.net/npm/mermaid@{VERSION}/dist/mermaid.min.js
 EOM
 )
 
-    local latest_version=$(get_latest_version_jsdelivr "mermaid" || get_latest_version_github "mermaid-js/mermaid")
+    local latest_version
+    latest_version=$(get_latest_version_jsdelivr "mermaid" || get_latest_version_github "mermaid-js/mermaid")
     if [ -z "$latest_version" ]; then
         exit_with_message "Unable to determine the latest Mermaid.js version."
     fi
 
-    local local_version=$(get_local_mermaid_version)
+    local local_version
+    local_version=$(get_local_mermaid_version)
     echo "Latest Mermaid.js version: ${latest_version}"
     echo "Local Mermaid.js version: ${local_version}"
     if [ "$latest_version" = "$local_version" ]; then
@@ -175,13 +180,15 @@ EOM
         return 0
     fi
 
-    local download_url="https://cdn.jsdelivr.net/npm/mermaid@${latest_version}/dist/mermaid.min.js"
+    local download_url
+    download_url="https://cdn.jsdelivr.net/npm/mermaid@${latest_version}/dist/mermaid.min.js"
     if ! curl_with_retry "${download_url}" "${TEMP_DIR}/${MERMAID_FILE}"; then
         exit_with_message "Failed to download Mermaid.js"
     fi
 
     uglify_file "${TEMP_DIR}/${MERMAID_FILE}" "$UGLIFY_ITERATIONS"
-    local comparison_result=$(compare_md5 "${TEMP_DIR}/${MERMAID_FILE}" "${MERMAID_PATH}")
+    local comparison_result
+    comparison_result=$(compare_md5 "${TEMP_DIR}/${MERMAID_FILE}" "${MERMAID_PATH}")
 
     case "$comparison_result" in
         "same")
@@ -201,7 +208,8 @@ EOM
     echo "Mermaid.js updated and minified successfully!"
     echo "Preparing to commit changes…"
     git add "${MERMAID_PATH}"
-    local commit_msg=$(generate_commit_message "$commit_msg_template" "$latest_version")
+    local commit_msg
+    commit_msg=$(generate_commit_message "$commit_msg_template" "$latest_version")
     git commit -m "${commit_msg}"
 
     echo "Most recent commit:"
@@ -215,7 +223,8 @@ upgrade_katex() {
         exit_with_message "KaTeX directories do not exist. Are you running this script from the root of the repository?"
     fi
 
-    local commit_msg_template=$(cat << EOM
+    local commit_msg_template
+    commit_msg_template=$(cat << EOM
 ⬆️ chore(deps): upgrade KaTeX to v{VERSION}
 
 Changelog: https://github.com/KaTeX/KaTeX/releases/tag/v{VERSION}
@@ -224,7 +233,8 @@ Source: https://github.com/KaTeX/KaTeX/releases/download/v{VERSION}/katex.tar.gz
 EOM
 )
 
-    local latest_version=$(get_latest_version_github "KaTeX/KaTeX")
+    local latest_version
+    latest_version=$(get_latest_version_github "KaTeX/KaTeX")
     local local_version
     local_version=$(get_local_katex_version)
     if [ -z "$local_version" ]; then
@@ -249,19 +259,22 @@ EOM
     cp "${TEMP_DIR}/katex/katex.min.js" "${TEMP_DIR}/${KATEX_JS_FILE}"
     append_autorender_extension "${TEMP_DIR}/${KATEX_JS_FILE}"
     uglify_file "${TEMP_DIR}/${KATEX_JS_FILE}" "$UGLIFY_ITERATIONS"
-    local js_comparison_result=$(compare_md5 "${TEMP_DIR}/${KATEX_JS_FILE}" "${KATEX_JS_PATH}")
+    local js_comparison_result
+    js_comparison_result=$(compare_md5 "${TEMP_DIR}/${KATEX_JS_FILE}" "${KATEX_JS_PATH}")
 
     # CSS.
     cp "${TEMP_DIR}/katex/katex.min.css" "${TEMP_DIR}/${KATEX_CSS_FILE}"
     modify_katex_css "${TEMP_DIR}/${KATEX_CSS_FILE}"
-    local css_comparison_result=$(compare_md5 "${TEMP_DIR}/${KATEX_CSS_FILE}" "${KATEX_CSS_PATH}")
+    local css_comparison_result
+    css_comparison_result=$(compare_md5 "${TEMP_DIR}/${KATEX_CSS_FILE}" "${KATEX_CSS_PATH}")
 
     if [ "$js_comparison_result" = "same" ] && [ "$css_comparison_result" = "same" ]; then
         echo "KaTeX: New version is the same as current version. No update needed."
         return 0
     fi
 
-    local changes_made=false
+    local changes_made
+    changes_made=false
     if [ "$js_comparison_result" != "same" ]; then
         echo "KaTeX JS: New version differs from current version. Proceeding with update."
         mv "${TEMP_DIR}/${KATEX_JS_FILE}" "${KATEX_JS_PATH}"
@@ -286,7 +299,8 @@ EOM
     echo "KaTeX updated successfully!"
     echo "Preparing to commit changes…"
     git add "${KATEX_JS_PATH}" "${KATEX_CSS_PATH}" "${KATEX_FONTS_DIR}"
-    local commit_msg=$(generate_commit_message "$commit_msg_template" "$latest_version")
+    local commit_msg
+    commit_msg=$(generate_commit_message "$commit_msg_template" "$latest_version")
     git commit -m "${commit_msg}"
 
     echo "Most recent commit:"
@@ -347,7 +361,8 @@ main() {
 
     echo "Updating local repository…"
     git fetch origin
-    local git_status=$(git status -uno)
+    local git_status
+    git_status=$(git status -uno)
     if echo "$git_status" | grep -q "Your branch is behind"; then
         exit_with_message "Your local branch is behind the remote. Pull the latest changes before running this script."
     elif echo "$git_status" | grep -q "Your branch is ahead"; then
