@@ -62,16 +62,9 @@
         #banner-home-img {
             border: none;
             aspect-ratio: 1 / 1;
-            width: 100%;
-            max-width: 15rem;
+            width: 192px;
             height: auto;
-            max-height: 15rem;
             border-radius: 50%;
-
-            @media only screen and (max-width: 600px) {
-                max-width: 12rem;
-                max-height: 12rem;
-            }
         }
 
         @media only screen and (max-width: 600px) {
