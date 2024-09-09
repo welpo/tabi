@@ -79,6 +79,14 @@ get_latest_version_github() {
     fi
 }
 
+get_local_mermaid_version() {
+    sed -n 's/.*bpt="\([^"]*\)".*/\1/p' "$MERMAID_PATH" | head -n 1
+}
+
+get_local_katex_version() {
+    sed -n 's/.*version:"\([^"]*\)".*/\1/p' "$KATEX_JS_PATH" | head -n 1
+}
+
 compare_md5() {
     local new_file="$1"
     local current_file="$2"
@@ -139,6 +147,8 @@ modify_katex_css() {
 }
 
 upgrade_mermaid() {
+    echo
+    echo "Starting Mermaid.js update…"
     if [ ! -d "$MERMAID_DIR" ]; then
         exit_with_message "Directory ${MERMAID_DIR} does not exist. Are you running this script from the root of the repository?"
     fi
@@ -153,12 +163,17 @@ EOM
 )
 
     local latest_version=$(get_latest_version_jsdelivr "mermaid" || get_latest_version_github "mermaid-js/mermaid")
-
     if [ -z "$latest_version" ]; then
         exit_with_message "Unable to determine the latest Mermaid.js version."
     fi
 
+    local local_version=$(get_local_mermaid_version)
     echo "Latest Mermaid.js version: ${latest_version}"
+    echo "Local Mermaid.js version: ${local_version}"
+    if [ "$latest_version" = "$local_version" ]; then
+        echo "Mermaid.js is already up to date. Skipping update."
+        return 0
+    fi
 
     local download_url="https://cdn.jsdelivr.net/npm/mermaid@${latest_version}/dist/mermaid.min.js"
     if ! curl_with_retry "${download_url}" "${TEMP_DIR}/${MERMAID_FILE}"; then
@@ -194,6 +209,8 @@ EOM
 }
 
 upgrade_katex() {
+    echo
+    echo "Starting KaTeX update…"
     if [ ! -d "$KATEX_JS_DIR" ] || [ ! -d "$KATEX_CSS_DIR" ]; then
         exit_with_message "KaTeX directories do not exist. Are you running this script from the root of the repository?"
     fi
@@ -208,12 +225,18 @@ EOM
 )
 
     local latest_version=$(get_latest_version_github "KaTeX/KaTeX")
-
-    if [ -z "$latest_version" ]; then
-        exit_with_message "Unable to determine the latest KaTeX version."
+    local local_version
+    local_version=$(get_local_katex_version)
+    if [ -z "$local_version" ]; then
+        exit_with_message "Unable to determine the local KaTeX version."
     fi
 
     echo "Latest KaTeX version: ${latest_version}"
+    echo "Local KaTeX version: ${local_version}"
+    if [ "$latest_version" = "$local_version" ]; then
+        echo "KaTeX is already up to date. Skipping update."
+        return 0
+    fi
 
     local download_url="https://github.com/KaTeX/KaTeX/releases/download/v${latest_version}/katex.tar.gz"
     if ! curl_with_retry "${download_url}" "${TEMP_DIR}/katex.tar.gz"; then
