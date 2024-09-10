@@ -13,12 +13,9 @@
     {%- endif -%}
 
     {# Favicon #}
-    {% if config.extra.favicon %}
-        <link rel="icon" type="image/png" href="{{ get_url(path=config.extra.favicon) }}"/>
-    {% endif %}
-    {% if config.extra.favicon_emoji %}
-        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">{{ config.extra.favicon_emoji }}</text></svg>'>
-    {% endif %}
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     {# Feeds #}
     {% if config.generate_feeds | default(value=config.generate_feed) %}
