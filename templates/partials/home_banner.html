@@ -14,8 +14,7 @@
     {%- set image_path = get_url(path=header.img, trailing_slash=false) | safe -%}
     {%- endif -%}
     <div id="image-container-home">
-        {% set meta = get_image_metadata(path=header.img, allow_missing=true) %}
-        <img fetchpriority="high" alt="{{ header.img_alt | default(value="the owner") }}" id="banner-home-img" src="{{ image_path }}" {% if meta.width %}width="{{ meta.width }}" {% endif %} {% if meta.height %}height="{{ meta.height }}" {% endif %} />
+        <img fetchpriority="high" alt="{{ header.img_alt | default(value="the owner") }}" id="banner-home-img" src="{{ image_path }}" width="192px" height="192px" />
     </div>
     {%- endif -%}
 </div>

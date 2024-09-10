@@ -18,10 +18,9 @@
         <a rel="{{ rel_attributes }}" {{ blank_target }} href="{{ target_url }}" class="card">
             <div>
                 {% if page.extra.local_image %}
-                    {% set meta = get_image_metadata(path=page.extra.local_image, allow_missing=true) %}
-                    <img loading="lazy" class="card-image" alt="{{ page.extra.local_image }}" src="{{ get_url(path=page.extra.local_image) }}" {% if meta.width %}width="{{ meta.width }}" {% endif %} {% if meta.height %}height="{{ meta.height }}" {% endif %}>
+                    <img loading="lazy" class="card-image" alt="{{ page.extra.local_image }}" src="{{ get_url(path=page.extra.local_image) }}" width="600px" height="600px">
                 {% elif page.extra.remote_image %}
-                    <img loading="lazy" class="card-image" alt="{{ page.extra.remote_image }}" src="{{ page.extra.remote_image }}">
+                    <img loading="lazy" class="card-image" alt="{{ page.extra.remote_image }}" src="{{ page.extra.remote_image }}" width="600px" height="600px">
                 {% else %}
                     <div class="card-image-placeholder"></div>
                 {% endif %}

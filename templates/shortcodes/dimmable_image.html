@@ -4,11 +4,9 @@
 {%- else -%}
     {%- set colocated_path = page.colocated_path | default(value="") -%}
     {%- set relative_path = colocated_path ~ src -%}
-    {%- set meta = get_image_metadata(path=relative_path, allow_missing=true) -%}
 
     {#- Fallback to absolute path if relative path doesn't work -#}
     {%- if not meta -%}
-        {%- set meta = get_image_metadata(path=src, allow_missing=true) -%}
         {%- set image_url = get_url(path=src) -%}
     {%- else -%}
         {%- set image_url = get_url(path=relative_path) -%}
