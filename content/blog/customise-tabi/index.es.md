@@ -1,7 +1,7 @@
 +++
 title = "Personaliza el color de tabi y el tema predeterminado"
 date = 2023-08-09
-updated = 2023-11-24
+updated = 2024-09-12
 description = "Aprende a personalizar tabi usando skins y estableciendo un tema predeterminado, haciendo que tu sitio sea único."
 
 [taxonomies]
@@ -171,12 +171,34 @@ Puedes guardar tu nueva skin en cualquiera de estos dos directorios:
 Crea un nuevo archivo `.scss` (por ejemplo, `tu_skin.scss`) en la ubicación que prefieras. Este archivo debe contener estas dos variables (esta es la skin predeterminada, "teal"):
 
 ```scss
-:root {
-    --primary-color: #087e96;
+// This defines theme-specific variables.
+@mixin theme-variables($theme) {
+    @if $theme =='light' {
+        // Light theme colours.
+        --primary-color: #087e96; // Contrast ratio: 4.73:1
+    }
+    @else if $theme == 'dark' {
+        // Dark theme colours.
+        --primary-color: #91e0ee;  // Contrast ratio: 11.06:1
+    }
 }
 
+// Apply light theme variables by default.
+:root {
+    @include theme-variables('light');
+}
+
+// Apply dark theme variables when dark theme is explicitly set.
 [data-theme='dark'] {
-    --primary-color: #91e0ee;
+    @include theme-variables('dark');
+}
+
+// Apply dark theme variables when user's system prefers dark mode
+// and the theme is not explicitly set to light.
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        @include theme-variables('dark');
+    }
 }
 ```
 
