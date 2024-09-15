@@ -1,7 +1,8 @@
 .draft-label {
-    margin-right: 0.3rem;
+    margin-inline-end: 0.3rem;
     background-color: var(--primary-color);
-    padding: 2px 4px;
+    padding-inline: 4px;
+    padding-block: 2px;
     color: var(--hover-color);
 }
 
@@ -16,9 +17,9 @@
 
 iframe {
     display: block;
-    margin-right: 15%;
-    margin-bottom: 3vmin;
-    margin-left: 15%;
+    margin-inline-start: 15%;
+    margin-inline-end: 15%;
+    margin-block-end: 3vmin;
     border: none;
     aspect-ratio: 16/9;
     width: 100vmin;
@@ -30,7 +31,7 @@ ul {
 }
 
 .toc-container {
-    margin-bottom: 4vmin;
+    margin-block-end: 4vmin;
 }
 
 .padding-top {
@@ -81,13 +82,13 @@ a:hover {
 a:not(.no-hover-padding):hover::after {
     display: inline-block;
     position: absolute;
-    top: 0;
-    right: -0.15em;
-    bottom: 0;
-    left: -0.15em;
     z-index: -1;
+    inset-block-end: 0;
+    inset-block-start: 0;
+    inset-inline-end: -0.15em;
+    inset-inline-start: -0.15em;
     background-color: var(--primary-color);
-    max-width: 105%;  // This fixes multi-line links (see #225)
+    max-inline-size: 105%;  // This fixes multi-line links (see #225)
     content: "";
 }
 
@@ -111,10 +112,10 @@ hr {
 }
 
 .footnote-definition {
-    margin-bottom: 0.6rem;
+    margin-block-end: 0.6rem;
 
     sup {
-        margin-right: 0.15rem;
+        margin-inline-end: 0.15rem;
         font-size: 0.75rem;
         font-family: var(--serif-font);
     }
@@ -125,7 +126,7 @@ hr {
 }
 
 .footnote-backlink {
-    margin-left: 0.2rem;
+    margin-inline-start: 0.2rem;
     font-size: 0.8rem;
 }
 
@@ -134,16 +135,16 @@ hr {
 }
 
 .references p {
-    margin-left: 2.4rem;
+    margin-inline-start: 2.4rem;
     text-indent: -2.4rem;
 }
 
 .info-box {
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
     border: 1px solid var(--primary-color);
-    border-left-width: 0.3rem;
     border-radius: 10px;
+    border-inline-start-width: 0.3rem;
     padding: 1rem;
     text-align: center;
 }
@@ -187,18 +188,18 @@ details summary {
 
 .article-navigation {
     display: flex;
-    margin-top: 2rem;
-    border-top: var(--divider-color) solid 0.5px;
-    padding-top: 2rem;
+    margin-block-start: 2rem;
+    border-block-start: var(--divider-color) solid 0.5px;
+    padding-block-start: 2rem;
 
     div:first-child {
         flex: 1;
-        text-align: left;
+        text-align: start;
     }
 
     div:last-child {
         flex: 1;
-        text-align: right;
+        text-align: end;
     }
 
     div p {
@@ -218,25 +219,15 @@ details summary {
     }
 }
 
-:dir(rtl) .article-navigation {
-    div:first-child {
-        text-align: right;
-    }
-
-    div:last-child {
-        text-align: left;
-    }
-}
-
 :dir(rtl) .arrow {
     display: inline-block;
-    transform: rotate(180deg);
+    transform: scaleX(-1);
 }
 
 // This for the arrows that point to a corner, (e.g. '↗', '↘', '↙', '↖')
 :dir(rtl) .arrow-corner {
     display: inline-block;
-    transform: rotate(270deg);
+    transform: rotate(-90deg);
 }
 
 .mermaid p {

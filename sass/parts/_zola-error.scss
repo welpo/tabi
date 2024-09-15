@@ -21,7 +21,7 @@ body > div:last-child > div:last-child[style]:not([class]):not([id]) > p[style]:
 }
 
 body > div:last-child > div:last-child[style]:not([class]):not([id]) > pre[style]:last-child {
-    margin-bottom: 0;
+    margin-block-end: 0;
     background-color: var(--admonition-danger-code);
     padding: 10px;
     overflow-x: auto;

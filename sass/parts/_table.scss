@@ -11,7 +11,8 @@ table {
     th,
     td {
         border: 1px solid var(--bg-1);
-        padding: 6px 13px;
+        padding-inline: 13px;
+        padding-block: 6px;
         font-size: large;
     }
 
