@@ -1,7 +1,8 @@
 code {
     border-radius: 5px;
     background-color: var(--bg-1);
-    padding: 0.1em 0.2em;
+    padding-inline: 0.2em;
+    padding-block: 0.1em;
     font-size: 0.9rem;
     font-family: var(--code-font);
 
@@ -17,7 +18,7 @@ code {
         border-collapse: collapse;
         border-spacing: 0rem;
         width: 100%;
-        text-align: left;
+        text-align: start;
 
         td,
         th,
@@ -29,7 +30,7 @@ code {
         tbody td:first-child {
             width: 2rem;
             user-select: none;
-            text-align: left;
+            text-align: start;
         }
 
         tbody tr:nth-child(even) {
@@ -46,7 +47,9 @@ pre {
     display: block;
     position: relative;
     border-radius: 5px;
-    padding: 2.4rem 1rem 1rem;
+    padding-inline: 1rem;
+    padding-block-start: 2.4rem;
+    padding-block-end: 1rem;
     overflow: hidden;
     overflow-x: auto;
     line-height: 1.4;
@@ -66,16 +69,16 @@ pre {
             display: block;
             position: absolute;
             top: 0;
-            left: 0;
+            inset-inline-start: 0;
             background-color: var(--primary-color);
             padding: 0.3rem;
-            padding-left: 1rem;
+            padding-inline-start: 1rem;
             width: calc(100% - 1.3rem);
             height: 0.9rem;
             content: attr(data-lang);
             color: var(--hover-color);
             font-size: 0.65rem;
-            text-align: left;
+            text-align: start;
             text-transform: uppercase;
         }
 
@@ -83,15 +86,15 @@ pre {
             display: block;
             position: absolute;
             top: 0;
-            right: 1.3rem;
+            inset-inline-end: 1.3rem;
             padding-top: 0.3rem;
-            padding-right: 1.3rem;
+            padding-inline-end: 1.3rem;
             max-width: calc(100% - 14em);
             height: 0.9rem;
             overflow: hidden;
             color: var(--hover-color);
             font-size: 0.65rem;
-            text-align: right;
+            text-align: end;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
@@ -102,10 +105,10 @@ pre {
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' %3E%3Cpath d='M217.002-67.694q-37.732 0-64.02-26.288-26.287-26.287-26.287-64.019V-707.69h77.999v549.689q0 4.615 3.846 8.462 3.846 3.846 8.462 3.846h451.689v77.999H217.002Zm175.999-175.999q-37.733 0-64.02-26.287T302.694-334v-463.383q0-37.732 26.287-64.02 26.287-26.287 64.02-26.287h365.383q37.732 0 64.019 26.287 26.288 26.288 26.288 64.02V-334q0 37.733-26.288 64.02-26.287 26.287-64.019 26.287H393.001Zm0-77.998h365.383q4.615 0 8.462-3.847 3.846-3.846 3.846-8.462v-463.383q0-4.616-3.846-8.462-3.847-3.846-8.462-3.846H393.001q-4.616 0-8.462 3.846-3.847 3.846-3.847 8.462V-334q0 4.616 3.847 8.462 3.846 3.847 8.462 3.847Zm-12.309 0v-488V-321.691Z'/%3E%3C/svg%3E");
     position: absolute;
     top: 0.3rem;
-    right: 0.7rem;
     align-self: center;
     z-index: 1;
     cursor: pointer;
+    inset-inline-end: 0.7rem;
     background: var(--hover-color);
     background-size: contain;
     width: 0.9rem;

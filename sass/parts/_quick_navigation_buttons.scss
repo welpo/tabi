@@ -64,20 +64,20 @@
             right: 0;
             bottom: 100%;
             z-index: 2;
-            margin-bottom: $padding-vertical;
+            margin-block-end: $padding-vertical;
             box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
             border: 1px solid var(--divider-color);
             border-radius: 5px;
             background-color: var(--background-color);
-            padding-right: $padding-horizontal;
+            padding-inline-end: $padding-horizontal;
             max-height: 70vh;
             overflow-y: auto;
             font-size: 0.8rem;
-            text-align: left;
+            text-align: start;
             white-space: nowrap; // Prevents wrapping, allowing content to define width.
 
             ul {
-                padding-left: $padding-horizontal;
+                padding-inline-start: $padding-horizontal;
                 list-style: none;
             }
         }

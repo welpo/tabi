@@ -4,8 +4,8 @@
     justify-content: center;
     align-items: center;
     opacity: 0;
-    margin-left: -2rem;
-    padding-right: 0.3rem;
+    margin-inline-start: -2rem;
+    padding-inline-end: 0.3rem;
     width: 1.9rem;
     height: 100%;
     user-select: none;
@@ -13,11 +13,6 @@
     @media (max-width: 500px) {
         display: none;
     }
-}
-
-:dir(rtl) .header-anchor {
-    margin-right: -2rem;
-    padding-left: 0.3rem;
 }
 
 .link-icon {

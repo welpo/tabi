@@ -7,10 +7,10 @@
     display: flex;
     align-items: flex-start;
     background-color: var(--navbar-color);
-    padding: 2.5rem 0;
+    padding-block: 2.5rem;
 
     .bloglist-meta {
-        margin-right: 0.7rem;
+        margin-inline-end: 0.7rem;
         padding: 0;
         width: 13.5rem;
         color: var(--meta-color);
@@ -32,7 +32,7 @@
 
         .tag {
             display: inline-block;
-            margin-right: 0.7rem;
+            margin-inline-end: 0.7rem;
             font-weight: 400;
             font-size: 0.75rem;
             text-transform: uppercase;
@@ -89,15 +89,15 @@
     .bloglist-row {
         flex-direction: column;
         align-items: flex-start;
-        padding: 2rem 0;
+        padding-block: 2rem;
 
         .bloglist-meta {
-            margin-bottom: 0;
+            margin-block-end: 0;
             width: 100%;
 
             li {
                 display: inline;
-                margin-right: 0.3rem;
+                margin-inline-end: 0.3rem;
             }
         }
 

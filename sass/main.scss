@@ -138,8 +138,8 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    margin: 0 5vmin;
-    padding: 0;
+    margin-inline: 5vmin;
+    margin-block: 0;
     min-height: 100vh;
 }
 
@@ -147,7 +147,7 @@ body {
     word-wrap: break-word;
     margin: 0 auto;
     margin-top: 6vmin;
-    margin-bottom: 4rem;
+    margin-block-end: 4rem;
     width: 100%;
     max-width: var(--max-layout-width);
 }
@@ -174,18 +174,18 @@ article {
     }
 
     .full-width {
-        margin-right: -$base-margin;
-        margin-left: -$base-margin;
+        margin-inline-start: -$base-margin;
+        margin-inline-end: -$base-margin;
         max-width: calc(100% + 2*$base-margin);
     }
 
     li {
         p:not(:last-child) {
-            margin-bottom: 0;
+            margin-block-end: 0;
         }
 
         p + :last-child {
-            margin-bottom: var(--paragraph-spacing);
+            margin-block-end: var(--paragraph-spacing);
         }
     }
 }
@@ -210,62 +210,44 @@ h3,
 h4,
 h5,
 h6 {
+    display: block;
     position: relative;
+    margin: 0;
 }
 
 h1 {
-    display: block;
     margin-top: 0.67em;
-    margin-right: 0;
-    margin-bottom: 0em;
-    margin-left: 0;
     font-weight: 550;
     font-size: 1.62rem;
 }
 
 h2 {
-    display: block;
     margin-top: 0.5em;
-    margin-right: 0;
-    margin-bottom: 0em;
-    margin-left: 0;
     font-weight: 550;
     font-size: 1.4rem;
 }
 
 h3 {
-    display: block;
     margin-top: 0.3em;
-    margin-right: 0;
-    margin-bottom: 0em;
-    margin-left: 0;
     font-weight: 550;
     font-size: 1.2rem;
 }
 
 h4 {
-    display: block;
     margin-top: 0.83em;
-    margin-right: 0;
-    margin-bottom: 0em;
-    margin-left: 0;
     font-weight: 550;
     font-size: 1rem;
 }
 
 h5 {
-    display: block;
     margin-top: 0.83em;
-    margin-right: 0;
-    margin-bottom: 0em;
-    margin-left: 0;
     font-weight: normal;
     font-size: 1rem;
 }
 
 p {
     margin-top: 0.4rem;
-    margin-bottom: var(--paragraph-spacing);
+    margin-block-end: var(--paragraph-spacing);
     font-size: 1em;
     line-height: 2rem;
 }
@@ -294,7 +276,7 @@ video {
 }
 
 .subheader {
-    margin-bottom: 2rem;
+    margin-block-end: 2rem;
 }
 
 .mobile-only {
@@ -312,8 +294,8 @@ video {
 
     article .full-width {
         display: block;
-        margin-right: 0;
-        margin-left: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
         max-width: none;
         overflow-x: auto;
     }
@@ -334,7 +316,8 @@ video {
     }
 
     body {
-        margin: 0 16px;
+        margin-inline: 16px;
+        margin-block: 0;
     }
 }
 
