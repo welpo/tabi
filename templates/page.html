@@ -12,48 +12,94 @@
 {%- endif -%}
 
 {# Debugging #}
-{# {% set last_ancestor = page.ancestors | slice(start=-1) %}
-{% set current_section = get_section(path=last_ancestor.0) %}
+{# <div><pre>
+    Page path: {{ page.path }}
+    Page components: {{ page.components | join(sep=", ") }}
+    Page ancestors: {{ page.ancestors | join(sep=", ") }}
+    Current language: {{ lang }}
+    Default language: {{ config.default_language }}
+    Current section: {% if current_section %}{{ current_section.path }}{% else %}None{% endif %}
+    Page extra: {{ page.extra | json_encode() }}
+    {% if section -%}
+        {%- set current_section = section -%}
+    {%- elif page -%}
+        {%- set current_section = "" -%}
+        {%- if page.ancestors | length > 0 -%}
+            {%- set last_ancestor = page.ancestors | slice(start=-1) -%}
+            {%- set_global current_section = get_section(path=last_ancestor.0, metadata_only=true) -%}
+        {%- else -%}
+            {%- set components = page.components -%}
+            {%- for i in range(start=1, end=components | length) -%}
+                {%- if lang == config.default_language -%}
+                    {%- set potential_path = components | slice(end=components | length - i) | join(sep="/") -%}
+                    {%- set potential_page = potential_path ~ "/index.md" -%}
+                    {%- set potential_section = potential_path ~ "/_index.md" -%}
+                {%- else -%}
+                    {%- set potential_path = components | slice(start=1, end=components | length - i) | join(sep="/") -%}
+                    {%- set potential_page = potential_path ~ "/index." ~ lang ~ ".md" -%}
+                    {%- set potential_section = potential_path ~ "/_index." ~ lang ~ ".md" -%}
+                {%- endif -%}
+                Checking parent page: {{ potential_page }}
+                {%- set page_data = load_data(path=potential_page, required=false) -%}
+                {%- if page_data -%}
+                    {%- set_global current_section = get_page(path=potential_page) %}
+    Parent page found: {{ current_section.path }}
+                    {%- break -%}
+                {%- endif -%}
+                Checking section: {{ potential_section }}
+                {%- set section_data = load_data(path=potential_section, required=false) -%}
+                {%- if section_data -%}
+                    {%- set_global current_section = get_section(path=potential_section, metadata_only=true) -%}
+                    Section found: {{ current_section.path }}
+                    {%- break -%}
+                {%- endif -%}
+            {%- endfor -%}
+        {%- endif -%}
+    {%- endif %}
+Found nearest parent/section: {% if current_section %}{{ current_section.path }}{% else %}None{% endif %}
+Current section extra: {% if current_section %}{{ current_section.extra | json_encode() }}{% else %}None{% endif %}
+</pre></div>
 
-{% set settings_to_test = [
-    "footnote_backlinks",
-    "add_src_to_code_block",
-    "copy_button",
-    "katex",
-    "quick_navigation_buttons",
-    "show_reading_time",
-    "show_date",
-    "show_author",
-    "show_remote_changes",
-    "toc",
-    "show_previous_next_article_links",
-    "invert_previous_next_article_links",
-    "previous_next_article_links_full_width",
-    "enable_csp",
-] %}
+    {% set settings_to_test = [
+        "footnote_backlinks",
+        "add_src_to_code_block",
+        "copy_button",
+        "katex",
+        "quick_navigation_buttons",
+        "show_reading_time",
+        "show_date",
+        "show_author",
+        "show_remote_changes",
+        "toc",
+        "show_previous_next_article_links",
+        "invert_previous_next_article_links",
+        "previous_next_article_links_full_width",
+        "enable_csp",
+    ] %}
 
-<table>
-    <thead>
-        <tr>
-            <th>setting</th>
-            <th>page</th>
-            <th>section</th>
-            <th>config</th>
-            <th>macro output</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for setting in settings_to_test %}
+    <table>
+        <thead>
             <tr>
-                <td><code>{{ setting }}</code></td>
-                <td>{{ page.extra[setting] | default(value="⬛") }}</td>
-                <td>{{ current_section.extra[setting] | default(value="⬛") }}</td>
-                <td>{{ config.extra[setting] | default(value="⬛") }}</td>
-                <td>{{ macros_settings::evaluate_setting_priority(setting=setting, page=page) }}</td>
+                <th>setting</th>
+                <th>page</th>
+                <th>section</th>
+                <th>config</th>
+                <th>macro output</th>
             </tr>
-        {% endfor %}
-    </tbody>
-</table> #}
+        </thead>
+        <tbody>
+            {% for setting in settings_to_test %}
+                <tr>
+                    <td><code>{{ setting }}</code></td>
+                    <td>{{ page.extra[setting] | default(value="⬛") }}</td>
+                    <td>{{ current_section.extra[setting] | default(value="⬛") }}</td>
+                    <td>{{ config.extra[setting] | default(value="⬛") }}</td>
+                    <td>{{ macros_settings::evaluate_setting_priority(setting=setting, page=page) }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div> #}
 {# {{ __tera_context }} #}
 {# End debugging #}
 
