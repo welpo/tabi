@@ -2675,6 +2675,7 @@ window.onload = function () {
         results.innerHTML = '';
         resultsContainer.style.display = 'none';
         searchInput.removeAttribute('aria-activedescendant');
+        clearSearchButton.style.display = 'none';
     }
 
     // Close modal when clicking/tapping outside.
@@ -2941,10 +2942,13 @@ window.onload = function () {
     searchInput.addEventListener(
         'input',
         async function () {
-            const searchTerm = this.value.trim();
+            const searchInput = this.value;
+            const searchTerm = searchInput.trim();
             const searchIndex = await searchIndexPromise;
             results.innerHTML = '';
 
+            // Use the raw input so the "clear" button appears even if there's only spaces.
+            clearSearchButton.style.display = searchInput.length > 0 ? 'block' : 'none';
             resultsContainer.style.display = searchTerm.length > 0 ? 'block' : 'none';
 
             // Perform the search and store the results.
