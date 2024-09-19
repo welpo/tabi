@@ -7,7 +7,7 @@
 {%- endif -%}
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="{{ get_url(path='/feed_style.xsl', trailing_slash=false) | safe }}" type="text/xsl"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}" xml:base="{{ config.base_url }}">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
     <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
         <tabi:separator>
             {{  config.extra.separator | default(value="•") }}
@@ -30,6 +30,15 @@
         <tabi:post_listing_date>
             {{- config.extra.post_listing_date | default(value="date") -}}
         </tabi:post_listing_date>
+        <tabi:current_section>
+            {%- if term -%}
+                {{ term.name }}
+            {%- elif section.title -%}
+                {{ section.title }}
+            {%- else -%}
+                {{ config.title }}
+            {%- endif -%}
+        </tabi:current_section>
     </tabi:metadata>
 
     {#- Load extra CSS (skin) if set in config.toml -#}
@@ -47,7 +56,9 @@
     {%- endif %}
     <link href="{{ feed_url | safe }}" rel="self" type="application/atom+xml"/>
     <link href="
-        {%- if section -%}
+        {%- if term -%}
+            {{ term.permalink | escape_xml | safe }}
+        {%- elif section -%}
             {{ section.permalink | escape_xml | safe }}
         {%- else -%}
             {{ get_url(path="/", lang=lang) | escape_xml | safe }}
