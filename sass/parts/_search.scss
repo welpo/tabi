@@ -28,6 +28,7 @@ $icon-size: 1.3rem;
         }
 
         .close-icon {
+            display: none;
             position: absolute;
             right: $icon-size;
             margin-inline-start: 1rem;
