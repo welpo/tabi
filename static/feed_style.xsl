@@ -43,9 +43,14 @@
               </p>
               <a class="readmore">
                 <xsl:attribute name="href">
-                  <xsl:value-of select="/atom:feed/@xml:base"/>
+                  <xsl:value-of select="/atom:feed/atom:link[@rel='alternate']/@href"/>
                 </xsl:attribute>
-                <xsl:value-of select="/atom:feed/tabi:metadata/tabi:visit_the_site" />&#160;<span class="arrow">→</span>
+                <xsl:value-of select="/atom:feed/tabi:metadata/tabi:visit_the_site" />
+                <xsl:if test="/atom:feed/tabi:metadata/tabi:current_section != /atom:feed/atom:title">
+                  <xsl:text>: </xsl:text>
+                  <xsl:value-of select="/atom:feed/tabi:metadata/tabi:current_section" />
+                </xsl:if>
+                <span class="arrow"> →</span>
               </a>
               <p></p>
             </section>
