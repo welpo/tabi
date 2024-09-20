@@ -4,6 +4,34 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.15.0](https://github.com/welpo/tabi/compare/v2.14.0..v2.15.0) - 2024-09-20
+
+### ✨ Features
+
+- *(feed)* Make "Visit website" link context-aware ([#394](https://github.com/welpo/tabi/issues/394)) by [@welpo](https://github.com/welpo)
+- *(search)* Hide "clear search" icon if input is empty ([#388](https://github.com/welpo/tabi/issues/388)) by [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(feed)* Resolve Atom feed validation issues ([#393](https://github.com/welpo/tabi/issues/393)) by [@welpo](https://github.com/welpo)
+- Allow pages within pages ([#385](https://github.com/welpo/tabi/issues/385)) by [@welpo](https://github.com/welpo)
+- Improve dark mode and OS theme handling ([#380](https://github.com/welpo/tabi/issues/380)) by [@welpo](https://github.com/welpo)
+
+### 💄 Styling
+
+- Improve RTL styling consistency ([#381](https://github.com/welpo/tabi/issues/381)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(README)* Add Ponderosa Games to showcase ([#395](https://github.com/welpo/tabi/issues/395)) by [@JVimes](https://github.com/JVimes)
+- *(deps)* Avoid masking return values ([1b11f4b](https://github.com/welpo/tabi/commit/1b11f4b321d0ae52179d88cc3ecd1b72ef2b37ae)) by [@welpo](https://github.com/welpo)
+- *(deps)* Check local deps version to early exit ([b5cbad4](https://github.com/welpo/tabi/commit/b5cbad422bc14f44a620bcbb87449f2425c16af6)) by [@welpo](https://github.com/welpo)
+- Set [@TheAwiteb](https://github.com/TheAwiteb) as owner of Arabic translation ([edb0873](https://github.com/welpo/tabi/commit/edb087392f2989b4f08122c81fa3e51d17fbb6b8)) by [@welpo](https://github.com/welpo)
+
+### 👥 New contributors
+
+🫶 [@JVimes](https://github.com/JVimes) made their first contribution in [#395](https://github.com/welpo/tabi/pull/395)
+
 ## [2.14.0](https://github.com/welpo/tabi/compare/v2.13.0..v2.14.0) - 2024-09-08
 
 ### ✨ Features
