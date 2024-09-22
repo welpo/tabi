@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-08-28
+updated = 2024-09-22
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -210,7 +210,7 @@ Embed text from a remote URL or a local file. To display the path or URL on the 
 **Important**:
 
 - **Remote VS local files**: If `src` starts with "http", it will be treated as a remote file. Otherwise, it assumes a local file path.
-- **Files access**: As it uses Zola's [`load_data`](https://www.getzola.org/documentation/templates/overview/#load-data), local files must be inside the Zola directory—see [File searching logic](https://www.getzola.org/documentation/templates/overview/#file-searching-logic).
+- **Files access**: As it uses Zola's [`load_data`](https://www.getzola.org/documentation/templates/overview/#load-data), local files must be inside the Zola directory—see [File searching logic](https://www.getzola.org/documentation/templates/overview/#file-searching-logic). As of [tabi 2.16.0](https://github.com/welpo/tabi/releases/tag/v2.16.0), the shortcode supports both relative and absolute paths.
 - **Code block formatting**: To display the text as a code block, you must manually add the Markdown code fences (backticks) and, optionally, specify the programming language for syntax highlighting.
 
 #### Usage
