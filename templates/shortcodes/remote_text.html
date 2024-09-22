@@ -1,3 +1,6 @@
+{%- set start = start | default(value=1) -%}
+{%- set end = end | default(value=0) -%}
+
 {#- load_data uses different arguments based on whether it's a remote or local file -#}
 {%- if src is starting_with("http") -%}
     {%- set response = load_data(url=src, format="plain") -%}
@@ -11,4 +14,17 @@
         {%- set response = load_data(path=src, format="plain") -%}
     {%- endif -%}
 {%- endif -%}
-{{- response | trim_end | safe -}}
+
+{%- set lines = response | trim_end | split(pat="\n") -%}
+
+{%- if start > 0 -%}
+    {%- set start = start - 1 -%}
+{%- endif -%}
+
+{%- if end == 0 or end > lines | length -%}
+    {%- set end = lines | length -%}
+{%- endif -%}
+
+{%- set lines = lines | slice(start=start, end=end) -%}
+
+{{- lines | join(sep="\n") | safe -}}

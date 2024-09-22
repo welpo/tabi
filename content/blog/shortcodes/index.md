@@ -207,6 +207,14 @@ dist/
 
 Embed text from a remote URL or a local file. To display the path or URL on the code block, see the [show source or path shortcode](#show-source-or-path).
 
+The shortcode accepts three parameters:
+
+- `src`: The source URL or file path (required)
+- `start`: First line to display (optional, starts at 1)
+- `end`: The ending line number (optional, defaults to 0, meaning the last line)
+
+{{ admonition(type="info", text="`start` and `end` are inclusive. `start=3, end=3` will display only the third line.") }}
+
 **Important**:
 
 - **Remote VS local files**: If `src` starts with "http", it will be treated as a remote file. Otherwise, it assumes a local file path.
@@ -227,6 +235,12 @@ Displaying text from a local file:
 
 ```
 {{/* remote_text(src="path/to/file.txt") */}}
+```
+
+Display lines 3 to 7 (both inclusive) of a local file:
+
+```
+{{/* remote_text(src="path/to/file.txt", start=3, end=7) */}}
 ```
 
 ### Admonitions

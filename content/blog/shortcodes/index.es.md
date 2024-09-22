@@ -208,6 +208,14 @@ dist/
 
 Añade texto desde una URL remota o un archivo local.
 
+El shortcode acepta tres parámetros:
+
+- `src`: La URL de origen o ruta del archivo (obligatorio)
+- `start`: Primera línea a mostrar (opcional, empieza en 1)
+- `end`: Número de la última línea (opcional, por defecto es 0, la última línea)
+
+{{ admonition(type="info", text="`start` y `end` son inclusivos. `start=3, end=3` mostrará solo la tercera línea.") }}
+
 **Importante**:
 
 - **Archivos remotos VS archivos locales**: Si `src` empieza con "http", se tratará como un archivo remoto. De lo contrario, se asume que es una ruta de archivo local.
@@ -228,6 +236,12 @@ Visualización de texto de un archivo local:
 
 ```
 {{/* remote_text(src="ruta/a/archivo.txt") */}}
+```
+
+Mostar sólo las líneas 3 a 5 de un archivo remoto:
+
+```
+{{/* remote_text(src="https://example.com/script.py", start=3, end=5) */}}
 ```
 
 ### Advertencias

@@ -207,6 +207,14 @@ dist/
 
 Afegeix text des d'una URL remota o un arxiu local.
 
+El shortcode accepta tres paràmetres:
+
+- `src`: L'URL d'origen o ruta del fitxer (obligatori)
+- `start`: Primera línia a mostrar (opcional, comença a 1)
+- `end`: Número de l'última línia (opcional, per defecte és 0, l'última línia)
+
+{{ admonition(type="info", text="`start` i `end` són inclusius. `start=3, end=3` mostrarà només la tercera línia.") }}
+
 **Important**:
 
 - **Arxius remots VS arxius locals**: Si `src` comença amb "http", es tractarà com un arxiu remot. D'altra banda, s'assumeix que és una ruta d'arxiu local.
@@ -227,6 +235,12 @@ Mostra el text d'un arxiu local:
 
 ```
 {{/* remote_text(src="ruta/a/arxiu.txt") */}}
+```
+
+Mostreu només les línies 3 a 5 d'un arxiu local:
+
+```
+{{/* remote_text(src="ruta/a/arxiu.txt", start=3, end=5) */}}
 ```
 
 ### Advertències
