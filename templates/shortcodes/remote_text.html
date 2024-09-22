@@ -2,6 +2,13 @@
 {%- if src is starting_with("http") -%}
     {%- set response = load_data(url=src, format="plain") -%}
 {%- else -%}
-    {%- set response = load_data(path=src, format="plain") -%}
+    {#- Try to load the file from a relative path -#}
+    {%- set colocated_path = page.colocated_path | default(value="") -%}
+    {%- set relative_path = colocated_path ~ src -%}
+    {%- set response = load_data(path=relative_path, format="plain", required=false) -%}
+    {#- If relative path fails, try absolute path -#}
+    {%- if not response -%}
+        {%- set response = load_data(path=src, format="plain") -%}
+    {%- endif -%}
 {%- endif -%}
 {{- response | trim_end | safe -}}
