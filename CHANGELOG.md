@@ -4,6 +4,13 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.16.0](https://github.com/welpo/tabi/compare/v2.15.0..v2.16.0) - 2024-09-22
+
+### ✨ Features
+
+- *(remote_text shortcode)* Support line ranges ([#399](https://github.com/welpo/tabi/issues/399)) ([008b976](https://github.com/welpo/tabi/commit/008b976e06e0b93e021e2ca641eda42521e58f98)) by [@welpo](https://github.com/welpo)
+- *(remote_text shortcode)* Support relative paths ([#398](https://github.com/welpo/tabi/issues/398)) by [@welpo](https://github.com/welpo)
+
 ## [2.15.0](https://github.com/welpo/tabi/compare/v2.14.0..v2.15.0) - 2024-09-20
 
 ### ✨ Features
