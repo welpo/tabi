@@ -361,17 +361,22 @@ main() {
 
     echo "Updating local repository…"
     git fetch origin
-    local git_status
-    git_status=$(git status -uno)
-    if echo "$git_status" | grep -q "Your branch is behind"; then
-        exit_with_message "Your local branch is behind the remote. Pull the latest changes before running this script."
-    elif echo "$git_status" | grep -q "Your branch is ahead"; then
-        echo "Your local branch is ahead of the remote. Checking if local changes can be pushed…"
-        if ! git push --dry-run &> /dev/null; then
-            exit_with_message "Unable to push local changes. Resolve any conflicts before running this script."
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    echo "Current branch: $current_branch"
+    # Check if the branch exists on the remote
+    if git ls-remote --exit-code --heads origin "$current_branch" >/dev/null 2>&1; then
+        # Branch exists on remote, compare with local.
+        local_commit=$(git rev-parse HEAD)
+        remote_commit=$(git rev-parse origin/"$current_branch")
+        if [ "$local_commit" = "$remote_commit" ]; then
+            echo "Branch is up to date with origin/$current_branch"
+        elif git merge-base --is-ancestor "$remote_commit" "$local_commit"; then
+            echo "Local branch is ahead of origin/$current_branch"
+        else
+            exit_with_message "Your local branch is behind origin/$current_branch. Pull the latest changes before running this script."
         fi
-    elif ! echo "$git_status" | grep -q "Your branch is up to date"; then
-        exit_with_message "Unable to determine if branch is up to date. Check your git status manually."
+    else
+        echo "Branch $current_branch does not exist on remote. Assuming it's a new branch."
     fi
     echo "Local repository is ready."
 
