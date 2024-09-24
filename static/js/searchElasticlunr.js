@@ -2942,13 +2942,13 @@ window.onload = function () {
     searchInput.addEventListener(
         'input',
         async function () {
-            const searchInput = this.value;
-            const searchTerm = searchInput.trim();
+            const inputValue = this.value;
+            const searchTerm = inputValue.trim();
             const searchIndex = await searchIndexPromise;
             results.innerHTML = '';
 
             // Use the raw input so the "clear" button appears even if there's only spaces.
-            clearSearchButton.style.display = searchInput.length > 0 ? 'block' : 'none';
+            clearSearchButton.style.display = inputValue.length > 0 ? 'block' : 'none';
             resultsContainer.style.display = searchTerm.length > 0 ? 'block' : 'none';
 
             // Perform the search and store the results.
