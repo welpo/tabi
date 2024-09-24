@@ -1,9 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended", ":automergeMinor", ":disableDependencyDashboard"],
-  "commitMessageAction": "chore(deps): update",
   "commitMessagePrefix": "⬆️",
+  "commitMessageAction": "chore(deps): update",
+  "commitMessageTopic": "{{{depName}}}",
   "labels": ["dependencies"],
+  "git-submodules": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "updateTypes": ["pin"],
@@ -16,6 +20,10 @@
     {
       "updateTypes": ["rollback"],
       "commitMessagePrefix": "⬇️"
+    },
+    {
+      "matchFileNames": ["scripts/release/**"],
+      "automerge": true
     }
   ]
 }
