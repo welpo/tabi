@@ -4,7 +4,7 @@ header {
 }
 
 .page-header {
-    margin: 4rem 0px 1rem 0px;
+    margin-block: 4rem 1rem;
     font-size: 3em;
     line-height: 100%;
     font-family: var(--header-font);
@@ -17,7 +17,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding: 1em 0;
+    padding-block: 1em;
     max-width: var(--max-layout-width);
 }
 
@@ -48,7 +48,7 @@ header {
 }
 
 .home-title {
-    margin-left: -0.12rem;
+    margin-inline-start: -0.12rem;
     border: none;
     padding: 0.12rem;
     color: var(--primary-color);
@@ -85,8 +85,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
+    margin-inline-end: 0.5rem;
 
     .language-switcher-icon {
         -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='1.8' d='M1 12a11 11 90 0 0 22 0 11 11 90 0 0-22 0m1-4h20M2 16h20M11 1a21 21 90 0 0 0 22m2-22a21 21 90 0 1 0 22'/%3E%3C/svg%3E%0A");
@@ -129,8 +129,8 @@ header {
         transform: translateX(-50%);
         z-index: 1;
         background: var(--background-color);
-        padding-right: 0.5rem;
-        padding-left: 0.5rem;
+        padding-inline-start: 0.5rem;
+        padding-inline-end: 0.5rem;
         text-align: center;
         white-space: nowrap;
 

@@ -14,9 +14,38 @@ Parameters:
 {%- if section -%}
     {%- set current_section = section -%}
 {%- elif page -%}
+    {%- set current_section = "" -%}
     {#- Retrieve last ancestor to determine current section, if applicable -#}
-    {%- set last_ancestor = page.ancestors | slice(start=-1) %}
-    {%- set current_section = get_section(path=last_ancestor.0, metadata_only=true) %}
+    {%- if page.ancestors | length > 0 -%}
+        {%- set last_ancestor = page.ancestors | slice(start=-1) -%}
+        {%- set_global current_section = get_section(path=last_ancestor.0, metadata_only=true) -%}
+    {%- else -%}
+        {#- We're likely in a nested page. Try to find the parent page or nearest section. -#}
+        {%- set components = page.components -%}
+        {%- for i in range(start=1, end=components | length) -%}
+            {%- if lang == config.default_language -%}
+                {%- set potential_path = components | slice(end=components | length - i) | join(sep="/") -%}
+                {%- set potential_page = potential_path ~ "/index.md" -%}
+                {%- set potential_section = potential_path ~ "/_index.md" -%}
+            {%- else -%}
+                {%- set potential_path = components | slice(start=1, end=components | length - i) | join(sep="/") -%}
+                {%- set potential_page = potential_path ~ "/index." ~ lang ~ ".md" -%}
+                {%- set potential_section = potential_path ~ "/_index." ~ lang ~ ".md" -%}
+            {%- endif -%}
+            {#- Check for parent page first. -#}
+            {%- set page_data = load_data(path=potential_page, required=false) -%}
+            {%- if page_data -%}
+                {%- set_global current_section = get_page(path=potential_page) -%}
+                {%- break -%}
+            {%- endif -%}
+            {#- No parent page, check for section. -#}
+            {%- set section_data = load_data(path=potential_section, required=false) -%}
+            {%- if section_data -%}
+                {%- set_global current_section = get_section(path=potential_section, metadata_only=true) -%}
+                {%- break -%}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endif -%}
 {%- endif -%}
 
 {%- set priority_order = [

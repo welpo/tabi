@@ -1,7 +1,22 @@
+@mixin theme-variables($theme) {
+    @if $theme =='light' {
+        --primary-color: #ca4963; // Contrast ratio: 4.52:1.
+    }
+    @else if $theme == 'dark' {
+        --primary-color: #ea535f; // Contrast ratio: 4.63:1.
+    }
+}
+
 :root {
-    --primary-color: #ca4963; // Contrast ratio: 4.52:1.
+    @include theme-variables('light');
 }
 
 [data-theme='dark'] {
-    --primary-color: #ea535f; // Contrast ratio: 4.63:1.
+    @include theme-variables('dark');
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        @include theme-variables('dark');
+    }
 }

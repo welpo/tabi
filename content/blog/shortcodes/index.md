@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-08-28
+updated = 2024-09-22
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -207,10 +207,18 @@ dist/
 
 Embed text from a remote URL or a local file. To display the path or URL on the code block, see the [show source or path shortcode](#show-source-or-path).
 
+The shortcode accepts three parameters:
+
+- `src`: The source URL or file path (required)
+- `start`: First line to display (optional, starts at 1)
+- `end`: The ending line number (optional, defaults to 0, meaning the last line)
+
+{{ admonition(type="info", text="`start` and `end` are inclusive. `start=3, end=3` will display only the third line.") }}
+
 **Important**:
 
 - **Remote VS local files**: If `src` starts with "http", it will be treated as a remote file. Otherwise, it assumes a local file path.
-- **Files access**: As it uses Zola's [`load_data`](https://www.getzola.org/documentation/templates/overview/#load-data), local files must be inside the Zola directory—see [File searching logic](https://www.getzola.org/documentation/templates/overview/#file-searching-logic).
+- **Files access**: As it uses Zola's [`load_data`](https://www.getzola.org/documentation/templates/overview/#load-data), local files must be inside the Zola directory—see [File searching logic](https://www.getzola.org/documentation/templates/overview/#file-searching-logic). As of [tabi 2.16.0](https://github.com/welpo/tabi/releases/tag/v2.16.0), the shortcode supports both relative and absolute paths.
 - **Code block formatting**: To display the text as a code block, you must manually add the Markdown code fences (backticks) and, optionally, specify the programming language for syntax highlighting.
 
 #### Usage
@@ -227,6 +235,12 @@ Displaying text from a local file:
 
 ```
 {{/* remote_text(src="path/to/file.txt") */}}
+```
+
+Display lines 3 to 7 (both inclusive) of a local file:
+
+```
+{{/* remote_text(src="path/to/file.txt", start=3, end=7) */}}
 ```
 
 ### Admonitions

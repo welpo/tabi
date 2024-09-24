@@ -1,6 +1,6 @@
 footer {
     margin-top: auto;
-    margin-bottom: 1.4rem;
+    margin-block-end: 1.4rem;
     color: var(--meta-color);
     font-size: 0.88rem;
     font-family: var(--post-font-family);
@@ -66,7 +66,7 @@ footer nav {
     }
 }
 
-[data-theme="dark"] {
+@mixin dark-theme-social {
     .social {
         &:hover {
             & > img {
@@ -77,5 +77,15 @@ footer nav {
         & > img {
             filter: invert(1);
         }
+    }
+}
+
+[data-theme="dark"] {
+    @include dark-theme-social;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        @include dark-theme-social;
     }
 }

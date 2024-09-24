@@ -4,7 +4,7 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 24px;
     margin-top: 4vmin;
-    padding: 12px 0;
+    padding-block: 12px;
 
     .card {
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -22,7 +22,9 @@
         }
 
         .card-info {
-            padding: 0 24px 24px;
+            padding-inline: 24px;
+            padding-block-start: 0;
+            padding-block-end: 24px;
             text-align: center;
         }
 

@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-08-28
+updated = 2024-09-17
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -25,11 +25,12 @@ tabi tiene una jerarquía que te permite personalizar tu sitio en diferentes niv
 
 1. **Configuraciones globales**: Estas son las configuraciones que se aplican a todo tu sitio. Se establecen en `config.toml`.
 2. **Configuraciones de sección**: Estas son las configuraciones que se aplican a una sección de tu sitio (por ejemplo, `/blog` o `/projects`). Se establecen en la metainformación del archivo `_index.md` de la sección.
-3. **Configuraciones de página**: Estas son las configuraciones que se aplican a una sola página. Se establecen en la metainformación de la página.
+3. **Configuración de la página «padre»**: Para páginas anidadas (páginas dentro de páginas), estas son las configuraciones de la página que las contiene.
+4. **Configuraciones de página**: Estas son las configuraciones que se aplican a una sola página. Se establecen en la metainformación de la página.
 
 En todos los casos, las opciones de tabi se establecen en la sección `[extra]`.
 
-Para las configuraciones que siguen esta jerarquía, el valor establecido en una página reemplaza el valor de una sección, que a su vez reemplaza el valor global. En resumen: cuanto más específica sea la configuración, mayor prioridad tendrá, o `página > sección > config.toml`.
+Para las configuraciones que siguen esta jerarquía, el valor establecido en una página reemplaza el valor de una sección, que a su vez reemplaza el valor global. En resumen: cuanto más específica sea la configuración, mayor prioridad tendrá, o `página > página padre/sección > config.toml`.
 
 ---
 

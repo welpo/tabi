@@ -2,11 +2,25 @@
 // and might not be suitable for users with certain types of visual impairment.
 // Furthermore, low contrast will affect your Google Lighthouse rating.
 // For more information on web accessibility: https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
+@mixin theme-variables($theme) {
+    @if $theme =='light' {
+        --primary-color: #f56a00; // Contrast ratio: 3.02:1. Not very accessible.
+    }
+    @else if $theme == 'dark' {
+        --primary-color: #ec984f; // Contrast ratio: 7.19:1. Accessible.
+    }
+}
 
 :root {
-    --primary-color: #f56a00; // Contrast ratio: 3.02:1. Not very accessible.
+    @include theme-variables('light');
 }
 
 [data-theme='dark'] {
-    --primary-color: #ec984f; // Contrast ratio: 7.19:1. Accessible.
+    @include theme-variables('dark');
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        @include theme-variables('dark');
+    }
 }

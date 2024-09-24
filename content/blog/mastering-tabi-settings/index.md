@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-08-28
+updated = 2024-09-17
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -25,11 +25,12 @@ tabi has a hierarchy that allows you to customise your site at different levels.
 
 1. **Global settings**: These are the settings that apply to your entire site. They are set in `config.toml`.
 2. **Section settings**: These are the settings that apply to a section of your site (e.g.`/blog` or `/projects`). They are set in the front matter of the `_index.md` file of the section.
-3. **Page settings**: These are the settings that apply to a single page. They are set in the front matter of the page.
+3. **Parent page settings**: For nested pages (pages within pages), these are the settings from the parent page.
+4. **Page settings**: These are the settings that apply to a single page. They are set in the front matter of the page.
 
 In all cases, tabi's settings are set in the `[extra]` section.
 
-For settings which follow this hierarchy, the value set on a page overrides the value for a section, which overrides the global value. In short: the more specific the setting, the higher priority it has, or `page > section > config.toml`.
+For settings which follow this hierarchy, the value set on a page overrides the value for a section, which overrides the global value. In short: the more specific the setting, the higher priority it has, or `page > parent page/section > config.toml`.
 
 ---
 

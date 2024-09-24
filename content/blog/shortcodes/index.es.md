@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2024-08-28
+updated = 2024-09-22
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -208,10 +208,18 @@ dist/
 
 Añade texto desde una URL remota o un archivo local.
 
+El shortcode acepta tres parámetros:
+
+- `src`: La URL de origen o ruta del archivo (obligatorio)
+- `start`: Primera línea a mostrar (opcional, empieza en 1)
+- `end`: Número de la última línea (opcional, por defecto es 0, la última línea)
+
+{{ admonition(type="info", text="`start` y `end` son inclusivos. `start=3, end=3` mostrará solo la tercera línea.") }}
+
 **Importante**:
 
 - **Archivos remotos VS archivos locales**: Si `src` empieza con "http", se tratará como un archivo remoto. De lo contrario, se asume que es una ruta de archivo local.
-- **Acceso a archivos**: Dado que utiliza la función [`load_data`](https://www.getzola.org/documentation/templates/overview/#load-data) de Zola, los archivos locales deben estar dentro del directorio de Zola —ver la [lógica de búsqueda de archivos](https://www.getzola.org/documentation/templates/overview/#file-searching-logic).
+- **Acceso a archivos**: Dado que utiliza la función [`load_data`](https://www.getzola.org/documentation/templates/overview/#load-data) de Zola, los archivos locales deben estar dentro del directorio de Zola —ver la [lógica de búsqueda de archivos](https://www.getzola.org/documentation/templates/overview/#file-searching-logic). Desde [tabi 2.16.0](https://github.com/welpo/tabi/releases/tag/v2.16.0), el shortcode admite también rutas relativas.
 - **Formateo de bloques de código**: Para mostrar el texto como un bloque de código, debes añadir manualmente las cercas de código Markdown (comillas invertidas) y, opcionalmente, especificar el lenguaje de programación para el resaltado sintáctico.
 
 #### Uso
@@ -228,6 +236,12 @@ Visualización de texto de un archivo local:
 
 ```
 {{/* remote_text(src="ruta/a/archivo.txt") */}}
+```
+
+Mostar sólo las líneas 3 a 5 de un archivo remoto:
+
+```
+{{/* remote_text(src="https://example.com/script.py", start=3, end=5) */}}
 ```
 
 ### Advertencias

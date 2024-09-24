@@ -1,9 +1,24 @@
-// Evangelion Unit-02.
-:root {
-    --primary-color: #d12e36;  // Contrast ratio: 5.05:1
+@mixin theme-variables($theme) {
+    @if $theme =='light' {
+        // Evangelion Unit-02.
+        --primary-color: #d12e36;  // Contrast ratio: 5.05:1
+    }
+    @else if $theme == 'dark' {
+        // Evangelion Unit-01.
+        --primary-color: #c09bd9;  // Contrast ratio: 7.01:1
+    }
 }
 
-// Evangelion Unit-01.
+:root {
+    @include theme-variables('light');
+}
+
 [data-theme='dark'] {
-    --primary-color: #c09bd9;  // Contrast
+    @include theme-variables('dark');
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        @include theme-variables('dark');
+    }
 }

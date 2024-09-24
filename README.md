@@ -180,6 +180,8 @@ git pull
 | [mikufan.page](https://mikufan.page) | [Nadia](https://github.com/nyadiia) | Personal blog | [Source](https://github.com/nyadiia/mikufan.page) |
 | [tim-boettcher.online](https://tim-boettcher.online/) | [Tim Böttcher](https://codeberg.org/Tim-Boettcher/) | Insights and ramblings of a deafblind programmer | [Source](https://codeberg.org/Tim-Boettcher/tim-boettcher-online/) |
 | [www.richtman.au](https://www.richtman.au) | [Ariel Richtman](https://github.com/arichtman) | Personal tech blog | [Source](https://github.com/arichtman/www.richtman.au) |
+| [Ponderosa Games](https://ponderosagames.com/) | John Burak ([JVimes](https://github.com/jvimes)) | A friendly indie game company | &mdash; |
+
 
 Using tabi? Feel free to create a PR and add your site to this list.
 

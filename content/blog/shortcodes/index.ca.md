@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2024-08-28
+updated = 2024-09-22
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -207,10 +207,18 @@ dist/
 
 Afegeix text des d'una URL remota o un arxiu local.
 
+El shortcode accepta tres paràmetres:
+
+- `src`: L'URL d'origen o ruta del fitxer (obligatori)
+- `start`: Primera línia a mostrar (opcional, comença a 1)
+- `end`: Número de l'última línia (opcional, per defecte és 0, l'última línia)
+
+{{ admonition(type="info", text="`start` i `end` són inclusius. `start=3, end=3` mostrarà només la tercera línia.") }}
+
 **Important**:
 
 - **Arxius remots VS arxius locals**: Si `src` comença amb "http", es tractarà com un arxiu remot. D'altra banda, s'assumeix que és una ruta d'arxiu local.
-- **Accés a arxius**: Atès que utilitza la funció [`load_data`](https://www.getzola.org/documentation/templates/overview/#load-data) de Zola, els arxius locals han d'estar dins del directori de Zola —vegeu la [lògica de cerca d'arxius](https://www.getzola.org/documentation/templates/overview/#file-searching-logic).
+- **Accés a arxius**: Atès que utilitza la funció [`load_data`](https://www.getzola.org/documentation/templates/overview/#load-data) de Zola, els arxius locals han d'estar dins del directori de Zola —vegeu la [lògica de cerca d'arxius](https://www.getzola.org/documentation/templates/overview/#file-searching-logic). Desde [tabi 2.16.0](https://github.com/welpo/tabi/releases/tag/v2.16.0), el shortcode admet també rutes relatives.
 - **Formateig de blocs de codi**: Per mostrar el text com un bloc de codi, has d'afegir manualment les tanques de codi Markdown (cometes inverses) i, opcionalment, especificar el llenguatge de programació per al ressaltat sintàctic.
 
 #### Ús
@@ -227,6 +235,12 @@ Mostra el text d'un arxiu local:
 
 ```
 {{/* remote_text(src="ruta/a/arxiu.txt") */}}
+```
+
+Mostreu només les línies 3 a 5 d'un arxiu local:
+
+```
+{{/* remote_text(src="ruta/a/arxiu.txt", start=3, end=5) */}}
 ```
 
 ### Advertències
