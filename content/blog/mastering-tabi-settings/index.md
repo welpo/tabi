@@ -652,7 +652,7 @@ You can set them up in the `[extra.analytics]` section of your `config.toml`.
 - `service`: Specifies which analytics service to use. Supported options are `"goatcounter"`, `"umami"`, and `"plausible"`.
 
 - `id`: The unique identifier for your analytics service. This varies based on the service:
-  - For GoatCounter, it's the code chosen during signup. Self-hosted instances don't require this field.
+  - For GoatCounter, it's the code chosen during signup. Self-hosted instances of GoatCounter don't require this field.
   - For Umami, it's the website ID.
   - For Plausible, it's the domain name.
 
