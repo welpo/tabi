@@ -280,7 +280,7 @@ enable_csp = true
 # For GoatCounter, this is the code you choose during signup.
 # For Umami, this is the website ID.
 # For Plausible, this is the domain name (e.g. "example.com").
-# Note: Leave this field empty if you're self-hosting.
+# Note: Leave this field empty if you're self-hosting GoatCounter.
 # id = "yourID"
 
 # Optional: Specify the URL for self-hosted analytics instances.

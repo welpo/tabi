@@ -644,7 +644,7 @@ Pots configurar-los en la secció `[extra.analytics]` del teu arxiu `config.toml
 - `service`: el servei a utilitzar. Les opcions disponibles són `"goatcounter"`, `"umami", i "plausible"`.
 
 - `id`: l'identificador únic per al teu servei d'anàlisi. Això varia segons el servei:
-  - Per a GoatCounter, és el codi triat durant el registre. Instàncies auto-allotjades no requereixen aquest camp.
+  - Per a GoatCounter, és el codi triat durant el registre. Instàncies auto-allotjades de GoatCounter no requereixen aquest camp.
   - Per a Umami, és l'ID del lloc web.
   - Per a Plausible, és el nom de domini.
 

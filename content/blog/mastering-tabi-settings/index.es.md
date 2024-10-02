@@ -644,7 +644,7 @@ Puedes configurarlos en la sección `[extra.analytics]` de tu archivo `config.to
 - `service`: el servicio a utilizar. Las opciones disponibles son `"goatcounter"`, `"umami"`, y `"plausible"`.
 
 - `id`: el identificador único para tu servicio de análisis. Esto varía según el servicio:
-  - Para GoatCounter, es el código elegido durante el registro. Instancias auto-alojadas no requieren este campo.
+  - Para GoatCounter, es el código elegido durante el registro. Instancias auto-alojadas de GoatCounter no requieren este campo.
   - Para Umami, es la ID del sitio web.
   - Para Plausible, es el nombre de dominio.
 
