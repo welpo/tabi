@@ -8,6 +8,7 @@ tags = ["showcase", "tutorial", "FAQ"]
 
 [extra]
 series_page_introduction = "custom"
+series_page_introduction_variables = { position = "third", foo = "FOO FOO FOO!!!"}
 
 +++
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
