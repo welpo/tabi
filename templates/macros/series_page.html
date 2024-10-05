@@ -61,6 +61,28 @@ Parameters:
 		    {%- set series_page_description = series_page_description | replace(from="$SERIES_TITLE", to=series_title) | replace(from="$SERIES_PERMALINK", to=series_permalink) | replace(from="$SERIES_HTML_LINK", to=series_html_link) -%}
 		    {%- set series_page_description = series_page_description | replace(from="$SERIES_PAGES_NUMBER", to=series_pages_number) | replace(from="$SERIES_PAGE_INDEX", to=series_page_index) | replace(from="$SERIES_PAGES_OLIST", to=series_pages_ordered_list) | replace(from="$SERIES_PAGES_ULIST", to=series_pages_unordered_list) -%}
 
+		    {# Replace introduction custom placeholders #}
+		    {%- if series_section.extra.series_page_introduction_placeholders is defined -%}
+		        {%- set missing_vars = [] -%}
+		        {%- for placeholder in series_section.extra.series_page_introduction_placeholders -%}
+		            {%- if placeholder in series_page_headline or placeholder in series_page_description -%}
+		                {# Attempt to retrieve the corresponding variable by trimming the $ sign and converting to lowercase #}
+		                {%- set var_name = placeholder | replace(from="$", to="") | lower -%}
+		                {%- if page.extra.series_page_introduction_variables[var_name] -%}
+		                    {%- set_global series_page_headline = series_page_headline | replace(from=placeholder, to=page.extra.series_page_introduction_variables[var_name]) -%}
+		                    {%- set_global series_page_description = series_page_description | replace(from=placeholder, to=page.extra.series_page_introduction_variables[var_name]) -%}
+		                {%- else -%}
+		                    {# Append the variable name to the list of missing variables #}
+		                    {% set_global missing_vars = missing_vars | concat(with=var_name) -%}
+		                {%- endif -%}
+		            {%- endif -%}
+		        {%- endfor -%}
+		        {%- if missing_vars | length > 0 -%}
+		            {%- set missing_vars_str = missing_vars | join(sep=", ") -%}
+		            {{ throw(message="ERROR: The following variables are included in this page's series introduction (`series_page_introduction_placeholders`) but have not been set in the `series_page_introduction_variables` of this page: " ~ missing_vars_str) }}
+		        {%- endif -%}
+		    {%- endif -%}
+
 		    {%- if series_page_introduction == "link" -%}
 		        <section class="series-page-introduction">
 		            <p>{{ series_page_headline | safe }}</p>
@@ -81,4 +103,78 @@ Parameters:
 		        </section>
 				{%- endif -%}
 		{%- endif -%}
+{% endmacro %}
+
+{#
+Computes the series navigation of a series's page.
+
+Parameters:
+    - `page`: The page object being part of the series.
+		- `series_section`: The series' section the page belongs to.
+		- `series_ordered_pages`: The series' pages properly ordered (see at the top of this file for an explanation).
+		- `language_strings`: A dictionary containing the translation strings.
+#}
+{% macro get_navigation(page, series_section, series_ordered_pages, language_strings) %}
+	  {%- if macros_settings::evaluate_setting_priority(setting="show_previous_next_series_article_links", page=page, default_global_value=false) == "true" -%}
+	      {%- if series_ordered_pages | length > 1 -%}
+	          {% set next_series_label = macros_translate::translate(key="next", default="Next", language_strings=language_strings) %}
+	          {% set prev_series_label = macros_translate::translate(key="prev", default="Prev", language_strings=language_strings) %}
+	          {% set is_previous = true %}
+	          {% set is_next = false %}
+	          {%- for series_page in series_ordered_pages -%}
+	              {%- if series_page.relative_path == page.relative_path -%}
+	                  {%- set_global is_previous = false -%}
+	                  {%- set_global is_next = true -%}
+	              {%- else -%}
+	                  {%- if is_previous -%}
+	                      {%- set_global prev_series_page = series_page -%}
+	                  {%- endif -%}
+	                  {%- if is_next -%}
+	                      {%- set_global next_series_page = series_page -%}
+	                      {%- set_global is_next = false-%}
+	                  {%- endif -%}
+	              {%- endif -%}
+	          {%- endfor -%}
+	          {% if macros_settings::evaluate_setting_priority(setting="invert_previous_next_article_links", page=page, default_global_value=true) == "true" %}
+	              {% if prev_series_page %}
+	                  {% set left_series_link = prev_series_page.permalink %}
+	                  {% set left_series_label = prev_series_label %}
+	                  {% set left_series_title = prev_series_page.title %}
+	              {% endif %}
+	              {% if next_series_page %}
+	                  {% set right_series_link = next_series_page.permalink %}
+	                  {% set right_series_label = next_series_label %}
+	                  {% set right_series_title = next_series_page.title %}
+	              {% endif %}
+	          {% else %}
+	              {% if next_series_page %}
+	                  {% set left_series_link = next_series_page.permalink %}
+	                  {% set left_series_label = next_series_label %}
+	                  {% set left_series_title = next_series_page.title %}
+	              {% endif %}
+	              {% if prev_series_page %}
+	                  {% set right_series_link = prev_series_page.permalink %}
+	                  {% set right_series_label = prev_series_label %}
+	                  {% set right_series_title = prev_series_page.title %}
+	              {% endif %}
+	          {% endif %}
+	          {% if macros_settings::evaluate_setting_priority(setting="previous_next_article_links_full_width", page=page, default_global_value=true) == "true" %}
+	              {%- set full_width_class = "full-width" -%}
+	          {% endif %}
+	      <nav class="{{ full_width_class | default(value="") }} series-article-navigation">
+	          <div>
+	          {%- if left_series_link and left_series_label and left_series_title -%}
+	          <a href="{{ left_series_link | safe }}" aria-label="{{ left_series_label }}" aria-describedby="left_series_title"><span class="arrow">←</span>&nbsp;{{ left_series_label }}</a>
+	          <p aria-hidden="true" id="left_series_title">{{ left_series_title | truncate(length=100, end="…") }}</p>
+	          {%- endif -%}
+	          </div>
+	          <div>
+	          {%- if right_series_link and right_series_label and right_series_title -%}
+	          <a href="{{ right_series_link | safe }}" aria-label="{{ right_series_label }}" aria-describedby="right_series_title">{{ right_series_label }}&nbsp;<span class="arrow">→</span></a>
+	          <p aria-hidden="true" id="right_series_title">{{ right_series_title | truncate(length=100, end="…") }}</p>
+	          {%- endif -%}
+	          </div>
+	      </nav>
+	      {%- endif -%}
+	  {%- endif -%}
 {% endmacro %}

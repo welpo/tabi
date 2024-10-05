@@ -8,7 +8,7 @@ tags = ["showcase", "tutorial"]
 
 [extra]
 series_page_introduction = "link"
-series_page_introduction_variables = { position = "first", toto = "TOTO!!! "}
+series_page_introduction_variables = { position = "first", foo = "FOO!!!"}
 
 +++
 
