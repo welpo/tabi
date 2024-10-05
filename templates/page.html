@@ -250,6 +250,9 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {% endif %}
         {% endfor %}
 
+        {% if series_section %}
+            {{ macros_series_page::get_navigation(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings)}}
+        {%- endif -%}
         {% if macros_settings::evaluate_setting_priority(setting="show_previous_next_article_links", page=page, default_global_value=true) == "true" %}
             {%- if page.lower or page.higher -%}
                 {% set next_label = macros_translate::translate(key="next", default="Next", language_strings=language_strings) %}

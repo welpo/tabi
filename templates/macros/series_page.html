@@ -117,8 +117,8 @@ Parameters:
 {% macro get_navigation(page, series_section, series_ordered_pages, language_strings) %}
 	  {%- if macros_settings::evaluate_setting_priority(setting="show_previous_next_series_article_links", page=page, default_global_value=false) == "true" -%}
 	      {%- if series_ordered_pages | length > 1 -%}
-	          {% set next_series_label = macros_translate::translate(key="next", default="Next", language_strings=language_strings) %}
-	          {% set prev_series_label = macros_translate::translate(key="prev", default="Prev", language_strings=language_strings) %}
+	          {% set next_series_label = macros_translate::translate(key="next_series", default="Next (series)", language_strings=language_strings) %}
+	          {% set prev_series_label = macros_translate::translate(key="prev_series", default="Prev (series)", language_strings=language_strings) %}
 	          {% set is_previous = true %}
 	          {% set is_next = false %}
 	          {%- for series_page in series_ordered_pages -%}

@@ -186,14 +186,20 @@ serve_local_mermaid = true
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 show_previous_next_article_links = false
 
+# Show links to previous and next series articles at the bottom of posts which is part of a series.
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+show_previous_next_series_article_links = false
+
 # Invert order of the links to previous and next articles at the bottom of posts.
 # By default, next articles are on the left side of the page and previous articles are on the right side.
 # To reverse the order (next articles on the right and previous articles on the left), set it to true.
+# This applies to series articles navigation as well.
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 invert_previous_next_article_links = false
 
 # Whether the navigation for previous/next article should match the full width of the site (same as the navigation bar at the top) or the article width.
 # To match the navigation bar at the top, set it to true.
+# This applies to series articles navigation as well.
 previous_next_article_links_full_width = true
 
 # Quick navigation buttons.
