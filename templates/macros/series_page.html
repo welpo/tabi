@@ -1,0 +1,84 @@
+{#
+Those macros deal with introduction and navigation for series pages.
+Using macros have been prefered over partial inclusion or inline code to make sure series_ordered_pages is forced to be used.
+A section's pages natural order is invalid in case of reversed pagination which would lead to invalid series' pages order.
+To prevent this, pages are ordered correctly in a separate variable which must be used instead of the series section pages.
+#}
+
+{#
+Computes the introduction of a series's page.
+
+Parameters:
+    - `page`: The page object being part of the series.
+		- `series_section`: The series' section the page belongs to.
+		- `series_ordered_pages`: The series' pages properly ordered (see at the top of this file for an explanation).
+		- `language_strings`: A dictionary containing the translation strings.
+#}
+{% macro get_introduction(page, series_section, series_ordered_pages, language_strings) %}
+	  {%- if "series" in series_section.extra and series_section.extra.series -%}
+		    {%- set allowed_series_page_introduction = ["none", "link", "summary", "custom"] -%}
+		    {%- set series_page_introduction = macros_settings::evaluate_setting_priority(setting="series_page_introduction", page=page, section=series_section, default_global_value="link") -%}
+		    {%- if series_page_introduction not in allowed_series_page_introduction -%}
+		        {{ throw(message="ERROR: Invalid value for series_page_description. Allowed values are 'none', 'link', 'summary' or 'custom' (defaults to 'link').") }}
+		    {%- endif -%}
+
+		    {# Prepare variables for substitution #}
+		    {%- set series_title = series_section.title -%}
+		    {%- set series_permalink = series_section.permalink -%}
+		    {%- set series_html_link = '<a href="' ~ series_section.permalink ~ '" aria_label="' ~ series_section.title ~ '">' ~ series_section.title ~ '</a>' -%}
+		    {%- set series_pages_list = [] -%}
+		    {%- set series_pages_number = 0 -%}
+		    {%- set series_page_index = 0 -%}
+			  {%- for series_page in series_ordered_pages -%}
+		        {%- set_global series_pages_number = series_pages_number + 1 -%}
+			      {%- if series_page.relative_path == page.relative_path -%}
+		            {%- set_global series_page_index = series_pages_number -%}
+		            {%- set series_pages_list_item = '<li>' ~ series_page.title ~ '</li>' -%}
+						{%- else -%}
+		            {%- set series_pages_list_item = '<li><a href="' ~ series_page.permalink ~ '" aria_label="' ~ series_page.title ~ '">' ~ series_page.title ~ '</a></li>' -%}
+			      {%- endif -%}
+		        {%- set_global series_pages_list = series_pages_list | concat(with=series_pages_list_item) -%}
+			  {%- endfor -%}
+		    {%- set series_pages_number = series_pages_number | as_str -%}
+		    {%- set series_page_index = series_page_index | as_str -%}
+		    {%- set series_pages_list = series_pages_list | join(sep="") -%}
+
+		    {%- if macros_settings::evaluate_setting_priority(setting="post_listing_index_reversed", page=series_section, default_global_value=false) == "true" -%}
+		        {%- set series_pages_ordered_list = '<ol reversed>' ~ series_pages_list ~ '</ol>' -%}
+		    {%- else -%}
+		        {%- set series_pages_ordered_list = '<ol>' ~ series_pages_list ~ '</ol>' -%}
+		    {%- endif -%}
+		    {%- set series_pages_unordered_list = '<ul>' ~ series_pages_list ~ '</ul>' -%}
+
+		    {# Define headline #}
+		    {%- set series_page_headline = macros_translate::translate(key="series_page_headline", default="This article is part of the series: $SERIES_HTML_LINK", language_strings=language_strings) -%}
+		    {%- set series_page_headline = series_section.extra.series_page_headline | default(value=series_page_headline) -%}
+		    {%- set series_page_headline = series_page_headline | replace(from="$SERIES_TITLE", to=series_title) | replace(from="$SERIES_PERMALINK", to=series_permalink) | replace(from="$SERIES_HTML_LINK", to=series_html_link) -%}
+		    {%- set series_page_headline = series_page_headline | replace(from="$SERIES_PAGES_NUMBER", to=series_pages_number) | replace(from="$SERIES_PAGE_INDEX", to=series_page_index) | replace(from="$SERIES_PAGES_OLIST", to=series_pages_ordered_list) | replace(from="$SERIES_PAGES_ULIST", to=series_pages_unordered_list) -%}
+
+		    {# Define description #}
+		    {%- set series_page_description = series_section.extra.series_page_description | default(value=series_section.description) -%}
+		    {%- set series_page_description = series_page_description | replace(from="$SERIES_TITLE", to=series_title) | replace(from="$SERIES_PERMALINK", to=series_permalink) | replace(from="$SERIES_HTML_LINK", to=series_html_link) -%}
+		    {%- set series_page_description = series_page_description | replace(from="$SERIES_PAGES_NUMBER", to=series_pages_number) | replace(from="$SERIES_PAGE_INDEX", to=series_page_index) | replace(from="$SERIES_PAGES_OLIST", to=series_pages_ordered_list) | replace(from="$SERIES_PAGES_ULIST", to=series_pages_unordered_list) -%}
+
+		    {%- if series_page_introduction == "link" -%}
+		        <section class="series-page-introduction">
+		            <p>{{ series_page_headline | safe }}</p>
+		        </section>
+		    {%- elif series_page_introduction == "summary" -%}
+		        <section class="series-page-introduction">
+		            <details>
+		                <summary>{{ series_page_headline | safe }}</summary>
+		                {{ series_page_description | safe }}
+		                <nav>
+		                    {{ series_pages_ordered_list | safe }}
+		                </nav>
+		            </details>
+		        </section>
+		    {%- elif series_page_introduction == "custom" -%}
+		        <section class="series-page-introduction-custom">
+		            {{ series_page_description | safe }}
+		        </section>
+				{%- endif -%}
+		{%- endif -%}
+{% endmacro %}

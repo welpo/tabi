@@ -251,3 +251,28 @@ details summary {
 .mermaid .node .label {
     max-width: none !important;
 }
+
+.series-page-introduction {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--primary-color);
+    border-left-width: 0.3rem;
+    border-radius: 10px;
+    padding: 1rem;
+
+    p {
+        margin: 0;
+    }
+
+    summary::marker {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+    }
+
+    details {
+        ol {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}
