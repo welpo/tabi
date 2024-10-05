@@ -66,6 +66,7 @@ load_comments = "Afficher les commentaires"
 series = "SERIE"
 series_jump_to_posts = "Aller aux articles"
 series_posts = "Articles de la série :"
+series_page_headline = "Cet article fait partie de la série : $SERIES_HTML_LINK."
 
 # Copy code block button.
 copied = "Copié !"

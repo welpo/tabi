@@ -180,6 +180,37 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {% endif %}
         </ul>
 
+        {# A page is part of a series if one of the sections above (whether it is transparent or not) has the `extra.series` parameter set to true. #}
+        {# As a series might be a transparent section in order to mix up its articles with those of the section just above or the root, #}
+        {# there is no other way but to compute the potential path of each ancestor section related to the page and look for the first one being a series. #}
+        {# Using the `ancestors` field of a section is not possible because transparent sections are not present in this field. #}
+        {%- set current_path = [] -%}
+        {%- set section_paths = [] -%}
+        {%- for path in page.relative_path | split(pat="/") | slice(end=-1) -%}
+            {%- set_global current_path = current_path | concat(with=path) -%}
+            {%- set section_path = current_path | concat(with="_index.md") | join(sep="/") -%}
+            {%- set_global section_paths = section_paths | concat(with=section_path) -%}
+        {%- endfor -%}
+        {# The series the page is part of is the closest section flagged as a series, if any #}
+        {%- for section_path in section_paths | reverse -%}
+            {%- set section_file_exists = load_data(path=section_path, required=false) -%}
+            {%- if section_file_exists -%}
+                {%- set loaded_section = get_section(path=section_path,lang=lang) -%}
+                {%- if "series" in loaded_section.extra and loaded_section.extra.series -%}
+                    {%- set_global series_section = loaded_section -%}
+                    {%- set_global series_ordered_pages = loaded_section.pages -%}
+                    {%- if loaded_section.paginated and loaded_section.paginate_reversed -%}
+                        {%- set_global series_ordered_pages = loaded_section.pages | reverse -%}
+                    {%- endif -%}
+                    {%- break -%}
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+
+        {% if series_section %}
+            {{ macros_series_page::get_introduction(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings)}}
+        {% endif %}
+
         {% if page.extra.tldr %}
             <div class="admonition note">
                 <div class="admonition-icon admonition-icon-note"></div>
