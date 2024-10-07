@@ -91,6 +91,18 @@ The Mermaid shortcode supports two parameters:
 
 {{ admonition(type="tip", text="You can use the [Mermaid Live Editor](https://mermaid.live/) to create and preview your diagrams.") }}
 
+#### Usage
+
+```
+{%/* mermaid(invertible=true, full_width=false) */%}
+
+Your diagram goes here.
+
+`invertible` or `full_width` can be omitted if default values are used.
+
+{%/* end */%}
+```
+
 ## Image shortcodes
 
 All image shortcodes support absolute paths, relative paths, and remote sources in the `src` parameter.
