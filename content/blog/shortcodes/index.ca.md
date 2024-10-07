@@ -91,6 +91,18 @@ El shortcode de Mermaid admet dos paràmetres:
 
 {{ admonition(type="tip", title="CONSELL", text="Empra l'[editor de Mermaid](https://mermaid.live/) per crear i previsualitzar els teus diagrames.") }}
 
+#### Ús
+
+```
+{%/* mermaid(invertible=true, full_width=false) */%}
+
+El teu codi Mermaid va aquí.
+
+`invertible` or `full_width` poden ometre's per emprar els valors per defecte.
+
+{%/* end */%}
+```
+
 ## Shortcodes d'imatge
 
 Tots els shortcodes d'imatge admeten rutes absolutes, rutes relatives, i fonts remotes en el paràmetre `src`.

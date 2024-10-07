@@ -91,6 +91,16 @@ El shortcode de Mermaid admite dos parámetros:
 
 {{ admonition(type="tip", title="CONSEJO", text="Puedes usar el [editor de Mermaid](https://mermaid.live/) para crear y previsualizar tus diagramas.") }}
 
+#### Uso
+
+```
+{%/* mermaid(invertible=true, full_width=false) */%}
+
+Tu diagrama Mermaid va aquí. Puedes omitir los parámetros para usar los valores predeterminados.
+
+{%/* end */%}
+```
+
 ## Shortcodes de imagen
 
 Todos los shortcodes de imagen admiten rutas absolutas, rutas relativas, y fuentes remotas en el parámetro `src`.
