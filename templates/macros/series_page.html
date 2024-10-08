@@ -85,12 +85,12 @@ Parameters:
 
 		    {%- if series_page_introduction == "link" -%}
 		        <section class="series-page-introduction">
-		            <p>{{ series_page_headline | safe }}</p>
+		            <p>{{ series_page_headline | markdown | safe }}</p>
 		        </section>
 		    {%- elif series_page_introduction == "summary" -%}
 		        <section class="series-page-introduction">
 		            <details>
-		                <summary>{{ series_page_headline | safe }}</summary>
+		                <summary>{{ series_page_headline | markdown | replace(from="<p>", to="") | safe }}</summary>
 		                {{ series_page_description | markdown | safe }}
 		                <nav>
 		                    {{ series_pages_ordered_list | safe }}
