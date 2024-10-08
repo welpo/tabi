@@ -13,26 +13,13 @@
     {%- include "partials/home_banner.html" -%}
 {% endif -%}
 
-    <article>
-        <div>
-            <span class="title-label">{{ macros_translate::translate(key="series", default="SERIES", language_strings=language_strings) }}</span>
-            {%- set jump_to_series_posts = macros_translate::translate(key="series_jump_to_posts", default="Jump to posts", language_strings=language_strings) -%}
-            <a href="#posts-list" class="title-button no-hover-padding" title="{{ jump_to_series_posts }}">
-                {{ jump_to_series_posts }}
-            </a>
-            {{ macros_page_header::page_header(title=section.title) }}
-        </div>
+    {{ macros_page_header::page_header(title=section.title) }}
 
-        <section class="body">
-            {{ section.content | safe }}
-        </section>
-    </article>
+    <section class="body">
+        {{ section.content | safe }}
+    </section>
+
     <div id="posts-list">
-        <div>
-            <h2 class="seriesposts-title bottom-divider">
-                {{ macros_translate::translate(key="series_posts", default="Series' posts:", language_strings=language_strings) }}
-            </h2>
-        </div>
         {%- if paginator %}
             {%- set pages = paginator.pages -%}
         {% else %}
@@ -41,13 +28,12 @@
 
         {% set max_posts = section.extra.max_posts | default(value=999999) %}
         {{ macros_list_posts::list_posts(posts=pages, max=max_posts, metadata="indexes", language_strings=language_strings, section_path=section.path, paginator=paginator | default(value="")) }}
-
     </div>
 
     {% if paginator %}
         {%- include "partials/paginate.html" -%}
     {% endif %}
-    
+
 </main>
 
 {%- include "partials/extra_features.html" -%}

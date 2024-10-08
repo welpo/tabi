@@ -65,9 +65,6 @@ table_of_contents = "Table of Contents"
 load_comments = "Load comments"
 
 # Series.
-series = "SERIE"
-series_jump_to_posts = "Jump to posts"
-series_posts = "Series' posts:"
 series_page_headline = "This article is part of the series: $SERIES_HTML_LINK."
 
 # Copy code block button.
