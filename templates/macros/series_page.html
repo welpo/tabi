@@ -91,7 +91,7 @@ Parameters:
 		        <section class="series-page-introduction">
 		            <details>
 		                <summary>{{ series_page_headline | safe }}</summary>
-		                {{ series_page_description | safe }}
+		                {{ series_page_description | markdown | safe }}
 		                <nav>
 		                    {{ series_pages_ordered_list | safe }}
 		                </nav>
@@ -99,7 +99,7 @@ Parameters:
 		        </section>
 		    {%- elif series_page_introduction == "custom" -%}
 		        <section class="series-page-introduction-custom">
-		            {{ series_page_description | safe }}
+		            {{ series_page_description | markdown | safe }}
 		        </section>
 				{%- endif -%}
 		{%- endif -%}
