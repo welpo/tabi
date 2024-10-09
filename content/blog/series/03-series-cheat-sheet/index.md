@@ -7,7 +7,6 @@ description = "This last article provides an overview of series and describe all
 tags = ["showcase", "tutorial", "FAQ"]
 
 [extra]
-series_page_introduction = "custom"
 series_page_introduction_variables = { position = "third", foo = "FOO FOO FOO!!!"}
 
 +++

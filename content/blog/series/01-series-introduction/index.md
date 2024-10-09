@@ -7,7 +7,6 @@ description = "This first article introduces how does series works and how to co
 tags = ["showcase", "tutorial"]
 
 [extra]
-series_page_introduction = "link"
 series_page_introduction_variables = { position = "first", foo = "FOO!!!"}
 
 +++
