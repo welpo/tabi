@@ -16,12 +16,6 @@ Parameters:
 #}
 {% macro get_introduction(page, series_section, series_ordered_pages, language_strings) %}
 	  {%- if "series" in series_section.extra and series_section.extra.series -%}
-		    {%- set allowed_series_page_introduction = ["none", "link", "summary", "custom"] -%}
-		    {%- set series_page_introduction = macros_settings::evaluate_setting_priority(setting="series_page_introduction", page=page, section=series_section, default_global_value="link") -%}
-		    {%- if series_page_introduction not in allowed_series_page_introduction -%}
-		        {{ throw(message="ERROR: Invalid value for series_page_description. Allowed values are 'none', 'link', 'summary' or 'custom' (defaults to 'link').") }}
-		    {%- endif -%}
-
 		    {# Prepare variables for substitution #}
 		    {%- set series_title = series_section.title -%}
 		    {%- set series_permalink = series_section.permalink -%}
@@ -50,27 +44,20 @@ Parameters:
 		    {%- endif -%}
 		    {%- set series_pages_unordered_list = '<ul>' ~ series_pages_list ~ '</ul>' -%}
 
-		    {# Define headline #}
-		    {%- set series_page_headline = macros_translate::translate(key="series_page_headline", default="This article is part of the series: $SERIES_HTML_LINK", language_strings=language_strings) -%}
-		    {%- set series_page_headline = series_section.extra.series_page_headline | default(value=series_page_headline) -%}
-		    {%- set series_page_headline = series_page_headline | replace(from="$SERIES_TITLE", to=series_title) | replace(from="$SERIES_PERMALINK", to=series_permalink) | replace(from="$SERIES_HTML_LINK", to=series_html_link) -%}
-		    {%- set series_page_headline = series_page_headline | replace(from="$SERIES_PAGES_NUMBER", to=series_pages_number) | replace(from="$SERIES_PAGE_INDEX", to=series_page_index) | replace(from="$SERIES_PAGES_OLIST", to=series_pages_ordered_list) | replace(from="$SERIES_PAGES_ULIST", to=series_pages_unordered_list) -%}
-
-		    {# Define description #}
-		    {%- set series_page_description = series_section.extra.series_page_description | default(value=series_section.description) -%}
-		    {%- set series_page_description = series_page_description | replace(from="$SERIES_TITLE", to=series_title) | replace(from="$SERIES_PERMALINK", to=series_permalink) | replace(from="$SERIES_HTML_LINK", to=series_html_link) -%}
-		    {%- set series_page_description = series_page_description | replace(from="$SERIES_PAGES_NUMBER", to=series_pages_number) | replace(from="$SERIES_PAGE_INDEX", to=series_page_index) | replace(from="$SERIES_PAGES_OLIST", to=series_pages_ordered_list) | replace(from="$SERIES_PAGES_ULIST", to=series_pages_unordered_list) -%}
+		    {# Define introduction #}
+		    {%- set series_page_introduction = series_section.extra.series_page_introduction | default(value="") -%}
+		    {%- set series_page_introduction = series_page_introduction | replace(from="$SERIES_TITLE", to=series_title) | replace(from="$SERIES_PERMALINK", to=series_permalink) | replace(from="$SERIES_HTML_LINK", to=series_html_link) -%}
+		    {%- set series_page_introduction = series_page_introduction | replace(from="$SERIES_PAGES_NUMBER", to=series_pages_number) | replace(from="$SERIES_PAGE_INDEX", to=series_page_index) | replace(from="$SERIES_PAGES_OLIST", to=series_pages_ordered_list) | replace(from="$SERIES_PAGES_ULIST", to=series_pages_unordered_list) -%}
 
 		    {# Replace introduction custom placeholders #}
 		    {%- if series_section.extra.series_page_introduction_placeholders is defined -%}
 		        {%- set missing_vars = [] -%}
 		        {%- for placeholder in series_section.extra.series_page_introduction_placeholders -%}
-		            {%- if placeholder in series_page_headline or placeholder in series_page_description -%}
+		            {%- if placeholder in series_page_introduction -%}
 		                {# Attempt to retrieve the corresponding variable by trimming the $ sign and converting to lowercase #}
 		                {%- set var_name = placeholder | replace(from="$", to="") | lower -%}
 		                {%- if page.extra.series_page_introduction_variables[var_name] -%}
-		                    {%- set_global series_page_headline = series_page_headline | replace(from=placeholder, to=page.extra.series_page_introduction_variables[var_name]) -%}
-		                    {%- set_global series_page_description = series_page_description | replace(from=placeholder, to=page.extra.series_page_introduction_variables[var_name]) -%}
+		                    {%- set_global series_page_introduction = series_page_introduction | replace(from=placeholder, to=page.extra.series_page_introduction_variables[var_name]) -%}
 		                {%- else -%}
 		                    {# Append the variable name to the list of missing variables #}
 		                    {% set_global missing_vars = missing_vars | concat(with=var_name) -%}
@@ -83,23 +70,9 @@ Parameters:
 		        {%- endif -%}
 		    {%- endif -%}
 
-		    {%- if series_page_introduction == "link" -%}
+		    {%- if series_page_introduction | length > 0 -%}
 		        <section class="series-page-introduction">
-		            <p>{{ series_page_headline | markdown | safe }}</p>
-		        </section>
-		    {%- elif series_page_introduction == "summary" -%}
-		        <section class="series-page-introduction">
-		            <details>
-		                <summary>{{ series_page_headline | markdown | replace(from="<p>", to="") | safe }}</summary>
-		                {{ series_page_description | markdown | safe }}
-		                <nav>
-		                    {{ series_pages_ordered_list | safe }}
-		                </nav>
-		            </details>
-		        </section>
-		    {%- elif series_page_introduction == "custom" -%}
-		        <section class="series-page-introduction-custom">
-		            {{ series_page_description | markdown | safe }}
+		            {{ series_page_introduction | markdown | safe }}
 		        </section>
 				{%- endif -%}
 		{%- endif -%}

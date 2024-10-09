@@ -64,9 +64,6 @@ see_changes = "Voir les modifications"
 table_of_contents = "Table des matières"
 load_comments = "Afficher les commentaires"
 
-# Series.
-series_page_headline = "Cet article fait partie de la série : $SERIES_HTML_LINK."
-
 # Copy code block button.
 copied = "Copié !"
 copy_code_to_clipboard = "Copier le code dans le presse-papier"

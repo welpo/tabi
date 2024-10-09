@@ -7,7 +7,6 @@ description = "This second article focuses on how to organisation the pages of a
 tags = ["showcase", "tutorial"]
 
 [extra]
-series_page_introduction = "summary"
 series_page_introduction_variables = { position = "second", foo = "FOO FOO!!!"}
 
 +++
