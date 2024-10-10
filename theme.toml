@@ -224,6 +224,9 @@ encode_plaintext_email = true  # Setting is ignored if email is already encoded.
 #     { name = "spotify", url = "https://open.spotify.com/artist/5Hv2bYBhMp1lUHFri06xkE", icon = "spotify" },
 # ]
 
+# Fediverse creator attribution
+# FediverseCreator = {  handle = "welpo", domain = "example.com" }
+
 # Extra menu to show on the footer, below socials section.
 # footer_menu = [
 #     {url = "about", name = "about", trailing_slash = true},

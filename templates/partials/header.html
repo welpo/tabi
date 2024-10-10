@@ -174,6 +174,11 @@
         {%- include "partials/analytics.html" -%}
     {%- endif -%}
 
+    {# Socials #}
+    {%- if config.extra.FediverseCreator -%}
+        <meta name="fediverse:creator" content="@{{ config.extra.FediverseCreator["handle"] }}@{{ config.extra.FediverseCreator["domain"]}}" />
+    {%- endif -%}
+
     {# Search #}
     {%- if config.build_search_index -%}
         {%- if config.search.index_format -%}
