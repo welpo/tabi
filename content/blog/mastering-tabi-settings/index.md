@@ -475,6 +475,20 @@ Since it follows the [hierarchy](#settings-hierarchy), if it's not set on a page
 
 **Protip**: automate their creation with a [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [From Bashful to Social Butterfly: Automating Link Previews for Zola Sites](https://osc.garden/blog/automating-social-media-cards-zola/).
 
+### Fediverse Creator
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
+
+You can highlight your fediverse profile in Mastodon link previews by setting the `fediverse_creator` variable in your `config.toml`. For example, for @username@example.com, use:
+
+```toml
+fediverse_creator = { handle = "username", domain = "example.com" }
+```
+
+This adds metadata to your HTML, allowing Mastodon to display the author's fediverse profile when your content is shared.
+
 ---
 
 ## Navigation

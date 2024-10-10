@@ -470,6 +470,18 @@ Dado que sigue la [jerarquía](#jerarquia-de-configuracion), si no está configu
 
 **Consejo**: automatiza su creación con un [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [De reservado a rey de las redes: automatizando las vistas previas de los enlaces con Zola](https://osc.garden/es/blog/automating-social-media-cards-zola/).
 
+### Creador del fediverso
+
+| Página | Sección | `config.toml` | Sigue jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:----------------:|:-------------------:|
+|   ❌   |    ❌   |      ✅       |        ❌        |         ❌          |
+
+Puedes mostrar tu perfil del fediverso en las vistas previas de enlaces de Mastodon configurando la variable `fediverse_creator` en tu `config.toml`. Por ejemplo, para @username@example.com, usa:
+
+```toml
+fediverse_creator = { handle = "username", domain = "example.com" }
+```
+
 ---
 
 ## Navegación

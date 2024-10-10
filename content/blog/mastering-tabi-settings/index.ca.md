@@ -470,6 +470,18 @@ Ja que segueix la [jerarquia](#jerarquia-de-configuracio), si no està configura
 
 **Consell**: automatitza la seva creació amb un [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [De reservat a rei de les xarxes: automatitzant les vistes prèvies dels enllaços amb Zola](https://osc.garden/ca/blog/automating-social-media-cards-zola/).
 
+### Creador del fedivers
+
+| Pàgina | Secció | `config.toml` | Segueix jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:-----------------:|:--------------------:|
+|   ❌   |   ❌   |      ✅       |         ❌        |          ❌          |
+
+Pots mostrar el perfil del fedivers de l'autor en les previsualitzacions d'enllaços de Mastodon configurant la variable `fediverse_creator` al teu `config.toml`. Per exemple, per a @username@example.com, fes servir:
+
+```toml
+fediverse_creator = { handle = "username", domain = "example.com" }
+```
+
 ---
 
 ## Navegació
