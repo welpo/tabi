@@ -4,6 +4,39 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [2.17.0](https://github.com/welpo/tabi/compare/v2.16.0..v2.17.0) - 2024-10-10
+
+### ✨ Features
+
+- Add fediverse creator metadata support ([#409](https://github.com/welpo/tabi/issues/409)) by [@arichtman](https://github.com/arichtman), [@Ariel](https://github.com/Ariel) Richtman and [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(search)* Restore highlighting functionality ([#401](https://github.com/welpo/tabi/issues/401)) by [@welpo](https://github.com/welpo)
+- Set proper URL for self-hosted Umami ([#402](https://github.com/welpo/tabi/issues/402)) by [@soumendrak](https://github.com/soumendrak)
+
+### 📝 Documentation
+
+- Add mermaid shortcode usage ([#407](https://github.com/welpo/tabi/issues/407)) by [@ZzMzaw](https://github.com/ZzMzaw) and [@welpo](https://github.com/welpo)
+- Update comment in config.toml RE: #402 ([c50edbd](https://github.com/welpo/tabi/commit/c50edbd453eca2f031bc97a5a25caa206644d568)) by [@welpo](https://github.com/welpo)
+
+### ♻️ Refactor
+
+- *(search)* Reduce search lag on mobile ([7ceada9](https://github.com/welpo/tabi/commit/7ceada974b7c3f2c52aaa5688af631c806901aed)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(README)* Add jmbhughes.com to showcase ([#404](https://github.com/welpo/tabi/issues/404)) by [@jmbhughes](https://github.com/jmbhughes)
+- *(deps)* Replace local release script w/ git submodule ([66239be](https://github.com/welpo/tabi/commit/66239bee016406c87a227b685eb70a464546e199)) by [@welpo](https://github.com/welpo)
+- *(deps)* Automate KaTeX/mermaid upgrades ([fc04ab4](https://github.com/welpo/tabi/commit/fc04ab4e40977bafa1b821c77e38554d287f69bc)) by [@welpo](https://github.com/welpo)
+- Reformat social card creation tip ([47fcee8](https://github.com/welpo/tabi/commit/47fcee8f81fb10bcd7cc042cc4a80dcada244b6d)) by [@welpo](https://github.com/welpo)
+
+### 👥 New contributors
+
+🫶 [@github-actions](https://github.com/github-actions)[bot] made their first contribution in [#405](https://github.com/welpo/tabi/pull/405)
+
+🫶 [@jmbhughes](https://github.com/jmbhughes) made their first contribution in [#404](https://github.com/welpo/tabi/pull/404)
+
 ## [2.16.0](https://github.com/welpo/tabi/compare/v2.15.0..v2.16.0) - 2024-09-22
 
 ### ✨ Features
@@ -73,8 +106,6 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - Add funding information ([8d22a42](https://github.com/welpo/tabi/commit/8d22a42e3fd5d909eaf90f7132e818b9c45f7b07)) by [@welpo](https://github.com/welpo)
 
 ### 👥 New contributors
-
-🫶 [@soumendrak](https://github.com/soumendrak) made their first contribution in [#372](https://github.com/welpo/tabi/pull/372)
 
 🫶 [@DataTriny](https://github.com/DataTriny) made their first contribution in [#367](https://github.com/welpo/tabi/pull/367)
 
