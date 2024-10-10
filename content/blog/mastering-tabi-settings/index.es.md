@@ -468,7 +468,7 @@ Si ambas rutas, relativa y absoluta, son válidas, la ruta relativa tendrá prio
 
 Dado que sigue la [jerarquía](#jerarquia-de-configuracion), si no está configurado en una página, pero sí lo está en una sección, se utilizará la imagen de la sección. Si no está configurado en una página o sección, pero sí en `config.toml`, se usará la imagen global.
 
-**Consejo**: automatiza su creación con un [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [De reservado a rey de las redes: automatizando las vistas previas de los enlaces con Zola](https://osc.garden/es/blog/automating-social-media-cards-zola/).
+{{ admonition(type="tip", title="CONSEJO", text="Automatiza su creación con un [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [Automatizando las vistas previas de los enlaces con Zola](https://osc.garden/es/blog/automating-social-media-cards-zola/).") }}
 
 ### Creador del fediverso
 

@@ -473,7 +473,7 @@ If both relative and absolute paths are valid, the relative path will take prece
 
 Since it follows the [hierarchy](#settings-hierarchy), if it's not set on a page, but is set on a section, the section's image will be used. If it's not set on a page or section, but is set in `config.toml`, the global image will be used.
 
-**Protip**: automate their creation with a [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [From Bashful to Social Butterfly: Automating Link Previews for Zola Sites](https://osc.garden/blog/automating-social-media-cards-zola/).
+{{ admonition(type="tip", title="PROTIP", text="Automate their creation with a [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [Automating Link Previews for Zola Sites](https://osc.garden/blog/automating-social-media-cards-zola/).") }}
 
 ### Fediverse Creator
 

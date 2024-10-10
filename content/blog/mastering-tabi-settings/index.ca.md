@@ -468,7 +468,7 @@ Si ambdues rutes, relativa i absoluta, són vàlides, la ruta relativa tindrà p
 
 Ja que segueix la [jerarquia](#jerarquia-de-configuracio), si no està configurat en una pàgina, però sí ho està en una secció, s'utilitzarà la imatge de la secció. Si no està configurat en una pàgina o secció, però sí en `config.toml`, s'utilitzarà la imatge global.
 
-**Consell**: automatitza la seva creació amb un [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [De reservat a rei de les xarxes: automatitzant les vistes prèvies dels enllaços amb Zola](https://osc.garden/ca/blog/automating-social-media-cards-zola/).
+{{ admonition(type="tip", title="CONSELL", text="Automatitza la seva creació amb un [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [Automatitzant les vistes prèvies dels enllaços amb Zola](https://osc.garden/ca/blog/automating-social-media-cards-zola/).") }}
 
 ### Creador del fedivers
 
