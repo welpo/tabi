@@ -199,7 +199,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- if "series" in loaded_section.extra and loaded_section.extra.series -%}
                     {%- set_global series_section = loaded_section -%}
                     {%- set_global series_ordered_pages = loaded_section.pages -%}
-                    {%- if loaded_section.paginated and loaded_section.paginate_reversed -%}
+                    {%- if loaded_section.paginated | default(value=0) > 0 and loaded_section.paginate_reversed -%}
                         {%- set_global series_ordered_pages = loaded_section.pages | reverse -%}
                     {%- endif -%}
                     {%- break -%}
