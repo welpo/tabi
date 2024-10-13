@@ -716,6 +716,8 @@ To use a custom icon, you can add it to your site's `static/social_icons` direct
 { name = "custom", url = "https://example.com", icon = "custom" }
 ```
 
+{{ admonition(type="note", text="All social links include the `rel='me'` [attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/me). This helps search engines and web services verify that the social media accounts are owned by you.") }}
+
 ### Feed Icon
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |

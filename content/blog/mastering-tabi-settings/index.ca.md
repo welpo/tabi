@@ -704,6 +704,8 @@ Per utilitzar una icona personalitzada, pots afegir-la al directori `static/soci
 { name = "custom", url = "https://example.com", icon = "custom" }
 ```
 
+{{ admonition(type="note", title="NOTA", text="Tots els enllaços a xarxes socials inclouen l'[atribut](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/me) `rel='me'`. Això ajuda els motors de cerca i serveis web a verificar que les comptes de xarxes socials et pertanyen.") }}
+
 ### Icona de feed
 
 | Pàgina | Secció  | `config.toml` | Segueix la jerarquia | Requereix JavaScript |

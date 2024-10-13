@@ -706,6 +706,8 @@ Para usar un icono personalizado, puedes añadirlo al directorio `static/social_
 { name = "custom", url = "https://example.com", icon = "custom" }
 ```
 
+{{ admonition(type="note", title="NOTA", text="Todos los enlaces sociales incluyen el [atributo](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/me) `rel='me'`. Esto ayuda a los motores de búsqueda y servicios web a verificar que las cuentas de redes sociales te pertenecen.") }}
+
 ### Icono de feed
 
 | Página | Sección | `config.toml` | Respeta jerarquía | Requiere JavaScript |
