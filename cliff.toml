@@ -37,7 +37,7 @@ body = """
 {% macro commit(commit, in_breaking_section=false) -%}
     - {% if commit.scope %}*({{ commit.scope }})* {% endif %}{% if commit.breaking and not in_breaking_section %}[**‼️BREAKING‼️**] {% endif %}\
         {{ commit.message | upper_first }}\
-        {% if not commit.github.pr_number %} ([{{ commit.id | truncate(length=7, end="") }}]({{ self::remote_url() }}/commit/{{ commit.id }})){%- endif -%}{% if commit.github.username %} by @{{ commit.github.username }} \
+        {% if not commit.remote.pr_number %} ([{{ commit.id | truncate(length=7, end="") }}]({{ self::remote_url() }}/commit/{{ commit.id }})){%- endif -%}{% if commit.remote.username %} by @{{ commit.remote.username }} \
         {%- set co_authors = commit.footers | filter(attribute="token", value="Co-authored-by") | map(attribute="value") -%}
         {%- set number_of_co_authors = co_authors | length -%}
         {%- for co_author in co_authors -%}
