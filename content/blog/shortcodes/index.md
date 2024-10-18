@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-09-22
+updated = 2024-10-18
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -362,3 +362,31 @@ Markdown will of course be rendered.
 
 {%/* end */%}
 ```
+
+### Force text direction
+
+Force the text direction of a content block. Overrides both the global `force_codeblock_ltr` setting and the document's overall direction.
+
+Accepts the parameter `direction`: the desired text direction. This can be either "ltr" (left-to-right) or "rtl" (right-to-left). Defaults to "ltr".
+
+{% force_text_direction(direction="rtl") %}
+```python
+def مرحبا_بالعالم():
+    print("مرحبا بالعالم!")
+```
+{% end %}
+
+#### Usage
+
+In a LTR page we can force a code block to be RTL (as shown above) like so:
+
+````
+{%/* force_text_direction(direction="rtl") */%}
+
+```python
+def مرحبا_بالعالم():
+    print("مرحبا بالعالم!")
+```
+
+{%/* end */%}
+````

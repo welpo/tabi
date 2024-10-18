@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2024-09-22
+updated = 2024-10-18
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -362,3 +362,31 @@ El Markdown, per suposat, serà interpretat.
 
 {%/* end */%}
 ```
+
+### Forçar direcció del text
+
+Força la direcció del text d'un bloc de contingut. Substitueix tant la configuració global `force_codeblock_ltr` com la direcció general del document.
+
+Accepta el paràmetre `direction`: la direcció de text desitjada. Pot ser "ltr" (d'esquerra a dreta) o "rtl" (de dreta a esquerra). Per defecte és "ltr".
+
+{% force_text_direction(direction="rtl") %}
+```python
+def مرحبا_بالعالم():
+    print("مرحبا بالعالم!")
+```
+{% end %}
+
+#### Ús
+
+En una pàgina LTR podem forçar que un bloc de codi sigui RTL (com es mostra a dalt) de la següent manera:
+
+````
+{%/* force_text_direction(direction="rtl") */%}
+
+```python
+def مرحبا_بالعالم():
+    print("مرحبا بالعالم!")
+```
+
+{%/* end */%}
+````
