@@ -581,6 +581,14 @@ Establecer `copy_button = true` añadirá un pequeño botón de copiar en la par
 
 Establece `add_src_to_code_block = true` para habilitar el uso del [shortcode `add_src_to_code_block`](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url).
 
+### Forzar bloques de código de izquierda a derecha
+
+| Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:----------------:|:-------------------:|
+|   ✅   |   ✅    |      ✅       |        ✅        |         ❌         |
+
+Por defecto, los bloques de código se renderizan de izquierda a derecha, independientemente de la dirección general del texto. Establece `force_codeblock_ltr = false` para permitir que los bloques de código sigan la dirección del documento. Útil para idiomas de derecha a izquierda que necesitan bloques de código de derecha a izquierda.
+
 ### Soporte para KaTeX
 
 | Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
