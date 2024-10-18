@@ -591,6 +591,14 @@ Setting `copy_button = true` will add a small copy button to the top right of co
 
 Setting `add_src_to_code_block = true` enables the use of the [`add_src_to_code_block` shortcode](@/blog/shortcodes/index.md#show-source-or-path).
 
+### Force Code Blocks LTR
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
+
+By default, code blocks are rendered left-to-right, regardless of the overall text direction. Set `force_codeblock_ltr = false` to allow code blocks to follow the document's text direction. Useful for RTL languages needing RTL code blocks.
+
 ### KaTeX Support
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
