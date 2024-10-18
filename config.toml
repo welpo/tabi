@@ -134,6 +134,11 @@ copy_button = true
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 add_src_to_code_block = false
 
+# Force left-to-right (LTR) direction for code blocks.
+# Set to false to allow code to follow the document's natural direction.
+# Can be set at page or section levels. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+force_codeblock_ltr = true
+
 # Show the author(s) of a page.
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 show_author = false

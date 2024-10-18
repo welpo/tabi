@@ -581,6 +581,14 @@ Establir `copy_button = true` afegirà un petit botó de copiar a la part superi
 
 Estableix `add_src_to_code_block = true` per habilitar l'ús del [shortcode `add_src_to_code_block`](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url).
 
+### Forçar blocs de codi d'esquerra a dreta
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:-----------------:|:--------------------:|
+|   ✅   |   ✅   |      ✅       |         ✅        |          ❌          |
+
+Per defecte, els blocs de codi es renderitzen d'esquerra a dreta, independentment de la direcció general del text. Estableix `force_codeblock_ltr = false` per permetre que els blocs de codi segueixin la direcció del document. Útil per a idiomes de dreta a esquerra que necessiten blocs de codi de dreta a esquerra.
+
 ### Suport per a KaTeX
 
 | Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
