@@ -237,3 +237,19 @@ details summary {
 .mermaid .node .label {
     max-width: none !important;
 }
+
+// For the `force_text_direction` shortcode.
+[data-force-text-direction="ltr"] {
+    direction: ltr;
+    unicode-bidi: bidi-override;
+}
+
+[data-force-text-direction="rtl"] {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+[data-force-text-direction="ltr"] *,
+[data-force-text-direction="rtl"] * {
+    direction: inherit;
+}

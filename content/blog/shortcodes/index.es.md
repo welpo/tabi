@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2024-09-22
+updated = 2024-10-18
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -362,3 +362,31 @@ El Markdown, por supuesto, será interpretado.
 
 {%/* end */%}
 ```
+
+### Forzar dirección del texto
+
+Fuerza la dirección del texto de un bloque de contenido. Anula tanto la configuración global `force_codeblock_ltr` como la dirección general del documento.
+
+Acepta el parámetro `direction`: la dirección de texto deseada. Puede ser "ltr" (de izquierda a derecha) o "rtl" (de derecha a izquierda). Por defecto es "ltr".
+
+{% force_text_direction(direction="rtl") %}
+```python
+def مرحبا_بالعالم():
+    print("مرحبا بالعالم!")
+```
+{% end %}
+
+#### Uso
+
+En una página LTR podemos forzar que un bloque de código sea RTL (como se muestra arriba) de la siguiente manera:
+
+````
+{%/* force_text_direction(direction="rtl") */%}
+
+```python
+def مرحبا_بالعالم():
+    print("مرحبا بالعالم!")
+```
+
+{%/* end */%}
+````
