@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-09-17
+updated = 2024-10-20
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -110,37 +110,48 @@ header = {title = "Hola! Soc tabi~", img = "img/main.webp", img_alt = "Óscar Fe
 
 La descripció és contingut Markdown normal, escrit fora del front matter.
 
-#### Mostrant publicacions recents
+#### Llistant publicacions recents
 
-Si vols mostrar publicacions a la pàgina principal, primer necessites decidir si la seva ruta serà `/` o quelcom diferent, com ara `/blog/`.
+Per mostrar publicacions a la pàgina principal, primer has de decidir d'on es serviran: de la ruta arrel (`/`) o d'un subdirectori (per exemple, `/blog`).
 
-Si vols servir les publicacions des de `/`, necessites configurar `paginate_by = 5` al front matter del teu arxiu `_index.md`. **Nota**: això no es configura a l'apartat `[extra]`, sinó al front matter principal. Exemple:
+**Opció A: Servir publicacions des de la ruta arrel (`/`)**
 
-```toml
-sort_by = "date"
-template = "section.html"
-paginate_by = 5
-
-[extra]
-header = {title = "Hola! Sóc tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, l'autor del tema" }
-```
-
-Si prefereixes servir les publicacions des de `/blog`, pots configurar `section_path = "/blog"` a la secció `[extra]`. Aquesta és la configuració d'aquesta demo:
+Configura `paginate_by` al front matter del teu arxiu `content/_index.md`:
 
 ```toml
-title = "Publicacions recents"
+title = "Últimes publicacions"
 sort_by = "date"
 template = "section.html"
+paginate_by = 5  # Mostra 5 publicacions per pàgina.
 
 [extra]
-header = {title = "Hola! Sóc tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, l'autor del tema" }
-section_path = "blog/_index.es.md"
-max_posts = 4
+header = {title = "Hola! Soc tabi~", img = "img/main.webp", img_alt = "El teu nom" }
 ```
 
-Fixa't que si configures `section_path`, no cal que configuris `paginate_by`. Pots establir `max_posts` per determinar el nombre de publicacions que vols mostrar a la pàgina principal.
+{{ admonition(type="note", text="La configuració `paginate_by` va al front matter principal, no a la secció `[extra]`.") }}
 
-El `title` és el títol que apareix a sobre de les publicacions.
+**Opció B: Servir publicacions des d'un subdirectori (per exemple, `/blog`)**
+
+Utilitza `section_path` a la secció `[extra]` del teu arxiu `content/_index.md`:
+
+```toml
+title = "Últimes publicacions"
+sort_by = "date"
+template = "section.html"
+# No configuris `paginate_by` aquí.
+
+[extra]
+header = {title = "Hola! Soc tabi~", img = "img/main.webp", img_alt = "El teu nom" }
+section_path = "blog/_index.md"  # On trobar les teves publicacions.
+max_posts = 5  # Mostra fins a 5 publicacions a la pàgina principal.
+```
+
+{{ admonition(type="warning", title="ALERTA", text="No configuris `paginate_by` i `section_path` alhora. Aquestes configuracions són mútuament excloents i usar ambdues pot fer que no es mostrin publicacions.") }}
+
+Notes addicionals:
+
+- El `title` al front matter estableix el títol que apareix sobre les publicacions.
+- Utilitza la ruta completa a l'arxiu `_index.md` de la secció per a `section_path`. Usar `section_path = "blog/"` no funcionarà.
 
 ##### Mostrar la data dels articles al llistat
 
