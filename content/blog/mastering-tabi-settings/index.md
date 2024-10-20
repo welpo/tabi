@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-09-17
+updated = 2024-10-20
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -112,35 +112,46 @@ The description is regular Markdown content, set outside the front matter.
 
 #### Listing Recent Posts
 
-If you'd like to show posts on the main page, you first need to decide whether their path will be `/` or something like `/blog`.
+To show posts on your main page, you first need to decide where these posts will be served from: the root path (`/`) or a subdirectory (e.g., `/blog`). 
 
-If you want to serve the posts from `/`, you need to set `paginate_by = 5` in the front matter of your `_index.md` file. **Note**: this is not in the `[extra]` section, but in the main front matter. Example:
+**Option A: Serve posts from the root path (`/`)**
 
-```toml
-sort_by = "date"
-template = "section.html"
-paginate_by = 5
-
-[extra]
-header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, the theme's author" }
-```
-
-If you'd rather serve the posts from `/blog`, you can set `section_path = "/blog"` in the `[extra]` section. This is the setup of this demo:
+Set `paginate_by` in the front matter of your `content/_index.md` file:
 
 ```toml
 title = "Latest posts"
 sort_by = "date"
 template = "section.html"
+paginate_by = 5  # Show 5 posts per page.
 
 [extra]
-header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, the theme's author" }
-section_path = "blog/_index.md"
-max_posts = 4
+header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Your Name" }
 ```
 
-Notice how if you set `section_path`, you don't need to set `paginate_by`. You can set `max_posts` to the determine the number of posts you want to show on the main page.
+{{ admonition(type="note", text="The `paginate_by` setting goes in the main front matter, not in the `[extra]` section.") }}
 
-The `title` is the header that appears above the posts.
+**Option B: Serve posts from a subdirectory (e.g., `/blog`)**
+
+Use `section_path` in the `[extra]` section of your `content/_index.md` file:
+
+```toml
+title = "Latest posts"
+sort_by = "date"
+template = "section.html"
+# Do not set `paginate_by` here.
+
+[extra]
+header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Your Name" }
+section_path = "blog/_index.md"  # Where to find your posts.
+max_posts = 5  # Show up to 5 posts on the main page.
+```
+
+{{ admonition(type="warning", text="Do not set both `paginate_by` and `section_path`. These settings are mutually exclusive and using both may result in no posts being displayed.") }}
+
+Additional notes:
+
+- The `title` in the front matter sets the header that appears above the posts.
+- Use the full path to the section's `_index.md` file for `section_path`. Using `section_path = "blog/"` will not work.
 
 ##### Display the Date of Posts in Listing
 

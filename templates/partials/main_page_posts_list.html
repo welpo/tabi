@@ -4,6 +4,32 @@
             {{ macros_page_header::page_header(title=section.title) }}
         </div>
 
+        {# Check if both paginate_by and section_path are set #}
+        {%- set both_settings_set = paginator and extra_section -%}
+        {%- set paginator_has_no_pages = paginator and paginator.pages | length == 0 -%}
+        {%- set extra_section_has_pages = extra_section and extra_section.pages | length > 0 -%}
+
+        {# Display a warning if both settings are set, paginator has no pages, but extra section does #}
+        {%- if both_settings_set and paginator_has_no_pages and extra_section_has_pages -%}
+            <div class="admonition warning">
+                <div class="admonition-icon admonition-icon-warning"></div>
+                <div class="admonition-content">
+                    <strong class="admonition-title">WARNING: Conflicting Configuration</strong>
+                    <p>
+                        No posts are displayed due to conflicting settings in your <code>_index.md</code>:
+                    </p>
+                    <ul>
+                        <li><code>paginate_by</code> is set, but there are no posts to paginate in the current section.</li>
+                        <li><code>section_path</code> is set, and posts are available in that section.</li>
+                    </ul>
+                    <p>
+                        <strong>Solution:</strong> Remove <code>paginate_by</code> from your <code>_index.md</code>.
+                        To limit the number of displayed posts, use <code>max_posts</code> in the <code>[extra]</code> section instead.
+                    </p>
+                </div>
+            </div>
+        {%- endif -%}
+
         {%- if paginator %}
             {%- set pages = paginator.pages -%}
         {% else %}
@@ -14,7 +40,7 @@
         {{ macros_list_posts::list_posts(posts=pages, max=max_posts, language_strings=language_strings, section_path=path) }}
     </div>
 
-    {% if paginator %}
+    {% if paginator and paginator.pages | length > 0 %}
         {%- include "partials/paginate.html" -%}
     {% endif %}
 {%- endif -%}
