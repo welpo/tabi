@@ -61,6 +61,13 @@ description = "tabi és un tema de Zola ràpid, lleuger i modern amb JavaScript 
 generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
 
+[languages.ar]
+title = "~/تابي"
+description = "تابي هو قالب Zola سريع وحديث مع دعم متعدد اللغات و JavaScript اختياري ودرجة Lighthouse مثالية."
+generate_feeds = true
+taxonomies = [{name = "tags", feed = true}]
+build_search_index = false
+
 [extra]
 # Check out the documentation (or the comments below) to learn how to customise tabi:
 # https://welpo.github.io/tabi/blog/mastering-tabi-settings/
