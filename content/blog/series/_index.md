@@ -2,10 +2,9 @@
 title = "How to deal with series"
 template = "series.html"
 sort_by = "slug"
-
 description = "This series explains how to properly configure a series."
-
 transparent = true
+insert_anchor_links = "left"
 
 [extra]
 series = true
