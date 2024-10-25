@@ -8,5 +8,4 @@ insert_anchor_links = "left"
 [extra]
 social_media_card = "blog/social_cards/es_blog.jpg"
 show_previous_next_article_links = true
-show_previous_next_series_article_links = true
 +++

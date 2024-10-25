@@ -172,7 +172,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- set formatted_date = macros_format_date::format_date(date=page.updated, short=true, language_strings=language_strings) -%}
                 {%- set updated_str = last_updated_str | replace(from="$DATE", to=formatted_date) -%}
                 </ul><ul class="meta last-updated"><li>{{ updated_str }}</li>
-                {# Show link to remote changes if enabled #}
+                {#- Show link to remote changes if enabled -#}
                 {% if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" %}
                     {%- if previous_visible -%}{{ separator }}&nbsp;{%- endif -%}
                     <li><a href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}<small>&nbsp;<span class="arrow-corner">↗</span></small></a></li>
@@ -180,10 +180,10 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {% endif %}
         </ul>
 
-        {# A page is part of a series if one of the sections above (whether it is transparent or not) has the `extra.series` parameter set to true. #}
-        {# As a series might be a transparent section in order to mix up its articles with those of the section just above or the root, #}
-        {# there is no other way but to compute the potential path of each ancestor section related to the page and look for the first one being a series. #}
-        {# Using the `ancestors` field of a section is not possible because transparent sections are not present in this field. #}
+        {#- A page is part of a series if one of the sections above (whether it is transparent or not) has the `extra.series` parameter set to true. -#}
+        {#- As a series might be a transparent section in order to mix up its articles with those of the section just above or the root, -#}
+        {#- there is no other way but to compute the potential path of each ancestor section related to the page and look for the first one being a series. -#}
+        {#- Using the `ancestors` field of a section is not possible because transparent sections are not present in this field. -#}
         {%- set current_path = [] -%}
         {%- set section_paths = [] -%}
         {%- for path in page.relative_path | split(pat="/") | slice(end=-1) -%}
@@ -191,7 +191,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {%- set section_path = current_path | concat(with="_index.md") | join(sep="/") -%}
             {%- set_global section_paths = section_paths | concat(with=section_path) -%}
         {%- endfor -%}
-        {# The series the page is part of is the closest section flagged as a series, if any #}
+        {#- The series the page is part of is the closest section flagged as a series, if any -#}
         {%- for section_path in section_paths | reverse -%}
             {%- set section_file_exists = load_data(path=section_path, required=false) -%}
             {%- if section_file_exists -%}
@@ -207,10 +207,6 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {%- endif -%}
         {%- endfor -%}
 
-        {% if series_section %}
-            {{ macros_series_page::get_introduction(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings)}}
-        {% endif %}
-
         {% if page.extra.tldr %}
             <div class="admonition note">
                 <div class="admonition-icon admonition-icon-note"></div>
@@ -223,18 +219,48 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             </div>
         {% endif %}
 
-        {# Optional table of contents below the header #}
+        {#- Optional table of contents below the header -#}
         {% if page.toc and macros_settings::evaluate_setting_priority(setting="toc", page=page, default_global_value=false) == "true" %}
             {{ macros_toc::toc(page=page, header=true, language_strings=language_strings) }}
         {% endif %}
 
         <section class="body">
-            {# The replace pattern is used to enable arbitrary locations for the Table of Contents #}
-            {# This is Philipp Oppermann's workaround: https://github.com/getzola/zola/issues/584#issuecomment-474329637 #}
-            {{ page.content | replace(from="<!-- toc -->", to=macros_toc::toc(page=page, header=false, language_strings=language_strings)) | safe }}
+            {#- Replace series_intro placeholder -#}
+            {%- set content_with_intro = page.content -%}
+            {%- if "<!-- series_intro -->" in page.content -%}
+                {%- set series_intro_html = macros_series_page::get_introduction(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings) -%}
+                {%- set content_with_intro = content_with_intro | replace(from="<!-- series_intro -->", to=series_intro_html) -%}
+            {%- elif series_section -%}
+                {%- set series_intro_html = macros_series_page::get_introduction(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings) -%}
+                {%- set content_with_intro = series_intro_html ~ content_with_intro -%}
+            {%- endif -%}
+
+            {#- Handle series_outro placeholder -#}
+            {%- set processed_content = content_with_intro -%}
+            {%- if "<!-- series_outro -->" in content_with_intro -%}
+                {%- set series_outro_html = macros_series_page::get_outro(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings) -%}
+                {%- set processed_content = processed_content | replace(from="<!-- series_outro -->", to=series_outro_html) -%}
+            {%- elif series_section -%}
+                {%- set series_outro_html = macros_series_page::get_outro(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings) -%}
+                {#- We want the outro at the end of the article, but before footnote definitions -#}
+                {%- set footnotes_marker = '<hr><ol class="footnotes-list">' -%}
+                {%- if footnotes_marker in content_with_intro -%}
+                    {%- set content_sections = processed_content | split(pat=footnotes_marker) -%}
+                    {%- set main_content = content_sections | first -%}
+                    {%- set footnotes_content = content_sections | slice(start=1) | join(sep=footnotes_marker) -%}
+                    {%- set processed_content = main_content ~ series_outro_html ~ footnotes_marker ~ footnotes_content -%}
+                {%- else -%}
+                    {%- set processed_content = processed_content ~ series_outro_html -%}
+                {%- endif -%}
+            {%- endif -%}
+
+            {#- Replace TOC and render final content -#}
+            {#- The replace pattern is used to enable arbitrary locations for the Table of Contents -#}
+            {#- This is Philipp Oppermann's workaround: https://github.com/getzola/zola/issues/584#issuecomment-474329637 -#}
+            {{ processed_content | replace(from="<!-- toc -->", to=macros_toc::toc(page=page, header=false, language_strings=language_strings)) | safe }}
         </section>
 
-        {# Check if comments are enabled, checking that they are not disabled on the specific page #}
+        {#- Check if comments are enabled, checking that they are not disabled on the specific page -#}
         {% set systems = ["giscus", "utterances", "hyvortalk", "isso"] %}
         {% set enabled_systems = 0 %}
         {% set comment_system = "" %}
@@ -250,9 +276,6 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {% endif %}
         {% endfor %}
 
-        {% if series_section %}
-            {{ macros_series_page::get_navigation(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings)}}
-        {%- endif -%}
         {% if macros_settings::evaluate_setting_priority(setting="show_previous_next_article_links", page=page, default_global_value=true) == "true" %}
             {%- if page.lower or page.higher -%}
                 {% set next_label = macros_translate::translate(key="next", default="Next", language_strings=language_strings) %}
@@ -300,12 +323,12 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {%- endif -%}
         {%- endif -%}
 
-        {# Ensure only one comment system is enabled #}
+        {#- Ensure only one comment system is enabled -#}
         {% if enabled_systems > 1 %}
             {{ throw(message="ERROR: Multiple comment systems have been enabled for the same page. Check your config.toml and individual page settings to ensure only one comment system is activated at a time.") }}
         {% endif %}
 
-        {# Comments #}
+        {#- Comments -#}
         {% if comment_system %}
             {% include "partials/comments.html" %}
         {% endif %}
