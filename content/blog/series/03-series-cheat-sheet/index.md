@@ -9,7 +9,7 @@ tags = ["showcase", "tutorial", "FAQ"]
 [extra]
 series_template_variables = { position = "third", foo = "FOO FOO FOO!!!"}
 toc = true
-
+add_src_to_code_block = true
 +++
 
 ## Quick Start
@@ -17,6 +17,8 @@ toc = true
 1. Create a directory for your series.
 2. Create `_index.md` in the series directory.
 3. Set up the `_index.md` front matter:
+
+    {{ add_src_to_code_block(src="series/_index.md") }}
 
     ```toml
     title = "Learning Rust"
@@ -43,6 +45,8 @@ To force the feature on or off, use the `show_jump_to_posts` option in the `[ext
 ## Intro and Outro Templates
 
 Series articles can have automatic introduction and conclusion sections. These are configured in your series' `_index.md`:
+
+{{ add_src_to_code_block(src="series/_index.md") }}
 
 ```toml
 [extra.series_intro_templates]
@@ -130,15 +134,19 @@ There are three types of variables:
 ### First Article Reference
 
 {% wide_container() %}
+
 | Variable | Availability | Returns | Description | Example Usage | Example Output |
 |----------|-------------|---------|-------------|---------------|----------------|
 | `$FIRST_TITLE` | Always | Text | First article's title | `Start with $FIRST_TITLE` | Start with Introduction to Rust |
 | `$FIRST_HTML_LINK` | Always | HTML | Ready-to-use link to first article | `Begin at $FIRST_HTML_LINK` | Begin at <a href="/series/learn-rust/intro">Introduction to Rust</a> |
+
 {% end %}
 
 ### Template Example
 
 {{ admonition(type="tip", title="HTML vs text variables", text="Use HTML variables (ending in `_HTML_LINK`) when you want ready-made links. Use text variables (ending in `_TITLE` or `_PERMALINK`) when you want more control over the formatting.") }}
+
+{{ add_src_to_code_block(src="series/_index.md") }}
 
 ```toml
 # Introduction.
@@ -203,10 +211,9 @@ This article is part $SERIES_PAGE_INDEX of $SERIES_PAGES_NUMBER in $SERIES_HTML_
 
 Series templates support custom variables for additional information you want to include across your series. The process takes two steps:
 
-1. Define your placeholders once in the series configuration with `series_template_placeholders`.
-2. Provide their values in each article with `series_template_variables` (note the different name).
+1. First, define your **placeholders** in your series configuration (`_index.md`):
 
-3. First, define your **placeholders** in your series configuration (`_index.md`):
+{{ add_src_to_code_block(src="series/_index.md") }}
 
 ```toml
 [extra]
@@ -215,6 +222,8 @@ series_template_placeholders = ["$POSITION", "$TOPIC", "$DIFFICULTY"]
 ```
 
 2. Then, in each series article, provide the values for these placeholders in `series_template_variables`:
+
+{{ add_src_to_code_block(src="series/article.md") }}
 
 ```toml
 [extra.series_template_variables]
@@ -226,6 +235,8 @@ difficulty = "Beginner"
 ### Using Custom Variables
 
 You can use your custom variables in any template, alongside the built-in variables:
+
+{{ add_src_to_code_block(src="series/_index.md") }}
 
 ```toml
 [extra.series_intro_templates]
@@ -240,10 +251,10 @@ Difficulty level: $DIFFICULTY
 
 ### Example with Custom Variables
 
-Here's a complete example showing how to use custom variables in a series:
+{{ add_src_to_code_block(src="series/_index.md") }}
 
 ```toml
-# In series _index.md
+# In the series configuration.
 [extra]
 series = true
 series_template_placeholders = ["$LEARNING_TIME", "$KEY_CONCEPTS"]
@@ -254,7 +265,12 @@ series_intro_templates.default = """
 🔑 Key concepts: $KEY_CONCEPTS
 """
 
-# In an article of the series
+```
+
+{{ add_src_to_code_block(src="series/02-learning-rust/index.md") }}
+
+```toml
+# In an article of the series.
 [extra.series_template_variables]
 learning_time = "30 minutes"
 key_concepts = "Functions, Error Handling, Pattern Matching"
