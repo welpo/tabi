@@ -114,6 +114,11 @@ show_date = true
 # "both" - Show both the original date and the last updated date.
 post_listing_date = "date"
 
+# Show "Jump to posts" link next to series' title.
+# By default, the link appears automatically when a series description exceeds 2000 characters.
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+# show_jump_to_posts = true
+
 # Determines if indexes should be increasing (false) or decreasing (true) in series' posts list.
 # It has only effect if the section uses indexes metadata (which is only the case for series as of now).
 # Can be set at section levels, following the hierarchy: section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy

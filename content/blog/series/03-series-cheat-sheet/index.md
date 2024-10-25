@@ -10,7 +10,11 @@ tags = ["showcase", "tutorial", "FAQ"]
 series_page_introduction_variables = { position = "third", foo = "FOO FOO FOO!!!"}
 
 +++
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## Jump to Posts Feature
+
+When a series has a description over 2000 characters, a "Jump to posts" link automatically appears next to the series title:
+
+##### TODO: Add screenshot with final design
+
+To force the feature on or off, use the `show_jump_to_posts` option in the `[extra]` section of your section (series) or in `config.toml`. This setting follows [the hierarchy](@blog/mastering-tabi-settings/index.md#settings-hierarchy).

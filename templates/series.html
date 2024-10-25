@@ -13,7 +13,25 @@
     {%- include "partials/home_banner.html" -%}
 {% endif -%}
 
-    {{ macros_page_header::page_header(title=section.title) }}
+    {%- set show_jump = false -%}
+    {%- set setting_value = macros_settings::evaluate_setting_priority(setting="show_jump_to_posts", page=section) -%}
+    {%- if setting_value == "true" -%}
+        {%- set_global show_jump = true -%}
+    {%- elif setting_value != "false" -%}
+        {#- Default to true if the content is long and var is unset #}
+        {%- if section.content | length > 2000 -%}
+            {%- set_global show_jump = true -%}
+        {%- endif -%}
+    {%- endif -%}
+
+    {%- if show_jump -%}
+    <div class="title-with-jump bottom-divider">
+        <h1 class="title-container section-title">{{ section.title }}</h1>
+        <a href="#posts-list" class="jump-link">{{ macros_translate::translate(key="jump_to_posts", default="Jump to posts", language_strings=language_strings) }} ↓</a>
+    </div>
+    {%- else -%}
+        {{ macros_page_header::page_header(title=section.title) }}
+    {%- endif -%}
 
     <section class="body">
         {{ section.content | safe }}

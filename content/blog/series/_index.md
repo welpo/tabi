@@ -10,6 +10,7 @@ transparent = true
 [extra]
 series = true
 quick_navigation_buttons = true
+show_jump_to_posts = true
 post_listing_index_reversed = false
 
 series_page_introduction_placeholders = ["$POSITION", "$FOO", "$BAR"]

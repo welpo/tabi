@@ -23,6 +23,7 @@ one_results = "$NUMBER resultado"
 many_results = "$NUMBER resultados"
 
 # Navigation.
+jump_to_posts = "Saltar a las entradas"
 read_more = "Leer más"
 one_posts = "$NUMBER entrada"
 many_posts = "$NUMBER entradas"
