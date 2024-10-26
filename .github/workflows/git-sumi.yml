@@ -14,8 +14,9 @@ permissions:
 jobs:
   main:
     name: Run git-sumi
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: welpo/git-sumi-action@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_SUMI_MAX_HEADER_LENGTH: ${{ contains(github.event.pull_request.title, 'deps:') && '80' || '' }} # Allow longer titles for dependency updates.
