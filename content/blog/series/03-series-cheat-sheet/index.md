@@ -44,7 +44,7 @@ To force the feature on or off, use the `show_jump_to_posts` option in the `[ext
 
 ## Intro and Outro Templates
 
-Series articles can have automatic introduction and conclusion sections. These are configured in your series' `_index.md`:
+Series articles can have automatic introduction and conclusion sections. These are configured in your series' `_index.md`. A basic example:
 
 {{ add_src_to_code_block(src="series/_index.md") }}
 
@@ -55,6 +55,35 @@ default = "This article is part of the $SERIES_HTML_LINK series."
 [extra.series_outro_templates]
 default = "Thanks for reading part $SERIES_PAGE_INDEX of $SERIES_HTML_LINK!"
 ```
+
+### Template Types
+
+The series system uses different templates based on an article's position in the series:
+
+- `next_only` - Used for the first article (has next article but no previous)
+- `middle` - Used for articles with both previous and next articles
+- `prev_only` - Used for the last article (has previous article but no next)
+- `default` - Fallback template used when a specific position template isn't defined
+
+The system automatically determines which template to use based on the article's position. The templates are defined in the series configuration (`_index.md`), as `extra.series_intro_templates` and `extra.series_outro_templates`.:
+
+{{ add_src_to_code_block(src="series/_index.md") }}
+
+```toml
+[extra.series_intro_templates]
+next_only = "Welcome to part 1! Next up: $NEXT_HTML_LINK"
+middle = "Previous: $PREV_HTML_LINK | Next: $NEXT_HTML_LINK"
+prev_only = "The final chapter! Previously: $PREV_HTML_LINK"
+default = "Part $SERIES_PAGE_INDEX of $SERIES_PAGES_NUMBER"
+```
+
+All templates are optional. Template selection follows a priority system:
+
+1. If a position-specific template exists (`next_only`, `middle`, or `prev_only`), it will be used
+2. Otherwise, the `default` template is used
+3. If no templates are defined at all, no series information will be displayed
+
+See the [template example](#template-example) for a more elaborate example.
 
 ### Placement in Content
 
