@@ -115,7 +115,8 @@ When a series has a content over 2000 characters, a "Jump to posts" link automat
 
 ##### TODO: Add screenshot with final design
 
-To force the feature on or off, use the `show_jump_to_posts` option in the `[extra]` section of your section (series) or in `config.toml`. This setting follows [the hierarchy](@blog/mastering-tabi-settings/index.md#settings-hierarchy).
+To force the feature on or off, use the `show_jump_to_posts` option in the `[extra]` section of your series section or in `config.toml`.
+This setting follows [the hierarchy](@blog/mastering-tabi-settings/index.md#settings-hierarchy).
 
 ## Series pages and ordering
 
@@ -136,6 +137,11 @@ Each type of `sort_by` will have its own pros and cons and the most common ones 
 {% end %}
 
 {{ admonition(type="danger", title="Zola version to sort by date", text="In order to properly reverse dates, Zola v0.19.3+ is required so that pagination information is available thourgh the `get_section` function. Anything relying on the series pages order won't be correct in a series page otherwise (e.g. previous/next series page, ordered and unordered list ...)") }}
+
+A 1-based indexing is used to provide an index to each series page as per their order according to the series section `sort_by`.
+The first series page will have 1, the second 2 and so on so forth.
+To reverse this index (i.e. the first series page will have the greatest index), set the `post_listing_index_reversed` option to `true` (default is `false`) in the `[extra]` section of your series sections or in `config.toml`.
+This setting follows [the hierarchy](@blog/mastering-tabi-settings/index.md#settings-hierarchy).
 
 ## Intro and Outro Templates
 
