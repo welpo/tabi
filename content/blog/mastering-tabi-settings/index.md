@@ -274,7 +274,7 @@ Setting `tag_sorting = "frequency"` will sort them by number-of-posts (descendin
 
 ### Series
 
-#### Series pages indexation
+#### Jump to posts link
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
@@ -282,11 +282,11 @@ Setting `tag_sorting = "frequency"` will sort them by number-of-posts (descendin
 
 By default, a "Jump to posts" link automatically appears next to the series title when a series has a content over 2000 characters:
 
-##### TODO: Add screenshot with final design
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/jump_to_series_posts_light.webp", dark_src="blog/mastering-tabi-settings/img/jump_to_series_posts_dark.webp" alt="jump to series posts link") }}
 
 Set `show_jump_to_posts = true` to force the feature on and `show_jump_to_posts = false` to force it off.
 
-#### Jump to posts link
+#### Series pages indexation
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|

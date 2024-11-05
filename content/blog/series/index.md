@@ -104,16 +104,13 @@ To mix up its posts with the section above (`blog` in our example), it must also
 
 The series' main page displays all the infos about the series followed by a list of all its posts.
 
-##### TODO: Add screenshot with final design
-{#
-{{ dual_theme_image(light_src="blog/series/img/series_light.webp", dark_src="blog/series/img/series_dark.webp", alt="Main series page") }}
-#}
+{{ dual_theme_image(light_src="blog/series/img/series_light.webp", dark_src="blog/series/img/series_dark.webp" alt="a series") }}
 
 ## Jump to Posts
 
 When a series has a content over 2000 characters, a "Jump to posts" link automatically appears next to the series title:
 
-##### TODO: Add screenshot with final design
+{{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="jump to series posts link") }}
 
 To force the feature on or off, use the `show_jump_to_posts` option in the `[extra]` section of your series section or in `config.toml`.
 This setting follows [the hierarchy](@blog/mastering-tabi-settings/index.md#settings-hierarchy).
@@ -142,6 +139,8 @@ A 1-based indexing is used to provide an index to each series page as per their 
 The first series page will have 1, the second 2 and so on so forth.
 To reverse this index (i.e. the first series page will have the greatest index), set the `post_listing_index_reversed` option to `true` (default is `false`) in the `[extra]` section of your series sections or in `config.toml`.
 This setting follows [the hierarchy](@blog/mastering-tabi-settings/index.md#settings-hierarchy).
+
+{{ dual_theme_image(light_src="blog/series/img/series_reversed_light.webp", dark_src="blog/series/img/series_reversed_dark.webp" alt="a series with indexes reversed") }}
 
 ## Intro and Outro Templates
 
