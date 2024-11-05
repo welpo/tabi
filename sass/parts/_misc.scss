@@ -87,6 +87,10 @@ a:hover {
     color: var(--hover-color);
 }
 
+a:hover rt {
+    color: initial;
+}
+
 a:not(.no-hover-padding):hover::after {
     display: inline-block;
     position: absolute;
