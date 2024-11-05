@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Set header length for dependency updates
-        if: contains(github.event.pull_request.title, 'deps:')
+        if: contains(github.event.pull_request.title, 'chore(deps)')
         run: echo "GIT_SUMI_MAX_HEADER_LENGTH=80" >> $GITHUB_ENV
       - uses: welpo/git-sumi-action@main
         env:
