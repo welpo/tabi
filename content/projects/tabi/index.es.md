@@ -1,7 +1,7 @@
 +++
 title = "tabi"
 description = "Un tema de Zola rápido, ligero y moderno con soporte multilingüe."
-weight = 30
+weight = 40
 
 [extra]
 local_image = "projects/tabi/tabi.webp"
