@@ -105,13 +105,13 @@ To create a series, you need to:
 
 The series main page displays an overview followed by a list of all posts in the series:
 
-{{ dual_theme_image(light_src="blog/series/img/series_light.webp", dark_src="blog/series/img/series_dark.webp" alt="a series") }}
+{{ dual_theme_image(light_src="blog/series/img/series_light.webp", dark_src="blog/series/img/series_dark.webp" alt="a series", full_width=true) }}
 
 ## Jump to Posts
 
 If the content of a series (the Markdown after the front matter in `_index.md`) is over 2000 characters, a "Jump to posts" link appears next to the series title.
 
-{{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="jump to series posts link") }}
+{{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="jump to series posts link", full_width=true) }}
 
 To force the feature on or off, set `show_jump_to_posts` in the `[extra]` section of your series section or in `config.toml`. This setting follows [the hierarchy](@/blog/mastering-tabi-settings/index.md#settings-hierarchy).
 
@@ -146,7 +146,7 @@ Pages in a series are indexed starting from 1, following their `sort_by` order. 
 post_listing_index_reversed = true  # Defaults to false if unset.
 ```
 
-{{ dual_theme_image(light_src="blog/series/img/series_reversed_light.webp", dark_src="blog/series/img/series_reversed_dark.webp" alt="a series with indexes reversed") }}
+{{ dual_theme_image(light_src="blog/series/img/series_reversed_light.webp", dark_src="blog/series/img/series_reversed_dark.webp" alt="a series with indexes reversed", full_width=true) }}
 
 This setting follows [the hierarchy](@/blog/mastering-tabi-settings/index.md#settings-hierarchy).
 
