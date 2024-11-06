@@ -20,7 +20,8 @@ social_media_card = "social_cards/es_projects_tabi.jpg"
 - [Establece cualquier idioma como predeterminado](https://welpo.github.io/tabi/es/blog/faq-languages/#como-establezco-el-idioma-predeterminado-de-mi-sitio). Configura tu sitio en chino, español, francés, hindi… o cualquier [otro idioma compatible](https://welpo.github.io/tabi/es/blog/faq-languages/#que-idiomas-admite-tabi). La interfaz del tema se traducirá en consecuencia.
 - [Integración con repositorios remotos](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#integracion-con-repositorios-git) en GitHub, GitLab, Gitea y Codeberg para el historial de commits y mostrar el código fuente del sitio.
 - [Soporte multilingüe completo](https://welpo.github.io/tabi/es/blog/faq-languages/#como-gestiona-tabi-el-soporte-multilingue). Añade tantos idiomas como desees y deja que tus usuarios elijan con un selector de idioma.
-- Temas claros y oscuros. Se adapta a la configuración del sistema operativo, con un interruptor en la barra de navegación.
+- Tema claro y oscuro. Se adapta a la configuración del sistema operativo, con un interruptor en la barra de navegación.
+- [Soporte para series](https://welpo.github.io/tabi/es/blog/series/) para crear contenido secuencial como tutoriales, cursos e historias en varias partes.
 - Puntuación perfecta en Lighthouse (Rendimiento, Accesibilidad, Mejores Prácticas y SEO).
 - Soporte para [diagramas de Mermaid](https://welpo.github.io/tabi/es/blog/shortcodes/#diagramas-de-mermaid) para crear diagramas y gráficos con texto.
 - Resaltado de sintaxis de código con colores basados en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
