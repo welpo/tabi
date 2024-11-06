@@ -109,7 +109,7 @@ The series main page displays an overview followed by a list of all posts in the
 
 ## Jump to Posts
 
-If the content of a series (the Markdown after the front matter in `index.md`) is over 2000 characters, a "Jump to posts" link appears next to the series title.
+If the content of a series (the Markdown after the front matter in `_index.md`) is over 2000 characters, a "Jump to posts" link appears next to the series title.
 
 {{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="jump to series posts link") }}
 
