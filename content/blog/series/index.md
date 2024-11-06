@@ -1,42 +1,41 @@
 +++
-title = "How to deal with series"
-date = 2023-09-13
-updated = 2024-10-19
-description = "tabi is able to deals with series to better organize your posts."
+title = "A Complete Guide to Series"
+date = 2024-11-12
+description = "Learn how to organize your posts into sequential series, perfect for tutorials, courses, and multi-part stories."
 
 [taxonomies]
-tags = ["showcase", "tutorial", "FAQ"]
+tags = ["showcase", "tutorial", "FAQ", "series"]
 
 [extra]
 quick_navigation_buttons = true
+toc = true
 mermaid=true
 #social_media_card = "social_cards/blog_series.jpg"
 +++
 
-A series of posts is a succession of posts linked with each others, like a story.
+A series organizes related posts in a sequential order, similar to chapters in a book. Unlike tags, which simply group related content, series suggest a specific reading order from start to finish.
 
-It is different from just tags in the sense that a series is ordered, a bit like a book.
-You should start reading the first post of the series then the second and so on until the end.
+Posts within a series do not need to be published consecutively; the series feature brings together thematically linked posts in a coherent sequence.
 
-Series' posts might not be consecutive in the normal flow of all the posts of the blog.
-This is exactly the point of the feature: bring together, in a cohesive way, posts which would be distinct otherwise.
-{% mermaid() %}
+The diagram below illustrates how series posts (3, 5, and 8) exist within the main blog flow while maintaining their own ordered sequence within Series 1.
+
+{% mermaid(full_width=true) %}
 flowchart
     subgraph main[BLOG]
         P1[Post 1]
-        P2[Post 2]
-        P3[Post 3]
-        P4[Post 4]
-        P5[Post 5]
-        P6[Post 6]
-        P7[Post 7]
-        P8[Post 8]
-        P9[Post 9]
+        P2[P2]
+        P3[P3]
+        P4[P4]
+        P5[P5]
+        P6[P6]
+        P7[P7]
+        P8[P8]
+        P9[P9]
     end
     subgraph series1[SERIES 1]
-        PS1["Series Post 1 (Post 3)"]
-        PS2["Series Post 2 (Post 5)"]
-        PS3["Series Post 3 (Post 8)"]
+        PS1["Series Post 1 (=P3)"]
+        PS2["Series Post 2 (=P5)"]
+        PS3["Series Post 3 (=P8)"]
     end
     P3 o-.-o PS1
     P5 o-.-o PS2
@@ -65,14 +64,13 @@ flowchart
 
 Want more? Keep reading!
 
-## How does series work
+## How Do Series Work?
 
-A series is just a section which is handled in a special way by tabi.
-It may be declared alongside your other blog posts.
-You can refer to [Zola documentation about sections](https://www.getzola.org/documentation/content/section/) to get more details.
+A series is just a section which is handled in a special way by tabi. For more details on sections, see the [Zola documentation](https://www.getzola.org/documentation/content/section/).
 
-Taking the example from the diagram above, the folder organisation would be as follow:
-```
+Taking the example from the diagram above, the directory structure would be as follow:
+
+```txt
 content/
     _index.md
     blog/
@@ -99,48 +97,58 @@ content/
                 index.md
 ```
 
-To be considered a series, a section must use the `series.html` template and have an extra settings `series` set to true.
-To mix up its posts with the section above (`blog` in our example), it must also be declared `transparent`.
+To create a series, you need to:
 
-The series' main page displays all the infos about the series followed by a list of all its posts.
+1. Use the `series.html` template
+2. Set `series = true` in the section's `[extra]` configuration
+3. Enable `transparent = true` to integrate series posts with the parent blog section
+
+The series main page displays an overview followed by a list of all posts in the series:
 
 {{ dual_theme_image(light_src="blog/series/img/series_light.webp", dark_src="blog/series/img/series_dark.webp" alt="a series") }}
 
 ## Jump to Posts
 
-When a series has a content over 2000 characters, a "Jump to posts" link automatically appears next to the series title:
+If the content of a series (the Markdown after the front matter in `index.md`) is over 2000 characters, a "Jump to posts" link appears next to the series title.
 
 {{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="jump to series posts link") }}
 
-To force the feature on or off, use the `show_jump_to_posts` option in the `[extra]` section of your series section or in `config.toml`.
-This setting follows [the hierarchy](@blog/mastering-tabi-settings/index.md#settings-hierarchy).
+To force the feature on or off, set `show_jump_to_posts` in the `[extra]` section of your series section or in `config.toml`. This setting follows [the hierarchy](@/blog/mastering-tabi-settings/index.md#settings-hierarchy).
 
-## Series pages and ordering
+## Series Pages and Order
 
-All pages in the series section will be a series page.
-The series pages will be ordered as per the series section `sort_by`.
+All pages in the series section will be a series page. The series pages will be ordered as per the series section `sort_by`.
 
-Whatever the series section `sort_by` is, it has no impact on the order of the pages in the main section (`blog` in our example).
-As series section is transparent, its order is ignored in the section above which applies its own `sort_by` (usually sorted by dates).
+While series maintain their own internal order, they remain independent from the main section's (e.g. `blog/`) chronological flow thanks to the `transparent` setting.
 
-Each type of `sort_by` will have its own pros and cons and the most common ones are:
+### Sorting Options
+
+Choose from these sorting methods, each with its own advantages:
 
 {% wide_container() %}
- sort_by | pros                                                                                                                                      | cons
+
+`sort_by` | pros                                                                                                                                      | cons
 ---------|-------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- slug    | The series pages order is made explicit in the path (e.g. `https://yourweb.site/blog/series1/01-series-post-one`).                        | Each series page must be prefixed accordingly.
- weight  | The series pages order is easy to set up transparently.<br>First series post has weight `1`, second series post has weight `2` and so on. | Each series page must have its weight set accordingly.
- date    | The series pages order can be configured once in the series section configuration. No need to do anything on each series page.            | The series pages order has to be reversed because the first page is usually the oldest. This can only be achieved by paginating the series section (`paginate_by = 9999`) and reversing its order (`paginate_reversed = true`).
+ `slug`    | The series pages order is made explicit in the path (e.g. `example.com/blog/series1/01-series-post-one`).                        | Each series page must be prefixed accordingly.
+ `weight`  | The series pages order is easy to set up transparently.<br>First series post has weight `1`, second series post has weight `2` and so on. | Each series page must have its weight set accordingly.
+ `date`    | The series pages order can be configured once in the series section configuration. No need to do anything on each series page.            | The series pages order has to be reversed because the first page is usually the oldest. This can only be achieved by paginating the series section (`paginate_by = 9999`) and reversing its order (`paginate_reversed = true`).
+
 {% end %}
 
-{{ admonition(type="danger", title="Zola version to sort by date", text="In order to properly reverse dates, Zola v0.19.3+ is required so that pagination information is available thourgh the `get_section` function. Anything relying on the series pages order won't be correct in a series page otherwise (e.g. previous/next series page, ordered and unordered list ...)") }}
+{{ admonition(type="danger", title="Zola version to sort by date", text="In order to properly reverse dates, Zola v0.19.3+ (unreleased) is required so that pagination information is available through the `get_section` function. Anything relying on the series pages order won't be correct in a series page otherwise (e.g. previous/next series page, ordered and unordered list…) See [Zola PR #2653](https://github.com/getzola/zola/pull/2653).") }}
 
-A 1-based indexing is used to provide an index to each series page as per their order according to the series section `sort_by`.
-The first series page will have 1, the second 2 and so on so forth.
-To reverse this index (i.e. the first series page will have the greatest index), set the `post_listing_index_reversed` option to `true` (default is `false`) in the `[extra]` section of your series sections or in `config.toml`.
-This setting follows [the hierarchy](@blog/mastering-tabi-settings/index.md#settings-hierarchy).
+### Page Indexing
+
+Pages in a series are indexed starting from 1, following their `sort_by` order. To reverse the indexing (making the first page have the highest index instead), add this setting to `_index.md` or `config.toml`:
+
+```toml
+[extra]
+post_listing_index_reversed = true  # Defaults to false if unset.
+```
 
 {{ dual_theme_image(light_src="blog/series/img/series_reversed_light.webp", dark_src="blog/series/img/series_reversed_dark.webp" alt="a series with indexes reversed") }}
+
+This setting follows [the hierarchy](@/blog/mastering-tabi-settings/index.md#settings-hierarchy).
 
 ## Intro and Outro Templates
 
@@ -156,8 +164,7 @@ default = "This article is part of the $SERIES_HTML_LINK series."
 default = "Thanks for reading part $SERIES_PAGE_INDEX of $SERIES_HTML_LINK!"
 ```
 
-Both intro and outro will have CSS class applied, respectively `series-page-intro` and `series-page-outro`.
-They can be used for styling purpose.
+The intro and outro sections each have their own CSS classes (`series-page-intro` and `series-page-outro`), allowing you to customize their appearance through [custom CSS](@/blog/mastering-tabi-settings/index.md#custom-css).
 
 ### Template Types
 
@@ -396,7 +403,6 @@ series_intro_templates.default = """
 ⏱️ Estimated time: $LEARNING_TIME
 🔑 Key concepts: $KEY_CONCEPTS
 """
-
 ```
 
 {{ add_src_to_code_block(src="series/02-learning-rust/index.md") }}
