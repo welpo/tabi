@@ -267,6 +267,34 @@ Si configuras `tag_sorting = "frequency"`, se ordenarán según el número de pu
 
 ---
 
+### Series
+
+Para una explicación detallada, consulta la [documentación de series](@/blog/series/index.es.md).
+
+#### Enlace para saltar a las publicaciones
+
+| Página | Sección | `config.toml` | Sigue jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:------------------:|:-------------------:|
+|   ❌   |   ✅    |      ✅       |        ✅          |         ❌          |
+
+Por defecto, aparece automáticamente un enlace "Saltar a publicaciones" junto al título de la serie cuando una serie tiene un contenido de más de 2000 caracteres:
+
+{{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="enlace para saltar a las publicaciones de la serie", full_width=true) }}
+
+Establece `show_jump_to_posts = true` para forzar la activación de la función y `show_jump_to_posts = false` para desactivarla.
+
+#### Indexación de páginas de series
+
+| Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:------------------:|:-------------------:|
+|   ❌   |   ✅    |      ✅       |        ✅          |         ❌          |
+
+Por defecto, las páginas de series se indexan (usando una indexación basada en 1) según el `sort_by` de la sección de series.
+
+Establece `post_listing_index_reversed = true` para invertir el índice.
+
+---
+
 ## Integración con repositorios Git
 
 | Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
