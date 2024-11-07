@@ -272,6 +272,34 @@ Setting `tag_sorting = "frequency"` will sort them by number-of-posts (descendin
 
 ---
 
+### Series
+
+For a detailed explanation of the series feature, see the [series documentation](@/blog/series/index.md).
+
+#### Jump to posts link
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❌  |     ✅  |      ✅       |           ✅      |         ❌          |
+
+By default, a "Jump to posts" link automatically appears next to the series title when a series has a content over 2000 characters:
+
+{{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="jump to series posts link", full_width=true) }}
+
+Set `show_jump_to_posts = true` to force the feature on and `show_jump_to_posts = false` to force it off.
+
+#### Series pages indexation
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❌  |     ✅  |      ✅       |           ✅      |         ❌          |
+
+By default, series page are indexed (using a 1-based indexing) as per the series section `sort_by`.
+
+Set `post_listing_index_reversed = true` to reverse this index.
+
+---
+
 ## Git Repository Integration
 
 | Page  | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |

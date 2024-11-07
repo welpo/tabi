@@ -265,3 +265,24 @@ details summary {
 [data-force-text-direction="rtl"] * {
     direction: inherit;
 }
+
+.title-with-jump {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-with-jump h1 {
+    flex: 1;
+}
+
+.jump-link {
+    flex-shrink: 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 500px) {
+    .title-with-jump {
+        flex-direction: column;
+    }
+}

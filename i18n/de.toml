@@ -27,6 +27,7 @@ one_results = "$NUMBER Ergebnis"  # "1 result"
 many_results = "$NUMBER Ergebnisse"  # "3 results"
 
 # Navigation.
+jump_to_posts = "Zu den Beiträgen springen"
 read_more = "Weiterlesen"
 one_posts = "$NUMBER Beitrag"
 many_posts = "$NUMBER Beiträge"

@@ -19,8 +19,9 @@ social_media_card = "social_cards/ca_projects_tabi.jpg"
 
 - [Estableix qualsevol idioma com a predeterminat](https://welpo.github.io/tabi/ca/blog/faq-languages/#com-estableixo-la-llengua-predeterminada-del-meu-lloc). Configura el teu lloc en xinès, espanyol, francès, hindi… o qualsevol [altre idioma compatible](https://welpo.github.io/tabi/ca/blog/faq-languages/#quines-llengues-admet-tabi). La interfície del tema es traduirà en conseqüència.
 - [Integració amb repositoris remots](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings#integracio-amb-repositoris-git) a GitHub, GitLab, Gitea i Codeberg per a l'historial de commits i mostrar el codi font del lloc.
-- Temes clars i foscos. S'adapta a la configuració del sistema operatiu, amb un interruptor a la barra de navegació.
+- Tema clar i fosc. S'adapta a la configuració del sistema operatiu, amb un interruptor a la barra de navegació.
 - [Suport multilingüe complet](https://welpo.github.io/tabi/ca/blog/faq-languages/#com-gestiona-tabi-el-suport-multilingue). Afegeix tants idiomes com vulguis i deixa que els teus usuaris triin amb el selector d'idioma.
+- [Suport per a sèries](https://welpo.github.io/tabi/ca/blog/series/) per crear contingut seqüencial com tutorials, cursos i històries multipart.
 - Puntuació perfecta en Lighthouse (Rendiment, Accessibilitat, Millors Pràctiques i SEO).
 - Suport per a [diagrames de Mermaid](https://welpo.github.io/tabi/ca/blog/shortcodes/#diagrames-de-mermaid) per a crear diagrames i gràfics amb text.
 - Ressaltat de sintaxi de codi amb colors basats en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.

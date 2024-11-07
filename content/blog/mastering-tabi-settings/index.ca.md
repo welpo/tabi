@@ -267,6 +267,34 @@ Si configures `tag_sorting = "frequency"`, s'ordenaran segons el nombre de publi
 
 ---
 
+### Sèries
+
+Per a una explicació detallada, consulta la [documentació de sèries](@/blog/series/index.ca.md).
+
+#### Enllaç per saltar a les publicacions
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:------------------:|:-------------------:|
+|   ❌   |   ✅    |      ✅       |        ✅          |         ❌          |
+
+Per defecte, apareix automàticament un enllaç "Salta a les publicacions" al costat del títol de la sèrie quan una sèrie té un contingut de més de 2000 caràcters:
+
+{{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="enllaç per saltar a les publicacions de la sèrie", full_width=true) }}
+
+Estableix `show_jump_to_posts = true` per forçar l'activació de la funció i `show_jump_to_posts = false` per desactivar-la.
+
+#### Indexació de pàgines de sèries
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:-------:|:-------------:|:------------------:|:-------------------:|
+|   ❌   |   ✅    |      ✅       |        ✅          |         ❌          |
+
+Per defecte, les pàgines de sèries s'indexen (usant una indexació basada en 1) segons el `sort_by` de la secció de sèries.
+
+Estableix `post_listing_index_reversed = true` per invertir aquest índex.
+
+---
+
 ## Integració amb repositoris Git
 
 | Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
