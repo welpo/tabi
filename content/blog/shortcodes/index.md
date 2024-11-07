@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-10-18
+updated = 2024-11-07
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -275,9 +275,25 @@ You can change the `title` and `icon` of the admonition. Both parameters take a 
 
 #### Usage
 
-```
+You can use admonitions in two ways:
+
+1. Inline with parameters:
+
+```md
 {{/* admonition(type="danger", icon="tip", title="An important tip", text="Stay hydrated~") */}}
 ```
+
+2. With a content body:
+
+```md
+{%/* admonition(type="danger", icon="tip", title="An important tip") */%}
+Stay hydrated~
+
+This method is particularly useful for longer content or multiple paragraphs.
+{%/* end */%}
+```
+
+Both methods support the same parameters (`type`, `icon`, and `title`), with the content either passed as the `text` parameter or as the body between tags.
 
 ### Multilingual quotes
 
