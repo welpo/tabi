@@ -14,13 +14,13 @@
 {% endif -%}
 
     {%- set show_jump = false -%}
-    {%- set setting_value = macros_settings::evaluate_setting_priority(setting="show_jump_to_posts", page=section) -%}
-    {%- if setting_value == "true" -%}
-        {%- set_global show_jump = true -%}
-    {%- elif setting_value != "false" -%}
+    {%- set show_jump_hierarchy = macros_settings::evaluate_setting_priority(setting="show_jump_to_posts", page=section) -%}
+    {%- if show_jump_hierarchy == "true" -%}
+        {%- set show_jump = true -%}
+    {%- elif show_jump_hierarchy != "false" -%}
         {#- Default to true if the content is long and var is unset #}
         {%- if section.content | length > 2000 -%}
-            {%- set_global show_jump = true -%}
+            {%- set show_jump = true -%}
         {%- endif -%}
     {%- endif -%}
 
