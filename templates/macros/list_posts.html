@@ -10,9 +10,7 @@
 <div class="bloglist-container">
     {% for post in posts %}
         {% if loop.index <= max %}
-            {% if loop.index == max %}
-                {% set bottom_divider = false %}
-            {% elif loop.last %}
+            {% if loop.index == max or loop.last %}
                 {% set bottom_divider = false %}
             {% else %}
                 {% set bottom_divider = true %}
