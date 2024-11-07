@@ -1,6 +1,6 @@
 +++
 title = "A Complete Guide to Series"
-date = 2024-11-12
+date = 2024-11-08
 description = "Learn how to organize your posts into sequential series, perfect for tutorials, courses, and multi-part stories."
 
 [taxonomies]
@@ -10,7 +10,7 @@ tags = ["showcase", "tutorial", "FAQ", "series"]
 quick_navigation_buttons = true
 toc = true
 mermaid = true
-#social_media_card = "social_cards/es_blog_series.jpg"
+social_media_card = "social_cards/es_blog_series.jpg"
 +++
 
 A series organizes related posts in a sequential order, similar to chapters in a book. Unlike tags, which simply group related content, series suggest a specific reading order from start to finish.

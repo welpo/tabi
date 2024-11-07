@@ -1,6 +1,6 @@
 +++
 title = "Guía completa sobre series"
-date = 2024-11-12
+date = 2024-11-08
 description = "Aprende a organizar tus publicaciones en series secuenciales, perfectas para tutoriales, cursos e historias de varias partes."
 
 [taxonomies]
@@ -10,7 +10,7 @@ tags = ["funcionalidad", "tutorial", "preguntas frecuentes", "series"]
 quick_navigation_buttons = true
 toc = true
 mermaid = true
-#social_media_card = "social_cards/es_blog_series.jpg"
+social_media_card = "social_cards/es_blog_series.jpg"
 +++
 
 Una serie organiza publicaciones relacionadas en orden secuencial, similar a los capítulos de un libro. A diferencia de las etiquetas, que simplemente agrupan contenido relacionado, las series sugieren un orden específico de lectura de principio a fin.

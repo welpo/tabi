@@ -1,6 +1,6 @@
 +++
 title = "Guia completa sobre sèries"
-date = 2024-11-12
+date = 2024-11-08
 description = "Aprèn a organitzar les teves publicacions en sèries seqüencials, perfectes per a tutorials, cursos i històries de diverses parts."
 
 [taxonomies]
@@ -10,7 +10,7 @@ tags = ["funcionalitat", "tutorial", "preguntes freqüents", "sèries"]
 quick_navigation_buttons = true
 toc = true
 mermaid = true
-#social_media_card = "social_cards/ca_blog_series.jpg"
+social_media_card = "social_cards/ca_blog_series.jpg"
 +++
 
 Una sèrie organitza publicacions relacionades en ordre seqüencial, similar als capítols d'un llibre. A diferència de les etiquetes, que simplement agrupen contingut relacionat, les sèries suggereixen un ordre específic de lectura de principi a fi.
