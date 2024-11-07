@@ -28,7 +28,7 @@ To include a Mermaid diagram in your post, there are two steps:
 
 2. Use the `mermaid()` shortcode to define your diagram in your posts. For example:
 
-```plaintext
+```txt
 {%/* mermaid() */%}
 classDiagram
     class CognitiveDistortions {

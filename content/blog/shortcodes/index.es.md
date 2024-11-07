@@ -28,7 +28,7 @@ Para incluir un diagrama Mermaid en tu publicación, sigue estos dos pasos:
 
 2. Usa el shortcode `mermaid()` para definir tu diagrama. Por ejemplo:
 
-```plaintext
+```txt
 {%/* mermaid() */%}
 classDiagram
     class DistorsionesCognitivas {
