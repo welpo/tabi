@@ -9,8 +9,8 @@ tags = ["showcase", "tutorial", "FAQ", "series"]
 [extra]
 quick_navigation_buttons = true
 toc = true
-mermaid=true
-#social_media_card = "social_cards/blog_series.jpg"
+mermaid = true
+#social_media_card = "social_cards/es_blog_series.jpg"
 +++
 
 A series organizes related posts in a sequential order, similar to chapters in a book. Unlike tags, which simply group related content, series suggest a specific reading order from start to finish.
@@ -313,7 +313,6 @@ Previously: $PREV_HTML_LINK
 # Fallback template.
 default = "This article is part of the $SERIES_HTML_LINK series."
 
-
 # Outro.
 [extra.series_outro_templates]
 next_only = """
@@ -416,7 +415,7 @@ key_concepts = "Functions, Error Handling, Pattern Matching"
 
 This will output:
 
-```text
+```txt
 📚 Part 2 of 5
 ⏱️ Estimated time: 30 minutes
 🔑 Key concepts: Functions, Error Handling, Pattern Matching
