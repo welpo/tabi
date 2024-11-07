@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2024-10-18
+updated = 2024-11-07
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -274,9 +274,25 @@ Puedes cambiar el `title` y el `icon` de la advertencia. Ambos parámetros acept
 
 #### Uso
 
-```
+Puedes usar las advertencias de dos formas:
+
+1. En línea con parámetros:
+
+```md
 {{/* admonition(type="danger", icon="tip", title="Un consejo importante", text="Mantente hidratado") */}}
 ```
+
+2. Con contenido en el cuerpo:
+
+```md
+{%/* admonition(type="danger", icon="tip", title="Un consejo importante") */%}
+Mantente hidratado
+
+Este método es especialmente útil para contenido largo o múltiples párrafos.
+{%/* end */%}
+```
+
+Ambos métodos admiten los mismos parámetros (`type`, `icon`, y `title`).
 
 ### Citas multilenguaje
 
