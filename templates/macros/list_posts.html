@@ -46,7 +46,7 @@
                             {# index starts at 1 instead of 0 #}
                             {%- set post_index = number_of_posts + 1 - post_index -%}
                         {%- endif -%}
-                        <li>{{ post_index }}</li>
+                        <li class="index-label">{{ post_index }}</li>
                     {%- endif -%}
 
                     {%- if "dates" in metadata -%}
