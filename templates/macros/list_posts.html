@@ -7,8 +7,21 @@
 
 {%- set separator = config.extra.separator | default(value="•") -%}
 
+{# Separate pinned and regular posts #}
+{% set pinned_posts = [] %}
+{% set regular_posts = [] %}
+{% for post in posts %}
+    {% if post.extra.pinned %}
+        {% set_global pinned_posts = pinned_posts | concat(with=post) %}
+    {% else %}
+        {% set_global regular_posts = regular_posts | concat(with=post) %}
+    {% endif %}
+{% endfor %}
+
 <div class="bloglist-container">
-    {% for post in posts %}
+    {# Display all posts (pinned first, then regular) #}
+    {% set all_posts = pinned_posts | concat(with=regular_posts) %}
+    {% for post in all_posts %}
         {% if loop.index <= max %}
             {% if loop.index == max or loop.last %}
                 {% set bottom_divider = false %}
@@ -16,81 +29,93 @@
                 {% set bottom_divider = true %}
             {% endif %}
 
-        <section class="bloglist-meta {% if bottom_divider -%}bottom-divider{%- endif -%}">
-            <ul>
-                {%- if "indexes" in metadata -%}
-                    {%- set post_index = loop.index -%}
-                    {%- set nb_posts = posts | length -%}
-                    {# in case we have a pager, the index has been computed for the current page. #}
-                    {%- if paginator -%}
-                        {%- set nb_posts = paginator.total_pages -%}
-                        {%- set number_of_other_pages = paginator.current_index - 1 -%}
-                        {%- set posts_per_page = paginator.paginate_by -%}
-                        {%- set posts_in_other_pages = number_of_other_pages * posts_per_page -%}
-                        {%- set post_index = posts_in_other_pages + post_index -%}
-                    {%- endif -%}
-                    {%- if macros_settings::evaluate_setting_priority(setting="post_listing_index_reversed", page=section, default_global_value=false) == "true" -%}
-                        {# index starts at 1 instead of 0 #}
-                        {%- set post_index = nb_posts + 1 - post_index -%}
-                    {%- endif -%}
-                    <li class="index-label">{{ post_index }}</li>
-                {%- endif -%}
-                {%- if "dates" in metadata -%}
-                    {%- set allowed_post_listing_dates = ["date", "updated", "both"] -%}
-                    {%- set post_listing_date = config.extra.post_listing_date | default(value="date") -%}
-                    {%- if post_listing_date not in allowed_post_listing_dates -%}
-                        {{ throw(message="ERROR: Invalid value for config.extra.post_listing_date. Allowed values are 'date', 'updated', or 'both'.") }}
-                    {%- endif -%}
-
-                    {%- set show_date = post.date and post_listing_date == "date" or post.date and post_listing_date == "both" or post.date and post_listing_date == "updated" and not post.updated -%}
-                    {%- set show_updated = post.updated and post_listing_date == "updated" or post.updated and post_listing_date == "both" -%}
-
-                    {%- if show_date or show_updated -%}
-                        {%- if show_date -%}
-                            <li class="date">{{- macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) -}}</li>
+            <section class="bloglist-meta {% if bottom_divider -%}bottom-divider{%- endif -%}">
+                <ul>
+                    {%- if "indexes" in metadata -%}
+                        {%- set post_index = loop.index -%}
+                        {%- set number_of_posts = posts | length -%}
+                        {# in case we have a pager, the index has been computed for the current page. #}
+                        {%- if paginator -%}
+                            {%- set number_of_posts = paginator.total_pages -%}
+                            {%- set number_of_other_pages = paginator.current_index - 1 -%}
+                            {%- set posts_per_page = paginator.paginate_by -%}
+                            {%- set posts_in_other_pages = number_of_other_pages * posts_per_page -%}
+                            {%- set post_index = posts_in_other_pages + post_index -%}
                         {%- endif -%}
-                        {%- if show_date and show_updated -%}
-                            <li class="mobile-only">{{- separator -}}</li>
+                        {%- if macros_settings::evaluate_setting_priority(setting="post_listing_index_reversed", page=section, default_global_value=false) == "true" -%}
+                            {# index starts at 1 instead of 0 #}
+                            {%- set post_index = number_of_posts + 1 - post_index -%}
                         {%- endif -%}
-                        {%- if show_updated -%}
-                            {%- set last_updated_str = macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -%}
-                            {%- set formatted_date = macros_format_date::format_date(date=post.updated, short=true, language_strings=language_strings) -%}
-                            {%- set updated_str = last_updated_str | replace(from="$DATE", to=formatted_date) -%}
-                            <li class="date">{{ updated_str }}</li>
+                        <li>{{ post_index }}</li>
+                    {%- endif -%}
+
+                    {%- if "dates" in metadata -%}
+                        {%- set allowed_post_listing_dates = ["date", "updated", "both"] -%}
+                        {%- set post_listing_date = config.extra.post_listing_date | default(value="date") -%}
+                        {%- if post_listing_date not in allowed_post_listing_dates -%}
+                            {{ throw(message="ERROR: Invalid value for config.extra.post_listing_date. Allowed values are 'date', 'updated', or 'both'.") }}
+                        {%- endif -%}
+
+                        {%- set show_date = post.date and post_listing_date == "date" or post.date and post_listing_date == "both" or post.date and post_listing_date == "updated" and not post.updated -%}
+                        {%- set show_updated = post.updated and post_listing_date == "updated" or post.updated and post_listing_date == "both" -%}
+
+                        {% if post.extra.pinned %}
+                            <li class="pinned-label">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M10.5 2.255v-.01c.003-.03.013-.157-.361-.35C9.703 1.668 8.967 1.5 8 1.5s-1.703.169-2.138.394c-.375.194-.365.32-.362.351v.01c-.003.03-.013.157.362.35C6.297 2.832 7.033 3 8 3s1.703-.169 2.139-.394c.374-.194.364-.32.361-.351M12 2.25c0 .738-.433 1.294-1.136 1.669l.825 2.31c1.553.48 2.561 1.32 2.561 2.52c0 1.854-2.402 2.848-5.5 2.985V15a.75.75 0 0 1-1.5 0v-3.266c-3.098-.136-5.5-1.131-5.5-2.984c0-1.2 1.008-2.04 2.561-2.52l.825-2.311C4.433 3.544 4 2.988 4 2.25C4 .75 5.79 0 8 0s4 .75 4 2.25" clip-rule="evenodd"/></svg>
+                                <span>{{ macros_translate::translate(key="pinned", default="Pinned", language_strings=language_strings) }}</span>
+                            </li>
+                            {%- if show_date -%}
+                                <li class="mobile-only">{{- separator -}}</li>
+                            {%- endif -%}
+                        {% endif %}
+
+                        {%- if show_date or show_updated -%}
+                            {%- if show_date -%}
+                                <li class="date">{{- macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) -}}</li>
+                            {%- endif -%}
+                            {%- if show_date and show_updated -%}
+                                <li class="mobile-only">{{- separator -}}</li>
+                            {%- endif -%}
+                            {%- if show_updated -%}
+                                {%- set last_updated_str = macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -%}
+                                {%- set formatted_date = macros_format_date::format_date(date=post.updated, short=true, language_strings=language_strings) -%}
+                                {%- set updated_str = last_updated_str | replace(from="$DATE", to=formatted_date) -%}
+                                <li class="date">{{ updated_str }}</li>
+                            {%- endif -%}
                         {%- endif -%}
                     {%- endif -%}
-                {%- endif -%}
 
-                {% if post.draft %}
-                <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
-                {% endif %}
-            </ul>
-        </section>
-        <section class="bloglist-content {% if bottom_divider -%}bottom-divider{%- endif -%}">
-            <div>
-                <h2 class="bloglist-title">
-                    <a href="{{ post.permalink }}">{{ post.title }}</a>
-                </h2>
-
-                {% if post.taxonomies.tags %}
-                    <div class="bloglist-tags">
-                        {% for tag in post.taxonomies.tags %}
-                            <a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-
-                <div class="description">
-                    {% if post.description %}
-                        <p>{{ post.description }}</p>
-                    {% elif post.summary %}
-                        <p>{{ post.summary | striptags | trim_end_matches(pat=".") | safe }}…</p>
+                    {% if post.draft %}
+                        <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
                     {% endif %}
+                </ul>
+            </section>
+
+            <section class="bloglist-content {% if bottom_divider -%}bottom-divider{%- endif -%}">
+                <div>
+                    <h2 class="bloglist-title">
+                        <a href="{{ post.permalink }}">{{ post.title }}</a>
+                    </h2>
+
+                    {% if post.taxonomies.tags %}
+                        <div class="bloglist-tags">
+                            {% for tag in post.taxonomies.tags %}
+                                <a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <div class="description">
+                        {% if post.description %}
+                            <p>{{ post.description }}</p>
+                        {% elif post.summary %}
+                            <p>{{ post.summary | striptags | trim_end_matches(pat=".") | safe }}…</p>
+                        {% endif %}
+                    </div>
+                    <a class="readmore" href="{{ post.permalink }}">{{ macros_translate::translate(key="read_more", default="Read more", language_strings=language_strings) }}&nbsp;<span class="arrow">→</span></a>
                 </div>
-                <a class="readmore" href="{{ post.permalink }}">{{ macros_translate::translate(key="read_more", default="Read more", language_strings=language_strings) }}&nbsp;<span class="arrow">→</span></a>
-            </div>
-        </section>
-    {% endif %}
+            </section>
+        {% endif %}
         {% if not loop.last %}
             {% if loop.index == max %}
                 <div class="all-posts">
@@ -100,5 +125,4 @@
         {% endif %}
     {% endfor %}
 </div>
-
 {% endmacro %}

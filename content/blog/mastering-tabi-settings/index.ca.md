@@ -1,13 +1,14 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-10-20
+updated = 2024-11-08
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
 tags = ["funcionalitat", "tutorial", "preguntes freqüents"]
 
 [extra]
+pinned = true
 quick_navigation_buttons = true
 social_media_card = "social_cards/ca_blog_mastering_tabi_settings.jpg"
 +++
@@ -152,6 +153,23 @@ Notes addicionals:
 
 - El `title` al front matter estableix el títol que apareix sobre les publicacions.
 - Utilitza la ruta completa a l'arxiu `_index.md` de la secció per a `section_path`. Usar `section_path = "blog/"` no funcionarà.
+
+##### Fixar entrades
+
+Pots fixar entrades per mantenir-les a la part superior de la pàgina principal. En aquesta demo, aquesta entrada està fixada, així que apareix primera amb una icona i etiqueta de "fixat":
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/pinned_post_light.webp", dark_src="blog/mastering-tabi-settings/img/pinned_post_dark.webp", alt="Entrada fixada", full_width=true) }}
+
+Les entrades fixades es mostren primer, mantenint el seu ordre relatiu segons el `sort_by` de la secció, seguides per les entrades regulars.
+
+Per fixar una entrada, afegeix el següent al seu front matter:
+
+```toml
+[extra]
+pinned = true
+```
+
+{{ admonition(type="note", text='Aquesta configuració només afecta la pàgina principal (`template = "section.html"`). En altres seccions (p.ex. `blog/`, `archive/`), aquest configuració no té cap efecte.') }}
 
 ##### Mostrar la data dels articles al llistat
 
