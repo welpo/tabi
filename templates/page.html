@@ -140,7 +140,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- set previous_visible = true -%}
             {% endif %}
 
-            {%- set separator_with_class = "<span class='separator'>" ~ separator ~ "</span>"-%}
+            {%- set separator_with_class = "<span class='separator' aria-hidden='true'>" ~ separator ~ "</span>"-%}
 
             {#- Date -#}
             {% if page.date and macros_settings::evaluate_setting_priority(setting="show_date", page=page, default_global_value=true) == "true" %}
@@ -157,9 +157,9 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
 
             {#- Tags -#}
             {%- if page.taxonomies and page.taxonomies.tags -%}
-                <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{- macros_translate::translate(key="tags", default="tags", language_strings=language_strings) | capitalize -}}:&nbsp;</li>
+                <li class="tag">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{- macros_translate::translate(key="tags", default="tags", language_strings=language_strings) | capitalize -}}:&nbsp;</li>
                 {%- for tag in page.taxonomies.tags -%}
-                    <li><a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
+                    <li class="tag"><a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
                     {%- if not loop.last -%}
                         ,&nbsp;
                     {%- endif -%}

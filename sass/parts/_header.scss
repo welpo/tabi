@@ -84,6 +84,10 @@ header {
         list-style-type: none;
     }
 
+    .tag {
+        margin-inline-end: 0;
+    }
+
     .separator {
         margin-inline-end: 0.2rem;
         user-select: none;
