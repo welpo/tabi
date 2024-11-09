@@ -18,28 +18,31 @@
                         {% endfor %}
                     {%- endif -%}
 
-                    {# Search #}
-                    {%- if config.build_search_index %}
-                    {%- set search_icon_title = macros_translate::translate(key='search_icon_title', default='Press $SHORTCUT to open search', language_strings=language_strings) -%}
-                    <li class="js">
-                        <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="{{ search_icon_title }}" aria-label="{{ search_icon_title }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
-                            </svg>
-                        </div>
-                    </li>
-                    {%- endif %}
+                    {#- Wrap the icons in a div to keep them all together -#}
+                    <div class="nav-navs">
+                        {# Search #}
+                        {%- if config.build_search_index %}
+                        {%- set search_icon_title = macros_translate::translate(key='search_icon_title', default='Press $SHORTCUT to open search', language_strings=language_strings) -%}
+                        <li class="js">
+                            <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="{{ search_icon_title }}" aria-label="{{ search_icon_title }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                </svg>
+                            </div>
+                        </li>
+                        {%- endif %}
 
-                    {# Language switcher #}
-                    {# Display the language switcher only if more than one language is available #}
-                    {%- if config.languages | length > 0 %}
-                    {% include "partials/language_switcher.html" %}
-                    {%- endif %}
+                        {# Language switcher #}
+                        {# Displayed only if more than one language is available #}
+                        {%- if config.languages | length > 0 %}
+                        {% include "partials/language_switcher.html" %}
+                        {%- endif %}
 
-                    {# Theme switcher #}
-                    {%- if config.extra.theme_switcher and config.extra.theme_switcher == true -%}
-                    {%- include "partials/theme_switcher.html" -%}
-                    {%- endif -%}
+                        {# Theme switcher #}
+                        {%- if config.extra.theme_switcher and config.extra.theme_switcher == true -%}
+                        {%- include "partials/theme_switcher.html" -%}
+                        {%- endif -%}
+                    </div>
                 </ul>
             </div>
         {% endif %}

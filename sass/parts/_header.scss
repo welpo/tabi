@@ -24,13 +24,15 @@ header {
 .nav-navs {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    gap: 1px;
 
     ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 1px;
+        display: inherit;
+        flex-wrap: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+        gap: inherit;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -76,11 +78,18 @@ header {
 
     ul,
     li {
-        display: inline;
+        display: inline-block;
+        margin-inline-end: 0.2rem;
         font-family: var(--sans-serif-font);
         list-style-type: none;
     }
+
+    .separator {
+        margin-inline-end: 0.2rem;
+        user-select: none;
+    }
 }
+
 .language-switcher {
     display: flex;
     justify-content: center;
