@@ -19,7 +19,7 @@
                     {%- endif -%}
 
                     {#- Wrap the icons in a div to keep them all together -#}
-                    <div class="nav-navs">
+                    <div class="nav-navs" id="menu-icons-group">
                         {# Search #}
                         {%- if config.build_search_index %}
                         {%- set search_icon_title = macros_translate::translate(key='search_icon_title', default='Press $SHORTCUT to open search', language_strings=language_strings) -%}
