@@ -140,24 +140,26 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- set previous_visible = true -%}
             {% endif %}
 
+            {%- set separator_with_class = "<span class='separator' aria-hidden='true'>" ~ separator ~ "</span>"-%}
+
             {#- Date -#}
             {% if page.date and macros_settings::evaluate_setting_priority(setting="show_date", page=page, default_global_value=true) == "true" %}
-                {%- if previous_visible -%}&nbsp;{{ separator }}&nbsp;{%- endif -%}<li>{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</li>
+                <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</li>
                 {#- Variable to keep track of whether we've shown a section, to avoid separators as the first element -#}
                 {%- set previous_visible = true -%}
             {% endif %}
 
             {#- Reading time -#}
             {% if macros_settings::evaluate_setting_priority(setting="show_reading_time", page=page, default_global_value=true) == "true" %}
-                {%- if previous_visible -%}&nbsp;{{ separator }}&nbsp;{%- endif -%}<li title="{{ macros_translate::translate(key="words", number=page.word_count, default="$NUMBER words", language_strings=language_strings) }}">{{ macros_translate::translate(key="min_read", number=page.reading_time, default="$NUMBER min read", language_strings=language_strings) }}</li>
+                <li title="{{ macros_translate::translate(key="words", number=page.word_count, default="$NUMBER words", language_strings=language_strings) }}">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_translate::translate(key="min_read", number=page.reading_time, default="$NUMBER min read", language_strings=language_strings) }}</li>
                 {%- set previous_visible = true -%}
             {% endif %}
 
             {#- Tags -#}
             {%- if page.taxonomies and page.taxonomies.tags -%}
-                {%- if previous_visible -%}&nbsp;{{ separator }}&nbsp;{%- endif -%}<li>{{- macros_translate::translate(key="tags", default="tags", language_strings=language_strings) | capitalize -}}:&nbsp;</li>
+                <li class="tag">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{- macros_translate::translate(key="tags", default="tags", language_strings=language_strings) | capitalize -}}:&nbsp;</li>
                 {%- for tag in page.taxonomies.tags -%}
-                    <li><a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
+                    <li class="tag"><a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
                     {%- if not loop.last -%}
                         ,&nbsp;
                     {%- endif -%}
@@ -174,8 +176,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 </ul><ul class="meta last-updated"><li>{{ updated_str }}</li>
                 {# Show link to remote changes if enabled #}
                 {% if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" %}
-                    {%- if previous_visible -%}{{ separator }}&nbsp;{%- endif -%}
-                    <li><a href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}<small>&nbsp;<span class="arrow-corner">↗</span></small></a></li>
+                    <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}<a href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}<small>&nbsp;<span class="arrow-corner">↗</span></small></a></li>
                 {% endif %}
             {% endif %}
         </ul>
