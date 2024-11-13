@@ -23,7 +23,7 @@ one_results = "$NUMBER resultat"  # "1 result"
 many_results = "$NUMBER resultats"  # "3 results"
 
 # Navigation.
-pinned = "Fixat"
+pinned = "Fixada"
 jump_to_posts = "Saltar als articles"
 read_more = "Llegir més"
 one_posts = "$NUMBER entrada"

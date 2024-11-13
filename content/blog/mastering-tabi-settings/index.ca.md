@@ -154,7 +154,7 @@ Notes addicionals:
 
 ##### Fixar entrades
 
-Pots fixar entrades per mantenir-les a la part superior de la pàgina principal. En aquesta demo, aquesta entrada està fixada, així que apareix primera amb una icona i etiqueta de "fixat":
+Pots fixar entrades per mantenir-les a la part superior de la pàgina principal. En aquesta demo, aquesta entrada està fixada, així que apareix primera amb una icona i etiqueta de "fixada":
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/pinned_post_light.webp", dark_src="blog/mastering-tabi-settings/img/pinned_post_dark.webp", alt="Entrada fixada", full_width=true) }}
 
@@ -166,7 +166,6 @@ Per fixar una entrada, afegeix el següent al seu front matter:
 [extra]
 pinned = true
 ```
-
 
 {{ admonition(type="note", text="Aquesta configuració només afecta les pàgines que utilitzen la plantilla predeterminada `section.html`. En aquesta demo, això inclou la pàgina principal i `blog/`. Altres seccions —pàgines d'etiquetes, `archive/` o sèries— ignoren aquesta configuració.") }}
 

@@ -154,7 +154,7 @@ Notas adicionales:
 
 ##### Fijar publicaciones
 
-Puedes fijar publicaciones para mantenerlas en la parte superior de la página principal. En esta demo, esta publicación está fijada, por lo que aparece primera con un icono y etiqueta de "fijado":
+Puedes fijar publicaciones para mantenerlas en la parte superior de la página principal. En esta demo, esta publicación está fijada, por lo que aparece primera con un icono y etiqueta de "fijada":
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/pinned_post_light.webp", dark_src="blog/mastering-tabi-settings/img/pinned_post_dark.webp", alt="Entrada fijada", full_width=true) }}
 
