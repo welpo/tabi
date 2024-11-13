@@ -1,7 +1,6 @@
 +++
 title = "Latest posts"
 sort_by = "date"
-template = "section.html"
 
 [extra]
 header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, the theme's author" }

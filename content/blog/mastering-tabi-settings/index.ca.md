@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-11-08
+updated = 2024-11-13
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -122,7 +122,6 @@ Configura `paginate_by` al front matter del teu arxiu `content/_index.md`:
 ```toml
 title = "Últimes publicacions"
 sort_by = "date"
-template = "section.html"
 paginate_by = 5  # Mostra 5 publicacions per pàgina.
 
 [extra]
@@ -138,7 +137,6 @@ Utilitza `section_path` a la secció `[extra]` del teu arxiu `content/_index.md`
 ```toml
 title = "Últimes publicacions"
 sort_by = "date"
-template = "section.html"
 # No configuris `paginate_by` aquí.
 
 [extra]
@@ -169,7 +167,8 @@ Per fixar una entrada, afegeix el següent al seu front matter:
 pinned = true
 ```
 
-{{ admonition(type="note", text='Aquesta configuració només afecta la pàgina principal (`template = "section.html"`). En altres seccions (p.ex. `blog/`, `archive/`), aquest configuració no té cap efecte.') }}
+
+{{ admonition(type="note", text="Aquesta configuració només afecta les pàgines que utilitzen la plantilla predeterminada `section.html`. En aquesta demo, això inclou la pàgina principal i `blog/`. Altres seccions —pàgines d'etiquetes, `archive/` o sèries— ignoren aquesta configuració.") }}
 
 ##### Mostrar la data dels articles al llistat
 

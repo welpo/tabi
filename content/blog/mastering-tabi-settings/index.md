@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-11-08
+updated = 2024-11-13
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -122,7 +122,6 @@ Set `paginate_by` in the front matter of your `content/_index.md` file:
 ```toml
 title = "Latest posts"
 sort_by = "date"
-template = "section.html"
 paginate_by = 5  # Show 5 posts per page.
 
 [extra]
@@ -138,7 +137,6 @@ Use `section_path` in the `[extra]` section of your `content/_index.md` file:
 ```toml
 title = "Latest posts"
 sort_by = "date"
-template = "section.html"
 # Do not set `paginate_by` here.
 
 [extra]
@@ -169,7 +167,7 @@ To pin a post, add the following to its front matter:
 pinned = true
 ```
 
-{{ admonition(type="note", text='This setting only affects the main page (`template = "section.html"`). On other sections (e.g. `blog/`, `archive/`), this setting makes no difference.') }}
+{{ admonition(type="note", text='This setting only affects pages using the default `section.html` template. In this demo, this includes the main page and `blog/`. Other sections —tags, archives, or series pages— ignore this setting.') }}
 
 ##### Display the Date of Posts in Listing
 
