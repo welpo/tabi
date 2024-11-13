@@ -3,30 +3,42 @@
 {# It would also work with arrays (e.g. ["dates"] or ["indexes"] or even ["indexes","dates"]). #}
 {# Nevertheless, arrays cannot be used as a default value for a macro parameter in Tera (see https://github.com/Keats/tera/issues/710). #}
 {# `paginator` is only used to compute indexes metadata and can be let empty otherwise. #}
-{% macro list_posts(posts, max, metadata="dates", language_strings="", section_path="blog", paginator="", pinned_first=false) %}
+{% macro list_posts(posts, all_posts="", max=999999, metadata="dates", language_strings="", section_path="blog", paginator="", pinned_first=false, current_page=1) %}
 
 {%- set separator = config.extra.separator | default(value="•") -%}
 
-{# Separate pinned and regular posts #}
-{% set all_posts = [] %}
+{# Separate pinned and regular posts from all_posts if available, otherwise from posts #}
 {% if pinned_first %}
+    {% set source_posts = all_posts | default(value=posts) %}
     {% set pinned_posts = [] %}
     {% set regular_posts = [] %}
-    {% for post in posts %}
+    {% for post in source_posts %}
         {% if post.extra.pinned %}
             {% set_global pinned_posts = pinned_posts | concat(with=post) %}
         {% else %}
             {% set_global regular_posts = regular_posts | concat(with=post) %}
         {% endif %}
     {% endfor %}
-    {% set all_posts = pinned_posts | concat(with=regular_posts) %}
+
+    {# On page 1 or when no pagination, show pinned then regular #}
+    {% if current_page == 1 %}
+        {% if paginator %}
+            {# With pagination: pinned + current page's posts #}
+            {% set display_posts = pinned_posts | concat(with=posts) %}
+        {% else %}
+            {# Without pagination: pinned + regular (no duplicates) #}
+            {% set display_posts = pinned_posts | concat(with=regular_posts) %}
+        {% endif %}
+    {% else %}
+        {% set display_posts = posts %}
+    {% endif %}
 {% else %}
-    {% set all_posts = posts %}
+    {% set display_posts = posts %}
 {% endif %}
 
 <div class="bloglist-container">
-    {# Display all posts (pinned first, then regular) #}
-    {% for post in all_posts %}
+    {# Display posts #}
+    {% for post in display_posts %}
         {% if loop.index <= max %}
             {% if loop.index == max or loop.last %}
                 {% set bottom_divider = false %}

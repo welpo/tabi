@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-11-13
+updated = 2024-11-14
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -167,7 +167,9 @@ Per fixar una entrada, afegeix el següent al seu front matter:
 pinned = true
 ```
 
-{{ admonition(type="note", text="Aquesta configuració només afecta les pàgines que utilitzen la plantilla predeterminada `section.html`. En aquesta demo, això inclou la pàgina principal i `blog/`. Altres seccions —pàgines d'etiquetes, `archive/` o sèries— ignoren aquesta configuració.") }}
+{{ admonition(type="info", text="Aquesta configuració només afecta les pàgines principals del lloc (com `/`, `/es/`, `/fr/`). Altres seccions com `blog/`, `tags/` o `archive/` mostren les publicacions en el seu ordre habitual.") }}
+
+{{ admonition(type="warning", text='Quan s'utilitza la paginació (`paginate_by`), les entrades fixades poden aparèixer dues vegades: una vegada a la part superior de la primera pàgina, i una altra en la seva posició cronològica normal en pàgines posteriors.') }}
 
 ##### Mostrar la data dels articles al llistat
 

@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-11-13
+updated = 2024-11-14
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -167,7 +167,9 @@ Para fijar una publicación, añade lo siguiente a su front matter:
 pinned = true
 ```
 
-{{ admonition(type="note", text='Este ajuste solo afecta a las páginas que usan la plantilla predeterminada `section.html`. En esta demo, esto incluye la página principal y `blog/`. Otras secciones —páginas de etiquetas, `archive/` o series— ignoran este ajuste.') }}
+{{ admonition(type="info", text="Este ajuste solo afecta a las páginas principales del sitio (como `/`, `/es/`, `/fr/`). Otras secciones como `blog/`, `tags/` o `archive/` muestran las publicaciones en su orden habitual.") }}
+
+{{ admonition(type="warning", text='Cuando se utiliza la paginación (`paginate_by`), las publicaciones destacadas pueden aparecer dos veces: una vez en la parte superior de la primera página, y otra en su posición cronológica normal en páginas posteriores.') }}
 
 ##### Mostrar la fecha de los artículos en el listado
 

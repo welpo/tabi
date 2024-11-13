@@ -9,7 +9,7 @@
         {%- set paginator_has_no_pages = paginator and paginator.pages | length == 0 -%}
         {%- set extra_section_has_pages = extra_section and extra_section.pages | length > 0 -%}
 
-        {# Display a warning if both settings are set, paginator has no pages, but extra section does #}
+        {# Display warning if both settings are set #}
         {%- if both_settings_set and paginator_has_no_pages and extra_section_has_pages -%}
             <div class="admonition warning">
                 <div class="admonition-icon admonition-icon-warning"></div>
@@ -30,14 +30,29 @@
             </div>
         {%- endif -%}
 
-        {%- if paginator %}
+        {# Get all posts for pinning if we're in root section with pagination #}
+        {%- if paginator and is_root_section -%}
+            {%- set root_section = get_section(path="_index.md") -%}
+            {%- set all_posts = root_section.pages -%}
             {%- set pages = paginator.pages -%}
-        {% else %}
+        {%- elif paginator -%}
+            {%- set all_posts = paginator.pages -%}
+            {%- set pages = paginator.pages -%}
+        {%- else -%}
+            {%- set all_posts = extra_section.pages -%}
             {%- set pages = extra_section.pages -%}
-        {% endif -%}
+        {%- endif -%}
 
         {% set max_posts = section.extra.max_posts | default(value=999999) %}
-        {{ macros_list_posts::list_posts(posts=pages, max=max_posts, language_strings=language_strings, section_path=path, pinned_first=true) }}
+        {{ macros_list_posts::list_posts(
+            posts=pages,
+            all_posts=all_posts,
+            max=max_posts,
+            language_strings=language_strings,
+            section_path=path,
+            pinned_first=is_root_section,
+            current_page=paginator.current_index | default(value=1)
+        ) }}
     </div>
 
     {% if paginator and paginator.pages | length > 0 %}

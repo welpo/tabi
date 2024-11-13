@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-11-13
+updated = 2024-11-14
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -167,7 +167,9 @@ To pin a post, add the following to its front matter:
 pinned = true
 ```
 
-{{ admonition(type="note", text='This setting only affects pages using the default `section.html` template. In this demo, this includes the main page and `blog/`. Other sections —tags, archives, or series pages— ignore this setting.') }}
+{{ admonition(type="info", text="This setting only affects your site's main pages (like `/`, `/es/`, `/fr/`). Other sections like `blog/`, `tags/`, or `archive/` show posts in their normal order.") }}
+
+{{ admonition(type="warning", text='When using pagination (`paginate_by`), pinned posts may appear twice: once on top of page 1, and again in their normal chronological position on subsequent pages.') }}
 
 ##### Display the Date of Posts in Listing
 
