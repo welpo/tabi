@@ -2,6 +2,16 @@
 
 {% block main_content %}
 
+{# We'll only pin posts in the root section. #}
+{# Right now both the main page and blog/ use the same `section.html` template. #}
+{# To avoid using different templates, we do this. #}
+{%- if lang == config.default_language -%}
+    {%- set expected_root = "/" -%}
+{%- else -%}
+    {%- set expected_root = "/" ~ lang ~ "/" -%}
+{%- endif -%}
+{%- set is_root_section = current_path == expected_root -%}
+
 {%- set show_projects_first = section.extra.show_projects_first | default(value=false) -%}
 {%- if show_projects_first -%}
     {%- set first_section = "projects" -%}
