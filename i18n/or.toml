@@ -23,6 +23,7 @@ one_results = "$NUMBER ପରିଣାମ"  # "1 result"
 many_results = "$NUMBER ପରିଣାମଗୁଡ଼ିକ"  # "3 results"
 
 # Navigation.
+pinned = "ପିନ୍ କରାଯାଇଛି"
 jump_to_posts = "ପୋଷ୍ଟକୁ ଯାଆନ୍ତୁ"
 read_more = "ଆହୁରି ପଢ଼ନ୍ତୁ"
 one_posts = "$NUMBER ପୋଷ୍ଟ"

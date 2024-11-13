@@ -1,13 +1,14 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-10-20
+updated = 2024-11-13
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
 tags = ["showcase", "tutorial", "FAQ"]
 
 [extra]
+pinned = true
 quick_navigation_buttons = true
 social_media_card = "social_cards/blog_mastering_tabi_settings.jpg"
 +++
@@ -121,7 +122,6 @@ Set `paginate_by` in the front matter of your `content/_index.md` file:
 ```toml
 title = "Latest posts"
 sort_by = "date"
-template = "section.html"
 paginate_by = 5  # Show 5 posts per page.
 
 [extra]
@@ -137,7 +137,6 @@ Use `section_path` in the `[extra]` section of your `content/_index.md` file:
 ```toml
 title = "Latest posts"
 sort_by = "date"
-template = "section.html"
 # Do not set `paginate_by` here.
 
 [extra]
@@ -152,6 +151,23 @@ Additional notes:
 
 - The `title` in the front matter sets the header that appears above the posts.
 - Use the full path to the section's `_index.md` file for `section_path`. Using `section_path = "blog/"` will not work.
+
+##### Pinning Posts
+
+You can pin posts to keep them at the top of the main page listing. In this demo, this post is pinned, so it appears first with a "pinned" icon and label:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/pinned_post_light.webp", dark_src="blog/mastering-tabi-settings/img/pinned_post_dark.webp", alt="Pinned post", full_width=true) }}
+
+Pinned posts are shown first, maintaining their relative order of the section's `sort_by`, followed by regular posts.
+
+To pin a post, add the following to its front matter:
+
+```toml
+[extra]
+pinned = true
+```
+
+{{ admonition(type="note", text='This setting only affects pages using the default `section.html` template. In this demo, this includes the main page and `blog/`. Other sections —tags, archives, or series pages— ignore this setting.') }}
 
 ##### Display the Date of Posts in Listing
 

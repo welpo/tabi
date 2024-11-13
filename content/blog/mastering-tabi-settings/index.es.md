@@ -1,13 +1,14 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-10-20
+updated = 2024-11-13
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
 tags = ["funcionalidad", "tutorial", "preguntas frecuentes"]
 
 [extra]
+pinned = true
 quick_navigation_buttons = true
 social_media_card = "social_cards/es_blog_mastering_tabi_settings.jpg"
 +++
@@ -121,7 +122,6 @@ Configura `paginate_by` en el front matter de tu archivo `content/_index.md`:
 ```toml
 title = "Últimas publicaciones"
 sort_by = "date"
-template = "section.html"
 paginate_by = 5  # Muestra 5 publicaciones por página.
 
 [extra]
@@ -137,7 +137,6 @@ Utiliza `section_path` en la sección `[extra]` de tu archivo `content/_index.md
 ```toml
 title = "Últimas publicaciones"
 sort_by = "date"
-template = "section.html"
 # No configures `paginate_by` aquí.
 
 [extra]
@@ -152,6 +151,23 @@ Notas adicionales:
 
 - El `title` en el front matter establece el título que aparece sobre las publicaciones.
 - Usa la ruta completa al archivo `_index.md` de la sección para `section_path`. Usar `section_path = "blog/"` no funcionará.
+
+##### Fijar publicaciones
+
+Puedes fijar publicaciones para mantenerlas en la parte superior de la página principal. En esta demo, esta publicación está fijada, por lo que aparece primera con un icono y etiqueta de "fijada":
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/pinned_post_light.webp", dark_src="blog/mastering-tabi-settings/img/pinned_post_dark.webp", alt="Entrada fijada", full_width=true) }}
+
+Las publicaciones fijadas se muestran primero, manteniendo su orden relativo según el `sort_by` de la sección, seguidas por el resto de las publicaciones.
+
+Para fijar una publicación, añade lo siguiente a su front matter:
+
+```toml
+[extra]
+pinned = true
+```
+
+{{ admonition(type="note", text='Este ajuste solo afecta a las páginas que usan la plantilla predeterminada `section.html`. En esta demo, esto incluye la página principal y `blog/`. Otras secciones —páginas de etiquetas, `archive/` o series— ignoran este ajuste.') }}
 
 ##### Mostrar la fecha de los artículos en el listado
 

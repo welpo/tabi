@@ -1,7 +1,6 @@
 +++
 title = "Publicacions recents"
 sort_by = "date"
-template = "section.html"
 
 [extra]
 header = {title = "Hola! Soc tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, l'autor de tabi" }
