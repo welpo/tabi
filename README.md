@@ -206,10 +206,17 @@ Using tabi? Feel free to create a PR and add your site to this list.
 ## Inspiration
 
 This theme was inspired by:
-- [shadharon](https://github.com/syedzayyan/shadharon) — tabi started as a fork of [syedzayyan](https://github.com/syedzayyan)'s theme;
-- [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog);
-- [abridge](https://github.com/Jieiku/abridge);
-- [internetVin's blog](https://internetvin.ghost.io).
+- [shadharon](https://github.com/syedzayyan/shadharon) — tabi started as a fork of [syedzayyan](https://github.com/syedzayyan)'s theme
+- [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
+- [abridge](https://github.com/Jieiku/abridge)
+
+## Support
+
+Something not working? Have an idea? Let us know!
+
+- Questions? → [Start a discussion](https://github.com/welpo/tabi/discussions)
+- Found a bug? → [Report it here](https://github.com/welpo/tabi/issues/new?&labels=bug&template=2_bug_report.yml)
+- Feature request? → [Tell us more!](https://github.com/welpo/tabi/issues/new?&labels=feature&template=3_feature_request.yml)
 
 ## Contributing
 
