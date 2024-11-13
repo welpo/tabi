@@ -185,11 +185,11 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
         {#- As a series might be a transparent section in order to mix up its articles with those of the section just above or the root, -#}
         {#- there is no other way but to compute the potential path of each ancestor section related to the page and look for the first one being a series. -#}
         {#- Using the `ancestors` field of a section is not possible because transparent sections are not present in this field. -#}
-        {%- set current_path = [] -%}
+        {%- set series_path_components = [] -%}
         {%- set section_paths = [] -%}
         {%- for path in page.relative_path | split(pat="/") | slice(end=-1) -%}
-            {%- set_global current_path = current_path | concat(with=path) -%}
-            {%- set section_path = current_path | concat(with="_index.md") | join(sep="/") -%}
+            {%- set_global series_path_components = series_path_components | concat(with=path) -%}
+            {%- set section_path = series_path_components | concat(with="_index.md") | join(sep="/") -%}
             {%- set_global section_paths = section_paths | concat(with=section_path) -%}
         {%- endfor -%}
         {#- The series the page is part of is the closest section flagged as a series, if any -#}
@@ -261,22 +261,6 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {{ processed_content | replace(from="<!-- toc -->", to=macros_toc::toc(page=page, header=false, language_strings=language_strings)) | safe }}
         </section>
 
-        {#- Check if comments are enabled, checking that they are not disabled on the specific page -#}
-        {% set systems = ["giscus", "utterances", "hyvortalk", "isso"] %}
-        {% set enabled_systems = 0 %}
-        {% set comment_system = "" %}
-
-        {% for system in systems %}
-            {% set global_enabled = config.extra[system].enabled_for_all_posts | default(value=false) %}
-            {% set page_enabled = page.extra[system] | default(value=global_enabled) %}
-            {% set is_enabled = global_enabled and page_enabled != false or page_enabled == true %}
-
-            {% if is_enabled %}
-                {% set_global comment_system = system %}
-                {% set_global enabled_systems = enabled_systems + 1 %}
-            {% endif %}
-        {% endfor %}
-
         {% if macros_settings::evaluate_setting_priority(setting="show_previous_next_article_links", page=page, default_global_value=true) == "true" %}
             {%- if page.lower or page.higher -%}
                 {% set next_label = macros_translate::translate(key="next", default="Next", language_strings=language_strings) %}
@@ -325,6 +309,21 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
         {%- endif -%}
 
         {#- Comments -#}
+        {#- Check if comments are enabled, checking that they are not disabled on the specific page -#}
+        {% set systems = ["giscus", "utterances", "hyvortalk", "isso"] %}
+        {% set enabled_systems = 0 %}
+        {% set comment_system = "" %}
+
+        {% for system in systems %}
+            {% set global_enabled = config.extra[system].enabled_for_all_posts | default(value=false) %}
+            {% set page_enabled = page.extra[system] | default(value=global_enabled) %}
+            {% set is_enabled = global_enabled and page_enabled != false or page_enabled == true %}
+
+            {% if is_enabled %}
+                {% set_global comment_system = system %}
+                {% set_global enabled_systems = enabled_systems + 1 %}
+            {% endif %}
+        {% endfor %}
         {#- Ensure only one comment system is enabled -#}
         {% if enabled_systems > 1 %}
             {{ throw(message="ERROR: Multiple comment systems have been enabled for the same page. Check your config.toml and individual page settings to ensure only one comment system is activated at a time.") }}
