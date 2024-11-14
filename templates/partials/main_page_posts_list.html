@@ -49,7 +49,7 @@
             all_posts=all_posts,
             max=max_posts,
             language_strings=language_strings,
-            section_path=path,
+            section_path=extra_section.path | default(value="blog"),
             pinned_first=is_root_section,
             current_page=paginator.current_index | default(value=1)
         ) }}
