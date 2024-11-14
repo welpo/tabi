@@ -41,6 +41,7 @@ social_media_card = "social_cards/es_projects_tabi.jpg"
 - [Tarjetas para redes sociales](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#tarjetas-para-redes-sociales).
 - [Shortcodes personalizados](https://welpo.github.io/tabi/es/blog/shortcodes/).
 - [Skins personalizables](https://welpo.github.io/tabi/es/blog/customise-tabi/).
+- [Publicaciones fijadas](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#fijar-publicaciones).
 - [Página de proyectos](https://welpo.github.io/tabi/es/projects/).
 - Diseño responsive.
 - Soporte de [KaTeX](https://katex.org/).

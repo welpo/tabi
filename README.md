@@ -65,6 +65,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] Responsive design.
 - [X] [Projects page](https://welpo.github.io/tabi/projects/).
 - [X] [Archive page](https://welpo.github.io/tabi/archive/).
+- [X] [Pinned posts](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#pinning-posts).
 - [X] [Social links](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-icons).
 - [X] [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 

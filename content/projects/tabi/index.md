@@ -45,6 +45,7 @@ social_media_card = "social_cards/projects_tabi.jpg"
 - Responsive design.
 - [Projects page](https://welpo.github.io/tabi/projects/).
 - [Archive page](https://welpo.github.io/tabi/archive/).
+- [Pinned posts](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#pinning-posts).
 - [Social links](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-icons).
 - [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 

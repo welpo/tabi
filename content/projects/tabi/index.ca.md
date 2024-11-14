@@ -41,6 +41,7 @@ social_media_card = "social_cards/ca_projects_tabi.jpg"
 - [Botons de navegació ràpida](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#botons-de-navegacio-rapida).
 - [Shortcodes personalitzats](https://welpo.github.io/tabi/ca/blog/shortcodes/).
 - [Skins personalitzables](https://welpo.github.io/tabi/ca/blog/customise-tabi/).
+- [Publicacions fixades](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#fixar-entrades).
 - [Pàgina de projectes](https://welpo.github.io/tabi/ca/projects/).
 - Disseny responsive.
 - Suport de [KaTeX](https://katex.org/).
