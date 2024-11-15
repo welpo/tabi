@@ -11,6 +11,13 @@ $padding: 2.5rem;
     align-items: flex-start;
     background-color: var(--navbar-color);
     padding-block: $padding;
+    min-width: 13.5rem;
+
+    .thumbnail-image {
+        margin: 0;
+        margin-top: 0.7rem;
+        max-width: 90%;
+    }
 
     ul {
         margin-inline-end: 0.7rem;
@@ -22,10 +29,6 @@ $padding: 2.5rem;
         li {
             list-style-type: none;
             white-space: nowrap;
-        }
-
-        li.date {
-            width: 13.5rem;
         }
 
         li.draft-label {
@@ -136,6 +139,10 @@ $padding: 2.5rem;
                 display: inline;
                 margin-inline-end: 0.3rem;
             }
+        }
+
+        .post-thumbnail {
+            display: none;
         }
     }
 

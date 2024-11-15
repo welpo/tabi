@@ -3,6 +3,9 @@ title = "ラム (ramu)"
 description = "A web app to practice reading and listening to Japanese numbers."
 weight = 30
 
+[taxonomies]
+tags = ["Japanese", "education", "web app", "PWA", "web", "JavaScript"]
+
 [extra]
 local_image = "projects/ramu/ramu_logo.png"
 canonical_url = "https://osc.garden/projects/ramu/"

@@ -3,6 +3,9 @@ title = "nani"
 description = "Bash script to create public URLs from files or text on remote servers."
 weight = 50
 
+[taxonomies]
+tags = ["bash", "CLI"]
+
 [extra]
 local_image = "projects/nani/nani_logo.webp"
 canonical_url = "https://osc.garden/projects/tabi/"

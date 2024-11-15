@@ -92,6 +92,25 @@
                         {%- endif -%}
                     {%- endif -%}
 
+                    {% if post.extra.local_image or post.extra.remote_image %}
+                        <li class="post-thumbnail">
+                            <a href="{{ post.permalink }}">
+                                {% if post.extra.local_image %}
+                                    {% set meta = get_image_metadata(path=post.extra.local_image, allow_missing=true) %}
+                                    <img class="thumbnail-image"
+                                        alt="{{ post.extra.local_image }}"
+                                        src="{{ get_url(path=post.extra.local_image) }}"
+                                        {% if meta.width %}width="{{ meta.width }}"{% endif %}
+                                        {% if meta.height %}height="{{ meta.height }}"{% endif %}>
+                                {% elif post.extra.remote_image %}
+                                    <img class="thumbnail-image"
+                                        alt="{{ post.extra.remote_image }}"
+                                        src="{{ post.extra.remote_image }}">
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endif %}
+
                     {% if post.draft %}
                         <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
                     {% endif %}

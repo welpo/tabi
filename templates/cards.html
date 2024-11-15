@@ -18,7 +18,12 @@
             {%- set show_pages = section.pages -%}
         {% endif -%}
 
-    {%- include "partials/cards_pages.html" -%}
+        {%- if macros_settings::evaluate_setting_priority(setting="enable_cards_tag_filtering", page=section, default_global_value=true) == "true" -%}
+            {%- include "partials/filter_card_tags.html" -%}
+        {%- endif -%}
+
+
+        {%- include "partials/cards_pages.html" -%}
     </main>
 
     {% if paginator %}
