@@ -32,4 +32,4 @@
 {% endif %}
 
 {#- Load the script -#}
-<script src="{{ get_url(path='js/filterCards.min.js', trailing_slash=false) | safe }}" async></script>
+<script src="{{ get_url(path='js/filterCards.min.js', trailing_slash=false, cachebust=true) | safe }}" defer></script>
