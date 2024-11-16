@@ -68,13 +68,12 @@
             padding-block-end: 24px;
             text-align: center;
         }
-
-        .card-title {
-            margin-top: 0.7em;
-        }
-
         .card-image {
-            width: 100%;
+            $card-image-margins: 1.6rem;
+            margin: $card-image-margins;
+            margin-bottom: $card-image-margins / 1.5;
+            width: calc(100% - $card-image-margins * 2);
+            height: auto;
         }
 
         .card-image-placeholder {

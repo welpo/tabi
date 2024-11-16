@@ -15,8 +15,14 @@ $padding: 2.5rem;
 
     .thumbnail-image {
         margin: 0;
-        margin-top: 0.7rem;
-        max-width: 90%;
+        margin-inline: auto;  // Centred by default.
+        max-width: 70%;
+    }
+
+    li.date + li.post-thumbnail .thumbnail-image {
+        // Styles for the thumbnail when there's a date above (either date or updated).
+        margin-inline: 0;  // Since metadata is left aligned, the image looks weird when centred.
+        margin-block-start: 0.7rem;
     }
 
     ul {

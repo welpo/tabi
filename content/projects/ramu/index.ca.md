@@ -7,7 +7,7 @@ weight = 30
 tags = ["Japonès", "interactiu", "web app", "web", "PWA", "JavaScript"]
 
 [extra]
-local_image = "projects/ramu/ramu_logo.png"
+local_image = "projects/ramu/ramu_logo.webp"
 canonical_url = "https://osc.garden/ca/projects/ramu/"
 social_media_card = "social_cards/projects_ramu.jpg"
 +++
