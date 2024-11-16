@@ -2,7 +2,7 @@
     border-color: var(--admonition-#{$type}-border);
     background-color: var(--admonition-#{$type}-bg);
 
-    code {
+    > .admonition-content > p > code {
         background-color: var(--admonition-#{$type}-code);
     }
 
