@@ -1,7 +1,7 @@
 +++
 title = "Sense JavaScript obligatori"
 date = 2023-01-06
-updated = 2024-08-28
+updated = 2024-11-16
 description = "JavaScript només s'utilitza quan HTML i CSS no són suficients."
 
 [taxonomies]
@@ -29,6 +29,7 @@ Les següents opcions es poden especificar per a publicacions, seccions i global
 - [**Diagrames de Mermaid**](@/blog/shortcodes/index.ca.md#diagrames-de-mermaid). Habilitat configurant `mermaid = true` (~2.5 MB).
 - [**Còpia de blocs de codi amb un sol clic**](@/blog/markdown/index.ca.md#bloc-de-codi). Habilitada configurant `copy_button = true`. (~700 bytes)
 - [**Mostrar ruta/URL a blocs de codi**](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url). S'activa configurant `add_src_to_code_block = true`. (~400 bytes)
+- [**Filtratge per etiquetes** per a graelles de targetes](@/blog/mastering-tabi-settings/index.ca.md#filtrar-projectes) (p. ex. [projectes](@/projects/_index.ca.md)) (~2KB). S'habilita configurant `enable_cards_tag_filtering = true`.
 
 Per especificar aquestes opcions:
 

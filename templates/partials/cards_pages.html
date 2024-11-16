@@ -15,24 +15,34 @@
 
         {% set target_url = page.extra.link_to | default(value=page.permalink) %}
 
-        <a rel="{{ rel_attributes }}" {{ blank_target }} href="{{ target_url }}" class="card">
-            <div>
-                {% if page.extra.local_image %}
-                    {% set meta = get_image_metadata(path=page.extra.local_image, allow_missing=true) %}
-                    <img class="card-image" alt="{{ page.extra.local_image }}" src="{{ get_url(path=page.extra.local_image) }}" {% if meta.width %}width="{{ meta.width }}" {% endif %} {% if meta.height %}height="{{ meta.height }}" {% endif %}>
-                {% elif page.extra.remote_image %}
-                    <img class="card-image" alt="{{ page.extra.remote_image }}" src="{{ page.extra.remote_image }}">
-                {% else %}
-                    <div class="card-image-placeholder"></div>
-                {% endif %}
+        <a rel="{{ rel_attributes }}"
+            {{ blank_target }}
+            href="{{ target_url }}"
+            class="card"
+            {% if page.taxonomies %}
+            data-tags="{% for tax_name, terms in page.taxonomies %}{% for term in terms | unique %}{{ term | lower }}{% if not loop.last %},{% endif %}{% endfor %}{% endfor %}"
+            {% endif %}>
+            {% if page.extra.local_image %}
+                {% set meta = get_image_metadata(path=page.extra.local_image, allow_missing=true) %}
+                <img class="card-image"
+                    alt="{{ page.extra.local_image }}"
+                    src="{{ get_url(path=page.extra.local_image) }}"
+                    {% if meta.width %}width="{{ meta.width }}"{% endif %}
+                    {% if meta.height %}height="{{ meta.height }}"{% endif %}>
+            {% elif page.extra.remote_image %}
+                <img class="card-image"
+                    alt="{{ page.extra.remote_image }}"
+                    src="{{ page.extra.remote_image }}">
+            {% else %}
+                <div class="card-image-placeholder"></div>
+            {% endif %}
 
-                <div class="card-info">
-                    <h2 class="card-title">{{ page.title }}</h2>
-                    <div class="card-description">
-                        {% if page.description %}
-                            {{ page.description }}
-                        {% endif %}
-                    </div>
+            <div class="card-info">
+                <h2 class="card-title">{{ page.title }}</h2>
+                <div class="card-description">
+                    {% if page.description %}
+                        {{ page.description }}
+                    {% endif %}
                 </div>
             </div>
         </a>

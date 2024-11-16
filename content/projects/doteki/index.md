@@ -3,6 +3,9 @@ title = "dōteki"
 description = "Add dynamic content to your GitHub profile through an intuitive plugin system."
 weight = 30
 
+[taxonomies]
+tags = ["GitHub Actions", "automation", "Python"]
+
 [extra]
 local_image = "projects/doteki/doteki_logo.webp"
 social_media_card = "social_cards/projects_doteki.jpg"

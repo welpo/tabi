@@ -1,7 +1,7 @@
 +++
 title = "Sin JavaScript obligatorio"
 date = 2023-01-06
-updated = 2024-08-28
+updated = 2024-11-16
 description = "JavaScript solo se utiliza cuando HTML y CSS no son suficientes."
 
 [taxonomies]
@@ -29,6 +29,7 @@ Las siguientes opciones pueden especificarse para publicaciones, secciones y a n
 - [**Diagramas de Mermaid**](@/blog/shortcodes/index.es.md#diagramas-de-mermaid). Habilitado al configurar `mermaid = true` (~2.5 MB).
 - [**Copia de bloques de código con un solo clic**](@/blog/markdown/index.es.md#bloque-de-codigo). Habilitado al configurar `copy_button = true` (~700 bytes).
 - [**Mostrar ruta/URL en bloques de código**](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url). Se activa configurando `add_src_to_code_block = true`. (~400 bytes)
+- [**Filtraje por etiquetas** para cuadrículas de tarjetas](@/blog/mastering-tabi-settings/index.es.md#filtrar-proyectos) (p. ej. [proyectos](@/projects/_index.es.md)) (~2KB). Habilitado al configurar `enable_cards_tag_filtering = true`.
 
 Para especificar estas opciones:
 

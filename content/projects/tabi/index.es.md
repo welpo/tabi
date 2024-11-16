@@ -3,6 +3,9 @@ title = "tabi"
 description = "Un tema de Zola rápido, ligero y moderno con soporte multilingüe."
 weight = 40
 
+[taxonomies]
+tags = ["web", "JavaScript"]
+
 [extra]
 local_image = "projects/tabi/tabi.webp"
 canonical_url = "https://osc.garden/es/projects/tabi/"
@@ -11,7 +14,7 @@ social_media_card = "social_cards/es_projects_tabi.jpg"
 
 [**tabi**](https://github.com/welpo/tabi) es un tema moderno y rico en funcionalidad para [Zola](https://www.getzola.org/), un generador de sitios web estáticos muy rápido.
 
-{{ full_width_image(src="light_dark_tabi.webp", alt="Modos claro y oscuro de tabi") }}
+{{ full_width_image(src="https://cdn.jsdelivr.net/gh/welpo/tabi@main/light_dark_screenshot.png", alt="Modos claro y oscuro de tabi") }}
 
 #### [Ver en GitHub](https://github.com/welpo/tabi) • [Demo y documentación](https://welpo.github.io/tabi/es/) {.centered-text}
 

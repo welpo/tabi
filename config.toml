@@ -231,6 +231,12 @@ compact_tags = false
 # Default: "name".
 tag_sorting = "name"
 
+# Show clickable tags above cards.html template (e.g. projects/) to filter the displayed items.
+# Loads JS to filter. If JS is disabled, the buttons are links to the tag's page.
+# Can be set at the section or config.toml level, following the hierarchy: section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+# Default: true
+enable_cards_tag_filtering = true
+
 # Invert the order of the site title and page title in the browser tab.
 # Example: true => "Blog • ~/tabi", false => "~/tabi • Blog"
 invert_title_order = false

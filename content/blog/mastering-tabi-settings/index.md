@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-11-14
+updated = 2024-11-16
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -356,7 +356,7 @@ Clicking on this link will take you to the commit history of the post, where you
 
 ### Projects
 
-tabi has a built-in projects template. To enable it, you can create a directory in `content/projects/`. There, you can create a `_index.md` file with the following front matter:
+tabi has a built-in projects (cards) template. To enable it, you can create a directory in `content/projects/`. There, you can create a `_index.md` file with the following front matter:
 
 ```toml
 title = "Projects"
@@ -395,6 +395,33 @@ local_image = "img/tabi.webp"
 When a user clicks on the image or title of a project, they will be taken to the project's page. If you'd rather have users go to an external link, you can set `link_to = "https://example.com` in the `[extra]` section of the project's `.md` file.
 
 The individual project's page is rendered with the default template, unless you set another one, e.g. `template = "info-page.html"`.
+
+#### Filtering Projects
+
+If you add tags to your projects, you will see a tag filter:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/projects_tag_filter_light.webp", dark_src="blog/mastering-tabi-settings/img/projects_tag_filter_dark.webp", alt="Projects page with tag filter", full_width=true) }}
+
+The tag filtering system uses progressive enhancement:
+
+- Without JavaScript: Tags link directly to dedicated tag pages (e.g. `/tags/tag-name`)
+- With JavaScript: Instant filtering, URL syncing (#tag-name), and keyboard navigation
+
+To disable this feature, set `enable_cards_tag_filtering = false` in the `[extra]` section of the `projects/_index.md` file or in `config.toml`.
+
+{% admonition(type="tip") %}
+
+To filter projects by tags, you need to set tags in the front matter of each project. For example:
+
+```toml
+title = "project name"
+weight = 40
+
+[taxonomies]
+tags = ["tag one", "tag 2", "third tag"]
+```
+
+{% end %}
 
 ### Archive
 

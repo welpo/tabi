@@ -11,6 +11,19 @@ $padding: 2.5rem;
     align-items: flex-start;
     background-color: var(--navbar-color);
     padding-block: $padding;
+    min-width: 13.5rem;
+
+    .thumbnail-image {
+        margin: 0;
+        margin-inline: auto;  // Centred by default.
+        max-width: 70%;
+    }
+
+    li.date + li.post-thumbnail .thumbnail-image {
+        // Styles for the thumbnail when there's a date above (either date or updated).
+        margin-inline: 0;  // Since metadata is left aligned, the image looks weird when centred.
+        margin-block-start: 0.7rem;
+    }
 
     ul {
         margin-inline-end: 0.7rem;
@@ -22,10 +35,6 @@ $padding: 2.5rem;
         li {
             list-style-type: none;
             white-space: nowrap;
-        }
-
-        li.date {
-            width: 13.5rem;
         }
 
         li.draft-label {
@@ -136,6 +145,10 @@ $padding: 2.5rem;
                 display: inline;
                 margin-inline-end: 0.3rem;
             }
+        }
+
+        .post-thumbnail {
+            display: none;
         }
     }
 
