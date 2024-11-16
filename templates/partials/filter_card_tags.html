@@ -24,7 +24,7 @@
         {% for term in all_terms | unique | sort %}
             <li class="taxonomy-item no-hover-padding">
                 <a class="no-hover-padding"
-                href="{{ get_taxonomy_url(kind="tags", name=term) }}"
+                href="{{ get_taxonomy_url(kind="tags", name=term, lang=lang) }}"
                 data-filter="{{ term | lower }}">{{ term }}</a>
             </li>
         {% endfor %}
