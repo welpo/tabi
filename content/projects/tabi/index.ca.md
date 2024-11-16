@@ -3,6 +3,9 @@ title = "tabi"
 description = "Un tema de Zola ràpid, lleuger i modern amb suport multilingüe."
 weight = 40
 
+[taxonomies]
+tags = ["web", "JavaScript"]
+
 [extra]
 local_image = "projects/tabi/tabi.webp"
 canonical_url = "https://osc.garden/ca/projects/tabi/"

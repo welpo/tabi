@@ -4,7 +4,7 @@ description = "A web app to practice reading and listening to Japanese numbers."
 weight = 30
 
 [taxonomies]
-tags = ["Japanese", "education", "web app", "PWA", "web", "JavaScript"]
+tags = ["Japanese", "interactive", "web app", "web", "PWA", "JavaScript"]
 
 [extra]
 local_image = "projects/ramu/ramu_logo.png"
