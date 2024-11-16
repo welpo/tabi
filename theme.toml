@@ -189,7 +189,6 @@ compact_tags = false
 tag_sorting = "name"
 
 # Show clickable tags above cards.html template (e.g. projects/) to filter the displayed items.
-# Items need tags (or another taxonomy) in their front matter for this to work.
 # Loads JS to filter. If JS is disabled, the buttons are links to the tag's page.
 # Can be set at the section or config.toml level, following the hierarchy: section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 # Default: true
