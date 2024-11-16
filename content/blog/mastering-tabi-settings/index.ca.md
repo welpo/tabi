@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-11-14
+updated = 2024-11-16
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -390,6 +390,33 @@ local_image = "img/tabi.webp"
 Quan un usuari faci clic a la imatge o al títol d'un projecte, serà portat a la pàgina del projecte. Si prefereixes que els usuaris vagin a un enllaç extern, pots establir `link_to = "https://example.com"` a la secció `[extra]` del fitxer `.md` del projecte.
 
 La pàgina del projecte individual es renderitza amb la plantilla predeterminada, tret que estableixis una altra, per exemple, `template = "info-page.html"`.
+
+#### Filtrar projectes
+
+Per defecte, la pàgina de projectes mostrarà tots els projectes. Si afegeixes etiquetes als teus projectes, veuràs un filtre d'etiquetes:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/projects_tag_filter_light.webp", dark_src="blog/mastering-tabi-settings/img/projects_tag_filter_dark.webp", alt="Pàgina de projectes amb filtre d'etiquetes", full_width=true) }}
+
+El sistema de filtratge d'etiquetes utilitza millora progressiva:
+
+- Sense JavaScript: Les etiquetes enllacen directament a pàgines d'etiquetes dedicades (per exemple, `/tags/nom-de-l-etiqueta`).
+- Amb JavaScript: Filtratge instantani, sincronització d'URL (#nom-etiqueta) i navegació amb el teclat.
+
+Per desactivar aquesta funció, estableix `enable_cards_tag_filtering = false` a la secció `[extra]` del fitxer `projects/_index.md` o a `config.toml`.
+
+{% admonition(type="tip") %}
+
+Per filtrar projectes per etiquetes, necessites establir etiquetes a la front matter de cada projecte. Per exemple:
+
+```toml
+title = "nom del projecte"
+weight = 40
+
+[taxonomies]
+tags = ["etiqueta", "etiqueta 2", "tercera etiqueta"]
+```
+
+{% end %}
 
 ### Arxiu
 

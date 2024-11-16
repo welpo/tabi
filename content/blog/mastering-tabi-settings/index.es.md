@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-11-14
+updated = 2024-11-16
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -390,6 +390,33 @@ local_image = "img/tabi.webp"
 Cuando un usuario haga clic en la imagen o el título de un proyecto, será llevado a la página del proyecto. Si prefieres que los usuarios vayan a un enlace externo, puedes establecer `link_to = "https://example.com"` en la sección `[extra]` del archivo `.md` del proyecto.
 
 La página del proyecto individual se renderiza con la plantilla predeterminada, a menos que establezcas otra, por ejemplo, `template = "info-page.html"`.
+
+#### Filtrar proyectos
+
+Por defecto, la página de proyectos mostrará todos los proyectos. Si agregas etiquetas a tus proyectos, verás un filtro de etiquetas:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/projects_tag_filter_light.webp", dark_src="blog/mastering-tabi-settings/img/projects_tag_filter_dark.webp", alt="Página de proyectos con filtro de etiquetas", full_width=true) }}
+
+El sistema de filtrado de etiquetas utiliza mejora progresiva:
+
+- Sin JavaScript: Las etiquetas enlazan directamente a páginas de etiquetas dedicadas (por ejemplo, `/tags/nombre-etiqueta`).
+- Con JavaScript: Filtrado instantáneo, sincronización de URL (#nombre-etiqueta) y navegación por teclado.
+
+Para desactivar esta función, establece `enable_cards_tag_filtering = false` en la sección `[extra]` del archivo `projects/_index.md` o en `config.toml`.
+
+{% admonition(type="tip") %}
+
+Para filtrar proyectos por etiquetas, necesitas establecer etiquetas en el front matter de cada proyecto. Por ejemplo:
+
+```toml
+title = "nombre del proyecto"
+weight = 40
+
+[taxonomies]
+tags = ["etiqueta uno", "etiqueta 2", "tercera etiqueta"]
+```
+
+{% end %}
 
 ### Archivo
 
