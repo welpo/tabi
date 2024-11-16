@@ -4,7 +4,7 @@ description = "A feature-rich modern Zola theme with first-class multi-language 
 weight = 40
 
 [taxonomies]
-tags = ["web", "JavaScript"]
+tags = ["Zola", "web", "JavaScript"]
 
 [extra]
 local_image = "projects/tabi/tabi.webp"
