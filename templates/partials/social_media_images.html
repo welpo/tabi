@@ -1,7 +1,6 @@
-{# Image for social media sharing #}
 {%- set social_media_card = macros_settings::evaluate_setting_priority(setting="social_media_card", page=page | default(value=""), section=section | default(value=""), default_global_value="") -%}
 {% if social_media_card %}
-    {# Get base path from either page or section #}
+    {# Get base path from page/section #}
     {% set base_path = "" %}
     {% if section and section.path %}
         {% set base_path = section.path | trim_end_matches(pat="/_index.md") %}
@@ -36,7 +35,6 @@
         {% set final_path = social_media_card %}
         {% set meta = absolute_meta %}
     {% else %}
-        {# Throw an error if the image doesn't exist at any path #}
         {{ throw(message="Could not find social media card image. Tried:
             1. Current page path: '" ~ current_path ~ "'
             2. Parent page path: '" ~ parent_relative_path ~ "'
@@ -44,7 +42,6 @@
             Please ensure the file exists at one of these locations.") }}
     {% endif %}
 
-    {# Generate the social media meta tags #}
     <meta property="og:image" content="{{ get_url(path=final_path, cachebust=true) }}" />
     <meta property="og:image:width" content="{{ meta.width }}" />
     <meta property="og:image:height" content="{{ meta.height }}" />
