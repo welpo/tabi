@@ -1,0 +1,44 @@
+{# Image for social media sharing #}
+{%- set social_media_card = macros_settings::evaluate_setting_priority(setting="social_media_card", page=page | default(value=""), section=section | default(value=""), default_global_value="") -%}
+{% if social_media_card %}
+    {# Try to find the image in current page, parent directories, and as absolute path #}
+    {% set page_path = page.colocated_path | default(value="") %}
+    {% set current_path = page_path ~ social_media_card %}
+
+    {# Try parent path by removing the last directory component #}
+    {% set parent_path = page_path | split(pat="/") | slice(end=-2) | join(sep="/") %}
+    {% if parent_path %}
+        {% set parent_path = parent_path ~ "/" %}
+    {% endif %}
+    {% set parent_relative_path = parent_path ~ social_media_card %}
+
+    {# Check all possible locations #}
+    {%- set current_meta = get_image_metadata(path=current_path, allow_missing=true) -%}
+    {%- set parent_meta = get_image_metadata(path=parent_relative_path, allow_missing=true) -%}
+    {%- set absolute_meta = get_image_metadata(path=social_media_card, allow_missing=true) -%}
+
+    {% if current_meta %}
+        {% set final_path = current_path %}
+        {% set meta = current_meta %}
+    {% elif parent_meta %}
+        {% set final_path = parent_relative_path %}
+        {% set meta = parent_meta %}
+    {% elif absolute_meta %}
+        {% set final_path = social_media_card %}
+        {% set meta = absolute_meta %}
+    {% else %}
+        {# Throw an error if the image doesn't exist at any path #}
+        {{ throw(message="Could not find social media card image. Tried:
+            1. Current page path: '" ~ current_path ~ "'
+            2. Parent page path: '" ~ parent_relative_path ~ "'
+            3. Absolute path: '" ~ social_media_card ~ "'
+            Please ensure the file exists at one of these locations.") }}
+    {% endif %}
+
+    {# Generate the social media meta tags #}
+    <meta property="og:image" content="{{ get_url(path=final_path, cachebust=true) }}" />
+    <meta property="og:image:width" content="{{ meta.width }}" />
+    <meta property="og:image:height" content="{{ meta.height }}" />
+    <meta name="twitter:image" content="{{ get_url(path=final_path, cachebust=true) }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+{% endif %}

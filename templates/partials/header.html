@@ -102,36 +102,7 @@
     <meta property="og:type" content="article" />
 
     {# Image for social media sharing #}
-    {%- set social_media_card = macros_settings::evaluate_setting_priority(setting="social_media_card", page=page | default(value=""), section=section | default(value=""), default_global_value="") -%}
-    {% if social_media_card %}
-        {# Try to construct the image path relative to the current page #}
-        {% set colocated_path = page.colocated_path | default(value="") %}
-        {% set file_path = colocated_path ~ social_media_card %}
-
-        {# Fetch metadata to verify image existence at the relative path #}
-        {%- set meta = get_image_metadata(path=file_path, allow_missing=true) -%}
-
-        {# Check if relative path exists, else try absolute path #}
-        {% if meta %}
-            {% set final_path = file_path %}
-        {% else %}
-            {# If the relative path didn't work, try fetching metadata for the absolute path #}
-            {% set meta = get_image_metadata(path=social_media_card, allow_missing=true) %}
-            {% if meta %}
-                {% set final_path = social_media_card %}
-            {% else %}
-                {# Throw an error if the image doesn't exist at either path #}
-                {{ throw(message="Could not get metadata for the specified social media card image in page " ~ page.path ~ ". Attempted relative path: '" ~ file_path ~ "' and absolute path: '" ~ social_media_card ~ "'. Ensure the file exists at one of these locations.") }}
-            {% endif %}
-        {% endif %}
-
-        {# Generate the social media meta tags #}
-        <meta property="og:image" content="{{ get_url(path=final_path, cachebust=true) }}" />
-        <meta property="og:image:width" content="{{ meta.width }}" />
-        <meta property="og:image:height" content="{{ meta.height }}" />
-        <meta name="twitter:image" content="{{ get_url(path=final_path, cachebust=true) }}" />
-        <meta name="twitter:card" content="summary_large_image" />
-    {% endif %}
+    {%- include "partials/social_media_images.html" -%}
 
     {# Add og:locale and hreflang tags for multilingual sites #}
     {%- if config.languages | length > 0 and current_url %}
