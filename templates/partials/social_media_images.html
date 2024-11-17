@@ -1,0 +1,50 @@
+{%- set social_media_card = macros_settings::evaluate_setting_priority(setting="social_media_card", page=page | default(value=""), section=section | default(value=""), default_global_value="") -%}
+{% if social_media_card %}
+    {# Get base path from page/section #}
+    {% set base_path = "" %}
+    {% if section and section.path %}
+        {% set base_path = section.path | trim_end_matches(pat="/_index.md") %}
+        {% if base_path and not social_media_card is starting_with("/") %}
+            {% set base_path = base_path ~ "/" %}
+        {% endif %}
+    {% else %}
+        {% set base_path = page.colocated_path | default(value="") %}
+    {% endif %}
+
+    {% set current_path = base_path ~ social_media_card | trim_start_matches(pat="/") %}
+
+    {# Try parent path by removing the last directory component #}
+    {% set parent_path = base_path | split(pat="/") | slice(end=-2) | join(sep="/") %}
+    {% if parent_path and not social_media_card is starting_with("/") %}
+        {% set parent_path = parent_path ~ "/" %}
+    {% endif %}
+    {% set parent_relative_path = parent_path ~ social_media_card | trim_start_matches(pat="/") %}
+
+    {# Check all possible locations #}
+    {%- set current_meta = get_image_metadata(path=current_path, allow_missing=true) -%}
+    {%- set parent_meta = get_image_metadata(path=parent_relative_path, allow_missing=true) -%}
+    {%- set absolute_meta = get_image_metadata(path=social_media_card, allow_missing=true) -%}
+
+    {% if current_meta %}
+        {% set final_path = current_path %}
+        {% set meta = current_meta %}
+    {% elif parent_meta %}
+        {% set final_path = parent_relative_path %}
+        {% set meta = parent_meta %}
+    {% elif absolute_meta %}
+        {% set final_path = social_media_card %}
+        {% set meta = absolute_meta %}
+    {% else %}
+        {{ throw(message="Could not find social media card image. Tried:
+            1. Current page path: '" ~ current_path ~ "'
+            2. Parent page path: '" ~ parent_relative_path ~ "'
+            3. Absolute path: '" ~ social_media_card ~ "'
+            Please ensure the file exists at one of these locations.") }}
+    {% endif %}
+
+    <meta property="og:image" content="{{ get_url(path=final_path, cachebust=true) }}" />
+    <meta property="og:image:width" content="{{ meta.width }}" />
+    <meta property="og:image:height" content="{{ meta.height }}" />
+    <meta name="twitter:image" content="{{ get_url(path=final_path, cachebust=true) }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+{% endif %}
