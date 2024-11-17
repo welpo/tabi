@@ -5,7 +5,6 @@ path = "about"
 
 [extra]
 quick_navigation_buttons = true
-social_media_card = "social_cards/about.jpg"
 +++
 
 Welcome to the demo of [**tabi**](https://github.com/welpo/tabi), a theme for [Zola](https://www.getzola.org/), a fast static site generator.

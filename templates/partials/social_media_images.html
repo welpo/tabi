@@ -1,16 +1,25 @@
 {# Image for social media sharing #}
 {%- set social_media_card = macros_settings::evaluate_setting_priority(setting="social_media_card", page=page | default(value=""), section=section | default(value=""), default_global_value="") -%}
 {% if social_media_card %}
-    {# Try to find the image in current page, parent directories, and as absolute path #}
-    {% set page_path = page.colocated_path | default(value="") %}
-    {% set current_path = page_path ~ social_media_card %}
+    {# Get base path from either page or section #}
+    {% set base_path = "" %}
+    {% if section and section.path %}
+        {% set base_path = section.path | trim_end_matches(pat="/_index.md") %}
+        {% if base_path and not social_media_card is starting_with("/") %}
+            {% set base_path = base_path ~ "/" %}
+        {% endif %}
+    {% else %}
+        {% set base_path = page.colocated_path | default(value="") %}
+    {% endif %}
+
+    {% set current_path = base_path ~ social_media_card | trim_start_matches(pat="/") %}
 
     {# Try parent path by removing the last directory component #}
-    {% set parent_path = page_path | split(pat="/") | slice(end=-2) | join(sep="/") %}
-    {% if parent_path %}
+    {% set parent_path = base_path | split(pat="/") | slice(end=-2) | join(sep="/") %}
+    {% if parent_path and not social_media_card is starting_with("/") %}
         {% set parent_path = parent_path ~ "/" %}
     {% endif %}
-    {% set parent_relative_path = parent_path ~ social_media_card %}
+    {% set parent_relative_path = parent_path ~ social_media_card | trim_start_matches(pat="/") %}
 
     {# Check all possible locations #}
     {%- set current_meta = get_image_metadata(path=current_path, allow_missing=true) -%}
