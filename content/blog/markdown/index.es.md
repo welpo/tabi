@@ -1,7 +1,7 @@
 +++
 title = "Ejemplos de Markdown"
 date = 2023-01-31
-updated = 2023-09-01
+updated = 2024-11-23
 description = "Esta publicación muestra algunos ejemplos de formato Markdown, incluyendo una tabla, bloques de código y etiquetas, citas, tablas y notas al pie de página."
 
 [taxonomies]
@@ -56,6 +56,42 @@ Aquí tienes un ejemplo de una tabla[^1]. Los colores cambian dependiendo del te
 ```rust
 fn main() {
     println!("¡Hola, mundo!") -> ();
+}
+```
+
+### Con números de línea
+
+```rust,linenos
+use std::collections::HashMap;
+
+#[derive(Debug)]
+struct TwinPeaksCharacter {
+    name: String,
+    coffee_rating: f32,
+    pie_preference: String,
+}
+
+fn main() {
+    let mut black_lodge = HashMap::new();
+
+    black_lodge.insert("agent", TwinPeaksCharacter {
+        name: String::from("Dale Cooper"),
+        coffee_rating: 9999.99,
+        pie_preference: String::from("Damn Fine Cherry"),
+    });
+
+    black_lodge.insert("giant", TwinPeaksCharacter {
+        name: String::from("The Fireman"),
+        coffee_rating: 42.424242,
+        pie_preference: String::from("Garmonbozia"),
+    });
+
+    // Calculate total appreciation of damn fine coffee
+    let total_coffee: f32 = black_lodge.values()
+        .map(|character| character.coffee_rating)
+        .sum();
+
+    println!("☕ Total coffee appreciation: {:.2} cups", total_coffee);
 }
 ```
 

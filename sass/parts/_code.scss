@@ -27,10 +27,13 @@ code {
             padding: 0rem;
         }
 
+        // Line number col.
         tbody td:first-child {
-            width: 2rem;
+            opacity: 50%;
+            padding-inline-end: 0.8rem;
+            width: 0rem;
             user-select: none;
-            text-align: start;
+            text-align: end;
         }
 
         tbody tr:nth-child(even) {
@@ -54,6 +57,11 @@ pre {
     overflow-x: auto;
     line-height: 1.4;
 
+    code,
+    code td {
+        font-size: 0.8rem;  // Fits ~77 characters.
+    }
+
     code {
         display: block;
         border: 0rem;
@@ -62,7 +70,6 @@ pre {
         padding: 0rem;
         overflow-x: auto;
         color: inherit;
-        font-size: 0.8rem;  // Fits ~77 characters.
         white-space: pre;
 
         &::before {
