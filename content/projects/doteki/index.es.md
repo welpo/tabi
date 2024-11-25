@@ -10,29 +10,54 @@ tags = ["GitHub Actions", "automatización", "Python"]
 local_image = "projects/doteki/doteki_logo.webp"
 social_media_card = "social_cards/projects_doteki.jpg"
 canonical_url = "https://osc.garden/es/projects/doteki/"
+add_src_to_code_block = true
 +++
 
-[**dōteki**](https://doteki.org/) es una herramienta diseñada para dar vida a los perfiles de GitHub añadiendo contenido dinámico de manera sencilla. Con un archivo de configuración TOML intuitivo y un versátil sistema de plugins, **dōteki** permite a los usuarios mostrar contenido reciente y automatizado directamente en sus perfiles de GitHub.
+**dōteki** actualiza tu perfil de GitHub automáticamente. Añade tus últimas publicaciones del blog, la música que escuchas o cualquier otro contenido dinámico mediante plugins.
 
 ![logo de dōteki: un río pasando por un bosque de bambú](https://cdn.jsdelivr.net/gh/welpo/doteki@main/website/static/img/logo.png)
 
 #### [GitHub](https://github.com/welpo/doteki) • [Sitio web](https://doteki.org/) • [Documentación](https://doteki.org/docs/) {.centered-text}
 
-## ¿Por qué dōteki?
+## Cómo funciona
 
-**dōteki** destaca por su simplicidad y potencia. Permite mostrar tu trabajo, intereses y personalidad en tu perfil de GitHub, siempre al día. Es altamente personalizable y extensible, y está diseñado para ser fácil de configurar y usar.
+1. Añade marcadores a tu README:
 
-## Características clave
+{{ add_src_to_code_block(src="README.md") }}
+```md
+<!-- blog start -->
+<!-- blog end -->
+```
 
-- **Plug-and-Play**: Añade marcadores a tu README y utiliza un archivo TOML para incorporar secciones de contenido dinámico en tu perfil de GitHub.
-- **Sistema de plugins extensible**: Desde mostrar las últimas publicaciones de tu blog hasta compartir la música que has estado escuchando, el sistema de plugins permite infinitas posibilidades. ¿No encuentras un plugin que se ajuste a tus necesidades? ¡[Crea tu propio plugin](https://doteki.org/docs/developer-guide/plugin-standard)!
-- [**Documentación exhaustiva**](https://doteki.org/docs/) con información detallada sobre cómo configurar y usar **dōteki** y sus plugins. Incluye [instrucciones claras para los desarrolladores](https://doteki.org/docs/developer-guide/) que quieran contribuir al proyecto
-- **Listo para la automatización**: Utiliza la [Acción de GitHub](https://github.com/welpo/doteki-action) para mantener tu perfil siempre actualizado.
+2. Configura qué va ahí:
 
-## Refresca tu perfil de GitHub
+{{ add_src_to_code_block(src="doteki.toml") }}
+```toml
+[sections.blog]
+plugin = "feed"
+url = "https://osc.garden/atom.xml"  # Reemplaza con tu feed.
 
-Aprovecha las capacidades dinámicas de **dōteki** y transforma tu perfil de GitHub en un escaparate de tu trabajo más reciente, pensamientos e intereses.
+[sections.last_updated]
+plugin = "current_date"
+inline = true
+```
 
-[Configura **dōteki** en menos de 5 minutos](https://doteki.org/) y da vida a tu perfil de GitHub.
+3. Configura la [Acción de GitHub](https://github.com/welpo/doteki-action).
 
-[![tarjeta de redes sociales de dōteki](social_cards/projects_doteki.jpg)](https://doteki.org/)
+¡Eso es todo! Tu README se actualizará automáticamente.
+
+## Características
+
+- **Sistema de plugins**: Muestra [entradas del blog](https://doteki.org/docs/plugins/feed), [música](https://doteki.org/docs/plugins/lastfm), o [crea tu propio plugin](https://doteki.org/docs/developer-guide/plugin-standard)
+- **Configuración simple**: Un archivo TOML, una Acción de GitHub
+- **Flexible**: Cada plugin tiene sus propias opciones (orden, entradas máximas, formato…)
+- **[Documentación detallada](https://doteki.org/docs/)**: Información detallada sobre cómo configurar y usar **dōteki** y sus plugins. Incluye [instrucciones claras para los desarrolladores](https://doteki.org/docs/developer-guide/) que quieran contribuir.
+
+## Documentación
+
+Consulta la [documentación](https://doteki.org/docs/) para:
+
+- [Guía de inicio rápido](https://doteki.org/docs/)
+- [Plugins disponibles](https://doteki.org/docs/plugins/)
+- [Desarrollo de plugins](https://doteki.org/docs/developer-guide/)
+- [Opciones de configuración](https://doteki.org/docs/configuration/)
