@@ -1,7 +1,7 @@
 #banner-container-home {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
     margin: 0.2rem auto;
     width: 100%;
 
@@ -11,6 +11,7 @@
     }
 
     #home-banner-text {
+        flex: 1;
         margin-block-end: 1.5rem;
         color: var(--primary-color);
         font-size: 1.875rem;
@@ -53,9 +54,9 @@
 
     #image-container-home {
         position: relative;
+        margin: auto 0;
         padding-inline-start: 2rem;
-        min-width: 11rem;
-        min-height: 11rem;
+        max-width: 11rem;
         overflow: hidden;
         text-align: center;
 
@@ -63,9 +64,8 @@
             border: none;
             aspect-ratio: 1 / 1;
             width: 100%;
-            max-width: 15rem;
-            height: auto;
-            max-height: 15rem;
+            height: 100%;
+            object-fit: cover;
 
             @media only screen and (max-width: 600px) {
                 max-width: 12rem;
@@ -75,6 +75,8 @@
 
         @media only screen and (max-width: 600px) {
             padding-inline-start: 0;
+            width: 100%;
+            max-width: none;
         }
     }
 }
