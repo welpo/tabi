@@ -18,9 +18,12 @@
         <img src="https://img.shields.io/badge/clean_commits-git--sumi-0?style=flat-square&labelColor=202b2d&color=087e96" alt="Clean commits"></a>
 </p>
 
-# tabi
+# 🌱 tabi
 
-A fast, lightweight, and modern [Zola](https://www.getzola.org) theme with multi-language support. It aims to be a personal page and home to blog posts.
+An accessible [Zola](https://www.getzola.org) theme with [search](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#search), [multi-language support](https://welpo.github.io/tabi/blog/faq-languages/), [optional JavaScript](https://welpo.github.io/tabi/blog/javascript/), a perfect Lighthouse score, and [comprehensive documentation](https://welpo.github.io/tabi). Crafted for personal websites and blogs.
+
+> [!TIP]
+> Want to start blogging right away? Use the [tabi-start template](https://github.com/welpo/tabi-start) to get a complete site up and running in minutes.
 
 See a live preview (and the theme's documentation) [here](https://welpo.github.io/tabi).
 
@@ -70,6 +73,11 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 
 ## Installation
+
+> [!NOTE]
+> The fastest way to create a new site is to use the [tabi-start template](https://github.com/welpo/tabi-start). This gives you a complete blog setup with all the essential configuration ready to go.
+
+### Manual installation
 
 To add tabi to you existing Zola site:
 

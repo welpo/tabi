@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-11-16
+updated = 2024-11-27
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -376,11 +376,11 @@ quick_navigation_buttons = true
 - `show_reading_time = false` hides the [reading time](#reading-time).
 - `quick_navigation_buttons = true` shows the [quick navigation buttons](#quick-navigation-buttons) are shown.
 
-Alongside the `_index.md` file, you can create a file for each project. For example, this is the front matter for the [tabi project page](/projects/tabi/):
+Alongside the `_index.md` file, you can create a file for each project. For example, this is the front matter for the [tabi project page](@/projects/tabi/index.md):
 
 ```toml
 title = "tabi"
-description = "A fast, lightweight, and modern Zola theme with multi-language support."
+description = "A feature-rich modern Zola theme with first-class multi-language support."
 weight = 1
 
 [extra]

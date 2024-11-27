@@ -1,5 +1,5 @@
 name = "tabi"
-description = "A fast, lightweight, and modern Zola theme with multi-language support, optional JavaScript, and a perfect Lighthouse score"
+description = "tabi is an accessible Zola theme with search, multi-language support, optional JavaScript, a perfect Lighthouse score, and comprehensive documentation. Crafted for personal websites and blogs."
 license = "MIT"
 homepage = "https://github.com/welpo/tabi"
 
