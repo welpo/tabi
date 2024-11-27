@@ -50,14 +50,14 @@ skip_anchor_prefixes = [
 
 [languages.es]
 title = "~/tabi"
-description = "tabi es un tema para Zola accesible con búsqueda, soporte multilingüe, JavaScript opcional, una puntuación perfecta en Lighthouse y documentación exhaustiva. Diseñado para sitios web y blogs personales."
+description = "tabi es un tema accesible para Zola con búsqueda, soporte multilingüe, JavaScript opcional, una puntuación perfecta en Lighthouse y documentación exhaustiva. Diseñado para sitios web y blogs personales."
 generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
 build_search_index = true
 
 [languages.ca]
 title = "~/tabi"
-description = "tabi és un tema per a Zola accessible amb cerca, suport multilingüe, JavaScript opcional, una puntuació perfecta a Lighthouse i documentació exhaustiva. Dissenyat per a llocs web i blogs personals."
+description = "tabi és un tema accessible per a Zola amb cerca, suport multilingüe, JavaScript opcional, una puntuació perfecta a Lighthouse i documentació exhaustiva. Dissenyat per a llocs web i blogs personals."
 generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
 
