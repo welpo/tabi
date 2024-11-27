@@ -12,7 +12,8 @@
 {% endfor %}
 
 {#- Display unique terms -#}
-{%- if all_terms -%}
+{% set unique_terms = all_terms | unique | sort %}
+{%- if unique_terms | length >= 2 -%}
     <ul class="filter-controls" role="group" aria-label="{{ macros_translate::translate(key='project_filters', default='Project filters', language_strings=language_strings) }}">
         <li class="taxonomy-item no-hover-padding">
             <a id="all-projects-filter" class="no-hover-padding active"
@@ -21,7 +22,7 @@
                 {{- macros_translate::translate(key="all_projects", default="All projects", language_strings=language_strings) -}}
             </a>
         </li>
-        {% for term in all_terms | unique | sort %}
+        {% for term in unique_terms %}
             <li class="taxonomy-item no-hover-padding">
                 <a class="no-hover-padding"
                 href="{{ get_taxonomy_url(kind="tags", name=term, lang=lang) }}"
