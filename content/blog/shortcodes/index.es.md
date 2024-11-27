@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2024-11-07
+updated = 2024-11-27
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -105,8 +105,9 @@ Tu diagrama Mermaid va aquí. Puedes omitir los parámetros para usar los valore
 
 Todos los shortcodes de imagen admiten rutas absolutas, rutas relativas, y fuentes remotas en el parámetro `src`.
 
-Todos los shortcodes de imagen tienen tres parámetros opcionales:
+Todos los shortcodes de imagen tienen los siguientes parámetros opcionales:
 
+- `raw_path`. Por defecto es `false`. Si se establece en `true`, el parámetro `src` se usará tal cual. Útil para activos ubicados en la misma carpeta que tienen un slug personalizado (ver [Zola issue #2598](https://github.com/getzola/zola/issues/2598)).
 - `inline`. Valor predeterminado: `false`. Si se establece `true`, la imagen se mostrará en línea con el texto.
 - `full_width`. Valor predeterminado: `false` (ver [más abajo](#imagen-a-ancho-completo)).
 - `lazy_loading`. Valor predeterminado: `true`.
