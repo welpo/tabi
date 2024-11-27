@@ -1,5 +1,5 @@
 {#- Set paths based on whether the src is remote or local -#}
-{%- if src is starting_with("http") -%}
+{%- if src is starting_with("http") or raw_path -%}
     {%- set image_url = src -%}
 {%- else -%}
     {%- set colocated_path = page.colocated_path | default(value="") -%}

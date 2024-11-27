@@ -19,7 +19,7 @@
 {%- endif -%}
 
 {# Direct or relative URL handling for default image #}
-{%- if default_src is starting_with("http") -%}
+{%- if default_src is starting_with("http") or raw_path -%}
     {%- set default_image_url = default_src -%}
 {%- else -%}
     {%- set relative_default_path = colocated_path ~ default_src -%}
@@ -32,7 +32,7 @@
 {%- endif -%}
 
 {# Direct or relative URL handling for toggled image #}
-{%- if toggled_src is starting_with("http") -%}
+{%- if toggled_src is starting_with("http") or raw_path -%}
     {%- set toggled_image_url = toggled_src -%}
 {%- else -%}
     {%- set relative_toggled_path = colocated_path ~ toggled_src -%}

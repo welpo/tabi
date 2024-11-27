@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-11-07
+updated = 2024-11-27
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -107,8 +107,9 @@ Your diagram goes here.
 
 All image shortcodes support absolute paths, relative paths, and remote sources in the `src` parameter.
 
-All image shortcodes have three optional parameters:
+All image shortcodes have these optional parameters:
 
+- `raw_path`. Defaults to `false`. If set to `true`, the `src` parameter will be used as is. Useful for colocated assets with a custom slug (see [Zola issue #2598](https://github.com/getzola/zola/issues/2598)).
 - `inline`. Defaults to `false`. If set to `true`, the image will be displayed inline with the text.
 - `full_width`. Defaults to `false` (see [below](#full-width-image))
 - `lazy_loading`. Defaults to `true`.

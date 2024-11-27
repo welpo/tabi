@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2024-11-07
+updated = 2024-11-27
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -107,8 +107,9 @@ El teu codi Mermaid va aquí.
 
 Tots els shortcodes d'imatge admeten rutes absolutes, rutes relatives, i fonts remotes en el paràmetre `src`.
 
-Tots els shortcodes d'imatge tenen tres paràmetres opcionals:
+Tots els shortcodes d'imatge tenen els següents paràmetres opcionals:
 
+- `raw_path`. Per defecte és `false`. Si es configura a `true`, el paràmetre `src` s'utilitzarà tal qual. Útil per a actius ubicats a la mateixa carpeta que tenen un slug personalitzat (vegeu [Zola issue #2598](https://github.com/getzola/zola/issues/2598)).
 - `inline`. Valor predeterminat: `false`. Si s'estableix a `true`, la imatge es mostrarà en línia amb el text.
 - `full_width`. Valor predeterminat: `false` (vegeu [a sota](#imatge-d-amplada-completa)).
 - `lazy_loading`. Valor predeterminat: `true`.
