@@ -75,7 +75,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 ## Installation
 
 > [!NOTE]
-> The fastest way to get started is to use the [tabi-start template](https://github.com/welpo/tabi-start). This gives you a complete blog setup with all the essential configuration ready to go.
+> The fastest way to create a new site is to use the [tabi-start template](https://github.com/welpo/tabi-start). This gives you a complete blog setup with all the essential configuration ready to go.
 
 ### Manual installation
 
