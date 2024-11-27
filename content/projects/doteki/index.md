@@ -60,6 +60,6 @@ That's it! Your README will stay updated automatically.
 Check the [docs](https://doteki.org/docs/) for:
 
 - [Getting started guide](https://doteki.org/docs/)
-- [Available plugins](https://doteki.org/docs/plugins/)
+- [Available plugins](https://doteki.org/docs/category/plugins)
 - [Plugin development](https://doteki.org/docs/developer-guide/)
 - [Configuration options](https://doteki.org/docs/configuration/)

@@ -58,6 +58,6 @@ Això és tot! El teu README s'actualitzarà automàticament.
 Consulta la [documentació](https://doteki.org/docs/) per a:
 
 - [Guia d'inici](https://doteki.org/docs/)
-- [Plugins disponibles](https://doteki.org/docs/plugins/)
+- [Plugins disponibles](https://doteki.org/docs/category/plugins)
 - [Desenvolupament de plugins](https://doteki.org/docs/developer-guide/)
 - [Opcions de configuració](https://doteki.org/docs/configuration/)

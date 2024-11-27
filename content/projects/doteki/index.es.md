@@ -58,6 +58,6 @@ inline = true
 Consulta la [documentación](https://doteki.org/docs/) para:
 
 - [Guía de inicio rápido](https://doteki.org/docs/)
-- [Plugins disponibles](https://doteki.org/docs/plugins/)
+- [Plugins disponibles](https://doteki.org/docs/category/plugins)
 - [Desarrollo de plugins](https://doteki.org/docs/developer-guide/)
 - [Opciones de configuración](https://doteki.org/docs/configuration/)
