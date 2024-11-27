@@ -1,14 +1,14 @@
 base_url = "https://welpo.github.io/tabi"
 title = "~/tabi"
-description = "tabi is a fast, lightweight, and modern Zola theme with multi-language support, optional JavaScript, and a perfect Lighthouse score."
+description = "tabi is an accessible Zola theme with search, multi-language support, optional JavaScript, a perfect Lighthouse score, and comprehensive documentation. Crafted for personal websites and blogs."
 author = "welpo"
 generate_feeds = true
 compile_sass = true
 minify_html = true
 build_search_index = true
 
-# To translate the entire theme, there must be a file with the same ISO 639-1
-# (or IETF BCP 47) Code in the `i18n` folder of your site or the tabi theme
+# To translate the entire theme, there must be a file with the same language code
+# in the `i18n` folder of your site or the tabi theme.
 # For example, "i18n/fr.toml" for French or "i18n/zh-Hans.toml" for Simplified Chinese.
 # Otherwise the theme will be in English.
 # See https://welpo.github.io/tabi/blog/faq-languages/ for more details.
@@ -50,14 +50,14 @@ skip_anchor_prefixes = [
 
 [languages.es]
 title = "~/tabi"
-description = "tabi es un tema de Zola rápido, liviano y moderno con JavaScript opcional y una puntuación perfecta en Lighthouse."
+description = "tabi es un tema para Zola accesible con búsqueda, soporte multilingüe, JavaScript opcional, una puntuación perfecta en Lighthouse y documentación exhaustiva. Diseñado para sitios web y blogs personales."
 generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
 build_search_index = true
 
 [languages.ca]
 title = "~/tabi"
-description = "tabi és un tema de Zola ràpid, lleuger i modern amb JavaScript opcional i una puntuació perfecta a Lighthouse."
+description = "tabi és un tema per a Zola accessible amb cerca, suport multilingüe, JavaScript opcional, una puntuació perfecta a Lighthouse i documentació exhaustiva. Dissenyat per a llocs web i blogs personals."
 generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
 

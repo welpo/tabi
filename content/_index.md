@@ -12,4 +12,4 @@ show_projects_first = false
 social_media_card = "index.jpg"
 +++
 
-tabi is a fast, lightweight, and modern [Zola](https://www.getzola.org) theme. It aims to be a personal page and home to blog posts. It features a perfect Lighthouse score, responsive design, dark and light themes, custom shortcodes, and much more.
+tabi is an accessible [Zola](https://www.getzola.org) theme with [search](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#search), [multi-language support](https://welpo.github.io/tabi/blog/faq-languages/), [optional JavaScript](https://welpo.github.io/tabi/blog/javascript/), a perfect Lighthouse score, and [comprehensive documentation](https://welpo.github.io/tabi). Crafted for personal websites and blogs.

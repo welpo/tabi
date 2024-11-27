@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-11-16
+updated = 2024-11-27
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -371,7 +371,7 @@ quick_navigation_buttons = true
 - `show_reading_time = false` amaga el temps estimat de lectura.
 - `quick_navigation_buttons = true` mostra els botons de navegació ràpida.
 
-Al costat del fitxer `_index.md`, pots crear un fitxer per a cada projecte. Per exemple, aquest és el bloc de metadades per a la pàgina del projecte [tabi](/ca/projects/tabi/):
+Al costat del fitxer `_index.md`, pots crear un fitxer per a cada projecte. Per exemple, aquest és el bloc de metadades per a la pàgina del projecte [tabi](@/projects/tabi/index.ca.md):
 
 ```toml
 title = "tabi"

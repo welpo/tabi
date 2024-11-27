@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-11-16
+updated = 2024-11-27
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -371,7 +371,7 @@ quick_navigation_buttons = true
 - `show_reading_time = false` oculta el tiempo estimado de lectura.
 - `quick_navigation_buttons = true` muestra los botones de navegación rápida.
 
-Junto al archivo `_index.md`, puedes crear un archivo para cada proyecto. Por ejemplo, este es el bloque de metadatos para la página del proyecto [tabi](/es/projects/tabi/):
+Junto al archivo `_index.md`, puedes crear un archivo para cada proyecto. Por ejemplo, este es el bloque de metadatos para la página del proyecto [tabi](@/projects/tabi/index.es.md):
 
 ```toml
 title = "tabi"
