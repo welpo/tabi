@@ -16,6 +16,10 @@
         <img src="https://img.shields.io/github/license/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="License"></a>
     <a href="https://github.com/welpo/git-sumi">
         <img src="https://img.shields.io/badge/clean_commits-git--sumi-0?style=flat-square&labelColor=202b2d&color=087e96" alt="Clean commits"></a>
+    <a href="https://isitmaintained.com/project/welpo/tabi">
+        <img src="https://isitmaintained.com/badge/resolution/welpo/tabi.svg" alt="Average time to resolve an issue"></a>
+    <a href="https://isitmaintained.com/project/welpo/tabi">
+        <img src="https://isitmaintained.com/badge/open/welpo/tabi.svg" alt="Percentage of issues still open"></a>
 </p>
 
 # 🌱 tabi
