@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-11-27
+updated = 2024-11-30
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -285,11 +285,11 @@ Si configuras `tag_sorting = "frequency"`, se ordenarán según el número de pu
 
 ---
 
-### Series
+## Series
 
 Para una explicación detallada, consulta la [documentación de series](@/blog/series/index.es.md).
 
-#### Enlace para saltar a las publicaciones
+### Enlace para saltar a las publicaciones
 
 | Página | Sección | `config.toml` | Sigue jerarquía | Requiere JavaScript |
 |:------:|:-------:|:-------------:|:------------------:|:-------------------:|
@@ -301,7 +301,7 @@ Por defecto, aparece automáticamente un enlace "Saltar a publicaciones" junto a
 
 Establece `show_jump_to_posts = true` para forzar la activación de la función y `show_jump_to_posts = false` para desactivarla.
 
-#### Indexación de páginas de series
+### Indexación de páginas de series
 
 | Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
 |:------:|:-------:|:-------------:|:------------------:|:-------------------:|

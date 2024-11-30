@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-11-27
+updated = 2024-11-30
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -290,11 +290,11 @@ Setting `tag_sorting = "frequency"` will sort them by number-of-posts (descendin
 
 ---
 
-### Series
+## Series
 
 For a detailed explanation of the series feature, see the [series documentation](@/blog/series/index.md).
 
-#### Jump to posts link
+### Jump to posts link
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
@@ -306,7 +306,7 @@ By default, a "Jump to posts" link automatically appears next to the series titl
 
 Set `show_jump_to_posts = true` to force the feature on and `show_jump_to_posts = false` to force it off.
 
-#### Series pages indexation
+### Series pages indexation
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
