@@ -12,4 +12,4 @@ show_projects_first = false
 social_media_card = "index.jpg"
 +++
 
-tabi is an accessible [Zola](https://www.getzola.org) theme with [search](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#search), [multi-language support](https://welpo.github.io/tabi/blog/faq-languages/), [optional JavaScript](https://welpo.github.io/tabi/blog/javascript/), a perfect Lighthouse score, and [comprehensive documentation](https://welpo.github.io/tabi). Crafted for personal websites and blogs.
+tabi is an accessible [Zola](https://www.getzola.org) theme with [search](@/blog/mastering-tabi-settings/index.md#search), [multi-language support](@/blog/faq-languages/index.md), [optional JavaScript](@/blog/javascript/index.md), a perfect Lighthouse score, and comprehensive documentation. Crafted for personal websites and blogs.

@@ -12,4 +12,4 @@ show_projects_first = false
 social_media_card = "ca.jpg"
 +++
 
-tabi és un tema accessible per a Zola amb [cerca](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#cerca), [suport multilingüe](https://welpo.github.io/tabi/ca/blog/faq-languages/), [JavaScript opcional](https://welpo.github.io/tabi/ca/blog/javascript/), una puntuació perfecta a Lighthouse i [documentació exhaustiva](https://welpo.github.io/tabi/ca). Dissenyat per a llocs web i blogs personals.
+tabi és un tema accessible per a Zola amb [cerca](@/blog/mastering-tabi-settings/index.ca.md#cerca), [suport multilingüe](@/blog/faq-languages/index.ca.md), [JavaScript opcional](@/blog/javascript/index.ca.md), una puntuació perfecta a Lighthouse i documentació exhaustiva. Dissenyat per a llocs web i blogs personals.
