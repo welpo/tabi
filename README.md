@@ -11,7 +11,7 @@
     <a href="https://github.com/welpo/tabi/releases">
         <img src="https://img.shields.io/github/v/release/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Latest release"></a>
     <a href="https://welpo.github.io/tabi/blog/mastering-tabi-settings/">
-        <img src="https://img.shields.io/website?url=https%3A%2F%2Fwelpo.github.io%2Ftabi&style=flat-square&label=docs&labelColor=202b2d&color=087e96" alt="Documentation"></a>
+        <img src="https://img.shields.io/website?url=https%3A%2F%2Fwelpo.github.io%2Ftabi&style=flat-square&label=docs&labelColor=202b2d" alt="Documentation"></a>
     <a href="https://github.com/welpo/tabi/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="License"></a>
     <a href="https://github.com/welpo/git-sumi">
