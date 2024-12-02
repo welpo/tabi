@@ -80,11 +80,23 @@ get_latest_version_github() {
 }
 
 get_local_mermaid_version() {
-    sed -n 's/.*bpt="\([^"]*\)".*/\1/p' "$MERMAID_PATH" | head -n 1
+    local version
+    version=$(grep -o '[A-Za-z]\+t="[0-9]\+\.[0-9]\+\.[0-9]\+"' "$MERMAID_PATH" | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' || true)
+    if [ -z "$version" ]; then
+        exit_with_message "Could not detect local Mermaid.js version"
+    fi
+    echo "$version"
 }
 
+
 get_local_katex_version() {
-    sed -n 's/.*version:"\([^"]*\)".*/\1/p' "$KATEX_JS_PATH" | head -n 1
+    local version
+    version=$(sed -n 's/.*version:"\([^"]*\)".*/\1/p' "$KATEX_JS_PATH" | head -n 1)
+    if [ -z "$version" ]; then
+        echo "Could not detect local KaTeX version" >&2
+        return 1
+    fi
+    echo "$version"
 }
 
 compare_md5() {
