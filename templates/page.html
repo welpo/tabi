@@ -177,7 +177,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 </ul><ul class="meta last-updated"><li>{{ updated_str }}</li>
                 {# Show link to remote changes if enabled #}
                 {% if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" %}
-                    <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}<a href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}<small>&nbsp;<span class="arrow-corner">↗</span></small></a></li>
+                    <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}<a class="external" href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}</a></li>
                 {% endif %}
             {% endif %}
         </ul>
