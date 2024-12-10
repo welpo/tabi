@@ -234,6 +234,25 @@ Haz clic en la imagen para comparar las fuentes:
 
 {{ image_toggler(default_src="blog/mastering-tabi-settings/img/serif.webp", toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp", default_alt="Fuente serif", toggled_alt="Fuente sans-serif", full_width=true) }}
 
+### Indicador de enlaces externos
+
+| Página | Sección | `config.toml` | Sigue Jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:----------------:|:------------------:|
+|   ❌   |    ❌   |      ✅       |        ❌        |         ❌         |
+
+{{ admonition(type="info", text="Requiere Zola 0.19.3 o posterior.") }}
+
+Si deseas añadir un icono a los enlaces externos, configura la sección `[markdown]` (no `[extra]`) en tu `config.toml`:
+
+```toml
+[markdown]
+external_links_class = "external"
+```
+
+Esto añadirá un pequeño icono junto a los enlaces externos:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/external_link_light.webp", dark_src="blog/mastering-tabi-settings/img/external_link_dark.webp", alt="Icono de enlace externo", full_width=true) }}
+
 ### Estilos CSS personalizados
 
 | Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
