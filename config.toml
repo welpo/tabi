@@ -38,6 +38,8 @@ bottom_footnotes = true
 # To use a Zola built-in theme, CSP needs to allow unsafe-inline for style-src.
 highlight_theme = "css"
 smart_punctuation = true
+# Set to 'external' to add an indicator next to external links.
+external_links_class = "external"
 
 [link_checker]
 internal_level = "warn"
