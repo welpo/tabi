@@ -1,0 +1,31 @@
+aside {
+    margin-block-end: var(--paragraph-spacing);
+    border-radius: 4px;
+    background: var(--bg-0);
+    padding-block: 0.8rem;
+    padding-inline: 1rem;
+    color: var(--meta-color);
+    font-size: 0.9rem;
+
+    article & p {
+        margin: 0;
+        font-family: var(--sans-serif-font);
+    }
+
+    @media only screen and (min-width: 1300px) {
+        position: absolute;
+        inset-inline-start: -14rem;
+        margin-block: 0;
+        border-radius: 0;
+        background: none;
+        padding: 0;
+        width: 12rem;
+        text-align: end;
+
+        &[data-position="right"] {
+            inset-inline-start: auto;
+            inset-inline-end: -14rem;
+            text-align: start;
+        }
+    }
+}
