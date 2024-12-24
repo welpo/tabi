@@ -1,0 +1,5 @@
+{%- set text = text | default(value=body) -%}
+
+<aside {% if position %}data-position="{{ position }}"{% endif %}>
+    {{ text | markdown | safe }}
+</aside>

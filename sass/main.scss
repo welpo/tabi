@@ -1,5 +1,6 @@
 @use 'parts/_admonitions.scss';
 @use 'parts/_archive.scss';
+@use 'parts/_aside.scss';
 @use 'parts/_cards.scss';
 @use 'parts/_code.scss';
 @use 'parts/_comments.scss';
@@ -161,6 +162,7 @@ body {
 
 article {
     $base-margin: 6rem;
+    position: relative;
     margin: 0 auto;
 
     max-width: calc(var(--max-layout-width) - 2*$base-margin);
