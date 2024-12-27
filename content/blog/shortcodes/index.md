@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-12-24
+updated = 2024-12-27
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -224,7 +224,7 @@ Add supplementary content in the margins on wide screens, or as distinct blocks 
 
 The shortcode accepts two parameters:
 
-- `position`: Set to "right" to place in right margin (defaults to left)
+- `position`: Set to `"right"` to place in right margin (defaults to left)
 - Content can be provided via `text` parameter or between shortcode tags
 
 #### Usage
@@ -235,10 +235,10 @@ Using the `text` parameter:
 {{/* aside(text="*Sidenote* comes from Latin *nota* ('mark') + Old English *síde* ('side').") */}}
 ```
 
-Using the content body:
+Using the content body and setting the position to right:
 
 ```
-{%/* aside() */%}
+{%/* aside(position="right") */%}
 A longer note that
 can span multiple lines.
 

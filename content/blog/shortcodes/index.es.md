@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2024-12-24
+updated = 2024-12-27
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -223,7 +223,7 @@ Añade contenido complementario en los márgenes en pantallas anchas, o como blo
 
 El shortcode acepta dos parámetros:
 
-- `position`: Establecer como "right" para colocar en el margen derecho (por defecto, izquierdo)
+- `position`: Establecer como `"right"` para colocar en el margen derecho (por defecto, izquierdo)
 - El contenido puede proporcionarse mediante el parámetro `text` o entre las etiquetas del shortcode
 
 #### Uso
@@ -234,10 +234,10 @@ Usando el parámetro `text`:
 {{/* aside(text="*Nota al margen* viene de *nota* (del latín, 'marca' o 'señal') y *margen* (del latín *margo*, 'borde' o 'límite').") */}}
 ```
 
-Usando el cuerpo del contenido:
+Usando el cuerpo del contenido e indicando la posición:
 
 ```
-{%/* aside() */%}
+{%/* aside(position="right") */%}
 Una nota más larga que
 puede ocupar varias líneas.
 
