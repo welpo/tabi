@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-12-27
+updated = 2024-12-28
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -228,6 +228,8 @@ The shortcode accepts two parameters:
 - Content can be provided via `text` parameter or between shortcode tags
 
 #### Usage
+
+{{ admonition(type="warning", text="Place the aside shortcode on its own line to prevent formatting issues.") }}
 
 Using the `text` parameter:
 

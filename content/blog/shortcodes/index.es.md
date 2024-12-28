@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2024-12-27
+updated = 2024-12-28
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -227,6 +227,8 @@ El shortcode acepta dos parámetros:
 - El contenido puede proporcionarse mediante el parámetro `text` o entre las etiquetas del shortcode
 
 #### Uso
+
+{{ admonition(type="warning", text="Separa la llamada al shortcode con saltos de línea para evitar errores de renderizado.") }}
 
 Usando el parámetro `text`:
 
