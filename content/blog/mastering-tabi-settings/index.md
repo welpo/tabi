@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-11-30
+updated = 2025-01-02
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -494,6 +494,17 @@ path = "about"
 ```
 
 Notice how the `path` is set to `about`. Zola will place the page at `$base_url/about/`. If you'd like to have the page available at `/contact/`, you'd set `path = "contact"`.
+
+The `info-page.html` template can also be used to create landing pages at the path root (`"/"`). To do that, the `content/_index.md` file should look like this:
+
+```markdown
++++
+title = "Landing Page Title"
+template = "info-page.html"
++++
+
+Place your landing page Markdown content here.
+```
 
 ---
 

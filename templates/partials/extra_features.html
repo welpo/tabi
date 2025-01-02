@@ -1,6 +1,11 @@
 {%- set page_or_section = page | default(value=section) -%}
+
+{# prepare parameters for evaluate_setting_priority macro #}
+{%- set page_s = page | default(value="") -%}
+{%- set section_s = section | default(value="") -%}
+
 {# Quick navigation buttons #}
-{% if macros_settings::evaluate_setting_priority(setting="quick_navigation_buttons", page=page_or_section, default_global_value=false) == "true" %}
+{% if macros_settings::evaluate_setting_priority(setting="quick_navigation_buttons", page=page_s, section=section_s, default_global_value=false) == "true" %}
     <div id="button-container">
         {# Button to go show a floating Table of Contents #}
         {% if page_or_section.toc %}
@@ -31,13 +36,13 @@
 {% endif %}
 
 {# Add KaTeX functionality #}
-{%- if macros_settings::evaluate_setting_priority(setting="katex", page=page_or_section, default_global_value=false) == "true" -%}
+{%- if macros_settings::evaluate_setting_priority(setting="katex", page=page_s, section=section_s, default_global_value=false) == "true" -%}
     <link rel="stylesheet" href="{{ get_url(path='katex.min.css', trailing_slash=false) | safe }}">
     <script defer src="{{ get_url(path='js/katex.min.js', trailing_slash=false) | safe }}"></script>
 {%- endif -%}
 
 {# Load mermaid.js #}
-{%- if macros_settings::evaluate_setting_priority(setting="mermaid", page=page_or_section, default_global_value=false) == "true" -%}
+{%- if macros_settings::evaluate_setting_priority(setting="mermaid", page=page_s, section=section_s, default_global_value=false) == "true" -%}
     {%- if config.extra.serve_local_mermaid | default(value=true) -%}
         <script defer src="{{ get_url(path='js/mermaid.min.js', trailing_slash=false) | safe }}"></script>
     {%- else -%}
@@ -46,7 +51,7 @@
 {%- endif -%}
 
 {# Add copy button to code blocks #}
-{%- if macros_settings::evaluate_setting_priority(setting="copy_button", page=page_or_section, default_global_value=true) == "true" -%}
+{%- if macros_settings::evaluate_setting_priority(setting="copy_button", page=page_s, section=section_s, default_global_value=true) == "true" -%}
     {#- Add hidden HTML elements with the translated strings for the button's interactions -#}
     <span id="copy-success" class="hidden">
         {{ macros_translate::translate(key="copied", default="Copied!", language_strings=language_strings) }}
@@ -58,11 +63,11 @@
 {%- endif -%}
 
 {# JavaScript to use the "Show source or path" on code blocks shortcode: https://welpo.github.io/tabi/blog/shortcodes/#show-source-or-path #}
-{%- if macros_settings::evaluate_setting_priority(setting="add_src_to_code_block", page=page_or_section, default_global_value=false) == "true" -%}
+{%- if macros_settings::evaluate_setting_priority(setting="add_src_to_code_block", page=page_s, section=section_s, default_global_value=false) == "true" -%}
     <script defer src="{{ get_url(path='js/addSrcToCodeBlock.min.js', trailing_slash=false) | safe }}"></script>
 {%- endif -%}
 
 {# Add backlinks to footnotes #}
-{%- if macros_settings::evaluate_setting_priority(setting="footnote_backlinks", page=page_or_section, default_global_value=false) == "true" -%}
+{%- if macros_settings::evaluate_setting_priority(setting="footnote_backlinks", page=page_s, section=section_s, default_global_value=false) == "true" -%}
     <script defer src="{{ get_url(path='js/footnoteBacklinks.min.js', trailing_slash=false | safe )}}"></script>
 {%- endif -%}
