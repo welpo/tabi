@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2024-11-30
+updated = 2025-01-02
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -489,6 +489,17 @@ path = "about"
 ```
 
 Fíjate cómo se establece `path = "about"`. Zola colocará la página en `$base_url/about/`. Si deseas que la página esté disponible en `/contacto/`, tendrías que establecer `path = "contacto"`.
+
+La plantilla `info-page.html` también se puede utilizar para crear lading pages en la ruta raíz (`"/"`). Para hacerlo, el archivo `content/_index.md` debería verse así:
+
+```markdown
++++
+title = "Título de la página"
+template = "info-page.html"
++++
+
+Contenido con Markdown.
+```
 
 ---
 

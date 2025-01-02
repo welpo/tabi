@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-11-30
+updated = 2025-01-02
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -489,6 +489,17 @@ path = "about"
 ```
 
 Fixa't com s'estableix `path = "about"`. Zola situarà la pàgina a `$base_url/about/`. Si vols que la pàgina estigui disponible a `/contacte/`, hauries d'establir `path = "contacte"`.
+
+La plantilla `info-page.html` també es pot utilitzar per crear landing pages a la ruta arrel (`"/"`). Per fer-ho, l'arxiu `content/_index.md` hauria de ser així:
+
+```markdown
++++
+title = "Títol de la pàgina"
+template = "info-page.html"
++++
+
+Contingut amb Markdown.
+```
 
 ---
 
