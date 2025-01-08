@@ -296,6 +296,7 @@ enable_csp = true
 # This avoids a flashing text issue in Firefox.
 # Please see https://welpo.github.io/tabi/blog/custom-font-subset/ to learn how to create this file.
 # custom_subset = true
+subset_enabled = true
 
 [extra.analytics]
 # Specify which analytics service you want to use.

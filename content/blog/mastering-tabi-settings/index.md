@@ -720,9 +720,9 @@ See the [Mermaid documentation](@/blog/shortcodes/index.md#mermaid-diagrams) for
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
 
-Custom fonts cause flashing text in Firefox. To amend this, tabi loads a subset of glyphs for the header. Since this (slightly) increases the initial load time, it's a good idea to try and minimise the size of this subset.
+Custom fonts cause flashing text in Firefox. To amend this, tabi loads a subset of glyphs for the header. Since this (slightly) increases the initial load time, it's a good idea to try and minimise the size of this subset, or disable it completely if you're not using a custom font in your skin.
 
-You can create a custom subset tailored to your site, save it as `static/custom_subset.css`, and have it load with `custom_subset = true`.
+You can create a custom subset tailored to your site, save it as `static/custom_subset.css`, and have it load with `custom_subset = true`. Disabling the subset can be done with `subset_enabled = false`.
 
 For more information, including instructions on how to create a custom subset, see the [docs](@/blog/custom-font-subset/index.md).
 
