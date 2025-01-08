@@ -160,7 +160,7 @@ highlight_theme = "css"
 >
 > These settings are mutually exclusive and using both may result in no posts being displayed.
 
-1. If you want an introduction section (see screenshot above), add these lines to `content/_index.md`:
+6. If you want an introduction section (see screenshot above), add these lines to `content/_index.md`:
 
 ```
 [extra]
