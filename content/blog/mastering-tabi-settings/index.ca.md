@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-01-02
+updated = 2025-01-12
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -710,9 +710,11 @@ Consulta la [documentació de Mermaid](@/blog/shortcodes/index.ca.md#diagrames-d
 |:------:|:------:|:-------------:|:------------------:|:--------------------:|
 |   ❌   |   ❌   |      ✅       |        ❌          |          ❌          |
 
-Les tipus de lletra personalitzades causen parpalleig del text en Firefox. Per resoldre això, tabi carrega un subconjunt de glifs per a la capçalera. Donat que això (lleugerament) augmenta el temps de càrrega inicial, és una bona idea intentar minimitzar la mida d'aquest subconjunt.
+Les tipus de lletra personalitzades causen parpalleig del text en Firefox. Per resoldre això, tabi carrega un subconjunt de glifs per a la capçalera. Donat que això (lleugerament) augmenta el temps de càrrega inicial, és una bona idea intentar minimitzar la mida d'aquest subconjunt, o desactivar-lo completament si no estàs fent servir un tipus de lletra personalitzat al teu tema.
 
 Pots crear un subconjunt personalitzat adaptat al teu lloc, guardar-lo com a `static/custom_subset.css`, i fer que es carregui amb `custom_subset = true`.
+
+Per desactivar el subconjunt, utilitza `enable_subset = false`.
 
 Per obtenir més informació, incloent instruccions sobre com crear un subconjunt personalitzat, consulta la [documentació](@/blog/custom-font-subset/index.ca.md).
 

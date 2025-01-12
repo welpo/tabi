@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-01-02
+updated = 2025-01-12
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -710,9 +710,11 @@ Consulta la [documentación de Mermaid](@/blog/shortcodes/index.es.md#diagramas-
 |:------:|:-------:|:-------------:|:---------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |        ❌       |         ❌          |
 
-Las fuentes personalizadas causan parpadeo del texto en Firefox. Para solucionar esto, tabi carga un subconjunto de glifos para el encabezado. Dado que esto (ligeramente) aumenta el tiempo de carga inicial, es una buena idea intentar minimizar el tamaño de este subconjunto.
+Las fuentes personalizadas causan parpadeo del texto en Firefox. Para solucionar esto, tabi carga un subconjunto de glifos para el encabezado. Dado que esto (ligeramente) aumenta el tiempo de carga inicial, es una buena idea intentar minimizar el tamaño de este subconjunto, o desactivarlo por completo si no estás usando una fuente personalizada en tu tema.
 
 Puedes crear un subconjunto personalizado adaptado a tu sitio, guardarlo como `static/custom_subset.css`, y hacer que se cargue con `custom_subset = true`.
+
+Para desactivar el subconjunto, puedes usar `enable_subset = false`.
 
 Para obtener más información, incluyendo instrucciones sobre cómo crear un subconjunto personalizado, consulta la [documentación](@/blog/custom-font-subset/index.es.md).
 

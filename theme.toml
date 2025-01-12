@@ -291,12 +291,15 @@ allowed_domains = [
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 enable_csp = true
 
-# Custom subset of characters for the header.
-# If set to true, the `static/custom_subset.css` file will be loaded first.
-# This avoids a flashing text issue in Firefox.
-# Please see https://welpo.github.io/tabi/blog/custom-font-subset/ to learn how to create this file.
-# custom_subset = true
+# Font subsetting configuration.
+# This feature helps prevent text flashing in Firefox when using custom fonts.
+# See: https://welpo.github.io/tabi/blog/custom-font-subset/
+# Enable or disable font subsetting completely, both built-in and custom subsets.
 enable_subset = true
+# Use a custom subset of characters for the header.
+# If true, tabi will load the `static/custom_subset.css` file.
+# If false, tabi will use the default language-specific subset (English or Spanish).
+custom_subset = true
 
 [extra.analytics]
 # Specify which analytics service you want to use.
