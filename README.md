@@ -205,6 +205,7 @@ git pull
 | Website | Creator | Description  | Site Source   |
 | - | - | - | - |
 | [osc.garden](https://osc.garden) | Óscar Fernández ([welpo](https://github.com/welpo)) | Data science, psychology, and Zola | [Source](https://github.com/welpo/osc.garden) |
+| [Nizzlay](https://nizzlay.com) | Niels Gouman ([Nizzlay](https://github.com/Nizzlay)) | Personal blog | [Source](https://github.com/Nizzlay/nizzlay.com) |
 | [sandip.live](https://sandip.live) | Sandip G ([sandman](https://github.com/sandman)) | Startups, tech and the good life | [Source](https://github.com/sandman/sandman.github.io) |
 | [seadve.github.io](https://seadve.github.io/) | Dave Patrick Caberto ([SeaDve](https://github.com/SeaDve/)) | Personal blog and portfolio with custom CSS | [Source](https://github.com/SeaDve/seadve.github.io) |
 | [mikufan.page](https://mikufan.page) | [Nadia](https://github.com/nyadiia) | Personal blog | [Source](https://github.com/nyadiia/mikufan.page) |
