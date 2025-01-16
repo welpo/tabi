@@ -96,8 +96,6 @@
 
     {% if is_404 %}
         <meta name="robots" content="noindex, follow" />
-    {% else %}
-        <meta name="robots" content="index, nofollow" />
     {% endif %}
 
     <meta property="og:title" content="{{ page.title | default(value=config.title) | safe }}" />
