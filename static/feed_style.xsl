@@ -14,7 +14,13 @@
         <meta charset="utf-8"/>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="{/atom:feed/@xml:base}/main.css"/>
+        <!-- The base URL is assumed to be the first URL in the sitemap. -->
+        <xsl:variable name="baseUrl" select="(sitemap:urlset/sitemap:url)[1]/sitemap:loc"/>
+        <!-- Remove http[s]:// -->
+        <xsl:variable name="baseUrlWithoutProtocol" select="substring-after($baseUrl, '://')"/>
+        <!-- Remove trailing slash -->
+        <xsl:variable name="clean_base_url" select="substring-before($baseUrlWithoutProtocol, '/')"/>
+        <link rel="stylesheet" href="{$baseUrl}main.css"/>
         <link rel="stylesheet" href="{/atom:feed/atom:link[@rel='extra-stylesheet']/@href}" />
 
       </head>
