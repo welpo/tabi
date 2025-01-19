@@ -214,6 +214,7 @@ git pull
 | [jmbhughes.com](https://jmbhughes.com/) | Marcus Hughes ([jmbhughes](https://github.com/jmbhughes)) | Personal blog | [Source](https://github.com/jmbhughes/jmbhughes.github.io) |
 | [szabolcs.me](https://szabolcs.me) | Szabolcs Fazekas ([szabolcsf](https://github.com/szabolcsf)) | Personal blog | [Source](https://github.com/szabolcsf/szabolcs.me) |
 | [Nizzlay](https://nizzlay.com) | Niels Gouman ([Nizzlay](https://github.com/Nizzlay)) | Personal blog | [Source](https://github.com/Nizzlay/nizzlay.com) |
+| [ZzMzaw's blog](https://zzmzaw.github.io/) | ZzMzaw ([ZzMzaw](https://github.com/ZzMzaw)) | Personal blog | [Source](https://github.com/ZzMzaw/zzmzaw.github.io) |
 
 
 Using tabi? Feel free to create a PR and add your site to this list.
