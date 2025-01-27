@@ -25,26 +25,23 @@
 @use 'parts/_zola-error.scss';
 
 @font-face {
-    src: local('Inter'),
-        url('fonts/Inter4.woff2') format("woff2");
+    src: url('fonts/Inter4.woff2') format("woff2");
     /* Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-    font-family: 'Inter';
+    font-family: 'Inter subset';
     font-display: swap;
 }
 
 @font-face {
-    src: local('Source Serif'),
-        url('fonts/SourceSerif4Variable-Roman.ttf.woff2') format("woff2");
+    src: url('fonts/SourceSerif4Variable-Roman.ttf.woff2') format("woff2");
     /* Copyright 2014 - 2023 Adobe (http://www.adobe.com/), with Reserved Font Name ‘Source’.adobe.com/). Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-    font-family: 'Source Serif';
+    font-family: 'Source Serif subset';
     font-display: swap;
 }
 
 @font-face {
-    src: local('Cascadia Code'),
-        url('fonts/CascadiaCode-SemiLight.woff2') format("woff2");
+    src: url('fonts/CascadiaCode-SemiLight.woff2') format("woff2");
     /* Copyright 2019 - Present, Microsoft Corporation, with Reserved Font Name 'Cascadia Code'. Licensed under the SIL Open Font License, Version 1.1. More information available at: http://scripts.sil.org/OFL */
-    font-family: 'Cascadia Code';
+    font-family: 'Cascadia Code subset';
     font-display: swap;
 }
 
@@ -95,9 +92,9 @@
     --small-layout-width: 200px;
     --paragraph-spacing: max(2.3vmin, 24px);
 
-    --sans-serif-font: 'Inter', Helvetica, Arial, sans-serif;
-    --serif-font: 'Source Serif', 'Georgia', serif;
-    --code-font: 'Cascadia Code';
+    --sans-serif-font: 'Inter', 'Inter subset', Helvetica, Arial, sans-serif;
+    --serif-font: 'Source Serif', 'Source Serif subset', 'Georgia', serif;
+    --code-font: 'Cascadia Code', 'Cascadia Code subset';
 
     scrollbar-color: var(--primary-color) transparent;
     accent-color: var(--primary-color);
