@@ -31,7 +31,6 @@ header {
         flex-wrap: inherit;
         justify-content: inherit;
         align-items: inherit;
-        gap: inherit;
         gap: 1px;
         margin: 0;
         padding: 0;
@@ -39,7 +38,13 @@ header {
     }
 }
 
-#menu-icons-group {
+.menu-icons-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.menu-icons-group {
     gap: 1px;
     margin: 0;
     padding: 0;
@@ -167,6 +172,10 @@ header {
     .nav-navs {
         display: flex;
         justify-content: center;
+    }
+
+    .menu-icons-container {
+        margin-left: 0;
     }
 }
 
