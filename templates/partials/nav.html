@@ -11,7 +11,15 @@
                         {% for menu in config.extra.menu %}
                             <li>
                                 {% set trailing_slash = menu.trailing_slash | default(value=true) %}
-                                <a class="nav-links no-hover-padding" href="{{ get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) }}">
+                                {%- if menu.url is starting_with("http") -%}
+                                    {%- if trailing_slash -%}
+                                        <a class="nav-links no-hover-padding" href="{{ menu.url }}/">
+                                    {%- else -%}
+                                        <a class="nav-links no-hover-padding" href="{{ menu.url }}">
+                                    {%- endif -%}
+                                {%- else -%}
+                                    <a class="nav-links no-hover-padding" href="{{ get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) }}">
+                                {%- endif -%}
                                 {{ macros_translate::translate(key=menu.name, default=menu.name, language_strings=language_strings) }}
                                 </a>
                             </li>

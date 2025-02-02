@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-01-12
+updated = 2025-02-02
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -587,7 +587,9 @@ fediverse_creator = { handle = "username", domain = "example.com" }
 |:------:|:------:|:-------------:|:---------------:|:-------------------:|
 |   ❌   |   ❌   |      ✅       |        ❌       |         ❌          |
 
-La barra de navegació és la franja a la part superior de la pàgina que conté el títol del lloc i el menú de navegació. Pots personalitzar els elements que apareixen configurant `menu` en `config.toml`. Per exemple:
+La barra de navegació és la franja a la part superior de la pàgina que conté el títol del lloc i el menú de navegació. Pots personalitzar els elements que apareixen configurant `menu` en `config.toml`.
+
+Soporta links relatius per a pàgines internes i links absoluts per a enllaços externs. Per exemple:
 
 ```toml
 menu = [
@@ -596,6 +598,7 @@ menu = [
     { name = "etiquetes", url = "tags", trailing_slash = true },
     { name = "projectes", url = "projects", trailing_slash = true },
     { name = "sobre nosaltres", url = "about", trailing_slash = true },
+    { name = "github", url = "https://github.com/welpo/tabi", trailing_slash = false },
 ]
 ```
 

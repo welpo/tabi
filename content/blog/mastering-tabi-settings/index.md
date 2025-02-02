@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-01-12
+updated = 2025-02-02
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -594,7 +594,9 @@ This adds metadata to your HTML, allowing Mastodon to display the author's fediv
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
 
-The navigation bar is the bar at the top of the page that contains the site title and the navigation menu. You can customise which items appear by setting `menu` in `config.toml`. For example:
+The navigation bar is the bar at the top of the page that contains the site title and the navigation menu. You can customise which items appear by setting `menu` in `config.toml`.
+
+The menu supports both relative URLs for internal pages and absolute URLs for external links. For example:
 
 ```toml
 menu = [
@@ -603,6 +605,7 @@ menu = [
     { name = "tags", url = "tags", trailing_slash = true },
     { name = "projects", url = "projects", trailing_slash = true },
     { name = "about", url = "about", trailing_slash = true },
+    { name = "github", url = "https://github.com/welpo/tabi", trailing_slash = false },
 ]
 ```
 
