@@ -179,6 +179,10 @@ Por defecto, cuando se listan los artículos, se muestra la fecha de creación. 
 - `updated`: Muestra solo la fecha de la última actualización del artículo. Si no hay fecha de actualización, muestra la fecha de publicación original.
 - `both`: Muestra tanto la fecha de publicación original como la fecha de la última actualización.
 
+{% admonition(type="tip") %}
+Esta configuración sigue la jerarquía: puedes establecer un valor global en `config.toml` o configurarlo para secciones específicas en su archivo `_index.md`. En ambos casos, añádelo a la sección `[extra]`.
+{% end %}
+
 #### Listado de proyectos
 
 Puedes mostrar una selección de proyectos en tu página principal. Para hacer esto, primero necesitarás configurar el directorio `projects`.

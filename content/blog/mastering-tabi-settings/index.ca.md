@@ -172,12 +172,15 @@ pinned = true
 {{ admonition(type="warning", text='Quan s'utilitza la paginació (`paginate_by`), les entrades fixades poden aparèixer dues vegades: una vegada a la part superior de la primera pàgina, i una altra en la seva posició cronològica normal en pàgines posteriors.') }}
 
 ##### Mostrar la data dels articles al llistat
-
 Per defecte, quan es llisten els articles, es mostra la data de creació. Pots configurar quina(es) data(es) mostrar utilitzant l'opció `post_listing_date`. Configuracions disponibles:
 
 - `date`: Mostra només la data de publicació original de l'article (opció per defecte).
 - `updated`: Mostra només la data de l'última actualització de l'article. Si no hi ha data d'actualització, es mostra la data de publicació original.
 - `both`: Mostra tant la data de publicació original com la data de l'última actualització.
+
+{% admonition(type="tip") %}
+Aquesta configuració segueix la jerarquia: pots establir un valor global a `config.toml` o canviar-lo per a seccions específiques al seu arxiu `_index.md`. En ambdós casos, afegeix-lo a la secció `[extra]`.
+{% end %}
 
 #### Llistat de Projectes
 

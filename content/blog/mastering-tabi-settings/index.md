@@ -183,6 +183,10 @@ By default, when listing posts, the date of post creation is shown. You can conf
 post_listing_date = "date"
 ```
 
+{% admonition(type="tip") %}
+This setting follows the hierarchy: you can set a global value in `config.toml` or override it for specific sections in their `_index.md` file. In both cases, add it to the `[extra]` section.
+{% end %}
+
 #### Listing Projects
 
 You can showcase a selection of projects on your main page. To do this, you'll need to set up the `projects` directory first.
