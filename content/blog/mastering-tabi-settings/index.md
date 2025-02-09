@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-02-02
+updated = 2025-02-09
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -443,10 +443,14 @@ By default, the archive will list posts located in `blog/`. To customise this, y
   section_path = ["blog/", "notes/", "path-three/"]
   ```
 
-**Notes**:
+The archive displays posts in reverse chronological order (newest first). You can reverse this order by setting `archive_reverse = true` in the `[extra]` section:
 
-- the Archive page will only list posts that have a date in their front matter.
-- Post sorting is determined by the `sort_by` variable of the sections you are archiving. This demo uses `sort_by = "date"` set in the `blog/_index.md`.
+```toml
+[extra]
+archive_reverse = true  # displays oldest posts first.
+```
+
+{{ admonition(type="note", text="The Archive page will only list posts that have a date in their front matter.") }}
 
 ### Tags
 

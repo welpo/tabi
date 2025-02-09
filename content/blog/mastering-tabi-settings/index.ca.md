@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-02-02
+updated = 2025-02-09
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -438,10 +438,14 @@ Per defecte, l'arxiu llistarà les publicacions situades a `blog/`. Per personal
   section_path = ["blog/", "notes/", "camí-tres/"]
   ```
 
-**Nota**:
+L'arxiu mostra les publicacions en ordre cronològic invers (les més recents primer). Pots invertir aquest ordre establint `archive_reverse = true` a la secció `[extra]`:
 
-- La pàgina d'arxiu només llistarà publicacions amb data.
-- L'ordre de les publicacions ve determinada per la variable `sort_by` de les seccions arxivades. Aquesta demo utilitza `sort_by = "date"` en `blog/_index.md`.
+```toml
+[extra]
+archive_reverse = true  # mostra les publicacions més antigues primer
+```
+
+{{ admonition(type="note", title="nota" text="La pàgina d'arxiu només llistarà publicacions que tinguin data al seu encapçalament.") }}
 
 ### Etiquetes
 
