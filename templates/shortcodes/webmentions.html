@@ -1,0 +1,8 @@
+{%- set format = config.extra.webmentions.format | default(value="") -%}
+{% if format == "" %}
+{%- set dash = "" -%}
+{% else %}
+{%- set dash = "-" -%}
+{% endif %}
+
+<div class="webmentions-container" id="webmentions{{ dash}}{{ format }}">hello</div>

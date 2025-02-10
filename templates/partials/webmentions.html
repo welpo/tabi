@@ -1,0 +1,70 @@
+{# Incorporate webmention.io links and script into the page head.
+1. Provide the link to the webmention data in the at webmention.io.
+2. Link to the stylesheet for styling webmentions on a page.
+3. Add and configure the javascript to fetch and display the webmentions collected at webmention.io. #} 
+
+<link rel="webmention" href="https://webmention.io/{{ config.extra.webmentions.domain }}/webmention" />
+<link rel="stylesheet" href="{{ get_url(path='webmention.min.css', trailing_slash=false) | safe }}" />
+
+{# Calculate the configured data for the script, if any #}
+
+{% set script_data = "" %}
+
+{% if config.extra.webmentions.id %}
+    {% set script_data = script_data ~ "data-id=" ~ config.extra.webmentions.id %}
+{% endif %}
+
+{% if config.extra.webmentions.page_url %}
+    {% set script_data = script_data ~ " data-page-url=" ~ config.extra.webmentions.page_url %}
+{% endif %}
+
+{% if config.extra.webmentions.add_urls %}
+    {% set script_data = script_data ~ "data-add-urls=" ~ config.extra.webmentions.add_urls %}
+{% endif %}
+
+{% if config.extra.webmentions.wordcount %}
+    {% set script_data = script_data ~ " data-wordcount=" ~ config.extra.webmentions.wordcount  %}
+{% endif %}
+
+{% if config.extra.webmentions.max_webmentions %}
+    {% set script_data = script_data ~ "data-max-webmentions=" ~ config.extra.webmentions.max_webmentions %}
+{% endif %}
+
+{% if config.extra.webmentions.prevent_spoofing %}
+    {% set script_data = script_data ~ "data-prevent-spoofing=" ~ config.extra.webmentions.prevent_spoofing %}
+{% endif %}
+
+{% if config.extra.webmentions.sort_by %}
+    {% set script_data = script_data ~ "data-sort-by=" ~ config.extra.webmentions.sort_by %}
+{% endif %}
+
+{% if config.extra.webmentions.sort_dir %}
+    {% set script_data = script_data ~ "data-sort-dir=" ~ config.extra.webmentions.sort_dir %}
+{% endif %}
+
+{% if config.extra.webmentions.comments_are_reactions %}
+    {% set script_data = script_data ~ " data-comments-are-reactions=" ~ config.extra.webmentions.comments_are_reactions %}
+{% endif %}
+
+<script 
+        async
+        src="{{ get_url(path='js/webmention.min.js', trailing_slash=false) | safe }}" 
+        {{ script_data }} 
+        >
+</script>
+
+{# 
+    <script src="{{ get_url(path='js/webmention.js', trailing_slash=false) | safe }}" 
+             data-id='webmentions' 
+             data-page-url='https://beesbuzz.biz/code/439-Falsehoods-programmers-believe-about-email'
+             data-wordcount='20'
+             async>
+    </script>
+    <!-- <script src="{{ get_url(path='js/webmention.min.js', trailing_slash=false) | safe }}" 
+    data-id="webmentions-condensed" 
+    data-page-url="https://beesbuzz.biz/code/439-Falsehoods-programmers-believe-about-email" 
+    data-comments-are-reactions="true" 
+    data-wordcount="20" 
+    async="">
+    </script> -->
+#}
