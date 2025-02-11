@@ -285,6 +285,7 @@ allowed_domains = [
     { directive = "script-src", domains = ["'self'"] },
     { directive = "style-src", domains = ["'self'"] },
     { directive = "frame-src", domains = ["player.vimeo.com", "https://www.youtube-nocookie.com"] },
+#    { directive = "connect-src", domains = [ "https://webmention.io"] },
 ]
 
 # Enable the CSP directives configured (or default).
@@ -319,6 +320,47 @@ custom_subset = true
 # For Plausible: Base URL like "https://plausible.example.com"
 # Leave this field empty if you're using the service's default hosting.
 # self_hosted_url = ""
+
+[extra.webmentions]
+# enable = true
+# Specify the domain registered with webmention.io.
+# domain = "www.example.com"
+
+# The HTML ID for the object to fill in with the webmention data.
+# Defaults to "webmentions"
+# id = "webmentions"
+
+# data configuration for the webmention.min.js script
+# The base URL to use for this page. Defaults to window.location
+page_url = "https://beesbuzz.biz/code/439-Falsehoods-programmers-believe-about-email"
+
+# Additional URLs to check, separated by |s
+# add_urls 
+
+# The maximum number of words to render in reply mentions.
+# wordcount = 20
+
+# The maximum number of mentions to retrieve. Defaults to 30.
+# max_webmentions 
+
+# By default, Webmentions render using the mf2 'url' element, which plays
+# nicely with webmention bridges (such as brid.gy and telegraph)
+# but allows certain spoofing attacks. If you would like to prevent
+# spoofing, set this to a non-empty string (e.g. "true").
+# prevent_spoofing 
+
+# What to order the responses by; defaults to 'published'. See
+# https://github.com/aaronpk/webmention.io#api
+# sort_by 
+
+# The order to sort the responses by; defaults to 'up' (i.e. oldest
+# first). See https://github.com/aaronpk/webmention.io#api
+# sort_dir 
+
+# If set to a non-empty string (e.g. "true"), will display comment-type responses
+# (replies/mentions/etc.) as being part of the reactions
+# (favorites/bookmarks/etc.) instead of in a separate comment list.
+# comments_are_reactions = "true"
 
 # giscus support for comments. https://giscus.app
 # Setup instructions: https://welpo.github.io/tabi/blog/comments/#setup
