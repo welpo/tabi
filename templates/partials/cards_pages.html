@@ -38,10 +38,10 @@
             {% endif %}
 
             <div class="card-info">
-                <h2 class="card-title">{{ page.title }}</h2>
+                <h2 class="card-title">{{ page.title | markdown | safe }}</h2>
                 <div class="card-description">
                     {% if page.description %}
-                        {{ page.description }}
+                        {{ page.description | markdown | safe }}
                     {% endif %}
                 </div>
             </div>
