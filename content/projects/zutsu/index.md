@@ -1,5 +1,5 @@
 +++
-title = "ずつ (zutsu)"
+title = "zutsu"
 description = "A private minimalist task management app."
 weight = 32
 

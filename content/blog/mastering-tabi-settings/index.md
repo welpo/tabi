@@ -2,6 +2,7 @@
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
 updated = 2025-02-11
+updated = 2025-02-11
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -182,6 +183,10 @@ By default, when listing posts, the date of post creation is shown. You can conf
 ```toml
 post_listing_date = "date"
 ```
+
+{% admonition(type="tip") %}
+This setting follows the hierarchy: you can set a global value in `config.toml` or override it for specific sections in their `_index.md` file. In both cases, add it to the `[extra]` section.
+{% end %}
 
 #### Listing Projects
 
@@ -443,10 +448,14 @@ By default, the archive will list posts located in `blog/`. To customise this, y
   section_path = ["blog/", "notes/", "path-three/"]
   ```
 
-**Notes**:
+The archive displays posts in reverse chronological order (newest first). You can reverse this order by setting `archive_reverse = true` in the `[extra]` section:
 
-- the Archive page will only list posts that have a date in their front matter.
-- Post sorting is determined by the `sort_by` variable of the sections you are archiving. This demo uses `sort_by = "date"` set in the `blog/_index.md`.
+```toml
+[extra]
+archive_reverse = true  # displays oldest posts first.
+```
+
+{{ admonition(type="note", text="The Archive page will only list posts that have a date in their front matter.") }}
 
 ### Tags
 

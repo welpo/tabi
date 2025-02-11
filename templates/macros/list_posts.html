@@ -68,7 +68,9 @@
 
                     {%- if "dates" in metadata -%}
                         {%- set allowed_post_listing_dates = ["date", "updated", "both"] -%}
-                        {%- set post_listing_date = config.extra.post_listing_date | default(value="date") -%}
+                        {#- Calling the hierarchy macro here causes an error due to the "get parents" part of the macro. -#}
+                        {#- This seems cleaner. -#}
+                        {%- set post_listing_date = section.extra.post_listing_date | default(value=config.extra.post_listing_date) | default(value="date") -%}
                         {%- if post_listing_date not in allowed_post_listing_dates -%}
                             {{ throw(message="ERROR: Invalid value for config.extra.post_listing_date. Allowed values are 'date', 'updated', or 'both'.") }}
                         {%- endif -%}

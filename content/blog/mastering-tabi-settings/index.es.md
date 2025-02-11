@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-02-02
+updated = 2025-02-11
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -178,6 +178,10 @@ Por defecto, cuando se listan los artículos, se muestra la fecha de creación. 
 - `date`: Muestra solo la fecha de publicación original del artículo (opción por defecto).
 - `updated`: Muestra solo la fecha de la última actualización del artículo. Si no hay fecha de actualización, muestra la fecha de publicación original.
 - `both`: Muestra tanto la fecha de publicación original como la fecha de la última actualización.
+
+{% admonition(type="tip") %}
+Esta configuración sigue la jerarquía: puedes establecer un valor global en `config.toml` o configurarlo para secciones específicas en su archivo `_index.md`. En ambos casos, añádelo a la sección `[extra]`.
+{% end %}
 
 #### Listado de proyectos
 
@@ -438,10 +442,14 @@ Por defecto, el archivo mostrará las publicaciones ubicadas en `blog/`. Para pe
   section_path = ["blog/", "notas/", "ruta-tres/"]
   ```
 
-**Nota**:
+El archivo muestra las publicaciones en orden cronológico inverso (las más recientes primero). Puedes invertir este orden estableciendo `archive_reverse = true` en la sección `[extra]`:
 
-- La página de Archivo sólo listará publicaciones con fecha.
-- El orden las publicaciones viene determinada por la variable `sort_by` de las secciones archivadas. Esta demo utiliza `sort_by = "date"` en `blog/_index.md`.
+```toml
+[extra]
+archive_reverse = true  # muestra las publicaciones más antiguas primero
+```
+
+{{ admonition(type="note", title="nota" text="La página de Archivo sólo listará publicaciones que tengan fecha en su encabezado.") }}
 
 ### Etiquetas
 

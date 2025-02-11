@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-02-02
+updated = 2025-02-11
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -172,12 +172,15 @@ pinned = true
 {{ admonition(type="warning", text='Quan s'utilitza la paginació (`paginate_by`), les entrades fixades poden aparèixer dues vegades: una vegada a la part superior de la primera pàgina, i una altra en la seva posició cronològica normal en pàgines posteriors.') }}
 
 ##### Mostrar la data dels articles al llistat
-
 Per defecte, quan es llisten els articles, es mostra la data de creació. Pots configurar quina(es) data(es) mostrar utilitzant l'opció `post_listing_date`. Configuracions disponibles:
 
 - `date`: Mostra només la data de publicació original de l'article (opció per defecte).
 - `updated`: Mostra només la data de l'última actualització de l'article. Si no hi ha data d'actualització, es mostra la data de publicació original.
 - `both`: Mostra tant la data de publicació original com la data de l'última actualització.
+
+{% admonition(type="tip") %}
+Aquesta configuració segueix la jerarquia: pots establir un valor global a `config.toml` o canviar-lo per a seccions específiques al seu arxiu `_index.md`. En ambdós casos, afegeix-lo a la secció `[extra]`.
+{% end %}
 
 #### Llistat de Projectes
 
@@ -438,10 +441,14 @@ Per defecte, l'arxiu llistarà les publicacions situades a `blog/`. Per personal
   section_path = ["blog/", "notes/", "camí-tres/"]
   ```
 
-**Nota**:
+L'arxiu mostra les publicacions en ordre cronològic invers (les més recents primer). Pots invertir aquest ordre establint `archive_reverse = true` a la secció `[extra]`:
 
-- La pàgina d'arxiu només llistarà publicacions amb data.
-- L'ordre de les publicacions ve determinada per la variable `sort_by` de les seccions arxivades. Aquesta demo utilitza `sort_by = "date"` en `blog/_index.md`.
+```toml
+[extra]
+archive_reverse = true  # mostra les publicacions més antigues primer
+```
+
+{{ admonition(type="note", title="nota" text="La pàgina d'arxiu només llistarà publicacions que tinguin data al seu encapçalament.") }}
 
 ### Etiquetes
 

@@ -1,5 +1,5 @@
 +++
-title = "ラム (ramu)"
+title = "ramu"
 description = "A web app to practice reading and listening to Japanese numbers."
 weight = 35
 
