@@ -113,7 +113,7 @@ The description is regular Markdown content, set outside the front matter.
 
 #### Listing Recent Posts
 
-To show posts on your main page, you first need to decide where these posts will be served from: the root path (`/`) or a subdirectory (e.g., `/blog`). 
+To show posts on your main page, you first need to decide where these posts will be served from: the root path (`/`) or a subdirectory (e.g., `/blog`).
 
 **Option A: Serve posts from the root path (`/`)**
 
