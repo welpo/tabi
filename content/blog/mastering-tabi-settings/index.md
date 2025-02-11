@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-02-02
+updated = 2025-02-11
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -758,6 +758,37 @@ To enable a system globally (on all pages), set `enabled_for_all_posts = true` i
 If you have enabled a system globally, but want to disable it on a specific page, set the name of the system to `false` in the front matter of that page. For example, `utterances = false`.
 
 Read [the docs](@/blog/comments/index.md) for more information on the available systems and their setup.
+
+## Webmentions
+
+As described by the recommended W3C standard [Webmention][1] is a simple way to notify any URL when you mention it on your site. From the receiver's perspective, it's a way to request notifications when other sites mention it.
+
+For static sites [webmention.io][2] hosts a webmention endpoint that can be used to receive webmentions. This feature fetches the webmentions stored at webmention.io and displays them for a page. You will need to have setup an account for your website at webmention.io. When you enable the webmention feature it will advertise your webmention.io endpoint and display the webmentions for any post using the webmention shortcut.
+
+### Configuration and Usage
+
+Enable webmentions for your site by adding the following to your `config.toml` file. A directive for CSP is required to allow the webmention.io endpoint to be used.
+
+```toml
+[extra]
+allowed_domains = [
+   { directive = "connect-src", domains = [ "https://webmention.io"] },
+]
+
+[extra.webmentions]
+enable = true
+# Specify the domain registered with webmention.io.
+domain = "www.example.com"
+```
+
+Add the shortcut on the page where you want to display the webmentions:
+
+```
+{{/* webmentions() */}}
+```
+
+[1]: https://www.w3.org/TR/webmention/#abstract-p-1
+[2]: https://webmention.io/
 
 ### Analytics
 
