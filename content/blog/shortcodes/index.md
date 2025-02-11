@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-12-28
+updated = 2025-02-11
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -79,9 +79,9 @@ classDiagram
         +MakeAssumptions()
     }
     CognitiveDistortions *-- AllOrNothingThinking
-    CognitiveDistortions *-- Overgeneralization
+    CognitiveDistortions*-- Overgeneralization
     CognitiveDistortions *-- MentalFilter
-    CognitiveDistortions *-- JumpingToConclusions
+    CognitiveDistortions*-- JumpingToConclusions
 {% end %}
 
 The Mermaid shortcode supports two parameters:
@@ -121,6 +121,7 @@ Useful if you want to use a different image for the light and dark themes:
 {{ dual_theme_image(light_src="img/paris_day.webp", dark_src="img/paris_night.webp" alt="The Eiffel tower") }}
 
 #### Usage
+
 ```
 {{/* dual_theme_image(light_src="img/paris_day.webp", dark_src="img/paris_night.webp" alt="The Eiffel tower") */}}
 ```
@@ -151,7 +152,7 @@ Images with too much brightness or contrast can be jarring against a dark backgr
 
 ### Swap image on hover
 
-Povides an interaction where the image displayed changes as the user hovers over it. Useful for before-after comparisons, for example.
+Provides an interaction where the image displayed changes as the user hovers over it. Useful for before-after comparisons, for example.
 
 {{ image_hover(default_src="img/edited.webp", hovered_src="img/raw.webp", default_alt="Edited picture", hovered_alt="Original shot") }}
 
@@ -193,7 +194,7 @@ All other image shortcodes can be made into full-width by setting the optional p
 
 Display a path or URL on the next code block found. If it starts with "http", it will become a link. Particularly useful when used in conjunction with the [remote text shortcode](#remote-text).
 
-{{ add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") }}
+{{ add_src_to_code_block(src="<https://github.com/welpo/doteki/blob/main/.gitignore>") }}
 
 ```.gitignore
 {{ remote_text(src="https://raw.githubusercontent.com/welpo/doteki/main/.gitignore") }}
@@ -292,19 +293,19 @@ Display lines 3 to 7 (both inclusive) of a local file:
 
 Bring attention to information with these admonition shortcodes. They come in five `type`s: `note`, `tip`, `info`, `warning`, and `danger`.
 
-{{ admonition(type="note", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="note", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
 
-{{ admonition(type="tip", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="tip", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
 
-{{ admonition(type="info", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="info", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
 
-{{ admonition(type="warning", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="warning", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
 
-{{ admonition(type="danger", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="danger", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
 
 You can change the `title` and `icon` of the admonition. Both parameters take a string and default to the type of admonition. `icon` can be any of the available admonition types.
 
-{{ admonition(type="note", icon="tip", title="Custom title and icon", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="note", icon="tip", title="Custom title and icon", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
 
 #### Usage
 
@@ -332,12 +333,12 @@ Both methods support the same parameters (`type`, `icon`, and `title`), with the
 
 This shortcode allows you to display both the translated and original text for a quote. The quotation marks will be added automatically:
 
-{{ multilingual_quote(original="Qué sosiego, ir por la vida en silencio, saludando sólo a los amigos.", translated="What tranquility, to go through life in silence, greeting only friends.", author="Francisco Umbral") }}
+{{ multilingual_quote(original="Qué sosiego, ir por la vida en silencio, saludando sólo a los amigos.", translated="What tranquillity, to go through life in silence, greeting only friends.", author="Francisco Umbral") }}
 
 #### Usage
 
 ```
-{{/* multilingual_quote(original="Qué sosiego, ir por la vida en silencio, saludando sólo a los amigos.", translated="What tranquility, to go through life in silence, greeting only friends.", author="Francisco Umbral") */}}
+{{/* multilingual_quote(original="Qué sosiego, ir por la vida en silencio, saludando sólo a los amigos.", translated="What tranquillity, to go through life in silence, greeting only friends.", author="Francisco Umbral") */}}
 ```
 
 ### References with hanging indent
@@ -394,7 +395,7 @@ Use this shortcode if you want to have a wider table, paragraph, code block… O
 
 | Title             |  Year | Director             | Cinematographer       | Genre         | IMDb  | Duration     |
 |-------------------|-------|----------------------|-----------------------|---------------|-------|--------------|
-| Beoning           | 2018  | Lee Chang-dong       | Hong Kyung-pyo        | Drama/Mystery | 7.5   | 148 min      |
+| Burning           | 2018  | Lee Chang-dong       | Hong Kyung-pyo        | Drama/Mystery | 7.5   | 148 min      |
 | The Master        | 2012  | Paul Thomas Anderson | Mihai Mălaimare Jr.   | Drama/History | 7.1   | 137 min      |
 | The Tree of Life  | 2011  | Terrence Malick      | Emmanuel Lubezki      | Drama         | 6.8   | 139 min      |
 
@@ -419,10 +420,12 @@ Force the text direction of a content block. Overrides both the global `force_co
 Accepts the parameter `direction`: the desired text direction. This can be either "ltr" (left-to-right) or "rtl" (right-to-left). Defaults to "ltr".
 
 {% force_text_direction(direction="rtl") %}
+
 ```python
 def مرحبا_بالعالم():
     print("مرحبا بالعالم!")
 ```
+
 {% end %}
 
 #### Usage
@@ -439,3 +442,29 @@ def مرحبا_بالعالم():
 
 {%/* end */%}
 ````
+
+## Displaying webmentions for your posts
+
+As described by the recommended W3C standard [Webmention][1] is a simple way to notify any URL when you mention it on your site. From the receiver's perspective, it's a way to request notifications when other sites mention it.
+
+For static sites [webmention.io][2] hosts a webmention endpoint that can be used to receive webmentions. This feature fetches the webmentions stored at webmention.io and displays them for a page. You will need to have setup an account for your website at webmention.io. When you enable the webmention feature it will advertise your webmention.io endpoint and display the webmentions for any post using the webmention shortcut.
+
+### Configuration and Usage
+
+Enable webmentions for your site, add the following to your `config.toml` file:
+
+```toml
+[extra.webmentions]
+enable = true
+# Specify the domain registered with webmention.io.
+domain = "www.example.com"
+```
+
+Add the shortcut on the page where you want to display the webmentions:
+
+```
+{{/* webmentions() */}}
+```
+
+[1]: https://www.w3.org/TR/webmention/#abstract-p-1
+[2]: https://webmention.io/
