@@ -54,6 +54,12 @@ content="default-src 'self'
         {%- set script_src = script_src ~ " " ~ " cdn.jsdelivr.net" -%}
     {%- endif -%}
 
+    {#- Check if a webmention system is enabled to allow the necessary domains and directives -#}
+    {%- set webmention_enabled = config.extra.webmentions.enabled -%}
+    {%- if webmention_enabled -%}
+        {%- set connect_src = connect_src ~ " webmention.io" -%}
+    {%- endif -%}
+
     {#- Append WebSocket for Zola serve mode -#}
     {%- if config.mode == "serve" -%}
         {%- set connect_src = connect_src ~ " ws:" -%}
