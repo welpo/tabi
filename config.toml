@@ -328,7 +328,6 @@ allowed_domains = [
     { directive = "script-src", domains = ["'self'"] },
     { directive = "style-src", domains = ["'self'"] },
     { directive = "frame-src", domains = ["player.vimeo.com", "https://www.youtube-nocookie.com"] },
-#    { directive = "connect-src", domains = [ "https://webmention.io"] },
 ]
 
 # Enable the CSP directives configured (or default).
@@ -365,9 +364,9 @@ service = "goatcounter"
 self_hosted_url = "https://tabi-stats.osc.garden"
 
 [extra.webmentions]
-# enable = true
+enabled = true
 # Specify the domain registered with webmention.io.
-# domain = "www.example.com"
+domain = "www.example.com"
 
 # The HTML ID for the object to fill in with the webmention data.
 # Defaults to "webmentions"
@@ -381,7 +380,7 @@ page_url = "https://beesbuzz.biz/code/439-Falsehoods-programmers-believe-about-e
 # add_urls 
 
 # The maximum number of words to render in reply mentions.
-# wordcount = 20
+wordcount = 20
 
 # The maximum number of mentions to retrieve. Defaults to 30.
 # max_webmentions 
