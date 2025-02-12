@@ -466,5 +466,7 @@ Add the shortcut on the page where you want to display the webmentions:
 {{/* webmentions() */}}
 ```
 
+{{ webmentions() }}
+
 [1]: https://www.w3.org/TR/webmention/#abstract-p-1
 [2]: https://webmention.io/
