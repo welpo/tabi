@@ -58,7 +58,7 @@
                                 {{ post.date | date(format="%d %b", locale=date_locale) }}
                             </span>
                         </div>
-                        <a href="{{ post.permalink }}" title="{{ post.title }}">{{ post.title }}</a>
+                        <a href="{{ post.permalink }}" title="{{ post.title }}">{{ post.title | markdown | safe }}</a>
                     </li>
                     {% endfor %}
                 </ul>
