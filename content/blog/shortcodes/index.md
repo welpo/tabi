@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2025-02-11
+updated = 2025-02-12
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -455,7 +455,7 @@ Enable webmentions for your site, add the following to your `config.toml` file:
 
 ```toml
 [extra.webmentions]
-enable = true
+enabled = true
 # Specify the domain registered with webmention.io.
 domain = "www.example.com"
 ```
