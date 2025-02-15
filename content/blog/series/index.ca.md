@@ -1,6 +1,7 @@
 +++
 title = "Guia completa sobre sèries"
 date = 2024-11-08
+updated = 2025-02-15
 description = "Aprèn a organitzar les teves publicacions en sèries seqüencials, perfectes per a tutorials, cursos i històries de diverses parts."
 
 [taxonomies]
@@ -48,9 +49,7 @@ flowchart
 2. Crea `_index.md` al directori de la sèrie
 3. Configura el front matter de `_index.md`:
 
-    {{ add_src_to_code_block(src="series/_index.md") }}
-
-    ```toml
+    ```toml,name=series/_index.md
     title = "Aprenent Rust"
     template = "series.html"
     sort_by = "slug"
@@ -154,9 +153,7 @@ Aquesta configuració segueix [la jerarquia](@/blog/mastering-tabi-settings/inde
 
 Els articles d'una sèrie poden tenir seccions automàtiques d'introducció i conclusió. Aquestes es configuren al `_index.md` de la teva sèrie. Un exemple bàsic:
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra.series_intro_templates]
 default = "Aquest article és part de la sèrie $SERIES_HTML_LINK."
 
@@ -177,9 +174,7 @@ El sistema de sèries utilitza diferents plantilles segons la posició de l'arti
 
 El sistema determina automàticament quina plantilla utilitzar segons la posició de l'article. Les plantilles es defineixen a la configuració de la sèrie (`_index.md`), com `extra.series_intro_templates` i `extra.series_outro_templates`:
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra.series_intro_templates]
 next_only = "Benvingut a la part 1! Següent: $NEXT_HTML_LINK"
 middle = "Anterior: $PREV_HTML_LINK | Següent: $NEXT_HTML_LINK"
@@ -285,9 +280,7 @@ Hi ha tres tipus de variables:
 
 {{ admonition(type="tip", title="Variables HTML vs text", text="Utilitza variables HTML (que acaben en `_HTML_LINK`) quan vulguis enllaços preparats per usar. Utilitza variables de text (que acaben en `_TITLE` o `_PERMALINK`) quan vulguis més control sobre el format.") }}
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 # Introducció
 [extra.series_intro_templates]
 next_only = """
@@ -351,9 +344,7 @@ Les plantilles de sèries admeten variables personalitzades per incloure informa
 
 1. Primer, defineix els teus **marcadors** a la configuració de la teva sèrie (`_index.md`):
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra]
 series = true
 series_template_placeholders = ["$POSITION", "$TOPIC", "$DIFFICULTY"]
@@ -361,9 +352,7 @@ series_template_placeholders = ["$POSITION", "$TOPIC", "$DIFFICULTY"]
 
 2. Després, a cada article de la sèrie, proporciona els valors per a aquests marcadors a `series_template_variables`:
 
-{{ add_src_to_code_block(src="series/article.md") }}
-
-```toml
+```toml,name=series/article.md
 [extra.series_template_variables]
 position = "primer"
 topic = "Variables i tipus"
@@ -374,9 +363,7 @@ difficulty = "Principiant"
 
 Pots usar les teves variables personalitzades a qualsevol plantilla, juntament amb les variables integrades:
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra.series_intro_templates]
 default = """
 Aquest és l'article $POSITION a $SERIES_HTML_LINK.
@@ -389,9 +376,7 @@ Nivell de dificultat: $DIFFICULTY
 
 ### Exemple amb variables personalitzades
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 # A la configuració de la sèrie.
 [extra]
 series = true
@@ -404,9 +389,7 @@ series_intro_templates.default = """
 """
 ```
 
-{{ add_src_to_code_block(src="series/02-learning-rust/index.md") }}
-
-```toml
+```toml,name=series/02-learning-rust/index.md
 # En un article de la sèrie.
 [extra.series_template_variables]
 learning_time = "30 minuts"

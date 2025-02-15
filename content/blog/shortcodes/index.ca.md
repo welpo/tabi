@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2024-12-28
+updated = 2025-02-15
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -11,7 +11,7 @@ tags = ["funcionalitat", "shortcodes"]
 toc = true
 toc_levels = 2
 quick_navigation_buttons = true
-add_src_to_code_block = true
+clickable_code_names = true
 mermaid = true
 social_media_card = "social_cards/ca_blog_shortcodes.jpg"
 +++
@@ -191,23 +191,55 @@ Tots els altres shortcodes d'imatges poden utilizar l'amplada completa assignant
 
 ### Mostrar ruta o URL
 
-Mostra una ruta o URL al següent bloc de codi trobat. Si comença amb "http", es convertirà en un enllaç. Particularment útil quan s'utilitza en conjunció amb el [shortcode de text remot](#text-remot).
+Pots mostrar una ruta o URL per a un bloc de codi utilitzant la sintaxi nativa de Zola:
 
-{{ admonition(type="warning", title="IMPORTANT", text="Aquesta funcionalitat requereix JavaScript. Per activar-la, configura `add_src_to_code_block = true` a la secció `[extra]` de la teva pàgina, secció, o `config.toml`.") }}
+{{ aside(text="Requereix Zola 0.20.0 o superior.") }}
 
-{{ add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") }}
+````
+```rust,name=src/main.rs
+fn main() {
+    println!("Hola, món!");
+}
+```
+````
 
-```.gitignore
-{{ remote_text(src="https://raw.githubusercontent.com/welpo/doteki/main/.gitignore") }}
+Això renderitza:
+
+```rust,name=src/main.rs
+fn main() {
+    println!("Hola, món!");
+}
+```
+
+Si estableixes el `name` com una URL (és a dir, comença amb `http` o `https`), pots convertir-lo en un enllaç clicable. Això és particularment útil quan s'utilitza juntament amb el [shortcode de text remot](#text-remot).
+
+{{ admonition(type="warning", title="JavaScript necessari", text="La funció d'URLs clicables requereix JavaScript. Per habilitar-la, configura `clickable_code_names = true` a la secció `[extra]` de la teva pàgina, secció, o `config.toml`.") }}
+
+```.gitignore,name=https://github.com/welpo/doteki/blob/main/.gitignore
+__pycache__/
+*coverage*
+.vscode/
+dist/
+```
+
+### Suport de shortcode heretat
+
+El shortcode `add_src_to_code_block` segueix funcionant per retrocompatibilitat però serà descontinuat en una versió futura. Si us plau, utilitza la sintaxi nativa de Zola:
+
+```
+# Forma antiga (descontinuada):
+{{/* add_src_to_code_block(src="ruta/al/fitxer.rs") */}}
+
+# Forma nova (recomanada):
+```rust,name=ruta/al/fitxer.rs
 ```
 
 #### Ús
 
 ````
 {{/* add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") */}}
-
 ```.gitignore
-__pycache__/
+**pycache**/
 *coverage*
 .vscode/
 dist/

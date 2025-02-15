@@ -63,6 +63,27 @@ pre {
         font-size: 0.8rem;  // Fits ~77 characters.
     }
 
+    // Supports both native Zola way of adding src, and old shortcode-based logic.
+    // See: https://github.com/welpo/tabi/pull/489
+    &::after,
+    code .source-path {
+        display: block;
+        position: absolute;
+        top: 0;
+        inset-inline-end: 1.3rem;
+        padding-top: 0.3rem;
+        padding-inline-end: 1.3rem;
+        max-width: calc(100% - 14em);
+        height: 0.9rem;
+        overflow: hidden;
+        content: attr(data-name);
+        color: var(--hover-color);
+        font-size: 0.65rem;
+        text-align: end;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     code {
         display: block;
         border: 0rem;
@@ -88,23 +109,6 @@ pre {
             font-size: 0.65rem;
             text-align: start;
             text-transform: uppercase;
-        }
-
-        .source-path {
-            display: block;
-            position: absolute;
-            top: 0;
-            inset-inline-end: 1.3rem;
-            padding-top: 0.3rem;
-            padding-inline-end: 1.3rem;
-            max-width: calc(100% - 14em);
-            height: 0.9rem;
-            overflow: hidden;
-            color: var(--hover-color);
-            font-size: 0.65rem;
-            text-align: end;
-            text-overflow: ellipsis;
-            white-space: nowrap;
         }
     }
 }
