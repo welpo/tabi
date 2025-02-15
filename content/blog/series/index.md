@@ -248,6 +248,8 @@ There are three types of variables:
 
 {% end %}
 
+{{ admonition(type="tip", title="TIP: Custom text with permalinks", text='Markdown links like `[text]($SERIES_PERMALINK)` will be marked (and [styled](@/blog/mastering-tabi-settings/index.md#external-link-indicator)) as external. If you need custom text and want to avoid external styling, use HTML: `<a href=\"$SERIES_PERMALINK\">your text</a>`.') }}
+
 ### Navigation Variables
 
 {% wide_container() %}
