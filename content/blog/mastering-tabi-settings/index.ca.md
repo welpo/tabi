@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-02-09
+updated = 2025-02-15
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -236,6 +236,25 @@ tabi utilitza una font serif per als paràgrafs dels articles (la que estàs vei
 Fes clic a la imatge a continuació per comparar les fonts:
 
 {{ image_toggler(default_src="blog/mastering-tabi-settings/img/serif.webp", toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp", default_alt="Font serif", toggled_alt="Font sans-serif", full_width=true) }}
+
+### Indicador d'enllaços externs
+
+| Pàgina | Secció | `config.toml` | Segueix Jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:-----------------:|:-------------------:|
+|   ❌   |   ❌   |      ✅       |         ❌        |         ❌          |
+
+{{ admonition(type="info", text="Requereix Zola 0.20.0 o posterior.") }}
+
+Si vols afegir una icona als enllaços externs, configura la secció `[markdown]` (no `[extra]`) al teu `config.toml`:
+
+```toml
+[markdown]
+external_links_class = "external"
+```
+
+Això afegirà una petita icona al costat dels enllaços externs:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/external_link_light.webp", dark_src="blog/mastering-tabi-settings/img/external_link_dark.webp", alt="Icona d'enllaç extern", full_width=true) }}
 
 ### Estils CSS personalitzats
 
