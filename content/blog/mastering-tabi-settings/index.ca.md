@@ -172,12 +172,15 @@ pinned = true
 {{ admonition(type="warning", text='Quan s'utilitza la paginació (`paginate_by`), les entrades fixades poden aparèixer dues vegades: una vegada a la part superior de la primera pàgina, i una altra en la seva posició cronològica normal en pàgines posteriors.') }}
 
 ##### Mostrar la data dels articles al llistat
-
 Per defecte, quan es llisten els articles, es mostra la data de creació. Pots configurar quina(es) data(es) mostrar utilitzant l'opció `post_listing_date`. Configuracions disponibles:
 
 - `date`: Mostra només la data de publicació original de l'article (opció per defecte).
 - `updated`: Mostra només la data de l'última actualització de l'article. Si no hi ha data d'actualització, es mostra la data de publicació original.
 - `both`: Mostra tant la data de publicació original com la data de l'última actualització.
+
+{% admonition(type="tip") %}
+Aquesta configuració segueix la jerarquia: pots establir un valor global a `config.toml` o canviar-lo per a seccions específiques al seu arxiu `_index.md`. En ambdós casos, afegeix-lo a la secció `[extra]`.
+{% end %}
 
 #### Llistat de Projectes
 
@@ -304,11 +307,11 @@ Si configures `tag_sorting = "frequency"`, s'ordenaran segons el nombre de publi
 
 ---
 
-### Sèries
+## Sèries
 
 Per a una explicació detallada, consulta la [documentació de sèries](@/blog/series/index.ca.md).
 
-#### Enllaç per saltar a les publicacions
+### Enllaç per saltar a les publicacions
 
 | Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
 |:------:|:-------:|:-------------:|:------------------:|:-------------------:|
@@ -320,7 +323,7 @@ Per defecte, apareix automàticament un enllaç "Salta a les publicacions" al co
 
 Estableix `show_jump_to_posts = true` per forçar l'activació de la funció i `show_jump_to_posts = false` per desactivar-la.
 
-#### Indexació de pàgines de sèries
+### Indexació de pàgines de sèries
 
 | Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
 |:------:|:-------:|:-------------:|:------------------:|:-------------------:|
@@ -457,10 +460,14 @@ Per defecte, l'arxiu llistarà les publicacions situades a `blog/`. Per personal
   section_path = ["blog/", "notes/", "camí-tres/"]
   ```
 
-**Nota**:
+L'arxiu mostra les publicacions en ordre cronològic invers (les més recents primer). Pots invertir aquest ordre establint `archive_reverse = true` a la secció `[extra]`:
 
-- La pàgina d'arxiu només llistarà publicacions amb data.
-- L'ordre de les publicacions ve determinada per la variable `sort_by` de les seccions arxivades. Aquesta demo utilitza `sort_by = "date"` en `blog/_index.md`.
+```toml
+[extra]
+archive_reverse = true  # mostra les publicacions més antigues primer
+```
+
+{{ admonition(type="note", title="nota" text="La pàgina d'arxiu només llistarà publicacions que tinguin data al seu encapçalament.") }}
 
 ### Etiquetes
 
@@ -508,6 +515,17 @@ path = "about"
 ```
 
 Fixa't com s'estableix `path = "about"`. Zola situarà la pàgina a `$base_url/about/`. Si vols que la pàgina estigui disponible a `/contacte/`, hauries d'establir `path = "contacte"`.
+
+La plantilla `info-page.html` també es pot utilitzar per crear landing pages a la ruta arrel (`"/"`). Per fer-ho, l'arxiu `content/_index.md` hauria de ser així:
+
+```markdown
++++
+title = "Títol de la pàgina"
+template = "info-page.html"
++++
+
+Contingut amb Markdown.
+```
 
 ---
 
@@ -595,7 +613,9 @@ fediverse_creator = { handle = "username", domain = "example.com" }
 |:------:|:------:|:-------------:|:---------------:|:-------------------:|
 |   ❌   |   ❌   |      ✅       |        ❌       |         ❌          |
 
-La barra de navegació és la franja a la part superior de la pàgina que conté el títol del lloc i el menú de navegació. Pots personalitzar els elements que apareixen configurant `menu` en `config.toml`. Per exemple:
+La barra de navegació és la franja a la part superior de la pàgina que conté el títol del lloc i el menú de navegació. Pots personalitzar els elements que apareixen configurant `menu` en `config.toml`.
+
+Soporta links relatius per a pàgines internes i links absoluts per a enllaços externs. Per exemple:
 
 ```toml
 menu = [
@@ -604,6 +624,7 @@ menu = [
     { name = "etiquetes", url = "tags", trailing_slash = true },
     { name = "projectes", url = "projects", trailing_slash = true },
     { name = "sobre nosaltres", url = "about", trailing_slash = true },
+    { name = "github", url = "https://github.com/welpo/tabi", trailing_slash = false },
 ]
 ```
 
@@ -718,9 +739,11 @@ Consulta la [documentació de Mermaid](@/blog/shortcodes/index.ca.md#diagrames-d
 |:------:|:------:|:-------------:|:------------------:|:--------------------:|
 |   ❌   |   ❌   |      ✅       |        ❌          |          ❌          |
 
-Les tipus de lletra personalitzades causen parpalleig del text en Firefox. Per resoldre això, tabi carrega un subconjunt de glifs per a la capçalera. Donat que això (lleugerament) augmenta el temps de càrrega inicial, és una bona idea intentar minimitzar la mida d'aquest subconjunt.
+Les tipus de lletra personalitzades causen parpalleig del text en Firefox. Per resoldre això, tabi carrega un subconjunt de glifs per a la capçalera. Donat que això (lleugerament) augmenta el temps de càrrega inicial, és una bona idea intentar minimitzar la mida d'aquest subconjunt, o desactivar-lo completament si no estàs fent servir un tipus de lletra personalitzat al teu tema.
 
 Pots crear un subconjunt personalitzat adaptat al teu lloc, guardar-lo com a `static/custom_subset.css`, i fer que es carregui amb `custom_subset = true`.
+
+Per desactivar el subconjunt, utilitza `enable_subset = false`.
 
 Per obtenir més informació, incloent instruccions sobre com crear un subconjunt personalitzat, consulta la [documentació](@/blog/custom-font-subset/index.ca.md).
 

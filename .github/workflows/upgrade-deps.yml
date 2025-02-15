@@ -1,5 +1,4 @@
 name: Dependency upgrade
-
 on:
   workflow_dispatch:
     inputs:
@@ -8,9 +7,9 @@ on:
         required: true
         type: choice
         options:
-        - all
-        - mermaid
-        - katex
+          - all
+          - mermaid
+          - katex
   schedule:
     - cron: '32 4 * * *'
 
@@ -48,6 +47,22 @@ jobs:
           git config --global user.name "welpo"
           git config --global user.email "welpo@users.noreply.github.com"
 
+      - name: Check for existing branch
+        id: check_branch
+        run: |
+          if git ls-remote --heads origin deps/upgrade-${{ matrix.dependency }} | grep -q deps/upgrade-${{ matrix.dependency }}; then
+            echo "branch_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "branch_exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Handle existing branch
+        if: steps.check_branch.outputs.branch_exists == 'true'
+        run: |
+          echo "Branch deps/upgrade-${{ matrix.dependency }} already exists."
+          echo "Skipping upgrade as there's already an open PR"
+          exit 0
+
       - name: Create and switch to new branch
         run: |
           git checkout -b deps/upgrade-${{ matrix.dependency }}
@@ -69,6 +84,6 @@ jobs:
             exit 0
           fi
           git push -u origin deps/upgrade-${{ matrix.dependency }}
-          gh pr create --fill --base main --head deps/upgrade-${{ matrix.dependency }}
+          gh pr create --fill --base main --head deps/upgrade-${{ matrix.dependency }} --label "dependencies"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

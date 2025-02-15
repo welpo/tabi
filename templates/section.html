@@ -26,6 +26,10 @@
 <main {% if more_than_one_section_shown %}class="{{ first_section }}-first"{% endif %}>
 {%- if section.extra.header %}
     {%- include "partials/home_banner.html" -%}
+{%- elif section.content -%}
+<section>
+    {{ section.content | safe }}
+</section>
 {% endif -%}
 
 {% if section.extra.section_path -%}

@@ -1,5 +1,10 @@
 <head>
     <meta charset="UTF-8">
+
+    {%- if macros_settings::evaluate_setting_priority(setting="enable_csp", page=page | default(value=""), section=section | default(value=""), default_global_value="true") == "true" -%}
+        {%- include "partials/content_security_policy.html" -%}
+    {%- endif -%}
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="base" content="{{ config.base_url | safe }}">
 
@@ -11,7 +16,7 @@
         <link rel="icon" type="image/png" href="{{ get_url(path=config.extra.favicon) }}"/>
     {% endif %}
     {% if config.extra.favicon_emoji %}
-        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">{{ config.extra.favicon_emoji }}</text></svg>'>
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50%" x="50%" dominant-baseline="central" text-anchor="middle" font-size="88">{{ config.extra.favicon_emoji }}</text></svg>'>
     {% endif %}
 
     {# Feeds #}
@@ -36,12 +41,14 @@
 
     {# CSS #}
     {# Load subset of glyphs for header. Avoids flashing issue in Firefox #}
-    {% if config.extra.custom_subset and config.extra.custom_subset == true %}
-        <link rel="stylesheet" href="{{ get_url(path="custom_subset.css" , cachebust=true) }}">
-    {% elif lang == 'en' %}
-        <link rel="stylesheet" href="{{ get_url(path="inter_subset_en.css", cachebust=true ) }}">
-    {% elif lang == 'es' %}
-        <link rel="stylesheet" href="{{ get_url(path="inter_subset_es.css", cachebust=true ) }}">
+    {% if config.extra.enable_subset %}
+        {% if config.extra.custom_subset == true %}
+            <link rel="stylesheet" href="{{ get_url(path="custom_subset.css" , cachebust=true) }}">
+        {% elif lang == 'en' %}
+            <link rel="stylesheet" href="{{ get_url(path="inter_subset_en.css", cachebust=true ) }}">
+        {% elif lang == 'es' %}
+            <link rel="stylesheet" href="{{ get_url(path="inter_subset_es.css", cachebust=true ) }}">
+        {% endif %}
     {% endif %}
 
     {# Define array of CSS files to load. main.css is always loaded. #}
@@ -94,8 +101,6 @@
 
     {% if is_404 %}
         <meta name="robots" content="noindex, follow" />
-    {% else %}
-        <meta name="robots" content="index, nofollow" />
     {% endif %}
 
     <meta property="og:title" content="{{ page.title | default(value=config.title) | safe }}" />
@@ -129,10 +134,6 @@
     {%- endif -%}
 
     <meta property="og:site_name" content="{{ config.title }}">
-
-    {%- if macros_settings::evaluate_setting_priority(setting="enable_csp", page=page | default(value=""), section=section | default(value=""), default_global_value="true") == "true" -%}
-        {%- include "partials/content_security_policy.html" -%}
-    {%- endif -%}
 
     {%- if config.extra.theme_switcher and config.extra.theme_switcher == true -%}
         {# If JavaScript is disabled, hide the button. #}

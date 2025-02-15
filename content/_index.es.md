@@ -12,4 +12,4 @@ show_projects_first = false
 social_media_card = "es.jpg"
 +++
 
-tabi es un tema accesible para [Zola](https://www.getzola.org) con [búsqueda](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#busqueda), [soporte multilingüe](https://welpo.github.io/tabi/es/blog/faq-languages/), [JavaScript opcional](https://welpo.github.io/tabi/es/blog/javascript/), una puntuación perfecta en Lighthouse y [documentación exhaustiva](https://welpo.github.io/tabi/es). Diseñado para sitios web y blogs personales.
+tabi es un tema accesible para [Zola](https://www.getzola.org) con [búsqueda](@/blog/mastering-tabi-settings/index.es.md#busqueda), [soporte multilingüe](@/blog/faq-languages/index.es.md), [JavaScript opcional](@/blog/javascript/index.es.md), una puntuación perfecta en Lighthouse y documentación exhaustiva. Diseñado para sitios web y blogs personales.

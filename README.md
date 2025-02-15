@@ -11,11 +11,15 @@
     <a href="https://github.com/welpo/tabi/releases">
         <img src="https://img.shields.io/github/v/release/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Latest release"></a>
     <a href="https://welpo.github.io/tabi/blog/mastering-tabi-settings/">
-        <img src="https://img.shields.io/website?url=https%3A%2F%2Fwelpo.github.io%2Ftabi&style=flat-square&label=docs&labelColor=202b2d&color=087e96" alt="Documentation"></a>
+        <img src="https://img.shields.io/website?url=https%3A%2F%2Fwelpo.github.io%2Ftabi&style=flat-square&label=docs&labelColor=202b2d" alt="Documentation"></a>
     <a href="https://github.com/welpo/tabi/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="License"></a>
     <a href="https://github.com/welpo/git-sumi">
         <img src="https://img.shields.io/badge/clean_commits-git--sumi-0?style=flat-square&labelColor=202b2d&color=087e96" alt="Clean commits"></a>
+    <a href="https://isitmaintained.com/project/welpo/tabi">
+        <img src="https://isitmaintained.com/badge/resolution/welpo/tabi.svg" alt="Average time to resolve an issue"></a>
+    <a href="https://isitmaintained.com/project/welpo/tabi">
+        <img src="https://isitmaintained.com/badge/open/welpo/tabi.svg" alt="Percentage of issues still open"></a>
 </p>
 
 # 🌱 tabi
@@ -156,7 +160,7 @@ highlight_theme = "css"
 >
 > These settings are mutually exclusive and using both may result in no posts being displayed.
 
-1. If you want an introduction section (see screenshot above), add these lines to `content/_index.md`:
+6. If you want an introduction section (see screenshot above), add these lines to `content/_index.md`:
 
 ```
 [extra]
@@ -208,13 +212,17 @@ git pull
 | [www.richtman.au](https://www.richtman.au) | [Ariel Richtman](https://github.com/arichtman) | Personal tech blog | [Source](https://github.com/arichtman/www.richtman.au) |
 | [Ponderosa Games](https://ponderosagames.com/) | John Burak ([JVimes](https://github.com/jvimes)) | A friendly indie game company | &mdash; |
 | [jmbhughes.com](https://jmbhughes.com/) | Marcus Hughes ([jmbhughes](https://github.com/jmbhughes)) | Personal blog | [Source](https://github.com/jmbhughes/jmbhughes.github.io) |
-
+| [szabolcs.me](https://szabolcs.me) | Szabolcs Fazekas ([szabolcsf](https://github.com/szabolcsf)) | Personal blog | [Source](https://github.com/szabolcsf/szabolcs.me) |
+| [Nizzlay](https://nizzlay.com) | Niels Gouman ([Nizzlay](https://github.com/Nizzlay)) | Personal blog | [Source](https://github.com/Nizzlay/nizzlay.com) |
+| [ZzMzaw's blog](https://zzmzaw.github.io/) | ZzMzaw ([ZzMzaw](https://github.com/ZzMzaw)) | Personal blog | [Source](https://github.com/ZzMzaw/zzmzaw.github.io) |
+| [idle-ti.me](https://idle-ti.me/) | Jérôme Ramette ([be-next](https://github.com/be-next)) | Personal blog | [Source](https://github.com/be-next/idle-ti.me) |
 
 Using tabi? Feel free to create a PR and add your site to this list.
 
 ## Inspiration
 
 This theme was inspired by:
+
 - [shadharon](https://github.com/syedzayyan/shadharon) — tabi started as a fork of [syedzayyan](https://github.com/syedzayyan)'s theme
 - [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
 - [abridge](https://github.com/Jieiku/abridge)

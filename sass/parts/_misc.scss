@@ -126,7 +126,7 @@ a:hover {
 }
 
 a:hover rt {
-    color: initial;
+    color: var(--text-color);
 }
 
 a:not(.no-hover-padding):hover::before {

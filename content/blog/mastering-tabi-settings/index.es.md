@@ -179,6 +179,10 @@ Por defecto, cuando se listan los artículos, se muestra la fecha de creación. 
 - `updated`: Muestra solo la fecha de la última actualización del artículo. Si no hay fecha de actualización, muestra la fecha de publicación original.
 - `both`: Muestra tanto la fecha de publicación original como la fecha de la última actualización.
 
+{% admonition(type="tip") %}
+Esta configuración sigue la jerarquía: puedes establecer un valor global en `config.toml` o configurarlo para secciones específicas en su archivo `_index.md`. En ambos casos, añádelo a la sección `[extra]`.
+{% end %}
+
 #### Listado de proyectos
 
 Puedes mostrar una selección de proyectos en tu página principal. Para hacer esto, primero necesitarás configurar el directorio `projects`.
@@ -304,11 +308,11 @@ Si configuras `tag_sorting = "frequency"`, se ordenarán según el número de pu
 
 ---
 
-### Series
+## Series
 
 Para una explicación detallada, consulta la [documentación de series](@/blog/series/index.es.md).
 
-#### Enlace para saltar a las publicaciones
+### Enlace para saltar a las publicaciones
 
 | Página | Sección | `config.toml` | Sigue jerarquía | Requiere JavaScript |
 |:------:|:-------:|:-------------:|:------------------:|:-------------------:|
@@ -320,7 +324,7 @@ Por defecto, aparece automáticamente un enlace "Saltar a publicaciones" junto a
 
 Establece `show_jump_to_posts = true` para forzar la activación de la función y `show_jump_to_posts = false` para desactivarla.
 
-#### Indexación de páginas de series
+### Indexación de páginas de series
 
 | Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
 |:------:|:-------:|:-------------:|:------------------:|:-------------------:|
@@ -457,10 +461,14 @@ Por defecto, el archivo mostrará las publicaciones ubicadas en `blog/`. Para pe
   section_path = ["blog/", "notas/", "ruta-tres/"]
   ```
 
-**Nota**:
+El archivo muestra las publicaciones en orden cronológico inverso (las más recientes primero). Puedes invertir este orden estableciendo `archive_reverse = true` en la sección `[extra]`:
 
-- La página de Archivo sólo listará publicaciones con fecha.
-- El orden las publicaciones viene determinada por la variable `sort_by` de las secciones archivadas. Esta demo utiliza `sort_by = "date"` en `blog/_index.md`.
+```toml
+[extra]
+archive_reverse = true  # muestra las publicaciones más antiguas primero
+```
+
+{{ admonition(type="note", title="nota" text="La página de Archivo sólo listará publicaciones que tengan fecha en su encabezado.") }}
 
 ### Etiquetas
 
@@ -508,6 +516,17 @@ path = "about"
 ```
 
 Fíjate cómo se establece `path = "about"`. Zola colocará la página en `$base_url/about/`. Si deseas que la página esté disponible en `/contacto/`, tendrías que establecer `path = "contacto"`.
+
+La plantilla `info-page.html` también se puede utilizar para crear lading pages en la ruta raíz (`"/"`). Para hacerlo, el archivo `content/_index.md` debería verse así:
+
+```markdown
++++
+title = "Título de la página"
+template = "info-page.html"
++++
+
+Contenido con Markdown.
+```
 
 ---
 
@@ -595,7 +614,9 @@ fediverse_creator = { handle = "username", domain = "example.com" }
 |:------:|:-------:|:-------------:|:---------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |        ❌       |         ❌          |
 
-La barra de navegación es la barra en la parte superior de la página que contiene el título del sitio y el menú de navegación. Puedes personalizar los elementos que aparecen configurando `menu` en `config.toml`. Por ejemplo:
+La barra de navegación es la barra en la parte superior de la página que contiene el título del sitio y el menú de navegación. Puedes personalizar los elementos que aparecen configurando `menu` en `config.toml`.
+
+Soporta links relativos para páginas internas y links absolutos para enlaces externos. Por ejemplo:
 
 ```toml
 menu = [
@@ -604,6 +625,7 @@ menu = [
     { name = "etiquetas", url = "tags", trailing_slash = true },
     { name = "proyectos", url = "projects", trailing_slash = true },
     { name = "acerca de", url = "about", trailing_slash = true },
+    { name = "github", url = "https://github.com/welpo/tabi", trailing_slash = false },
 ]
 ```
 
@@ -718,9 +740,11 @@ Consulta la [documentación de Mermaid](@/blog/shortcodes/index.es.md#diagramas-
 |:------:|:-------:|:-------------:|:---------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |        ❌       |         ❌          |
 
-Las fuentes personalizadas causan parpadeo del texto en Firefox. Para solucionar esto, tabi carga un subconjunto de glifos para el encabezado. Dado que esto (ligeramente) aumenta el tiempo de carga inicial, es una buena idea intentar minimizar el tamaño de este subconjunto.
+Las fuentes personalizadas causan parpadeo del texto en Firefox. Para solucionar esto, tabi carga un subconjunto de glifos para el encabezado. Dado que esto (ligeramente) aumenta el tiempo de carga inicial, es una buena idea intentar minimizar el tamaño de este subconjunto, o desactivarlo por completo si no estás usando una fuente personalizada en tu tema.
 
 Puedes crear un subconjunto personalizado adaptado a tu sitio, guardarlo como `static/custom_subset.css`, y hacer que se cargue con `custom_subset = true`.
+
+Para desactivar el subconjunto, puedes usar `enable_subset = false`.
 
 Para obtener más información, incluyendo instrucciones sobre cómo crear un subconjunto personalizado, consulta la [documentación](@/blog/custom-font-subset/index.es.md).
 

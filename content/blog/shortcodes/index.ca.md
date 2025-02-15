@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2024-11-27
+updated = 2024-12-28
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -215,6 +215,38 @@ dist/
 ````
 
 ## Shortcodes de text
+
+### Aside (nota al marge)
+
+Afegeix contingut complementari als marges en pantalles amples, o com a blocs distintius en mòbil.
+
+{{ aside(text="*Nota al marge* ve de *nota* (del llatí, 'marca' o 'senyal') i *marge* (del llatí *margo*, 'vora' o 'límit').") }}
+
+El shortcode accepta dos paràmetres:
+
+- `position`: Establir com a `"right"` per col·locar al marge dret (per defecte, esquerre)
+- El contingut es pot proporcionar mitjançant el paràmetre `text` o entre les etiquetes del shortcode
+
+#### Ús
+
+{{ admonition(type="warning", text="Separa la definició de la nota del shortcode amb dues línies en blanc per evitar errors de renderització.") }}
+
+Fent servir el paràmetre `text`:
+
+```
+{{/* aside(text="*Nota al marge* ve de *nota* (del llatí, 'marca' o 'senyal') i *marge* (del llatí *margo*, 'vora' o 'límit').") */}}
+```
+
+Fent servir el cos del contingut i indicant la posició a la dreta:
+
+```
+{%/* aside(position="right") */%}
+Una nota més llarga que
+pot ocupar diverses línies.
+
+S'admet *Markdown*.
+{%/* end */%}
+```
 
 ### Text remot
 

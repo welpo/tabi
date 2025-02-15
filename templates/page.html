@@ -151,10 +151,10 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {% endif %}
 
             {#- Reading time -#}
-            {% if macros_settings::evaluate_setting_priority(setting="show_reading_time", page=page, default_global_value=true) == "true" %}
+            {%- if macros_settings::evaluate_setting_priority(setting="show_reading_time", page=page, default_global_value=true) == "true" -%}
                 <li title="{{ macros_translate::translate(key="words", number=page.word_count, default="$NUMBER words", language_strings=language_strings) }}">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_translate::translate(key="min_read", number=page.reading_time, default="$NUMBER min read", language_strings=language_strings) }}</li>
                 {%- set previous_visible = true -%}
-            {% endif %}
+            {%- endif -%}
 
             {#- Tags -#}
             {%- if page.taxonomies and page.taxonomies.tags -%}
@@ -174,11 +174,12 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- set last_updated_str = macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -%}
                 {%- set formatted_date = macros_format_date::format_date(date=page.updated, short=true, language_strings=language_strings) -%}
                 {%- set updated_str = last_updated_str | replace(from="$DATE", to=formatted_date) -%}
+                {%- set previous_visible = true -%}
                 </ul><ul class="meta last-updated"><li>{{ updated_str }}</li>
-                {# Show link to remote changes if enabled #}
-                {% if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" %}
+                {#- Show link to remote changes if enabled -#}
+                {%- if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" -%}
                     <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}<a class="external" href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}</a></li>
-                {% endif %}
+                {%- endif -%}
             {% endif %}
         </ul>
 

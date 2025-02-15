@@ -1,7 +1,7 @@
 +++
-title = "ラム (ramu)"
+title = "ramu"
 description = "Una aplicación web para practicar la lectura y comprensión auditiva de números en japonés."
-weight = 30
+weight = 35
 
 [taxonomies]
 tags = ["Japonés", "interactivo", "web app", "web", "PWA", "JavaScript"]

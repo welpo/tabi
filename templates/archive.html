@@ -25,6 +25,13 @@
             {%- set_global all_posts = all_posts | concat(with=section_item.pages) -%}
         {%- endfor %}
 
+        {# Sort all posts by date #}
+        {%- set archive_reverse = section.extra.archive_reverse | default(value=false) -%}
+        {%- set all_posts = all_posts | sort(attribute="date") -%}
+        {%- if not archive_reverse -%}
+            {%- set all_posts = all_posts | reverse -%}
+        {%- endif -%}
+
         {# Group posts by year. #}
         {% set posts_by_year = all_posts | group_by(attribute="year") %}
         {% set years = [] %}
@@ -32,8 +39,13 @@
             {% set_global years = years | concat(with=[year]) %}
         {% endfor %}
 
-        {# Iterate over sorted & reversed years (newest to oldest). #}
-        {% for year in years | sort | reverse %}
+        {# Iterate over years #}
+        {% set years = years | sort %}
+        {%- if not archive_reverse -%}
+            {%- set years = years | reverse -%}
+        {%- endif -%}
+
+        {% for year in years %}
             {% set posts = posts_by_year[year] %}
             {% if posts | length > 0 %}
             <li>

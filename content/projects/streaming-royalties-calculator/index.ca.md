@@ -4,7 +4,7 @@ description = "Una eina per calcular els royalties de streaming per a músics."
 weight = 45
 
 [taxonomies]
-tags = ["música", "web app", "web", "JavaScript", "anàlisi de dades"]
+tags = ["música", "interactiu", "web app", "web", "JavaScript", "anàlisi de dades"]
 
 [extra]
 local_image = "projects/streaming-royalties-calculator/streaming-royalties-calculator_logo.webp"

@@ -183,6 +183,10 @@ By default, when listing posts, the date of post creation is shown. You can conf
 post_listing_date = "date"
 ```
 
+{% admonition(type="tip") %}
+This setting follows the hierarchy: you can set a global value in `config.toml` or override it for specific sections in their `_index.md` file. In both cases, add it to the `[extra]` section.
+{% end %}
+
 #### Listing Projects
 
 You can showcase a selection of projects on your main page. To do this, you'll need to set up the `projects` directory first.
@@ -309,11 +313,11 @@ Setting `tag_sorting = "frequency"` will sort them by number-of-posts (descendin
 
 ---
 
-### Series
+## Series
 
 For a detailed explanation of the series feature, see the [series documentation](@/blog/series/index.md).
 
-#### Jump to posts link
+### Jump to posts link
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
@@ -325,7 +329,7 @@ By default, a "Jump to posts" link automatically appears next to the series titl
 
 Set `show_jump_to_posts = true` to force the feature on and `show_jump_to_posts = false` to force it off.
 
-#### Series pages indexation
+### Series pages indexation
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
@@ -462,10 +466,14 @@ By default, the archive will list posts located in `blog/`. To customise this, y
   section_path = ["blog/", "notes/", "path-three/"]
   ```
 
-**Notes**:
+The archive displays posts in reverse chronological order (newest first). You can reverse this order by setting `archive_reverse = true` in the `[extra]` section:
 
-- the Archive page will only list posts that have a date in their front matter.
-- Post sorting is determined by the `sort_by` variable of the sections you are archiving. This demo uses `sort_by = "date"` set in the `blog/_index.md`.
+```toml
+[extra]
+archive_reverse = true  # displays oldest posts first.
+```
+
+{{ admonition(type="note", text="The Archive page will only list posts that have a date in their front matter.") }}
 
 ### Tags
 
@@ -513,6 +521,17 @@ path = "about"
 ```
 
 Notice how the `path` is set to `about`. Zola will place the page at `$base_url/about/`. If you'd like to have the page available at `/contact/`, you'd set `path = "contact"`.
+
+The `info-page.html` template can also be used to create landing pages at the path root (`"/"`). To do that, the `content/_index.md` file should look like this:
+
+```markdown
++++
+title = "Landing Page Title"
+template = "info-page.html"
++++
+
+Place your landing page Markdown content here.
+```
 
 ---
 
@@ -602,7 +621,9 @@ This adds metadata to your HTML, allowing Mastodon to display the author's fediv
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
 
-The navigation bar is the bar at the top of the page that contains the site title and the navigation menu. You can customise which items appear by setting `menu` in `config.toml`. For example:
+The navigation bar is the bar at the top of the page that contains the site title and the navigation menu. You can customise which items appear by setting `menu` in `config.toml`.
+
+The menu supports both relative URLs for internal pages and absolute URLs for external links. For example:
 
 ```toml
 menu = [
@@ -611,6 +632,7 @@ menu = [
     { name = "tags", url = "tags", trailing_slash = true },
     { name = "projects", url = "projects", trailing_slash = true },
     { name = "about", url = "about", trailing_slash = true },
+    { name = "github", url = "https://github.com/welpo/tabi", trailing_slash = false },
 ]
 ```
 
@@ -728,9 +750,9 @@ See the [Mermaid documentation](@/blog/shortcodes/index.md#mermaid-diagrams) for
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
 
-Custom fonts cause flashing text in Firefox. To amend this, tabi loads a subset of glyphs for the header. Since this (slightly) increases the initial load time, it's a good idea to try and minimise the size of this subset.
+Custom fonts cause flashing text in Firefox. To amend this, tabi loads a subset of glyphs for the header. Since this (slightly) increases the initial load time, it's a good idea to try and minimise the size of this subset, or disable it completely if you're not using a custom font in your skin.
 
-You can create a custom subset tailored to your site, save it as `static/custom_subset.css`, and have it load with `custom_subset = true`.
+You can create a custom subset tailored to your site, save it as `static/custom_subset.css`, and have it load with `custom_subset = true`. Disabling the subset can be done with `enable_subset = false`.
 
 For more information, including instructions on how to create a custom subset, see the [docs](@/blog/custom-font-subset/index.md).
 
