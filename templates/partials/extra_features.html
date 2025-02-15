@@ -63,11 +63,11 @@
 {%- endif -%}
 
 {# JavaScript to make code block names clickable when they are URLs: https://welpo.github.io/tabi/blog/shortcodes/#show-source-or-path #}
-{# Note: "add_src_to_code_block" is deprecated in favor of "clickable_code_names". It will be removed in a future release. #}
+{# Note: "add_src_to_code_block" is deprecated in favor of "clickable_code_block_names". It will be removed in a future release. #}
 {# See https://github.com/welpo/tabi/pull/489 #}
-{%- if macros_settings::evaluate_setting_priority(setting="clickable_code_names", page=page_s, section=section_s, default_global_value=false) == "true" 
+{%- if macros_settings::evaluate_setting_priority(setting="clickable_code_block_names", page=page_s, section=section_s, default_global_value=false) == "true"
     or macros_settings::evaluate_setting_priority(setting="add_src_to_code_block", page=page_s, section=section_s, default_global_value=false) == "true" -%}
-    <script defer src="{{ get_url(path='js/clickableCodeNames.min.js', trailing_slash=false) | safe }}"></script>
+    <script defer src="{{ get_url(path='js/clickableCodeBlockNames.min.js', trailing_slash=false) | safe }}"></script>
 {%- endif -%}
 
 {# Add backlinks to footnotes #}

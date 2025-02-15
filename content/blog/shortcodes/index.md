@@ -11,7 +11,7 @@ tags = ["showcase", "shortcodes"]
 toc = true
 toc_levels = 2
 quick_navigation_buttons = true
-clickable_code_names = true
+clickable_code_block_names = true
 mermaid = true
 social_media_card = "social_cards/blog_shortcodes.jpg"
 +++
@@ -213,7 +213,7 @@ fn main() {
 
 If you set the `name` to a URL (i.e. it starts with `http` or `https`), you can turn it into a clickable link. This is particularly useful when used in conjunction with the [remote text shortcode](#remote-text).
 
-{{ admonition(type="warning", title="JavaScript required", text="The clickable URL feature requires JavaScript. To enable it, set `clickable_code_names = true` on the `[extra]` section of your page, section, or `config.toml`.") }}
+{{ admonition(type="warning", title="JavaScript required", text="The clickable URL feature requires JavaScript. To enable it, set `clickable_code_block_names = true` on the `[extra]` section of your page, section, or `config.toml`.") }}
 
 ```.gitignore,name=https://github.com/welpo/doteki/blob/main/.gitignore
 __pycache__/

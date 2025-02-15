@@ -703,7 +703,7 @@ Establir `copy_button = true` afegirà un petit botó de copiar a la part superi
 |:------:|:-------:|:-------------:|:---------------:|:-------------------:|
 |   ✅   |   ✅    |      ✅       |        ✅       |         ✅          |
 
-En establir `clickable_code_names = true` s'habiliten els enllaços clicables als noms dels blocs de codi. Consulta la [documentació](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url) per veure exemples i ús.
+En establir `clickable_code_block_names = true` s'habiliten els enllaços clicables als noms dels blocs de codi. Consulta la [documentació](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url) per veure exemples i ús.
 
 ### Forçar blocs de codi d'esquerra a dreta
 

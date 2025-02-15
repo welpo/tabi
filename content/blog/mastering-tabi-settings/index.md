@@ -714,7 +714,7 @@ Setting `copy_button = true` will add a small copy button to the top right of co
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ✅  |   ✅    |      ✅       |         ✅        |         ✅          |
 
-Setting `clickable_code_names = true` enables URLs in code block names to become clickable links. Check out the [documentation](@/blog/shortcodes/index.md#show-source-or-path) for examples and usage.
+Setting `clickable_code_block_names = true` enables URLs in code block names to become clickable links. Check out the [documentation](@/blog/shortcodes/index.md#show-source-or-path) for examples and usage.
 
 ### Force Code Blocks LTR
 
