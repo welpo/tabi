@@ -18,12 +18,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Zola Build
-        uses: shalzz/zola-deploy-action@v0.19.2
+        uses: shalzz/zola-deploy-action@v0.20.0
         env:
           BUILD_ONLY: true
 
       - name: Zola Check
-        uses: shalzz/zola-deploy-action@v0.19.2
+        uses: shalzz/zola-deploy-action@v0.20.0
         env:
           BUILD_ONLY: true
           CHECK_LINKS: true
@@ -37,7 +37,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build and Deploy
-        uses: shalzz/zola-deploy-action@v0.19.2
+        uses: shalzz/zola-deploy-action@v0.20.0
         env:
           PAGES_BRANCH: gh-pages
           TOKEN: ${{ secrets.TOKEN }}
