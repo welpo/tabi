@@ -101,7 +101,7 @@ main {
         mask-size: 100% 100%;
         margin-inline-start: 0.2em;
         inset-inline-end: 0;
-        background-color: var(--primary-color);
+        background-color: currentColor;
         width: 0.8em;
         height: 0.8em;
         content: '';
