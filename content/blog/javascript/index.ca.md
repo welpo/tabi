@@ -28,7 +28,7 @@ Les següents opcions es poden especificar per a publicacions, seccions i global
 - [**Suport de KaTeX**](@/blog/markdown/index.ca.md#katex). Habilitat configurant `katex = true` (274 KB). Per renderitzar fórmules sense JS, prova [MathML](https://developer.mozilla.org/docs/Web/MathML/).
 - [**Diagrames de Mermaid**](@/blog/shortcodes/index.ca.md#diagrames-de-mermaid). Habilitat configurant `mermaid = true` (~2.5 MB).
 - [**Còpia de blocs de codi amb un sol clic**](@/blog/markdown/index.ca.md#bloc-de-codi). Habilitada configurant `copy_button = true`. (~700 bytes)
-- [**Noms de blocs de codi clicables**](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url). S'activa configurant `clickable_code_block_names = true`. (~400 bytes)
+- [**Noms de blocs de codi clicables**](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url). S'activa configurant `code_block_name_links = true`. (~400 bytes)
 - [**Filtratge per etiquetes** per a graelles de targetes](@/blog/mastering-tabi-settings/index.ca.md#filtrar-projectes) (p. ex. [projectes](@/projects/_index.ca.md)) (~2KB). S'habilita configurant `enable_cards_tag_filtering = true`.
 
 Per especificar aquestes opcions:

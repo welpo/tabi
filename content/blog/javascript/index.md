@@ -28,7 +28,7 @@ The following settings can be specified for posts, sections and globally, follow
 - [**KaTeX support**](@/blog/markdown/index.md#katex). Enabled by setting `katex = true` (274 KB). To render math without JS, check out [MathML](https://developer.mozilla.org/docs/Web/MathML/).
 - [**Mermaid diagrams**](@/blog/shortcodes/index.md#mermaid-diagrams). Enabled by setting `mermaid = true` (~2.5 MB).
 - [**One-click copy of code blocks**](@/blog/markdown/index.md#code-block). Enabled by setting `copy_button = true`. (~700 bytes)
-- [**Clickable code block names**](@/blog/shortcodes/index.md#show-source-or-path). Enabled by setting `clickable_code_block_names = true`. (~300 bytes)
+- [**Clickable code block names**](@/blog/shortcodes/index.md#show-source-or-path). Enabled by setting `code_block_name_links = true`. (~300 bytes)
 - [**Tag filtering** for card grids](@/blog/mastering-tabi-settings/index.md#filtering-projects) (e.g. [projects](@/projects/_index.md)) (~2KB). Enabled by setting `enable_cards_tag_filtering = true`.
 
 To specify these settings:

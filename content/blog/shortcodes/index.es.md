@@ -11,7 +11,7 @@ tags = ["funcionalidad", "shortcodes"]
 toc = true
 toc_levels = 2
 quick_navigation_buttons = true
-clickable_code_block_names = true
+code_block_name_links = true
 mermaid = true
 social_media_card = "social_cards/es_blog_shortcodes.jpg"
 +++
@@ -212,7 +212,7 @@ fn main() {
 
 Si estableces el `name` como una URL (es decir, comienza con `http` o `https`), puedes convertirlo en un enlace clickable. Esto es particularmente útil cuando se usa junto con el [shortcode de texto remoto](#texto-remoto).
 
-{{ admonition(type="warning", title="JavaScript requerido", text="La función de URLs clickables requiere JavaScript. Para habilitarla, configura `clickable_code_block_names = true` en la sección `[extra]` de tu página, sección, o `config.toml`.") }}
+{{ admonition(type="warning", title="JavaScript requerido", text="La función de URLs clickables requiere JavaScript. Para habilitarla, configura `code_block_name_links = true` en la sección `[extra]` de tu página, sección, o `config.toml`.") }}
 
 ```.gitignore,name=https://github.com/welpo/doteki/blob/main/.gitignore
 __pycache__/

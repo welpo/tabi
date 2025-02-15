@@ -28,7 +28,7 @@ Las siguientes opciones pueden especificarse para publicaciones, secciones y a n
 - [**Soporte de KaTeX**](@/blog/markdown/index.es.md#katex). Habilitado al configurar `katex = true` (274 KB). Para renderizar fórmulas sin JS, prueba [MathML](https://developer.mozilla.org/docs/Web/MathML/).
 - [**Diagramas de Mermaid**](@/blog/shortcodes/index.es.md#diagramas-de-mermaid). Habilitado al configurar `mermaid = true` (~2.5 MB).
 - [**Copia de bloques de código con un solo clic**](@/blog/markdown/index.es.md#bloque-de-codigo). Habilitado al configurar `copy_button = true` (~700 bytes).
-- [**Nombres de bloques de código clicables**](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url). Se activa configurando `clickable_code_block_names = true`. (~400 bytes)
+- [**Nombres de bloques de código clicables**](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url). Se activa configurando `code_block_name_links = true`. (~400 bytes)
 - [**Filtraje por etiquetas** para cuadrículas de tarjetas](@/blog/mastering-tabi-settings/index.es.md#filtrar-proyectos) (p. ej. [proyectos](@/projects/_index.es.md)) (~2KB). Habilitado al configurar `enable_cards_tag_filtering = true`.
 
 Para especificar estas opciones:

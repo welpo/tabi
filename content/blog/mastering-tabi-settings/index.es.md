@@ -704,7 +704,7 @@ Establecer `copy_button = true` añadirá un pequeño botón de copiar en la par
 |:------:|:-------:|:-------------:|:---------------:|:-------------------:|
 |   ✅   |   ✅    |      ✅       |        ✅       |         ✅          |
 
-Establece `clickable_code_block_names = true` para habilitan los enlaces clickables en los nombres de bloques de código. Consulta la [documentación](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url) para ver ejemplos y uso.
+Establece `code_block_name_links = true` para habilitan los enlaces clickables en los nombres de bloques de código. Consulta la [documentación](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url) para ver ejemplos y uso.
 
 ### Forzar bloques de código de izquierda a derecha
 
