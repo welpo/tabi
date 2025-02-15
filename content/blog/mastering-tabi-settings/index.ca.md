@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2024-11-30
+updated = 2025-02-15
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -240,7 +240,7 @@ Fes clic a la imatge a continuació per comparar les fonts:
 |:------:|:------:|:-------------:|:-----------------:|:-------------------:|
 |   ❌   |   ❌   |      ✅       |         ❌        |         ❌          |
 
-{{ admonition(type="info", text="Requereix Zola 0.19.3 o posterior.") }}
+{{ admonition(type="info", text="Requereix Zola 0.20.0 o posterior.") }}
 
 Si vols afegir una icona als enllaços externs, configura la secció `[markdown]` (no `[extra]`) al teu `config.toml`:
 

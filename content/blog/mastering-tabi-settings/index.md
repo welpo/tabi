@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2024-11-30
+updated = 2025-02-15
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -244,7 +244,7 @@ Click on the image below to compare the two looks:
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
 
-{{ admonition(type="info", text="Requires Zola 0.19.3 or later.") }}
+{{ admonition(type="info", text="Requires Zola 0.20.0 or later.") }}
 
 If you'd like to add an icon to external links, configure the `[markdown]` (not `[extra]`) section in your `config.toml`:
 
