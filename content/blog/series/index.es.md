@@ -1,6 +1,7 @@
 +++
 title = "Guía completa sobre series"
 date = 2024-11-08
+updated = 2025-02-15
 description = "Aprende a organizar tus publicaciones en series secuenciales, perfectas para tutoriales, cursos e historias de varias partes."
 
 [taxonomies]
@@ -48,9 +49,7 @@ flowchart
 2. Crea `_index.md` en el directorio de la serie
 3. Configura el front matter de `_index.md`:
 
-    {{ add_src_to_code_block(src="series/_index.md") }}
-
-    ```toml
+    ```toml,name=series/_index.md
     title = "Aprendiendo Rust"
     template = "series.html"
     sort_by = "slug"
@@ -154,9 +153,7 @@ Esta configuración sigue [la jerarquía](@/blog/mastering-tabi-settings/index.e
 
 Los artículos de una serie pueden tener secciones automáticas de introducción y conclusión. Estas se configuran en el `_index.md` de tu serie. Un ejemplo básico:
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra.series_intro_templates]
 default = "Este artículo es parte de la serie $SERIES_HTML_LINK."
 
@@ -177,9 +174,7 @@ El sistema de series usa diferentes plantillas según la posición del artículo
 
 El sistema determina automáticamente qué plantilla usar según la posición del artículo. Las plantillas se definen en la configuración de la serie (`_index.md`), como `extra.series_intro_templates` y `extra.series_outro_templates`:
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra.series_intro_templates]
 next_only = "¡Bienvenido a la parte 1! Siguiente: $NEXT_HTML_LINK"
 middle = "Anterior: $PREV_HTML_LINK | Siguiente: $NEXT_HTML_LINK"
@@ -285,9 +280,7 @@ Hay tres tipos de variables:
 
 {{ admonition(type="tip", title="Variables HTML vs texto", text="Usa variables HTML (que terminan en `_HTML_LINK`) cuando quieras enlaces listos para usar. Usa variables de texto (que terminan en `_TITLE` o `_PERMALINK`) cuando quieras más control sobre el formato.") }}
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 # Introducción.
 [extra.series_intro_templates]
 next_only = """
@@ -351,9 +344,7 @@ Las plantillas de series admiten variables personalizadas para incluir informaci
 
 1. Primero, define tus **marcadores** en la configuración de tu serie (`_index.md`):
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra]
 series = true
 series_template_placeholders = ["$POSITION", "$TOPIC", "$DIFFICULTY"]
@@ -361,9 +352,7 @@ series_template_placeholders = ["$POSITION", "$TOPIC", "$DIFFICULTY"]
 
 2. Luego, en cada artículo de la serie, proporciona los valores para estos marcadores en `series_template_variables`:
 
-{{ add_src_to_code_block(src="series/article.md") }}
-
-```toml
+```toml,name=series/article.md
 [extra.series_template_variables]
 position = "primero"
 topic = "Variables y tipos"
@@ -374,9 +363,7 @@ difficulty = "Principiante"
 
 Puedes usar tus variables personalizadas en cualquier plantilla, junto con las variables integradas:
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra.series_intro_templates]
 default = """
 Este es el artículo $POSITION en $SERIES_HTML_LINK.
@@ -389,9 +376,7 @@ Nivel de dificultad: $DIFFICULTY
 
 ### Ejemplo con variables personalizadas
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 # En la configuración de la serie.
 [extra]
 series = true
@@ -404,9 +389,7 @@ series_intro_templates.default = """
 """
 ```
 
-{{ add_src_to_code_block(src="series/02-learning-rust/index.md") }}
-
-```toml
+```toml,name=series/02-learning-rust/index.md
 # En un artículo de la serie.
 [extra.series_template_variables]
 learning_time = "30 minutos"

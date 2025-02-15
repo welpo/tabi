@@ -10,7 +10,6 @@ tags = ["GitHub Actions", "automation", "Python"]
 local_image = "projects/doteki/doteki_logo.webp"
 social_media_card = "social_cards/projects_doteki.jpg"
 canonical_url = "https://osc.garden/projects/doteki/"
-add_src_to_code_block = true
 +++
 
 **dōteki** updates your GitHub profile README automatically. Add your latest blog posts, music you're listening to, or any other dynamic content using plugins.
@@ -23,18 +22,14 @@ add_src_to_code_block = true
 
 1. Add markers to your README:
 
-{{ add_src_to_code_block(src="README.md") }}
-
-```md
+```md,name=README.md
 <!-- blog start -->
 <!-- blog end -->
 ```
 
 2. Configure what goes there:
 
-{{ add_src_to_code_block(src="doteki.toml") }}
-
-```toml
+```toml,name=doteki.toml
 [sections.blog]
 plugin = "feed"
 url = "https://osc.garden/atom.xml"  # Replace with your feed.

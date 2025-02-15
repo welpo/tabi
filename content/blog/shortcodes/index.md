@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2024-12-28
+updated = 2025-02-15
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -11,7 +11,7 @@ tags = ["showcase", "shortcodes"]
 toc = true
 toc_levels = 2
 quick_navigation_buttons = true
-add_src_to_code_block = true
+code_block_name_links = true
 mermaid = true
 social_media_card = "social_cards/blog_shortcodes.jpg"
 +++
@@ -191,28 +191,48 @@ All other image shortcodes can be made into full-width by setting the optional p
 
 ### Show source or path
 
-Display a path or URL on the next code block found. If it starts with "http", it will become a link. Particularly useful when used in conjunction with the [remote text shortcode](#remote-text).
+You can display a path or URL for a code block using Zola's native syntax:
 
-{{ add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") }}
-
-```.gitignore
-{{ remote_text(src="https://raw.githubusercontent.com/welpo/doteki/main/.gitignore") }}
-```
-
-{{ admonition(type="warning", title="IMPORTANT", text="This feature requires JavaScript. To enable it, set `add_src_to_code_block = true` on the `[extra]` section of your page, section, or `config.toml`.") }}
-
-#### Usage
+{{ aside(text="Requires Zola 0.20.0 or later.") }}
 
 ````
-{{/* add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") */}}
+```rust,name=src/main.rs
+fn main() {
+    println!("Hello, world!");
+}
+```
+````
 
-```.gitignore
+This renders:
+
+```rust,name=src/main.rs
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+If you set the `name` to a URL (i.e. it starts with `http` or `https`), you can turn it into a clickable link. This is particularly useful when used in conjunction with the [remote text shortcode](#remote-text).
+
+{{ admonition(type="warning", title="JavaScript required", text="The clickable URL feature requires JavaScript. To enable it, set `code_block_name_links = true` on the `[extra]` section of your page, section, or `config.toml`.") }}
+
+```.gitignore,name=https://github.com/welpo/doteki/blob/main/.gitignore
 __pycache__/
 *coverage*
 .vscode/
 dist/
 ```
-````
+
+### Legacy shortcode support
+
+The `add_src_to_code_block` shortcode is still supported for backward compatibility but will be deprecated in a future release. Please use Zola's native syntax shown above instead:
+
+```
+# Old way (deprecated):
+{{/* add_src_to_code_block(src="path/to/file.rs") */}}
+
+# New way (preferred):
+```rust,name=path/to/file.rs
+```
 
 ## Text shortcodes
 
