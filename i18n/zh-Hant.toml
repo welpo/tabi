@@ -23,6 +23,8 @@ one_results = "$NUMBER 個結果"
 many_results = "$NUMBER 個結果"
 
 # Navigation.
+pinned = "釘選"
+jump_to_posts = "跳轉到文章"
 read_more = "閱讀全文"
 one_posts = "$NUMBER 篇文章"
 many_posts = "$NUMBER 篇文章"

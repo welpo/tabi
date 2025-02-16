@@ -4,13 +4,15 @@
 
 {%- block main_content %}
 
-{{ macros_page_header::page_header(title=page.title) }}
+{%- set page_or_section = page | default(value=section) -%}
+
+{{ macros_page_header::page_header(title=page_or_section.title) }}
 
 <div id="page-content">
     <main>
         {# The replace pattern is used to enable arbitrary locations for the Table of Contents #}
         {# This is Philipp Oppermann's workaround: https://github.com/getzola/zola/issues/584#issuecomment-474329637 #}
-        {{ page.content | replace(from="<!-- toc -->", to=macros_toc::toc(page=page, header=false, language_strings=language_strings)) | safe }}
+        {{ page_or_section.content | replace(from="<!-- toc -->", to=macros_toc::toc(page=page_or_section, header=false, language_strings=language_strings)) | safe }}
     </main>
 </div>
 

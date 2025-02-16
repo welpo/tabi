@@ -1,4 +1,5 @@
 code {
+    -webkit-text-size-adjust: 100%;
     border-radius: 5px;
     background-color: var(--bg-1);
     padding-inline: 0.2em;
@@ -27,10 +28,13 @@ code {
             padding: 0rem;
         }
 
+        // Line number col.
         tbody td:first-child {
-            width: 2rem;
+            opacity: 50%;
+            padding-inline-end: 0.8rem;
+            width: 1px;  // Without this, iOS Safari centres short lines.
             user-select: none;
-            text-align: start;
+            text-align: end;
         }
 
         tbody tr:nth-child(even) {
@@ -54,6 +58,32 @@ pre {
     overflow-x: auto;
     line-height: 1.4;
 
+    code,
+    code td {
+        font-size: 0.8rem;  // Fits ~77 characters.
+    }
+
+    // Supports both native Zola way of adding src, and old shortcode-based logic.
+    // See: https://github.com/welpo/tabi/pull/489
+    &::after,
+    code .source-path {
+        display: block;
+        position: absolute;
+        top: 0;
+        inset-inline-end: 1.3rem;
+        padding-top: 0.3rem;
+        padding-inline-end: 1.3rem;
+        max-width: calc(100% - 14em);
+        height: 0.9rem;
+        overflow: hidden;
+        content: attr(data-name);
+        color: var(--hover-color);
+        font-size: 0.65rem;
+        text-align: end;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     code {
         display: block;
         border: 0rem;
@@ -62,7 +92,6 @@ pre {
         padding: 0rem;
         overflow-x: auto;
         color: inherit;
-        font-size: 0.8rem;  // Fits ~77 characters.
         white-space: pre;
 
         &::before {
@@ -81,23 +110,18 @@ pre {
             text-align: start;
             text-transform: uppercase;
         }
+    }
+}
 
-        .source-path {
-            display: block;
-            position: absolute;
-            top: 0;
-            inset-inline-end: 1.3rem;
-            padding-top: 0.3rem;
-            padding-inline-end: 1.3rem;
-            max-width: calc(100% - 14em);
-            height: 0.9rem;
-            overflow: hidden;
-            color: var(--hover-color);
-            font-size: 0.65rem;
-            text-align: end;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
+// Default to LTR codeblocks.
+code, pre {
+    direction: ltr;
+}
+
+// Allows RTL codeblocks if `force_codeblock_ltr` is set to false.
+html[data-code-direction="inherit"] {
+    code, pre {
+        direction: inherit;
     }
 }
 

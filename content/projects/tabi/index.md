@@ -1,7 +1,10 @@
 +++
 title = "tabi"
 description = "A feature-rich modern Zola theme with first-class multi-language support."
-weight = 30
+weight = 40
+
+[taxonomies]
+tags = ["web", "JavaScript"]
 
 [extra]
 local_image = "projects/tabi/tabi.webp"
@@ -18,6 +21,7 @@ social_media_card = "social_cards/projects_tabi.jpg"
 
 - [Set any language as default](https://welpo.github.io/tabi/blog/faq-languages/#how-do-i-set-a-default-language-for-my-site). Set your base site to Chinese, Spanish, French, Hindi… or any [other supported language](https://welpo.github.io/tabi/blog/faq-languages/#what-languages-does-tabi-support). The theme's interface will be translated accordingly.
 - [Integration with remote repositories](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#git-repository-integration) on GitHub, GitLab, Gitea & Codeberg for commit history and showing the site source.
+- [Series support](https://welpo.github.io/tabi/blog/series/) for creating sequential content like tutorials, courses, and multi-part stories.
 - Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
 - Thorough documentation. See [Mastering tabi Settings: A Comprehensive Guide](https://welpo.github.io/tabi/blog/mastering-tabi-settings/).
 - Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
@@ -44,6 +48,7 @@ social_media_card = "social_cards/projects_tabi.jpg"
 - Responsive design.
 - [Projects page](https://welpo.github.io/tabi/projects/).
 - [Archive page](https://welpo.github.io/tabi/archive/).
+- [Pinned posts](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#pinning-posts).
 - [Social links](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-icons).
 - [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 

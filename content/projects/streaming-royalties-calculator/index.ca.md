@@ -3,6 +3,9 @@ title = "Calculadora de royalties de streaming"
 description = "Una eina per calcular els royalties de streaming per a músics."
 weight = 45
 
+[taxonomies]
+tags = ["música", "interactiu", "web app", "web", "JavaScript", "anàlisi de dades"]
+
 [extra]
 local_image = "projects/streaming-royalties-calculator/streaming-royalties-calculator_logo.webp"
 canonical_url = "https://osc.garden/ca/projects/streaming-royalties-calculator/"

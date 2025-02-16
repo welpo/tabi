@@ -33,6 +33,8 @@ few_results = "$NUMBER результати"
 many_results = "$NUMBER результатів"
 
 # Navigation.
+pinned = "Закріплено"
+jump_to_posts = "Перейти до дописів"
 read_more = "Читати далі"
 one_posts = "$NUMBER пост"
 few_posts = "$NUMBER пости"  # 2, 3, 4 but not 12-14

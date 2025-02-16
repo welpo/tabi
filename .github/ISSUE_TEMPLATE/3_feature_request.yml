@@ -1,0 +1,34 @@
+name: "✨ Feature request"
+description: "Suggest an idea for tabi"
+labels: ["enhancement"]
+body:
+- type: textarea
+  attributes:
+      label: "Summary and motivation"
+      description: "Briefly describe the feature and why it would be valuable for tabi users."
+      placeholder: |
+          Describe:
+          - What the feature is
+          - Why it would be useful
+          - Any examples from other projects
+  validations:
+      required: true
+
+- type: textarea
+  attributes:
+      label: "Implementation details"
+      description: "Share any ideas you have about how this could be implemented."
+      placeholder: "Technical suggestions, potential approaches, or specific requirements."
+  validations:
+      required: false
+
+- type: checkboxes
+  attributes:
+      label: "Checklist"
+      options:
+          - label: "I've searched existing issues to make sure this feature hasn't already been requested."
+            required: true
+          - label: "This feature aligns with tabi's philosophy (minimal JS, accessible…)"
+            required: true
+          - label: "I'm willing to contribute to the implementation of this feature."
+            required: false

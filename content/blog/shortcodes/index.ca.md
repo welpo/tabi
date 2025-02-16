@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2024-08-28
+updated = 2025-02-15
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -11,7 +11,7 @@ tags = ["funcionalitat", "shortcodes"]
 toc = true
 toc_levels = 2
 quick_navigation_buttons = true
-add_src_to_code_block = true
+code_block_name_links = true
 mermaid = true
 social_media_card = "social_cards/ca_blog_shortcodes.jpg"
 +++
@@ -28,7 +28,7 @@ Per incloure un diagrama Mermaid a la teva publicació, cal fer dues coses:
 
 2. Utilitza el shortcode `mermaid()` per definir el teu diagrama. Per exemple:
 
-```plaintext
+```txt
 {%/* mermaid() */%}
 classDiagram
     class DistorsionsCognitives {
@@ -91,12 +91,25 @@ El shortcode de Mermaid admet dos paràmetres:
 
 {{ admonition(type="tip", title="CONSELL", text="Empra l'[editor de Mermaid](https://mermaid.live/) per crear i previsualitzar els teus diagrames.") }}
 
+#### Ús
+
+```
+{%/* mermaid(invertible=true, full_width=false) */%}
+
+El teu codi Mermaid va aquí.
+
+`invertible` or `full_width` poden ometre's per emprar els valors per defecte.
+
+{%/* end */%}
+```
+
 ## Shortcodes d'imatge
 
 Tots els shortcodes d'imatge admeten rutes absolutes, rutes relatives, i fonts remotes en el paràmetre `src`.
 
-Tots els shortcodes d'imatge tenen tres paràmetres opcionals:
+Tots els shortcodes d'imatge tenen els següents paràmetres opcionals:
 
+- `raw_path`. Per defecte és `false`. Si es configura a `true`, el paràmetre `src` s'utilitzarà tal qual. Útil per a actius ubicats a la mateixa carpeta que tenen un slug personalitzat (vegeu [Zola issue #2598](https://github.com/getzola/zola/issues/2598)).
 - `inline`. Valor predeterminat: `false`. Si s'estableix a `true`, la imatge es mostrarà en línia amb el text.
 - `full_width`. Valor predeterminat: `false` (vegeu [a sota](#imatge-d-amplada-completa)).
 - `lazy_loading`. Valor predeterminat: `true`.
@@ -178,23 +191,55 @@ Tots els altres shortcodes d'imatges poden utilizar l'amplada completa assignant
 
 ### Mostrar ruta o URL
 
-Mostra una ruta o URL al següent bloc de codi trobat. Si comença amb "http", es convertirà en un enllaç. Particularment útil quan s'utilitza en conjunció amb el [shortcode de text remot](#text-remot).
+Pots mostrar una ruta o URL per a un bloc de codi utilitzant la sintaxi nativa de Zola:
 
-{{ admonition(type="warning", title="IMPORTANT", text="Aquesta funcionalitat requereix JavaScript. Per activar-la, configura `add_src_to_code_block = true` a la secció `[extra]` de la teva pàgina, secció, o `config.toml`.") }}
+{{ aside(text="Requereix Zola 0.20.0 o superior.") }}
 
-{{ add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") }}
+````
+```rust,name=src/main.rs
+fn main() {
+    println!("Hola, món!");
+}
+```
+````
 
-```.gitignore
-{{ remote_text(src="https://raw.githubusercontent.com/welpo/doteki/main/.gitignore") }}
+Això renderitza:
+
+```rust,name=src/main.rs
+fn main() {
+    println!("Hola, món!");
+}
+```
+
+Si estableixes el `name` com una URL (és a dir, comença amb `http` o `https`), pots convertir-lo en un enllaç clicable. Això és particularment útil quan s'utilitza juntament amb el [shortcode de text remot](#text-remot).
+
+{{ admonition(type="warning", title="JavaScript necessari", text="La funció d'URLs clicables requereix JavaScript. Per habilitar-la, configura `code_block_name_links = true` a la secció `[extra]` de la teva pàgina, secció, o `config.toml`.") }}
+
+```.gitignore,name=https://github.com/welpo/doteki/blob/main/.gitignore
+__pycache__/
+*coverage*
+.vscode/
+dist/
+```
+
+### Suport de shortcode heretat
+
+El shortcode `add_src_to_code_block` segueix funcionant per retrocompatibilitat però serà descontinuat en una versió futura. Si us plau, utilitza la sintaxi nativa de Zola:
+
+```
+# Forma antiga (descontinuada):
+{{/* add_src_to_code_block(src="ruta/al/fitxer.rs") */}}
+
+# Forma nova (recomanada):
+```rust,name=ruta/al/fitxer.rs
 ```
 
 #### Ús
 
 ````
 {{/* add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") */}}
-
 ```.gitignore
-__pycache__/
+**pycache**/
 *coverage*
 .vscode/
 dist/
@@ -203,14 +248,54 @@ dist/
 
 ## Shortcodes de text
 
+### Aside (nota al marge)
+
+Afegeix contingut complementari als marges en pantalles amples, o com a blocs distintius en mòbil.
+
+{{ aside(text="*Nota al marge* ve de *nota* (del llatí, 'marca' o 'senyal') i *marge* (del llatí *margo*, 'vora' o 'límit').") }}
+
+El shortcode accepta dos paràmetres:
+
+- `position`: Establir com a `"right"` per col·locar al marge dret (per defecte, esquerre)
+- El contingut es pot proporcionar mitjançant el paràmetre `text` o entre les etiquetes del shortcode
+
+#### Ús
+
+{{ admonition(type="warning", text="Separa la definició de la nota del shortcode amb dues línies en blanc per evitar errors de renderització.") }}
+
+Fent servir el paràmetre `text`:
+
+```
+{{/* aside(text="*Nota al marge* ve de *nota* (del llatí, 'marca' o 'senyal') i *marge* (del llatí *margo*, 'vora' o 'límit').") */}}
+```
+
+Fent servir el cos del contingut i indicant la posició a la dreta:
+
+```
+{%/* aside(position="right") */%}
+Una nota més llarga que
+pot ocupar diverses línies.
+
+S'admet *Markdown*.
+{%/* end */%}
+```
+
 ### Text remot
 
 Afegeix text des d'una URL remota o un arxiu local.
 
+El shortcode accepta tres paràmetres:
+
+- `src`: L'URL d'origen o ruta del fitxer (obligatori)
+- `start`: Primera línia a mostrar (opcional, comença a 1)
+- `end`: Número de l'última línia (opcional, per defecte és 0, l'última línia)
+
+{{ admonition(type="info", text="`start` i `end` són inclusius. `start=3, end=3` mostrarà només la tercera línia.") }}
+
 **Important**:
 
 - **Arxius remots VS arxius locals**: Si `src` comença amb "http", es tractarà com un arxiu remot. D'altra banda, s'assumeix que és una ruta d'arxiu local.
-- **Accés a arxius**: Atès que utilitza la funció [`load_data`](https://www.getzola.org/documentation/templates/overview/#load-data) de Zola, els arxius locals han d'estar dins del directori de Zola —vegeu la [lògica de cerca d'arxius](https://www.getzola.org/documentation/templates/overview/#file-searching-logic).
+- **Accés a arxius**: Atès que utilitza la funció [`load_data`](https://www.getzola.org/documentation/templates/overview/#load-data) de Zola, els arxius locals han d'estar dins del directori de Zola —vegeu la [lògica de cerca d'arxius](https://www.getzola.org/documentation/templates/overview/#file-searching-logic). Desde [tabi 2.16.0](https://github.com/welpo/tabi/releases/tag/v2.16.0), el shortcode admet també rutes relatives.
 - **Formateig de blocs de codi**: Per mostrar el text com un bloc de codi, has d'afegir manualment les tanques de codi Markdown (cometes inverses) i, opcionalment, especificar el llenguatge de programació per al ressaltat sintàctic.
 
 #### Ús
@@ -227,6 +312,12 @@ Mostra el text d'un arxiu local:
 
 ```
 {{/* remote_text(src="ruta/a/arxiu.txt") */}}
+```
+
+Mostreu només les línies 3 a 5 d'un arxiu local:
+
+```
+{{/* remote_text(src="ruta/a/arxiu.txt", start=3, end=5) */}}
 ```
 
 ### Advertències
@@ -249,9 +340,25 @@ Pots canviar el `title` i la `icon` de l'advertència. Ambdós paràmetres accep
 
 #### Ús
 
-```
+Pots utilitzar les advertències de dues maneres:
+
+1. En línia amb paràmetres:
+
+```md
 {{/* admonition(type="danger", icon="tip", title="Un consell important", text="Mantingues-te hidratat") */}}
 ```
+
+2. Amb contingut al cos:
+
+```md
+{%/* admonition(type="danger", icon="tip", title="Un consell important") */%}
+Mantingues-te hidratat
+
+Aquest mètode és especialment útil per a contingut llarg o múltiples paràgrafs.
+{%/* end */%}
+```
+
+Ambdós mètodes admeten els mateixos paràmetres (`type`, `icon`, i `title`).
 
 ### Cites multillenguatge
 
@@ -336,3 +443,31 @@ El Markdown, per suposat, serà interpretat.
 
 {%/* end */%}
 ```
+
+### Forçar direcció del text
+
+Força la direcció del text d'un bloc de contingut. Substitueix tant la configuració global `force_codeblock_ltr` com la direcció general del document.
+
+Accepta el paràmetre `direction`: la direcció de text desitjada. Pot ser "ltr" (d'esquerra a dreta) o "rtl" (de dreta a esquerra). Per defecte és "ltr".
+
+{% force_text_direction(direction="rtl") %}
+```python
+def مرحبا_بالعالم():
+    print("مرحبا بالعالم!")
+```
+{% end %}
+
+#### Ús
+
+En una pàgina LTR podem forçar que un bloc de codi sigui RTL (com es mostra a dalt) de la següent manera:
+
+````
+{%/* force_text_direction(direction="rtl") */%}
+
+```python
+def مرحبا_بالعالم():
+    print("مرحبا بالعالم!")
+```
+
+{%/* end */%}
+````

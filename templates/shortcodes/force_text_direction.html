@@ -1,0 +1,5 @@
+{%- set direction = direction | default(value="ltr") -%}
+
+<div data-force-text-direction="{{ direction }}">
+    {{ body | markdown | safe }}
+</div>

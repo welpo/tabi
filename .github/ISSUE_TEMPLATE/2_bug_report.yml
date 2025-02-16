@@ -1,0 +1,62 @@
+name: "🐛 Bug report"
+description: "Did you run into an issue while using tabi?"
+labels: ["bug"]
+body:
+- type: textarea
+  attributes:
+      label: "System information"
+      description: |
+          Please provide the following information:
+          - Zola version: Run `zola --version`
+          - tabi version or commit hash
+      placeholder: |
+          Zola version: 
+          tabi version or commit: 
+  validations:
+      required: true
+
+- type: textarea
+  attributes:
+      label: "Expected behaviour"
+      description: "Tell us what should have happened."
+      placeholder: "Describe what you expected tabi to do…"
+  validations:
+      required: true
+
+- type: textarea
+  attributes:
+      label: "Actual behaviour"
+      description: "Tell us what happens instead of the expected behavior."
+      placeholder: "Describe what actually happened…"
+  validations:
+      required: true
+
+- type: textarea
+  attributes:
+      label: "Steps to reproduce"
+      description: "Please provide detailed steps to reproduce the issue."
+      placeholder: |
+          1. Set up `config.toml` with these settings: …
+          2. Create content with this structure: …
+          3. Run Zola with these arguments: …
+          4. See the following error: …
+  validations:
+      required: true
+
+- type: textarea
+  attributes:
+      label: "Additional context"
+      description: >
+          Please provide any relevant configuration files, error messages, or screenshots that might help us understand the issue.
+          You can drag and drop files here to attach them.
+  validations:
+      required: false
+
+- type: checkboxes
+  attributes:
+      label: "Final checklist"
+      options:
+          - label: "I've checked that the issue isn't already reported."
+            required: true
+          - label: "I've tested with the latest version of tabi to check if the issue has already been fixed."
+            required: true

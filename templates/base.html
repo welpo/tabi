@@ -5,6 +5,7 @@
 {% import "macros/settings.html" as macros_settings %}
 {% import "macros/table_of_contents.html" as macros_toc %}
 {% import "macros/translate.html" as macros_translate %}
+{% import "macros/series_page.html" as macros_series_page %}
 
 {# Load the internationalisation data for the current language from
 the .toml files in the user's '/i18n' folder, falling back to the theme's.
@@ -15,11 +16,18 @@ This variable will hold all the text strings for the language #}
 {%- endif -%}
 {% set rtl_languages = ["ar", "arc", "az", "dv", "ff", "he", "ku", "nqo", "fa", "rhg", "syc", "ur"] %}
 
+{#- Necessary for the hierarchy macro -#}
+{%- if page -%}
+    {%- set current_page = page -%}
+{%- else -%}
+    {%- set current_page = ""-%}
+{%- endif -%}
 
 <!DOCTYPE html>
 <html lang="{{ lang }}" {% if config.extra.default_theme -%}
     data-theme="{{config.extra.default_theme}}"
-{%- endif -%}>
+{%- endif -%}{% if macros_settings::evaluate_setting_priority(setting="force_codeblock_ltr", page=current_page, default_global_value=true) == "false" -%}
+    data-code-direction="inherit"{% endif %}>
 
 {% include "partials/header.html" %}
 

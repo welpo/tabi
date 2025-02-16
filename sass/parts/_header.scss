@@ -24,17 +24,30 @@ header {
 .nav-navs {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 
     ul {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+        flex-wrap: inherit;
+        justify-content: inherit;
+        align-items: inherit;
         gap: 1px;
         margin: 0;
         padding: 0;
         list-style: none;
     }
+}
+
+.menu-icons-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.menu-icons-group {
+    gap: 1px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links {
@@ -76,11 +89,22 @@ header {
 
     ul,
     li {
-        display: inline;
+        display: inline-block;
+        margin-inline-end: 0.2rem;
         font-family: var(--sans-serif-font);
         list-style-type: none;
     }
+
+    .tag {
+        margin-inline-end: 0;
+    }
+
+    .separator {
+        margin-inline-end: 0.2rem;
+        user-select: none;
+    }
 }
+
 .language-switcher {
     display: flex;
     justify-content: center;
@@ -147,21 +171,21 @@ header {
 
     .nav-navs {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
+    }
+
+    .menu-icons-container {
+        margin-left: 0;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .nav-navs {
-        flex-wrap: wrap;
-        justify-content: center;
         margin-top: 0.8rem;
-        width: 100%;
     }
 
     .navbar {
         flex-direction: column;
-        justify-content: center;
         align-items: center;
     }
 }

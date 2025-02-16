@@ -4,6 +4,142 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [3.1.0](https://github.com/welpo/tabi/compare/v3.0.0..v3.1.0) - 2024-11-14
+
+### ✨ Features
+
+- *(shortcodes)* Support body admonitions ([#423](https://github.com/welpo/tabi/issues/423)) by [@welpo](https://github.com/welpo)
+- Allow pinned posts with pagination ([#428](https://github.com/welpo/tabi/issues/428)) by [@welpo](https://github.com/welpo)
+- Add pinned posts functionality ([#424](https://github.com/welpo/tabi/issues/424)) by [@welpo](https://github.com/welpo)
+- Add series functionality ([#406](https://github.com/welpo/tabi/issues/406)) by [@ZzMzaw](https://github.com/ZzMzaw) and [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- Link to "All posts" in non-default-language root ([3b7fd3d](https://github.com/welpo/tabi/commit/3b7fd3db9c33fd3ca6114ca00fffa2a91f682a0a)) by [@welpo](https://github.com/welpo)
+- Isso comments in multilingual setups ([#427](https://github.com/welpo/tabi/issues/427)) by [@welpo](https://github.com/welpo)
+
+### 💄 Styling
+
+- Colour scrollbar to match primary colour ([#430](https://github.com/welpo/tabi/issues/430)) by [@welpo](https://github.com/welpo)
+- Set accent color to match theme ([#429](https://github.com/welpo/tabi/issues/429)) by [@welpo](https://github.com/welpo)
+- Fix info admonition code color ([5927409](https://github.com/welpo/tabi/commit/5927409c41e71d6943deee426fc75a94037cee36)) by [@welpo](https://github.com/welpo)
+- Improve navigation bar & metadata wrapping ([#425](https://github.com/welpo/tabi/issues/425)) by [@welpo](https://github.com/welpo)
+- Fix hover color for <rt> element in links ([87f1099](https://github.com/welpo/tabi/commit/87f1099caa8741bcacadf2aae2677a529395e454)) by [@welpo](https://github.com/welpo)
+- Add styling for <kbd> keyboard input ([51fee5d](https://github.com/welpo/tabi/commit/51fee5d660232a1eafeb39f439fe5377f3f63406)) by [@welpo](https://github.com/welpo)
+
+### 📝 Documentation
+
+- *(README)* Fix typo ([#421](https://github.com/welpo/tabi/issues/421)) by [@ZzMzaw](https://github.com/ZzMzaw)
+- Highlight pinned posts feature ([c3c344a](https://github.com/welpo/tabi/commit/c3c344a76fb894ec87fc9896e7a0202788e001c5)) by [@welpo](https://github.com/welpo)
+- Clarify instructions for listing recent posts ([#418](https://github.com/welpo/tabi/issues/418)) ([3442fd9](https://github.com/welpo/tabi/commit/3442fd9ff0c0a093f08bb27aaa0d92e5993df29b)) by [@welpo](https://github.com/welpo)
+
+### ♻️ Refactor
+
+- *(GitHub)* Update issue templates ([5687f3b](https://github.com/welpo/tabi/commit/5687f3bacb6ed69ffbe4143e93b6c95ce8fb5c59)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(CI)* Allow longer PR titles for dep updates ([e2c5c6e](https://github.com/welpo/tabi/commit/e2c5c6e9b749c3591af6a822eee65c1ee1854c01)) by [@welpo](https://github.com/welpo)
+- *(CI)* Allow longer PR titles for dep updates ([fa9f160](https://github.com/welpo/tabi/commit/fa9f16034241ccee6229ef0279b3b9bc65249cfa)) by [@welpo](https://github.com/welpo)
+- *(CI)* Allow longer PR titles for dep updates ([bd45a1a](https://github.com/welpo/tabi/commit/bd45a1ae45997b950c703d1ebf1e34b3b82173eb)) by [@welpo](https://github.com/welpo)
+- *(deps)* Remove local release script ([2e3cff2](https://github.com/welpo/tabi/commit/2e3cff2ef1ca8396c632de48b21174601d5ff46c)) by [@welpo](https://github.com/welpo)
+- *(projects)* Add ラム (ramu) project ([f300129](https://github.com/welpo/tabi/commit/f3001298c24d49d234247c9cce2a6c771778c1c3)) by [@welpo](https://github.com/welpo)
+- Change codeblock language from plaintext to txt ([57a0a8e](https://github.com/welpo/tabi/commit/57a0a8e1a09d586acdf5c72464d79328e0c9b27f)) by [@welpo](https://github.com/welpo)
+
+## [3.0.0](https://github.com/welpo/tabi/compare/v2.17.0..v3.0.0) - 2024-10-18
+
+### 💥 BREAKING CHANGES 💥
+
+- Force code blocks LTR rendering ([#412](https://github.com/welpo/tabi/issues/412)) ([092ccdd](https://github.com/welpo/tabi/commit/092ccdd1ba8bf08cc738664ba4fbe9e7a0ff282e)) by [@welpo](https://github.com/welpo)
+
+### ✨ Features
+
+- Add force_text_direction shortcode ([#414](https://github.com/welpo/tabi/issues/414)) ([c9f8d27](https://github.com/welpo/tabi/commit/c9f8d27b962217ff0fb09b30ec14aee65fe8518d)) by [@welpo](https://github.com/welpo)
+- [**‼️BREAKING‼️**] Force code blocks LTR rendering ([#412](https://github.com/welpo/tabi/issues/412)) ([092ccdd](https://github.com/welpo/tabi/commit/092ccdd1ba8bf08cc738664ba4fbe9e7a0ff282e)) by [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- Update CSP for GoatCounter ([#413](https://github.com/welpo/tabi/issues/413)) by [@noeddl](https://github.com/noeddl)
+
+### 📝 Documentation
+
+- *(CONTRIBUTING)* Fix broken link to commit message style ([11e246a](https://github.com/welpo/tabi/commit/11e246a876eef846e8c1e26add7331f25beb9c27)) by [@welpo](https://github.com/welpo)
+- *(mastering tabi)* Mention social links rel='me' ([5db70b7](https://github.com/welpo/tabi/commit/5db70b7978e7141be9396d3f69375a87b2d44ed2)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- Update git-cliff variables to `commit.remote` ([0a36ef5](https://github.com/welpo/tabi/commit/0a36ef55ee092fe7bb1f8803c04a4cb8245b2a13)) by [@welpo](https://github.com/welpo)
+
+### 👥 New contributors
+
+🫶 [@noeddl](https://github.com/noeddl) made their first contribution in [#413](https://github.com/welpo/tabi/pull/413)
+
+## [2.17.0](https://github.com/welpo/tabi/compare/v2.16.0..v2.17.0) - 2024-10-10
+
+### ✨ Features
+
+- Add fediverse creator metadata support ([#409](https://github.com/welpo/tabi/issues/409)) by [@arichtman](https://github.com/arichtman), [@Ariel](https://github.com/Ariel) Richtman and [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(search)* Restore highlighting functionality ([#401](https://github.com/welpo/tabi/issues/401)) by [@welpo](https://github.com/welpo)
+- Set proper URL for self-hosted Umami ([#402](https://github.com/welpo/tabi/issues/402)) by [@soumendrak](https://github.com/soumendrak)
+
+### 📝 Documentation
+
+- Add mermaid shortcode usage ([#407](https://github.com/welpo/tabi/issues/407)) by [@ZzMzaw](https://github.com/ZzMzaw) and [@welpo](https://github.com/welpo)
+- Update comment in config.toml RE: #402 ([c50edbd](https://github.com/welpo/tabi/commit/c50edbd453eca2f031bc97a5a25caa206644d568)) by [@welpo](https://github.com/welpo)
+
+### ♻️ Refactor
+
+- *(search)* Reduce search lag on mobile ([7ceada9](https://github.com/welpo/tabi/commit/7ceada974b7c3f2c52aaa5688af631c806901aed)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(README)* Add jmbhughes.com to showcase ([#404](https://github.com/welpo/tabi/issues/404)) by [@jmbhughes](https://github.com/jmbhughes)
+- *(deps)* Replace local release script w/ git submodule ([66239be](https://github.com/welpo/tabi/commit/66239bee016406c87a227b685eb70a464546e199)) by [@welpo](https://github.com/welpo)
+- *(deps)* Automate KaTeX/mermaid upgrades ([fc04ab4](https://github.com/welpo/tabi/commit/fc04ab4e40977bafa1b821c77e38554d287f69bc)) by [@welpo](https://github.com/welpo)
+- Reformat social card creation tip ([47fcee8](https://github.com/welpo/tabi/commit/47fcee8f81fb10bcd7cc042cc4a80dcada244b6d)) by [@welpo](https://github.com/welpo)
+
+### 👥 New contributors
+
+🫶 [@jmbhughes](https://github.com/jmbhughes) made their first contribution in [#404](https://github.com/welpo/tabi/pull/404)
+
+## [2.16.0](https://github.com/welpo/tabi/compare/v2.15.0..v2.16.0) - 2024-09-22
+
+### ✨ Features
+
+- *(remote_text shortcode)* Support line ranges ([#399](https://github.com/welpo/tabi/issues/399)) ([008b976](https://github.com/welpo/tabi/commit/008b976e06e0b93e021e2ca641eda42521e58f98)) by [@welpo](https://github.com/welpo)
+- *(remote_text shortcode)* Support relative paths ([#398](https://github.com/welpo/tabi/issues/398)) by [@welpo](https://github.com/welpo)
+
+## [2.15.0](https://github.com/welpo/tabi/compare/v2.14.0..v2.15.0) - 2024-09-20
+
+### ✨ Features
+
+- *(feed)* Make "Visit website" link context-aware ([#394](https://github.com/welpo/tabi/issues/394)) by [@welpo](https://github.com/welpo)
+- *(search)* Hide "clear search" icon if input is empty ([#388](https://github.com/welpo/tabi/issues/388)) by [@welpo](https://github.com/welpo)
+
+### 🐛 Bug fixes
+
+- *(feed)* Resolve Atom feed validation issues ([#393](https://github.com/welpo/tabi/issues/393)) by [@welpo](https://github.com/welpo)
+- Allow pages within pages ([#385](https://github.com/welpo/tabi/issues/385)) by [@welpo](https://github.com/welpo)
+- Improve dark mode and OS theme handling ([#380](https://github.com/welpo/tabi/issues/380)) by [@welpo](https://github.com/welpo)
+
+### 💄 Styling
+
+- Improve RTL styling consistency ([#381](https://github.com/welpo/tabi/issues/381)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(README)* Add Ponderosa Games to showcase ([#395](https://github.com/welpo/tabi/issues/395)) by [@JVimes](https://github.com/JVimes)
+- *(deps)* Avoid masking return values ([1b11f4b](https://github.com/welpo/tabi/commit/1b11f4b321d0ae52179d88cc3ecd1b72ef2b37ae)) by [@welpo](https://github.com/welpo)
+- *(deps)* Check local deps version to early exit ([b5cbad4](https://github.com/welpo/tabi/commit/b5cbad422bc14f44a620bcbb87449f2425c16af6)) by [@welpo](https://github.com/welpo)
+- Set [@TheAwiteb](https://github.com/TheAwiteb) as owner of Arabic translation ([edb0873](https://github.com/welpo/tabi/commit/edb087392f2989b4f08122c81fa3e51d17fbb6b8)) by [@welpo](https://github.com/welpo)
+
+### 👥 New contributors
+
+🫶 [@JVimes](https://github.com/JVimes) made their first contribution in [#395](https://github.com/welpo/tabi/pull/395)
+
 ## [2.14.0](https://github.com/welpo/tabi/compare/v2.13.0..v2.14.0) - 2024-09-08
 
 ### ✨ Features
@@ -38,8 +174,6 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 - Add funding information ([8d22a42](https://github.com/welpo/tabi/commit/8d22a42e3fd5d909eaf90f7132e818b9c45f7b07)) by [@welpo](https://github.com/welpo)
 
 ### 👥 New contributors
-
-🫶 [@soumendrak](https://github.com/soumendrak) made their first contribution in [#372](https://github.com/welpo/tabi/pull/372)
 
 🫶 [@DataTriny](https://github.com/DataTriny) made their first contribution in [#367](https://github.com/welpo/tabi/pull/367)
 
@@ -104,7 +238,7 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 
 ### ✨ Features
 
-- *(socials)* Add bluesky icon ([#333](https://github.com/welpo/tabi/issues/333)) by [@gacallea](https://github.com/gacallea)
+- *(socials)* Add bluesky icon ([#333](https://github.com/welpo/tabi/issues/333)) by [@andreacfromtheapp](https://github.com/andreacfromtheapp)
 - Allow HTML tags in multilingual quote author ([be7628a](https://github.com/welpo/tabi/commit/be7628aeaa573b69739a2751e93d77da0b587124)) by [@welpo](https://github.com/welpo)
 
 ### 🐛 Bug fixes
@@ -128,7 +262,7 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 
 ### 👥 New contributors
 
-🫶 [@gacallea](https://github.com/gacallea) made their first contribution in [#333](https://github.com/welpo/tabi/pull/333)
+🫶 [@andreacfromtheapp](https://github.com/andreacfromtheapp) made their first contribution in [#333](https://github.com/welpo/tabi/pull/333)
 
 ## [2.10.0](https://github.com/welpo/tabi/compare/v2.9.0..v2.10.0) - 2024-05-30
 

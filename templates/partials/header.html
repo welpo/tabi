@@ -1,5 +1,10 @@
 <head>
     <meta charset="UTF-8">
+
+    {%- if macros_settings::evaluate_setting_priority(setting="enable_csp", page=page | default(value=""), section=section | default(value=""), default_global_value="true") == "true" -%}
+        {%- include "partials/content_security_policy.html" -%}
+    {%- endif -%}
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="base" content="{{ config.base_url | safe }}">
 
@@ -11,7 +16,7 @@
         <link rel="icon" type="image/png" href="{{ get_url(path=config.extra.favicon) }}"/>
     {% endif %}
     {% if config.extra.favicon_emoji %}
-        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="82">{{ config.extra.favicon_emoji }}</text></svg>'>
+        <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50%" x="50%" dominant-baseline="central" text-anchor="middle" font-size="88">{{ config.extra.favicon_emoji }}</text></svg>'>
     {% endif %}
 
     {# Feeds #}
@@ -36,12 +41,14 @@
 
     {# CSS #}
     {# Load subset of glyphs for header. Avoids flashing issue in Firefox #}
-    {% if config.extra.custom_subset and config.extra.custom_subset == true %}
-        <link rel="stylesheet" href="{{ get_url(path="custom_subset.css" , cachebust=true) }}">
-    {% elif lang == 'en' %}
-        <link rel="stylesheet" href="{{ get_url(path="inter_subset_en.css", cachebust=true ) }}">
-    {% elif lang == 'es' %}
-        <link rel="stylesheet" href="{{ get_url(path="inter_subset_es.css", cachebust=true ) }}">
+    {% if config.extra.enable_subset %}
+        {% if config.extra.custom_subset == true %}
+            <link rel="stylesheet" href="{{ get_url(path="custom_subset.css" , cachebust=true) }}">
+        {% elif lang == 'en' %}
+            <link rel="stylesheet" href="{{ get_url(path="inter_subset_en.css", cachebust=true ) }}">
+        {% elif lang == 'es' %}
+            <link rel="stylesheet" href="{{ get_url(path="inter_subset_es.css", cachebust=true ) }}">
+        {% endif %}
     {% endif %}
 
     {# Define array of CSS files to load. main.css is always loaded. #}
@@ -94,44 +101,13 @@
 
     {% if is_404 %}
         <meta name="robots" content="noindex, follow" />
-    {% else %}
-        <meta name="robots" content="index, nofollow" />
     {% endif %}
 
     <meta property="og:title" content="{{ page.title | default(value=config.title) | safe }}" />
     <meta property="og:type" content="article" />
 
     {# Image for social media sharing #}
-    {%- set social_media_card = macros_settings::evaluate_setting_priority(setting="social_media_card", page=page | default(value=""), section=section | default(value=""), default_global_value="") -%}
-    {% if social_media_card %}
-        {# Try to construct the image path relative to the current page #}
-        {% set colocated_path = page.colocated_path | default(value="") %}
-        {% set file_path = colocated_path ~ social_media_card %}
-
-        {# Fetch metadata to verify image existence at the relative path #}
-        {%- set meta = get_image_metadata(path=file_path, allow_missing=true) -%}
-
-        {# Check if relative path exists, else try absolute path #}
-        {% if meta %}
-            {% set final_path = file_path %}
-        {% else %}
-            {# If the relative path didn't work, try fetching metadata for the absolute path #}
-            {% set meta = get_image_metadata(path=social_media_card, allow_missing=true) %}
-            {% if meta %}
-                {% set final_path = social_media_card %}
-            {% else %}
-                {# Throw an error if the image doesn't exist at either path #}
-                {{ throw(message="Could not get metadata for the specified social media card image in page " ~ page.path ~ ". Attempted relative path: '" ~ file_path ~ "' and absolute path: '" ~ social_media_card ~ "'. Ensure the file exists at one of these locations.") }}
-            {% endif %}
-        {% endif %}
-
-        {# Generate the social media meta tags #}
-        <meta property="og:image" content="{{ get_url(path=final_path, cachebust=true) }}" />
-        <meta property="og:image:width" content="{{ meta.width }}" />
-        <meta property="og:image:height" content="{{ meta.height }}" />
-        <meta name="twitter:image" content="{{ get_url(path=final_path, cachebust=true) }}" />
-        <meta name="twitter:card" content="summary_large_image" />
-    {% endif %}
+    {%- include "partials/social_media_images.html" -%}
 
     {# Add og:locale and hreflang tags for multilingual sites #}
     {%- if config.languages | length > 0 and current_url %}
@@ -159,10 +135,6 @@
 
     <meta property="og:site_name" content="{{ config.title }}">
 
-    {%- if macros_settings::evaluate_setting_priority(setting="enable_csp", page=page | default(value=""), section=section | default(value=""), default_global_value="true") == "true" -%}
-        {%- include "partials/content_security_policy.html" -%}
-    {%- endif -%}
-
     {%- if config.extra.theme_switcher and config.extra.theme_switcher == true -%}
         {# If JavaScript is disabled, hide the button. #}
         <noscript><link rel="stylesheet" href="{{ get_url(path='no_js.css') | safe }}"/></noscript>
@@ -172,6 +144,11 @@
 
     {%- if config.extra.analytics.service -%}
         {%- include "partials/analytics.html" -%}
+    {%- endif -%}
+
+    {# Socials #}
+    {%- if config.extra.fediverse_creator -%}
+        <meta name="fediverse:creator" content="@{{ config.extra.fediverse_creator["handle"] }}@{{ config.extra.fediverse_creator["domain"]}}" />
     {%- endif -%}
 
     {# Search #}

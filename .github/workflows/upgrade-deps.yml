@@ -1,0 +1,89 @@
+name: Dependency upgrade
+on:
+  workflow_dispatch:
+    inputs:
+      dependency:
+        description: 'Dependency to upgrade'
+        required: true
+        type: choice
+        options:
+          - all
+          - mermaid
+          - katex
+  schedule:
+    - cron: '32 4 * * *'
+
+jobs:
+  upgrade-dependency:
+    name: Upgrade dependency
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      pull-requests: write
+    strategy:
+      matrix:
+        dependency: ${{ github.event_name == 'schedule' && fromJson('["mermaid", "katex"]') || fromJson(format('["{0}"]', github.event.inputs.dependency)) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq npm curl git
+          npm install uglify-js -g
+          uglifyjs --version
+
+      - name: Configure GPG key
+        run: |
+          echo -n ${{ secrets.GPG_PRIVATE_KEY }} | base64 --decode | gpg --import
+
+      - name: Configure Git
+        run: |
+          git config --global user.signingkey 33EACFE956484C3940BFEEDCE4EC28F8DFB57474
+          git config --global commit.gpgsign true
+          git config --global user.name "welpo"
+          git config --global user.email "welpo@users.noreply.github.com"
+
+      - name: Check for existing branch
+        id: check_branch
+        run: |
+          if git ls-remote --heads origin deps/upgrade-${{ matrix.dependency }} | grep -q deps/upgrade-${{ matrix.dependency }}; then
+            echo "branch_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "branch_exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Handle existing branch
+        if: steps.check_branch.outputs.branch_exists == 'true'
+        run: |
+          echo "Branch deps/upgrade-${{ matrix.dependency }} already exists."
+          echo "Skipping upgrade as there's already an open PR"
+          exit 0
+
+      - name: Create and switch to new branch
+        run: |
+          git checkout -b deps/upgrade-${{ matrix.dependency }}
+
+      - name: Run upgrade script
+        shell: bash
+        run: |
+          if [[ "${{ matrix.dependency }}" == "all" ]]; then
+            bash scripts/upgrade-deps --all
+          else
+            bash scripts/upgrade-deps --${{ matrix.dependency }}
+          fi
+
+      - name: Push changes and create PR
+        shell: bash
+        run: |
+          if git diff --quiet HEAD origin/main; then
+            echo "No changes to push for ${{ matrix.dependency }}"
+            exit 0
+          fi
+          git push -u origin deps/upgrade-${{ matrix.dependency }}
+          gh pr create --fill --base main --head deps/upgrade-${{ matrix.dependency }} --label "dependencies"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

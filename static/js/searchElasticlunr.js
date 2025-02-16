@@ -2686,7 +2686,7 @@ window.onload = function () {
         event.stopPropagation(); // Prevents tapping through the modal.
     }
     searchModal.addEventListener('click', handleModalInteraction);
-    searchModal.addEventListener('touchend', handleModalInteraction);
+    searchModal.addEventListener('touchend', handleModalInteraction, { passive: true });
 
     // Close modal when pressing escape.
     document.addEventListener('keydown', function (event) {
@@ -2711,7 +2711,7 @@ window.onload = function () {
     // Clicking/tapping the search button opens the modal.
     searchButton.addEventListener('mouseover', loadSearchIndex);
     searchButton.addEventListener('click', openSearchModal);
-    searchButton.addEventListener('touchstart', openSearchModal);
+    searchButton.addEventListener('touchstart', openSearchModal, { passive: true });
 
     let searchIndexPromise = null;
     function loadSearchIndex() {
@@ -2942,13 +2942,13 @@ window.onload = function () {
     searchInput.addEventListener(
         'input',
         async function () {
-            const searchInput = this.value;
-            const searchTerm = searchInput.trim();
+            const inputValue = this.value;
+            const searchTerm = inputValue.trim();
             const searchIndex = await searchIndexPromise;
             results.innerHTML = '';
 
             // Use the raw input so the "clear" button appears even if there's only spaces.
-            clearSearchButton.style.display = searchInput.length > 0 ? 'block' : 'none';
+            clearSearchButton.style.display = inputValue.length > 0 ? 'block' : 'none';
             resultsContainer.style.display = searchTerm.length > 0 ? 'block' : 'none';
 
             // Perform the search and store the results.
@@ -3109,7 +3109,7 @@ window.onload = function () {
         resultDivs.forEach((div) => {
             // Remove existing listener to avoid duplicates.
             div.removeEventListener('touchstart', handleTouchStart);
-            div.addEventListener('touchstart', handleTouchStart);
+            div.addEventListener('touchstart', handleTouchStart, { passive: true });
         });
     }
 

@@ -1,7 +1,10 @@
 +++
 title = "tabi"
 description = "Un tema de Zola rápido, ligero y moderno con soporte multilingüe."
-weight = 30
+weight = 40
+
+[taxonomies]
+tags = ["web", "JavaScript"]
 
 [extra]
 local_image = "projects/tabi/tabi.webp"
@@ -11,7 +14,7 @@ social_media_card = "social_cards/es_projects_tabi.jpg"
 
 [**tabi**](https://github.com/welpo/tabi) es un tema moderno y rico en funcionalidad para [Zola](https://www.getzola.org/), un generador de sitios web estáticos muy rápido.
 
-{{ full_width_image(src="light_dark_tabi.webp", alt="Modos claro y oscuro de tabi") }}
+{{ full_width_image(src="https://cdn.jsdelivr.net/gh/welpo/tabi@main/light_dark_screenshot.png", alt="Modos claro y oscuro de tabi") }}
 
 #### [Ver en GitHub](https://github.com/welpo/tabi) • [Demo y documentación](https://welpo.github.io/tabi/es/) {.centered-text}
 
@@ -20,7 +23,8 @@ social_media_card = "social_cards/es_projects_tabi.jpg"
 - [Establece cualquier idioma como predeterminado](https://welpo.github.io/tabi/es/blog/faq-languages/#como-establezco-el-idioma-predeterminado-de-mi-sitio). Configura tu sitio en chino, español, francés, hindi… o cualquier [otro idioma compatible](https://welpo.github.io/tabi/es/blog/faq-languages/#que-idiomas-admite-tabi). La interfaz del tema se traducirá en consecuencia.
 - [Integración con repositorios remotos](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#integracion-con-repositorios-git) en GitHub, GitLab, Gitea y Codeberg para el historial de commits y mostrar el código fuente del sitio.
 - [Soporte multilingüe completo](https://welpo.github.io/tabi/es/blog/faq-languages/#como-gestiona-tabi-el-soporte-multilingue). Añade tantos idiomas como desees y deja que tus usuarios elijan con un selector de idioma.
-- Temas claros y oscuros. Se adapta a la configuración del sistema operativo, con un interruptor en la barra de navegación.
+- Tema claro y oscuro. Se adapta a la configuración del sistema operativo, con un interruptor en la barra de navegación.
+- [Soporte para series](https://welpo.github.io/tabi/es/blog/series/) para crear contenido secuencial como tutoriales, cursos e historias en varias partes.
 - Puntuación perfecta en Lighthouse (Rendimiento, Accesibilidad, Mejores Prácticas y SEO).
 - Soporte para [diagramas de Mermaid](https://welpo.github.io/tabi/es/blog/shortcodes/#diagramas-de-mermaid) para crear diagramas y gráficos con texto.
 - Resaltado de sintaxis de código con colores basados en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
@@ -40,6 +44,7 @@ social_media_card = "social_cards/es_projects_tabi.jpg"
 - [Tarjetas para redes sociales](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#tarjetas-para-redes-sociales).
 - [Shortcodes personalizados](https://welpo.github.io/tabi/es/blog/shortcodes/).
 - [Skins personalizables](https://welpo.github.io/tabi/es/blog/customise-tabi/).
+- [Publicaciones fijadas](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#fijar-publicaciones).
 - [Página de proyectos](https://welpo.github.io/tabi/es/projects/).
 - Diseño responsive.
 - Soporte de [KaTeX](https://katex.org/).

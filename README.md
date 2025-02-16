@@ -11,16 +11,23 @@
     <a href="https://github.com/welpo/tabi/releases">
         <img src="https://img.shields.io/github/v/release/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Latest release"></a>
     <a href="https://welpo.github.io/tabi/blog/mastering-tabi-settings/">
-        <img src="https://img.shields.io/website?url=https%3A%2F%2Fwelpo.github.io%2Ftabi&style=flat-square&label=docs&labelColor=202b2d&color=087e96" alt="Documentation"></a>
+        <img src="https://img.shields.io/website?url=https%3A%2F%2Fwelpo.github.io%2Ftabi&style=flat-square&label=docs&labelColor=202b2d" alt="Documentation"></a>
     <a href="https://github.com/welpo/tabi/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="License"></a>
     <a href="https://github.com/welpo/git-sumi">
         <img src="https://img.shields.io/badge/clean_commits-git--sumi-0?style=flat-square&labelColor=202b2d&color=087e96" alt="Clean commits"></a>
+    <a href="https://isitmaintained.com/project/welpo/tabi">
+        <img src="https://isitmaintained.com/badge/resolution/welpo/tabi.svg" alt="Average time to resolve an issue"></a>
+    <a href="https://isitmaintained.com/project/welpo/tabi">
+        <img src="https://isitmaintained.com/badge/open/welpo/tabi.svg" alt="Percentage of issues still open"></a>
 </p>
 
-# tabi
+# 🌱 tabi
 
-A fast, lightweight, and modern [Zola](https://www.getzola.org) theme with multi-language support. It aims to be a personal page and home to blog posts.
+An accessible [Zola](https://www.getzola.org) theme with [search](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#search), [multi-language support](https://welpo.github.io/tabi/blog/faq-languages/), [optional JavaScript](https://welpo.github.io/tabi/blog/javascript/), a perfect Lighthouse score, and [comprehensive documentation](https://welpo.github.io/tabi). Crafted for personal websites and blogs.
+
+> [!TIP]
+> Want to start blogging right away? Use the [tabi-start template](https://github.com/welpo/tabi-start) to get a complete site up and running in minutes.
 
 See a live preview (and the theme's documentation) [here](https://welpo.github.io/tabi).
 
@@ -38,6 +45,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 
 - [X] [Set any language as default](https://welpo.github.io/tabi/blog/faq-languages/#how-do-i-set-a-default-language-for-my-site). Set your base site to Chinese, Spanish, French, Hindi… or any [other supported language](/i18n). The theme's interface will be translated accordingly.
 - [X] [Integration with remote repositories](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#git-repository-integration) on GitHub, GitLab, Gitea & Codeberg for commit history and showing the site source.
+- [X] [Series support](https://welpo.github.io/tabi/blog/series/) for creating sequential content like tutorials, courses, and multi-part stories.
 - [X] Dark and light themes. Defaults to the OS setting, with a switcher in the navigation bar.
 - [X] Thorough documentation. See [Mastering tabi Settings: A Comprehensive Guide](https://welpo.github.io/tabi/blog/mastering-tabi-settings/).
 - [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
@@ -64,10 +72,16 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] Responsive design.
 - [X] [Projects page](https://welpo.github.io/tabi/projects/).
 - [X] [Archive page](https://welpo.github.io/tabi/archive/).
+- [X] [Pinned posts](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#pinning-posts).
 - [X] [Social links](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-icons).
 - [X] [Tags](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#tags).
 
 ## Installation
+
+> [!NOTE]
+> The fastest way to create a new site is to use the [tabi-start template](https://github.com/welpo/tabi-start). This gives you a complete blog setup with all the essential configuration ready to go.
+
+### Manual installation
 
 To add tabi to you existing Zola site:
 
@@ -111,24 +125,40 @@ highlight_code = true
 highlight_theme = "css"
 ```
 
-5. Create a `content/_index.md` file with the following content:
+5. Create a `content/_index.md` file. This file controls how your home page looks and behaves. Choose one of the following options:
 
-```
-+++
-title = "Home"
-paginate_by = 5 # Set the number of posts per page
-template = "index.html"
-+++
-```
+   **Option A: Serve posts from `/`**:
 
-If you want to serve your blog posts from a different path, such as `blog/`, add a `section_path` in the `[extra]` section of `content/_index.md` (this file will need pagination):
+   ```
+   +++
+   title = "Home"
+   paginate_by = 5  # Show 5 posts per page.
+   +++
+   ```
 
-```
-[extra]
-section_path = "blog/_index.md"
-```
+   - This will display posts in `content/` with pagination.
 
-**Note**: use the full path to the section's `_index.md` file. Simply using `section_path = "blog/"` will not work.
+   **Option B: Serve posts from a different path (e.g., `blog/`)**:
+
+   ```
+   +++
+   title = "Home"
+   # Note we're not setting `paginate_by` here.
+
+   [extra]
+   section_path = "blog/_index.md"  # Where to find your posts.
+   max_posts = 5  # Show 5 posts on the home page.
+   +++
+   ```
+
+    - This will display the latest 5 posts from the `blog/` section.
+    - Do not set `paginate_by` if you choose this option.
+    - Use the full path to the section's `_index.md` file. Using `section_path = "blog/"` will not work.
+
+> [!WARNING]
+> Do not set both `paginate_by` and `section_path` in `content/_index.md`.
+>
+> These settings are mutually exclusive and using both may result in no posts being displayed.
 
 6. If you want an introduction section (see screenshot above), add these lines to `content/_index.md`:
 
@@ -180,16 +210,30 @@ git pull
 | [mikufan.page](https://mikufan.page) | [Nadia](https://github.com/nyadiia) | Personal blog | [Source](https://github.com/nyadiia/mikufan.page) |
 | [tim-boettcher.online](https://tim-boettcher.online/) | [Tim Böttcher](https://codeberg.org/Tim-Boettcher/) | Insights and ramblings of a deafblind programmer | [Source](https://codeberg.org/Tim-Boettcher/tim-boettcher-online/) |
 | [www.richtman.au](https://www.richtman.au) | [Ariel Richtman](https://github.com/arichtman) | Personal tech blog | [Source](https://github.com/arichtman/www.richtman.au) |
+| [Ponderosa Games](https://ponderosagames.com/) | John Burak ([JVimes](https://github.com/jvimes)) | A friendly indie game company | &mdash; |
+| [jmbhughes.com](https://jmbhughes.com/) | Marcus Hughes ([jmbhughes](https://github.com/jmbhughes)) | Personal blog | [Source](https://github.com/jmbhughes/jmbhughes.github.io) |
+| [szabolcs.me](https://szabolcs.me) | Szabolcs Fazekas ([szabolcsf](https://github.com/szabolcsf)) | Personal blog | [Source](https://github.com/szabolcsf/szabolcs.me) |
+| [Nizzlay](https://nizzlay.com) | Niels Gouman ([Nizzlay](https://github.com/Nizzlay)) | Personal blog | [Source](https://github.com/Nizzlay/nizzlay.com) |
+| [ZzMzaw's blog](https://zzmzaw.github.io/) | ZzMzaw ([ZzMzaw](https://github.com/ZzMzaw)) | Personal blog | [Source](https://github.com/ZzMzaw/zzmzaw.github.io) |
+| [idle-ti.me](https://idle-ti.me/) | Jérôme Ramette ([be-next](https://github.com/be-next)) | Personal blog | [Source](https://github.com/be-next/idle-ti.me) |
 
 Using tabi? Feel free to create a PR and add your site to this list.
 
 ## Inspiration
 
 This theme was inspired by:
-- [shadharon](https://github.com/syedzayyan/shadharon) — tabi started as a fork of [syedzayyan](https://github.com/syedzayyan)'s theme;
-- [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog);
-- [abridge](https://github.com/Jieiku/abridge);
-- [internetVin's blog](https://internetvin.ghost.io).
+
+- [shadharon](https://github.com/syedzayyan/shadharon) — tabi started as a fork of [syedzayyan](https://github.com/syedzayyan)'s theme
+- [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
+- [abridge](https://github.com/Jieiku/abridge)
+
+## Support
+
+Something not working? Have an idea? Let us know!
+
+- Questions? → [Start a discussion](https://github.com/welpo/tabi/discussions)
+- Found a bug? → [Report it here](https://github.com/welpo/tabi/issues/new?&labels=bug&template=2_bug_report.yml)
+- Feature request? → [Tell us more!](https://github.com/welpo/tabi/issues/new?&labels=feature&template=3_feature_request.yml)
 
 ## Contributing
 

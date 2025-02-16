@@ -1,0 +1,162 @@
+{#
+Those macros deal with introduction and navigation for series pages.
+Using macros have been prefered over partial inclusion or inline code to make sure series_ordered_pages is forced to be used.
+A section's pages natural order is invalid in case of reversed pagination which would lead to invalid series' pages order.
+To prevent this, pages are ordered correctly in a separate variable which must be used instead of the series section pages.
+#}
+
+{#
+Computes the introduction of a series's page.
+
+Parameters:
+    - `page`: The page object being part of the series.
+		- `series_section`: The series' section the page belongs to.
+		- `series_ordered_pages`: The series' pages properly ordered (see at the top of this file for an explanation).
+		- `language_strings`: A dictionary containing the translation strings.
+#}
+{% macro process_series_template(template_type, page, series_section, series_ordered_pages, language_strings) %}
+    {%- if "series" in series_section.extra and series_section.extra.series -%}
+        {# Prepare variables for substitution #}
+        {%- set series_title = series_section.title -%}
+        {%- set series_permalink = series_section.permalink -%}
+        {%- set series_html_link = '<a href="' ~ series_section.permalink ~ '" aria_label="' ~ series_section.title ~ '">' ~ series_section.title ~ '</a>' -%}
+		{# Build series pages list #}
+		{%- set series_pages_list = [] -%}
+		{%- for series_page in series_ordered_pages -%}
+			{%- if series_page.relative_path == page.relative_path -%}
+				{%- set series_pages_list_item = '<li>' ~ series_page.title ~ '</li>' -%}
+			{%- else -%}
+				{%- set series_pages_list_item = '<li><a href="' ~ series_page.permalink ~ '" aria_label="' ~ series_page.title ~ '">' ~ series_page.title ~ '</a></li>' -%}
+			{%- endif -%}
+			{%- set_global series_pages_list = series_pages_list | concat(with=series_pages_list_item) -%}
+		{%- endfor -%}
+		{%- set series_pages_list = series_pages_list | join(sep="") -%}
+		{%- if macros_settings::evaluate_setting_priority(setting="post_listing_index_reversed", page=series_section, default_global_value=false) == "true" -%}
+			{%- set series_pages_ordered_list = '<ol reversed>' ~ series_pages_list ~ '</ol>' -%}
+		{%- else -%}
+			{%- set series_pages_ordered_list = '<ol>' ~ series_pages_list ~ '</ol>' -%}
+		{%- endif -%}
+		{%- set series_pages_unordered_list = '<ul>' ~ series_pages_list ~ '</ul>' -%}
+
+        {# Get page position and navigation info #}
+        {%- set series_pages_number = 0 -%}
+        {%- set series_page_index = 0 -%}
+        {%- set first_page = series_ordered_pages | first -%}
+        {%- set is_found = false -%}
+
+        {%- for series_page in series_ordered_pages -%}
+            {%- set_global series_pages_number = series_pages_number + 1 -%}
+            {%- if series_page.relative_path == page.relative_path -%}
+                {%- set_global series_page_index = series_pages_number -%}
+                {%- set_global is_found = true -%}
+            {%- else -%}
+                {%- if not is_found -%}
+                    {%- set_global prev_page = series_page -%}
+                {%- elif not next_page is defined -%}
+                    {%- set_global next_page = series_page -%}
+                {%- endif -%}
+            {%- endif -%}
+        {%- endfor -%}
+
+		{# Determine template to use based on available navigation #}
+		{%- set position = "middle" -%}
+		{%- if prev_page is defined and not next_page is defined -%}
+			{%- set_global position = "prev_only" -%}
+		{%- elif next_page is defined and not prev_page is defined -%}
+			{%- set_global position = "next_only" -%}
+		{%- endif -%}
+
+        {# Get template from config #}
+        {%- set templates_key = "series_" ~ template_type ~ "_templates" -%}
+        {%- set template = "" -%}
+        {%- if series_section.extra[templates_key] is defined -%}
+            {%- if series_section.extra[templates_key][position] is defined -%}
+                {%- set_global template = series_section.extra[templates_key][position] -%}
+            {%- elif series_section.extra[templates_key].default is defined -%}
+                {%- set_global template = series_section.extra[templates_key].default -%}
+            {%- endif -%}
+        {%- endif -%}
+
+		{# Prepare navigation variables #}
+		{%- if prev_page is defined -%}
+			{%- set prev_title = prev_page.title -%}
+			{%- set prev_permalink = prev_page.permalink -%}
+			{%- set prev_html_link = '<a href="' ~ prev_page.permalink ~ '" aria_label="' ~ prev_page.title ~ '">' ~ prev_page.title ~ '</a>' -%}
+			{%- set prev_description = prev_page.description | default(value="") -%}
+		{%- endif -%}
+		{%- if next_page is defined -%}
+			{%- set next_title = next_page.title -%}
+			{%- set next_permalink = next_page.permalink -%}
+			{%- set next_html_link = '<a href="' ~ next_page.permalink ~ '" aria_label="' ~ next_page.title ~ '">' ~ next_page.title ~ '</a>' -%}
+			{%- set next_description = next_page.description | default(value="") -%}
+		{%- endif -%}
+
+		{# Replace standard variables #}
+		{%- set template = template
+			| replace(from="$SERIES_TITLE", to=series_title)
+			| replace(from="$SERIES_PERMALINK", to=series_permalink)
+			| replace(from="$SERIES_HTML_LINK", to=series_html_link)
+			| replace(from="$FIRST_TITLE", to=first_page.title)
+			| replace(from="$FIRST_HTML_LINK", to='<a href="' ~ first_page.permalink ~ '">' ~ first_page.title ~ '</a>')
+			| replace(from="$SERIES_PAGES_NUMBER", to=series_pages_number | as_str)
+			| replace(from="$SERIES_PAGE_INDEX", to=series_page_index | as_str)
+			| replace(from="$SERIES_PAGES_OLIST", to=series_pages_ordered_list)
+			| replace(from="$SERIES_PAGES_ULIST", to=series_pages_unordered_list)
+		-%}
+
+        {# Replace navigation variables if they exist #}
+		{%- if prev_page is defined -%}
+		{%- set template = template
+			| replace(from="$PREV_TITLE", to=prev_title)
+			| replace(from="$PREV_PERMALINK", to=prev_permalink)
+			| replace(from="$PREV_HTML_LINK", to=prev_html_link)
+			| replace(from="$PREV_DESCRIPTION", to=prev_description)
+		-%}
+		{%- endif -%}
+
+		{%- if next_page is defined -%}
+		{%- set template = template
+			| replace(from="$NEXT_TITLE", to=next_title)
+			| replace(from="$NEXT_PERMALINK", to=next_permalink)
+			| replace(from="$NEXT_HTML_LINK", to=next_html_link)
+			| replace(from="$NEXT_DESCRIPTION", to=next_description)
+		-%}
+		{%- endif -%}
+
+		{# Custom placeholders #}
+		{%- if series_section.extra.series_template_placeholders is defined -%}
+			{%- set missing_vars = [] -%}
+			{%- for placeholder in series_section.extra.series_template_placeholders -%}
+				{%- if placeholder in template -%}
+					{%- set var_name = placeholder | replace(from="$", to="") | lower -%}
+					{%- if page.extra.series_template_variables is defined and page.extra.series_template_variables[var_name] is defined -%}
+						{%- set_global template = template | replace(from=placeholder, to=page.extra.series_template_variables[var_name]) -%}
+					{%- else -%}
+						{%- set_global missing_vars = missing_vars | concat(with=var_name) -%}
+					{%- endif -%}
+				{%- endif -%}
+			{%- endfor -%}
+			{%- if missing_vars | length > 0 -%}
+				{%- set missing_vars_str = missing_vars | join(sep=", ") -%}
+				{{ throw(message="ERROR: The following variables are included in this page's series templates (`series_template_placeholders`) but have not been set in the `series_template_variables` of this page: " ~ missing_vars_str) }}
+			{%- endif -%}
+		{%- endif -%}
+
+        {# Output the processed template if not empty #}
+        {%- if template | length > 0 -%}
+            <section class="series-page-{{ template_type }}">
+                {{ template | markdown | safe }}
+            </section>
+        {%- endif -%}
+    {%- endif -%}
+{% endmacro %}
+
+{# Macro for series introduction #}
+{% macro get_introduction(page, series_section, series_ordered_pages, language_strings) %}
+    {{ macros_series_page::process_series_template(template_type="intro", page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings) }}
+{% endmacro %}
+
+{# Macro for series outro #}
+{% macro get_outro(page, series_section, series_ordered_pages, language_strings) %}
+    {{ macros_series_page::process_series_template(template_type="outro", page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings) }}
+{% endmacro %}

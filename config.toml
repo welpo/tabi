@@ -1,14 +1,14 @@
 base_url = "https://welpo.github.io/tabi"
 title = "~/tabi"
-description = "tabi is a fast, lightweight, and modern Zola theme with multi-language support, optional JavaScript, and a perfect Lighthouse score."
+description = "tabi is an accessible Zola theme with search, multi-language support, optional JavaScript, a perfect Lighthouse score, and comprehensive documentation. Crafted for personal websites and blogs."
 author = "welpo"
 generate_feeds = true
 compile_sass = true
 minify_html = true
 build_search_index = true
 
-# To translate the entire theme, there must be a file with the same ISO 639-1
-# (or IETF BCP 47) Code in the `i18n` folder of your site or the tabi theme
+# To translate the entire theme, there must be a file with the same language code
+# in the `i18n` folder of your site or the tabi theme.
 # For example, "i18n/fr.toml" for French or "i18n/zh-Hans.toml" for Simplified Chinese.
 # Otherwise the theme will be in English.
 # See https://welpo.github.io/tabi/blog/faq-languages/ for more details.
@@ -38,6 +38,8 @@ bottom_footnotes = true
 # To use a Zola built-in theme, CSP needs to allow unsafe-inline for style-src.
 highlight_theme = "css"
 smart_punctuation = true
+# Set to 'external' to add an indicator next to external links.
+external_links_class = "external"
 
 [link_checker]
 internal_level = "warn"
@@ -50,14 +52,14 @@ skip_anchor_prefixes = [
 
 [languages.es]
 title = "~/tabi"
-description = "tabi es un tema de Zola rápido, liviano y moderno con JavaScript opcional y una puntuación perfecta en Lighthouse."
+description = "tabi es un tema accesible para Zola con búsqueda, soporte multilingüe, JavaScript opcional, una puntuación perfecta en Lighthouse y documentación exhaustiva. Diseñado para sitios web y blogs personales."
 generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
 build_search_index = true
 
 [languages.ca]
 title = "~/tabi"
-description = "tabi és un tema de Zola ràpid, lleuger i modern amb JavaScript opcional i una puntuació perfecta a Lighthouse."
+description = "tabi és un tema accessible per a Zola amb cerca, suport multilingüe, JavaScript opcional, una puntuació perfecta a Lighthouse i documentació exhaustiva. Dissenyat per a llocs web i blogs personals."
 generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
 
@@ -133,13 +135,18 @@ show_remote_changes = true  # Defaults to true.
 # Show a link to the repository of the site, right next to the "Powered by Zola & tabi" text.
 show_remote_source = true  # Defaults to true.
 
-# Add a "copy" button to codeblocks (loads ~700 bytes of JavaScript).
+# Add a "copy" button to code blocks (loads ~700 bytes of JavaScript).
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 copy_button = true
 
-# Loads the necessary JavaScript (~400 bytes) to use the "Show source or path" shortcode: https://welpo.github.io/tabi/blog/shortcodes/#show-source-or-path
+# Make code block names clickable if they are URLs (loads ~400 bytes of JavaScript).
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
-add_src_to_code_block = false
+code_block_name_links = false
+
+# Force left-to-right (LTR) direction for code blocks.
+# Set to false to allow code to follow the document's natural direction.
+# Can be set at page or section levels. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+force_codeblock_ltr = true
 
 # Show the author(s) of a page.
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
@@ -158,6 +165,16 @@ show_date = true
 # "updated" - Show only the last updated date of the post. If there is no last updated date, it shows the original date.
 # "both" - Show both the original date and the last updated date.
 post_listing_date = "date"
+
+# Show "Jump to posts" link next to series' title.
+# By default, the link appears automatically when a series description exceeds 2000 characters.
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+# show_jump_to_posts = true
+
+# Determines if indexes should be increasing (false) or decreasing (true) in series' posts list.
+# It has only effect if the section uses indexes metadata (which is only the case for series as of now).
+# Can be set at section levels, following the hierarchy: section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+post_listing_index_reversed = false  # Defaults to false.
 
 # DEPRECATED!
 # Use Zola's built-in `bottom_footnotes = true` in the [markdown] section instead. (Available since v0.19.0)
@@ -223,6 +240,12 @@ compact_tags = false
 # Default: "name".
 tag_sorting = "name"
 
+# Show clickable tags above cards.html template (e.g. projects/) to filter the displayed items.
+# Loads JS to filter. If JS is disabled, the buttons are links to the tag's page.
+# Can be set at the section or config.toml level, following the hierarchy: section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+# Default: true
+enable_cards_tag_filtering = true
+
 # Invert the order of the site title and page title in the browser tab.
 # Example: true => "Blog • ~/tabi", false => "~/tabi • Blog"
 invert_title_order = false
@@ -238,7 +261,7 @@ favicon_emoji = "🌱"
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 # Learn how to create these images in batch and automatically:
 # https://osc.garden/blog/automating-social-media-cards-zola/
-social_media_card = "social_cards/index.jpg"
+social_media_card = "index.jpg"
 
 menu = [
     { name = "blog", url = "blog", trailing_slash = true },
@@ -273,6 +296,11 @@ socials = [
     { name = "youtube", url = "https://youtube.com/@oskerwyld", icon = "youtube" },
     { name = "spotify", url = "https://open.spotify.com/artist/5Hv2bYBhMp1lUHFri06xkE", icon = "spotify" },
 ]
+
+# Fediverse profile.
+# Adds metadata to feature the author's profile in Mastodon link previews.
+# Example: for @username@example.com, use:
+# fediverse_creator = { handle = "username", domain = "example.com" }
 
 # Extra menu to show on the footer, below socials section.
 footer_menu = [
@@ -315,10 +343,14 @@ allowed_domains = [
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 enable_csp = true
 
-# Custom subset of characters for the header.
-# If set to true, the `static/custom_subset.css` file will be loaded first.
-# This avoids a flashing text issue in Firefox.
-# Please see https://welpo.github.io/tabi/blog/custom-font-subset/ to learn how to create this file.
+# Font subsetting configuration.
+# This feature helps prevent text flashing in Firefox when using custom fonts.
+# See: https://welpo.github.io/tabi/blog/custom-font-subset/
+# Enable or disable font subsetting completely, both built-in and custom subsets.
+enable_subset = true
+# Use a custom subset of characters for the header.
+# If true, tabi will load the `static/custom_subset.css` file.
+# If false, tabi will use the default language-specific subset (English or Spanish).
 custom_subset = true
 
 [extra.analytics]
@@ -330,7 +362,7 @@ service = "goatcounter"
 # For GoatCounter, this is the code you choose during signup.
 # For Umami, this is the website ID.
 # For Plausible, this is the domain name (e.g. "example.com").
-# Note: Leave this field empty if you're self-hosting.
+# Note: Leave this field empty if you're self-hosting GoatCounter.
 # id = "yourID"
 
 # Optional: Specify the URL for self-hosted analytics instances.

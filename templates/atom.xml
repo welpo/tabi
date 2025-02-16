@@ -7,27 +7,40 @@
 {%- endif -%}
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="{{ get_url(path='/feed_style.xsl', trailing_slash=false) | safe }}" type="text/xsl"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xml:lang="{{ lang }}" xml:base="{{ config.base_url }}">
-    <str:translations xmlns:str="https://github.com/welpo/tabi">
-        <str:separator>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>{{ config.base_url }}</tabi:base_url>
+        <tabi:separator>
             {{  config.extra.separator | default(value="•") }}
-        </str:separator>
-        <str:about_feeds>
+        </tabi:separator>
+        <tabi:about_feeds>
             {{- macros_translate::translate(key="about_feeds", default="This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader", language_strings=language_strings) -}}
-        </str:about_feeds>
-        <str:visit_the_site>
+        </tabi:about_feeds>
+        <tabi:visit_the_site>
             {{- macros_translate::translate(key="visit_the_site", default="Visit website", language_strings=language_strings) -}}
-        </str:visit_the_site>
-        <str:recent_posts>
+        </tabi:visit_the_site>
+        <tabi:recent_posts>
             {{- macros_translate::translate(key="recent_posts", default="Recent posts", language_strings=language_strings) -}}
-        </str:recent_posts>
-        <str:last_updated_on>
+        </tabi:recent_posts>
+        <tabi:last_updated_on>
             {{- macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -}}
-        </str:last_updated_on>
-        <str:default_theme>
+        </tabi:last_updated_on>
+        <tabi:default_theme>
             {{- config.extra.default_theme | default(value="") -}}
-        </str:default_theme>
-    </str:translations>
+        </tabi:default_theme>
+        <tabi:post_listing_date>
+            {{- config.extra.post_listing_date | default(value="date") -}}
+        </tabi:post_listing_date>
+        <tabi:current_section>
+            {%- if term -%}
+                {{ term.name }}
+            {%- elif section.title -%}
+                {{ section.title }}
+            {%- else -%}
+                {{ config.title }}
+            {%- endif -%}
+        </tabi:current_section>
+    </tabi:metadata>
 
     {#- Load extra CSS (skin) if set in config.toml -#}
     {%- if config.extra.skin -%}
@@ -43,19 +56,26 @@
         <subtitle>{{ config.description }}</subtitle>
     {%- endif %}
     <link href="{{ feed_url | safe }}" rel="self" type="application/atom+xml"/>
-    <post_listing_date>{{ config.extra.post_listing_date | default(value="date") }}</post_listing_date>
     <link href="
-        {%- if section -%}
+        {%- if term -%}
+            {{ term.permalink | escape_xml | safe }}
+        {%- elif section -%}
             {{ section.permalink | escape_xml | safe }}
         {%- else -%}
             {{ get_url(path="/", lang=lang) | escape_xml | safe }}
         {%- endif -%}
-    "/>
+    " rel="alternate" type="text/html"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>{{ last_updated | date(format="%+") }}</updated>
     <id>{{ feed_url | safe }}</id>
     {%- for page in pages %}
     {%- if macros_settings::evaluate_setting_priority(setting="hide_from_feed", page=page, default_global_value=false) == "true" -%}
+        {%- continue -%}
+    {%- endif -%}
+    {#- Skip if hide_from_main_feed is true and this is the main feed -#}
+    {%- if macros_settings::evaluate_setting_priority(setting="hide_from_main_feed", page=page, default_global_value=false) == "true"
+         and not section
+         and not term -%}
         {%- continue -%}
     {%- endif -%}
     <entry xml:lang="{{ page.lang }}">

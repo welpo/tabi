@@ -23,6 +23,8 @@ one_results = "$NUMBER resultaat"  # "1 result"
 many_results = "$NUMBER resultaten"  # "3 results"
 
 # Navigation.
+pinned = "Vastgezet"
+jump_to_posts = "Naar berichten springen"
 read_more = "Lees meer"
 one_posts = "$NUMBER bericht" # "1 post"
 many_posts = "$NUMBER berichten"  # "3 posts"

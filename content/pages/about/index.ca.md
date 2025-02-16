@@ -5,7 +5,6 @@ path = "/ca/about"
 
 [extra]
 quick_navigation_buttons = true
-social_media_card = "social_cards/about.ca.jpg"
 +++
 
 Benvingut a la demo de [**tabi**](https://github.com/welpo/tabi), un tema per a [Zola](https://www.getzola.org/), un generador de llocs web estàtics rapidíssim.

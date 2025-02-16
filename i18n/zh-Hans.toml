@@ -23,6 +23,8 @@ one_results = "$NUMBER 个结果"
 many_results = "$NUMBER 个结果"
 
 # Navigation.
+pinned = "置顶"
+jump_to_posts = "跳转到文章"
 read_more = "阅读全文"
 one_posts = "$NUMBER 篇文章"
 many_posts = "$NUMBER 篇文章"

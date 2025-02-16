@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+{# Throw an error if the section is not flagged as a series. #}
+{# This page would be displayed properly but it would become impossible for the series' child pages to reference their series. #}
+{%- if "series" not in section.extra or not section.extra.series -%}
+    {{ throw(message="Section is not flagged as a series. Set `section.extra.series` to `true` if you want to use `series.html` template.") }}
+{%- endif -%}
+
+<main>
+{%- if section.extra.header %}
+    {%- include "partials/home_banner.html" -%}
+{% endif -%}
+
+    {%- set show_jump = false -%}
+    {%- set show_jump_hierarchy = macros_settings::evaluate_setting_priority(setting="show_jump_to_posts", page=section) -%}
+    {%- if show_jump_hierarchy == "true" -%}
+        {%- set show_jump = true -%}
+    {%- elif show_jump_hierarchy != "false" -%}
+        {#- Default to true if the content is long and var is unset #}
+        {%- if section.content | length > 2000 -%}
+            {%- set show_jump = true -%}
+        {%- endif -%}
+    {%- endif -%}
+
+    {%- if show_jump -%}
+    <div class="title-with-jump bottom-divider">
+        <h1 class="title-container section-title">{{ section.title }}</h1>
+        <a href="#posts-list" class="jump-link">{{ macros_translate::translate(key="jump_to_posts", default="Jump to posts", language_strings=language_strings) }} ↓</a>
+    </div>
+    {%- else -%}
+        {{ macros_page_header::page_header(title=section.title) }}
+    {%- endif -%}
+
+    <section class="body">
+        {{ section.content | safe }}
+    </section>
+
+    <div id="posts-list">
+        <h2 class="bottom-divider">
+            {{ macros_translate::translate(key="all_posts", default="All posts", language_strings=language_strings) }}
+        </h2>
+        {%- if paginator %}
+            {%- set pages = paginator.pages -%}
+        {% else %}
+            {%- set pages = section.pages -%}
+        {% endif -%}
+
+        {% set max_posts = section.extra.max_posts | default(value=999999) %}
+        {{ macros_list_posts::list_posts(posts=pages, max=max_posts, metadata="indexes", language_strings=language_strings, section_path=section.path, paginator=paginator | default(value="")) }}
+    </div>
+
+    {% if paginator %}
+        {%- include "partials/paginate.html" -%}
+    {% endif %}
+
+</main>
+
+{%- include "partials/extra_features.html" -%}
+
+{% endblock main_content %}

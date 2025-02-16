@@ -3,33 +3,58 @@ title = "dōteki"
 description = "Add dynamic content to your GitHub profile through an intuitive plugin system."
 weight = 30
 
+[taxonomies]
+tags = ["GitHub Actions", "automation", "Python"]
+
 [extra]
 local_image = "projects/doteki/doteki_logo.webp"
 social_media_card = "social_cards/projects_doteki.jpg"
 canonical_url = "https://osc.garden/projects/doteki/"
 +++
 
-[**dōteki**](https://doteki.org/) is a tool designed to breathe life into GitHub profiles by adding dynamic content effortlessly. By leveraging an intuitive TOML configuration file along with a versatile plugin system, **dōteki** empowers users to showcase fresh, automated content directly on their GitHub profiles.
+**dōteki** updates your GitHub profile README automatically. Add your latest blog posts, music you're listening to, or any other dynamic content using plugins.
 
 ![doteki logo: a river passing through a bamboo forest](https://cdn.jsdelivr.net/gh/welpo/doteki@main/website/static/img/logo.png)
 
 #### [GitHub](https://github.com/welpo/doteki) • [Website](https://doteki.org/) • [Documentation](https://doteki.org/docs/) {.centered-text}
 
-## Why dōteki?
+## How it works
 
-**dōteki** stands out for its simplicity and power, enabling you to dynamically showcase your work, interests and personality on your GitHub profile. It's designed to be easy to set up and use, while also being highly customizable and extensible.
+1. Add markers to your README:
 
-## Key Features
+```md,name=README.md
+<!-- blog start -->
+<!-- blog end -->
+```
 
-- **Plug-and-Play**: Add markers to your README and use a TOML file for straightforward setup and easy management of dynamic content sections on your GitHub profile README.
-- **Extensible plugin system**: From showcasing your latest blog posts to displaying your favourite music, the plugin system allows for endless possibilities. Can't find a plugin that suits your needs? [Create your own](https://doteki.org/docs/developer-guide/plugin-standard)!
-- **Extensive documentation**: The [comprehensive documentation](https://doteki.org/docs/) provides detailed information on how to set up and use **dōteki** and its plugins. It includes [clear instructions for developers](https://doteki.org/docs/developer-guide/) looking to contribute.
-- **Automation Ready**: Use the [GitHub Action](https://github.com/welpo/doteki-action) to keep your profile always up to date.
+2. Configure what goes there:
 
-## Enhance Your GitHub Profile Today
+```toml,name=doteki.toml
+[sections.blog]
+plugin = "feed"
+url = "https://osc.garden/atom.xml"  # Replace with your feed.
 
-Embrace the dynamic capabilities of **dōteki** and transform your GitHub profile into a vibrant showcase of your latest work, thoughts, and interests.
+[sections.last_updated]
+plugin = "current_date"
+inline = true
+```
 
-[Set up **dōteki** in less than 5 minutes](https://doteki.org/) and bring your GitHub profile to life.
+3. Set up the [GitHub Action](https://github.com/welpo/doteki-action).
 
-[![dōteki social media card](social_cards/projects_doteki.jpg)](https://doteki.org/)
+That's it! Your README will stay updated automatically.
+
+## Features
+
+- **Plugin system**: Show [blog posts](https://doteki.org/docs/plugins/feed), [music](https://doteki.org/docs/plugins/lastfm), or [build your own plugin](https://doteki.org/docs/developer-guide/plugin-standard)
+- **Simple setup**: One TOML file, one GitHub Action
+- **Flexible**: Each plugin has its own options (sort order, max entries, format…)
+- **[Extensive documentation](https://doteki.org/docs/)**: Detailed information on how to set up and use **dōteki** and its plugins. It includes [clear instructions for developers](https://doteki.org/docs/developer-guide/) looking to contribute.
+
+## Documentation
+
+Check the [docs](https://doteki.org/docs/) for:
+
+- [Getting started guide](https://doteki.org/docs/)
+- [Available plugins](https://doteki.org/docs/category/plugins)
+- [Plugin development](https://doteki.org/docs/developer-guide/)
+- [Configuration options](https://doteki.org/docs/configuration/)

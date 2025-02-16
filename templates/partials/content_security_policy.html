@@ -27,10 +27,10 @@ content="default-src 'self'
         {%- if config.extra.analytics.service -%}
             {%- if config.extra.analytics.service == "goatcounter" -%}
                 {%- set script_src = script_src ~ " gc.zgo.at" -%}
-                {%- set connect_src = connect_src ~ " gc.zgo.at" -%}
+                {%- set connect_src = connect_src ~ " " ~ config.extra.analytics.id ~ ".goatcounter.com/count" -%}
             {%- elif config.extra.analytics.service == "umami" -%}
-                {%- set script_src = script_src ~ " analytics.eu.umami.is" -%}
-                {%- set connect_src = connect_src ~ " *.umami.dev" ~ " analytics.eu.umami.is" -%}
+                {%- set script_src = script_src ~ " cloud.umami.is" -%}
+                {%- set connect_src = connect_src ~ " *.umami.dev" ~ " cloud.umami.is" -%}
             {%- elif config.extra.analytics.service == "plausible" -%}
                 {%- set script_src = script_src ~ " plausible.io" -%}
                 {%- set connect_src = connect_src ~ " plausible.io" -%}

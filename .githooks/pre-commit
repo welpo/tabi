@@ -148,8 +148,8 @@ fi
 # Ensure JavaScript files are minified.                          #
 ##################################################################
 
-# Get the newly added and modified files.
-mapfile -t all_changed_files < <(git diff --cached --name-only)
+# Get the newly added and modified files, but not deleted files.
+mapfile -t all_changed_files < <(git diff --cached --name-only --diff-filter=d)
 
 script_name=$(basename "$0")
 # Loop through all newly added or modified files.

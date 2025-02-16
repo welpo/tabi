@@ -1,6 +1,7 @@
 {%- set type = type | default(value="info") -%}
 {%- set title = title | default(value=type | upper) -%}
 {%- set icon = icon | default(value=type) -%}
+{%- set text = text | default(value=body) -%}
 
 <div class="admonition {{ type }}">
     <div class="admonition-icon admonition-icon-{{ icon }}"></div>

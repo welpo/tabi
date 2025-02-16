@@ -1,7 +1,6 @@
 +++
 title = "Latest posts"
 sort_by = "date"
-template = "section.html"
 
 [extra]
 header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Óscar Fernández, the theme's author" }
@@ -10,7 +9,7 @@ max_posts = 4
 projects_path = "projects/_index.md"
 max_projects = 3
 show_projects_first = false
-social_media_card = "social_cards/index.jpg"
+social_media_card = "index.jpg"
 +++
 
-tabi is a fast, lightweight, and modern [Zola](https://www.getzola.org) theme. It aims to be a personal page and home to blog posts. It features a perfect Lighthouse score, responsive design, dark and light themes, custom shortcodes, and much more.
+tabi is an accessible [Zola](https://www.getzola.org) theme with [search](@/blog/mastering-tabi-settings/index.md#search), [multi-language support](@/blog/faq-languages/index.md), [optional JavaScript](@/blog/javascript/index.md), a perfect Lighthouse score, and comprehensive documentation. Crafted for personal websites and blogs.

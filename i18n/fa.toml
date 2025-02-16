@@ -23,6 +23,8 @@ one_results = "$NUMBER نتیجه"   # "1 result"
 many_results = "$NUMBER نتیجه"  # "3 results"
 
 # Navigation.
+pinned = "سنجاق‌شده"
+jump_to_posts = "پرش به نوشته‌ها"
 read_more = "ادامه مطلب"
 one_posts = "$NUMBER مطلب"
 many_posts = "$NUMBER مطلب"  # "3 posts"

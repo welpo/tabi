@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:atom="http://www.w3.org/2005/Atom" xmlns:base="http://purl.org/atompub/base/1.0/" xmlns:str="https://github.com/welpo/tabi">
+  xmlns:atom="http://www.w3.org/2005/Atom" xmlns:tabi="https://github.com/welpo/tabi">
   <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
       <xsl:attribute name="data-theme">
-        <xsl:value-of select="/atom:feed/str:translations/str:default_theme"/>
+        <xsl:value-of select="/atom:feed/tabi:metadata/tabi:default_theme"/>
       </xsl:attribute>
       <head>
         <title>
@@ -14,7 +14,8 @@
         <meta charset="utf-8"/>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="{/atom:feed/@xml:base}/main.css"/>
+        <xsl:variable name="baseUrl" select="/atom:feed/tabi:metadata/tabi:base_url"/>
+        <link rel="stylesheet" href="{$baseUrl}/main.css"/>
         <link rel="stylesheet" href="{/atom:feed/atom:link[@rel='extra-stylesheet']/@href}" />
 
       </head>
@@ -24,13 +25,13 @@
             <div class="info-box">
               <!-- This block replaces the text "About Feeds" with a hyperlink in the translated string -->
               <xsl:choose>
-                <xsl:when test="contains(/atom:feed/str:translations/str:about_feeds, 'About Feeds')">
-                  <xsl:value-of select="substring-before(/atom:feed/str:translations/str:about_feeds, 'About Feeds')"/>
+                <xsl:when test="contains(/atom:feed/tabi:metadata/tabi:about_feeds, 'About Feeds')">
+                  <xsl:value-of select="substring-before(/atom:feed/tabi:metadata/tabi:about_feeds, 'About Feeds')"/>
                   <a href="https://aboutfeeds.com/" target="_blank">About Feeds</a>
-                  <xsl:value-of select="substring-after(/atom:feed/str:translations/str:about_feeds, 'About Feeds')"/>
+                  <xsl:value-of select="substring-after(/atom:feed/tabi:metadata/tabi:about_feeds, 'About Feeds')"/>
                 </xsl:when>
                 <xsl:otherwise>
-                  <xsl:value-of select="/atom:feed/str:translations/str:about_feeds"/>
+                  <xsl:value-of select="/atom:feed/tabi:metadata/tabi:about_feeds"/>
                 </xsl:otherwise>
               </xsl:choose>
             </div>
@@ -43,20 +44,25 @@
               </p>
               <a class="readmore">
                 <xsl:attribute name="href">
-                  <xsl:value-of select="/atom:feed/@xml:base"/>
+                  <xsl:value-of select="/atom:feed/atom:link[@rel='alternate']/@href"/>
                 </xsl:attribute>
-                <xsl:value-of select="/atom:feed/str:translations/str:visit_the_site" />&#160;<span class="arrow">→</span>
+                <xsl:value-of select="/atom:feed/tabi:metadata/tabi:visit_the_site" />
+                <xsl:if test="/atom:feed/tabi:metadata/tabi:current_section != /atom:feed/atom:title">
+                  <xsl:text>: </xsl:text>
+                  <xsl:value-of select="/atom:feed/tabi:metadata/tabi:current_section" />
+                </xsl:if>
+                <span class="arrow"> →</span>
               </a>
               <p></p>
             </section>
             <div class="padding-top listing-title bottom-divider">
-              <h1><xsl:value-of select="/atom:feed/str:translations/str:recent_posts" /></h1>
+              <h1><xsl:value-of select="/atom:feed/tabi:metadata/tabi:recent_posts" /></h1>
             </div>
-            <xsl:variable name="post_listing_date" select="/atom:feed/atom:post_listing_date"/>
+            <xsl:variable name="post_listing_date" select="/atom:feed/tabi:metadata/tabi:post_listing_date"/>
             <div class="bloglist-container">
               <xsl:for-each select="/atom:feed/atom:entry">
-                <section class="bloglist-row bottom-divider">
-                  <ul class="bloglist-meta">
+                <section class="bloglist-meta bottom-divider">
+                  <ul>
                     <xsl:variable name="show_date" select="$post_listing_date = 'date' or $post_listing_date = 'both'"/>
                     <xsl:variable name="show_updated" select="$post_listing_date = 'updated' or $post_listing_date = 'both'"/>
 
@@ -68,13 +74,13 @@
 
                     <xsl:if test="$show_date and $show_updated">
                       <li class="mobile-only">
-                        <xsl:value-of select="/atom:feed/str:translations/str:separator"/>
+                        <xsl:value-of select="/atom:feed/tabi:metadata/tabi:separator"/>
                       </li>
                     </xsl:if>
 
                     <xsl:if test="$show_updated">
                       <li class="date">
-                        <xsl:variable name="update_string" select="/atom:feed/str:translations/str:last_updated_on"/>
+                        <xsl:variable name="update_string" select="/atom:feed/tabi:metadata/tabi:last_updated_on"/>
                         <xsl:variable name="update_date" select="substring(atom:updated, 0, 11)"/>
                         <xsl:value-of select="substring-before($update_string, '$DATE')"/>
                         <xsl:value-of select="$update_date"/>
@@ -82,7 +88,9 @@
                       </li>
                     </xsl:if>
                   </ul>
-                  <div class="bloglist-content">
+                </section>
+                <section class="bloglist-content bottom-divider">
+                  <div>
                     <div class="bloglist-title">
                       <a>
                         <xsl:attribute name="href">

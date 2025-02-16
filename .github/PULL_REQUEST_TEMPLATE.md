@@ -58,6 +58,7 @@ If you need help, please ask! -->
 - [ ] I have verified the accessibility of my changes
 - [ ] I have tested all possible scenarios for this change
 - [ ] I have updated `theme.toml` with a sane default for the feature
+- [ ] I have updated `config.toml` in [tabi-start](https://github.com/welpo/tabi-start)
 - [ ] I have made corresponding changes to the documentation:
   - [ ] Updated `config.toml` comments
   - [ ] Updated `theme.toml` comments

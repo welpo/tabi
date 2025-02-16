@@ -1,3 +1,44 @@
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 1.2rem;
+    margin-bottom: -1rem;
+    padding: 0;
+    list-style: none;
+
+    #all-projects-filter {
+        display: none;
+    }
+
+    .taxonomy-item {
+        margin: 0;
+
+        a {
+            display: inline-block;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+            border-radius: 1rem;
+            background: var(--bg-2);
+            padding: 0 16px;
+            color: var(--text-color);
+            font-size: 0.8rem;
+            text-decoration: none;
+
+            &:hover {
+                background: var(--primary-color);
+                color: var(--hover-color);
+            }
+
+            &.active {
+                background: var(--primary-color);
+                color: var(--hover-color);
+            }
+        }
+    }
+}
+
 .cards {
     display: grid;
     grid-template-rows: auto;
@@ -27,13 +68,12 @@
             padding-block-end: 24px;
             text-align: center;
         }
-
-        .card-title {
-            margin-top: 0.7em;
-        }
-
         .card-image {
-            width: 100%;
+            $margin: 1.6rem;
+            margin: $margin;
+            margin-bottom: $margin / 1.5;
+            width: calc(100% - $margin * 2);
+            height: auto;
         }
 
         .card-image-placeholder {
@@ -52,5 +92,14 @@
 @media all and (max-width: 720px) {
     .cards {
         gap: 18px;
+    }
+
+    .filter-controls {
+        gap: 8px;
+        margin: 18px 0;
+
+        .taxonomy-item a {
+            padding: 4px 12px;
+        }
     }
 }

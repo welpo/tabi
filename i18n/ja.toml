@@ -27,6 +27,8 @@ one_results = "$NUMBER 結果"  # "1 result"
 many_results = "$NUMBER 結果"  # "3 results"
 
 # Navigation.
+pinned = "固定"
+jump_to_posts = "投稿へジャンプ"
 read_more = "続きを読む"
 one_posts = "$NUMBER 投稿"
 many_posts = "$NUMBER 投稿"

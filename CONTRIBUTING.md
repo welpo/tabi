@@ -25,7 +25,7 @@ Working on your first Pull Request? You can learn how from this free video serie
 Please make sure the following is done when submitting a pull request:
 
 1. **Keep your PR small**. Small pull requests are much easier to review and more likely to get merged. Make sure the PR does only one thing, otherwise please split it.
-2. **Use descriptive titles**. It is recommended to follow this [commit message style](#conventional-commit-messages).
+2. **Use descriptive titles**. It is recommended to follow this [commit message style](#conventional-commit-messages-with-gitmoji).
 3. **Test your changes**. Make sure to test different configurations that might affect your changes.
 4. **Fill the PR template**. The template will guide you through the process of submitting a PR.
 
@@ -37,7 +37,7 @@ Format: `<gitmoji> <type>(<scope>): <description>`
 
 `<gitmoji>` is an emoji from the [gitmoji](https://gitmoji.dev/) list. It makes it easier to visually scan the commit history and quickly grasp the purpose of changes.
 
-`<scope>` is optional. If your change affects a specific part of the codebase, consider adding the scope. Scopes should be brief but recognizable, e.g. `config`, `gitmoji`, or `cli`.
+`<scope>` is optional. If your change affects a specific part of the codebase, consider adding the scope. Scopes should be brief but recognizable, e.g. `config`, `feed`, or `search`.
 
 The various types of commits:
 
@@ -47,7 +47,7 @@ The various types of commits:
 - `docs`: a change to the website or other Markdown documents.
 - `refactor`: a change to code that doesn't change behaviour, e.g. splitting files, renaming internal variables, improving code style…
 - `chore`: upgrading dependencies, releasing new versions… Chores that are **regularly done** for maintenance purposes.
-- `misc`: anything else that doesn't change production code, yet is not `test` or `chore`. e.g. updating GitHub actions workflow.
+- `misc`: anything else that doesn't change production code, yet is not `chore`. e.g. updating GitHub actions workflow.
 
 The commits within your PR don't need to follow this convention (we'll [squash them](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests)). However, the PR title should be in this format. If you're not sure about the title, don't worry, we'll help you fix it. Your code is more important than conventions!
 

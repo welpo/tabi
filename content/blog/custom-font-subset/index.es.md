@@ -1,7 +1,7 @@
 +++
 title = "Optimiza la carga con un subconjunto de fuente personalizado"
 date = 2023-04-29
-updated = 2023-07-08
+updated = 2025-01-12
 description = "Aprende cómo crear un subconjunto personalizado que solo incluya los glifos necesarios."
 
 [taxonomies]
@@ -21,7 +21,11 @@ Para solucionar esto, tabi carga un subconjunto de glifos para el encabezado. Da
 
 Por defecto, tabi incluye archivos de subconjuntos para caracteres en inglés y español (con algunos símbolos). Estos archivos se cargan cuando la página o el sitio de Zola está en ese idioma.
 
-Para una optimización adicional, puedes crear un subconjunto de fuentes personalizado que solo incluya los caracteres utilizados en tu encabezado.
+{% admonition(type="tip") %}
+Si estás usando una fuente personalizada, puedes crear tu propio subconjunto (ver más abajo) o desactivar completamente los subconjuntos predeterminados con `enable_subset = false` en tu `config.toml`.
+{% end %}
+
+Para una optimización adicional, a continuación verás cómo crear un subconjunto de fuentes personalizado que solo incluya los caracteres utilizados en tu encabezado.
 
 ## Requisitos
 
