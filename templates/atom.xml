@@ -9,6 +9,7 @@
 <?xml-stylesheet href="{{ get_url(path='/feed_style.xsl', trailing_slash=false) | safe }}" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
     <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>{{ config.base_url }}</tabi:base_url>
         <tabi:separator>
             {{  config.extra.separator | default(value="•") }}
         </tabi:separator>
