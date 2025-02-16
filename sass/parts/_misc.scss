@@ -156,6 +156,11 @@ hr {
     height: 1px;
 }
 
+.footnotes-list,
+.footnotes {
+    text-align: start;
+}
+
 .footnote-reference {
     font-size: 0.7rem;
     font-family: var(--serif-font);
@@ -180,7 +185,12 @@ hr {
     font-size: 0.8rem;
 }
 
-.footnotes-list a[href^="#fr-"] {
+.footnotes-list a[href^="#fr-"],
+.footnotes a[href^="#fr-"] {
+    font-size: 0.8rem;
+}
+
+.footnotes code {
     font-size: 0.8rem;
 }
 

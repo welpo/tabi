@@ -105,4 +105,6 @@ In Rust, you declare a mutable variable with `let mut x = 5;`, whereas in Python
 >
 > — Charlie Kaufman, Synecdoche, New York
 
+---
+
 [^1]: And here's an example of a footnote!

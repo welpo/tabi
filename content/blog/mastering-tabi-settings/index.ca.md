@@ -1005,6 +1005,8 @@ Aquesta opció està habilitada per defecte. Per desactivar-la per una pàgina, 
 
 Per a més informació, consulta la [pàgina de documentació de CSP](@/blog/security/index.ca.md).
 
+---
+
 [^1]: Si estàs utilitzant un repositori Git remot, potser voldràs automatitzar el procés d'actualització del camp `updated`. Aquí tens una guia per a això: [Zola Git Hook: actualitzant les dates de les publicacions](https://osc.garden/ca/blog/zola-date-git-hook/).
 
 [^2]: Per a codificar el teu correu electrònic en base64 pots utilitzar [eines en línia](https://www.base64encode.org/) o, al teu terminal, executar: `printf 'mail@example.com' | base64`

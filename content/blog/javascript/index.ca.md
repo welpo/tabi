@@ -43,4 +43,6 @@ Per especificar aquestes opcions:
 
 A part d'això, és un tema ràpid amb HTML i CSS que funciona sense JavaScript. Just com hauria de ser (la majoria de) la web :-)
 
+---
+
 [^1]: Per codificar el teu correu en base64 pots utilitzar [eines en línia](https://www.base64encode.org/) o, al terminal, executa: `printf 'mail@example.com' | base64`.

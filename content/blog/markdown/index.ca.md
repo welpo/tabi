@@ -105,4 +105,6 @@ A Rust, declares una variable mutable amb `let mut x = 5;`, mentre que a Python,
 >
 > — Mercè Rodoreda, La plaça del Diamant
 
+---
+
 [^1]: I aquí tens un exemple de nota a peu de pàgina!

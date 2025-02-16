@@ -1016,6 +1016,8 @@ This feature is enabled by default. To disable it (and allow all connections), s
 
 See the [CSP documentation page](@/blog/security/index.md) for more information.
 
+---
+
 [^1]: If you're using a remote Git repository, you might want to automate the process of updating the `updated` field. Here's a guide for that: [Zola Git Pre-Commit Hook: Updating Post Dates](https://osc.garden/blog/zola-date-git-hook/).
 
 [^2]: To encode your email in base64 you can use [online tools](https://www.base64encode.org/) or, on your terminal, run: `printf 'mail@example.com' | base64`.

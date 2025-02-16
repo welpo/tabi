@@ -41,4 +41,6 @@ Puedes desactivar las cabeceras (permitiendo todo) en una página, sección, o g
     { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
     ```
 
+---
+
 [^1]: Requiere una configuración adecuada del servidor web (por ejemplo, redirigir el tráfico HTTP a HTTPS).

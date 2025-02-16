@@ -41,4 +41,6 @@ You can disable the CSP (allowing all connections) on a page, section, or global
     { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
     ```
 
+---
+
 [^1]: Requires proper webserver configuration (e.g. redirecting HTTP traffic to HTTPS).

@@ -41,4 +41,6 @@ Pots desactivar les capçaleres (permitint-ho tot) en una pàgina, secció, o gl
     { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
     ```
 
+---
+
 [^1]: Requereix una configuració adequada del servidor web (p. ex., redirigir el trànsit HTTP a HTTPS).
