@@ -16,7 +16,7 @@ social_media_card = "social_cards/about.ar.jpg"
 
 ## الميزات
 
-يركز **تابي** على الاداء ويدعم [تعدد اللغات] أي انه يمكن لمدونتك دعم أكثر من لغة، ويمكنك [تخصيص مظهرها]، ويمكنك [تفعيل التعليقات بها] أي السماح للأخرين بالتعليق على منشوراتك. و **تابي** لا يجبر مدونتك على إستخدام جافاسكربت، حيث انها [إختيارية] ولكنك سوف تفقد المميزات التي تحتاج إليها. 
+يركز **تابي** على الاداء ويدعم [تعدد اللغات] أي انه يمكن لمدونتك دعم أكثر من لغة، ويمكنك [تخصيص مظهرها]، ويمكنك [تفعيل التعليقات بها] أي السماح للأخرين بالتعليق على منشوراتك. و **تابي** لا يجبر مدونتك على إستخدام جافاسكربت، حيث انها [إختيارية] ولكنك سوف تفقد المميزات التي تحتاج إليها.
 
 ## المساهمة
 
@@ -32,10 +32,9 @@ social_media_card = "social_cards/about.ar.jpg"
 [osc.garden]: https://osc.garden
 [المدونة]: https://welpo.github.io/tabi/blog
 [الأرشيف]: https://welpo.github.io/tabi/archive
-[تعدد اللغات]: https://welpo.github.io/tabi/ar/blog/faq-languages
-[تخصيص مظهرها]: https://welpo.github.io/tabi/ar/blog/customise-tabi
-[تفعيل التعليقات بها]: https://welpo.github.io/tabi/ar/blog/comments
-[إختيارية]: https://welpo.github.io/tabi/ar/blog/javascript
+[تعدد اللغات]: https://welpo.github.io/tabi/blog/faq-languages
+[تخصيص مظهرها]: https://welpo.github.io/tabi/blog/customise-tabi
+[تفعيل التعليقات بها]: https://welpo.github.io/tabi/blog/comments
+[إختيارية]: https://welpo.github.io/tabi/blog/javascript
 [إرشادات المساهمة]: https://github.com/welpo/tabi/blob/main/CONTRIBUTING.md
 [رخصة MIT]: https://choosealicense.com/licenses/mit
-
