@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-02-15
+updated = 2025-02-16
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -770,7 +770,10 @@ By default, the Atom feed only contains the summary/description of your posts. Y
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
 
-You can hide specific pages or entire sections from your feed by setting `hide_from_feed = true`.
+You can control how content appears in your feeds using two settings:
+
+1. `hide_from_feed = true`: Hides content from all feeds (main, section, and tag feeds)
+2. `hide_from_main_feed = true`: Hides content only from the main feed while keeping it visible in section and tag feeds
 
 ### Comments {#adding-comments}
 

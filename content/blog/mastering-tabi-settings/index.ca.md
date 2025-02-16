@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-02-15
+updated = 2025-02-16
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -761,7 +761,10 @@ Per defecte, el feed Atom només conté el resum o descripció de les teves publ
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
 
-Pots amagar pàgines específiques o seccions senceres del feed amb `hide_from_feed = true`.
+Pots controlar com apareix el contingut als feeds utilitzant dues configuracions:
+
+- `hide_from_feed = true`: Amaga el contingut de tots els feeds (feed principal, feeds de secció i feeds d'etiquetes)
+- `hide_from_main_feed = true`: Amaga el contingut només del feed principal mentre el manté visible als feeds de secció i d'etiquetes
 
 ### Comentaris {#afegir-comentaris}
 

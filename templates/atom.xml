@@ -72,6 +72,12 @@
     {%- if macros_settings::evaluate_setting_priority(setting="hide_from_feed", page=page, default_global_value=false) == "true" -%}
         {%- continue -%}
     {%- endif -%}
+    {#- Skip if hide_from_main_feed is true and this is the main feed -#}
+    {%- if macros_settings::evaluate_setting_priority(setting="hide_from_main_feed", page=page, default_global_value=false) == "true"
+         and not section
+         and not term -%}
+        {%- continue -%}
+    {%- endif -%}
     <entry xml:lang="{{ page.lang }}">
         <title>{{ page.title }}</title>
         <published>{{ page.date | date(format="%+") }}</published>
