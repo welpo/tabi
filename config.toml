@@ -374,7 +374,7 @@ domain = "www.example.com"
 
 # data configuration for the webmention.min.js script
 # The base URL to use for this page. Defaults to window.location
-page_url = "https://beesbuzz.biz/code/439-Falsehoods-programmers-believe-about-email"
+page_url = "https://www.jrussell.ie/blog/update-and-release/10-update-and-release/"
 
 # Additional URLs to check, separated by |s
 # add_urls 
