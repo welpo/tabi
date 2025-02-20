@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-02-12
+updated = 2025-02-19
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -767,7 +767,7 @@ If you have enabled a system globally, but want to disable it on a specific page
 
 Read [the docs](@/blog/comments/index.md) for more information on the available systems and their setup.
 
-### Webmentions
+### Webmentions {#adding-webmentions}
 
 As described by the recommended W3C standard [Webmention][1] is a simple way to notify any URL when you mention it on your site. From the receiver's perspective, it's a way to request notifications when other sites mention it.
 
@@ -787,6 +787,10 @@ Add the shortcut on the page where you want to display the webmentions:
 ```
 {{/* webmentions() */}}
 ```
+
+The webmentions section will then be displayed where you added it on the page as follows:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/webmention_light.webp", dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Page footer, showing a 'Site source' link") }}
 
 [1]: https://www.w3.org/TR/webmention/#abstract-p-1
 [2]: https://webmention.io/
