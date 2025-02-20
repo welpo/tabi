@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2025-02-12
+updated = 2025-02-19
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -465,6 +465,12 @@ Add the shortcut on the page where you want to display the webmentions:
 ```
 {{/* webmentions() */}}
 ```
+
+The webmentions section will then be displayed where you added it on the page as follows:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/webmention_light.webp", dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Page footer, showing a 'Site source' link") }}
+
+The following is a live example based on the specific page_url configured in the template config.toml.
 
 {{ webmentions() }}
 
