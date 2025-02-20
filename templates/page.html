@@ -106,10 +106,11 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
 {# End debugging #}
 
 <main>
-    <article>
-        <h1 class="article-title">
+    <article class="h-entry">
+        <h1 class="p-name article-title">
             {{ page.title }}
         </h1>
+        <a class="u-url u-uid" href="{{ page.permalink | safe }}"></a>
 
         <ul class="meta">
             {#- Draft indicator -#}
@@ -137,7 +138,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- endif -%}
 
                 {%- set by_author = macros_translate::translate(key="by_author", default="By $AUTHOR", language_strings=language_strings) -%}
-                <li>{{ by_author | replace(from="$AUTHOR", to=author_string) }}</li>
+                <li p-author>{{ by_author | replace(from="$AUTHOR", to=author_string) }}</li>
                 {%- set previous_visible = true -%}
             {% endif %}
 
@@ -145,7 +146,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
 
             {#- Date -#}
             {% if page.date and macros_settings::evaluate_setting_priority(setting="show_date", page=page, default_global_value=true) == "true" %}
-                <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</li>
+                <li class="dt-published">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</li>
                 {#- Variable to keep track of whether we've shown a section, to avoid separators as the first element -#}
                 {%- set previous_visible = true -%}
             {% endif %}
@@ -160,7 +161,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {%- if page.taxonomies and page.taxonomies.tags -%}
                 <li class="tag">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{- macros_translate::translate(key="tags", default="tags", language_strings=language_strings) | capitalize -}}:&nbsp;</li>
                 {%- for tag in page.taxonomies.tags -%}
-                    <li class="tag"><a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
+                    <li class="p-category tag"><a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
                     {%- if not loop.last -%}
                         ,&nbsp;
                     {%- endif -%}
@@ -175,7 +176,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- set formatted_date = macros_format_date::format_date(date=page.updated, short=true, language_strings=language_strings) -%}
                 {%- set updated_str = last_updated_str | replace(from="$DATE", to=formatted_date) -%}
                 {%- set previous_visible = true -%}
-                </ul><ul class="meta last-updated"><li>{{ updated_str }}</li>
+                </ul><ul class="dt-updated meta last-updated"><li>{{ updated_str }}</li>
                 {#- Show link to remote changes if enabled -#}
                 {%- if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" -%}
                     <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}<a href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}<small>&nbsp;<span class="arrow-corner">↗</span></small></a></li>
@@ -227,7 +228,13 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {{ macros_toc::toc(page=page, header=true, language_strings=language_strings) }}
         {% endif %}
 
-        <section class="body">
+        {#- Optional Summary paragraph for readers -#}
+        {% if page.description %}
+            <p class="p-summary" hidden>{{ page.description }}</p>
+        {%- endif -%}
+
+
+        <section class="e-content body">
             {#- Replace series_intro placeholder -#}
             {%- set content_with_intro = page.content -%}
             {%- if "<!-- series_intro -->" in page.content -%}
