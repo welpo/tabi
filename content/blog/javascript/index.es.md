@@ -1,7 +1,7 @@
 +++
 title = "Sin JavaScript obligatorio"
 date = 2023-01-06
-updated = 2024-12-15
+updated = 2025-02-21
 description = "JavaScript solo se utiliza cuando HTML y CSS no son suficientes."
 
 [taxonomies]
@@ -28,7 +28,7 @@ Las siguientes opciones pueden especificarse para publicaciones, secciones y a n
 - [**Soporte de KaTeX**](@/blog/markdown/index.es.md#katex). Habilitado al configurar `katex = true` (274 KB). Para renderizar fórmulas sin JS, prueba [MathML](https://developer.mozilla.org/docs/Web/MathML/).
 - [**Diagramas de Mermaid**](@/blog/shortcodes/index.es.md#diagramas-de-mermaid). Habilitado al configurar `mermaid = true` (~2.5 MB).
 - [**Copia de bloques de código con un solo clic**](@/blog/markdown/index.es.md#bloque-de-codigo). Habilitado al configurar `copy_button = true` (~700 bytes).
-- [**Mostrar ruta/URL en bloques de código**](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url). Se activa configurando `add_src_to_code_block = true`. (~400 bytes)
+- [**Nombres de bloques de código clicables**](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url). Se activa configurando `code_block_name_links = true`. (~400 bytes)
 - [**Filtraje por etiquetas** para cuadrículas de tarjetas](@/blog/mastering-tabi-settings/index.es.md#filtrar-proyectos) (p. ej. [proyectos](@/projects/_index.es.md)) (~2KB). Habilitado al configurar `enable_cards_tag_filtering = true`.
 
 Para especificar estas opciones:
@@ -42,5 +42,7 @@ Para especificar estas opciones:
 - [**Comentarios**](@/blog/comments/index.es.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) o Isso (1KB) pueden habilitarse globalmente configurando `enabled_for_all_posts = true` en la sección apropiada de tu `config.toml` (`[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` o `[extra.isso]`). Para habilitar comentarios en publicaciones individuales, configura el nombre del sistema `= true` (por ejemplo, `hyvortalk = true`) en el front matter de la publicación.
 
 Aparte de eso, es un tema rápido con HTML y CSS que funciona con JavaScript deshabilitado. Justo como debería ser (la mayoría de) la web :-)
+
+---
 
 [^1]: Para codificar tu correo electrónico en base64 puedes usar [herramientas en línea](https://www.base64encode.org/) o, en tu terminal, ejecutar: `printf 'mail@example.com' | base64`.

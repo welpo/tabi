@@ -1,7 +1,7 @@
 +++
 title = "Seguro por defecto"
 date = 2023-02-22
-updated = 2024-08-28
+updated = 2025-02-21
 description = "tabi tiene una Política de Seguridad de Contenido (CSP) fácilmente personalizable con configuraciones seguras. Obtén tranquilidad y una calificación de A+ en Mozilla Observatory."
 
 [taxonomies]
@@ -40,5 +40,7 @@ Puedes desactivar las cabeceras (permitiendo todo) en una página, sección, o g
     ```
     { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
     ```
+
+---
 
 [^1]: Requiere una configuración adecuada del servidor web (por ejemplo, redirigir el tráfico HTTP a HTTPS).

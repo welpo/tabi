@@ -9,6 +9,7 @@
 <?xml-stylesheet href="{{ get_url(path='/feed_style.xsl', trailing_slash=false) | safe }}" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
     <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>{{ config.base_url }}</tabi:base_url>
         <tabi:separator>
             {{  config.extra.separator | default(value="•") }}
         </tabi:separator>
@@ -69,6 +70,12 @@
     <id>{{ feed_url | safe }}</id>
     {%- for page in pages %}
     {%- if macros_settings::evaluate_setting_priority(setting="hide_from_feed", page=page, default_global_value=false) == "true" -%}
+        {%- continue -%}
+    {%- endif -%}
+    {#- Skip if hide_from_main_feed is true and this is the main feed -#}
+    {%- if macros_settings::evaluate_setting_priority(setting="hide_from_main_feed", page=page, default_global_value=false) == "true"
+         and not section
+         and not term -%}
         {%- continue -%}
     {%- endif -%}
     <entry xml:lang="{{ page.lang }}">

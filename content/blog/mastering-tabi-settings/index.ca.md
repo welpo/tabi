@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-02-11
+updated = 2025-02-21
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -236,6 +236,25 @@ tabi utilitza una font serif per als paràgrafs dels articles (la que estàs vei
 Fes clic a la imatge a continuació per comparar les fonts:
 
 {{ image_toggler(default_src="blog/mastering-tabi-settings/img/serif.webp", toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp", default_alt="Font serif", toggled_alt="Font sans-serif", full_width=true) }}
+
+### Indicador d'enllaços externs
+
+| Pàgina | Secció | `config.toml` | Segueix Jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:-----------------:|:-------------------:|
+|   ❌   |   ❌   |      ✅       |         ❌        |         ❌          |
+
+{{ admonition(type="info", text="Requereix Zola 0.20.0 o posterior.") }}
+
+Si vols afegir una icona als enllaços externs, configura la secció `[markdown]` (no `[extra]`) al teu `config.toml`:
+
+```toml
+[markdown]
+external_links_class = "external"
+```
+
+Això afegirà una petita icona al costat dels enllaços externs:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/external_link_light.webp", dark_src="blog/mastering-tabi-settings/img/external_link_dark.webp", alt="Icona d'enllaç extern", full_width=true) }}
 
 ### Estils CSS personalitzats
 
@@ -678,13 +697,13 @@ Establir `copy_button = true` afegirà un petit botó de copiar a la part superi
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp", dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp", alt="Botó de copiar en blocs de codi", full_width=true) }}
 
-### Mostrar ruta/URL en blocs de codi
+### Nom del bloc de codi clicable
 
 | Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
 |:------:|:-------:|:-------------:|:---------------:|:-------------------:|
 |   ✅   |   ✅    |      ✅       |        ✅       |         ✅          |
 
-Estableix `add_src_to_code_block = true` per habilitar l'ús del [shortcode `add_src_to_code_block`](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url).
+En establir `code_block_name_links = true` s'habiliten els enllaços clicables als noms dels blocs de codi. Consulta la [documentació](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url) per veure exemples i ús.
 
 ### Forçar blocs de codi d'esquerra a dreta
 
@@ -742,7 +761,10 @@ Per defecte, el feed Atom només conté el resum o descripció de les teves publ
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
 
-Pots amagar pàgines específiques o seccions senceres del feed amb `hide_from_feed = true`.
+Pots controlar com apareix el contingut als feeds utilitzant dues configuracions:
+
+- `hide_from_feed = true`: Amaga el contingut de tots els feeds (feed principal, feeds de secció i feeds d'etiquetes)
+- `hide_from_main_feed = true`: Amaga el contingut només del feed principal mentre el manté visible als feeds de secció i d'etiquetes
 
 ### Comentaris {#afegir-comentaris}
 
@@ -982,6 +1004,8 @@ allowed_domains = [
 Aquesta opció està habilitada per defecte. Per desactivar-la per una pàgina, secció o globalment, estableix `enable_csp = false`. La configuració de `enable_csp` segueix la jerarquia.
 
 Per a més informació, consulta la [pàgina de documentació de CSP](@/blog/security/index.ca.md).
+
+---
 
 [^1]: Si estàs utilitzant un repositori Git remot, potser voldràs automatitzar el procés d'actualització del camp `updated`. Aquí tens una guia per a això: [Zola Git Hook: actualitzant les dates de les publicacions](https://osc.garden/ca/blog/zola-date-git-hook/).
 

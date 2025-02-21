@@ -1,7 +1,7 @@
 +++
 title = "Sense JavaScript obligatori"
 date = 2023-01-06
-updated = 2024-12-15
+updated = 2025-02-21
 description = "JavaScript només s'utilitza quan HTML i CSS no són suficients."
 
 [taxonomies]
@@ -28,7 +28,7 @@ Les següents opcions es poden especificar per a publicacions, seccions i global
 - [**Suport de KaTeX**](@/blog/markdown/index.ca.md#katex). Habilitat configurant `katex = true` (274 KB). Per renderitzar fórmules sense JS, prova [MathML](https://developer.mozilla.org/docs/Web/MathML/).
 - [**Diagrames de Mermaid**](@/blog/shortcodes/index.ca.md#diagrames-de-mermaid). Habilitat configurant `mermaid = true` (~2.5 MB).
 - [**Còpia de blocs de codi amb un sol clic**](@/blog/markdown/index.ca.md#bloc-de-codi). Habilitada configurant `copy_button = true`. (~700 bytes)
-- [**Mostrar ruta/URL a blocs de codi**](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url). S'activa configurant `add_src_to_code_block = true`. (~400 bytes)
+- [**Noms de blocs de codi clicables**](@/blog/shortcodes/index.ca.md#mostrar-ruta-o-url). S'activa configurant `code_block_name_links = true`. (~400 bytes)
 - [**Filtratge per etiquetes** per a graelles de targetes](@/blog/mastering-tabi-settings/index.ca.md#filtrar-projectes) (p. ex. [projectes](@/projects/_index.ca.md)) (~2KB). S'habilita configurant `enable_cards_tag_filtering = true`.
 
 Per especificar aquestes opcions:
@@ -42,5 +42,7 @@ Per especificar aquestes opcions:
 - [**Comentaris**](@/blog/comments/index.ca.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) o Isso (1KB) es poden habilitar globalment configurant `enabled_for_all_posts = true` a la secció apropiada del teu `config.toml` (`[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` o `[extra.isso]`). Per habilitar comentaris en publicacions individuals, configura el nom del sistema `= true` (per exemple, `hyvortalk = true`) al front matter del post.
 
 A part d'això, és un tema ràpid amb HTML i CSS que funciona sense JavaScript. Just com hauria de ser (la majoria de) la web :-)
+
+---
 
 [^1]: Per codificar el teu correu en base64 pots utilitzar [eines en línia](https://www.base64encode.org/) o, al terminal, executa: `printf 'mail@example.com' | base64`.

@@ -108,7 +108,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
 <main>
     <article class="h-entry">
         <h1 class="p-name article-title">
-            {{ page.title }}
+            {{ page.title | markdown(inline=true) | safe }}
         </h1>
         <a class="u-url u-uid" href="{{ page.permalink | safe }}"></a>
 
@@ -179,7 +179,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 </ul><ul class="dt-updated meta last-updated"><li>{{ updated_str }}</li>
                 {#- Show link to remote changes if enabled -#}
                 {%- if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" -%}
-                    <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}<a href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}<small>&nbsp;<span class="arrow-corner">↗</span></small></a></li>
+                    <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}<a class="external" href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}</a></li>
                 {%- endif -%}
             {% endif %}
         </ul>
@@ -304,13 +304,13 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 <div>
                 {%- if left_link and left_label and left_title -%}
                 <a href="{{ left_link | safe }}" aria-label="{{ left_label }}" aria-describedby="left_title"><span class="arrow">←</span>&nbsp;{{ left_label }}</a>
-                <p aria-hidden="true" id="left_title">{{ left_title | truncate(length=100, end="…") }}</p>
+                <p aria-hidden="true" id="left_title">{{ left_title | truncate(length=100, end="…") | markdown(inline=true) | safe }}</p>
                 {%- endif -%}
                 </div>
                 <div>
                 {%- if right_link and right_label and right_title -%}
                 <a href="{{ right_link | safe }}" aria-label="{{ right_label }}" aria-describedby="right_title">{{ right_label }}&nbsp;<span class="arrow">→</span></a>
-                <p aria-hidden="true" id="right_title">{{ right_title | truncate(length=100, end="…") }}</p>
+                <p aria-hidden="true" id="right_title">{{ right_title | truncate(length=100, end="…") | markdown(inline=true) | safe }}</p>
                 {%- endif -%}
                 </div>
             </nav>

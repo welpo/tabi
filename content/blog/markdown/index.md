@@ -1,7 +1,7 @@
 +++
 title = "Markdown examples"
 date = 2023-01-31
-updated = 2024-11-23
+updated = 2025-02-21
 description = "This post showcases some examples of Markdown formatting, including a table, code blocks and tags, quotes, tables, and footnotes."
 
 [taxonomies]
@@ -104,5 +104,7 @@ In Rust, you declare a mutable variable with `let mut x = 5;`, whereas in Python
 > "We're all hurtling towards death. Yet here we are, for the moment, alive. Each of us knowing we're going to die. Each of us secretly believing we won't."
 >
 > — Charlie Kaufman, Synecdoche, New York
+
+---
 
 [^1]: And here's an example of a footnote!

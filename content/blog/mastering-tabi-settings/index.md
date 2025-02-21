@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-02-19
+updated = 2025-02-21
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -241,6 +241,25 @@ tabi uses a serif font for article paragraphs (the one you're seeing now). You c
 Click on the image below to compare the two looks:
 
 {{ image_toggler(default_src="blog/mastering-tabi-settings/img/serif.webp", toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp", default_alt="Serif font", toggled_alt="Sans-serif font", full_width=true) }}
+
+### External Link Indicator
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
+
+{{ admonition(type="info", text="Requires Zola 0.20.0 or later.") }}
+
+If you'd like to add an icon to external links, configure the `[markdown]` (not `[extra]`) section in your `config.toml`:
+
+```toml
+[markdown]
+external_links_class = "external"
+```
+
+This will add a small icon next to external links:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/external_link_light.webp", dark_src="blog/mastering-tabi-settings/img/external_link_dark.webp", alt="External link icon", full_width=true) }}
 
 ### Custom CSS
 
@@ -689,13 +708,13 @@ Setting `copy_button = true` will add a small copy button to the top right of co
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp", dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp" alt="Copy button on code blocks", full_width=true) }}
 
-### Source/Path on Code Blocks
+### Clickable Code Block Names
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ✅  |   ✅    |      ✅       |         ✅        |         ✅          |
 
-Setting `add_src_to_code_block = true` enables the use of the [`add_src_to_code_block` shortcode](@/blog/shortcodes/index.md#show-source-or-path).
+Setting `code_block_name_links = true` enables URLs in code block names to become clickable links. Check out the [documentation](@/blog/shortcodes/index.md#show-source-or-path) for examples and usage.
 
 ### Force Code Blocks LTR
 
@@ -751,7 +770,10 @@ By default, the Atom feed only contains the summary/description of your posts. Y
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
 
-You can hide specific pages or entire sections from your feed by setting `hide_from_feed = true`.
+You can control how content appears in your feeds using two settings:
+
+1. `hide_from_feed = true`: Hides content from all feeds (main, section, and tag feeds)
+2. `hide_from_main_feed = true`: Hides content only from the main feed while keeping it visible in section and tag feeds
 
 ### Comments {#adding-comments}
 
@@ -1021,6 +1043,8 @@ allowed_domains = [
 This feature is enabled by default. To disable it (and allow all connections), set `enable_csp = false` on a page, section or globally. The `enable_csp` setting follows the [hierarchy](#settings-hierarchy).
 
 See the [CSP documentation page](@/blog/security/index.md) for more information.
+
+---
 
 [^1]: If you're using a remote Git repository, you might want to automate the process of updating the `updated` field. Here's a guide for that: [Zola Git Pre-Commit Hook: Updating Post Dates](https://osc.garden/blog/zola-date-git-hook/).
 

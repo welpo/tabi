@@ -1,6 +1,7 @@
 +++
 title = "A Complete Guide to Series"
 date = 2024-11-08
+updated = 2025-02-21
 description = "Learn how to organize your posts into sequential series, perfect for tutorials, courses, and multi-part stories."
 
 [taxonomies]
@@ -48,9 +49,7 @@ flowchart
 2. Create `_index.md` in the series directory.
 3. Set up the `_index.md` front matter:
 
-    {{ add_src_to_code_block(src="series/_index.md") }}
-
-    ```toml
+    ```toml,name=series/_index.md
     title = "Learning Rust"
     template = "series.html"
     sort_by = "slug"
@@ -154,9 +153,7 @@ This setting follows [the hierarchy](@/blog/mastering-tabi-settings/index.md#set
 
 Series articles can have automatic introduction and conclusion sections. These are configured in your series' `_index.md`. A basic example:
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra.series_intro_templates]
 default = "This article is part of the $SERIES_HTML_LINK series."
 
@@ -177,9 +174,7 @@ The series system uses different templates based on an article's position in the
 
 The system automatically determines which template to use based on the article's position. The templates are defined in the series configuration (`_index.md`), as `extra.series_intro_templates` and `extra.series_outro_templates`.:
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra.series_intro_templates]
 next_only = "Welcome to part 1! Next up: $NEXT_HTML_LINK"
 middle = "Previous: $PREV_HTML_LINK | Next: $NEXT_HTML_LINK"
@@ -253,6 +248,8 @@ There are three types of variables:
 
 {% end %}
 
+{{ admonition(type="tip", title="TIP: Custom text with permalinks", text='Markdown links like `[text]($SERIES_PERMALINK)` will be marked (and [styled](@/blog/mastering-tabi-settings/index.md#external-link-indicator)) as external. If you need custom text and want to avoid external styling, use HTML: `<a href=\"$SERIES_PERMALINK\">your text</a>`.') }}
+
 ### Navigation Variables
 
 {% wide_container() %}
@@ -285,9 +282,7 @@ There are three types of variables:
 
 {{ admonition(type="tip", title="HTML vs text variables", text="Use HTML variables (ending in `_HTML_LINK`) when you want ready-made links. Use text variables (ending in `_TITLE` or `_PERMALINK`) when you want more control over the formatting.") }}
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 # Introduction.
 [extra.series_intro_templates]
 next_only = """
@@ -351,9 +346,7 @@ Series templates support custom variables for additional information you want to
 
 1. First, define your **placeholders** in your series configuration (`_index.md`):
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra]
 series = true
 series_template_placeholders = ["$POSITION", "$TOPIC", "$DIFFICULTY"]
@@ -361,9 +354,7 @@ series_template_placeholders = ["$POSITION", "$TOPIC", "$DIFFICULTY"]
 
 2. Then, in each series article, provide the values for these placeholders in `series_template_variables`:
 
-{{ add_src_to_code_block(src="series/article.md") }}
-
-```toml
+```toml,name=series/article.md
 [extra.series_template_variables]
 position = "first"
 topic = "Variables and Types"
@@ -374,9 +365,7 @@ difficulty = "Beginner"
 
 You can use your custom variables in any template, alongside the built-in variables:
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 [extra.series_intro_templates]
 default = """
 This is the $POSITION article in $SERIES_HTML_LINK.
@@ -389,9 +378,7 @@ Difficulty level: $DIFFICULTY
 
 ### Example with Custom Variables
 
-{{ add_src_to_code_block(src="series/_index.md") }}
-
-```toml
+```toml,name=series/_index.md
 # In the series configuration.
 [extra]
 series = true
@@ -404,9 +391,7 @@ series_intro_templates.default = """
 """
 ```
 
-{{ add_src_to_code_block(src="series/02-learning-rust/index.md") }}
-
-```toml
+```toml,name=series/02-learning-rust/index.md
 # In an article of the series.
 [extra.series_template_variables]
 learning_time = "30 minutes"

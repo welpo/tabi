@@ -38,6 +38,8 @@ bottom_footnotes = true
 # To use a Zola built-in theme, CSP needs to allow unsafe-inline for style-src.
 highlight_theme = "css"
 smart_punctuation = true
+# Set to 'external' to add an indicator next to external links.
+external_links_class = "external"
 
 [link_checker]
 internal_level = "warn"
@@ -60,6 +62,13 @@ title = "~/tabi"
 description = "tabi és un tema accessible per a Zola amb cerca, suport multilingüe, JavaScript opcional, una puntuació perfecta a Lighthouse i documentació exhaustiva. Dissenyat per a llocs web i blogs personals."
 generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
+
+[languages.ar]
+title = "~/تابي"
+description = "تابي هو قالب Zola سريع وحديث مع دعم متعدد اللغات و JavaScript اختياري ودرجة Lighthouse مثالية."
+generate_feeds = true
+taxonomies = [{name = "tags", feed = true}]
+build_search_index = false
 
 [extra]
 # Check out the documentation (or the comments below) to learn how to customise tabi:
@@ -126,13 +135,13 @@ show_remote_changes = true  # Defaults to true.
 # Show a link to the repository of the site, right next to the "Powered by Zola & tabi" text.
 show_remote_source = true  # Defaults to true.
 
-# Add a "copy" button to codeblocks (loads ~700 bytes of JavaScript).
+# Add a "copy" button to code blocks (loads ~700 bytes of JavaScript).
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 copy_button = true
 
-# Loads the necessary JavaScript (~400 bytes) to use the "Show source or path" shortcode: https://welpo.github.io/tabi/blog/shortcodes/#show-source-or-path
+# Make code block names clickable if they are URLs (loads ~400 bytes of JavaScript).
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
-add_src_to_code_block = false
+code_block_name_links = false
 
 # Force left-to-right (LTR) direction for code blocks.
 # Set to false to allow code to follow the document's natural direction.

@@ -1,7 +1,7 @@
 +++
 title = "Exemples de Markdown"
 date = 2023-01-31
-updated = 2024-11-23
+updated = 2025-02-21
 description = "Aquesta publicació mostra alguns exemples de format en Markdown, incloent-hi una taula, blocs de codi i etiquetes, citacions, taules i notes a peu de pàgina."
 
 [taxonomies]
@@ -104,5 +104,7 @@ A Rust, declares una variable mutable amb `let mut x = 5;`, mentre que a Python,
 > «La vida, perquè sigui vida, s'ha de viure a poc a poc…»
 >
 > — Mercè Rodoreda, La plaça del Diamant
+
+---
 
 [^1]: I aquí tens un exemple de nota a peu de pàgina!

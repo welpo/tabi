@@ -1,7 +1,7 @@
 +++
 title = "No mandatory JavaScript"
 date = 2023-01-06
-updated = 2024-12-15
+updated = 2025-02-21
 description = "JavaScript is only used when HTML and CSS aren't enough."
 
 [taxonomies]
@@ -28,7 +28,7 @@ The following settings can be specified for posts, sections and globally, follow
 - [**KaTeX support**](@/blog/markdown/index.md#katex). Enabled by setting `katex = true` (274 KB). To render math without JS, check out [MathML](https://developer.mozilla.org/docs/Web/MathML/).
 - [**Mermaid diagrams**](@/blog/shortcodes/index.md#mermaid-diagrams). Enabled by setting `mermaid = true` (~2.5 MB).
 - [**One-click copy of code blocks**](@/blog/markdown/index.md#code-block). Enabled by setting `copy_button = true`. (~700 bytes)
-- [**Showing source (path or URL) in code blocks**](@/blog/shortcodes/index.md#show-source-or-path). Enabled by setting `add_src_to_code_block = true`. (~300 bytes)
+- [**Clickable code block names**](@/blog/shortcodes/index.md#show-source-or-path). Enabled by setting `code_block_name_links = true`. (~300 bytes)
 - [**Tag filtering** for card grids](@/blog/mastering-tabi-settings/index.md#filtering-projects) (e.g. [projects](@/projects/_index.md)) (~2KB). Enabled by setting `enable_cards_tag_filtering = true`.
 
 To specify these settings:
@@ -42,5 +42,7 @@ To specify these settings:
 - [**Comments**](@/blog/comments/index.md). giscus (2 KB), utterances (1 KB), Hyvor Talk (~800 bytes) or Isso (1KB) can be globally enabled by setting `enabled_for_all_posts = true` in the right section of your  `config.toml` (i.e. `[extra.giscus]`, `[extra.utterances]`, `[extra.hyvortalk]` or `[extra.isso]`). To enable comments on individual posts, set the name of the system `= true` (e.g. `hyvortalk = true`) in the post's front matter.
 
 Other than that, it's a fast theme with HTML and CSS which works with JavaScript disabled. Just the way (most of) the web should be :-)
+
+---
 
 [^1]: To encode your email in base64 you can use [online tools](https://www.base64encode.org/) or, on your terminal, run: `printf 'mail@example.com' | base64`.

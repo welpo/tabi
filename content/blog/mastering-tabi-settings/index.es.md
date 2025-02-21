@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-02-11
+updated = 2025-02-21
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -237,6 +237,25 @@ tabi utiliza una fuente serif para los párrafos de los artículos (la que está
 Haz clic en la imagen para comparar las fuentes:
 
 {{ image_toggler(default_src="blog/mastering-tabi-settings/img/serif.webp", toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp", default_alt="Fuente serif", toggled_alt="Fuente sans-serif", full_width=true) }}
+
+### Indicador de enlaces externos
+
+| Página | Sección | `config.toml` | Sigue Jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:----------------:|:------------------:|
+|   ❌   |    ❌   |      ✅       |        ❌        |         ❌         |
+
+{{ admonition(type="info", text="Requiere Zola 0.20.0 o posterior.") }}
+
+Si deseas añadir un icono a los enlaces externos, configura la sección `[markdown]` (no `[extra]`) en tu `config.toml`:
+
+```toml
+[markdown]
+external_links_class = "external"
+```
+
+Esto añadirá un pequeño icono junto a los enlaces externos:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/external_link_light.webp", dark_src="blog/mastering-tabi-settings/img/external_link_dark.webp", alt="Icono de enlace externo", full_width=true) }}
 
 ### Estilos CSS personalizados
 
@@ -679,13 +698,13 @@ Establecer `copy_button = true` añadirá un pequeño botón de copiar en la par
 
 {{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp", dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp", alt="Botón de copiar en bloques de código", full_width=true) }}
 
-### Mostrar ruta/URL en bloques de código
+### Nombres de bloques de código clicables
 
 | Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
 |:------:|:-------:|:-------------:|:---------------:|:-------------------:|
 |   ✅   |   ✅    |      ✅       |        ✅       |         ✅          |
 
-Establece `add_src_to_code_block = true` para habilitar el uso del [shortcode `add_src_to_code_block`](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url).
+Establece `code_block_name_links = true` para habilitan los enlaces clickables en los nombres de bloques de código. Consulta la [documentación](@/blog/shortcodes/index.es.md#mostrar-ruta-o-url) para ver ejemplos y uso.
 
 ### Forzar bloques de código de izquierda a derecha
 
@@ -743,7 +762,10 @@ Por defecto, el feed Atom solo contiene el resumen/descripción de tus publicaci
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
 
-Puedes ocultar páginas específicas o secciones enteras del feed con `hide_from_feed = true`.
+Puedes controlar cómo aparece el contenido en los feeds usando dos configuraciones:
+
+- `hide_from_feed = true`: Oculta el contenido de todos los feeds (feed principal, feeds de sección y feeds de etiquetas)
+- `hide_from_main_feed = true`: Oculta el contenido solo del feed principal mientras lo mantiene visible en los feeds de sección y de etiquetas
 
 ### Comentarios {#añadir-comentarios}
 
@@ -983,6 +1005,8 @@ allowed_domains = [
 Esta función está habilitada por defecto. Para deshabilitarla (y permitir todo), configura `enable_csp = false` en una página, sección o globalmente. La opción `enable_csp` sigue [la jerarquía](#jerarquia-de-configuracion).
 
 Para obtener más información, consulta la [página de documentación de CSP](@/blog/security/index.es.md).
+
+---
 
 [^1]: Si estás utilizando un repositorio Git remoto, es posible que quieras automatizar el proceso de actualización del campo `updated`. Aquí tienes una guía para eso: [Zola Git Hook: actualizando las fechas de las publicaciones](https://osc.garden/es/blog/zola-date-git-hook/).
 

@@ -82,6 +82,44 @@ a {
     text-decoration: inherit;
 }
 
+// External link styles with `external_links_class = "external"`.
+main {
+    --external-link-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M11 5h-6v14h14v-6'/%3E%3Cpath d='M13 11l7 -7'/%3E%3Cpath d='M21 3h-6M21 3v6'/%3E%3C/g%3E%3C/svg%3E");
+    a.external:not(:has(img, svg, video, picture, figure)) {
+        display: inline-block;
+        padding-inline-end: 0.9em;
+    }
+
+    a.external:not(:has(img, svg, video, picture, figure))::after {
+        -webkit-mask-image: var(--external-link-icon);
+        -webkit-mask-size: 100% 100%;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        mask-image: var(--external-link-icon);
+        mask-size: 100% 100%;
+        margin-inline-start: 0.2em;
+        inset-inline-end: 0;
+        background-color: currentColor;
+        width: 0.8em;
+        height: 0.8em;
+        content: '';
+    }
+
+    &:dir(rtl) a.external:not(:has(img, svg, video, picture, figure))::after {
+        transform: translateY(-50%) rotate(-90deg);
+    }
+
+    .meta a.external:not(:has(img, svg, video, picture, figure))::after {
+        background-color: var(--meta-color);
+    }
+
+    a.external:not(:has(img, svg, video, picture, figure)):hover::after {
+        background-color: var(--hover-color);
+    }
+}
+
 a:hover {
     background-color: var(--primary-color);
     color: var(--hover-color);
@@ -91,7 +129,7 @@ a:hover rt {
     color: var(--text-color);
 }
 
-a:not(.no-hover-padding):hover::after {
+a:not(.no-hover-padding):hover::before {
     display: inline-block;
     position: absolute;
     z-index: -1;
@@ -100,7 +138,7 @@ a:not(.no-hover-padding):hover::after {
     inset-inline-end: -0.15em;
     inset-inline-start: -0.15em;
     background-color: var(--primary-color);
-    max-inline-size: 105%;  // This fixes multi-line links (see #225)
+    max-inline-size: 105%;
     content: "";
 }
 
@@ -116,6 +154,11 @@ hr {
     border: none;
     background-color: var(--divider-color);
     height: 1px;
+}
+
+.footnotes-list,
+.footnotes {
+    text-align: start;
 }
 
 .footnote-reference {
@@ -142,7 +185,12 @@ hr {
     font-size: 0.8rem;
 }
 
-.footnotes-list a[href^="#fr-"] {
+.footnotes-list a[href^="#fr-"],
+.footnotes a[href^="#fr-"] {
+    font-size: 0.8rem;
+}
+
+.footnotes code {
     font-size: 0.8rem;
 }
 

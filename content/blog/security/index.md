@@ -1,7 +1,7 @@
 +++
 title = "Secure by default"
 date = 2023-02-22
-updated = 2024-08-28
+updated = 2025-02-21
 description = "tabi has an easily customizable Content Security Policy (CSP) with safe defaults. Get peace of mind and an A+ on Mozilla Observatory."
 
 [taxonomies]
@@ -40,5 +40,7 @@ You can disable the CSP (allowing all connections) on a page, section, or global
     ```
     { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
     ```
+
+---
 
 [^1]: Requires proper webserver configuration (e.g. redirecting HTTP traffic to HTTPS).

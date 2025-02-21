@@ -1,7 +1,7 @@
 +++
 title = "Seguretat per defecte"
 date = 2023-02-22
-updated = 2024-08-28
+updated = 2025-02-21
 description = "tabi té una Política de Seguretat de Contingut (CSP) fàcilment personalitzable amb valors segurs per defecte. Obtingues tranquil·litat i un A+ en l'Observatori de Mozilla."
 
 [taxonomies]
@@ -40,5 +40,7 @@ Pots desactivar les capçaleres (permitint-ho tot) en una pàgina, secció, o gl
     ```
     { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
     ```
+
+---
 
 [^1]: Requereix una configuració adequada del servidor web (p. ex., redirigir el trànsit HTTP a HTTPS).
