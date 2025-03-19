@@ -321,9 +321,9 @@ custom_subset = true
 # self_hosted_url = ""
 
 [extra.webmentions]
-# enabled = true
+# enabled = false
 # Specify the domain registered with webmention.io.
-# domain = "www.example.com"
+# domain = ""
 
 # The HTML ID for the object to fill in with the webmention data.
 # Defaults to "webmentions"

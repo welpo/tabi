@@ -383,7 +383,7 @@ enable = false
 
 # data configuration for the webmention.min.js script
 # The base URL to use for this page. Defaults to window.location
-# page_url = ""
+# page_url = 
 
 # Additional URLs to check, separated by |s
 # add_urls 
