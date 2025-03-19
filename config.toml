@@ -373,9 +373,9 @@ service = "goatcounter"
 self_hosted_url = "https://tabi-stats.osc.garden"
 
 [extra.webmentions]
-enable = true
+enable = false
 # Specify the domain registered with webmention.io.
-domain = "www.example.com"
+# domain = ""
 
 # The HTML ID for the object to fill in with the webmention data.
 # Defaults to "webmentions"
@@ -383,13 +383,13 @@ domain = "www.example.com"
 
 # data configuration for the webmention.min.js script
 # The base URL to use for this page. Defaults to window.location
-page_url = "https://www.jrussell.ie/blog/update-and-release/10-update-and-release/"
+# page_url = ""
 
 # Additional URLs to check, separated by |s
 # add_urls 
 
 # The maximum number of words to render in reply mentions.
-wordcount = 20
+# wordcount = 20
 
 # The maximum number of mentions to retrieve. Defaults to 30.
 # max_webmentions = 30 
