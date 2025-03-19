@@ -265,7 +265,7 @@ Using the content body and setting the position to right:
 A longer note that
 can span multiple lines.
 
-*Markdown* is supported.
+_Markdown_ is supported.
 {%/* end */%}
 ```
 
@@ -313,19 +313,19 @@ Display lines 3 to 7 (both inclusive) of a local file:
 
 Bring attention to information with these admonition shortcodes. They come in five `type`s: `note`, `tip`, `info`, `warning`, and `danger`.
 
-{{ admonition(type="note", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="note", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
 
-{{ admonition(type="tip", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="tip", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
 
-{{ admonition(type="info", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="info", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
 
-{{ admonition(type="warning", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="warning", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
 
-{{ admonition(type="danger", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="danger", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
 
 You can change the `title` and `icon` of the admonition. Both parameters take a string and default to the type of admonition. `icon` can be any of the available admonition types.
 
-{{ admonition(type="note", icon="tip", title="Custom title and icon", text="Some **content** with *Markdown* `syntax`. Check [this `api`](#).") }}
+{{ admonition(type="note", icon="tip", title="Custom title and icon", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
 
 #### Usage
 
