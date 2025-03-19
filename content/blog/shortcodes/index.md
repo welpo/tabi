@@ -415,7 +415,7 @@ Use this shortcode if you want to have a wider table, paragraph, code block… O
 
 | Title             |  Year | Director             | Cinematographer       | Genre         | IMDb  | Duration     |
 |-------------------|-------|----------------------|-----------------------|---------------|-------|--------------|
-| Burning           | 2018  | Lee Chang-dong       | Hong Kyung-pyo        | Drama/Mystery | 7.5   | 148 min      |
+| Beoning           | 2018  | Lee Chang-dong       | Hong Kyung-pyo        | Drama/Mystery | 7.5   | 148 min      |
 | The Master        | 2012  | Paul Thomas Anderson | Mihai Mălaimare Jr.   | Drama/History | 7.1   | 137 min      |
 | The Tree of Life  | 2011  | Terrence Malick      | Emmanuel Lubezki      | Drama         | 6.8   | 139 min      |
 
