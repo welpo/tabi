@@ -465,22 +465,11 @@ def مرحبا_بالعالم():
 
 ## Displaying webmentions for your posts
 
-As described by the recommended W3C standard [Webmention][1] is a simple way to notify any URL when you mention it on your site. From the receiver's perspective, it's a way to request notifications when other sites mention it.
+You can find an introduction to webmentions [here](/blog/mastering-tabi-settings/#adding-webmentions). Webmentions need to be enabled and configured in the `config.toml` file.
 
-For static sites [webmention.io][2] hosts a webmention endpoint that can be used to receive webmentions. This feature fetches the webmentions stored at webmention.io and displays them for a page. You will need to have setup an account for your website at webmention.io. When you enable the webmention feature it will advertise your webmention.io endpoint and display the webmentions for any post using the webmention shortcut.
+### Usage
 
-### Configuration and Usage
-
-Enable webmentions for your site, add the following to your `config.toml` file:
-
-```toml
-[extra.webmentions]
-enabled = true
-# Specify the domain registered with webmention.io.
-domain = "www.example.com"
-```
-
-Add the shortcut on the page where you want to display the webmentions:
+Add the shortcode on the page where you want to display the webmentions:
 
 ```
 {{/* webmentions() */}}
@@ -494,5 +483,3 @@ The following is a live example based on the specific page_url configured in the
 
 {{ webmentions() }}
 
-[1]: https://www.w3.org/TR/webmention/#abstract-p-1
-[2]: https://webmention.io/
