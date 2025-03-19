@@ -55,8 +55,7 @@ content="default-src 'self'
     {%- endif -%}
 
     {#- Check if a webmention system is enabled to allow the necessary domains and directives -#}
-    {%- set webmention_enabled = config.extra.webmentions.enabled -%}
-    {%- if webmention_enabled -%}
+    {%- if config.extra.webmentions.enable -%}
         {%- set connect_src = connect_src ~ " webmention.io" -%}
     {%- endif -%}
 

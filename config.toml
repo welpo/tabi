@@ -373,7 +373,7 @@ service = "goatcounter"
 self_hosted_url = "https://tabi-stats.osc.garden"
 
 [extra.webmentions]
-enabled = true
+enable = true
 # Specify the domain registered with webmention.io.
 domain = "www.example.com"
 
@@ -392,7 +392,7 @@ page_url = "https://www.jrussell.ie/blog/update-and-release/10-update-and-releas
 wordcount = 20
 
 # The maximum number of mentions to retrieve. Defaults to 30.
-# max_webmentions 
+# max_webmentions = 30 
 
 # By default, Webmentions render using the mf2 'url' element, which plays
 # nicely with webmention bridges (such as brid.gy and telegraph)
