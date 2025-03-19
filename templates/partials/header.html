@@ -136,12 +136,10 @@
     <meta property="og:site_name" content="{{ config.title }}">
 
     {%- if config.extra.theme_switcher and config.extra.theme_switcher == true -%}
-    {# If JavaScript is disabled, hide the button. #}
-    <noscript>
-        <link rel="stylesheet" href="{{ get_url(path='no_js.css') | safe }}" />
-    </noscript>
-    <script type="text/javascript" src="{{ get_url(path='js/initializeTheme.min.js') | safe }}"></script>
-    <script defer src="{{ get_url(path='js/themeSwitcher.min.js', trailing_slash=false) | safe }}"></script>
+        {# If JavaScript is disabled, hide the button. #}
+        <noscript><link rel="stylesheet" href="{{ get_url(path='no_js.css') | safe }}"/></noscript>
+        <script type="text/javascript" src="{{ get_url(path='js/initializeTheme.min.js') | safe }}"></script>
+        <script defer src="{{ get_url(path='js/themeSwitcher.min.js', trailing_slash=false) | safe }}"></script>
     {%- endif -%}
 
     {%- if config.extra.analytics.service -%}
