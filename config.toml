@@ -427,3 +427,21 @@ avatar = true
 voting = true
 page_author_hashes = ""  # hash (or list of hashes) of the author.
 lazy_loading = true  # Loads when the comments are in the viewport (using the Intersection Observer API).
+
+# h-card configuration
+# will identify you on the indieweb (see https://microformats.org/wiki/h-card)
+[extra.hcard]
+# enable = true # Enables the h-card on the home page
+# with_mail = false        # Add your email to the card if extra.email is set and not encoded
+# with_social_links = true # Add your social links to the card
+# homepage = "https://myhomepage.net" # Homepage url, default to the value of 'base_url'
+# avatar = "img/profile.webp"
+# full_name = "John Doe" # Display name, default to the value of 'author'
+# biography = "Fond of the indieweb" # Small bio, as shown on social media profiles 
+#
+# You can add any property from https://microformats.org/wiki/h-card#Properties
+# Make sure to replace all '-' characters by '_'
+# Below are some examples
+# p_nickname = "nickname"
+# p_locality = "Bordeaux"
+# p_country_name = "France"

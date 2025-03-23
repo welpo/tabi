@@ -1,0 +1,70 @@
+{%- set hcard = config.extra.hcard -%}
+
+{% set full_name = config.author %}
+{% if hcard.full_name %}
+  {% set full_name = hcard.full_name %}
+{% endif %}
+
+{%- set homepage = config.base_url -%}
+{% if hcard.homepage %}
+  {%- set homepage = hcard.homepage -%}
+{% endif %}
+
+{% if hcard.enable %}
+<div class="h-card hidden">
+  <div>
+    {%- if hcard.avatar -%}
+    <img
+      class="u-photo"
+      src="{{ get_url(path=hcard.avatar) }}"
+      width="200"
+      height="200"
+      alt="{{ full_name }}"
+    />
+    {%- endif -%}
+
+    <span class="p-name" rel="me">{{ full_name }}</span>
+
+    {% if hcard.p_nickname %}
+    ( <span class="p-nickname">{{ hcard.p_nickname }}</span> )
+    {% endif %}
+  </div>
+
+  {% if hcard.biography %}
+  <p class="p-note">{{ hcard.biography }}</p>
+  {% endif %}
+
+  {# links #}
+  <div>
+    {%- if hcard.with_mail and config.extra.email and not config.extra.encode_plaintext_email -%}
+    <span>
+      <a class="u-email" href="mailto:{{ config.extra.email | safe }}">email</a>
+    </span> -
+    {%- endif -%}
+
+    <span>
+      <a class="u-url u-id" href="{{ homepage }}">homepage</a>
+    </span> -
+
+    {%- if hcard.with_social_links and config.extra.socials %}
+      {% for social in config.extra.socials %}
+      <span>
+        <a class="p-url" rel="me" href="{{ social.url | safe }}">{{ social.name }}</a>
+      </span> -
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  {# additional properties #}
+  <dl>
+  {% for key, value in hcard %}
+    {# exclude all properties previously displayed #}
+    {% if key not in ['enable', 'with_mail', 'with_social_links', 'homepage', 'full_name', 'avatar', 'biography', 'p_nickname'] %} 
+      <dt>{{ key | replace(from="p_", to="") | replace(from="u_", to="") | replace(from="dt_", to="") | replace(from="_", to=" ") | capitalize }}</dt>
+      <dd class="{{ key | replace(from="_", to="-") }}">{{ value }}</dd>
+    {% endif %}
+  {% endfor %}
+  </dl>
+
+</div>
+{% endif %}
