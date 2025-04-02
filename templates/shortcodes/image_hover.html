@@ -21,9 +21,9 @@
     {%- set relative_default_path = colocated_path ~ default_src -%}
     {%- set default_meta = get_image_metadata(path=relative_default_path, allow_missing=true) -%}
     {%- if not default_meta -%}
-        {%- set default_image_url = get_url(path=default_src) -%}
+        {%- set default_image_url = get_url(path=default_src, cachebust=true) -%}
     {%- else -%}
-        {%- set default_image_url = get_url(path=relative_default_path) -%}
+        {%- set default_image_url = get_url(path=relative_default_path, cachebust=true) -%}
     {%- endif -%}
 {%- endif -%}
 
@@ -34,9 +34,9 @@
     {%- set relative_hovered_path = colocated_path ~ hovered_src -%}
     {%- set hovered_meta = get_image_metadata(path=relative_hovered_path, allow_missing=true) -%}
     {%- if not hovered_meta -%}
-        {%- set hovered_image_url = get_url(path=hovered_src) -%}
+        {%- set hovered_image_url = get_url(path=hovered_src, cachebust=true) -%}
     {%- else -%}
-        {%- set hovered_image_url = get_url(path=relative_hovered_path) -%}
+        {%- set hovered_image_url = get_url(path=relative_hovered_path, cachebust=true) -%}
     {%- endif -%}
 {%- endif -%}
 
