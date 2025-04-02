@@ -16,9 +16,9 @@
     {%- set relative_light_path = colocated_path ~ light_src -%}
     {%- set light_meta = get_image_metadata(path=relative_light_path, allow_missing=true) -%}
     {%- if not light_meta -%}
-        {%- set light_image_url = get_url(path=light_src) -%}
+        {%- set light_image_url = get_url(path=light_src, cachebust=true) -%}
     {%- else -%}
-        {%- set light_image_url = get_url(path=relative_light_path) -%}
+        {%- set light_image_url = get_url(path=relative_light_path, cachebust=true) -%}
     {%- endif -%}
 {%- endif -%}
 
@@ -29,9 +29,9 @@
     {%- set relative_dark_path = colocated_path ~ dark_src -%}
     {%- set dark_meta = get_image_metadata(path=relative_dark_path, allow_missing=true) -%}
     {%- if not dark_meta -%}
-        {%- set dark_image_url = get_url(path=dark_src) -%}
+        {%- set dark_image_url = get_url(path=dark_src, cachebust=true) -%}
     {%- else -%}
-        {%- set dark_image_url = get_url(path=relative_dark_path) -%}
+        {%- set dark_image_url = get_url(path=relative_dark_path, cachebust=true) -%}
     {%- endif -%}
 {%- endif -%}
 
