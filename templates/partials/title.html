@@ -1,4 +1,7 @@
 {#- Setup -#}
+{% if not config.title %}
+{{ throw(message="ERROR: No `title` set in `config.toml`. tabi requires a title to function.") }}
+{% endif %}
 {%- set prefix = config.title | safe -%}
 {%- set custom_separator = config.extra.separator | default(value="•") -%}
 {%- set separator = " " ~ custom_separator ~ " " -%}
