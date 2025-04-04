@@ -56,15 +56,18 @@
   </div>
 
   {# additional properties #}
-  <dl>
+  {% set dl_started = false %}
   {% for key, value in hcard %}
-    {# exclude all properties previously displayed #}
-    {% if key not in ['enable', 'with_mail', 'with_social_links', 'homepage', 'full_name', 'avatar', 'biography', 'p_nickname'] %} 
+    {% if key not in ['enable', 'with_mail', 'with_social_links', 'homepage', 'full_name', 'avatar', 'biography', 'p_nickname'] %}
+      {% if not dl_started %}
+        <dl>
+        {% set dl_started = true %}
+      {% endif %}
       <dt>{{ key | replace(from="p_", to="") | replace(from="u_", to="") | replace(from="dt_", to="") | replace(from="_", to=" ") | capitalize }}</dt>
       <dd class="{{ key | replace(from="_", to="-") }}">{{ value }}</dd>
     {% endif %}
   {% endfor %}
-  </dl>
-
-</div>
+  {% if dl_started %}
+    </dl>
+  {% endif %}
 {% endif %}
