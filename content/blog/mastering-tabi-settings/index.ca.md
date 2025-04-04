@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-02-16
+updated = 2025-02-21
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
