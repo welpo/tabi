@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-02-16
+updated = 2025-04-05
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -1005,6 +1005,26 @@ allowed_domains = [
 Esta función está habilitada por defecto. Para deshabilitarla (y permitir todo), configura `enable_csp = false` en una página, sección o globalmente. La opción `enable_csp` sigue [la jerarquía](#jerarquia-de-configuracion).
 
 Para obtener más información, consulta la [página de documentación de CSP](@/blog/security/index.es.md).
+
+---
+
+## Indieweb
+
+### h-card representativa
+
+| Página | Sección | `config.toml` | Sigue Jerarquía | Requiere JavaScript |
+| :--: | :-----: | :-----------: | :---------------: | :-----------------: |
+|  ❌  |   ❌    |      ✅       |        ❌         |         ❌          |
+
+Por defecto, tabi añade una [h-card](https://microformats.org/wiki/h-card) representativa **oculta** a la página de inicio. Aunque es invisible para los visitantes, está disponible para los analizadores de microformatos. Puedes comprobar la validez de la tarjeta con la herramienta [Indiewebify.me](https://indiewebify.me/validate-h-card/).
+
+Para desactivar la h-card, establece `enable = false` en la sección `[extra.hcard]` de `config.toml`.
+
+La h-card predeterminada incluye tu nombre, la URL del sitio web y los enlaces a redes sociales.
+
+Puedes establecer una imagen de perfil y una pequeña biografía con los ajustes `avatar` y `biography`.
+
+Todas las demás [propiedades de h-card](https://microformats.org/wiki/h-card#Properties) se pueden añadir listándolas en la sección `[extra.hcard]` del archivo de configuración. Simplemente reemplaza todos los caracteres `-` por `_`.
 
 ---
 

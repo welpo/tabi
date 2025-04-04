@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-04-02
+updated = 2025-04-04
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -113,7 +113,7 @@ The description is regular Markdown content, set outside the front matter.
 
 #### Listing Recent Posts
 
-To show posts on your main page, you first need to decide where these posts will be served from: the root path (`/`) or a subdirectory (e.g., `/blog`). 
+To show posts on your main page, you first need to decide where these posts will be served from: the root path (`/`) or a subdirectory (e.g., `/blog`).
 
 **Option A: Serve posts from the root path (`/`)**
 
@@ -1026,12 +1026,14 @@ See the [CSP documentation page](@/blog/security/index.md) for more information.
 | :--: | :-----: | :-----------: | :---------------: | :-----------------: |
 |  ❌  |   ❌    |      ✅       |        ❌         |         ❌          |
 
-Tabi adds a representative [h-card](https://microformats.org/wiki/h-card) to the homepage out of the box. It is hidden to the naked eye, but remains visible by microformat parsers. You can check the validity of the card with the [Indiewebify.me](https://indiewebify.me/validate-h-card/) tool.
+By default, tabi adds a **hidden** representative [h-card](https://microformats.org/wiki/h-card) to the homepage. While invisible to visitors, it's available to microformat parsers. You can check the validity of the card with the [Indiewebify.me](https://indiewebify.me/validate-h-card/) tool.
 
-It is possible to disable the h-card by setting `enable = false` in the `[extra.hcard]` section of the config file.
+To disable the h-card, set `enable = false` in the `[extra.hcard]` section of `config.toml`.
 
 The default h-card includes your name, website url and social media links.
+
 You can set a profile picture and a small bio with the `avatar` and `biography` settings.
+
 All other [h-card properties](https://microformats.org/wiki/h-card#Properties) can be added by listing them under the `[extra.hcard]`section of the config file. Simply replace all `-` characters by `_`.
 
 ---
