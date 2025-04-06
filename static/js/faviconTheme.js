@@ -16,8 +16,13 @@ function updateFaviconColor(dark) {
     }
 }
 
-// Get the current theme at startup, defaulting to light
-const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+// Determine the initial theme.
+let currentTheme =
+    localStorage.getItem('theme') ||
+    document.documentElement.getAttribute('data-theme') ||
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
 
 // Set the favicon color on startup
 updateFaviconColor(currentTheme === 'dark');
