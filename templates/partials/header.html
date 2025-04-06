@@ -16,8 +16,8 @@
         <link rel="icon" type="image/png" href="{{ get_url(path=config.extra.favicon) }}"/>
     {% elif config.extra.light_favicon and config.extra.dark_favicon %}
         {# Favicon theme switcher. If JavaScript is disabled, defaults to the light icon #}
-        <link id="dark-favicon" rel="icon" href="{{ get_url(path=config.extra.dark_favicon) }}">
-        <link id="light-favicon" rel="icon" href="{{ get_url(path=config.extra.light_favicon) }}">
+        <link id="dark-favicon" rel="icon" type="image/png" href="{{ get_url(path=config.extra.dark_favicon) }}">
+        <link id="light-favicon" rel="icon" type="image/png" href="{{ get_url(path=config.extra.light_favicon) }}">
         <script type="text/javascript" src="{{ get_url(path='js/faviconTheme.js') | safe }}"></script>
     {% endif %}
     {% if config.extra.favicon_emoji %}
