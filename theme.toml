@@ -202,7 +202,7 @@ invert_title_order = false
 # favicon = ""
 # 
 # Or, you can set both light and dark favicons to be used depending on the theme.
-# The light favicon will be used if JavaScript is not enabled or on Safari.
+# The light favicon will be used when JavaScript is not enabled or on the Safari browser.
 # light_favicon = ""
 # dark_favicon = ""
 

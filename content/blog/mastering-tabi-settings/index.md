@@ -547,6 +547,16 @@ tabi takes care of most of the SEO for you (like Open Graph protocol tags, descr
 
 The favicon is the small icon that appears in the browser tab. You can set it in `config.toml` with `favicon = "img/favicon.png"`.
 
+### Light and Dark Mode Favicon
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❌  |   ❌    |      ✅       |         ❌        |         ✅          |
+
+If you want to use different favicons for light and dark themes, you can specify both `light_favicon` and `dark_favicon` in `config.toml`. For example: `light_favicon = "img/favicon-light.png"` and `dark_favicon = "img/favicon-dark.png"`.
+
+{{ admonition(type="note", text="The light favicon will be used when JavaScript is not enabled or on the Safari browser.") }}
+
 ### Emoji Favicon
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
