@@ -61,7 +61,7 @@
     {% if key not in ['enable', 'with_mail', 'with_social_links', 'homepage', 'full_name', 'avatar', 'biography', 'p_nickname'] %}
       {% if not dl_started %}
         <dl>
-        {% set dl_started = true %}
+        {% set_global dl_started = true %}
       {% endif %}
       <dt>{{ key | replace(from="p_", to="") | replace(from="u_", to="") | replace(from="dt_", to="") | replace(from="_", to=" ") | capitalize }}</dt>
       <dd class="{{ key | replace(from="_", to="-") }}">{{ value }}</dd>
@@ -70,4 +70,6 @@
   {% if dl_started %}
     </dl>
   {% endif %}
+
+  </div>
 {% endif %}
