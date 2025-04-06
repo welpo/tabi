@@ -20,9 +20,7 @@ function updateFaviconColor(dark) {
 let currentTheme =
     localStorage.getItem('theme') ||
     document.documentElement.getAttribute('data-theme') ||
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
 // Set the favicon color on startup
 updateFaviconColor(currentTheme === 'dark');
