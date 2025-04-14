@@ -2,11 +2,7 @@
 
 {%- set rel_attributes = macros_rel_attributes::rel_attributes() | trim -%}
 
-{%- if config.markdown.external_links_target_blank -%}
-    {%- set blank_target = "target=_blank" -%}
-{%- else -%}
-    {%- set blank_target = "" -%}
-{%- endif -%}
+{%- set blank_target = macros_target_attribute::target_attribute(new_tab=config.markdown.external_links_target_blank) -%}
 
 {#- Feed icon -#}
 {#- Zola 0.19.0 uses `generate_feeds`. Prior versions use `generate_feed` -#}
