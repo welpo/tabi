@@ -7,11 +7,7 @@
             {% break %}
         {% endif %}
         {# Determine which URL to use, default is page.permalink #}
-        {%- if page.extra.link_to and config.markdown.external_links_target_blank -%}
-            {%- set blank_target = "target=_blank" -%}
-        {%- else -%}
-            {%- set blank_target = "" -%}
-        {%- endif -%}
+        {%- set blank_target = macros_target_attribute::target_attribute(new_tab=config.markdown.external_links_target_blank or page.extra.link_to ) -%}
 
         {% set target_url = page.extra.link_to | default(value=page.permalink) %}
 
