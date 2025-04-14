@@ -9,9 +9,9 @@
     {#- Fallback to absolute path if relative path doesn't work -#}
     {%- if not meta -%}
         {%- set meta = get_image_metadata(path=src, allow_missing=true) -%}
-        {%- set image_url = get_url(path=src) -%}
+        {%- set image_url = get_url(path=src, cachebust=true) -%}
     {%- else %}
-        {%- set image_url = get_url(path=relative_path) -%}
+        {%- set image_url = get_url(path=relative_path, cachebust=true) -%}
     {%- endif -%}
 {%- endif -%}
 

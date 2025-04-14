@@ -1,0 +1,99 @@
+language_name = "suomi"  # Shown in language picker for multi-language sites.
+date_locale = "fi_FI"
+full_stop = "."  # Used at the end of a sentence.
+
+# Menu items.
+# Should match the names in config.extra.menu and config.extra.footer_menu.
+blog = "blogi"
+archive = "arkisto"
+tags = "tunnisteet"
+projects = "projektit"
+diagrams = "kaaviot"
+about = "minusta"
+contact = "yhteystiedot"
+privacy = "tietosuojakäytäntö"
+site_statistics = "tilastot"
+sitemap = "sivustokartta"
+
+# Search.
+search = "Hae"
+search_icon_title = "Paina $SHORTCUT avataksesi haun"  # $SHORTCUT will be replaced with the actual keyboard shortcut.
+clear_search = "Tyhjennä haku"  # Title of the X icon next to search input.
+zero_results = "Ei tuloksia"
+one_results = "$NUMBER tulos"  # "1 result"
+many_results = "$NUMBER tulosta"  # "3 results"
+
+# Navigation.
+# Some will prefer artikkeli (=article) instead of julkaisu (=publication), but this is more general
+pinned = "Kiinnitetty"
+jump_to_posts = "Siirry julkaisuihin"
+read_more = "Lue lisää"
+one_posts = "$NUMBER julkaisu"
+many_posts = "$NUMBER julkaisua"  # "3 posts"
+prev = "Edellinen"  # As in "Previous" page.
+next = "Seuraava"  # As in "Next" page.
+of = "/"  # E.g. Page 1 "of" 3
+all_posts = "Kaikki julkaisut"
+all_tags = "Kaikki tunnisteet"
+all_projects = "Kaikki projektit"
+featured_projects = "Esittelyprojektit"
+language_selection = "Kielivalinta"
+toggle_mode = "Vaihda $MODE"  # $MODE will be replaced by a value (or both) below. Literally "Change $MODE"
+# The declension assumes that both values are used. e.g. "Change dark mode" wouldn't work and would need the "to" preposition
+# It also omits the "mode" word: "Change dark/light mode" instead of "Change dark mode/light mode"
+dark = "tumma"
+light = "vaalea tila"
+reset_mode = "Palauta oletustilaan"
+
+# Quick navigation buttons.
+toggle_toc = "Sisällysluettelo päälle/pois"
+go_to_top = "Siirry sivun alkuun"
+go_to_comments = "Siirry kommenttiosioon"
+
+# Post metadata.
+by_author = "Kirjoittanut $AUTHOR"  # $AUTHOR will be replaced by the author(s). Literally "Written by $AUTHOR"
+author_separator = ", "  # For multiple authors. Ensure spacing where necessary.
+author_conjunction = " ja "  # For multiple authors. Ensure spacing where necessary.
+draft = "LUONNOS"
+zero_min_read = "<1 min. lukuaika"
+one_min_read = "$NUMBER min. lukuaika"
+many_min_read = "$NUMBER min. lukuaika"
+zero_words = "Ei sanoja"
+one_words = "$NUMBER sana"
+many_words = "$NUMBER sanaa"
+last_updated_on = "Päivitetty $DATE"
+see_changes = "Katso muutokset"
+
+# Post body.
+table_of_contents = "Sisällysluettelo"
+load_comments = "Lataa kommentit"
+
+# Copy code block button.
+copied = "Kopioitu!"
+copy_code_to_clipboard = "Kopioi koodi leikepöydälle"
+
+# Footer: Powered by Zola and tabi.
+powered_by = "Pyörii ohjelmilla" # "Works using the software"
+and = "&"
+site_source = "Sivuston lähdekoodi"
+
+# 404 error.
+# https://welpo.github.io/tabi/404.html
+page_missing = "Pyytämääsi sivua ei löydy"
+translation_missing = "tai sitä ei ole vielä käännetty kielellesi"
+check_url = "Tarkista URL-osoitteesta mahdolliset virheet tai"
+go_home = "palaa etusivulle"
+
+# For multilingual quote shortcode.
+# https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
+show_original_quote = "Näytä alkuperäinen lainaus"
+show_translation = "Näytä käännös"
+open_quotation_mark = "“"
+close_quotation_mark = "”"
+
+# Translations for stylised Atom feed.
+# https://welpo.github.io/tabi/atom.xml
+# Must contain "About Feeds"; it will become a link.
+about_feeds = "Tämä on verkkosyöte, joka tunnetaan myös nimellä Atom-syöte. Tilaa kopioimalla URL-osoite osoitepalkista uutislukijaasi. Käy sivulla About Feeds saadaksesi lisätietoja ja aloittaakeksi. Se on ilmaista."
+visit_the_site = "Vieraile sivustolla"
+recent_posts = "Viimeisimmät julkaisut"
