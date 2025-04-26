@@ -142,7 +142,7 @@
 
                     <div class="description">
                         {% if post.description %}
-                            <p>{{ post.description }}</p>
+                            <p>{{ post.description | markdown(inline=true) | safe  }}</p>
                         {% elif post.summary %}
                             <p>{{ post.summary | markdown(inline=true) | trim_end_matches(pat=".") | safe }}…</p>
                         {% endif %}
