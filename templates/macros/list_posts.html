@@ -83,7 +83,7 @@
                                 <li class="date">{{- macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) -}}</li>
                             {%- endif -%}
                             {%- if show_date and show_updated -%}
-                                <li class="mobile-only">{{- separator -}}</li>
+                                <li class="mobile-only separator">{{- separator -}}</li>
                             {%- endif -%}
                             {%- if show_updated -%}
                                 {%- set last_updated_str = macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -%}
