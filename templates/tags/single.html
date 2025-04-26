@@ -6,15 +6,8 @@
 {#- Zola 0.19.0 uses `generate_feeds` and `feed_filenames`. Prior versions use `generate_feed` and `feed_filename` -#}
 {%- set generate_feed = config.generate_feeds | default(value=config.generate_feed) -%}
 {%- set feed_url = config.feed_filenames[0] | default(value=(config.feed_filename)) -%}
-{%- set show_feed_icon = false -%}
-{% if generate_feed and feed_url and taxonomy.feed %}
-    {% for page in term.pages %}
-        {% if page.date %}
-            {% set_global show_feed_icon = true %}
-            {% break %}
-        {% endif %}
-    {% endfor %}
-{% endif %}
+{%- set feed_pre_conditions = generate_feed and feed_url and taxonomy.feed -%}
+{%- set show_feed_icon = feed_pre_conditions and term.pages | filter(attribute="date") | length > 0 -%}
 
 {{ macros_page_header::page_header(title=term.name, show_feed_icon=show_feed_icon) }}
 
