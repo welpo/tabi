@@ -2,14 +2,13 @@
 
 {% set rel_attributes = macros_rel_attributes::rel_attributes() | trim %}
 
-{#- Zola 0.19.0 uses `generate_feeds` and `feed_filenames`. Prior versions use `feed_filename` -#}
-{%- set feed_url = config.feed_filenames[0] | default(value=(config.feed_filename)) -%}
 
 {%- set blank_target = macros_target_attribute::target_attribute(new_tab=config.markdown.external_links_target_blank) -%}
 
 <h1 class="title-container section-title bottom-divider">
-    {{ title }}
+    {{ title -}}
     {% if show_feed_icon %}
+        {%- set feed_url = feed_utils::get_feed_url() -%}
         <a class="no-hover-padding social" rel="{{ rel_attributes }}" {{ blank_target }} href="{{ get_url(path=term.path ~ feed_url, lang=lang, trailing_slash=false) | safe }}">
             <img loading="lazy" alt="feed" title="feed" src="{{ get_url(path='/social_icons/rss.svg') }}">
         </a>

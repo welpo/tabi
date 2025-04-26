@@ -1,0 +1,17 @@
+{#- Feed utility macros -#}
+
+{#- Zola 0.19.0 uses `generate_feeds`. Prior versions use `generate_feed` -#}
+{%- macro get_generate_feed() -%}
+    {{- config.generate_feeds | default(value=config.generate_feed) -}}
+{%- endmacro get_generate_feed -%}
+
+{%- macro get_feed_url() -%}
+    {{- config.feed_filenames[0] | default(value=(config.feed_filename)) -}}
+{%- endmacro get_feed_url -%}
+
+{#- Check footer feed icon conditions -#}
+{%- macro should_show_footer_feed_icon() -%}
+    {%- set generate_feed = config.generate_feeds | default(value=config.generate_feed) -%}
+    {%- set feed_url = config.feed_filenames[0] | default(value=(config.feed_filename)) -%}
+    {{- generate_feed and config.extra.feed_icon and feed_url -}}
+{%- endmacro should_show_footer_feed_icon -%}

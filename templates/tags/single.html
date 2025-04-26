@@ -3,9 +3,8 @@
 {% block main_content %}
 
 {#- Feed icon -#}
-{#- Zola 0.19.0 uses `generate_feeds` and `feed_filenames`. Prior versions use `generate_feed` and `feed_filename` -#}
-{%- set generate_feed = config.generate_feeds | default(value=config.generate_feed) -%}
-{%- set feed_url = config.feed_filenames[0] | default(value=(config.feed_filename)) -%}
+{%- set generate_feed = feed_utils::get_generate_feed() -%}
+{%- set feed_url = feed_utils::get_feed_url() -%}
 {%- set feed_pre_conditions = generate_feed and feed_url and taxonomy.feed -%}
 {%- set show_feed_icon = feed_pre_conditions and term.pages | filter(attribute="date") | length > 0 -%}
 
