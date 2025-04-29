@@ -6,7 +6,7 @@
 {%- set generate_feed = feed_utils::get_generate_feed() -%}
 {%- set feed_url = feed_utils::get_feed_url() -%}
 {%- set feed_pre_conditions = generate_feed and feed_url and taxonomy.feed -%}
-{%- set show_feed_icon = feed_pre_conditions and term.pages | filter(attribute="date") | length > 0 -%}
+{%- set show_feed_icon = feed_pre_conditions and term.pages | filter(attribute="date") -%}
 
 {{ macros_page_header::page_header(title=term.name, show_feed_icon=show_feed_icon) }}
 
