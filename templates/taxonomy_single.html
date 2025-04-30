@@ -2,7 +2,13 @@
 
 {% block main_content %}
 
-{{ macros_page_header::page_header(title=term.name) }}
+{#- Feed icon -#}
+{%- set generate_feed = feed_utils::get_generate_feed() -%}
+{%- set feed_url = feed_utils::get_feed_url() -%}
+{%- set feed_pre_conditions = generate_feed and feed_url and taxonomy.feed -%}
+{%- set show_feed_icon = feed_pre_conditions and term.pages | filter(attribute="date") | length > 0 -%}
+
+{{ macros_page_header::page_header(title=term.name, show_feed_icon=show_feed_icon) }}
 
 {% set max = section.extra.max_posts | default(value=999999) %}
 {{ macros_list_posts::list_posts(posts=term.pages, max=max, language_strings=language_strings) }}
