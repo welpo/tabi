@@ -465,7 +465,7 @@ def مرحبا_بالعالم():
 
 ## Displaying webmentions for your posts
 
-You can find an introduction to webmentions [here](/blog/mastering-tabi-settings/#adding-webmentions). Webmentions need to be enabled and configured in the `config.toml` file.
+You can find an introduction to webmentions [here](@/blog/mastering-tabi-settings/index.md#adding-webmentions). Webmentions need to be enabled and configured in the `config.toml` file.
 
 ### Usage
 
