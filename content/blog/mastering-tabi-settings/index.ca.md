@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-02-21
+updated = 2025-04-05
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -1004,6 +1004,26 @@ allowed_domains = [
 Aquesta opció està habilitada per defecte. Per desactivar-la per una pàgina, secció o globalment, estableix `enable_csp = false`. La configuració de `enable_csp` segueix la jerarquia.
 
 Per a més informació, consulta la [pàgina de documentació de CSP](@/blog/security/index.ca.md).
+
+---
+
+## Indieweb
+
+### h-card representativa
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+| :--: | :-----: | :-----------: | :---------------: | :-----------------: |
+|  ❌  |   ❌    |      ✅       |        ❌         |         ❌          |
+
+Per defecte, tabi afegeix una h-card representativa [h-card](https://microformats.org/wiki/h-card) **oculta** a la pàgina d'inici. Tot i que és invisible per als visitants, està disponible per als analitzadors de microformats. Pots comprovar la validesa de la targeta amb l'eina [Indiewebify.me](https://indiewebify.me/validate-h-card/).
+
+Per desactivar l'h-card, estableix `enable = false` a la secció `[extra.hcard]` de `config.toml`.
+
+L'h-card predeterminada inclou el teu nom, l'URL del lloc web i els enllaços a les xarxes socials.
+
+Pots establir una imatge de perfil i una petita biografia amb els paràmetres `avatar` i `biography`.
+
+Totes les altres [propietats h-card](https://microformats.org/wiki/h-card#Properties) es poden afegir llistant-les a la secció `[extra.hcard]` del fitxer de configuració. Simplement substitueix tots els caràcters `-` per `_`.
 
 ---
 

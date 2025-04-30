@@ -5,7 +5,7 @@
         <img src="https://img.shields.io/github/contributors/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Contributors"></a>
     <a href="https://github.com/welpo/tabi/forks">
         <img src="https://img.shields.io/github/forks/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Forks"></a>
-    <a hfref="https://github.com/welpo/tabi/commits/main/">
+    <a href="https://github.com/welpo/tabi/commits/main/">
         <img src="https://img.shields.io/github/last-commit/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Last commit"></a>
     <br>
     <a href="https://github.com/welpo/tabi/releases">
@@ -216,6 +216,7 @@ git pull
 | [Nizzlay](https://nizzlay.com) | Niels Gouman ([Nizzlay](https://github.com/Nizzlay)) | Personal blog | [Source](https://github.com/Nizzlay/nizzlay.com) |
 | [ZzMzaw's blog](https://zzmzaw.github.io/) | ZzMzaw ([ZzMzaw](https://github.com/ZzMzaw)) | Personal blog | [Source](https://github.com/ZzMzaw/zzmzaw.github.io) |
 | [idle-ti.me](https://idle-ti.me/) | Jérôme Ramette ([be-next](https://github.com/be-next)) | Personal blog | [Source](https://github.com/be-next/idle-ti.me) |
+| [tzinm.me](https://tzinm.me/) | [Tzinm](https://github.com/tzinm) | Personal blog | [Source](https://codeberg.org/tzinm/blog) |
 
 Using tabi? Feel free to create a PR and add your site to this list.
 

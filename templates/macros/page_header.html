@@ -1,5 +1,18 @@
-{% macro page_header(title) %}
+{% macro page_header(title, show_feed_icon=false) %}
+
+{% set rel_attributes = macros_rel_attributes::rel_attributes() | trim %}
+
+
+{%- set blank_target = macros_target_attribute::target_attribute(new_tab=config.markdown.external_links_target_blank) -%}
+
 <h1 class="title-container section-title bottom-divider">
-    {{ title }}
+    {{ title -}}
+    {% if show_feed_icon %}
+        {%- set feed_url = feed_utils::get_feed_url() -%}
+        <a class="no-hover-padding social" rel="{{ rel_attributes }}" {{ blank_target }} href="{{ get_url(path=term.path ~ feed_url, lang=lang, trailing_slash=false) | safe }}">
+            <img loading="lazy" alt="feed" title="feed" src="{{ get_url(path='/social_icons/rss.svg') }}">
+        </a>
+    {% endif %}
 </h1>
+
 {% endmacro page_header %}

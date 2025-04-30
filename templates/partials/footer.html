@@ -2,17 +2,11 @@
 
 {%- set rel_attributes = macros_rel_attributes::rel_attributes() | trim -%}
 
-{%- if config.markdown.external_links_target_blank -%}
-    {%- set blank_target = "target=_blank" -%}
-{%- else -%}
-    {%- set blank_target = "" -%}
-{%- endif -%}
+{%- set blank_target = macros_target_attribute::target_attribute(new_tab=config.markdown.external_links_target_blank) -%}
 
 {#- Feed icon -#}
-{#- Zola 0.19.0 uses `generate_feeds`. Prior versions use `generate_feed` -#}
-{%- set generate_feed = config.generate_feeds | default(value=config.generate_feed) -%}
-{%- set feed_url = config.feed_filenames[0] | default(value=(config.feed_filename)) -%}
-{%- set should_show_feed = generate_feed and config.extra.feed_icon and feed_url -%}
+{%- set feed_url = feed_utils::get_feed_url() -%}
+{%- set should_show_feed = feed_utils::should_show_footer_feed_icon() -%}
 
 {%- set should_show_footer_icons = should_show_feed or config.extra.socials or config.extra.email -%}
 

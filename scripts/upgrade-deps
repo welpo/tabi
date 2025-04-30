@@ -81,7 +81,14 @@ get_latest_version_github() {
 
 get_local_mermaid_version() {
     local version
+    # Old format.
     version=$(grep -o '[A-Za-z]\+t="[0-9]\+\.[0-9]\+\.[0-9]\+"' "$MERMAID_PATH" | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' || true)
+
+    # New format.
+    if [ -z "$version" ]; then
+        version=$(grep -o 'version:"[0-9]\+\.[0-9]\+\.[0-9]\+"' "$MERMAID_PATH" | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+' || true)
+    fi
+
     if [ -z "$version" ]; then
         exit_with_message "Could not detect local Mermaid.js version"
     fi
