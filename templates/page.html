@@ -142,7 +142,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
 
             {#- Date -#}
             {% if page.date and macros_settings::evaluate_setting_priority(setting="show_date", page=page, default_global_value=true) == "true" %}
-                <li class="dt-published">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</li>
+                <li><time class="dt-published" datetime="{{ page.date }}">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</time></li>
                 {#- Variable to keep track of whether we've shown a section, to avoid separators as the first element -#}
                 {%- set previous_visible = true -%}
             {% endif %}
