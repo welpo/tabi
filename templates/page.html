@@ -321,6 +321,11 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
         {% set enabled_systems = 0 %}
         {% set comment_system = "" %}
 
+        {# Webmentions #}
+        {%- if config.extra.webmentions.enable -%}
+            {%- include "partials/webmentions.html" -%} 
+        {%- endif -%}
+
         {% for system in systems %}
             {% set global_enabled = config.extra[system].enabled_for_all_posts | default(value=false) %}
             {% set page_enabled = page.extra[system] | default(value=global_enabled) %}

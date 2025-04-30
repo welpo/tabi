@@ -151,10 +151,6 @@
         <meta name="fediverse:creator" content="@{{ config.extra.fediverse_creator["handle"] }}@{{ config.extra.fediverse_creator["domain"]}}" />
     {%- endif -%}
 
-    {# Webmentions #}
-    {%- if config.extra.webmentions.enable -%}
-        {%- include "partials/webmentions.html" -%} 
-    {%- endif -%}
 
     {# Search #}
     {%- if config.build_search_index -%}
