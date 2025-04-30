@@ -79,9 +79,9 @@ classDiagram
     +MakeAssumptions()
   }
   CognitiveDistortions *-- AllOrNothingThinking
-  CognitiveDistortions*-- Overgeneralization
+  CognitiveDistortions *-- Overgeneralization
   CognitiveDistortions *-- MentalFilter
-  CognitiveDistortions*-- JumpingToConclusions
+  CognitiveDistortions *-- JumpingToConclusions
 {% end %}
 
 The Mermaid shortcode supports two parameters:
