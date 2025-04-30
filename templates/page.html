@@ -157,7 +157,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {%- if page.taxonomies and page.taxonomies.tags -%}
                 <li class="tag">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{- macros_translate::translate(key="tags", default="tags", language_strings=language_strings) | capitalize -}}:&nbsp;</li>
                 {%- for tag in page.taxonomies.tags -%}
-                    <li class="p-category tag"><a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
+                    <li class="tag"><a class="p-category" href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
                     {%- if not loop.last -%}
                         ,&nbsp;
                     {%- endif -%}
