@@ -463,23 +463,3 @@ def مرحبا_بالعالم():
 {%/* end */%}
 ````
 
-## Displaying webmentions for your posts
-
-You can find an introduction to webmentions [here](@/blog/mastering-tabi-settings/index.md#adding-webmentions). Webmentions need to be enabled and configured in the `config.toml` file.
-
-### Usage
-
-Add the shortcode on the page where you want to display the webmentions:
-
-```
-{{/* webmentions() */}}
-```
-
-The webmentions section will then be displayed where you added it on the page as follows:
-
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/webmention_light.webp", dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Page footer, showing a 'Site source' link") }}
-
-The following is a live example based on the specific page_url configured in the template config.toml.
-
-{{ webmentions() }}
-
