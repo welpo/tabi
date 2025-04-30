@@ -1,12 +1,13 @@
+{% import "macros/feed_utils.html" as feed_utils %}
 {% import "macros/format_date.html" as macros_format_date %}
 {% import "macros/list_posts.html" as macros_list_posts %}
 {% import "macros/page_header.html" as macros_page_header %}
 {% import "macros/rel_attributes.html" as macros_rel_attributes %}
+{% import "macros/series_page.html" as macros_series_page %}
 {% import "macros/settings.html" as macros_settings %}
 {% import "macros/table_of_contents.html" as macros_toc %}
-{% import "macros/translate.html" as macros_translate %}
-{% import "macros/series_page.html" as macros_series_page %}
 {% import "macros/target_attribute.html" as macros_target_attribute %}
+{% import "macros/translate.html" as macros_translate %}
 
 {# Load the internationalisation data for the current language from
 the .toml files in the user's '/i18n' folder, falling back to the theme's.
