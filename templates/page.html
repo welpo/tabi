@@ -123,14 +123,16 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- endif -%}
 
                 {%- if author_list | length == 1 -%}
-                    {%- set author_string = author_list.0 -%}
+                    {%- set author_string = '<span class="p-author">' ~ author_list.0 ~ '</span>' -%}
                 {%- else -%}
                     {%- set last_author = author_list | last -%}
                     {%- set other_authors = author_list | slice(end=-1) -%}
                     {%- set author_separator = macros_translate::translate(key="author_separator", default=", ", language_strings=language_strings) -%}
                     {%- set conjunction = macros_translate::translate(key="author_conjunction", default=" and ", language_strings=language_strings) -%}
+                    {%- set conjunction = '<span>' ~ conjunction ~ '<span class="p-author">' -%}
                     {%- set author_string = other_authors | join(sep=author_separator) -%}
                     {%- set author_string = author_string ~ conjunction ~ last_author -%}
+                    {%- set author_string = '<span class="p-author">' ~ author_string ~ conjunction ~ last_author  ~ '</span>' -%}
                 {%- endif -%}
 
                 {%- set by_author = macros_translate::translate(key="by_author", default="By $AUTHOR", language_strings=language_strings) -%}
