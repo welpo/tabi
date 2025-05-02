@@ -130,7 +130,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                     {%- set author_separator = macros_translate::translate(key="author_separator", default=", ", language_strings=language_strings) -%}
                    {%- set author_separator = '</span>' ~ author_separator ~ '<span class="p-author">' -%}
                     {%- set conjunction = macros_translate::translate(key="author_conjunction", default=" and ", language_strings=language_strings) -%}
-                    {%- set conjunction = '<span>' ~ conjunction ~ '<span class="p-author">' -%}
+                    {%- set conjunction = '</span>' ~ conjunction ~ '<span class="p-author">' -%}
                     {%- set author_string = other_authors | join(sep=author_separator) -%}
                     {%- set author_string = author_string ~ conjunction ~ last_author -%}
                     {%- set author_string = '<span class="p-author">' ~ author_string ~ conjunction ~ last_author  ~ '</span>' -%}
