@@ -5,7 +5,7 @@
         <img src="https://img.shields.io/github/contributors/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Contributors"></a>
     <a href="https://github.com/welpo/tabi/forks">
         <img src="https://img.shields.io/github/forks/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Forks"></a>
-    <a hfref="https://github.com/welpo/tabi/commits/main/">
+    <a href="https://github.com/welpo/tabi/commits/main/">
         <img src="https://img.shields.io/github/last-commit/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Last commit"></a>
     <br>
     <a href="https://github.com/welpo/tabi/releases">

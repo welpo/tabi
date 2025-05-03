@@ -83,7 +83,7 @@
                                 <li class="date">{{- macros_format_date::format_date(date=post.date, short=false, language_strings=language_strings) -}}</li>
                             {%- endif -%}
                             {%- if show_date and show_updated -%}
-                                <li class="mobile-only">{{- separator -}}</li>
+                                <li class="mobile-only separator">{{- separator -}}</li>
                             {%- endif -%}
                             {%- if show_updated -%}
                                 {%- set last_updated_str = macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -%}
@@ -142,9 +142,9 @@
 
                     <div class="description">
                         {% if post.description %}
-                            <p>{{ post.description }}</p>
+                            <p>{{ post.description | markdown(inline=true) | safe  }}</p>
                         {% elif post.summary %}
-                            <p>{{ post.summary | striptags | trim_end_matches(pat=".") | safe }}…</p>
+                            <p>{{ post.summary | markdown(inline=true) | trim_end_matches(pat=".") | safe }}…</p>
                         {% endif %}
                     </div>
                     <a class="readmore" href="{{ post.permalink }}">{{ macros_translate::translate(key="read_more", default="Read more", language_strings=language_strings) }}&nbsp;<span class="arrow">→</span></a>
