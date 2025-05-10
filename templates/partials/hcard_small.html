@@ -1,0 +1,26 @@
+{%- set hcard = config.extra.hcard -%}
+
+{%- set full_name = config.author -%}
+{%- if hcard.full_name -%}
+  {%- set full_name = hcard.full_name -%}
+{%- endif -%}
+
+{%- set homepage = config.base_url -%}
+{%- if hcard.homepage -%}
+  {%- set homepage = hcard.homepage -%}
+{%- endif -%}
+
+{%- set icon_attr = "" -%}
+{%- if hcard.avatar -%}
+    {%- set icon_attr = "author-icon" -%}
+{%- endif -%}
+
+<span class="hidden p-author h-card">
+<a rel="author" href="{{ homepage }}" class="u-url {{ icon_attr }}" title="{{ full_name }}">
+    {%- if hcard.avatar -%}
+    <img class="u-photo" src="{{ get_url(path=hcard.avatar, cachebust=true) }}" alt="{{ full_name }}" />
+    {%- else -%}
+    {{ full_name }}
+    {%- endif -%}
+</a>
+</span>
