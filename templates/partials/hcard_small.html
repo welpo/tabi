@@ -18,7 +18,7 @@
 <span class="hidden p-author h-card">
 <a rel="author" href="{{ homepage }}" class="u-url {{ icon_attr }}" title="{{ full_name }}">
     {%- if hcard.avatar -%}
-    <img class="u-photo" src="{{ get_url(path=hcard.avatar) }}" alt="{{ full_name }}" />
+    <img class="u-photo" src="{{ get_url(path=hcard.avatar, cachebust=true) }}" alt="{{ full_name }}" />
     {%- else -%}
     {{ full_name }}
     {%- endif -%}
