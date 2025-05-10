@@ -1,7 +1,7 @@
 +++
 title = "No mandatory JavaScript"
 date = 2023-01-06
-updated = 2025-02-15
+updated = 2025-02-21
 description = "JavaScript is only used when HTML and CSS aren't enough."
 
 [taxonomies]
