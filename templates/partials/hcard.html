@@ -16,7 +16,7 @@
     {%- if hcard.avatar -%}
     <img
       class="u-photo"
-      src="{{ get_url(path=hcard.avatar) }}"
+      src="{{ get_url(path=hcard.avatar, cachebust=true) }}"
       width="200"
       height="200"
       alt="{{ full_name }}"
