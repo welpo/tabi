@@ -98,10 +98,10 @@
         {% if config.extra.full_content_in_feed %}
             <content type="html">{{ page.content }}</content>
         {% endif -%}
-        {% if page.summary -%}
-            <summary type="html">{{ page.summary | striptags | trim_end_matches(pat=".") | safe }}…</summary>
-        {% elif page.description -%}
+        {% if page.description -%}
             <summary type="html">{{ page.description }}</summary>
+        {% elif page.summary -%}
+            <summary type="html">{{ page.summary | striptags | trim_end_matches(pat=".") | safe }}…</summary>
         {% endif -%}
     </entry>
     {%- endfor %}
