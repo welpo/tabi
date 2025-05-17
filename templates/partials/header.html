@@ -177,4 +177,8 @@
         {%- endif -%}
     {%- endif -%}
 
+    {# Optional extended header content #}
+    {%- if config.extra.extend_header -%}
+        {% include "extend_header.html" %}
+    {%- endif -%}
 </head>

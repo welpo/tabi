@@ -253,6 +253,12 @@ invert_title_order = false
 # Full path after the base URL required. So if you were to place it in "static" it would be "/favicon.png"
 favicon = "img/seedling.png"
 
+# Optionally extend the header by supplying an `extend_header.html` template
+extend_header = false
+
+# Optionally extend the body by supplying an `extend_body.html` template
+extend_body = false
+
 # Add an emoji here to use it as favicon.
 # Compatibility: https://caniuse.com/link-icon-svg
 favicon_emoji = "🌱"

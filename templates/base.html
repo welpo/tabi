@@ -43,6 +43,11 @@ This variable will hold all the text strings for the language #}
         {% endblock main_content %}
     </div>
     {% include "partials/footer.html" %}
+
+    {# Optional extended body content #}
+    {%- if config.extra.extend_body -%}
+        {% include "extend_body.html" %}
+    {%- endif -%}
 </body>
 
 </html>
