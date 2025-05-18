@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2025-03-19
+updated = 2025-05-18
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -60,28 +60,28 @@ The diagram will be rendered as follows:
 
 {% mermaid() %}
 classDiagram
-  class CognitiveDistortions {
-    +AllOrNothingThinking()
-    +Overgeneralization()
-    +MentalFilter()
-    +JumpingToConclusions()
-  }
-  class AllOrNothingThinking {
-    +SeeInExtremes()
-  }
-  class Overgeneralization {
-    +GeneralizeFromSingle()
-  }
-  class MentalFilter {
-    +FocusOnNegative()
-  }
-  class JumpingToConclusions {
-    +MakeAssumptions()
-  }
-  CognitiveDistortions *-- AllOrNothingThinking
-  CognitiveDistortions *-- Overgeneralization
-  CognitiveDistortions *-- MentalFilter
-  CognitiveDistortions *-- JumpingToConclusions
+    class CognitiveDistortions {
+        +AllOrNothingThinking()
+        +Overgeneralization()
+        +MentalFilter()
+        +JumpingToConclusions()
+    }
+    class AllOrNothingThinking {
+        +SeeInExtremes()
+    }
+    class Overgeneralization {
+        +GeneralizeFromSingle()
+    }
+    class MentalFilter {
+        +FocusOnNegative()
+    }
+    class JumpingToConclusions {
+        +MakeAssumptions()
+    }
+    CognitiveDistortions *-- AllOrNothingThinking
+    CognitiveDistortions *-- Overgeneralization
+    CognitiveDistortions *-- MentalFilter
+    CognitiveDistortions *-- JumpingToConclusions
 {% end %}
 
 The Mermaid shortcode supports two parameters:
@@ -462,4 +462,3 @@ def مرحبا_بالعالم():
 
 {%/* end */%}
 ````
-
