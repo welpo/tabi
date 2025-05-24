@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2025-02-15
+updated = 2025-05-18
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -121,6 +121,7 @@ Useful if you want to use a different image for the light and dark themes:
 {{ dual_theme_image(light_src="img/paris_day.webp", dark_src="img/paris_night.webp" alt="The Eiffel tower") }}
 
 #### Usage
+
 ```
 {{/* dual_theme_image(light_src="img/paris_day.webp", dark_src="img/paris_night.webp" alt="The Eiffel tower") */}}
 ```
@@ -151,7 +152,7 @@ Images with too much brightness or contrast can be jarring against a dark backgr
 
 ### Swap image on hover
 
-Povides an interaction where the image displayed changes as the user hovers over it. Useful for before-after comparisons, for example.
+Provides an interaction where the image displayed changes as the user hovers over it. Useful for before-after comparisons, for example.
 
 {{ image_hover(default_src="img/edited.webp", hovered_src="img/raw.webp", default_alt="Edited picture", hovered_alt="Original shot") }}
 
@@ -264,7 +265,7 @@ Using the content body and setting the position to right:
 A longer note that
 can span multiple lines.
 
-*Markdown* is supported.
+_Markdown_ is supported.
 {%/* end */%}
 ```
 
@@ -352,12 +353,12 @@ Both methods support the same parameters (`type`, `icon`, and `title`), with the
 
 This shortcode allows you to display both the translated and original text for a quote. The quotation marks will be added automatically:
 
-{{ multilingual_quote(original="Qué sosiego, ir por la vida en silencio, saludando sólo a los amigos.", translated="What tranquility, to go through life in silence, greeting only friends.", author="Francisco Umbral") }}
+{{ multilingual_quote(original="Qué sosiego, ir por la vida en silencio, saludando sólo a los amigos.", translated="What tranquillity, to go through life in silence, greeting only friends.", author="Francisco Umbral") }}
 
 #### Usage
 
 ```
-{{/* multilingual_quote(original="Qué sosiego, ir por la vida en silencio, saludando sólo a los amigos.", translated="What tranquility, to go through life in silence, greeting only friends.", author="Francisco Umbral") */}}
+{{/* multilingual_quote(original="Qué sosiego, ir por la vida en silencio, saludando sólo a los amigos.", translated="What tranquillity, to go through life in silence, greeting only friends.", author="Francisco Umbral") */}}
 ```
 
 ### References with hanging indent
@@ -439,10 +440,12 @@ Force the text direction of a content block. Overrides both the global `force_co
 Accepts the parameter `direction`: the desired text direction. This can be either "ltr" (left-to-right) or "rtl" (right-to-left). Defaults to "ltr".
 
 {% force_text_direction(direction="rtl") %}
+
 ```python
 def مرحبا_بالعالم():
     print("مرحبا بالعالم!")
 ```
+
 {% end %}
 
 #### Usage

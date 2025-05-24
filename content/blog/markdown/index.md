@@ -1,7 +1,7 @@
 +++
 title = "Markdown examples"
 date = 2023-01-31
-updated = 2024-11-23
+updated = 2025-02-21
 description = "This post showcases some examples of Markdown formatting, including a table, code blocks and tags, quotes, tables, and footnotes."
 
 [taxonomies]
