@@ -45,14 +45,7 @@
 {% set script_data = script_data ~ " data-comments-are-reactions=" ~ config.extra.webmentions.comments_are_reactions %}
 {% endif %}
 
-<script async src="{{ get_url(path='js/webmention.min.js', trailing_slash=false) | safe }}" {{ script_data }}>
+<script async src="{{ get_url(path='js/webmention.min.js', trailing_slash=false, cachebust=true) | safe }}" {{ script_data }}>
 </script>
 
-{%- set format = config.extra.webmentions.format | default(value="") -%}
-{% if format == "" %}
-{%- set dash = "" -%}
-{% else %}
-{%- set dash = "-" -%}
-{% endif %}
-
-<div class="webmentions-container" id="webmentions{{ dash}}{{ format }}"></div>
+<div class="webmentions-container" id="webmentions"></div>
