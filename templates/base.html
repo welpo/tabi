@@ -44,10 +44,8 @@ This variable will hold all the text strings for the language #}
     </div>
     {% include "partials/footer.html" %}
 
-    {# Optional extended body content #}
-    {%- if config.extra.extend_body -%}
-        {% include "extend_body.html" %}
-    {%- endif -%}
+    {# Users can optionally provide this template to add content to the body element. #}
+    {% include "tabi/extend_body.html" ignore missing %}
 </body>
 
 </html>

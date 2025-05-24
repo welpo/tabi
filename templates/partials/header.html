@@ -177,8 +177,6 @@
         {%- endif -%}
     {%- endif -%}
 
-    {# Optional extended header content #}
-    {%- if config.extra.extend_header -%}
-        {% include "extend_header.html" %}
-    {%- endif -%}
+    {# Users can optionally provide this template to add content to the head element. #}
+    {% include "tabi/extend_head.html" ignore missing %}
 </head>
