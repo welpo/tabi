@@ -3,7 +3,7 @@
         <img src="https://img.shields.io/badge/PRs-welcome-0?style=flat-square&labelColor=202b2d&color=087e96" alt="PRs welcome"></a>
     <a href="https://github.com/welpo/tabi/graphs/contributors">
         <img src="https://img.shields.io/github/contributors/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Contributors"></a>
-    <a href="https://github.com/welpo/tabi/forks">
+    <a href="https://github.com/welpo/tabi/network/members">
         <img src="https://img.shields.io/github/forks/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Forks"></a>
     <a href="https://github.com/welpo/tabi/commits/main/">
         <img src="https://img.shields.io/github/last-commit/welpo/tabi?style=flat-square&labelColor=202b2d&color=087e96" alt="Last commit"></a>
