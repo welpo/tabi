@@ -43,6 +43,9 @@ This variable will hold all the text strings for the language #}
         {% endblock main_content %}
     </div>
     {% include "partials/footer.html" %}
+
+    {# Users can optionally provide this template to add content to the body element. #}
+    {% include "tabi/extend_body.html" ignore missing %}
 </body>
 
 </html>
