@@ -6,7 +6,7 @@
 
 {#- Feed icon -#}
 {%- set feed_url = feed_utils::get_feed_url() -%}
-{%- set should_show_feed = feed_utils::should_show_footer_feed_icon() -%}
+{%- set should_show_feed = feed_utils::should_show_footer_feed_icon() == "true" -%}
 
 {%- set should_show_footer_icons = should_show_feed or config.extra.socials or config.extra.email -%}
 
