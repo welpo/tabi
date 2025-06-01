@@ -11,7 +11,7 @@
 
 {#- Check footer feed icon conditions -#}
 {%- macro should_show_footer_feed_icon() -%}
-    {%- set generate_feed = feed_utils::get_generate_feed() -%}
+    {%- set generate_feed = feed_utils::get_generate_feed() == "true" -%}
     {%- set feed_url = feed_utils::get_feed_url() -%}
     {{- generate_feed and config.extra.feed_icon and feed_url -}}
 {%- endmacro should_show_footer_feed_icon -%}
