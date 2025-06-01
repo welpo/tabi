@@ -23,6 +23,7 @@
 @use 'parts/_tags.scss';
 @use 'parts/_theme-switch.scss';
 @use 'parts/_zola-error.scss';
+@use 'parts/_webmention.scss';
 
 @font-face {
     src: local('Inter'),
