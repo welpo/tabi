@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-04-05
+updated = 2025-06-01
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -1025,6 +1025,21 @@ La h-card predeterminada incluye tu nombre, la URL del sitio web y los enlaces a
 Puedes establecer una imagen de perfil y una pequeña biografía con los ajustes `avatar` y `biography`.
 
 Todas las demás [propiedades de h-card](https://microformats.org/wiki/h-card#Properties) se pueden añadir listándolas en la sección `[extra.hcard]` del archivo de configuración. Simplemente reemplaza todos los caracteres `-` por `_`.
+
+---
+
+## Extendiendo elementos HTML en tabi
+
+Algunos elementos HTML en tabi pueden extenderse para admitir casos de uso adicionales, como agregar JavaScript personalizado para comportamientos en todo el sitio al final de la etiqueta `<body>` o incluir contenido adicional al final del elemento `<head>` que no esté soportado por otras configuraciones de tabi.
+
+Consulta la tabla a continuación para ver los elementos que pueden extenderse:
+
+| Elemento | Plantilla                         |
+| :------: | :-------------------------------: |
+| `<head>` | `templates/tabi/extend_head.html` |
+| `<body>` | `templates/tabi/extend_body.html` |
+
+No hay configuraciones explícitas que debas establecer para tu sitio o páginas. Simplemente crea el archivo de plantilla correspondiente para tu sitio, y tabi lo incluirá automáticamente.
 
 ---
 
