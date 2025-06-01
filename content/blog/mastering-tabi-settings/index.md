@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-04-04
+updated = 2025-06-01
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -1035,6 +1035,21 @@ The default h-card includes your name, website url and social media links.
 You can set a profile picture and a small bio with the `avatar` and `biography` settings.
 
 All other [h-card properties](https://microformats.org/wiki/h-card#Properties) can be added by listing them under the `[extra.hcard]`section of the config file. Simply replace all `-` characters by `_`.
+
+---
+
+## Extending HTML Elements in tabi
+
+Some HTML elements in tabi can be extended to support additional use cases such as adding custom JavaScript for site-wide behavior at the end of the `<body>` tag or including additional content at the end of the `<head>` element that is not otherwise supported by other tabi settings.
+
+See the table below for elements that can be extended:
+
+| Element  | Template                          |
+| :------: | :-------------------------------: |
+| `<head>` | `templates/tabi/extend_head.html` |
+| `<body>` | `templates/tabi/extend_body.html` |
+
+There are no explicit settings to configure for your site or pages. Simply create the relevant template file for your site, and tabi will automatically include it.
 
 ---
 

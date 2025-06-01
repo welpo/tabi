@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-04-05
+updated = 2025-06-01
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -1024,6 +1024,21 @@ L'h-card predeterminada inclou el teu nom, l'URL del lloc web i els enllaços a 
 Pots establir una imatge de perfil i una petita biografia amb els paràmetres `avatar` i `biography`.
 
 Totes les altres [propietats h-card](https://microformats.org/wiki/h-card#Properties) es poden afegir llistant-les a la secció `[extra.hcard]` del fitxer de configuració. Simplement substitueix tots els caràcters `-` per `_`.
+
+---
+
+## Estenent elements HTML a tabi
+
+Alguns elements HTML a tabi es poden estendre per admetre casos d'ús addicionals, com ara afegir JavaScript personalitzat per a comportaments a tot el lloc al final de l'etiqueta `<body>` o incloure contingut addicional al final de l'element `<head>` que no estigui suportat per altres configuracions de tabi.
+
+Consulta la taula a continuació per veure els elements que es poden estendre:
+
+| Element | Plantilla                         |
+| :------: | :-------------------------------: |
+| `<head>` | `templates/tabi/extend_head.html` |
+| `<body>` | `templates/tabi/extend_body.html` |
+
+No hi ha configuracions explícites que hagis d'establir per al teu lloc o pàgines. Simplement crea el fitxer de plantilla corresponent per al teu lloc, i tabi l'inclourà automàticament.
 
 ---
 
