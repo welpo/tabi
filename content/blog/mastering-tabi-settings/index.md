@@ -1038,6 +1038,21 @@ All other [h-card properties](https://microformats.org/wiki/h-card#Properties) c
 
 ---
 
+## Extending HTML Elements in tabi
+
+Some HTML elements in tabi can be extended to support additional use cases such as adding custom JavaScript for site-wide behavior at the end of the `<body>` tag or including additional content at the end of the `<head>` element that is not otherwise supported by other tabi settings.
+
+See the table below for elements that can be extended:
+
+| Element  | Template                          |
+| :------: | :-------------------------------: |
+| `<head>` | `templates/tabi/extend_head.html` |
+| `<body>` | `templates/tabi/extend_body.html` |
+
+There are no explicit settings to configure for your site or pages. Simply create the relevant template file for your site, and tabi will automatically include it.
+
+---
+
 [^1]: If you're using a remote Git repository, you might want to automate the process of updating the `updated` field. Here's a guide for that: [Zola Git Pre-Commit Hook: Updating Post Dates](https://osc.garden/blog/zola-date-git-hook/).
 
 [^2]: To encode your email in base64 you can use [online tools](https://www.base64encode.org/) or, on your terminal, run: `printf 'mail@example.com' | base64`.
