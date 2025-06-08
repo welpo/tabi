@@ -137,7 +137,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- endif -%}
 
                 {%- set by_author = macros_translate::translate(key="by_author", default="By $AUTHOR", language_strings=language_strings) -%}
-                <li>{{ by_author | replace(from="$AUTHOR", to=author_string) }}</li>
+                <li>{{ by_author | replace(from="$AUTHOR", to=author_string) | safe }}</li>
                 {%- set previous_visible = true -%}
             {% endif %}
 
