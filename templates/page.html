@@ -114,8 +114,8 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
             {% endif %}
 
-            {#- Author(s) -#}
-            {% if page.authors or config.author and macros_settings::evaluate_setting_priority(setting="show_author", page=page, default_global_value=false) == "true" %}
+         {#- Author(s) -#}
+            {%- if page.authors or config.author and macros_settings::evaluate_setting_priority(setting="show_author", page=page, default_global_value=false) == "true" -%}
                 {%- if page.authors -%}
                     {%- set author_list = page.authors -%}
                 {%- else -%}
@@ -139,20 +139,20 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- set by_author = macros_translate::translate(key="by_author", default="By $AUTHOR", language_strings=language_strings) -%}
                 <li>{{ by_author | replace(from="$AUTHOR", to=author_string) | safe }}</li>
                 {%- set previous_visible = true -%}
-            {% endif %}
+            {%- endif -%}
 
-            {% if config.extra.hcard and config.extra.hcard.enable and ( not author_list or author_list is containing(config.author)) %}
+            {%- if config.extra.hcard and config.extra.hcard.enable and ( not author_list or author_list is containing(config.author)) -%}
                 {% include "partials/hcard_small.html" %}
-            {% endif %}
+            {%- endif -%}
 
             {%- set separator_with_class = "<span class='separator' aria-hidden='true'>" ~ separator ~ "</span>"-%}
 
             {#- Date -#}
-            {% if page.date and macros_settings::evaluate_setting_priority(setting="show_date", page=page, default_global_value=true) == "true" %}
+            {%- if page.date and macros_settings::evaluate_setting_priority(setting="show_date", page=page, default_global_value=true) == "true" -%}
                 <li><time class="dt-published" datetime="{{ page.date }}">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</time></li>
                 {#- Variable to keep track of whether we've shown a section, to avoid separators as the first element -#}
                 {%- set previous_visible = true -%}
-            {% endif %}
+            {%- endif -%}
 
             {#- Reading time -#}
             {%- if macros_settings::evaluate_setting_priority(setting="show_reading_time", page=page, default_global_value=true) == "true" -%}
