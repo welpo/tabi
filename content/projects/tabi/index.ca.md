@@ -26,6 +26,7 @@ social_media_card = "social_cards/ca_projects_tabi.jpg"
 - [Suport multilingüe complet](https://welpo.github.io/tabi/ca/blog/faq-languages/#com-gestiona-tabi-el-suport-multilingue). Afegeix tants idiomes com vulguis i deixa que els teus usuaris triin amb el selector d'idioma.
 - [Suport per a sèries](https://welpo.github.io/tabi/ca/blog/series/) per crear contingut seqüencial com tutorials, cursos i històries multipart.
 - Puntuació perfecta en Lighthouse (Rendiment, Accessibilitat, Millors Pràctiques i SEO).
+- Suport per a [Indieweb](https://indieweb.org/) amb microformats, suport per a [hcard](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#h-card-representativa) i [webmentions](https://welpo.github.io/tabi/blog/ca/mastering-tabi-settings/#webmentions).
 - Suport per a [diagrames de Mermaid](https://welpo.github.io/tabi/ca/blog/shortcodes/#diagrames-de-mermaid) per a crear diagrames i gràfics amb text.
 - Ressaltat de sintaxi de codi amb colors basats en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - Suport per a [comentaris usant giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/ca/blog/comments/).

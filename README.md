@@ -51,7 +51,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] Perfect Lighthouse score (Performance, Accessibility, Best Practices and SEO).
 - [X] [Comprehensive multi-language support](https://welpo.github.io/tabi/blog/faq-languages/#how-does-tabi-handle-multilingual-support). Add as many languages as you wish.
 - [X] Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
-- [X] [Indieweb](https://indieweb.org/) ready with microformats, [hcard](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#representative-h-card) and [webmentions](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#adding-webmentions) support.
+- [X] [Indieweb](https://indieweb.org/) ready with microformats, [hcard](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#representative-h-card) and [webmentions](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#webmentions) support.
 - [X] Code syntax highlighting with colours based on [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - [X] [Mermaid support](https://welpo.github.io/tabi/blog/shortcodes/#mermaid-diagrams) to create diagrams and charts with text.
 - [X] [Local search](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#search) with an accessible, multi-lingual interface.

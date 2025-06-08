@@ -23,6 +23,7 @@ local_image = "projects/tabi/tabi.webp"
 - سمتان داكنة وفاتحة، مع التبديل التلقائي حسب إعدادات النظام
 - [دعم التعليقات](https://welpo.github.io/tabi/blog/comments/) باستخدام giscus أو utterances أو Hyvor Talk أو Isso
 - [دعم KaTeX](https://katex.org/) للمعادلات الرياضية
+- [دعم Indieweb](https://indieweb.org/) مع microformats وh-card وwebmentions
 - [دعم Mermaid](https://welpo.github.io/tabi/blog/shortcodes/#mermaid-diagrams) لإنشاء المخططات
 - [بحث محلي](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#search) متعدد اللغات
 - تصميم متجاوب يعمل على جميع الأجهزة

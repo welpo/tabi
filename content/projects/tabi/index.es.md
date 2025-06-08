@@ -26,6 +26,7 @@ social_media_card = "social_cards/es_projects_tabi.jpg"
 - Tema claro y oscuro. Se adapta a la configuración del sistema operativo, con un interruptor en la barra de navegación.
 - [Soporte para series](https://welpo.github.io/tabi/es/blog/series/) para crear contenido secuencial como tutoriales, cursos e historias en varias partes.
 - Puntuación perfecta en Lighthouse (Rendimiento, Accesibilidad, Mejores Prácticas y SEO).
+- Soporte para [Indieweb](https://indieweb.org/) con microformatos, soporte para [hcard](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#h-card-representativa) y [webmentions](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#webmentions).
 - Soporte para [diagramas de Mermaid](https://welpo.github.io/tabi/es/blog/shortcodes/#diagramas-de-mermaid) para crear diagramas y gráficos con texto.
 - Resaltado de sintaxis de código con colores basados en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - Soporte para [comentarios usando giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/es/blog/comments/).
