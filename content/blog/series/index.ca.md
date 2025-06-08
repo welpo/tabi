@@ -1,7 +1,7 @@
 +++
 title = "Guia completa sobre sèries"
 date = 2024-11-08
-updated = 2025-02-15
+updated = 2025-02-21
 description = "Aprèn a organitzar les teves publicacions en sèries seqüencials, perfectes per a tutorials, cursos i històries de diverses parts."
 
 [taxonomies]

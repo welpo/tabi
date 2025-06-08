@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-06-01
+updated = 2025-06-08
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -1019,6 +1019,31 @@ See the [CSP documentation page](@/blog/security/index.md) for more information.
 ---
 
 ## Indieweb
+
+### Webmentions
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ❓  |   ❓    |      ✅       |         ❓        |         ✅          |
+
+As described by the recommended W3C standard [Webmention](https://www.w3.org/TR/webmention/#abstract-p-1) is a simple way to notify any URL when you mention it on your site. From the receiver's perspective, it's a way to request notifications when other sites mention it.
+
+For static sites [webmention.io](https://webmention.io/) hosts a webmention endpoint that can be used to receive webmentions. This feature fetches the webmentions stored at webmention.io and displays them for a page. You will need to have setup an account for your website at webmention.io. When you enable the webmention feature it will advertise your webmention.io endpoint and display the webmentions for all posts.
+
+Enable webmentions for your site by adding the following to your `config.toml` file.
+
+```toml
+[extra.webmentions]
+enable = true
+# Specify the domain registered with webmention.io.
+domain = "www.example.com"
+```
+
+❓: To disable webmentions for a specific section or page, set `webmentions = false` in the `[extra]` section of that section or page's front matter.
+
+The webmentions section looks like this:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/webmention_light.webp", dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Webmentions screenshot showing reposts, likes, bookmarks, and comments", full_width=true) }}
 
 ### Representative h-card
 

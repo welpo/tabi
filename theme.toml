@@ -376,6 +376,48 @@ custom_subset = true
 # page_author_hashes = ""  # hash (or list of hashes) of the author.
 # lazy_loading = true  # Loads when the comments are in the viewport (using the Intersection Observer API).
 
+[extra.webmentions]
+# To disable for a specific section or page, set webmentions = false in that page/section's front matter's [extra] section.
+enable = false
+# Specify the domain registered with webmention.io.
+# domain = ""
+
+# The HTML ID for the object to fill in with the webmention data.
+# Defaults to "webmentions"
+# id = "webmentions"
+
+# data configuration for the webmention.min.js script
+# The base URL to use for this page. Defaults to window.location
+# page_url =
+
+# Additional URLs to check, separated by |s
+# add_urls
+
+# The maximum number of words to render in reply mentions.
+# wordcount = 20
+
+# The maximum number of mentions to retrieve. Defaults to 30.
+# max_webmentions = 30
+
+# By default, Webmentions render using the mf2 'url' element, which plays
+# nicely with webmention bridges (such as brid.gy and telegraph)
+# but allows certain spoofing attacks. If you would like to prevent
+# spoofing, set this to a non-empty string (e.g. "true").
+# prevent_spoofing
+
+# What to order the responses by; defaults to 'published'. See
+# https://github.com/aaronpk/webmention.io#api
+# sort_by
+
+# The order to sort the responses by; defaults to 'up' (i.e. oldest
+# first). See https://github.com/aaronpk/webmention.io#api
+# sort_dir
+
+# If set to a non-empty string (e.g. "true"), will display comment-type responses
+# (replies/mentions/etc.) as being part of the reactions
+# (favorites/bookmarks/etc.) instead of in a separate comment list.
+# comments_are_reactions = "true"
+
 # h-card configuration
 # Will identify you on the indieweb (see https://microformats.org/wiki/h-card)
 [extra.hcard]

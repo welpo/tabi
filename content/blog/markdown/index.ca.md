@@ -1,7 +1,7 @@
 +++
 title = "Exemples de Markdown"
 date = 2023-01-31
-updated = 2024-11-23
+updated = 2025-02-21
 description = "Aquesta publicació mostra alguns exemples de format en Markdown, incloent-hi una taula, blocs de codi i etiquetes, citacions, taules i notes a peu de pàgina."
 
 [taxonomies]

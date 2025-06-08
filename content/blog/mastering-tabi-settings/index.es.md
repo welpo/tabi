@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-06-01
+updated = 2025-06-08
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -1009,6 +1009,31 @@ Para obtener más información, consulta la [página de documentación de CSP](@
 ---
 
 ## Indieweb
+
+### Webmentions
+
+| Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:---------------:|:-------------------:|
+|   ❓   |   ❓    |      ✅       |        ❓       |         ✅          |
+
+Como se describe en el estándar W3C recomendado, [Webmention](https://www.w3.org/TR/webmention/#abstract-p-1) es una manera sencilla de notificar cualquier URL cuando la mencionas en tu sitio web. Desde la perspectiva del receptor, es una forma de solicitar notificaciones cuando otros sitios web la mencionan.
+
+Para sitios web estáticos, [webmention.io](https://webmention.io/) aloja un punto final de webmention que se puede utilizar para recibir webmentions. Esta función recupera las webmentions almacenadas en webmention.io y las muestra para una página. Necesitarás configurar una cuenta para tu sitio web en webmention.io. Cuando habilites la función, anunciará tu punto final de webmention.io y mostrará las webmentions para cualquier página.
+
+Habilita las webmentions para tu sitio web agregando lo siguiente a tu archivo `config.toml`.
+
+```toml
+[extra.webmentions]
+enable = true
+# Especifica el dominio registrado con webmention.io.
+domain = "www.example.com"
+```
+
+❓: Para desactivar las webmentions para una sección o página específica, establece `webmentions = false` en la sección `[extra]` del front matter de esa sección o página.
+
+La sección de webmentions se ve así:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/webmention_light.webp", dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Captura de pantalla de webmentions mostrando reposts, me gusta, marcadores y comentarios", full_width=true) }}
 
 ### h-card representativa
 

@@ -102,10 +102,11 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
 {# End debugging #}
 
 <main>
-    <article>
-        <h1 class="article-title">
+    <article class="h-entry">
+        <h1 class="p-name article-title">
             {{ page.title | markdown(inline=true) | safe }}
         </h1>
+        <a class="u-url u-uid" href="{{ page.permalink | safe }}"></a>
 
         <ul class="meta">
             {#- Draft indicator -#}
@@ -122,14 +123,17 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- endif -%}
 
                 {%- if author_list | length == 1 -%}
-                    {%- set author_string = author_list.0 -%}
+                    {%- set author_string = '<span class="p-author">' ~ author_list.0 ~ '</span>' -%}
                 {%- else -%}
                     {%- set last_author = author_list | last -%}
                     {%- set other_authors = author_list | slice(end=-1) -%}
                     {%- set author_separator = macros_translate::translate(key="author_separator", default=", ", language_strings=language_strings) -%}
+                   {%- set author_separator = '</span>' ~ author_separator ~ '<span class="p-author">' -%}
                     {%- set conjunction = macros_translate::translate(key="author_conjunction", default=" and ", language_strings=language_strings) -%}
+                    {%- set conjunction = '</span>' ~ conjunction ~ '<span class="p-author">' -%}
                     {%- set author_string = other_authors | join(sep=author_separator) -%}
                     {%- set author_string = author_string ~ conjunction ~ last_author -%}
+                    {%- set author_string = '<span class="p-author">' ~ author_string ~ '</span>' -%}
                 {%- endif -%}
 
                 {%- set by_author = macros_translate::translate(key="by_author", default="By $AUTHOR", language_strings=language_strings) -%}
@@ -145,7 +149,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
 
             {#- Date -#}
             {% if page.date and macros_settings::evaluate_setting_priority(setting="show_date", page=page, default_global_value=true) == "true" %}
-                <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</li>
+                <li><time class="dt-published" datetime="{{ page.date }}">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</time></li>
                 {#- Variable to keep track of whether we've shown a section, to avoid separators as the first element -#}
                 {%- set previous_visible = true -%}
             {% endif %}
@@ -160,7 +164,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {%- if page.taxonomies and page.taxonomies.tags -%}
                 <li class="tag">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{- macros_translate::translate(key="tags", default="tags", language_strings=language_strings) | capitalize -}}:&nbsp;</li>
                 {%- for tag in page.taxonomies.tags -%}
-                    <li class="tag"><a href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
+                    <li class="tag"><a class="p-category" href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
                     {%- if not loop.last -%}
                         ,&nbsp;
                     {%- endif -%}
@@ -175,7 +179,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- set formatted_date = macros_format_date::format_date(date=page.updated, short=true, language_strings=language_strings) -%}
                 {%- set updated_str = last_updated_str | replace(from="$DATE", to=formatted_date) -%}
                 {%- set previous_visible = true -%}
-                </ul><ul class="meta last-updated"><li>{{ updated_str }}</li>
+                </ul><ul class="meta last-updated"><li><time class="dt-updated" datetime="{{ page.updated }}">{{ updated_str }}</time></li>
                 {#- Show link to remote changes if enabled -#}
                 {%- if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" -%}
                     <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}<a class="external" href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}</a></li>
@@ -227,7 +231,13 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {{ macros_toc::toc(page=page, header=true, language_strings=language_strings) }}
         {% endif %}
 
-        <section class="body">
+        {#- Optional Summary paragraph for readers -#}
+        {% if page.description %}
+            <p class="p-summary" hidden>{{ page.description }}</p>
+        {%- endif -%}
+
+
+        <section class="e-content body">
             {#- Replace series_intro placeholder -#}
             {%- set content_with_intro = page.content -%}
             {%- if "<!-- series_intro -->" in page.content -%}
@@ -333,6 +343,14 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
         {% if comment_system %}
             {% include "partials/comments.html" %}
         {% endif %}
+
+        {#- Webmentions -#}
+        {%- set global_webmentions_enabled = config.extra.webmentions.enable | default(value=false) -%}
+        {%- set page_webmentions_enabled = page.extra.webmentions | default(value=global_webmentions_enabled) -%}
+        {%- set webmentions_enabled = global_webmentions_enabled and page_webmentions_enabled != false or page_webmentions_enabled == true -%}
+        {%- if webmentions_enabled -%}
+            {%- include "partials/webmentions.html" -%}
+        {%- endif -%}
 
     </article>
 </main>

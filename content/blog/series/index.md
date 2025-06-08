@@ -1,7 +1,7 @@
 +++
 title = "A Complete Guide to Series"
 date = 2024-11-08
-updated = 2025-02-15
+updated = 2025-02-21
 description = "Learn how to organize your posts into sequential series, perfect for tutorials, courses, and multi-part stories."
 
 [taxonomies]
