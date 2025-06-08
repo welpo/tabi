@@ -340,8 +340,11 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {% include "partials/comments.html" %}
         {% endif %}
 
-        {# Webmentions #}
-        {%- if config.extra.webmentions.enable -%}
+        {#- Webmentions -#}
+        {%- set global_webmentions_enabled = config.extra.webmentions.enable | default(value=false) -%}
+        {%- set page_webmentions_enabled = page.extra.webmentions | default(value=global_webmentions_enabled) -%}
+        {%- set webmentions_enabled = global_webmentions_enabled and page_webmentions_enabled != false or page_webmentions_enabled == true -%}
+        {%- if webmentions_enabled -%}
             {%- include "partials/webmentions.html" -%}
         {%- endif -%}
 

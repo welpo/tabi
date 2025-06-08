@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-04-05
+updated = 2025-06-08
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -1008,6 +1008,31 @@ Per a més informació, consulta la [pàgina de documentació de CSP](@/blog/sec
 ---
 
 ## Indieweb
+
+### Webmentions
+
+| Pàgina | Secció | `config.toml` | Segueix jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:-----------------:|:--------------------:|
+|   ❓   |   ❓   |      ✅       |         ❓        |         ✅           |
+
+Com es descriu en l'estàndard W3C recomanat, [Webmention](https://www.w3.org/TR/webmention/#abstract-p-1) és una manera senzilla de notificar qualsevol URL quan la menciones al teu lloc web. Des de la perspectiva del receptor, és una manera de sol·licitar notificacions quan altres llocs web la mencionen.
+
+Per a llocs web estàtics, [webmention.io](https://webmention.io/) allotja un punt final de webmention que es pot utilitzar per rebre webmentions. Aquesta funcionalitat recupera les webmentions emmagatzemades a webmention.io i les mostra per a una pàgina. Hauràs de configurar un compte per al teu lloc web a webmention.io. Quan habilitis la funcionalitat de webmention, anunciarà el teu punt final de webmention.io i mostrarà les webmentions per a qualsevol pàgina.
+
+Habilita les webmentions per al teu lloc web afegint el següent al teu fitxer `config.toml`.
+
+```toml
+[extra.webmentions]
+enable = true
+# Especifica el domini registrat amb webmention.io.
+domain = "www.example.com"
+```
+
+❓: Per desactivar les webmentions per a una secció o pàgina específica, estableix `webmentions = false` a la secció `[extra]` del front matter d'aquesta secció o pàgina.
+
+La secció de webmentions es veu així:
+
+{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/webmention_light.webp", dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Captura de pantalla de webmentions mostrant republications, m'agrada, marcadors i comentaris", full_width=true) }}
 
 ### h-card representativa
 
