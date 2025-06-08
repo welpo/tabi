@@ -218,6 +218,7 @@ git pull
 | [ZzMzaw's blog](https://zzmzaw.github.io/) | ZzMzaw ([ZzMzaw](https://github.com/ZzMzaw)) | Personal blog | [Source](https://github.com/ZzMzaw/zzmzaw.github.io) |
 | [idle-ti.me](https://idle-ti.me/) | Jérôme Ramette ([be-next](https://github.com/be-next)) | Personal blog | [Source](https://github.com/be-next/idle-ti.me) |
 | [tzinm.me](https://tzinm.me/) | [Tzinm](https://github.com/tzinm) | Personal blog | [Source](https://codeberg.org/tzinm/blog) |
+| [b1n.io](https://b1n.io) | [b1nhack](https://github.com/b1nhack) | Linux kernel vulnerability researcher | [Source](https://github.com/b1nhack/blog) |
 
 Using tabi? Feel free to create a PR and add your site to this list.
 

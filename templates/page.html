@@ -141,6 +141,10 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- set previous_visible = true -%}
             {% endif %}
 
+            {% if config.extra.hcard and config.extra.hcard.enable and ( not author_list or author_list is containing(config.author)) %}
+                {% include "partials/hcard_small.html" %}
+            {% endif %}
+
             {%- set separator_with_class = "<span class='separator' aria-hidden='true'>" ~ separator ~ "</span>"-%}
 
             {#- Date -#}

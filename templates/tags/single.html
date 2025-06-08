@@ -3,7 +3,7 @@
 {% block main_content %}
 
 {#- Feed icon -#}
-{%- set generate_feed = feed_utils::get_generate_feed() -%}
+{%- set generate_feed = feed_utils::get_generate_feed() == "true" -%}
 {%- set feed_url = feed_utils::get_feed_url() -%}
 {%- set feed_pre_conditions = generate_feed and feed_url and taxonomy.feed -%}
 {%- set show_feed_icon = feed_pre_conditions and term.pages | filter(attribute="date") -%}
