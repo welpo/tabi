@@ -4,6 +4,67 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [4.1.0](https://github.com/welpo/tabi/compare/v4.0.0..v4.1.0) - 2025-06-14
+
+### ✨ Features
+
+- *(feed)* Add feed icon tag pages ([#522](https://github.com/welpo/tabi/issues/522)) by [@tzinm](https://github.com/tzinm) and [@welpo](https://github.com/welpo)
+- *(i18n)* Add Finnish language ([#505](https://github.com/welpo/tabi/issues/505)) by [@axelkar](https://github.com/axelkar) and [@welpo](https://github.com/welpo)
+- *(indieweb)* Add hidden h-card ([#506](https://github.com/welpo/tabi/issues/506)) by [@mmai](https://github.com/mmai) and [@welpo](https://github.com/welpo)
+- *(socials)* Add itch.io icon ([#520](https://github.com/welpo/tabi/issues/520)) by [@mystal](https://github.com/mystal)
+- *(webmentions)* Add hcard in post page ([#524](https://github.com/welpo/tabi/issues/524)) by [@mmai](https://github.com/mmai) and [@welpo](https://github.com/welpo)
+- Add support for webmentions ([#485](https://github.com/welpo/tabi/issues/485)) by [@gortavoher](https://github.com/gortavoher), [@Jeremiah](https://github.com/Jeremiah) Russell, [@Henri](https://github.com/Henri) Bourcereau and [@welpo](https://github.com/welpo)
+- Extend tabi `<head>` and `<body>` elements ([#528](https://github.com/welpo/tabi/issues/528)) by [@axis7818](https://github.com/axis7818) and [@welpo](https://github.com/welpo)
+- Parse markdown in post summary & description ([#517](https://github.com/welpo/tabi/issues/517)) by [@rktjump](https://github.com/rktjump) and [@welpo](https://github.com/welpo)
+- Cache bust images in shortcodes ([#504](https://github.com/welpo/tabi/issues/504)) by [@axelkar](https://github.com/axelkar)
+
+### 🐛 Bug fixes
+
+- *(feed)* Prioritise description > summary ([#525](https://github.com/welpo/tabi/issues/525)) by [@tzinm](https://github.com/tzinm)
+- Render author HTML on page metadata ([7321fc5](https://github.com/welpo/tabi/commit/7321fc5a43fa50dc24c9fa87714612a2295b904a)) by [@welpo](https://github.com/welpo)
+- Allow feed icon to be hidden ([#533](https://github.com/welpo/tabi/issues/533)) by [@bajacc](https://github.com/bajacc)
+- Fix hcard html tags ([#508](https://github.com/welpo/tabi/issues/508)) by [@mmai](https://github.com/mmai)
+- Fix external link icon breaking word wrapping ([#498](https://github.com/welpo/tabi/issues/498)) by [@welpo](https://github.com/welpo)
+- Fix padding hover on links with code (custom font) ([#494](https://github.com/welpo/tabi/issues/494)) by [@clement-escolano](https://github.com/clement-escolano)
+
+### 💄 Styling
+
+- Remove extra spacing after author ([2e29782](https://github.com/welpo/tabi/commit/2e29782279d8154cb9c6f1df9a2401612ec77948)) by [@welpo](https://github.com/welpo)
+
+### ♻️ Refactor
+
+- Add "target_attribute" macro ([#515](https://github.com/welpo/tabi/issues/515)) by [@tzinm](https://github.com/tzinm) and @Óscar
+- Improve error message when title is unset ([a384ac8](https://github.com/welpo/tabi/commit/a384ac80c8e6b8be46d4a335930fba697a523af9)) by [@welpo](https://github.com/welpo)
+
+### 🔧 Miscellaneous tasks
+
+- *(CI)* Fix Mermaid version detection ([e11186a](https://github.com/welpo/tabi/commit/e11186a8448f94494b350402f76a2cc5e5a98a97)) by [@welpo](https://github.com/welpo)
+- *(README)* Add b1n.io to 'sites using tabi' ([#531](https://github.com/welpo/tabi/issues/531)) by [@b1nhack](https://github.com/b1nhack)
+- *(README)* Fix broken link tag ([#516](https://github.com/welpo/tabi/issues/516)) by [@Olexandr88](https://github.com/Olexandr88)
+- *(README)* Add tzinm's blog to 'sites using tabi' ([#496](https://github.com/welpo/tabi/issues/496)) by [@tzinm](https://github.com/tzinm)
+
+### 👥 New contributors
+
+🫶 [@gortavoher](https://github.com/gortavoher) made their first contribution in [#485](https://github.com/welpo/tabi/pull/485)
+
+🫶 [@bajacc](https://github.com/bajacc) made their first contribution in [#533](https://github.com/welpo/tabi/pull/533)
+
+🫶 [@axis7818](https://github.com/axis7818) made their first contribution in [#528](https://github.com/welpo/tabi/pull/528)
+
+🫶 [@b1nhack](https://github.com/b1nhack) made their first contribution in [#531](https://github.com/welpo/tabi/pull/531)
+
+🫶 [@tzinm](https://github.com/tzinm) made their first contribution in [#525](https://github.com/welpo/tabi/pull/525)
+
+🫶 [@mmai](https://github.com/mmai) made their first contribution in [#524](https://github.com/welpo/tabi/pull/524)
+
+🫶 [@rktjump](https://github.com/rktjump) made their first contribution in [#517](https://github.com/welpo/tabi/pull/517)
+
+🫶 [@mystal](https://github.com/mystal) made their first contribution in [#520](https://github.com/welpo/tabi/pull/520)
+
+🫶 [@axelkar](https://github.com/axelkar) made their first contribution in [#504](https://github.com/welpo/tabi/pull/504)
+
+🫶 [@clement-escolano](https://github.com/clement-escolano) made their first contribution in [#494](https://github.com/welpo/tabi/pull/494)
+
 ## [4.0.0](https://github.com/welpo/tabi/compare/v3.1.0..v4.0.0) - 2025-02-16
 
 ### 💥 BREAKING CHANGES 💥
@@ -206,6 +267,8 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 
 🫶 [@jmbhughes](https://github.com/jmbhughes) made their first contribution in [#404](https://github.com/welpo/tabi/pull/404)
 
+🫶 [@soumendrak](https://github.com/soumendrak) made their first contribution in [#402](https://github.com/welpo/tabi/pull/402)
+
 ## [2.16.0](https://github.com/welpo/tabi/compare/v2.15.0..v2.16.0) - 2024-09-22
 
 ### ✨ Features
@@ -245,7 +308,7 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 
 ### ✨ Features
 
-- *(i18n)* Add Odia language ([#372](https://github.com/welpo/tabi/issues/372)) by [@soumendrak](https://github.com/soumendrak)
+- *(i18n)* Add Odia language ([#372](https://github.com/welpo/tabi/issues/372))
 - *(i18n)* Add Estonian language ([#365](https://github.com/welpo/tabi/issues/365)) by [@NippleOfAnApe](https://github.com/NippleOfAnApe)
 - Add Mermaid diagram support ([#370](https://github.com/welpo/tabi/issues/370)) by [@welpo](https://github.com/welpo)
 
@@ -276,7 +339,7 @@ We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.
 
 ### 👥 New contributors
 
-🫶 [@soumendrak](https://github.com/soumendrak) made their first contribution in [#372](https://github.com/welpo/tabi/pull/372)
+🫶 @ made their first contribution in [#372](https://github.com/welpo/tabi/pull/372)
 
 🫶 [@DataTriny](https://github.com/DataTriny) made their first contribution in [#367](https://github.com/welpo/tabi/pull/367)
 
