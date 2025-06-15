@@ -25,7 +25,7 @@
         data-website-id="{{ analytics_id }}"
         src="https://cloud.umami.is/script.js"
     {% endif %}
-    data-do-not-track="true">
+    {% if config.extra.analytics.do_not_track %}data-do-not-track="true"{% endif %}>
     </script>
 
     {% elif analytics_service == "plausible" %}

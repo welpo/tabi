@@ -372,6 +372,9 @@ service = "goatcounter"
 # Leave this field empty if you're using the service's default hosting.
 self_hosted_url = "https://tabi-stats.osc.garden"
 
+# Optional: For Umami, enable this option to respect users' Do Not Track (DNT) settings. The default is true.
+do_not_track = true
+
 # giscus support for comments. https://giscus.app
 # Setup instructions: https://welpo.github.io/tabi/blog/comments/#setup
 [extra.giscus]
