@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-06-08
+updated = 2025-06-16
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -802,6 +802,8 @@ Puedes configurarlos en la sección `[extra.analytics]` de tu archivo `config.to
   - Para GoatCounter: `"https://stats.example.com"`
   - Para Umami: `"https://umami.example.com"`
   - Para Plausible: `"https://plausible.example.com"`
+
+- `do_not_track`: (sólo para Umami) opcional. Cuando se establece en `true`, se desactiva el seguimiento para los usuarios cuyos navegadores envían un encabezado "Do Not Track".
 
 Un ejemplo de configuración para GoatCounter no auto-alojada sería:
 
