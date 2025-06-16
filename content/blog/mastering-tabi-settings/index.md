@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-06-08
+updated = 2025-06-16
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -810,6 +810,8 @@ You can set them up in the `[extra.analytics]` section of your `config.toml`.
   - For GoatCounter: `"https://stats.example.com"`
   - For Umami: `"https://umami.example.com"`
   - For Plausible: `"https://plausible.example.com"`
+
+- `do_not_track`: (Umami only) Optional. When set to `true`, the generated tracking script will include the `data-do-not-track="true"` attribute, which disables tracking for users whose browsers send a "Do Not Track" header.
 
 An example configuration for non-self-hosted GoatCounter would look like this:
 
