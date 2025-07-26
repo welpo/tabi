@@ -68,6 +68,9 @@ load_comments = "Carregar comentaris"
 copied = "Copiat!"
 copy_code_to_clipboard = "Copia el codi al porta-retalls"
 
+# iine appreciation button.
+like_this_post = "M'agrada aquesta publicació"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "Propulsat per"
 and = "i"

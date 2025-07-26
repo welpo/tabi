@@ -8,6 +8,9 @@ content="default-src 'self'
     {%- set hyvortalk_enabled = config.extra.hyvortalk.enabled_for_all_posts or page.extra.hyvortalk -%}
     {%- set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso -%}
     {%- if page -%}
+        {%- set iine_enabled = macros_settings::evaluate_setting_priority(setting="iine", page=page, default_global_value=false) == "true" -%}
+    {%- endif -%}
+    {%- if page -%}
         {%- set mermaid_enabled = macros_settings::evaluate_setting_priority(setting="mermaid", page=page, default_global_value=false) == "true" -%}
     {%- endif -%}
     {%- set serve_local_mermaid = config.extra.serve_local_mermaid | default(value=true) -%}
@@ -50,13 +53,18 @@ content="default-src 'self'
         {%- set script_src = script_src ~ " " ~ " utteranc.es" -%}
     {%- endif -%}
 
-    {%- if mermaid_enabled and not serve_local_mermaid -%}
+    {%- if (mermaid_enabled and not serve_local_mermaid) or iine_enabled -%}
         {%- set script_src = script_src ~ " " ~ " cdn.jsdelivr.net" -%}
     {%- endif -%}
 
     {#- Check if a webmention system is enabled to allow the necessary domains and directives -#}
     {%- if config.extra.webmentions.enable -%}
         {%- set connect_src = connect_src ~ " webmention.io" -%}
+    {%- endif -%}
+
+    {#- Check if iine like buttons are enabled to allow the necessary domains -#}
+    {%- if iine_enabled -%}
+        {%- set connect_src = connect_src ~ " vhiweeypifbwacashxjz.supabase.co" -%}
     {%- endif -%}
 
     {#- Append WebSocket for Zola serve mode -#}

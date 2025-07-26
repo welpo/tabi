@@ -68,6 +68,9 @@ load_comments = "ମତାମତ ଲୋଡ କରନ୍ତୁ"
 copied = "କପି ହେଲା!"
 copy_code_to_clipboard = "କ୍ଲିପବୋର୍ଡକୁ କପି କରନ୍ତୁ"
 
+# iine appreciation button.
+like_this_post = "ମୋର ଏହି ପୋସ୍ଟ ଭଲ ଲାଗେ"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "ଚାଳିତ ଦ୍ୱାରା"
 and = "ଏବଂ"

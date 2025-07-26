@@ -1,0 +1,5 @@
+{% set button_icon = icon | default(value="heart") %}
+{% set label = label | default(value="Like this post") %}
+{% set slug = slug | default(value=page.path) %}
+
+{% include "partials/iine_button.html" %}

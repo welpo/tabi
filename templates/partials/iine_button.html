@@ -1,0 +1,26 @@
+{#
+    Partial template for iine appreciation buttons
+
+    Expected variables:
+    - button_icon: the icon to display (required)
+    - slug (optional): custom identifier
+    - label (optional): accessibility label
+#}
+
+{%- if button_icon == "heart" -%}
+  {%- set icon_display = "♥️" -%}
+{%- elif button_icon == "thumbs_up" -%}
+  {%- set icon_display = "👍" -%}
+{%- elif button_icon == "upvote" -%}
+  {%- set icon_display = "⬆️" -%}
+{%- else -%}
+  {%- set icon_display = button_icon -%}
+{%- endif -%}
+
+<form method="post" action="https://vhiweeypifbwacashxjz.supabase.co/rest/v1/rpc/increment_page_hits?apikey=sb_publishable_EoB7MFJhCmb6PiAk-GPJ4w_PGhQ44Ru" class="iine-form">
+  <input type="hidden" name="page_slug" value="{%- if slug -%}{{ slug }}{%- else -%}{{ current_url | default(value=page.path) }}{%- endif -%}">
+  <button class="iine-button" type="submit"
+    {%- if slug %} data-slug="{{ slug }}"{% endif %}
+    {%- if button_icon %} data-icon="{{ button_icon }}"{% endif %}
+    aria-label="{%- if label -%}{{ label }}{%- else -%}{{ trans(key="like_this_post", lang=lang) }}{%- endif -%}">{{ icon_display }}</button>
+</form>

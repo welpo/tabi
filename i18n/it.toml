@@ -68,6 +68,9 @@ load_comments = "Carica commenti"
 copied = "Copiato!"
 copy_code_to_clipboard = "Copia codice negli appunti"
 
+# iine appreciation button.
+like_this_post = "Mi piace questo post"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "Alimentato da"
 and = "e"

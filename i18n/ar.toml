@@ -83,6 +83,9 @@ load_comments = "إظهار التعليقات"
 copied = "تم النسخ!"
 copy_code_to_clipboard = "نسخ الشِفرة إلى الحافظة"
 
+# iine appreciation button.
+like_this_post = "أعجبني هذا المقال"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "مُشَغل بواسطة"
 and = "و"

@@ -72,6 +72,9 @@ load_comments = "Lataa kommentit"
 copied = "Kopioitu!"
 copy_code_to_clipboard = "Kopioi koodi leikepöydälle"
 
+# iine appreciation button.
+like_this_post = "Pidän tästä kirjoituksesta"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "Pyörii ohjelmilla" # "Works using the software"
 and = "&"

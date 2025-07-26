@@ -81,6 +81,9 @@ load_comments = "Завантажити коментарі"
 copied = "Скопійовано!"
 copy_code_to_clipboard = "Копіювати код у буфер обміну"
 
+# iine appreciation button.
+like_this_post = "Мені подобається ця стаття"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "Під управлінням"
 and = "та"
