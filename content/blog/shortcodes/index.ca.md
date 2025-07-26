@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2025-02-15
+updated = 2025-07-26
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -186,6 +186,28 @@ Tots els altres shortcodes d'imatges poden utilizar l'amplada completa assignant
 ```
 {{/* full_width_image(src="img/amsterdam_by_oskerwyld.webp", alt="Fotografia d'un canal a Àmsterdam") */}}
 ```
+
+## Shortcodes de participació
+
+### iine
+
+{{ aside(text="Per afegir-lo a totes les publicacions, estableix `iine = true` a la secció `[extra]` del teu `config.toml`.") }}
+
+Aquest shortcode et permet afegir botons addicionals d'[iine.to](https://iine.to) a les teves publicacions, com aquest:
+
+{{ iine(slug="/blog/shortcodes/demo-button") }}
+
+#### Ús
+
+```
+{{/* iine(icon="heart", slug="/post/el-meu-slug-de-post/like", label="M'agrada aquesta publicació") */}}
+```
+
+El shortcode accepta els següents paràmetres opcionals:
+
+- `icon`: La icona a mostrar. Pot ser `heart`, `thumbs_up`, `upvote`, o qualsevol emoji.
+- `slug`: Un identificador únic. Per defecte és la ruta de la pàgina actual. Útil si vols més d'un botó a la mateixa pàgina.
+- `label`: L'etiqueta d'accessibilitat per al botó. Per defecte és "M'agrada aquesta publicació".
 
 ## Shortcodes de codi
 

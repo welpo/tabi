@@ -69,6 +69,9 @@ load_comments = "بارگذاری نظرات"
 copied = "کپی شد!"
 copy_code_to_clipboard = "کپی کد به کلیپ‌بورد"
 
+# iine appreciation button.
+like_this_post = "این مقاله را دوست دارم"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "قدرت گرفته از"
 and = "و"

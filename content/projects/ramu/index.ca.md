@@ -10,6 +10,7 @@ tags = ["Japonès", "interactiu", "web app", "web", "PWA", "JavaScript"]
 local_image = "projects/ramu/ramu_logo.webp"
 canonical_url = "https://osc.garden/ca/projects/ramu/"
 social_media_card = "social_cards/projects_ramu.jpg"
+iine_icon = '🐏'
 +++
 
 <ruby>ラ<rt>ra</rt>ム<rt>mu</rt></ruby> és una aplicació web progressiva per practicar la lectura i comprensió auditiva de nombres en japonès. El nom reflecteix el seu propòsit: aconseguir accès aleatori (RAM; memòria d'accés aleatori) als nombres, en contraposició a una memòria seqüencial (1, 2, 3…).

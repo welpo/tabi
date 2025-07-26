@@ -72,6 +72,9 @@ load_comments = "Kommentare laden"
 copied = "Kopiert!"
 copy_code_to_clipboard = "Code in die Zwischenablage kopieren"
 
+# iine appreciation button.
+like_this_post = "Dieser Beitrag gefällt mir"
+
 # Footer.
 powered_by = "Angetrieben von"
 and = "und"

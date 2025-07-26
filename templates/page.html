@@ -57,6 +57,8 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
 </pre></div>
 
     {% set settings_to_test = [
+        "iine",
+        "iine_icon",
         "enable_cards_tag_filtering",
         "footnote_backlinks",
         "add_src_to_code_block",
@@ -98,6 +100,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
         </tbody>
     </table>
 </div> #}
+
 {# {{ __tera_context }} #}
 {# End debugging #}
 
@@ -272,6 +275,11 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {#- This is Philipp Oppermann's workaround: https://github.com/getzola/zola/issues/584#issuecomment-474329637 -#}
             {{ processed_content | replace(from="<!-- toc -->", to=macros_toc::toc(page=page, header=false, language_strings=language_strings)) | safe }}
         </section>
+
+        {#- iine button -#}
+        {%- if macros_settings::evaluate_setting_priority(setting="iine", page=page, default_global_value=false) == "true" -%}
+            {% include "partials/iine_button.html" %}
+        {%- endif -%}
 
         {% if macros_settings::evaluate_setting_priority(setting="show_previous_next_article_links", page=page, default_global_value=true) == "true" %}
             {%- if page.lower or page.higher -%}

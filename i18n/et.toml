@@ -68,6 +68,9 @@ load_comments = "Lae kommentaarid"
 copied = "Kopeeritud!"
 copy_code_to_clipboard = "Kopeeri kood lõikelauale"
 
+# iine appreciation button.
+like_this_post = "Mulle meeldib see postitus"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "Toetab"
 and = "ja"

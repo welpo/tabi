@@ -10,6 +10,7 @@ tags = ["web", "JavaScript"]
 local_image = "projects/tabi/tabi.webp"
 canonical_url = "https://osc.garden/ca/projects/tabi/"
 social_media_card = "social_cards/ca_projects_tabi.jpg"
+iine_icon = '🌱'
 +++
 
 [**tabi**](https://github.com/welpo/tabi) és un tema modern i ric en funcionalitat per a [Zola](https://www.getzola.org/), un generador de llocs web estàtics molt ràpid.
@@ -28,6 +29,7 @@ social_media_card = "social_cards/ca_projects_tabi.jpg"
 - Puntuació perfecta en Lighthouse (Rendiment, Accessibilitat, Millors Pràctiques i SEO).
 - Suport per a [Indieweb](https://indieweb.org/) amb microformats, suport per a [hcard](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#h-card-representativa) i [webmentions](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#webmentions).
 - Suport per a [diagrames de Mermaid](https://welpo.github.io/tabi/ca/blog/shortcodes/#diagrames-de-mermaid) per a crear diagrames i gràfics amb text.
+- Botons de «m'agrada» d'[iine](https://iine.to/) per mostrar apreciació anònima pel teu contingut.
 - Ressaltat de sintaxi de codi amb colors basats en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - Suport per a [comentaris usant giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/ca/blog/comments/).
 - [Cerca local](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#cerca) amb una interfície accessible i multilingüe.

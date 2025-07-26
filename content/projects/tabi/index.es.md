@@ -10,6 +10,7 @@ tags = ["web", "JavaScript"]
 local_image = "projects/tabi/tabi.webp"
 canonical_url = "https://osc.garden/es/projects/tabi/"
 social_media_card = "social_cards/es_projects_tabi.jpg"
+iine_icon = '🌱'
 +++
 
 [**tabi**](https://github.com/welpo/tabi) es un tema moderno y rico en funcionalidad para [Zola](https://www.getzola.org/), un generador de sitios web estáticos muy rápido.
@@ -27,6 +28,7 @@ social_media_card = "social_cards/es_projects_tabi.jpg"
 - [Soporte para series](https://welpo.github.io/tabi/es/blog/series/) para crear contenido secuencial como tutoriales, cursos e historias en varias partes.
 - Puntuación perfecta en Lighthouse (Rendimiento, Accesibilidad, Mejores Prácticas y SEO).
 - Soporte para [Indieweb](https://indieweb.org/) con microformatos, soporte para [hcard](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#h-card-representativa) y [webmentions](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#webmentions).
+- Botones de «me gusta» de [iine](https://iine.to/) para mostrar aprecio anónimo por tu contenido.
 - Soporte para [diagramas de Mermaid](https://welpo.github.io/tabi/es/blog/shortcodes/#diagramas-de-mermaid) para crear diagramas y gráficos con texto.
 - Resaltado de sintaxis de código con colores basados en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - Soporte para [comentarios usando giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/es/blog/comments/).

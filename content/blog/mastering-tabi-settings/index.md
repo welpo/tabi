@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-06-16
+updated = 2025-07-26
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -788,6 +788,37 @@ To enable a system globally (on all pages), set `enabled_for_all_posts = true` i
 If you have enabled a system globally, but want to disable it on a specific page, set the name of the system to `false` in the front matter of that page. For example, `utterances = false`.
 
 Read [the docs](@/blog/comments/index.md) for more information on the available systems and their setup.
+
+### iine Like Buttons {#iine}
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
+
+tabi supports [iine](https://iine.to/) like buttons for anonymous appreciation of your content. These privacy-focused buttons work without JavaScript and don't track users.
+
+To enable iine buttons globally:
+
+```toml
+[extra]
+iine = true
+```
+
+You can customise the icon used for the buttons (follows the hierarchy):
+
+```toml
+[extra]
+iine_icon = "thumbs_up"  # Options: "heart", "thumbs_up", "upvote", or any emoji
+```
+
+For multilingual sites, you can unify like counts across language versions of the same content (config-only setting):
+
+```toml
+[extra]
+iine_unified_languages = true  # Likes on /es/blog/hello/ count towards /blog/hello/
+```
+
+You can also enable iine buttons on individual pages or sections by setting `iine = true` in their front matter, or override the icon with `iine_icon = "🚀"`.
 
 ### Analytics
 
