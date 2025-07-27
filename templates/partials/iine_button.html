@@ -24,7 +24,7 @@
   {%- set icon_display = button_icon -%}
 {%- endif -%}
 
-<form method="post" action="https://vhiweeypifbwacashxjz.supabase.co/rest/v1/rpc/increment_page_hits?apikey=sb_publishable_EoB7MFJhCmb6PiAk-GPJ4w_PGhQ44Ru" class="iine-form">
+<form method="post" action="https://vhiweeypifbwacashxjz.supabase.co/rest/v1/rpc/increment_hits?apikey=sb_publishable_EoB7MFJhCmb6PiAk-GPJ4w_PGhQ44Ru" class="iine-form">
   <input type="hidden" name="page_slug" value="{%- if slug -%}{{ slug }}{%- else -%}{{ current_url | default(value=page.path) }}{%- endif -%}">
   <button class="iine-button" type="submit"
     {%- if slug %} data-slug="{{ slug }}"{% endif %}
