@@ -31,7 +31,7 @@ Appreciation buttons for your blog, digital garden, portfolio… No account requ
 Add appreciation buttons to your site with two lines. Load the script:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.mini.js"></script>
 ```
 
 Add the button:

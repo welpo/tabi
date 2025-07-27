@@ -31,7 +31,7 @@ Botones de apreciación para tu blog, jardín digital, portafolio… Sin cuenta 
 Añade botones de apreciación a tu sitio con dos líneas. Carga el script:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.mini.js"></script>
 ```
 
 Añade el botón:

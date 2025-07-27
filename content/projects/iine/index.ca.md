@@ -31,7 +31,7 @@ Botons d'apreciació per al teu blog, jardí digital, portafoli… No cal compte
 Afegeix botons d'apreciació al teu lloc amb dues línies. Carrega l'script:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.mini.js"></script>
 ```
 
 Afegeix el botó:
