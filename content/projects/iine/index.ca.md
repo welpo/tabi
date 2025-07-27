@@ -8,7 +8,8 @@ tags = ["web", "JavaScript", "privadesa", "backend"]
 
 [extra]
 local_image = "projects/iine/iine_logo.webp"
-social_media_card = "social_cards/projects_iine.png"
+social_media_card = "social_cards/projects_iine.jpg"
+canonical_url = "https://osc.garden/projects/iine/"
 +++
 
 Botons d'apreciació per al teu blog, jardí digital, portafoli… No cal compte. Sense seguiment.
