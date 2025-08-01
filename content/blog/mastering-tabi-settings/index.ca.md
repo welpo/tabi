@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-07-26
+updated = 2025-08-01
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -802,7 +802,7 @@ Pots personalitzar la icona usada als botons (segueix la jerarquia):
 iine_icon = "thumbs_up"  # Opcions: "heart", "thumbs_up", "upvote", o qualsevol emoji
 ```
 
-Per a llocs multilingües, pots unificar els recomptes de likes entre versions en diferents idiomes del mateix contingut (configuració només de config):
+Per a llocs multilingües, pots unificar els recomptes de likes entre versions en diferents idiomes del mateix contingut (configuració només de config; valor per defecte és `true`):
 
 ```toml
 [extra]

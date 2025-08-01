@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-07-26
+updated = 2025-08-01
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -803,7 +803,7 @@ Puedes personalizar el icono usado en los botones (esta configuración sigue la 
 iine_icon = "thumbs_up"  # Opciones: "heart", "thumbs_up", "upvote", o cualquier emoji
 ```
 
-Para sitios multilingües, puedes unificar los conteos de likes entre versiones en diferentes idiomas del mismo contenido (configuración solo de config):
+Para sitios multilingües, puedes unificar los conteos de likes entre versiones en diferentes idiomas del mismo contenido (configuración solo de config; valor predeterminado: `true`):
 
 ```toml
 [extra]

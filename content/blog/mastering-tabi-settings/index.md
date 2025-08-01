@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-07-26
+updated = 2025-08-01
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -811,7 +811,7 @@ You can customise the icon used for the buttons (follows the hierarchy):
 iine_icon = "thumbs_up"  # Options: "heart", "thumbs_up", "upvote", or any emoji
 ```
 
-For multilingual sites, you can unify like counts across language versions of the same content (config-only setting):
+For multilingual sites, you can unify like counts across language versions of the same content (config-only setting; true by default):
 
 ```toml
 [extra]

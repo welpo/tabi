@@ -120,7 +120,7 @@ iine = false
 iine_icon = "heart"  # See https://iine.to/#customise
 # Unify like counts across all language versions of the same page.
 # When enabled, likes on /es/blog/hello/ will count towards /blog/hello/ (default language).
-iine_unified_languages = false
+iine_unified_languages = true
 
 # Show "Jump to posts" link next to series' title.
 # By default, the link appears automatically when a series description exceeds 2000 characters.
