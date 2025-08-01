@@ -84,7 +84,7 @@ copied = "تم النسخ!"
 copy_code_to_clipboard = "نسخ الشِفرة إلى الحافظة"
 
 # iine appreciation button.
-like_this_post = "أعجبني هذا المقال"
+like_this_post = "أعجبني"
 
 # Footer: Powered by Zola and tabi.
 powered_by = "مُشَغل بواسطة"
