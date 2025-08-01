@@ -72,6 +72,9 @@ load_comments = "コメントを読む"
 copied = "コピーしました！"
 copy_code_to_clipboard = "コードをクリップボードにコピー"
 
+# iine appreciation button.
+like_this_post = "いいね！"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "Powered by"
 and = "と"

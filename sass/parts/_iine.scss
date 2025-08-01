@@ -1,0 +1,37 @@
+.iine-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-family: var(--sans-serif-font);
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+
+    .icon {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .counter {
+        margin-left: .2rem;
+        font-size: 0.8rem;
+    }
+
+    svg {
+        width: 1em;
+        height: 1em;
+    }
+}
+
+.iine-auto-buttons {
+    margin-top: 2rem;
+    padding: 1rem 0;
+}

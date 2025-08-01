@@ -72,6 +72,9 @@ load_comments = "댓글 불러오기"
 copied = "복사됨!"
 copy_code_to_clipboard = "코드를 클립보드에 복사"
 
+# iine appreciation button.
+like_this_post = "이 글이 좋아요"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "제공됨"
 and = "&"

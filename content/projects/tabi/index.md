@@ -9,6 +9,7 @@ tags = ["web", "JavaScript"]
 [extra]
 local_image = "projects/tabi/tabi.webp"
 social_media_card = "social_cards/projects_tabi.jpg"
+iine_icon = '🌱'
 +++
 
 [**tabi**](https://github.com/welpo/tabi) is a modern, feature-rich theme for [Zola](https://www.getzola.org/), a fast static site generator.
@@ -29,6 +30,7 @@ social_media_card = "social_cards/projects_tabi.jpg"
 - Support for [comments using giscus, utterances, Hyvor Talk, or Isso](https://welpo.github.io/tabi/blog/comments/).
 - [Indieweb](https://indieweb.org/) ready with microformats, [hcard](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#representative-h-card) and [webmentions](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#webmentions) support.
 - Code syntax highlighting with colours based on [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
+- [iine like buttons](https://iine.to/) for anonymous appreciation of your content.
 - [Mermaid support](https://welpo.github.io/tabi/blog/shortcodes/#mermaid-diagrams) to create diagrams and charts with text.
 - [Local search](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#search) with an accessible, multi-lingual interface.
 - [Custom Twitter card](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards) and automatic Open Graph tags.

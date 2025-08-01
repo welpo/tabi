@@ -114,6 +114,14 @@ show_date = true
 # "both" - Show both the original date and the last updated date.
 post_listing_date = "date"
 
+# Enable iine like buttons on all posts: https://iine.to/
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+iine = false
+iine_icon = "heart"  # See https://iine.to/#customise
+# Unify like counts across all language versions of the same page.
+# When enabled, likes on /es/blog/hello/ will count towards /blog/hello/ (default language).
+iine_unified_languages = true
+
 # Show "Jump to posts" link next to series' title.
 # By default, the link appears automatically when a series description exceeds 2000 characters.
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy

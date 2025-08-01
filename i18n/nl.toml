@@ -68,6 +68,9 @@ load_comments = "Laad opmerkingen"
 copied = "Gekopieerd!"
 copy_code_to_clipboard = "Kopieer code naar klembord"
 
+# iine appreciation button.
+like_this_post = "Vind ik leuk"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "Aangedreven door"
 and = "&"

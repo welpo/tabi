@@ -81,3 +81,8 @@
 {%- if macros_settings::evaluate_setting_priority(setting="footnote_backlinks", page=page_s, section=section_s, default_global_value=false) == "true" -%}
     <script defer src="{{ get_url(path='js/footnoteBacklinks.min.js', trailing_slash=false | safe )}}"></script>
 {%- endif -%}
+
+{# Add iine.js for the like button #}
+{%- if macros_settings::evaluate_setting_priority(setting="iine", page=page_s, section=section_s, default_global_value=false) == "true" -%}
+    <script defer src="https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.mini.js"></script>
+{%- endif -%}

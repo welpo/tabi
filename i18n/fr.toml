@@ -68,6 +68,9 @@ load_comments = "Afficher les commentaires"
 copied = "Copié !"
 copy_code_to_clipboard = "Copier le code dans le presse-papier"
 
+# iine appreciation button.
+like_this_post = "J'aime cet article"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "Propulsé par"
 and = "et"

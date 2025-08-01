@@ -56,6 +56,7 @@ tabi has a perfect score on Google's Lighthouse audit:
 - [X] [Mermaid support](https://welpo.github.io/tabi/blog/shortcodes/#mermaid-diagrams) to create diagrams and charts with text.
 - [X] [Local search](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#search) with an accessible, multi-lingual interface.
 - [X] [Custom Twitter card](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#social-media-cards) and automatic Open Graph tags.
+- [X] Anonymous [like buttons](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#iine) powered by [iine](https://iine.to).
 - [X] [KaTeX](https://katex.org/) support for mathematical notation.
 - [X] [Stylized and human readable Atom feed](https://welpo.github.io/tabi/atom.xml).
 - [X] [Stylized and human readable sitemap](https://welpo.github.io/tabi/sitemap.xml).

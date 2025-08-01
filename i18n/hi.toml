@@ -70,6 +70,9 @@ load_comments = "कमेंट्स लोड करें"
 copied = "कॉपी किया गया!"
 copy_code_to_clipboard = "कोड क्लिपबोर्ड में कॉपी करें"
 
+# iine appreciation button.
+like_this_post = "मुझे यह पोस्ट पसंद है"
+
 # Footer: Powered by Zola and tabi.
 powered_by = "चालित द्वारा"
 and = "और"

@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-06-16
+updated = 2025-08-01
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -779,6 +779,35 @@ Si vols activar els comentaris de forma global, pots fer-ho establint `enabled_f
 Si has activat un sistema de forma global i vols desactivar-lo per a una pàgina específica, pots fer-ho establint el nom del sistema com a `false` al front matter. Per exemple, `utterances = false`.
 
 Llegeix la [documentació](@/blog/comments/index.ca.md) per a més informació sobre els sistemes disponibles i la seva configuració.
+
+### Botons d'iine {#iine}
+
+| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
+|:------:|:------:|:-------------:|:--------------------:|:--------------------:|
+|   ✅   |   ✅   |      ✅       |          ✅          |         ❌          |
+
+tabi permet botons d'[iine](https://iine.to/) per mostrar apreciació anònima pel teu contingut. Aquests botons centrats en la privadesa funcionen sense JavaScript i no rastegen usuaris.
+
+Per activar els botons iine globalment:
+
+```toml
+[extra]
+iine = true
+```
+
+Pots personalitzar la icona usada als botons (segueix la jerarquia):
+
+```toml
+[extra]
+iine_icon = "thumbs_up"  # Opcions: "heart", "thumbs_up", "upvote", o qualsevol emoji
+```
+
+Per a llocs multilingües, pots unificar els recomptes de likes entre versions en diferents idiomes del mateix contingut (configuració només de config; valor per defecte és `true`):
+
+```toml
+[extra]
+iine_unified_languages = true  # Els likes a /ca/blog/hello/ compten cap a /blog/hello/
+```
 
 ### Anàlisi web
 

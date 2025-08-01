@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-06-16
+updated = 2025-08-01
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -780,6 +780,37 @@ Si quieres activar los comentarios de forma global, puedes hacerlo estableciendo
 Si has activado un sistema globalmente, pero quieres desactivarlo en una página específica, puedes hacerlo estableciendo el nombre del sistema como `false` en el front matter. Por ejemplo, `utterances = false`.
 
 Lee la [documentación](@/blog/comments/index.es.md) para obtener más información sobre los sistemas disponibles y su configuración.
+
+### Botones de iine {#iine}
+
+| Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
+|:------:|:-------:|:-------------:|:-------------------:|:-------------------:|
+|   ✅   |   ✅    |      ✅       |          ✅         |         ❌          |
+
+tabi soporta botones de [iine](https://iine.to/) para mostrar apreciación anónima por tu contenido. Estos botones centrados en la privacidad funcionan sin JavaScript y no rastrean usuarios.
+
+Para activar los botones iine globalmente:
+
+```toml
+[extra]
+iine = true
+```
+
+Puedes personalizar el icono usado en los botones (esta configuración sigue la jerarquía):
+
+```toml
+[extra]
+iine_icon = "thumbs_up"  # Opciones: "heart", "thumbs_up", "upvote", o cualquier emoji
+```
+
+Para sitios multilingües, puedes unificar los conteos de likes entre versiones en diferentes idiomas del mismo contenido (configuración solo de config; valor predeterminado: `true`):
+
+```toml
+[extra]
+iine_unified_languages = true  # Los likes en /es/blog/hello/ cuentan hacia /blog/hello/
+```
+
+También puedes activar los botones iine en páginas o secciones individuales estableciendo `iine = true` en su front matter, o personalizar el icono con `iine_icon = "🚀"`.
 
 ### Análisis web
 

@@ -1,0 +1,33 @@
+{% import "macros/settings.html" as macros_settings %}
+{%- set button_icon = button_icon | default(value=macros_settings::evaluate_setting_priority(setting="iine_icon", page=page | default(value=""), section=section | default(value=""), default_global_value="heart")) -%}
+{%- if config.extra.iine_unified_languages and lang != config.default_language -%}
+    {%- set unified_slug = page.path | replace(from='/' ~ lang ~ '/', to='/') -%}
+    {%- set slug = slug | default(value=unified_slug) -%}
+{%- else -%}
+    {%- set slug = slug | default(value=page.path) -%}
+{%- endif -%}
+{%- if label -%}
+    {%- set final_label = label -%}
+{%- elif language_strings -%}
+    {%- set final_label = macros_translate::translate(key="like_this_post", default="Like this post", language_strings=language_strings) -%}
+{%- else -%}
+    {%- set final_label = "Like this post" -%}
+{%- endif -%}
+
+{%- if button_icon == "heart" -%}
+  {%- set icon_display = "♥️" -%}
+{%- elif button_icon == "thumbs_up" -%}
+  {%- set icon_display = "👍" -%}
+{%- elif button_icon == "upvote" -%}
+  {%- set icon_display = "⬆️" -%}
+{%- else -%}
+  {%- set icon_display = button_icon -%}
+{%- endif -%}
+
+<form method="post" action="https://vhiweeypifbwacashxjz.supabase.co/rest/v1/rpc/increment_hits?apikey=sb_publishable_EoB7MFJhCmb6PiAk-GPJ4w_PGhQ44Ru" class="iine-form">
+  <input type="hidden" name="page_slug" value="{%- if slug -%}{{ slug }}{%- else -%}{{ current_url | default(value=page.path) }}{%- endif -%}">
+  <button class="iine-button" type="submit"
+    {%- if slug %} data-slug="{{ slug }}"{% endif %}
+    {%- if button_icon %} data-icon="{{ button_icon }}"{% endif %}
+    aria-label="{{ final_label }}" title="{{ final_label }}">{{ icon_display }}</button>
+</form>
