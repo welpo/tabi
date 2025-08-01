@@ -23,6 +23,7 @@ one_results = "$NUMBER tulemus"  # "1 result"
 many_results = "$NUMBER tulemust"  # "3 results"
 
 # Navigation.
+skip_to_content = "Hüppa sisu juurde"
 pinned = "Kinnitatud"
 jump_to_posts = "Hüppa postitusteni"
 read_more = "Loe edasi"
