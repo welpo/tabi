@@ -34,8 +34,9 @@ This variable will hold all the text strings for the language #}
 {% include "partials/header.html" %}
 
 <body{% if lang in rtl_languages %} dir="rtl"{% endif %}{% if config.extra.override_serif_with_sans %} class="use-sans-serif"{% endif %}>
+    <a href="#main-content" id="skip-link">{{ macros_translate::translate(key="skip_to_content", default="Skip to content", language_strings=language_strings) }}</a>
     {% include "partials/nav.html" %}
-    <div class="content">
+    <div class="content" id="main-content">
 
         {# Post page is the default #}
         {% block main_content %}
