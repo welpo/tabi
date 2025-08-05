@@ -74,19 +74,19 @@ content="default-src 'self'
 
     {%- for domain in config.extra.allowed_domains -%}
         {%- if domain.directive == "connect-src" -%}
-            {%- set configured_connect_src = domain.domains | join(sep=' ') -%}
+            {%- set configured_connect_src = domain.domains | join(sep=' ') | safe -%}
             {%- set_global connect_src = connect_src ~ " " ~ configured_connect_src  -%}
             {%- continue -%}
         {%- endif -%}
 
         {%- if domain.directive == "script-src" -%}
-            {%- set configured_script_src = domain.domains | join(sep=' ') -%}
+            {%- set configured_script_src = domain.domains | join(sep=' ') | safe -%}
             {%- set_global script_src = script_src ~ " " ~ configured_script_src  -%}
             {%- continue -%}
         {%- endif -%}
 
         {#- Handle directives that are not connect-src -#}
-        {{ domain.directive }} {{ domain.domains | join(sep=' ') -}}
+        {{ domain.directive }} {{ domain.domains | join(sep=' ') | safe -}}
 
         {%- if domain.directive == "style-src" -%}
             {%- if utterances_enabled or hyvortalk_enabled or mermaid_enabled %} 'unsafe-inline'
