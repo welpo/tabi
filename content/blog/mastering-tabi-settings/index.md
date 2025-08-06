@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-08-01
+updated = 2025-08-06
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -988,6 +988,19 @@ tabi has two date formats: `long_date_format` and `short_date_format`. The short
 The default is "6th July 2049" for both formats in English. For other languages, the defaut is `"%d %B %Y"` for the long format and `"%-d %b %Y"` for the short format.
 
 In Zola, time formatting syntax is inspired fom strftime. A full reference is available in the [chrono docs](https://docs.rs/chrono/0.4.31/chrono/format/strftime/index.html).
+
+#### Per-language date formats
+
+You can customise date formats for specific languages using the `date_formats` array in `config.toml`:
+
+```toml
+date_formats = [
+    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y" },
+    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y" },
+]
+```
+
+This allows different languages to use culturally appropriate date formatting (e.g. Spanish "3 de febrero de 2024" vs German "3. Februar 2024").
 
 ### Custom Separator
 
