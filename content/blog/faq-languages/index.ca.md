@@ -1,7 +1,7 @@
 +++
 title = "Lost in Translation? Explora les capacitats multilingües de tabi"
 date = 2023-09-12
-updated = 2025-04-02
+updated = 2025-08-06
 description = "Descobreix com tabi t'ajuda a connectar amb una audiència global gràcies a les seves funcions multilingües. Aprèn a canviar la llengua per defecte, afegir més llengües i aportar les teves pròpies traduccions."
 
 [taxonomies]
@@ -106,6 +106,19 @@ tabi cerca els fitxers de cadenes en el següent ordre. `$base_directory` és on
 Per tant, si crees `i18n/ca.toml` al teu directori base, tabi llegirà les cadenes de text d'aquest fitxer en lloc de les cadenes predeterminades en català. Pots fer això per a qualsevol idioma, suportat o no.
 
 Assegura't de copiar tot el fitxer per a aquest idioma primer, o el tema utilitzarà l'anglès per les claus que faltin.
+
+## Com personalitzo els formats de data per a diferents idiomes?
+
+Pots establir formats de data específics per idioma al teu `config.toml` utilitzant la matriu `date_formats`:
+
+```toml
+date_formats = [
+    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y" },
+    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y" },
+]
+```
+
+Això permet que cada idioma mostri les dates segons les convencions locals. Per exemple, l'espanyol mostrarà «3 de febrero de 2024» mentre que l'alemany mostrarà «3. Februar 2024». Si no es defineix un format específic per a un idioma, tabi utilitzarà la configuració global `long_date_format` i `short_date_format`.
 
 ## Què passa si falta una traducció o està incompleta?
 

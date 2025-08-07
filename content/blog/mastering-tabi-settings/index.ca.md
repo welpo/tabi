@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-08-01
+updated = 2025-08-06
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -973,6 +973,19 @@ tabi té dos formats de data: `long_date_format` i `short_date_format`. El forma
 Per defecte és "6th July 2049" per a ambdós formats en anglès. Per a altres idiomes, el predeterminat és `"%d %B %Y"` per al format llarg i `"%-d %b %Y"` per al format curt.
 
 A Zola, la sintaxi per al format de temps està inspirada en strftime. Una referència completa està disponible a la [documentació de chrono](https://docs.rs/chrono/0.4.31/chrono/format/strftime/index.html).
+
+#### Formats de data per idioma
+
+Pots personalitzar els formats de data per idiomes específics utilitzant la matriu `date_formats` a `config.toml`:
+
+```toml
+date_formats = [
+    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y" },
+    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y" },
+]
+```
+
+Això permet que diferents idiomes utilitzin formats de data culturalment apropiats (per exemple, "6. Juli 2049" per a alemany VS "6 de julio de 2049" per a espanyol).
 
 ### Separador personalitzat
 

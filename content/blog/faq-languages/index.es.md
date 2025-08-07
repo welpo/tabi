@@ -1,7 +1,7 @@
 +++
 title = "¿Lost in Translation? Explora las capacidades multilingües de tabi"
 date = 2023-09-12
-updated = 2025-04-02
+updated = 2025-08-06
 description = "Descubre cómo tabi te ayuda a conectar con una audiencia global gracias a sus funciones multilingües. Aprende a cambiar el idioma por defecto, añadir más idiomas y aportar tus propias traducciones."
 
 [taxonomies]
@@ -106,6 +106,19 @@ tabi busca los archivos de cadenas en el siguiente orden. `$base_directory` es d
 Por lo tanto, si creas `i18n/en.toml` en tu directorio base, tabi leerá las cadenas de texto de ese archivo en lugar de las cadenas predeterminadas en inglés. Puedes hacer esto para cualquier idioma, soportado o no.
 
 Asegúrate de copiar todo el archivo para ese idioma primero, o el tema usará el inglés para las claves faltantes.
+
+## ¿Cómo personalizo los formatos de fecha para diferentes idiomas?
+
+Puedes establecer formatos de fecha específicos por idioma en tu `config.toml` usando la matriz `date_formats`:
+
+```toml
+date_formats = [
+    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y" },
+    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y" },
+]
+```
+
+Esto permite que cada idioma muestre las fechas según las convenciones locales. Por ejemplo, el español mostrará «3 de febrero de 2024» mientras que el alemán mostrará «3. Februar 2024». Si no se define un formato específico para un idioma, tabi usará la configuración global `long_date_format` y `short_date_format`.
 
 ## ¿Qué pasa si falta una traducción o está incompleta?
 
