@@ -973,9 +973,9 @@ Por defecto, la fecha se muestra debajo del título de la publicación. Puedes o
 |:------:|:-------:|:-------------:|:------------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |         ❌         |         ❌          |
 
-tabi tiene dos formatos de fecha: `long_date_format` y `short_date_format`. El formato corto se utiliza en los metadatos de una publicación, mientras que el formato largo se utiliza al listar las publicaciones (es decir, en la [sección de blog](/es/blog/) o en la [página principal](/es/)).
+tabi tiene tres formatos de fecha: `long_date_format`, `short_date_format` y `archive_date_format`. El formato corto se utiliza en los metadatos de una publicación, mientras que el formato largo se utiliza al listar las publicaciones (es decir, en la [sección de blog](/es/blog/) o en la [página principal](/es/)). El formato de archivo se usa para mostrar el día y el mes en la página de archivo.
 
-Por defecto es "6th July 2049" para ambos formatos en inglés. Para otros idiomas, el predeterminado es `"%d %B %Y"` para el formato largo y `"%-d %b %Y"` para el formato corto.
+Por defecto es "6th July 2049" para los formatos corto y largo en inglés. Para otros idiomas, el predeterminado es `"%d %B %Y"` para el formato largo y `"%-d %b %Y"` para el formato corto. El formato de archivo predeterminado universal es `"%d %b"`.
 
 En Zola, la sintaxis para el formateo de tiempo está inspirada en strftime. Una referencia completa está disponible en la [documentación de chrono](https://docs.rs/chrono/0.4.31/chrono/format/strftime/index.html).
 
@@ -985,8 +985,8 @@ Puedes personalizar los formatos de fecha para idiomas específicos usando la ma
 
 ```toml
 date_formats = [
-    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y" },
-    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y" },
+    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y", archive = "%d de %b" },
+    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y", archive = "%d. %b" },
 ]
 ```
 
