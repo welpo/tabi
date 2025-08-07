@@ -23,6 +23,7 @@ one_results = "$NUMBER resultado"  # "1 result"
 many_results = "$NUMBER resultados"  # "3 results"
 
 # Navigation.
+skip_to_content = "Pular para o conteúdo"
 pinned = "Fixado"
 jump_to_posts = "Ir para as publicações"
 read_more = "Ler mais"

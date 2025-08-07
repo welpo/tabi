@@ -25,6 +25,7 @@ one_results = "$NUMBER परिणाम"  # "1 result"
 many_results = "$NUMBER परिणाम"  # "3 results"
 
 # Navigation.
+skip_to_content = "सामग्री पर जाएं"
 pinned = "पिन किया गया"
 jump_to_posts = "पोस्ट पर जाएं"
 read_more = "और पढ़ें"
