@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-08-06
+updated = 2025-08-07
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -224,7 +224,7 @@ Las pieles de tabi cambian el color principal del sitio. Puedes configurar la pi
 
 {{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="piel lavender en modo claro", toggled_alt="piel lavender en modo oscuro", full_width=true) }}
 
-Explora las pieles disponibles y aprende cómo crear la tuya propia consultando [la documentación](/es/blog/customise-tabi/#skins).
+Explora las pieles disponibles y aprende cómo crear la tuya propia consultando [la documentación](@/blog/customise-tabi/index.es.md#skins).
 
 ### Fuente sans serif (paloseco)
 
