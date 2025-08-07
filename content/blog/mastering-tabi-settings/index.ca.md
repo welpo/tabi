@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-08-06
+updated = 2025-08-07
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -968,9 +968,9 @@ Per defecte, la data es mostra sota el títol de la publicació. Pots amagar-la 
 |:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
 
-tabi té dos formats de data: `long_date_format` i `short_date_format`. El format curt s'utilitza a les metadades d'una publicació, mentre que el format llarg s'utilitza al llistar les publicacions (és a dir, a la [secció de blog](/ca/blog/) o a la [pàgina principal](/ca/)).
+tabi té tres formats de data: `long_date_format`, `short_date_format` i `archive_data_format`. El format curt s'utilitza a les metadades d'una publicació, mentre que el format llarg s'utilitza al llistar les publicacions (és a dir, a la [secció de blog](/ca/blog/) o a la [pàgina principal](/ca/)). El format d'arxiu s'utilitza per mostrar el dia i el mes a la pàgina d'arxiu.
 
-Per defecte és "6th July 2049" per a ambdós formats en anglès. Per a altres idiomes, el predeterminat és `"%d %B %Y"` per al format llarg i `"%-d %b %Y"` per al format curt.
+Per defecte és "6th July 2049" per als formats curt i llarg en anglès. Per a altres idiomes, el predeterminat és `"%d %B %Y"` per al format llarg i `"%-d %b %Y"` per al format curt. El format d'arxiu predeterminat universal és `"%d %b"`.
 
 A Zola, la sintaxi per al format de temps està inspirada en strftime. Una referència completa està disponible a la [documentació de chrono](https://docs.rs/chrono/0.4.31/chrono/format/strftime/index.html).
 
@@ -980,8 +980,8 @@ Pots personalitzar els formats de data per idiomes específics utilitzant la mat
 
 ```toml
 date_formats = [
-    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y" },
-    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y" },
+    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y", archive = "%d de %b" },
+    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y", archive = "%d. %b" },
 ]
 ```
 

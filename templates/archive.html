@@ -69,6 +69,8 @@
                             <span class="date">
                                 {%- if language_format -%}
                                     {{ post.date | date(format=language_format, locale=date_locale) }}
+                                {%- elif config.extra.archive_date_format -%}
+                                    {{ post.date | date(format=config.extra.archive_date_format, locale=date_locale) }}
                                 {%- else -%}
                                     {{ post.date | date(format="%d %b", locale=date_locale) }}
                                 {%- endif -%}

@@ -235,11 +235,15 @@ long_date_format = "%d %B %Y"
 # Default is "6th July 2049" in English and "%-d %B %Y" in other languages.
 short_date_format = ""
 
+# Date format used for the archive page.
+# Default is "06 July" in English and "%d %b" in other languages.
+archive_date_format = ""
+
 # Per-language date format overrides.
 # Examples: Spanish uses "3 de febrero de 2024", German uses "3. Februar 2024"
 date_formats = [
-    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y" },
-    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y" },
+    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y", archive = "%d de %b" },
+    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y", archive = "%d. %b" },
 ]
 
 # Custom separator used in title tag and posts metadata (between date, time to read, and tags).
