@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2025-08-06
+updated = 2025-08-07
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -228,7 +228,7 @@ tabi's skins change the main colour of the site. You can set the skin in `config
 
 {{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="lavender skin in light mode", toggled_alt="lavender skin in dark mode", full_width=true) }}
 
-Explore the available skins and learn how to create your own reading [the documentation](/blog/customise-tabi/#skins).
+Explore the available skins and learn how to create your own reading [the documentation](@/blog/customise-tabi/#skins).
 
 ### Sans-serif Font
 

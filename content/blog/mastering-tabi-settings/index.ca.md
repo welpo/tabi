@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-08-06
+updated = 2025-08-07
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -223,7 +223,7 @@ Les skins («pells») de tabi canvien el color principal del lloc web. Pots conf
 
 {{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="pell lavender en mode clar", toggled_alt="pell lavender en mode fosc", full_width=true) }}
 
-Explora les skins disponibles i aprèn com crear la teva pròpia consultant [la documentació](/ca/blog/customise-tabi/#skins).
+Explora les skins disponibles i aprèn com crear la teva pròpia consultant [la documentació](@/blog/customise-tabi/index.ca.md#skins).
 
 ### Font sans serif (pal sec)
 
