@@ -242,7 +242,7 @@ archive_date_format = ""
 # Per-language date format overrides.
 # Examples: Spanish uses "3 de febrero de 2024", German uses "3. Februar 2024"
 date_formats = [
-    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y", archive = "%d de %b" },
+    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y" },
     { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y", archive = "%d. %b" },
 ]
 
