@@ -1,7 +1,7 @@
 +++
 title = "¿Lost in Translation? Explora las capacidades multilingües de tabi"
 date = 2023-09-12
-updated = 2025-08-06
+updated = 2025-08-07
 description = "Descubre cómo tabi te ayuda a conectar con una audiencia global gracias a sus funciones multilingües. Aprende a cambiar el idioma por defecto, añadir más idiomas y aportar tus propias traducciones."
 
 [taxonomies]
@@ -113,12 +113,12 @@ Puedes establecer formatos de fecha específicos por idioma en tu `config.toml` 
 
 ```toml
 date_formats = [
-    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y" },
-    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y" },
+    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y", archive = "%d de %b" },
+    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y", archive = "%d. %b" },
 ]
 ```
 
-Esto permite que cada idioma muestre las fechas según las convenciones locales. Por ejemplo, el español mostrará «3 de febrero de 2024» mientras que el alemán mostrará «3. Februar 2024». Si no se define un formato específico para un idioma, tabi usará la configuración global `long_date_format` y `short_date_format`.
+Esto permite que cada idioma muestre las fechas según las convenciones locales. Por ejemplo, el español mostrará «3 de febrero de 2024» mientras que el alemán mostrará «3. Februar 2024». Si no se define un formato específico para un idioma, tabi usará la configuración global `long_date_format`, `short_date_format` y `archive_date_format`.
 
 ## ¿Qué pasa si falta una traducción o está incompleta?
 

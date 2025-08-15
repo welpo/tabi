@@ -983,9 +983,9 @@ By default, the date is shown below the post title. You can hide it with `show_d
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
 
-tabi has two date formats: `long_date_format` and `short_date_format`. The short format is used in a post's metadata, while the long format is used when listing posts (i.e. on the [blog section](@/blog/_index.md) or the [main page](@/_index.md)).
+tabi has three date formats: `long_date_format`, `short_date_format` and `archive_date_format`. The short format is used in a post's metadata, while the long format is used when listing posts (i.e. on the [blog section](@/blog/_index.md) or the [main page](@/_index.md)). The archive format is used to display day and month on the archive page.
 
-The default is "6th July 2049" for both formats in English. For other languages, the defaut is `"%d %B %Y"` for the long format and `"%-d %b %Y"` for the short format.
+The default is "6th July 2049" for `long_date_format` and `short_date_format` in English. For other languages, the defaut is `"%d %B %Y"` for the long format and `"%-d %b %Y"` for the short format. The universal default for the archive format is `"%d %b"`.
 
 In Zola, time formatting syntax is inspired fom strftime. A full reference is available in the [chrono docs](https://docs.rs/chrono/0.4.31/chrono/format/strftime/index.html).
 
@@ -995,8 +995,8 @@ You can customise date formats for specific languages using the `date_formats` a
 
 ```toml
 date_formats = [
-    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y" },
-    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y" },
+    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y", archive = "%d de %b" },
+    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y", archive = "%d. %b" },
 ]
 ```
 

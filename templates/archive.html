@@ -7,6 +7,18 @@
 {# Set locale for date #}
 {% set date_locale = macros_translate::translate(key="date_locale", default="en_GB", language_strings=language_strings) %}
 
+{#- Check for language-specific date formats -#}
+{%- set language_format = "" -%}
+{%- if config.extra.date_formats -%}
+    {%- for format_config in config.extra.date_formats -%}
+        {%- if format_config.lang == lang -%}
+            {%- if format_config.archive -%}
+                {%- set_global language_format = format_config.archive -%}
+            {%- endif -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
+
 <div class="archive">
     <ul class="list-with-title">
         {%- set source_paths = section.extra.section_path | default(value="blog/") -%}
@@ -55,7 +67,13 @@
                     <li class="listing-item">
                         <div class="post-time">
                             <span class="date">
-                                {{ post.date | date(format="%d %b", locale=date_locale) }}
+                                {%- if language_format -%}
+                                    {{ post.date | date(format=language_format, locale=date_locale) }}
+                                {%- elif config.extra.archive_date_format -%}
+                                    {{ post.date | date(format=config.extra.archive_date_format, locale=date_locale) }}
+                                {%- else -%}
+                                    {{ post.date | date(format="%d %b", locale=date_locale) }}
+                                {%- endif -%}
                             </span>
                         </div>
                         <a href="{{ post.permalink }}" title="{{ post.title }}">{{ post.title | markdown(inline=true) | safe }}</a>
