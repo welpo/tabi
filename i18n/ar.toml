@@ -30,6 +30,7 @@ few_results = "تم العثور على $NUMBER نتائج"  # for 3 to 10 searc
 many_results = "تم العثور على $NUMBER نتيجة"  # 11 or more search results.
 
 # Navigation.
+skip_to_content = "الإنتقال إلى المحتوى"
 pinned = "مثبتة"
 jump_to_posts = "الإنتقال إلى التدوينات"
 read_more = "إقرأ المزيد"

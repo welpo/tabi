@@ -27,6 +27,7 @@ one_results = "$NUMBER 결과"  # "1 result"
 many_results = "$NUMBER 결과"  # "3 results"
 
 # Navigation.
+skip_to_content = "콘텐츠로 건너뛰기"
 pinned = "고정됨"
 jump_to_posts = "게시물로 이동"
 read_more = "더 읽기"
