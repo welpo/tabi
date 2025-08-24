@@ -1,7 +1,7 @@
 +++
 title = "Lost in Translation? Not with tabi's Multilingual Capabilities"
 date = 2023-09-12
-updated = 2025-08-07
+updated = 2025-08-24
 description = "Master the art of serving a global audience through tabi's built-in multilingual features. Learn how to change the default language, add multilingual support, and contribute your own translations."
 
 [taxonomies]
@@ -148,3 +148,7 @@ If you did, you will need to manually update the translations. You can do this b
 ## Does tabi translate my content?
 
 No. tabi only translates the theme's text strings. You will need to translate your content yourself.
+
+# How to show current language code on the language switcher?
+
+Add `language_switcher_show_lcode = true` in your config extras.

@@ -132,6 +132,9 @@ iine_unified_languages = true
 # Can be set at section levels, following the hierarchy: section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 post_listing_index_reversed = false  # Defaults to false.
 
+# Show current language code on the language switcher
+language_switcher_show_lcode = false # Defaults to false
+
 # DEPRECATED!
 # Use Zola's built-in `bottom_footnotes = true` in the [markdown] section instead. (Available since v0.19.0)
 # Adds backlinks to footnotes (loads ~500 bytes of JavaScripts).
