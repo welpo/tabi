@@ -108,6 +108,9 @@ skin = ""
 browser_theme_color = "#087e96"
 # browser_theme_color = ["#ffffff", "#000000"]  # Example of light/dark colours.
 
+# For multilingual sites: show current language code on the language switcher.
+show_selected_language_code_in_language_switcher = false
+
 # List additional stylesheets to load site-wide.
 # These stylesheets should be located in your site's `static` directory.
 # Example: stylesheets = ["extra1.css", "path/extra2.css"]
@@ -183,9 +186,6 @@ iine_unified_languages = true
 # It has only effect if the section uses indexes metadata (which is only the case for series as of now).
 # Can be set at section levels, following the hierarchy: section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 post_listing_index_reversed = false  # Defaults to false.
-
-# Show current language code on the language switcher
-language_switcher_show_lcode = false # Defaults to false
 
 # DEPRECATED!
 # Use Zola's built-in `bottom_footnotes = true` in the [markdown] section instead. (Available since v0.19.0)
