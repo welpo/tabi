@@ -1,7 +1,7 @@
 +++
 title = "Lost in Translation? Explora les capacitats multilingües de tabi"
 date = 2023-09-12
-updated = 2025-08-07
+updated = 2025-09-14
 description = "Descobreix com tabi t'ajuda a connectar amb una audiència global gràcies a les seves funcions multilingües. Aprèn a canviar la llengua per defecte, afegir més llengües i aportar les teves pròpies traduccions."
 
 [taxonomies]
@@ -147,3 +147,7 @@ Si ho vas fer, hauràs d'actualitzar manualment les traduccions. Pots fer-ho cop
 ## tabi tradueix el meu contingut?
 
 No. tabi només tradueix les cadenes de text del tema. Hauràs de traduir el teu contingut tu mateix.
+
+## Com puc mostrar el codi de l'idioma actual al commutador d'idioma?
+
+Afegeix `show_selected_language_code_in_language_switcher = true` a la secció `[extra]` del teu `config.toml`.

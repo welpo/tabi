@@ -1,7 +1,12 @@
 <li class="language-switcher">
     <details class="dropdown">
         <summary role="button" aria-haspopup="true" title="{{ macros_translate::translate(key="language_selection", default="Language selection", language_strings=language_strings) }}" aria-label="{{ macros_translate::translate(key="language_selection", default="Language selection", language_strings=language_strings) }}">
+            {%- if config.extra.show_selected_language_code_in_language_switcher -%}
+            <div class="language-switcher-icon language-switcher-icon-with-code"></div>
+            <div class="language-switcher-icon-code">{{lang}}</div>
+            {%- else -%}
             <div class="language-switcher-icon"></div>
+            {%- endif -%}
         </summary>
         <div class="dropdown-content" role="menu">
             {#- Display the current language first in the dropdown -#}
