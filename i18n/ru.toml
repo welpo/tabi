@@ -28,6 +28,7 @@ few_results = "$NUMBER результата"  # 2, 3, 4 but not 12-14
 many_results = "$NUMBER результатов"  # 5-9, 0, 11-14, and others
 
 # Navigation.
+skip_to_content = "Перейти к содержанию"
 pinned = "Закреплено"
 jump_to_posts = "Перейти к записям"
 read_more = "Читать далее"

@@ -24,6 +24,7 @@ one_results = "$NUMBER tulos"  # "1 result"
 many_results = "$NUMBER tulosta"  # "3 results"
 
 # Navigation.
+skip_to_content = "Siirry sisältöön"
 # Some will prefer artikkeli (=article) instead of julkaisu (=publication), but this is more general
 pinned = "Kiinnitetty"
 jump_to_posts = "Siirry julkaisuihin"

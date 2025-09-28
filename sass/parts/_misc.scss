@@ -328,3 +328,28 @@ details summary {
         flex-direction: column;
     }
 }
+
+#skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: 9999;
+    transition: all 0.1s ease;
+    border-radius: 0 0 5px 0;
+    background-color: var(--primary-color);
+    padding: 4px 8px;
+    color: var(--hover-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+#skip-link:focus {
+    top: 0;
+    transform: translateY(0);
+    opacity: 1;
+    outline: 2px solid var(--text-color);
+    outline-offset: 2px;
+}
