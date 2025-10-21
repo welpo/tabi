@@ -1,7 +1,7 @@
 +++
 title = "Custom shortcodes"
 date = 2023-02-19
-updated = 2025-07-26
+updated = 2025-10-21
 description = "This theme includes some useful custom shortcodes that you can use to enhance your posts. Whether you want to display images that adapt to light and dark themes, or format a professional-looking reference section, these custom shortcodes have got you covered."
 
 [taxonomies]
@@ -333,7 +333,7 @@ Display lines 3 to 7 (both inclusive) of a local file:
 
 ### Admonitions
 
-Bring attention to information with these admonition shortcodes. They come in five `type`s: `note`, `tip`, `info`, `warning`, and `danger`.
+Bring attention to information with these admonition/alert shortcodes. They come in five `type`s: `note`, `tip`, `info`, `warning`, and `danger`.
 
 {{ admonition(type="note", text="Some **content** with _Markdown_ `syntax`. Check [this `api`](#).") }}
 

@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalitzats"
 date = 2023-02-19
-updated = 2025-08-01
+updated = 2025-10-21
 description = "Aquest tema inclou alguns shortcodes personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s'adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests shortcodes personalitzats t'ajudaran."
 
 [taxonomies]
@@ -344,7 +344,7 @@ Mostreu només les línies 3 a 5 d'un arxiu local:
 
 ### Advertències
 
-Destaca informació amb aquests shortcodes. Hi ha cinc tipus (`type`): `note`, `tip`, `info`, `warning`, i `danger`.
+Destaca informació amb aquests shortcodes d'advertència/alerta. Hi ha cinc tipus (`type`): `note`, `tip`, `info`, `warning`, i `danger`.
 
 {{ admonition(type="note", text="Contingut amb **sintaxi** *Markdown*. Consulta [aquesta `api`](#).") }}
 

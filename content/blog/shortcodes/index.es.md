@@ -1,7 +1,7 @@
 +++
 title = "Shortcodes personalizados"
 date = 2023-02-19
-updated = 2025-08-01
+updated = 2025-10-21
 description = "Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más."
 
 [taxonomies]
@@ -331,7 +331,7 @@ Mostar sólo las líneas 3 a 5 de un archivo remoto:
 
 ### Advertencias
 
-Destaca información con estos shortcodes. Hay cinco tipos (`type`): `note`, `tip`, `info`, `warning`, y `danger`.
+Destaca información con estos shortcodes de advertencia/alerta. Hay cinco tipos (`type`): `note`, `tip`, `info`, `warning`, y `danger`.
 
 {{ admonition(type="note", text="Contenido con **sintaxis** *Markdown*. Consulta [esta `api`](#).") }}
 
