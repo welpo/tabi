@@ -171,6 +171,13 @@ show_date = true
 # "both" - Show both the original date and the last updated date.
 post_listing_date = "date"
 
+# Auto generate summary for post listing and Atom feeds.
+# It will be generated in separated paragraph alongside with post description.
+# Auto generated when no summary is set using the <!-- more --> tag.
+auto_generated_summary_length = 300
+auto_generated_post_listing_summary = true
+auto_generated_atom_feed_summary = true
+
 # Enable iine like buttons on all posts: https://iine.to/
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 iine = true
