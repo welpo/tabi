@@ -1,0 +1,138 @@
+// Micro posts section - force left alignment
+#micro-posts {
+    margin-top: 4rem;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+// Card container - left aligned, no centering
+.micro-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+    margin-left: 0;
+    background-color: var(--navbar-color);
+    border: 1px solid var(--divider-color);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+// Left column header
+.micro-header {
+    h2 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0;
+        color: var(--text-color-high-contrast);
+        font-family: var(--header-font);
+        font-weight: 550;
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .feed-link {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .feed-icon {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        fill: var(--meta-color);
+        transition: fill 0.2s ease;
+
+        &:hover {
+            fill: var(--primary-color);
+        }
+    }
+}
+
+// Right column content
+.micro-content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+// Individual micro post
+.micro-item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--divider-color);
+
+    &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    time {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--meta-color);
+        font-family: var(--sans-serif-font);
+        font-weight: 300;
+        font-size: 0.85rem;
+    }
+}
+
+// Micro post text
+.micro-text {
+    color: var(--text-color);
+    font-family: var(--sans-serif-font);
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+
+    p {
+        margin: 0.5rem 0 1rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--hover-color);
+        }
+    }
+
+    strong {
+        font-weight: 580;
+    }
+}
+
+// Mobile responsive
+@media only screen and (max-width: 1100px) {
+    #micro-posts {
+        margin-top: 3rem;
+    }
+
+    .micro-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .micro-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .micro-content-column {
+        gap: 1.2rem;
+    }
+
+    .micro-item {
+        padding-bottom: 1.2rem;
+    }
+}
