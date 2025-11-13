@@ -101,13 +101,14 @@
             <content type="html">{{ page.content }}</content>
         {% endif -%}
         <summary type="xhtml">
+        <!-- xhtml allows multi-paragraph summary -->
             <div xmlns="http://www.w3.org/1999/xhtml">
             {% if page.description -%}
                 <p>{{ page.description | markdown(inline=true) | safe }}</p>
             {% endif %}
             {% if page.summary -%}
                 <p>{{ page.summary | striptags | trim_end_matches(pat=".") | safe }}...</p>
-            {% elif config.extra.auto_generated_atom_feed_summary %}
+            {% elif config.extra.auto_generate_post_summary %}
                 <p>{{ page.content | striptags | truncate(length=config.extra.auto_generated_summary_length) | safe }}</p>
             {% endif %}
             </div>
