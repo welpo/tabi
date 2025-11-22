@@ -28,11 +28,20 @@
     {% if config.extra.analytics.do_not_track %}data-do-not-track="true"{% endif %}>
     </script>
 
-    {% elif analytics_service == "plausible" %}
+{% elif analytics_service == "plausible" %}
+{% if analytics_id is matching("^pa-[^\.]+$") %}
+    {# Use new script available in Plausible 3.1.0 or later #}
+    <script async src="{% if self_hosted_url %}{{ self_hosted_url ~ '/js/' }}{% else %}https://plausible.io/js/{% endif %}{{ analytics_id }}.js"></script>
+    <script>
+        window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+        plausible.init()
+    </script>
+{% else %}
     <script
         defer
         data-domain="{{ analytics_id }}"
         src="{% if self_hosted_url %}{{ self_hosted_url ~ '/js/plausible.js' }}{% else %}https://plausible.io/js/script.js{% endif %}"
     ></script>
+{% endif %}
 
 {% endif %}

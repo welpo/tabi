@@ -840,7 +840,7 @@ You can set them up in the `[extra.analytics]` section of your `config.toml`.
 - `id`: The unique identifier for your analytics service. This varies based on the service:
   - For GoatCounter, it's the code chosen during signup. Self-hosted instances of GoatCounter don't require this field.
   - For Umami, it's the website ID.
-  - For Plausible, it's the domain name.
+  - For Plausible, it's either the random script name without the extension (e.g. `"pa-XXXXXX"`) or the domain name (legacy mode).
 
 - `self_hosted_url`: Optional. Use this field to specify the URL for self-hosted instances of your chosen analytics service. The base URL differs based on your specific setup. Some examples:
   - For GoatCounter: `"https://stats.example.com"`
