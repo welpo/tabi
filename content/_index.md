@@ -10,6 +10,10 @@ projects_path = "projects/_index.md"
 max_projects = 3
 show_projects_first = false
 social_media_card = "index.jpg"
+micro_path = "micro/_index.md"
+max_micro = 3
+micro_section_name = "Latest Thoughts"
+show_micro = true
 +++
 
 tabi is an accessible [Zola](https://www.getzola.org) theme with [search](@/blog/mastering-tabi-settings/index.md#search), [multi-language support](@/blog/faq-languages/index.md), [optional JavaScript](@/blog/javascript/index.md), a perfect Lighthouse score, and comprehensive documentation. Crafted for personal websites and blogs.
