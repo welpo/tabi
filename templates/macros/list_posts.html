@@ -98,8 +98,17 @@
                         <li class="post-thumbnail">
                             <a href="{{ post.permalink }}">
                                 {% if post.extra.local_image %}
+                                    {% if post.extra.local_image_dark %}
+                                        {# Show light image only in light mode, dark image only in dark mode #}
+                                        {% set meta_dark = get_image_metadata(path=post.extra.local_image_dark, allow_missing=true) %}
+                                        <img class="thumbnail-image img-dark"
+                                            alt="{{ post.extra.local_image_dark }}"
+                                            src="{{ get_url(path=post.extra.local_image_dark) }}"
+                                            {% if meta_dark.width %}width="{{ meta_dark.width }}"{% endif %}
+                                            {% if meta_dark.height %}height="{{ meta_dark.height }}"{% endif %}>
+                                    {% endif %}
                                     {% set meta = get_image_metadata(path=post.extra.local_image, allow_missing=true) %}
-                                    <img class="thumbnail-image"
+                                    <img class="thumbnail-image{% if page.extra.local_image_dark %} img-light{% endif %}"
                                         alt="{{ post.extra.local_image }}"
                                         src="{{ get_url(path=post.extra.local_image) }}"
                                         {% if meta.width %}width="{{ meta.width }}"{% endif %}

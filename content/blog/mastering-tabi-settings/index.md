@@ -415,6 +415,7 @@ invertible_image = false
 - `description` is the description of the project.
 - `weight` determines the order in which the projects are shown. The lower the weight, the higher the project will appear.
 - `local_image` is the path to the image of the project. This image is shown on the projects page.
+- `local_image_dark` is an optional path to an alternative image to be shown in dark mode. When set, `local_image` is shown in light mode only.
 - `invertible_image` inverts the image colours in dark mode. Useful for black and white logos/icons.
 
 When a user clicks on the image or title of a project, they will be taken to the project's page. If you'd rather have users go to an external link, you can set `link_to = "https://example.com` in the `[extra]` section of the project's `.md` file.
