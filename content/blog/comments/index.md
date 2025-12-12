@@ -1,7 +1,7 @@
 +++
 title = "Add comments to your posts with these 4 comment systems"
 date = 2023-07-14
-updated = 2023-07-26
+updated = 2025-12-12
 description = "Discover how to enable a comments section on your posts using giscus, utterances, Hyvor Talk, or Isso, enabling reader interaction and feedback."
 
 [taxonomies]
@@ -93,7 +93,7 @@ lazy_loading = true
 
 ### Isso
 
-To enable Isso, you'll first need to install and run an Isso server ([here's a useful guide](https://blog.phusion.nl/2018/08/16/isso-simple-self-hosted-commenting-system/#1installingisso)). Then, complete these settings in `config.toml`:
+To enable Isso, you'll first need to install and run an Isso server ([here's a useful guide](https://blog.phusion.nl/isso-simple-self-hosted-commenting-system/#1installingisso)). Then, complete these settings in `config.toml`:
 
 ```toml
 [extra.isso]

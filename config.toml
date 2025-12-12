@@ -438,7 +438,7 @@ page_author = ""  # Email (or base64 encoded email) of the author.
 lazy_loading = true
 
 # Isso support for comments. https://isso-comments.de/
-# You need to self-host the backend first: https://blog.phusion.nl/2018/08/16/isso-simple-self-hosted-commenting-system/
+# You need to self-host the backend first: https://blog.phusion.nl/isso-simple-self-hosted-commenting-system/
 # More info on some settings: https://isso-comments.de/docs/reference/client-config/
 [extra.isso]
 enabled_for_all_posts = false  # Enables Isso on all posts. It can be enabled on individual posts by setting `isso = true` in the [extra] section of a post's front matter.

@@ -1,7 +1,7 @@
 +++
 title = "Añade comentarios a tus publicaciones con estas 4 plataformas"
 date = 2023-07-14
-updated = 2023-07-26
+updated = 2025-12-12
 description = "Descubre cómo habilitar una sección de comentarios en tus publicaciones usando giscus, utterances, Hyvor Talk, o Isso, permitiendo la interacción y feedback de los lectores."
 
 [taxonomies]
@@ -93,7 +93,7 @@ lazy_loading = true
 
 ### Isso
 
-Para habilitar Isso, primero necesitarás instalar y ejecutar un servidor Isso ([aquí tienes una guía útil](https://blog.phusion.nl/2018/08/16/isso-simple-self-hosted-commenting-system/#1installingisso)). Luego, completa estas configuraciones en `config.toml`:
+Para habilitar Isso, primero necesitarás instalar y ejecutar un servidor Isso ([aquí tienes una guía útil](https://blog.phusion.nl/isso-simple-self-hosted-commenting-system/#1installingisso)). Luego, completa estas configuraciones en `config.toml`:
 
 ```toml
 [extra.isso]
