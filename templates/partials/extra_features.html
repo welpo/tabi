@@ -83,6 +83,6 @@
 {%- endif -%}
 
 {# Add iine.js for the like button #}
-{%- if macros_settings::evaluate_setting_priority(setting="iine", page=page_s, section=section_s, default_global_value=false) == "true" -%}
+{%- if page and macros_settings::evaluate_setting_priority(setting="iine", page=page_s, section=section_s, default_global_value=false) == "true" -%}
     <script defer src="https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.mini.js"></script>
 {%- endif -%}
