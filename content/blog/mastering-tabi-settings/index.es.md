@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-08-07
+updated = 2025-12-27
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -403,12 +403,14 @@ weight = 1
 
 [extra]
 local_image = "img/tabi.webp"
+invertible_image = false
 ```
 
 - `title` es el título del proyecto.
 - `description` es la descripción del proyecto.
 - `weight` determina el orden en el que se muestran los proyectos. Cuanto menor sea el peso, más arriba aparecerá el proyecto.
 - `local_image` es la ruta de la imagen del proyecto. Esta imagen se muestra en la página de proyectos.
+- `invertible_image` invierte los colores de la imagen en modo oscuro. Útil para logotipos o iconos en blanco y negro.
 
 Cuando un usuario haga clic en la imagen o el título de un proyecto, será llevado a la página del proyecto. Si prefieres que los usuarios vayan a un enlace externo, puedes establecer `link_to = "https://example.com"` en la sección `[extra]` del archivo `.md` del proyecto.
 
