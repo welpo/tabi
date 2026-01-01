@@ -97,6 +97,7 @@
                     {% if post.extra.local_image or post.extra.remote_image %}
                         <li class="post-thumbnail">
                             <a href="{{ post.permalink }}">
+                                
                                 {% if post.extra.local_image %}
                                     {% if post.extra.local_image_dark %}
                                         {# Show light image only in light mode, dark image only in dark mode #}
@@ -114,13 +115,17 @@
                                         {% if meta.width %}width="{{ meta.width }}"{% endif %}
                                         {% if meta.height %}height="{{ meta.height }}"{% endif %}>
                                 {% elif post.extra.remote_image %}
-                                    <img class="thumbnail-image"
+                                    {% if post.extra.remote_image_dark %}
+                                        {# Show light image only in light mode, dark image only in dark mode #}
+                                        {% set meta_dark = get_image_metadata(path=post.extra.remote_image_dark, allow_missing=true) %}
+                                        <img class="thumbnail-image img-dark"
+                                            alt="{{ post.extra.remote_image_dark }}"
+                                            src="{{ get_url(path=post.extra.remote_image_dark) }}">
+                                    {% endif %}
+                                    <img class="thumbnail-image{% if page.extra.remote_image_dark %} img-light{% endif %}"
                                         alt="{{ post.extra.remote_image }}"
                                         src="{{ post.extra.remote_image }}">
                                 {% endif %}
-                            </a>
-                        </li>
-                    {% endif %}
 
                     {% if post.draft %}
                         <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>

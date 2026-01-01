@@ -36,7 +36,15 @@
                     {% if meta.width %}width="{{ meta.width }}"{% endif %}
                     {% if meta.height %}height="{{ meta.height }}"{% endif %}>
             {% elif page.extra.remote_image %}
-                <img class="{{ card_image_class }}"
+                {% if page.extra.remote_image_dark %}
+                    {# Show light image only in light mode, dark image only in dark mode #}
+                    {% set meta_dark = get_image_metadata(path=page.extra.remote_image_dark, allow_missing=true) %}
+                    <img class="card-image img-dark"
+                        alt="{{ page.extra.remote_image_dark }}"
+                        src="{{ page.extra.remote_image_dark) }}">
+                {% endif %}
+                {% set meta = get_image_metadata(path=page.extra.remote_image_dark, allow_missing=true) %}
+                <img class="{{ card_image_class }}{% if page.extra.local_image_dark %} img-light{% endif %}"
                     alt="{{ page.extra.remote_image }}"
                     src="{{ page.extra.remote_image }}">
             {% else %}
