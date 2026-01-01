@@ -9,8 +9,10 @@ KATEX_CSS_DIR="static"
 KATEX_FONTS_DIR="static/fonts/KaTeX"
 KATEX_JS_FILE="katex.min.js"
 KATEX_CSS_FILE="katex.min.css"
+KATEX_MHCHEM_FILE="mhchem.min.js"
 KATEX_JS_PATH="${KATEX_JS_DIR}/${KATEX_JS_FILE}"
 KATEX_CSS_PATH="${KATEX_CSS_DIR}/${KATEX_CSS_FILE}"
+KATEX_MHCHEM_PATH="${KATEX_JS_DIR}/${KATEX_MHCHEM_FILE}"
 UGLIFY_ITERATIONS=5
 CURL_RETRIES=3
 
@@ -287,7 +289,13 @@ EOM
     local css_comparison_result
     css_comparison_result=$(compare_md5 "${TEMP_DIR}/${KATEX_CSS_FILE}" "${KATEX_CSS_PATH}")
 
-    if [ "$js_comparison_result" = "same" ] && [ "$css_comparison_result" = "same" ]; then
+    # mhchem extension.
+    cp "${TEMP_DIR}/katex/contrib/mhchem.min.js" "${TEMP_DIR}/${KATEX_MHCHEM_FILE}"
+    uglify_file "${TEMP_DIR}/${KATEX_MHCHEM_FILE}" "$UGLIFY_ITERATIONS"
+    local mhchem_comparison_result
+    mhchem_comparison_result=$(compare_md5 "${TEMP_DIR}/${KATEX_MHCHEM_FILE}" "${KATEX_MHCHEM_PATH}")
+
+    if [ "$js_comparison_result" = "same" ] && [ "$css_comparison_result" = "same" ] && [ "$mhchem_comparison_result" = "same" ]; then
         echo "KaTeX: New version is the same as current version. No update needed."
         return 0
     fi
@@ -306,6 +314,12 @@ EOM
         changes_made=true
     fi
 
+    if [ "$mhchem_comparison_result" != "same" ]; then
+        echo "KaTeX mhchem: New version differs from current version. Proceeding with update."
+        mv "${TEMP_DIR}/${KATEX_MHCHEM_FILE}" "${KATEX_MHCHEM_PATH}"
+        changes_made=true
+    fi
+
     rm -rf "${KATEX_FONTS_DIR}"
     mkdir -p "${KATEX_FONTS_DIR}"
     cp -r "${TEMP_DIR}/katex/fonts"/* "${KATEX_FONTS_DIR}/"
@@ -317,7 +331,7 @@ EOM
 
     echo "KaTeX updated successfully!"
     echo "Preparing to commit changes…"
-    git add "${KATEX_JS_PATH}" "${KATEX_CSS_PATH}" "${KATEX_FONTS_DIR}"
+    git add "${KATEX_JS_PATH}" "${KATEX_CSS_PATH}" "${KATEX_MHCHEM_PATH}" "${KATEX_FONTS_DIR}"
     local commit_msg
     commit_msg=$(generate_commit_message "$commit_msg_template" "$latest_version")
     git commit -m "${commit_msg}"
