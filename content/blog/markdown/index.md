@@ -1,7 +1,7 @@
 +++
 title = "Markdown examples"
 date = 2023-01-31
-updated = 2025-02-21
+updated = 2026-01-01
 description = "This post showcases some examples of Markdown formatting, including a table, code blocks and tags, quotes, tables, and footnotes."
 
 [taxonomies]
@@ -24,7 +24,7 @@ To display the expression **on its own line and centered**, wrap it around `$$` 
 
 For example, `\\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}} \\]` renders: \\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}} \\]
 
-To activate $\KaTeX$ for a post or an entire section, include `katex = true` within the `[extra]` section of the front matter. For exemple:
+Enable $\KaTeX$ by setting `katex = true` in `[extra]`:
 
 ```toml,hl_lines=5-6
 title = "Testing KaTeX"
@@ -34,11 +34,19 @@ date = 2002-11-30
 katex = true
 ```
 
-You may enable it globally as well, by setting `katex = true` in the `[extra]` section of your `config.toml`.
+Works in: page front matter, section `_index.md`, or globally in `config.toml`.
 
 For enhanced performance and security, the $\KaTeX$ JavaScript, CSS, and fonts are hosted locally.
 
 **Note**: After enabling $\KaTeX$, if you want to use \$ without rendering a mathematical expression, escape it with a single backslash: `\$`.
+
+### Chemistry formulas
+
+Chemistry formulas are supported via the [mhchem extension](https://mhchem.github.io/MathJax-mhchem/), which loads automatically when using `\ce{}` or `\pu{}`.
+
+`\ce{}` for chemistry: $\ce{H2O}$, $\ce{CO2 + H2O -> H2CO3}$
+
+`\pu{}` for units: $\pu{25 °C}$, $\pu{1.2 mol/L}$
 
 ## Table
 
