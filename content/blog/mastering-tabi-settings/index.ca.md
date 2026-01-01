@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2025-12-27
+updated = 2026-01-01
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -883,6 +883,8 @@ Per utilitzar una icona personalitzada, pots afegir-la al directori `static/soci
 |   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
 
 Pots afegir un enllaç al teu feed RSS/Atom al peu de pàgina amb `feed_icon = true`.
+
+Per utilitzar una icona personalitzada, estableix `feed_icon` amb el nom de la icona (per exemple, `feed_icon = "square-rss"`). La icona ha d'existir a `static/social_icons/` (sense l'extensió `.svg`).
 
 Nota pels usuaris de Zola 0.19.X: quan hi ha dos noms de fitxer a `feed_filenames`, només s'enllaçarà el primer al peu de pàgina.
 
