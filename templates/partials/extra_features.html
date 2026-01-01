@@ -46,6 +46,10 @@
 {%- if macros_settings::evaluate_setting_priority(setting="katex", page=page_s, section=section_s, default_global_value=false) == "true" -%}
     <link rel="stylesheet" href="{{ get_url(path='katex.min.css', trailing_slash=false) | safe }}">
     <script defer src="{{ get_url(path='js/katex.min.js', trailing_slash=false) | safe }}"></script>
+    {# Load mhchem extension if chemistry formulas detected #}
+    {%- if page and page.content and ("\ce{" in page.content or "\pu{" in page.content) -%}
+        <script defer src="{{ get_url(path='js/mhchem.min.js', trailing_slash=false) | safe }}"></script>
+    {%- endif -%}
 {%- endif -%}
 
 {# Load mermaid.js #}

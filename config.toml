@@ -292,7 +292,9 @@ menu = [
     { name = "projects", url = "projects", trailing_slash = true },
 ]
 
-# The RSS icon will be shown if (1) it's enabled and (2) the following variable is set to true.
+# The RSS icon will be shown if (1) it's enabled and (2) the following variable is set.
+# Set to true to use the default "rss" icon, or specify a custom icon name (e.g. "square-rss").
+# The icon must exist in static/social_icons/ (without the .svg extension).
 # Note for Zola 0.19.X users: when `feed_filenames` has two filenames, only the first one will be linked in the footer.
 feed_icon = true
 

@@ -1,7 +1,7 @@
 +++
 title = "Ejemplos de Markdown"
 date = 2023-01-31
-updated = 2025-02-21
+updated = 2026-01-01
 description = "Esta publicación muestra algunos ejemplos de formato Markdown, incluyendo una tabla, bloques de código y etiquetas, citas, tablas y notas al pie de página."
 
 [taxonomies]
@@ -24,7 +24,7 @@ Para mostrar la expresión **en su propia línea y centrada**, envuélvela entre
 
 Por ejemplo, `\\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}} \\]` se mostraría como: \\[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{n}(y_i - \bar{y})^2}} \\]
 
-Para activar $\KaTeX$ en una publicación o sección entera, incluye `katex = true` dentro de la sección `[extra]` del encabezado. Por ejemplo:
+Activa $\KaTeX$ añadiendo `katex = true` en `[extra]`:
 
 ```toml,hl_lines=5-6
 title = "Probando KaTeX"
@@ -34,11 +34,19 @@ date = 2002-11-30
 katex = true
 ```
 
-Para activarlo globalmente, añade `katex = true` en la sección `[extra]` de tu `config.toml`.
+Funciona en: encabezado de página, `_index.md` de sección, o globalmente en `config.toml`.
 
 Para un mejor rendimiento y seguridad, el JavaScript, CSS y las fuentes de $\KaTeX$ se alojan localmente.
 
 **Nota**: Después de habilitar $\KaTeX$, si deseas usar \$ sin representar una expresión matemática, escápalo con una sola barra invertida: `\$`.
+
+### Fórmulas químicas
+
+Las fórmulas químicas están soportadas mediante la [extensión mhchem](https://mhchem.github.io/MathJax-mhchem/), que se carga automáticamente al usar `\ce{}` o `\pu{}`.
+
+`\ce{}` para química: $\ce{H2O}$, $\ce{CO2 + H2O -> H2CO3}$
+
+`\pu{}` para unidades: $\pu{25 °C}$, $\pu{1.2 mol/L}$
 
 ## Tabla
 

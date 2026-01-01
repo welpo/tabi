@@ -15,3 +15,12 @@
     {%- set feed_url = feed_utils::get_feed_url() -%}
     {{- generate_feed and config.extra.feed_icon and feed_url -}}
 {%- endmacro should_show_footer_feed_icon -%}
+
+{#- Get feed icon name: string value or "rss" for true, empty for false -#}
+{%- macro get_feed_icon_name() -%}
+    {%- if config.extra.feed_icon is string -%}
+        {{- config.extra.feed_icon -}}
+    {%- elif config.extra.feed_icon -%}
+        {{- "rss" -}}
+    {%- endif -%}
+{%- endmacro get_feed_icon_name -%}
