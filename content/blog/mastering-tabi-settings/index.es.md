@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2025-12-27
+updated = 2026-01-01
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -888,6 +888,8 @@ Para usar un icono personalizado, puedes añadirlo al directorio `static/social_
 |   ❌   |   ❌    |      ✅       |         ❌        |         ❌          |
 
 Puedes añadir un enlace a tu feed RSS/Atom en el pie de página con `feed_icon = true`.
+
+Para usar un icono personalizado, establece `feed_icon` con el nombre del icono (por ejemplo, `feed_icon = "square-rss"`). El icono debe existir en `static/social_icons/` (sin la extensión `.svg`).
 
 Nota para usuarios de Zola 0.19.X: cuando hay dos nombres de archivo en `feed_filenames`, solo se enlazará el primero en el pie de página.
 
