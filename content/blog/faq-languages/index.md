@@ -1,7 +1,7 @@
 +++
 title = "Lost in Translation? Not with tabi's Multilingual Capabilities"
 date = 2023-09-12
-updated = 2025-09-14
+updated = 2026-01-03
 description = "Master the art of serving a global audience through tabi's built-in multilingual features. Learn how to change the default language, add multilingual support, and contribute your own translations."
 
 [taxonomies]
@@ -39,6 +39,7 @@ tabi supports the following languages:
 - Odia
 - Persian
 - Portuguese (European)
+- Portuguese (Brazilian)
 - Russian
 - Spanish
 - Ukranian
