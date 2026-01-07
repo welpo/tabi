@@ -41,7 +41,7 @@
                     {% set meta_dark = get_image_metadata(path=page.extra.remote_image_dark, allow_missing=true) %}
                     <img class="card-image img-dark"
                         alt="{{ page.extra.remote_image_dark }}"
-                        src="{{ page.extra.remote_image_dark) }}">
+                        src="{{ page.extra.remote_image_dark }}">
                 {% endif %}
                 {% set meta = get_image_metadata(path=page.extra.remote_image_dark, allow_missing=true) %}
                 <img class="{{ card_image_class }}{% if page.extra.local_image_dark %} img-light{% endif %}"

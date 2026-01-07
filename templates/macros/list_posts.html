@@ -126,6 +126,7 @@
                                         alt="{{ post.extra.remote_image }}"
                                         src="{{ post.extra.remote_image }}">
                                 {% endif %}
+                          {% endif %}
 
                     {% if post.draft %}
                         <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
