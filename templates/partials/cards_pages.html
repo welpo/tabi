@@ -19,15 +19,38 @@
             data-tags="{% for tax_name, terms in page.taxonomies %}{% for term in terms | unique %}{{ term | lower }}{% if not loop.last %},{% endif %}{% endfor %}{% endfor %}"
             {% endif %}>
             {% if page.extra.invertible_image %}{% set card_image_class = "card-image invertible-image" %}{% else %}{% set card_image_class = "card-image" %}{% endif %}
+            {% if page.extra.local_image_dark and not page.extra.local_image %}
+                {{ throw(message="ERROR: `local_image_dark` requires `local_image` to be set in " ~ page.path) }}
+            {% endif %}
+            {% if page.extra.remote_image_dark and not page.extra.remote_image %}
+                {{ throw(message="ERROR: `remote_image_dark` requires `remote_image` to be set in " ~ page.path) }}
+            {% endif %}
             {% if page.extra.local_image %}
+                {% if page.extra.local_image_dark %}
+                    {# Show light image only in light mode, dark image only in dark mode #}
+                    {% set meta_dark = get_image_metadata(path=page.extra.local_image_dark, allow_missing=true) %}
+                    <img class="card-image img-dark"
+                        alt="{{ page.extra.local_image_dark }}"
+                        src="{{ get_url(path=page.extra.local_image_dark) }}"
+                        {% if meta_dark.width %}width="{{ meta_dark.width }}"{% endif %}
+                        {% if meta_dark.height %}height="{{ meta_dark.height }}"{% endif %}>
+                {% endif %}
                 {% set meta = get_image_metadata(path=page.extra.local_image, allow_missing=true) %}
-                <img class="{{ card_image_class }}"
+                <img class="{{ card_image_class }}{% if page.extra.local_image_dark %} img-light{% endif %}"
                     alt="{{ page.extra.local_image }}"
                     src="{{ get_url(path=page.extra.local_image) }}"
                     {% if meta.width %}width="{{ meta.width }}"{% endif %}
                     {% if meta.height %}height="{{ meta.height }}"{% endif %}>
             {% elif page.extra.remote_image %}
-                <img class="{{ card_image_class }}"
+                {% if page.extra.remote_image_dark %}
+                    {# Show light image only in light mode, dark image only in dark mode #}
+                    {% set meta_dark = get_image_metadata(path=page.extra.remote_image_dark, allow_missing=true) %}
+                    <img class="card-image img-dark"
+                        alt="{{ page.extra.remote_image_dark }}"
+                        src="{{ page.extra.remote_image_dark }}">
+                {% endif %}
+                {% set meta = get_image_metadata(path=page.extra.remote_image, allow_missing=true) %}
+                <img class="{{ card_image_class }}{% if page.extra.remote_image_dark %} img-light{% endif %}"
                     alt="{{ page.extra.remote_image }}"
                     src="{{ page.extra.remote_image }}">
             {% else %}

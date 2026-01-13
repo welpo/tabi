@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2026-01-01
+updated = 2026-01-13
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -415,6 +415,9 @@ invertible_image = false
 - `description` is the description of the project.
 - `weight` determines the order in which the projects are shown. The lower the weight, the higher the project will appear.
 - `local_image` is the path to the image of the project. This image is shown on the projects page.
+- `local_image_dark` is an optional dark mode variant. Requires `local_image` to be set.
+- `remote_image` is a URL to an external image, as an alternative to `local_image`.
+- `remote_image_dark` is an optional dark mode variant. Requires `remote_image` to be set.
 - `invertible_image` inverts the image colours in dark mode. Useful for black and white logos/icons.
 
 When a user clicks on the image or title of a project, they will be taken to the project's page. If you'd rather have users go to an external link, you can set `link_to = "https://example.com` in the `[extra]` section of the project's `.md` file.

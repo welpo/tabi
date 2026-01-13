@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2026-01-01
+updated = 2026-01-13
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -409,6 +409,9 @@ invertible_image = false
 - `description` és la descripció del projecte.
 - `weight` determina l'ordre en què es mostren els projectes. Com menor sigui el pes, més amunt apareixerà el projecte.
 - `local_image` és la ruta de la imatge del projecte. Aquesta imatge es mostra a la pàgina de projectes.
+- `local_image_dark` és una variant opcional per al mode fosc. Requereix que `local_image` estigui configurat.
+- `remote_image` és una URL a una imatge externa, com a alternativa a `local_image`.
+- `remote_image_dark` és una variant opcional per al mode fosc. Requereix que `remote_image` estigui configurat.
 - `invertible_image` inverteix els colors de la imatge en mode fosc. Útil per a logotips o icones en blanc i negre.
 
 Quan un usuari faci clic a la imatge o al títol d'un projecte, serà portat a la pàgina del projecte. Si prefereixes que els usuaris vagin a un enllaç extern, pots establir `link_to = "https://example.com"` a la secció `[extra]` del fitxer `.md` del projecte.
