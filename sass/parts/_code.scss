@@ -14,6 +14,7 @@ code {
         color: inherit;
     }
 
+    /* Legacy table support for Zola versions older than 0.22.0 */
     table {
         margin: 0rem;
         border-collapse: collapse;
@@ -21,18 +22,15 @@ code {
         width: 100%;
         text-align: start;
 
-        td,
-        th,
-        tr {
+        td, th, tr {
             border: none;
             padding: 0rem;
         }
 
-        // Line number col.
         tbody td:first-child {
             opacity: 50%;
             padding-inline-end: 0.8rem;
-            width: 1px;  // Without this, iOS Safari centres short lines.
+            width: 1px;
             user-select: none;
             text-align: end;
         }
@@ -40,6 +38,24 @@ code {
         tbody tr:nth-child(even) {
             background-color: inherit;
         }
+    }
+
+    /* Span-based layout (Giallo; Zola v0.22.0 and above) */
+    .giallo-l {
+        float: left;
+        clear: left;
+        width: 100%;
+        line-height: 1.2;
+    }
+
+    .giallo-ln {
+        display: inline-block;
+        opacity: 0.5;
+        padding-inline-end: 0.8rem;
+        min-width: 3ch;
+        color: inherit;
+        user-select: none;
+        text-align: end;
     }
 }
 
@@ -66,8 +82,8 @@ pre {
 
     // Supports both native Zola way of adding src, and old shortcode-based logic.
     // See: https://github.com/welpo/tabi/pull/489
-    &::after,
-    code .source-path {
+    code .source-path,
+    code[data-name]::after {
         display: block;
         position: absolute;
         top: 0;
@@ -77,12 +93,15 @@ pre {
         max-width: calc(100% - 14em);
         height: 0.9rem;
         overflow: hidden;
-        content: attr(data-name);
         color: var(--hover-color);
         font-size: 0.65rem;
         text-align: end;
         text-overflow: ellipsis;
         white-space: nowrap;
+    }
+
+    code[data-name]::after {
+        content: attr(data-name);
     }
 
     code {
@@ -123,6 +142,10 @@ code, pre {
 html[data-code-direction="inherit"] {
     code, pre {
         direction: inherit;
+    }
+    .giallo-l {
+        float: right;
+        clear: right;
     }
 }
 
