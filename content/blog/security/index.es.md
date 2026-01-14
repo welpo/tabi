@@ -1,7 +1,7 @@
 +++
 title = "Seguro por defecto"
 date = 2023-02-22
-updated = 2025-02-21
+updated = 2026-01-14
 description = "tabi tiene una Política de Seguridad de Contenido (CSP) fácilmente personalizable con configuraciones seguras. Obtén tranquilidad y una calificación de A+ en Mozilla Observatory."
 
 [taxonomies]
@@ -35,7 +35,7 @@ Puedes desactivar las cabeceras (permitiendo todo) en una página, sección, o g
 **Notas**:
 
 - [Habilitar los comentarios](@/blog/comments/index.es.md), [las analíticas](@/blog/mastering-tabi-settings/index.es.md#analisis-web), o [los diagramas mermaid](@/blog/shortcodes/index.es.md#diagramas-de-mermaid) permite automáticamente los scripts/frames/estilos/conexiones pertinentes.
-- Para usar un [tema de resaltado de sintaxis integrado en Zola](https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting), has de permitir `unsafe-inline` en la directiva `style-src`:
+- Para usar un [tema de resaltado de sintaxis integrado en Zola](https://www.getzola.org/documentation/content/syntax-highlighting/), has de permitir `unsafe-inline` en la directiva `style-src`:
 
     ```
     { directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },

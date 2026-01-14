@@ -238,7 +238,7 @@ If you set the `name` to a URL (i.e. it starts with `http` or `https`), you can 
 
 {{ admonition(type="warning", title="JavaScript required", text="The clickable URL feature requires JavaScript. To enable it, set `code_block_name_links = true` on the `[extra]` section of your page, section, or `config.toml`.") }}
 
-```.gitignore,name=https://github.com/welpo/doteki/blob/main/.gitignore
+```plain,name=https://github.com/welpo/doteki/blob/main/.gitignore
 __pycache__/
 *coverage*
 .vscode/

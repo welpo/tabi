@@ -28,7 +28,7 @@ Per incloure un diagrama Mermaid a la teva publicació, cal fer dues coses:
 
 2. Utilitza el shortcode `mermaid()` per definir el teu diagrama. Per exemple:
 
-```txt
+```plain
 {%/* mermaid() */%}
 classDiagram
     class DistorsionsCognitives {
@@ -237,7 +237,7 @@ Si estableixes el `name` com una URL (és a dir, comença amb `http` o `https`),
 
 {{ admonition(type="warning", title="JavaScript necessari", text="La funció d'URLs clicables requereix JavaScript. Per habilitar-la, configura `code_block_name_links = true` a la secció `[extra]` de la teva pàgina, secció, o `config.toml`.") }}
 
-```.gitignore,name=https://github.com/welpo/doteki/blob/main/.gitignore
+```plain,name=https://github.com/welpo/doteki/blob/main/.gitignore
 __pycache__/
 *coverage*
 .vscode/
@@ -260,7 +260,7 @@ El shortcode `add_src_to_code_block` segueix funcionant per retrocompatibilitat 
 
 ````
 {{/* add_src_to_code_block(src="https://github.com/welpo/doteki/blob/main/.gitignore") */}}
-```.gitignore
+```plain
 **pycache**/
 *coverage*
 .vscode/
