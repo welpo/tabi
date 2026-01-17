@@ -87,27 +87,14 @@
 
             &:checked {
 
-                + .overlay,
-                + .overlay + #toc-button + .toc-content {
+                + #toc-button + .toc-content {
                     display: block;
                 }
 
-                + .overlay + #toc-button svg {
+                + #toc-button svg {
                     fill: var(--primary-color); // Show the ToC icon as toggled.
                 }
             }
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            opacity: 40%;
-            z-index: 1; // Lower than the Table of Contents
-            background: var(--background-color);
         }
 
     }
