@@ -32,7 +32,7 @@
 {% if analytics_id is matching("^pa-[^\.]+$") %}
     {# Use new script available in Plausible 3.1.0 or later #}
     <script async src="{% if self_hosted_url %}{{ self_hosted_url ~ '/js/' }}{% else %}https://plausible.io/js/{% endif %}{{ analytics_id }}.js"></script>
-    <script src="{$baseUrl}js/initializePlausible.min.js" defer="defer"></script>
+    <script src="{{ get_url(path='js/initializePlausible.min.js', trailing_slash=false) | safe }}" defer="defer"></script>
 {% else %}
     <script
         defer
