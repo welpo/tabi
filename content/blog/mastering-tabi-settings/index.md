@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2026-01-13
+updated = 2026-01-31
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -840,7 +840,9 @@ You can set them up in the `[extra.analytics]` section of your `config.toml`.
 - `id`: The unique identifier for your analytics service. This varies based on the service:
   - For GoatCounter, it's the code chosen during signup. Self-hosted instances of GoatCounter don't require this field.
   - For Umami, it's the website ID.
-  - For Plausible, it's either the random script name without the extension (e.g. `"pa-XXXXXX"`) or the domain name (legacy mode).
+  - For Plausible, it's either:
+    - **New format** (Plausible v3.1.0+): The random script name without the extension (e.g. `"pa-XXXXXX"`). Find this in your Plausible dashboard under Settings → Website Details → Script name.
+    - **Legacy format**: Your domain name (e.g. `"example.com"`). Use this if you need to send stats to multiple dashboards simultaneously, as the new format doesn't support this feature. See [Plausible's script update guide](https://plausible.io/docs/script-update-guide) for details.
 
 - `self_hosted_url`: Optional. Use this field to specify the URL for self-hosted instances of your chosen analytics service. The base URL differs based on your specific setup. Some examples:
   - For GoatCounter: `"https://stats.example.com"`

@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2026-01-13
+updated = 2026-01-31
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -832,7 +832,9 @@ Puedes configurarlos en la sección `[extra.analytics]` de tu archivo `config.to
 - `id`: el identificador único para tu servicio de análisis. Esto varía según el servicio:
   - Para GoatCounter, es el código elegido durante el registro. Instancias auto-alojadas de GoatCounter no requieren este campo.
   - Para Umami, es la ID del sitio web.
-  - Para Plausible, es el nombre de dominio.
+  - Para Plausible, puede ser:
+    - **Formato nuevo** (Plausible v3.1.0+): El nombre de script aleatorio sin la extensión (ej. `"pa-XXXXXX"`). Encuéntralo en tu panel de Plausible en Ajustes → Detalles del sitio web → Nombre del script.
+    - **Formato heredado**: Tu nombre de dominio (ej. `"example.com"`). Útil si necesitas enviar estadísticas a múltiples paneles simultáneamente; el nuevo formato no admite esta funcionalidad. Consulta la [guía de actualización de scripts de Plausible](https://plausible.io/docs/script-update-guide) para más detalles.
 
 - `self_hosted_url`. Opcional. Utiliza este campo para especificar la URL si tienes una instancia auto-alojada. La URL base variará según tu configuración particular. Algunos ejemplos:
   - Para GoatCounter: `"https://stats.example.com"`

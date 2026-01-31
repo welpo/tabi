@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2026-01-13
+updated = 2026-01-31
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -829,7 +829,9 @@ Pots configurar-los en la secció `[extra.analytics]` del teu arxiu `config.toml
 - `id`: l'identificador únic per al teu servei d'anàlisi. Això varia segons el servei:
   - Per a GoatCounter, és el codi triat durant el registre. Instàncies auto-allotjades de GoatCounter no requereixen aquest camp.
   - Per a Umami, és l'ID del lloc web.
-  - Per a Plausible, és el nom de domini.
+  - Per a Plausible, pot ser:
+    - **Format nou** (Plausible v3.1.0+): El nom d'script aleatori sense l'extensió (ex. `"pa-XXXXXX"`). Troba'l al teu panell de Plausible a Configuració → Detalls del lloc web → Nom de l'script.
+    - **Format heretat**: El teu nom de domini (ex. `"example.com"`). Útil si necessites enviar estadístiques a múltiples panells simultàniament; el nou format no admet aquesta funcionalitat. Consulta la [guia d'actualització d'scripts de Plausible](https://plausible.io/docs/script-update-guide) per a més detalls.
 
 - `self_hosted_url`: Opcional. Utilitza aquest camp per especificar l'URL si tens una instància auto-allotjada. L'URL base variarà segons la teva configuració particular. Alguns exemples:
   - Per a GoatCounter: `"https://stats.example.com"`
