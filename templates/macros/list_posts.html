@@ -167,7 +167,7 @@
                             <p>{{ post.description | markdown(inline=true) | safe }}</p>
                         {% endif %}
                         {% if post.summary %}
-                            <p>{{ post.summary | striptags | trim_end_matches(pat=".") | safe }}...</p>
+                            <p>{{ post.summary | striptags | trim_end_matches(pat=".") | safe }}…</p>
                         {% elif config.extra.auto_generate_post_summary %}
                             <p>{{ post.content | striptags | truncate(length=config.extra.auto_generated_summary_length) | safe }}</p>
                         {% endif %}
