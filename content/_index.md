@@ -12,7 +12,7 @@ show_projects_first = false
 social_media_card = "index.jpg"
 micro_path = "micro/_index.md"
 max_micro = 3
-micro_section_name = "Latest Thoughts"
+micro_section_name = "Latest thoughts"
 show_micro = true
 +++
 
