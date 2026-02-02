@@ -1,42 +1,32 @@
-{% if section.extra.show_micro | default(value=true) %}
+{% if section.extra.show_micro | default(value=false) %}
     {% if section.extra.micro_path %}
         {%- set micro_section = get_section(path=section.extra.micro_path) -%}
         {%- if micro_section -%}
             {%- set show_pages = micro_section.pages -%}
             {%- set max_micro = section.extra.max_micro | default(value=5) -%}
             {%- set section_name = section.extra.micro_section_name | default(value="Latest Thoughts") -%}
-            
             <div id="micro-posts">
-                <div class="micro-card">
-                    <div class="micro-header">
-                        <h2>
-                            {{ section_name }}
-                            {%- if micro_section.generate_feeds -%}
-                                <a href="{{ get_url(path=micro_section.path ~ 'atom.xml', trailing_slash=false) | safe }}" 
-                                   title="RSS Feed" 
-                                   aria-label="RSS Feed">
-                                    <svg class="feed-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <circle cx="6.18" cy="17.82" r="2.18"/>
-                                        <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
-                                    </svg>
+                <h1 class="title-container section-title bottom-divider">{{ section_name }}</h1>
+                <div class="micro-list">
+                    {% for post in show_pages | slice(end=max_micro) %}
+                        <div class="micro-entry">
+                            <div class="micro-meta">
+                                <a class="micro-date no-hover-padding" href="{{ post.permalink | safe }}">
+                                    <time datetime="{{ post.date | date(format='%Y-%m-%dT%H:%M:%S') }}">
+                                        {{ macros_format_date::format_date(date=post.date, short=true, language_strings=language_strings) }} · {{ post.date | date(format='%H:%M') }}
+                                    </time>
                                 </a>
-                            {%- endif -%}
-                        </h2>
-                    </div>
-                    <div class="micro-content-column">
-                        {% for post in show_pages | slice(end=max_micro) %}
-                            <div class="micro-item">
-                                <time datetime="{{ post.date | date(format='%Y-%m-%d') }}">
-                                    {{ post.date | date(format='%d %b %Y · %H:%M') }}
-                                </time>
-                                <div class="micro-text">
-                                    {{ post.content | safe }}
-                                </div>
+                                {%- if config.extra.micro_iine | default(value=false) -%}
+                                    {%- set slug = post.path -%}
+                                    {%- include "partials/iine_button.html" -%}
+                                {%- endif -%}
                             </div>
-                        {% endfor %}
-                    </div>
+                            <div class="micro-text">
+                                {{ post.content | safe }}
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-                
                 {%- if show_pages | length > max_micro -%}
                     <div class="all-posts">
                         <a href="{{ get_url(path=micro_section.path, lang=lang) }}/">All {{ section_name | lower }}&nbsp;<span class="arrow">⟶</span></a>
