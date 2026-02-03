@@ -333,7 +333,7 @@ custom_subset = true
 # Unique identifier for tracking.
 # For GoatCounter, this is the code you choose during signup.
 # For Umami, this is the website ID.
-# For Plausible, this is the domain name (e.g. "example.com").
+# For Plausible, this is the random script name without the extension (e.g. "pa-XXXXXX") or the domain name (legacy mode, e.g. "example.com").
 # Note: Leave this field empty if you're self-hosting GoatCounter.
 # id = "yourID"
 
