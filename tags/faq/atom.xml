@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://welpo.github.io/tabi/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;welpo.github.io&#x2F;tabi</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>FAQ</tabi:current_section>
+    </tabi:metadata><title>~/tabi - FAQ</title>
+        <subtitle>tabi is an accessible Zola theme with search, multi-language support, optional JavaScript, a perfect Lighthouse score, and comprehensive documentation. Crafted for personal websites and blogs.</subtitle>
+    <link href="https://welpo.github.io/tabi/tags/faq/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://welpo.github.io/tabi/tags/faq/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-01-31T00:00:00+00:00</updated><id>https://welpo.github.io/tabi/tags/faq/atom.xml</id><entry xml:lang="en">
+        <title>A Complete Guide to Series</title>
+        <published>2024-11-08T00:00:00+00:00</published>
+        <updated>2025-02-21T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/series/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/series/</id>
+        <summary type="html">Learn how to organize your posts into sequential series, perfect for tutorials, courses, and multi-part stories.</summary>
+        </entry><entry xml:lang="en">
+        <title>Mastering tabi Settings: A Comprehensive Guide</title>
+        <published>2023-09-18T00:00:00+00:00</published>
+        <updated>2026-01-31T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/mastering-tabi-settings/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/mastering-tabi-settings/</id>
+        <summary type="html">Discover the many ways you can customise your tabi site.</summary>
+        </entry><entry xml:lang="en">
+        <title>Lost in Translation? Not with tabi&#x27;s Multilingual Capabilities</title>
+        <published>2023-09-12T00:00:00+00:00</published>
+        <updated>2026-01-03T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/faq-languages/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/faq-languages/</id>
+        <summary type="html">Master the art of serving a global audience through tabi&#x27;s built-in multilingual features. Learn how to change the default language, add multilingual support, and contribute your own translations.</summary>
+        </entry>
+</feed>
