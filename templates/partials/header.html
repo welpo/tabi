@@ -173,6 +173,9 @@
         {# Support correct stemming and stop word filtering in non-English search #}
         {%- if lang != "en" -%}
             <script defer src="{{ get_url(path='js/lunr/lunrStemmerSupport.min.js') | safe }}"></script>
+            {%- if lang == "ja" -%}
+                <script defer src="{{ get_url(path='js/lunr/tinyseg.min.js') | safe }}"></script>
+            {%- endif -%}
             <script defer src="{{ get_url(path='js/lunr/lunr.' ~ lang ~ '.min.js') | safe }}"></script>
         {%- endif -%}
     {%- endif -%}
