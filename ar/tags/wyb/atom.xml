@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://welpo.github.io/tabi/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ar">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;welpo.github.io&#x2F;tabi</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>الخلاصة تجدها هنا، تُسمى أيضًا Atom. اشترك عبر نسخ الرابط إلى برنامج قارئ الخُلاصات الذي تستخدمه. قم بزيارة About Feeds لمعرفة المزيد والبدء. انه مجانا.</tabi:about_feeds>
+        <tabi:visit_the_site>زيارة الموقع</tabi:visit_the_site>
+        <tabi:recent_posts>المنشورات الأخيرة</tabi:recent_posts>
+        <tabi:last_updated_on>تم التحديث في $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>ويب</tabi:current_section>
+    </tabi:metadata><title>~/تابي - ويب</title>
+        <subtitle>تابي هو قالب Zola سريع وحديث مع دعم متعدد اللغات و JavaScript اختياري ودرجة Lighthouse مثالية.</subtitle>
+    <link href="https://welpo.github.io/tabi/ar/tags/wyb/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://welpo.github.io/tabi/ar/tags/wyb/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><id>https://welpo.github.io/tabi/ar/tags/wyb/atom.xml</id>
+</feed>

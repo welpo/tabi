@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://welpo.github.io/tabi/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;welpo.github.io&#x2F;tabi</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>Esta es una fuente web, también conocida como fuente Atom. Suscríbete copiando la URL de la barra de direcciones en tu lector de noticias. Visita About Feeds para aprender más y empezar. Es gratis. </tabi:about_feeds>
+        <tabi:visit_the_site>Visita la web</tabi:visit_the_site>
+        <tabi:recent_posts>Publicaciones recientes</tabi:recent_posts>
+        <tabi:last_updated_on>Actualizado el $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>funcionalidad</tabi:current_section>
+    </tabi:metadata><title>~/tabi - funcionalidad</title>
+        <subtitle>tabi es un tema accesible para Zola con búsqueda, soporte multilingüe, JavaScript opcional, una puntuación perfecta en Lighthouse y documentación exhaustiva. Diseñado para sitios web y blogs personales.</subtitle>
+    <link href="https://welpo.github.io/tabi/es/tags/funcionalidad/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://welpo.github.io/tabi/es/tags/funcionalidad/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-01-31T00:00:00+00:00</updated><id>https://welpo.github.io/tabi/es/tags/funcionalidad/atom.xml</id><entry xml:lang="es">
+        <title>Guía completa sobre series</title>
+        <published>2024-11-08T00:00:00+00:00</published>
+        <updated>2025-02-21T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/series/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/series/</id>
+        <summary type="html">Aprende a organizar tus publicaciones en series secuenciales, perfectas para tutoriales, cursos e historias de varias partes.</summary>
+        </entry><entry xml:lang="es">
+        <title>Domina la configuración de tabi: guía completa</title>
+        <published>2023-09-18T00:00:00+00:00</published>
+        <updated>2026-01-31T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/</id>
+        <summary type="html">Descubre las múltiples maneras en que puedes personalizar tabi.</summary>
+        </entry><entry xml:lang="es">
+        <title>¿Lost in Translation? Explora las capacidades multilingües de tabi</title>
+        <published>2023-09-12T00:00:00+00:00</published>
+        <updated>2026-01-03T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/faq-languages/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/faq-languages/</id>
+        <summary type="html">Descubre cómo tabi te ayuda a conectar con una audiencia global gracias a sus funciones multilingües. Aprende a cambiar el idioma por defecto, añadir más idiomas y aportar tus propias traducciones.</summary>
+        </entry><entry xml:lang="es">
+        <title>Personaliza el color de tabi y el tema predeterminado</title>
+        <published>2023-08-09T00:00:00+00:00</published>
+        <updated>2024-09-12T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/customise-tabi/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/customise-tabi/</id>
+        <summary type="html">Aprende a personalizar tabi usando skins y estableciendo un tema predeterminado, haciendo que tu sitio sea único.</summary>
+        </entry><entry xml:lang="es">
+        <title>Añade comentarios a tus publicaciones con estas 4 plataformas</title>
+        <published>2023-07-14T00:00:00+00:00</published>
+        <updated>2025-12-12T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/comments/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/comments/</id>
+        <summary type="html">Descubre cómo habilitar una sección de comentarios en tus publicaciones usando giscus, utterances, Hyvor Talk, o Isso, permitiendo la interacción y feedback de los lectores.</summary>
+        </entry><entry xml:lang="es">
+        <title>Optimiza la carga con un subconjunto de fuente personalizado</title>
+        <published>2023-04-29T00:00:00+00:00</published>
+        <updated>2025-01-12T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/custom-font-subset/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/custom-font-subset/</id>
+        <summary type="html">Aprende cómo crear un subconjunto personalizado que solo incluya los glifos necesarios.</summary>
+        </entry><entry xml:lang="es">
+        <title>Seguro por defecto</title>
+        <published>2023-02-22T00:00:00+00:00</published>
+        <updated>2026-01-14T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/security/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/security/</id>
+        <summary type="html">tabi tiene una Política de Seguridad de Contenido (CSP) fácilmente personalizable con configuraciones seguras. Obtén tranquilidad y una calificación de A+ en Mozilla Observatory.</summary>
+        </entry><entry xml:lang="es">
+        <title>Shortcodes personalizados</title>
+        <published>2023-02-19T00:00:00+00:00</published>
+        <updated>2025-10-21T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/shortcodes/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/shortcodes/</id>
+        <summary type="html">Este tema incluye algunos shortcodes personalizados útiles que puedes utilizar para mejorar tus publicaciones. Puedes mostrar imágenes que se adapten a los temas claro y oscuro, dar formato a una sección de referencias con un aspecto profesional, y más.</summary>
+        </entry><entry xml:lang="es">
+        <title>Ejemplos de Markdown</title>
+        <published>2023-01-31T00:00:00+00:00</published>
+        <updated>2026-01-01T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/markdown/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/markdown/</id>
+        <summary type="html">Esta publicación muestra algunos ejemplos de formato Markdown, incluyendo una tabla, bloques de código y etiquetas, citas, tablas y notas al pie de página.</summary>
+        </entry><entry xml:lang="es">
+        <title>Sin JavaScript obligatorio</title>
+        <published>2023-01-06T00:00:00+00:00</published>
+        <updated>2025-02-21T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/javascript/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/javascript/</id>
+        <summary type="html">JavaScript solo se utiliza cuando HTML y CSS no son suficientes.</summary>
+        </entry><entry xml:lang="es">
+        <title>Tabla de contenido</title>
+        <published>2022-11-01T00:00:00+00:00</published>
+        <updated>2024-02-16T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/toc/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/toc/</id>
+        <summary type="html">Una publicación que muestra la tabla de contenido opcional así como su configuración.</summary>
+        </entry>
+</feed>

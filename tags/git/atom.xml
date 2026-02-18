@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://welpo.github.io/tabi/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;welpo.github.io&#x2F;tabi</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>Git</tabi:current_section>
+    </tabi:metadata><title>~/tabi - Git</title>
+        <subtitle>tabi is an accessible Zola theme with search, multi-language support, optional JavaScript, a perfect Lighthouse score, and comprehensive documentation. Crafted for personal websites and blogs.</subtitle>
+    <link href="https://welpo.github.io/tabi/tags/git/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://welpo.github.io/tabi/tags/git/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><id>https://welpo.github.io/tabi/tags/git/atom.xml</id>
+</feed>

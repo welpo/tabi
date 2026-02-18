@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://welpo.github.io/tabi/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ca">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;welpo.github.io&#x2F;tabi</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>Aquest és un canal web, també conegut com a canal Atom. Subscriu-te copiant l&#x27;URL de la barra d&#x27;adreces al teu lector de notícies. Visita About Feeds per aprendre més i començar. És gratuït.</tabi:about_feeds>
+        <tabi:visit_the_site>Visita la web</tabi:visit_the_site>
+        <tabi:recent_posts>Publicacions recents</tabi:recent_posts>
+        <tabi:last_updated_on>Actualitzat el $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>media</tabi:current_section>
+    </tabi:metadata><title>~/tabi - media</title>
+        <subtitle>tabi és un tema accessible per a Zola amb cerca, suport multilingüe, JavaScript opcional, una puntuació perfecta a Lighthouse i documentació exhaustiva. Dissenyat per a llocs web i blogs personals.</subtitle>
+    <link href="https://welpo.github.io/tabi/ca/tags/media/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://welpo.github.io/tabi/ca/tags/media/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><id>https://welpo.github.io/tabi/ca/tags/media/atom.xml</id>
+</feed>

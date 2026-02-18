@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://welpo.github.io/tabi/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;welpo.github.io&#x2F;tabi</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>tutorial</tabi:current_section>
+    </tabi:metadata><title>~/tabi - tutorial</title>
+        <subtitle>tabi is an accessible Zola theme with search, multi-language support, optional JavaScript, a perfect Lighthouse score, and comprehensive documentation. Crafted for personal websites and blogs.</subtitle>
+    <link href="https://welpo.github.io/tabi/tags/tutorial/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://welpo.github.io/tabi/tags/tutorial/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-01-31T00:00:00+00:00</updated><id>https://welpo.github.io/tabi/tags/tutorial/atom.xml</id><entry xml:lang="en">
+        <title>A Complete Guide to Series</title>
+        <published>2024-11-08T00:00:00+00:00</published>
+        <updated>2025-02-21T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/series/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/series/</id>
+        <summary type="html">Learn how to organize your posts into sequential series, perfect for tutorials, courses, and multi-part stories.</summary>
+        </entry><entry xml:lang="en">
+        <title>Mastering tabi Settings: A Comprehensive Guide</title>
+        <published>2023-09-18T00:00:00+00:00</published>
+        <updated>2026-01-31T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/mastering-tabi-settings/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/mastering-tabi-settings/</id>
+        <summary type="html">Discover the many ways you can customise your tabi site.</summary>
+        </entry><entry xml:lang="en">
+        <title>Lost in Translation? Not with tabi&#x27;s Multilingual Capabilities</title>
+        <published>2023-09-12T00:00:00+00:00</published>
+        <updated>2026-01-03T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/faq-languages/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/faq-languages/</id>
+        <summary type="html">Master the art of serving a global audience through tabi&#x27;s built-in multilingual features. Learn how to change the default language, add multilingual support, and contribute your own translations.</summary>
+        </entry><entry xml:lang="en">
+        <title>Customise tabi with skins and a default theme</title>
+        <published>2023-08-09T00:00:00+00:00</published>
+        <updated>2024-09-12T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/customise-tabi/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/customise-tabi/</id>
+        <summary type="html">Learn how to customise tabi using skins and setting a default theme, making your site uniquely yours.</summary>
+        </entry><entry xml:lang="en">
+        <title>Add comments to your posts with these 4 comment systems</title>
+        <published>2023-07-14T00:00:00+00:00</published>
+        <updated>2025-12-12T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/comments/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/comments/</id>
+        <summary type="html">Discover how to enable a comments section on your posts using giscus, utterances, Hyvor Talk, or Isso, enabling reader interaction and feedback.</summary>
+        </entry><entry xml:lang="en">
+        <title>Optimise loading times with a custom font subset</title>
+        <published>2023-04-29T00:00:00+00:00</published>
+        <updated>2025-01-12T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/custom-font-subset/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/custom-font-subset/</id>
+        <summary type="html">Learn how to create a custom subset that only includes the necessary glyphs.</summary>
+        </entry><entry xml:lang="en">
+        <title>No mandatory JavaScript</title>
+        <published>2023-01-06T00:00:00+00:00</published>
+        <updated>2025-02-21T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/javascript/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/javascript/</id>
+        <summary type="html">JavaScript is only used when HTML and CSS aren&#x27;t enough.</summary>
+        </entry><entry xml:lang="en">
+        <title>Table of Contents</title>
+        <published>2022-11-01T00:00:00+00:00</published>
+        <updated>2024-02-16T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/toc/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/toc/</id>
+        <summary type="html">A post showcasing the optional Table of Contents and its options.</summary>
+        </entry>
+</feed>
