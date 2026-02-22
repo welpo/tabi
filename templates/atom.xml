@@ -100,11 +100,20 @@
         {% if config.extra.full_content_in_feed %}
             <content type="html">{{ page.content }}</content>
         {% endif -%}
-        {% if page.description -%}
-            <summary type="html">{{ page.description }}</summary>
-        {% elif page.summary -%}
-            <summary type="html">{{ page.summary | striptags | trim_end_matches(pat=".") | safe }}…</summary>
-        {% endif -%}
+        {% if page.description or page.summary or config.extra.auto_generate_post_summary %}
+        <summary type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+            {% if page.description -%}
+                <p>{{ page.description | markdown(inline=true) | safe }}</p>
+            {% endif %}
+            {% if page.summary -%}
+                <p>{{ page.summary | striptags | trim_end_matches(pat=".") | safe }}…</p>
+            {% elif config.extra.auto_generate_post_summary %}
+                <p>{{ page.content | striptags | truncate(length=config.extra.auto_generated_summary_length) | safe }}</p>
+            {% endif %}
+            </div>
+        </summary>
+        {% endif %}
     </entry>
     {%- endfor %}
 </feed>
