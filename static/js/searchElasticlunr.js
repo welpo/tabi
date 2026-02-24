@@ -3157,7 +3157,8 @@ window.onload = function () {
         if (
             ['ArrowUp', 'ArrowDown', 'Home', 'End', 'PageUp', 'PageDown'].includes(
                 event.key
-            )
+            ) &&
+            !event.isComposing
         ) {
             event.preventDefault();
             let newIndex = activeDivIndex;
@@ -3188,7 +3189,7 @@ window.onload = function () {
             }
         }
 
-        if (event.key === 'Enter' && activeDiv) {
+        if (event.key === 'Enter' && activeDiv && !event.isComposing) {
             event.preventDefault();
             event.stopImmediatePropagation();
             const anchorTag = activeDiv.querySelector('a');
