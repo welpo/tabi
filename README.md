@@ -122,9 +122,9 @@ title = "Your Site Title"
 4. Configure code block highlighting in your `config.toml`:
 
 ```toml
-[markdown]
-highlight_code = true
-highlight_theme = "css"
+[markdown.highlighting]
+theme = "catppuccin-frappe"
+style = "class"
 ```
 
 5. Create a `content/_index.md` file. This file controls how your home page looks and behaves. Choose one of the following options:
