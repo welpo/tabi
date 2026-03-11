@@ -20,8 +20,10 @@ img {
     height: auto;
 }
 
-img.inline {
+img.inline,
+p > a > img {
     display: inline;
+    margin: 0;
     vertical-align: middle;
 }
 
