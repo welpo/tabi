@@ -2683,10 +2683,8 @@ window.onload = function () {
         if (event.target === searchModal) {
             closeModal();
         }
-        event.stopPropagation(); // Prevents tapping through the modal.
     }
     searchModal.addEventListener('click', handleModalInteraction);
-    searchModal.addEventListener('touchend', handleModalInteraction, { passive: true });
 
     // Close modal when pressing escape.
     document.addEventListener('keydown', function (event) {
@@ -2709,9 +2707,13 @@ window.onload = function () {
 
     // The index loads on mouseover/tap.
     // Clicking/tapping the search button opens the modal.
+    // Index is preloaded on `touchstart` so it's ready by the time the synthetic
+    // click fires; the modal itself is opened from `click` so we don't open it
+    // mid-tap (which causes the follow-up synthetic click to land on the newly
+    // visible overlay and immediately close it again).
     searchButton.addEventListener('mouseover', loadSearchIndex);
+    searchButton.addEventListener('touchstart', loadSearchIndex, { passive: true });
     searchButton.addEventListener('click', openSearchModal);
-    searchButton.addEventListener('touchstart', openSearchModal, { passive: true });
 
     let searchIndexPromise = null;
     function loadSearchIndex() {
