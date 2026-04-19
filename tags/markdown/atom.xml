@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://welpo.github.io/tabi/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;welpo.github.io&#x2F;tabi</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>markdown</tabi:current_section>
+    </tabi:metadata><title>~/tabi - markdown</title>
+        <subtitle>tabi is an accessible Zola theme with search, multi-language support, optional JavaScript, a perfect Lighthouse score, and comprehensive documentation. Crafted for personal websites and blogs.</subtitle>
+    <link href="https://welpo.github.io/tabi/tags/markdown/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://welpo.github.io/tabi/tags/markdown/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-01-01T00:00:00+00:00</updated><id>https://welpo.github.io/tabi/tags/markdown/atom.xml</id><entry xml:lang="en">
+        <title>Markdown examples</title>
+        <published>2023-01-31T00:00:00+00:00</published>
+        <updated>2026-01-01T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/markdown/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/markdown/</id>
+        <summary type="html">This post showcases some examples of Markdown formatting, including a table, code blocks and tags, quotes, tables, and footnotes.</summary>
+        </entry><entry xml:lang="en">
+        <title>Table of Contents</title>
+        <published>2022-11-01T00:00:00+00:00</published>
+        <updated>2024-02-16T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/blog/toc/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/blog/toc/</id>
+        <summary type="html">A post showcasing the optional Table of Contents and its options.</summary>
+        </entry>
+</feed>
