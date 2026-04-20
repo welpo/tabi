@@ -57,7 +57,7 @@ title = "~/tabi"
 description = "tabi es un tema accesible para Zola con búsqueda, soporte multilingüe, JavaScript opcional, una puntuación perfecta en Lighthouse y documentación exhaustiva. Diseñado para sitios web y blogs personales."
 generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
-build_search_index = true
+build_search_index = false
 
 [languages.ca]
 title = "~/tabi"
@@ -178,6 +178,8 @@ iine_icon = "thumbs_up"  # See https://iine.to/#customise
 # Unify like counts across all language versions of the same page.
 # When enabled, likes on /es/blog/hello/ will count towards /blog/hello/ (default language).
 iine_unified_languages = true
+# Enable iine like buttons on micro posts.
+micro_iine = true
 
 # Show "Jump to posts" link next to series' title.
 # By default, the link appears automatically when a series description exceeds 2000 characters.
