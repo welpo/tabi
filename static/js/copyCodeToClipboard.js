@@ -27,7 +27,13 @@ const copyCodeAndChangeIcon = async (copyDiv, block) => {
 };
 
 const getNonTableCode = (block) => {
-    return [...block.querySelectorAll('code')].map((code) => code.textContent).join('');
+    return [...block.querySelectorAll('code')]
+        .map((code) => {
+            const clone = code.cloneNode(true);
+            clone.querySelectorAll('.giallo-ln').forEach(el => el.remove());
+            return clone.textContent;
+        })
+        .join('');
 };
 
 const getTableCode = (block) => {
