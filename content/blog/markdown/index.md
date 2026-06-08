@@ -113,6 +113,22 @@ In Rust, you declare a mutable variable with `let mut x = 5;`, whereas in Python
 >
 > — Charlie Kaufman, Synecdoche, New York
 
+## Github-style Alerts
+You can use Github-style Alerts by writing
+```markdown
+> [!NOTE]
+> This is a note!
+```
+
+The result looks like:
+> [!NOTE]
+> This is a note!
+
+> [!CAUTION]
+> Pay caution before continuing!
+
+The supported alert types are `note`, `tip`, `important`, `warning`, or `caution`.
+
 ---
 
 [^1]: And here's an example of a footnote!

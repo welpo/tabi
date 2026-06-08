@@ -37,6 +37,8 @@ bottom_footnotes = true
 smart_punctuation = true
 # Set to 'external' to add an indicator next to external links.
 external_links_class = "external"
+# Enable Github-styled blockquote alerts
+github_alerts = true
 
 [markdown.highlighting]
 theme = "catppuccin-frappe"
