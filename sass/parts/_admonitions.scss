@@ -1,3 +1,6 @@
+/* The alert icon is pinned to the box's padding edge, so both must use this value. */
+$admonition-padding: 0.8rem;
+
 /* GitHub-style alerts (Zola's `github_alerts`) reuse the admonition palette and icons. */
 /* Zola only outputs `<blockquote class="markdown-alert-{name}">`, so the title comes from */
 /* the `--alert-{name}-label` custom property (translated per language at the bottom) and the icon from ::after. */
@@ -116,26 +119,26 @@
     }
 }
 
-.admonition {
-    display: flex;
-    align-items: flex-start;
+.admonition,
+[class^='markdown-alert-'] {
     margin-block: 1em;
     border-radius: 10px;
     border-inline-start: 6px solid;
-    padding: 0.8rem;
+    padding: $admonition-padding;
     color: var(--text-color-high-contrast);
     font-family: var(--sans-serif-font);
+    a code {
+        color: inherit;
+    }
+}
 
+.admonition {
+    display: flex;
+    align-items: flex-start;
     p {
         margin-inline-start: -1.75rem;
         margin-block-end: 0;
         font-family: inherit;
-    }
-
-    a {
-        code {
-            color: inherit;
-        }
     }
 }
 
@@ -146,17 +149,22 @@
     }
 }
 
-.admonition-icon {
-    display: flex;
-    align-items: center;
-    margin: 0.3rem;
+.admonition-icon,
+[class^='markdown-alert-']::after {
     background-size: contain;
     background-repeat: no-repeat;
     aspect-ratio: 1/1;
     width: 1.5rem;
 }
 
-.admonition-title {
+.admonition-icon {
+    display: flex;
+    align-items: center;
+    margin: 0.3rem;
+}
+
+.admonition-title,
+[class^='markdown-alert-']::before {
     opacity: 0.92;
     font-weight: bold;
     font-size: 0.82rem;
@@ -196,31 +204,18 @@
 
 [class^='markdown-alert-'] {
     position: relative;
-    margin-block: 1em;
-    border-radius: 10px;
-    border-inline-start: 6px solid;
-    padding: 0.8rem;
-    color: var(--text-color-high-contrast);
-    font-family: var(--sans-serif-font);
 
     &::before {
         display: block;
-        opacity: 0.92;
         margin-inline-start: 2.1rem;
-        font-weight: bold;
-        font-size: 0.82rem;
         line-height: 1.5rem;
         text-transform: uppercase;
     }
 
     &::after {
         position: absolute;
-        inset-block-start: 0.8rem;
-        inset-inline-start: 0.8rem;
-        background-size: contain;
-        background-repeat: no-repeat;
-        aspect-ratio: 1/1;
-        width: 1.5rem;
+        inset-block-start: $admonition-padding;
+        inset-inline-start: $admonition-padding;
         content: '';
     }
 
@@ -230,12 +225,6 @@
 
         + p {
             margin-block-start: 0.6em;
-        }
-    }
-
-    a {
-        code {
-            color: inherit;
         }
     }
 }
