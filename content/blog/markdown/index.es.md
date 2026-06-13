@@ -1,7 +1,7 @@
 +++
 title = "Ejemplos de Markdown"
 date = 2023-01-31
-updated = 2026-01-01
+updated = 2026-06-10
 description = "Esta publicación muestra algunos ejemplos de formato Markdown, incluyendo una tabla, bloques de código y etiquetas, citas, tablas y notas al pie de página."
 
 [taxonomies]
@@ -112,6 +112,43 @@ En Rust, declaras una variable mutable con `let mut x = 5;`, mientras que en Pyt
 > «A mí me sobra el cuerpo, Orfeo, me sobra el cuerpo porque me falta alma.»
 >
 > — Miguel de Unamuno, Niebla
+
+## Alertas estilo GitHub
+
+Configurar `github_alerts = true` en la sección `[markdown]` de tu `config.toml` (requiere Zola 0.21+) activa las [alertas estilo GitHub](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts):
+
+```markdown
+> [!NOTE]
+> ¡Esto es una nota!
+>
+> Puede ocupar varios párrafos.
+
+> [!CAUTION]
+> ¡Ten cuidado antes de continuar!
+```
+
+El resultado es:
+
+> [!NOTE]
+> ¡Esto es una nota!
+>
+> Puede ocupar varios párrafos.
+
+> [!CAUTION]
+> ¡Ten cuidado antes de continuar!
+
+Los tipos de alerta disponibles son `NOTE`, `TIP`, `IMPORTANT`, `WARNING` y `CAUTION`.
+
+Las etiquetas se traducen automáticamente según el idioma de la página. Para cambiarlas (o añadir un idioma que falte), sobreescribe las variables CSS `--alert-{tipo}-label` con [CSS personalizado](@/blog/mastering-tabi-settings/index.es.md#estilos-css-personalizados):
+
+```css
+html:lang(eo) {
+    --alert-note-label: "Noto";
+    --alert-caution-label: "Atentu";
+}
+```
+
+Para tener control total sobre el título, el icono y los colores, consulta el [shortcode de advertencias](@/blog/shortcodes/index.es.md#advertencias).
 
 ---
 

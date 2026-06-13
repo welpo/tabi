@@ -37,6 +37,8 @@ bottom_footnotes = true
 smart_punctuation = true
 # Set to 'external' to add an indicator next to external links.
 external_links_class = "external"
+# Render GitHub-style alerts, e.g. `> [!NOTE]`. Requires Zola 0.21+.
+github_alerts = true
 
 [markdown.highlighting]
 theme = "catppuccin-frappe"
