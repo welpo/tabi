@@ -9,6 +9,8 @@ content="default-src 'self'
     {%- set isso_enabled = config.extra.isso.enabled_for_all_posts or page.extra.isso -%}
     {%- if page -%}
         {%- set iine_enabled = macros_settings::evaluate_setting_priority(setting="iine", page=page, default_global_value=false) == "true" -%}
+    {%- elif section and section.extra.show_micro | default(value=false) and config.extra.micro_iine | default(value=false) -%}
+        {%- set iine_enabled = true -%}
     {%- endif -%}
     {%- if page -%}
         {%- set mermaid_enabled = macros_settings::evaluate_setting_priority(setting="mermaid", page=page, default_global_value=false) == "true" -%}
