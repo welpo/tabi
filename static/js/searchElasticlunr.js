@@ -2678,6 +2678,30 @@ window.onload = function () {
         clearSearchButton.style.display = 'none';
     }
 
+    results.addEventListener('mouseover', function (event) {
+        if (event.target.closest('div[role="option"]')) {
+            updateSelection(event.target.closest('div[role="option"]'));
+        }
+    });
+
+    results.addEventListener('click', function (event) {
+        const clickedElement = event.target.closest('a');
+        if (clickedElement) {
+            const clickedHref = clickedElement.getAttribute('href');
+            const currentPageUrl = window.location.href;
+
+            // Normalise URLs by removing the text fragment and trailing slash.
+            const normalizeUrl = (url) => url.split('#')[0].replace(/\/$/, '');
+
+            // Check if the clicked link matches the current page.
+            // If using Ctrl+click or Cmd+click, don't close the modal.
+            if (normalizeUrl(clickedHref) === normalizeUrl(currentPageUrl) &&
+                !event.ctrlKey && !event.metaKey) {
+                closeModal();
+            }
+        }
+    });
+
     // Close modal when clicking/tapping outside.
     function handleModalInteraction(event) {
         if (event.target === searchModal) {
@@ -3012,30 +3036,6 @@ window.onload = function () {
             if (results.firstChild) {
                 updateSelection(results.firstChild);
             }
-
-            results.addEventListener('mouseover', function (event) {
-                if (event.target.closest('div[role="option"]')) {
-                    updateSelection(event.target.closest('div[role="option"]'));
-                }
-            });
-
-            results.addEventListener('click', function(event) {
-                const clickedElement = event.target.closest('a');
-                if (clickedElement) {
-                    const clickedHref = clickedElement.getAttribute('href');
-                    const currentPageUrl = window.location.href;
-
-                    // Normalise URLs by removing the text fragment and trailing slash.
-                    const normalizeUrl = (url) => url.split('#')[0].replace(/\/$/, '');
-
-                    // Check if the clicked link matches the current page.
-                    // If using Ctrl+click or Cmd+click, don't close the modal.
-                    if (normalizeUrl(clickedHref) === normalizeUrl(currentPageUrl) &&
-                        !event.ctrlKey && !event.metaKey) {
-                        closeModal();
-                    }
-                }
-            });
 
             // Add touch events to the results.
             setupTouchEvents();
