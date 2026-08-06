@@ -19,14 +19,14 @@ Parameters:
         {# Prepare variables for substitution #}
         {%- set series_title = series_section.title -%}
         {%- set series_permalink = series_section.permalink -%}
-        {%- set series_html_link = '<a href="' ~ series_section.permalink ~ '" aria_label="' ~ series_section.title ~ '">' ~ series_section.title ~ '</a>' -%}
+        {%- set series_html_link = '<a href="' ~ series_section.permalink ~ '" aria-label="' ~ series_section.title ~ '">' ~ series_section.title ~ '</a>' -%}
 		{# Build series pages list #}
 		{%- set series_pages_list = [] -%}
 		{%- for series_page in series_ordered_pages -%}
 			{%- if series_page.relative_path == page.relative_path -%}
 				{%- set series_pages_list_item = '<li>' ~ series_page.title ~ '</li>' -%}
 			{%- else -%}
-				{%- set series_pages_list_item = '<li><a href="' ~ series_page.permalink ~ '" aria_label="' ~ series_page.title ~ '">' ~ series_page.title ~ '</a></li>' -%}
+				{%- set series_pages_list_item = '<li><a href="' ~ series_page.permalink ~ '" aria-label="' ~ series_page.title ~ '">' ~ series_page.title ~ '</a></li>' -%}
 			{%- endif -%}
 			{%- set_global series_pages_list = series_pages_list | concat(with=series_pages_list_item) -%}
 		{%- endfor -%}
@@ -81,13 +81,13 @@ Parameters:
 		{%- if prev_page is defined -%}
 			{%- set prev_title = prev_page.title -%}
 			{%- set prev_permalink = prev_page.permalink -%}
-			{%- set prev_html_link = '<a href="' ~ prev_page.permalink ~ '" aria_label="' ~ prev_page.title ~ '">' ~ prev_page.title ~ '</a>' -%}
+			{%- set prev_html_link = '<a href="' ~ prev_page.permalink ~ '" aria-label="' ~ prev_page.title ~ '">' ~ prev_page.title ~ '</a>' -%}
 			{%- set prev_description = prev_page.description | default(value="") -%}
 		{%- endif -%}
 		{%- if next_page is defined -%}
 			{%- set next_title = next_page.title -%}
 			{%- set next_permalink = next_page.permalink -%}
-			{%- set next_html_link = '<a href="' ~ next_page.permalink ~ '" aria_label="' ~ next_page.title ~ '">' ~ next_page.title ~ '</a>' -%}
+			{%- set next_html_link = '<a href="' ~ next_page.permalink ~ '" aria-label="' ~ next_page.title ~ '">' ~ next_page.title ~ '</a>' -%}
 			{%- set next_description = next_page.description | default(value="") -%}
 		{%- endif -%}
 
