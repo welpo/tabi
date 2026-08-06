@@ -48,7 +48,9 @@ if (!defaultTheme) {
     window
         .matchMedia('(prefers-color-scheme: dark)')
         .addEventListener('change', (e) => {
-            setTheme(e.matches ? 'dark' : 'light');
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
         });
 }
 
