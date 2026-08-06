@@ -262,19 +262,19 @@ A more detailed example:
    */
   function formatReactions(type, reacts) {
     let html = `
-      <div class="color--primary" >
-        <h3 id=`+ type + ` - header"> ` + getIcon(type) + `&nbsp; <span>` + reacts.length + `</span> ` + type + `s </h3>
+      <div class="color--primary">
+        <h3 id="`+ type + `-header">` + getIcon(type) + `&nbsp;<span>` + reacts.length + `</span> ` + type + `s</h3>
 
-          <ol class="likes" role = "list" aria - labelledby="`+ type + `-header"> `;
+          <ol class="likes" role="list" aria-labelledby="`+ type + `-header">`;
 
     reacts.forEach(function (react) {
       html += `
             <li class="h-card">
               <a class="u-url"
-                href="`+ react.author.url + `
-       target="_blank"
-    rel = "noreferrer"
-    title = "`+ react.author.name + `" >
+                href="`+ react.author.url + `"
+                target="_blank"
+                rel="noreferrer"
+                title="`+ react.author.name + `">
       <img
         alt=""
         class="lazy mentions__image u-photo"
@@ -284,7 +284,7 @@ A more detailed example:
         width="48"
         height="48"
       >
-        <span class="p-author visually-hidden" aria-hidden="true">{{ author }}</span>
+        <span class="p-author visually-hidden" aria-hidden="true">`+ react.author.name + `</span>
       </a>
   </li>
       `;
@@ -335,8 +335,7 @@ A more detailed example:
       if (response.status >= 200 && response.status < 300) {
         json = await response.json();
       } else {
-        console.error("Could not parse response");
-        new Error(response.statusText);
+        console.error("Could not parse response", response.statusText);
       }
     } catch (error) {
       // Purposefully not escalate further, i.e. no UI update
@@ -367,7 +366,7 @@ A more detailed example:
       "rsvp": comments
     };
 
-    json.children.forEach(function (child) {
+    (json.children || []).forEach(function (child) {
       // Map each mention into its respective container
       const store = mapping[child['wm-property']];
       if (store) {
