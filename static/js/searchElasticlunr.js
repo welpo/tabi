@@ -3056,7 +3056,11 @@ window.onload = function () {
         const activeSpan = resultSpans[pluralizationKey];
         if (activeSpan) {
             activeSpan.style.display = 'inline';
-            activeSpan.textContent = activeSpan.textContent.replace(
+            // Cache the original "$NUMBER" template so repeated searches don't replace a stale count.
+            if (activeSpan.dataset.template === undefined) {
+                activeSpan.dataset.template = activeSpan.textContent;
+            }
+            activeSpan.textContent = activeSpan.dataset.template.replace(
                 '$NUMBER',
                 count.toString()
             );
