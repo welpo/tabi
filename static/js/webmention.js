@@ -255,6 +255,23 @@ A more detailed example:
   }
 
   /**
+   * Escape a string for safe interpolation into HTML text or a
+   * double-quoted attribute. Webmention author data comes from a
+   * third party's page, so it must never be inserted raw.
+   *
+   * @param {string} str
+   * @returns string
+   */
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  /**
    * Formats a list of reactions as HTML.
    *
    * @param {Array<Reaction>} reacts List of reactions to format
@@ -271,20 +288,20 @@ A more detailed example:
       html += `
             <li class="h-card">
               <a class="u-url"
-                href="`+ react.author.url + `"
+                href="`+ escapeHtml(react.author.url) + `"
                 target="_blank"
                 rel="noreferrer"
-                title="`+ react.author.name + `">
+                title="`+ escapeHtml(react.author.name) + `">
       <img
         alt=""
         class="lazy mentions__image u-photo"
-        src="`+ react.author.photo + `"
+        src="`+ escapeHtml(react.author.photo) + `"
         loading="lazy"
         decoding="async"
         width="48"
         height="48"
       >
-        <span class="p-author visually-hidden" aria-hidden="true">`+ react.author.name + `</span>
+        <span class="p-author visually-hidden" aria-hidden="true">`+ escapeHtml(react.author.name) + `</span>
       </a>
   </li>
       `;
