@@ -158,6 +158,55 @@ A more detailed example:
     return filtered;
   }
 
+  const SANITIZE_ALLOWED_TAGS = ['A', 'B', 'STRONG', 'I', 'EM', 'P', 'BR', 'BLOCKQUOTE', 'CODE', 'PRE', 'UL', 'OL', 'LI', 'IMG'];
+  /**
+   * Strip a reply's HTML down to an allow-listed set of tags/attributes.
+   * Reply content is untrusted third-party HTML from the sender's page.
+   *
+   * @param {string} html
+   * @returns string
+   */
+  function sanitizeHtml(html) {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    function clean(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (child) {
+        if (child.nodeType === Node.COMMENT_NODE) {
+          node.removeChild(child);
+          return;
+        }
+        if (child.nodeType !== Node.ELEMENT_NODE) {
+          return;
+        }
+        if (SANITIZE_ALLOWED_TAGS.indexOf(child.tagName) === -1) {
+          clean(child);
+          while (child.firstChild) {
+            node.insertBefore(child.firstChild, child);
+          }
+          node.removeChild(child);
+          return;
+        }
+        const href = child.tagName === 'A' ? child.getAttribute('href') : null;
+        const src = child.tagName === 'IMG' ? child.getAttribute('src') : null;
+        const alt = child.tagName === 'IMG' ? child.getAttribute('alt') : null;
+        Array.prototype.slice.call(child.attributes).forEach(function (attr) {
+          child.removeAttribute(attr.name);
+        });
+        if (href !== null && /^https?:\/\//i.test(href.trim())) {
+          child.setAttribute('href', href);
+          child.setAttribute('rel', 'noreferrer');
+        }
+        if (src !== null && /^https?:\/\//i.test(src.trim())) {
+          child.setAttribute('src', src);
+          child.setAttribute('alt', alt || '');
+        }
+        clean(child);
+      });
+    }
+    clean(doc.body);
+    return doc.body.innerHTML;
+  }
+
+
   /**
    * Format comments as HTML.
    *
@@ -174,9 +223,9 @@ A more detailed example:
       let content = '';
       if (comment.hasOwnProperty('content')) {
         if (comment.content.hasOwnProperty('html')) {
-          content = comment.content.html;
+          content = sanitizeHtml(comment.content.html);
         } else if (comment.content.hasOwnProperty('text')) {
-          content = comment.content.text;
+          content = escapeHtml(comment.content.text);
         }
       }
 
@@ -184,12 +233,12 @@ A more detailed example:
   <li class="comment h-entry">
     <div>
       <a class="comment_author u-author"
-         href="`+ comment.author.url + `"
+         href="`+ escapeHtml(comment.author.url) + `"
          target="_blank"
-         title="`+ comment.author.name + `"
+         title="`+ escapeHtml(comment.author.name) + `"
          rel="noreferrer">
         <img
-          src="`+ comment.author.photo + `"
+          src="`+ escapeHtml(comment.author.photo) + `"
           alt=""
           class="u-photo"
           loading="lazy"
@@ -197,19 +246,19 @@ A more detailed example:
           width="48"
           height="48"
         >
-        <span class="p-author">`+ comment.author.name + `</span>
+        <span class="p-author">`+ escapeHtml(comment.author.name) + `</span>
       </a>`;
       if (comment.published) {
         const published = new Date(comment.published);
         html += `
-      <time class="dt-published" datetime="`+ comment.published + `">` + published.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }) + `</time>`;
+      <time class="dt-published" datetime="`+ escapeHtml(comment.published) + `">` + published.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }) + `</time>`;
       }
       html += `
     </div>
 
     <p class="e-entry">`+ content + `
       <a class="u-url"
-         href="`+ comment.url + `"
+         href="`+ escapeHtml(comment.url) + `"
          target="_blank"
          rel="noreferrer">
         source
