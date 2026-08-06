@@ -51,7 +51,8 @@
             language_strings=language_strings,
             section_path=extra_section.path | default(value="blog"),
             pinned_first=is_root_section,
-            current_page=paginator.current_index | default(value=1)
+            current_page=paginator.current_index | default(value=1),
+            paginator=paginator | default(value="")
         ) }}
     </div>
 

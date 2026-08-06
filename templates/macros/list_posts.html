@@ -20,17 +20,26 @@
         {% endif %}
     {% endfor %}
 
+    {# Pinned posts are always shown separately on page 1, so exclude them from any paginated slice #}
+    {% set page_posts_without_pinned = [] %}
+    {% for post in posts %}
+        {% if not post.extra.pinned %}
+            {% set_global page_posts_without_pinned = page_posts_without_pinned | concat(with=post) %}
+        {% endif %}
+    {% endfor %}
+
     {# On page 1 or when no pagination, show pinned then regular #}
     {% if current_page == 1 %}
         {% if paginator %}
             {# With pagination: pinned + current page's posts #}
-            {% set display_posts = pinned_posts | concat(with=posts) %}
+            {% set display_posts = pinned_posts | concat(with=page_posts_without_pinned) %}
         {% else %}
             {# Without pagination: pinned + regular (no duplicates) #}
             {% set display_posts = pinned_posts | concat(with=regular_posts) %}
         {% endif %}
     {% else %}
-        {% set display_posts = posts %}
+        {# Later pages: pinned posts already shown on page 1 #}
+        {% set display_posts = page_posts_without_pinned %}
     {% endif %}
 {% else %}
     {% set display_posts = posts %}
