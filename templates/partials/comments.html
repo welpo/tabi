@@ -69,6 +69,9 @@
     {%- set default_lang_url = current_path | replace(from='/' ~ lang ~ '/', to = '/') -%}
         data-isso-id="{{ default_lang_url }}"
         data-title="{{ default_lang_url }}"
+    {% else %}
+        data-isso-id="{{ current_url }}"
+        data-title="{{ current_url }}"
     {% endif %}
     {% if config.extra.isso.lang  %}
         data-page-language="{{ config.extra.isso.lang }}"
