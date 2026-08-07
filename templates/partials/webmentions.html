@@ -10,7 +10,7 @@
 {% set script_data = "" %}
 
 {% if config.extra.webmentions.id %}
-{% set script_data = script_data ~ "data-id=" ~ config.extra.webmentions.id %}
+{% set script_data = script_data ~ " data-id=" ~ config.extra.webmentions.id %}
 {% endif %}
 
 {% if config.extra.webmentions.page_url %}
@@ -18,7 +18,7 @@
 {% endif %}
 
 {% if config.extra.webmentions.add_urls %}
-{% set script_data = script_data ~ "data-add-urls=" ~ config.extra.webmentions.add_urls %}
+{% set script_data = script_data ~ " data-add-urls=" ~ config.extra.webmentions.add_urls %}
 {% endif %}
 
 {% if config.extra.webmentions.wordcount %}
@@ -26,19 +26,19 @@
 {% endif %}
 
 {% if config.extra.webmentions.max_webmentions %}
-{% set script_data = script_data ~ "data-max-webmentions=" ~ config.extra.webmentions.max_webmentions %}
+{% set script_data = script_data ~ " data-max-webmentions=" ~ config.extra.webmentions.max_webmentions %}
 {% endif %}
 
 {% if config.extra.webmentions.prevent_spoofing %}
-{% set script_data = script_data ~ "data-prevent-spoofing=" ~ config.extra.webmentions.prevent_spoofing %}
+{% set script_data = script_data ~ " data-prevent-spoofing=" ~ config.extra.webmentions.prevent_spoofing %}
 {% endif %}
 
 {% if config.extra.webmentions.sort_by %}
-{% set script_data = script_data ~ "data-sort-by=" ~ config.extra.webmentions.sort_by %}
+{% set script_data = script_data ~ " data-sort-by=" ~ config.extra.webmentions.sort_by %}
 {% endif %}
 
 {% if config.extra.webmentions.sort_dir %}
-{% set script_data = script_data ~ "data-sort-dir=" ~ config.extra.webmentions.sort_dir %}
+{% set script_data = script_data ~ " data-sort-dir=" ~ config.extra.webmentions.sort_dir %}
 {% endif %}
 
 {% if config.extra.webmentions.comments_are_reactions %}
