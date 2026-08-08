@@ -47,7 +47,7 @@
         <link rel="extra-stylesheet" href="{{ get_url(path='skins/' ~ config.extra.skin ~ '.css', cachebust=true) | safe }}" />
     {%- endif -%}
 
-    <title>{{ config.title | striptags | safe }}
+    <title>{{ config.title | striptags | escape_xml | safe }}
     {%- if term %} - {{ term.name }}
     {%- elif section.title %} - {{ section.title }}
     {%- endif -%}
