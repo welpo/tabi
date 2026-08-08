@@ -16,7 +16,7 @@
             href="{{ target_url }}"
             class="card"
             {% if page.taxonomies %}
-            data-tags="{% for tax_name, terms in page.taxonomies %}{% for term in terms | unique %}{{ term | lower }}{% if not loop.last %},{% endif %}{% endfor %}{% endfor %}"
+            data-tags="{%- set_global is_first_tag = true -%}{% for tax_name, terms in page.taxonomies %}{% for term in terms | unique %}{% if not is_first_tag %},{% endif %}{% set_global is_first_tag = false %}{{ term | lower }}{% endfor %}{% endfor %}"
             {% endif %}>
             {% if page.extra.invertible_image %}{% set card_image_class = "card-image invertible-image" %}{% else %}{% set card_image_class = "card-image" %}{% endif %}
             {% if page.extra.local_image_dark and not page.extra.local_image %}
