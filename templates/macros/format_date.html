@@ -52,7 +52,7 @@
     {%- if short -%}
         {{ date | date(format="%-d %b %Y", locale=date_locale) }}
     {%- else -%}
-        {{ date | date(format="%d %b %Y", locale=date_locale) }}
+        {{ date | date(format="%d %B %Y", locale=date_locale) }}
     {%- endif -%}
 {%- endif -%}
 
