@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://welpo.github.io/tabi/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;welpo.github.io&#x2F;tabi</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>Esta es una fuente web, también conocida como fuente Atom. Suscríbete copiando la URL de la barra de direcciones en tu lector de noticias. Visita About Feeds para aprender más y empezar. Es gratis. </tabi:about_feeds>
+        <tabi:visit_the_site>Visita la web</tabi:visit_the_site>
+        <tabi:recent_posts>Publicaciones recientes</tabi:recent_posts>
+        <tabi:last_updated_on>Actualizado el $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>Preguntas Frecuentes</tabi:current_section>
+    </tabi:metadata><title>~/tabi - Preguntas Frecuentes</title>
+        <subtitle>tabi es un tema accesible para Zola con búsqueda, soporte multilingüe, JavaScript opcional, una puntuación perfecta en Lighthouse y documentación exhaustiva. Diseñado para sitios web y blogs personales.</subtitle>
+    <link href="https://welpo.github.io/tabi/es/tags/preguntas-frecuentes/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://welpo.github.io/tabi/es/tags/preguntas-frecuentes/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-01-31T00:00:00+00:00</updated><id>https://welpo.github.io/tabi/es/tags/preguntas-frecuentes/atom.xml</id><entry xml:lang="es">
+        <title>Guía completa sobre series</title>
+        <published>2024-11-08T00:00:00+00:00</published>
+        <updated>2025-02-21T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/series/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/series/</id>
+        <summary type="html">Aprende a organizar tus publicaciones en series secuenciales, perfectas para tutoriales, cursos e historias de varias partes.</summary>
+        </entry><entry xml:lang="es">
+        <title>Domina la configuración de tabi: guía completa</title>
+        <published>2023-09-18T00:00:00+00:00</published>
+        <updated>2026-01-31T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/</id>
+        <summary type="html">Descubre las múltiples maneras en que puedes personalizar tabi.</summary>
+        </entry><entry xml:lang="es">
+        <title>¿Lost in Translation? Explora las capacidades multilingües de tabi</title>
+        <published>2023-09-12T00:00:00+00:00</published>
+        <updated>2026-01-03T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/es/blog/faq-languages/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/es/blog/faq-languages/</id>
+        <summary type="html">Descubre cómo tabi te ayuda a conectar con una audiencia global gracias a sus funciones multilingües. Aprende a cambiar el idioma por defecto, añadir más idiomas y aportar tus propias traducciones.</summary>
+        </entry>
+</feed>

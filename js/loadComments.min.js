@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("#load-comments");t&&t.addEventListener("click",()=>{var e=document.createElement("script");e.src=t.dataset.scriptSrc,e.async=!0,document.body.appendChild(e),t.style.display="none"})});
