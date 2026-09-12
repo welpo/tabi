@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block main_content %}
-    {% if section.extra.section_path -%}
-        {% set section = get_section(path=section.extra.section_path) %}
+    {% if section?.extra?.section_path -%}
+        {% set section = get_section(path=section?.extra?.section_path) %}
     {% endif -%}
 
-    {{ macros_page_header::page_header(title=section.title) }}
+    {{< page_header title={section.title} />}}
 
     <main>
         {% if section.content -%}
@@ -18,7 +18,8 @@
             {%- set show_pages = section.pages -%}
         {% endif -%}
 
-        {%- if macros_settings::evaluate_setting_priority(setting="enable_cards_tag_filtering", page=section, default_global_value=true) == "true" -%}
+        {%- set enable_cards_tag_filtering_value %}{{< evaluate_setting_priority setting="enable_cards_tag_filtering" default_global_value="true" />}}{% endset -%}
+        {%- if enable_cards_tag_filtering_value | trim == "true" -%}
             {%- include "partials/filter_card_tags.html" -%}
         {%- endif -%}
 

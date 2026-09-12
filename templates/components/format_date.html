@@ -1,0 +1,65 @@
+{#- Formats a date according to the site's date settings and the current language.
+
+Parameters:
+- `date`: The date to format.
+- `short`: Whether to use the short format.
+- `config`, `lang`, and `language_strings` are read from the template context. -#}
+{%- component format_date(date: string, short: bool, @config: map, @lang: string, @language_strings = {}) -%}
+
+{#- Set locale. -#}
+{%- set date_locale = language_strings["date_locale"] | default(value="en_GB") -%}
+
+{#- Check for language-specific date formats -#}
+{%- set language_format = "" -%}
+{%- if config.extra.date_formats -%}
+    {%- for format_config in config.extra.date_formats -%}
+        {%- if format_config.lang == lang -%}
+            {%- if short and format_config.short -%}
+                {%- set_global language_format = format_config.short -%}
+            {%- elif not short and format_config.long -%}
+                {%- set_global language_format = format_config.long -%}
+            {%- endif -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
+
+{%- if language_format -%}
+    {{ date | date(format=language_format, locale=date_locale) }}
+{%- elif config.extra.short_date_format and short -%}
+    {{ date | date(format=config.extra.short_date_format, locale=date_locale) }}
+{%- elif config.extra.long_date_format and not short -%}
+    {{ date | date(format=config.extra.long_date_format, locale=date_locale) }}
+{%- elif not config.extra.short_date_format and date_locale == "en_GB" -%}
+    {%- set day = date | date(format="d", locale=date_locale) | int -%}
+
+    {%- if day in [11, 12, 13] -%}
+        {%- set suffix = "th" -%}
+    {%- else -%}
+        {%- set last_digit = day % 10 -%}
+        {%- if last_digit == 1 -%}
+            {%- set suffix = "st" -%}
+        {%- elif last_digit == 2 -%}
+            {%- set suffix = "nd" -%}
+        {%- elif last_digit == 3 -%}
+            {%- set suffix = "rd" -%}
+        {%- else -%}
+            {%- set suffix = "th" -%}
+        {%- endif -%}
+    {%- endif -%}
+
+    {#- Return the date. -#}
+    {{ day }}{{ suffix }}
+    {%- if short == true -%}
+        {{ date | date(format=" MMM y", locale=date_locale) }}
+    {%- else -%}
+        {{ date | date(format=" MMMM y", locale=date_locale) }}
+    {%- endif -%}
+{%- else -%}
+    {%- if short -%}
+        {{ date | date(format="d MMM y", locale=date_locale) }}
+    {%- else -%}
+        {{ date | date(format="dd MMMM y", locale=date_locale) }}
+    {%- endif -%}
+{%- endif -%}
+
+{%- endcomponent format_date -%}

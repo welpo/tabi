@@ -1,15 +1,15 @@
 {%- set relative_path = page.relative_path -%}
-{%- set repository_url = config.extra.remote_repository_url | trim_end_matches(pat='/') -%}
+{%- set repository_url = config.extra.remote_repository_url | trim_end(pat='/') -%}
 {%- set branch = config.extra.remote_repository_branch | default(value="main") -%}
 {%- set git_platform = config.extra.remote_repository_git_platform | default(value="auto") -%}
 
 {# Auto-detect the git platform based on the URL#}
 {%- if git_platform == "auto" %}
-    {%- if repository_url is containing("github.") -%}
+    {%- if repository_url is containing(pat="github.") -%}
         {%- set git_platform = "github" -%}
-    {%- elif repository_url is containing("gitlab.") -%}
+    {%- elif repository_url is containing(pat="gitlab.") -%}
         {%- set git_platform = "gitlab" -%}
-    {%- elif repository_url is matching("(gitea\.|codeberg\.)") -%}
+    {%- elif repository_url is matching(pat="(gitea\\.|codeberg\\.)") -%}
         {%- set git_platform = "gitea" -%}
     {%- endif -%}
 {%- endif -%}

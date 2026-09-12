@@ -174,13 +174,9 @@ hr {
     }
 }
 
-.footnote-backlink {
-    margin-inline-start: 0.2rem;
-    font-size: 0.8rem;
-}
-
-.footnotes-list a[href^="#fr-"],
-.footnotes a[href^="#fr-"] {
+// Match the footnote fragment inside absolute backlink URLs.
+.footnotes-list a[href*="#fr-"],
+.footnotes a[href*="#fr-"] {
     font-size: 0.8rem;
 }
 
@@ -292,7 +288,7 @@ details summary {
     max-width: none !important;
 }
 
-// For the `force_text_direction` shortcode.
+// For the `force_text_direction` component.
 [data-force-text-direction="ltr"] {
     direction: ltr;
     unicode-bidi: bidi-override;

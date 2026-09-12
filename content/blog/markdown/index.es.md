@@ -1,7 +1,7 @@
 +++
 title = "Ejemplos de Markdown"
 date = 2023-01-31
-updated = 2026-06-10
+updated = 2026-09-12
 description = "Esta publicación muestra algunos ejemplos de formato Markdown, incluyendo una tabla, bloques de código y etiquetas, citas, tablas y notas al pie de página."
 
 [taxonomies]
@@ -115,7 +115,7 @@ En Rust, declaras una variable mutable con `let mut x = 5;`, mientras que en Pyt
 
 ## Alertas estilo GitHub
 
-Configurar `github_alerts = true` en la sección `[markdown]` de tu `config.toml` (requiere Zola 0.21+) activa las [alertas estilo GitHub](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts):
+Configurar `github_alerts = true` en la sección `[markdown]` de tu `config.toml` activa las [alertas estilo GitHub](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts):
 
 ```markdown
 > [!NOTE]
@@ -148,7 +148,7 @@ html:lang(eo) {
 }
 ```
 
-Para tener control total sobre el título, el icono y los colores, consulta el [shortcode de advertencias](@/blog/shortcodes/index.es.md#advertencias).
+Para tener control total sobre el título, el icono y los colores, consulta el [componente de advertencias](@/blog/shortcodes/index.es.md#advertencias).
 
 ---
 

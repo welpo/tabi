@@ -1,0 +1,5 @@
+{%- component force_text_direction(direction = "ltr") -%}
+<div data-force-text-direction="{{ direction }}">
+    {{ body | markdown | safe }}
+</div>
+{%- endcomponent force_text_direction -%}

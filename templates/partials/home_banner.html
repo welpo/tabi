@@ -1,4 +1,4 @@
-{%- set header = section.extra.header-%}
+{%- set header = section?.extra?.header-%}
 <div id="banner-container-home">
     <div id="home-banner-text">
         <h1 id="home-banner-header">{{ header.title }}</h1>
@@ -7,7 +7,7 @@
         </section>
     </div>
     {%- if header.img -%}
-        {%- if header.img is containing("$BASE_URL") -%}
+        {%- if header.img is containing(pat="$BASE_URL") -%}
             {# Conversion no longer supported in favour of proper path. #}
             {{ throw(message="ERROR: The image path for the header should not contain '$BASE_URL'. Please remove it and use the proper image path.") }}
         {%- else -%}

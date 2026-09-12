@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuración de tabi: guía completa"
 date = 2023-09-18
-updated = 2026-01-31
+updated = 2026-09-13
 description = "Descubre las múltiples maneras en que puedes personalizar tabi."
 
 [taxonomies]
@@ -64,22 +64,6 @@ include_content = true
 
 **Nota**: para soporte de búsqueda en Chino/Japonés, necesitas usar una [build personalizada de Zola](https://github.com/getzola/zola/blob/master/Cargo.toml#L54-L55).
 
-### Consideraciones para usuarios de Zola 0.17.X
-
-Zola 0.17.X no proporciona acceso a la variable `search.index_format` ([reporte del bug](https://github.com/getzola/zola/issues/2165)). Al usar tabi, se asume el uso del índice JSON, que es más eficiente. Sin embargo, debido a [otro bug](https://github.com/getzola/zola/issues/2193) solucionado en 0.18.0, el índice JSON para sitios multilingües no se genera correctamente.
-
-Los usuarios con versiones de Zola anteriores a 0.18.0 que quieran usar el índice JavaScript necesitan establecer la variable `index_format` en dos lugares:
-
-```toml
-[search]
-index_format = "elasticlunr_javascript"
-
-[extra]
-index_format = "elasticlunr_javascript"
-```
-
-Esto asegura que tabi cargue los archivos correctos. Recomendamos actualizar a Zola 0.18.0 o posterior para una funcionalidad óptima.
-
 ### Detalles de implementación
 
 Para detalles técnicos sobre la implementación de la búsqueda en tabi, incluyendo cuándo se carga el índice, características de accesibilidad y otros detalles, consulta el [Pull Request #250](https://github.com/welpo/tabi/pull/250).
@@ -98,7 +82,7 @@ tabi ofrece soporte multilingüe completo para tu sitio Zola, desde configurar u
 
 La [página principal](/) de esta demo tiene un encabezado con una imagen, un título y una descripción:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/header_light.webp", dark_src="blog/mastering-tabi-settings/img/header_dark.webp", alt="Encabezado de la página principal") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/header_light.webp" dark_src="blog/mastering-tabi-settings/img/header_dark.webp" alt="Encabezado de la página principal" />}}
 
 #### Cabecera
 
@@ -128,7 +112,7 @@ paginate_by = 5  # Muestra 5 publicaciones por página.
 header = {title = "¡Hola! Soy tabi~", img = "img/main.webp", img_alt = "Tu nombre" }
 ```
 
-{{ admonition(type="note", text="La configuración `paginate_by` va en el front matter principal, no en la sección `[extra]`.") }}
+{{< admonition type="note" text="La configuración `paginate_by` va en el front matter principal, no en la sección `[extra]`." />}}
 
 **Opción B: Servir publicaciones desde un subdirectorio (por ejemplo, `/blog`)**
 
@@ -145,7 +129,7 @@ section_path = "blog/_index.md"  # Dónde encontrar tus publicaciones.
 max_posts = 5  # Muestra hasta 5 publicaciones en la página principal.
 ```
 
-{{ admonition(type="warning", title="ALERTA", text="No configures `paginate_by` y `section_path` a la vez. Estas configuraciones son mutuamente excluyentes y usarlas juntas puede resultar en que no se muestren publicaciones.") }}
+{{< admonition type="warning" title="ALERTA" text="No configures `paginate_by` y `section_path` a la vez. Estas configuraciones son mutuamente excluyentes y usarlas juntas puede resultar en que no se muestren publicaciones." />}}
 
 Notas adicionales:
 
@@ -156,7 +140,7 @@ Notas adicionales:
 
 Puedes fijar publicaciones para mantenerlas en la parte superior de la página principal. En esta demo, esta publicación está fijada, por lo que aparece primera con un icono y etiqueta de "fijada":
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/pinned_post_light.webp", dark_src="blog/mastering-tabi-settings/img/pinned_post_dark.webp", alt="Entrada fijada", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/pinned_post_light.webp" dark_src="blog/mastering-tabi-settings/img/pinned_post_dark.webp" alt="Entrada fijada" full_width={true} />}}
 
 Las publicaciones fijadas se muestran primero, manteniendo su orden relativo según el `sort_by` de la sección, seguidas por el resto de las publicaciones.
 
@@ -167,9 +151,9 @@ Para fijar una publicación, añade lo siguiente a su front matter:
 pinned = true
 ```
 
-{{ admonition(type="info", text="Este ajuste solo afecta a las páginas principales del sitio (como `/`, `/es/`, `/fr/`). Otras secciones como `blog/`, `tags/` o `archive/` muestran las publicaciones en su orden habitual.") }}
+{{< admonition type="info" text="Este ajuste solo afecta a las páginas principales del sitio (como `/`, `/es/`, `/fr/`). Otras secciones como `blog/`, `tags/` o `archive/` muestran las publicaciones en su orden habitual." />}}
 
-{{ admonition(type="warning", text='Cuando se utiliza la paginación (`paginate_by`), las publicaciones destacadas pueden aparecer dos veces: una vez en la parte superior de la primera página, y otra en su posición cronológica normal en páginas posteriores.') }}
+{{< admonition type="warning" text="Cuando se utiliza la paginación (`paginate_by`), las publicaciones destacadas pueden aparecer dos veces: una vez en la parte superior de la primera página, y otra en su posición cronológica normal en páginas posteriores." />}}
 
 ##### Mostrar la fecha de los artículos en el listado
 
@@ -179,9 +163,9 @@ Por defecto, cuando se listan los artículos, se muestra la fecha de creación. 
 - `updated`: Muestra solo la fecha de la última actualización del artículo. Si no hay fecha de actualización, muestra la fecha de publicación original.
 - `both`: Muestra tanto la fecha de publicación original como la fecha de la última actualización.
 
-{% admonition(type="tip") %}
+{% <admonition type="tip"> %}
 Esta configuración sigue la jerarquía: puedes establecer un valor global en `config.toml` o configurarlo para secciones específicas en su archivo `_index.md`. En ambos casos, añádelo a la sección `[extra]`.
-{% end %}
+{% </admonition> %}
 
 #### Listado de proyectos
 
@@ -222,7 +206,7 @@ El tema predeterminado puede especificarse con la variable `default_theme`, que 
 
 Las pieles de tabi cambian el color principal del sitio. Puedes configurar la piel en `config.toml` con `skin = "nombre_de_la_piel"`. Por ejemplo, `skin = "lavender"` se ve así (haz clic para cambiar entre modo claro y oscuro):
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="piel lavender en modo claro", toggled_alt="piel lavender en modo oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lavender_light.webp" toggled_src="blog/customise-tabi/skins/lavender_dark.webp" default_alt="piel lavender en modo claro" toggled_alt="piel lavender en modo oscuro" full_width={true} />}}
 
 Explora las pieles disponibles y aprende cómo crear la tuya propia consultando [la documentación](@/blog/customise-tabi/index.es.md#skins).
 
@@ -236,15 +220,13 @@ tabi utiliza una fuente serif para los párrafos de los artículos (la que está
 
 Haz clic en la imagen para comparar las fuentes:
 
-{{ image_toggler(default_src="blog/mastering-tabi-settings/img/serif.webp", toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp", default_alt="Fuente serif", toggled_alt="Fuente sans-serif", full_width=true) }}
+{{< image_toggler default_src="blog/mastering-tabi-settings/img/serif.webp" toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp" default_alt="Fuente serif" toggled_alt="Fuente sans-serif" full_width={true} />}}
 
 ### Indicador de enlaces externos
 
 | Página | Sección | `config.toml` | Sigue Jerarquía | Requiere JavaScript |
 |:------:|:-------:|:-------------:|:----------------:|:------------------:|
 |   ❌   |    ❌   |      ✅       |        ❌        |         ❌         |
-
-{{ admonition(type="info", text="Requiere Zola 0.20.0 o posterior.") }}
 
 Si deseas añadir un icono a los enlaces externos, configura la sección `[markdown]` (no `[extra]`) en tu `config.toml`:
 
@@ -255,7 +237,7 @@ external_links_class = "external"
 
 Esto añadirá un pequeño icono junto a los enlaces externos:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/external_link_light.webp", dark_src="blog/mastering-tabi-settings/img/external_link_dark.webp", alt="Icono de enlace externo", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/external_link_light.webp" dark_src="blog/mastering-tabi-settings/img/external_link_dark.webp" alt="Icono de enlace externo" full_width={true} />}}
 
 ### Estilos CSS personalizados
 
@@ -277,7 +259,7 @@ stylesheets = ["css/custom.css", "css/another.css"]
 
 El color del tema del navegador es el color que aparece en la barra de pestañas del navegador:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/browser_theme_color_light.webp", dark_src="blog/mastering-tabi-settings/img/browser_theme_color_dark.webp" alt="pestañas con un tema de navegador de color") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/browser_theme_color_light.webp" dark_src="blog/mastering-tabi-settings/img/browser_theme_color_dark.webp" alt="pestañas con un tema de navegador de color" />}}
 
 Puedes establecerlo en `config.toml` como `browser_theme_color = "#087e96"`. Si deseas diferentes colores para los modos oscuro/claro, puedes establecer un conjunto de colores con `browser_theme_color = ["#ffffff", "#000000"]`. El primer color es para el modo claro, el segundo para el oscuro.
 
@@ -320,7 +302,7 @@ Para una explicación detallada, consulta la [documentación de series](@/blog/s
 
 Por defecto, aparece automáticamente un enlace "Saltar a publicaciones" junto al título de la serie cuando una serie tiene un contenido de más de 2000 caracteres:
 
-{{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="enlace para saltar a las publicaciones de la serie", full_width=true) }}
+{{< dual_theme_image light_src="blog/series/img/jump_to_series_posts_light.webp" dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="enlace para saltar a las publicaciones de la serie" full_width={true} />}}
 
 Establece `show_jump_to_posts = true` para forzar la activación de la función y `show_jump_to_posts = false` para desactivarla.
 
@@ -358,15 +340,15 @@ Esto habilita dos funciones:
 
 1. `show_remote_source = true` añade un enlace al código fuente de tu sitio (tu `remote_repository_url`) que se mostrará en el pie de página:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/site_source_light.webp", dark_src="blog/mastering-tabi-settings/img/site_source_dark.webp" alt="Pie de página del sitio, mostrando un enlace 'Código fuente del sitio'") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/site_source_light.webp" dark_src="blog/mastering-tabi-settings/img/site_source_dark.webp" alt="Pie de página del sitio, mostrando un enlace 'Código fuente del sitio'" />}}
 
 1. `show_remote_changes = true` añade un enlace «Ver cambios ↗» al historial de commits del artículo actualizado, al lado de la fecha de última actualización [^1]:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/see_changes_light.webp", dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Título del artículo y metadatos, mostrando un enlace 'Ver cambios'") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/see_changes_light.webp" dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Título del artículo y metadatos, mostrando un enlace 'Ver cambios'" />}}
 
 Al hacer clic en este enlace, serás dirigido al historial de commits del artículo, donde podrás ver los cambios realizados en él:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/commit_history_light.webp", dark_src="blog/mastering-tabi-settings/img/commit_history_dark.webp" alt="Historial de commits de un artículo", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/commit_history_light.webp" dark_src="blog/mastering-tabi-settings/img/commit_history_dark.webp" alt="Historial de commits de un artículo" full_width={true} />}}
 
 ---
 
@@ -423,7 +405,7 @@ La página del proyecto individual se renderiza con la plantilla predeterminada,
 
 Si agregas etiquetas a tus proyectos, verás un filtro de etiquetas:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/projects_tag_filter_light.webp", dark_src="blog/mastering-tabi-settings/img/projects_tag_filter_dark.webp", alt="Página de proyectos con filtro de etiquetas", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/projects_tag_filter_light.webp" dark_src="blog/mastering-tabi-settings/img/projects_tag_filter_dark.webp" alt="Página de proyectos con filtro de etiquetas" full_width={true} />}}
 
 El sistema de filtrado de etiquetas utiliza mejora progresiva:
 
@@ -432,7 +414,7 @@ El sistema de filtrado de etiquetas utiliza mejora progresiva:
 
 Para desactivar esta función, establece `enable_cards_tag_filtering = false` en la sección `[extra]` del archivo `projects/_index.md` o en `config.toml`.
 
-{% admonition(type="tip") %}
+{% <admonition type="tip"> %}
 
 Para filtrar proyectos por etiquetas, necesitas establecer etiquetas en el front matter de cada proyecto. Por ejemplo:
 
@@ -444,7 +426,7 @@ weight = 40
 tags = ["etiqueta uno", "etiqueta 2", "tercera etiqueta"]
 ```
 
-{% end %}
+{% </admonition> %}
 
 ### Archivo
 
@@ -473,7 +455,7 @@ El archivo muestra las publicaciones en orden cronológico inverso (las más rec
 archive_reverse = true  # muestra las publicaciones más antiguas primero
 ```
 
-{{ admonition(type="note", title="nota" text="La página de Archivo sólo listará publicaciones que tengan fecha en su encabezado.") }}
+{{< admonition type="note" title="nota" text="La página de Archivo sólo listará publicaciones que tengan fecha en su encabezado." />}}
 
 ### Etiquetas
 
@@ -581,7 +563,7 @@ Por ejemplo, si configuras `base_canonical_url = "https://example.com"`, la URL 
 
 Las tarjetas para redes sociales son las imágenes que se muestran cuando compartes un enlace en redes sociales:
 
-{{ dimmable_image(src="img/with_social_media_card.webp", alt="Una captura de pantalla de WhatsApp mostrando un enlace con una tarjeta para redes sociales") }}
+{{< dimmable_image src="img/with_social_media_card.webp" alt="Una captura de pantalla de WhatsApp mostrando un enlace con una tarjeta para redes sociales" />}}
 
 Puedes establecer la imagen para redes sociales con `social_media_card = "img/social_media_card.png"`.
 
@@ -595,7 +577,7 @@ Si ambas rutas, relativa y absoluta, son válidas, la ruta relativa tendrá prio
 
 Dado que sigue la [jerarquía](#jerarquia-de-configuracion), si no está configurado en una página, pero sí lo está en una sección, se utilizará la imagen de la sección. Si no está configurado en una página o sección, pero sí en `config.toml`, se usará la imagen global.
 
-{{ admonition(type="tip", title="CONSEJO", text="Automatiza su creación con un [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [Automatizando las vistas previas de los enlaces con Zola](https://osc.garden/es/blog/automating-social-media-cards-zola/).") }}
+{{< admonition type="tip" title="CONSEJO" text="Automatiza su creación con un [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [Automatizando las vistas previas de los enlaces con Zola](https://osc.garden/es/blog/automating-social-media-cards-zola/)." />}}
 
 ### Creador del fediverso
 
@@ -642,7 +624,7 @@ menu = [
 
 Los botones de navegación rápida son los botones que aparecen en la parte inferior derecha de la pantalla. Deberías verlos en esta página, si no estás en un dispositivo móvil. Se ven así:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_light.webp", dark_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_dark.webp", alt="Botones de navegación rápida") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_light.webp" dark_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_dark.webp" alt="Botones de navegación rápida" />}}
 
 Para activarlos, establece `quick_navigation_buttons = true`.
 
@@ -664,7 +646,7 @@ Para saber más sobre cómo personalizarlo, consulta [la documentación sobre la
 
 Muestra enlaces a los artículos anterior y siguiente en la parte inferior de los posts. Se ve así:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp", dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp", alt="Enlaces a los artículos anterior y siguiente", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp" dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp" alt="Enlaces a los artículos anterior y siguiente" full_width={true} />}}
 
 Para activar esta función, configura `show_previous_next_article_links = true` y asegúrate de que tu sección tiene `sort_by` (por ejemplo, `sort_by = "date"`).
 
@@ -674,22 +656,6 @@ Para invertir el orden (artículos siguientes en el lado derecho y artículos an
 Por defecto, esta sección de navegación tendrá el ancho completo del sitio (igual que la barra de navegación de la parte superior). Para hacerla más estrecha, coincidiendo con el ancho del artículo, establece `previous_next_article_links_full_width = false`.
 
 Todas estas configuraciones siguen la jerarquía.
-
-### Enlaces de retorno en notas al pie
-
-{{ admonition(type="warning", title="ADVERTENCIA DE DEPRECACIÓN", text="Zola v0.19.0 y posterior puede hacer esto de forma nativa. Establece `bottom_footnotes = true` en la sección `[markdown]` de tu configuración.") }}
-
-| Página | Sección | `config.toml` | Sigue la jerarquía | Requiere JavaScript |
-|:------:|:-------:|:-------------:|:---------------:|:-------------------:|
-|   ✅   |   ✅    |      ✅       |        ✅       |         ✅          |
-
-Establecer `footnote_backlinks = true` añadirá enlaces de retorno a las notas al pie de tus publicaciones, como este:
-
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/footnote_backlinks_light.webp", dark_src="blog/mastering-tabi-settings/img/footnote_backlinks_dark.webp", alt="Enlaces de retorno en notas al pie", full_width=true) }}
-
-Cuando hagas clic en un enlace de retorno (la flecha ↩), te llevará de vuelta al punto del texto donde se hizo referencia a la nota al pie.
-
----
 
 ## Usabilidad
 
@@ -701,7 +667,7 @@ Cuando hagas clic en un enlace de retorno (la flecha ↩), te llevará de vuelta
 
 Establecer `copy_button = true` añadirá un pequeño botón de copiar en la parte superior derecha de los bloques de código, como este:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp", dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp", alt="Botón de copiar en bloques de código", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp" dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp" alt="Botón de copiar en bloques de código" full_width={true} />}}
 
 ### Nombres de bloques de código clicables
 
@@ -884,7 +850,7 @@ Para usar un icono personalizado, puedes añadirlo al directorio `static/social_
 { name = "custom", url = "https://example.com", icon = "custom" }
 ```
 
-{{ admonition(type="note", title="NOTA", text="Todos los enlaces sociales incluyen el [atributo](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/me) `rel='me'`. Esto ayuda a los motores de búsqueda y servicios web a verificar que las cuentas de redes sociales te pertenecen.") }}
+{{< admonition type="note" title="NOTA" text="Todos los enlaces sociales incluyen el [atributo](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/me) `rel='me'`. Esto ayuda a los motores de búsqueda y servicios web a verificar que las cuentas de redes sociales te pertenecen." />}}
 
 ### Icono de feed
 
@@ -895,8 +861,6 @@ Para usar un icono personalizado, puedes añadirlo al directorio `static/social_
 Puedes añadir un enlace a tu feed RSS/Atom en el pie de página con `feed_icon = true`.
 
 Para usar un icono personalizado, establece `feed_icon` con el nombre del icono (por ejemplo, `feed_icon = "square-rss"`). El icono debe existir en `static/social_icons/` (sin la extensión `.svg`).
-
-Nota para usuarios de Zola 0.19.X: cuando hay dos nombres de archivo en `feed_filenames`, solo se enlazará el primero en el pie de página.
 
 ### Menú de pie de página
 
@@ -934,7 +898,7 @@ copyright = "© $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the c
 
 Se procesará el texto en Markdown. Por ejemplo, la configuració de arriba:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copyright_light.webp", dark_src="blog/mastering-tabi-settings/img/copyright_dark.webp" alt="Sección de derechos de autor", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/copyright_light.webp" dark_src="blog/mastering-tabi-settings/img/copyright_dark.webp" alt="Sección de derechos de autor" full_width={true} />}}
 
 Si tienes un sitio multilingüe y deseas establecer diferentes notificaciones de derechos de autor para diferentes idiomas, añade la traducción correspondiente a `copyright_translations.{código_de_idioma}` para cada idioma que quieras dar soporte. El código de idioma debe coincidir con el [código de idioma de tabi](https://welpo.github.io/tabi/es/blog/faq-languages/#que-son-estos-codigos-de-dos-letras). Por ejemplo:
 
@@ -964,7 +928,7 @@ Esto mostrará lxs autorxs establecidxs en la variable `authors = []` en el fron
 
 Puedes activar o desactivar el tiempo estimado de lectura de un artículo con `show_reading_time`. Si lo estableces en `true`, se mostrará en los metadatos del artículo, así:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/see_changes_light.webp", dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Título del artículo y metadatos, mostrando un enlace «Ver cambios»") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/see_changes_light.webp" dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Título del artículo y metadatos, mostrando un enlace «Ver cambios»" />}}
 
 Dado que sigue [la jerarquía](#jerarquia-de-configuracion), puedes activarlo o desactivarlo para páginas o secciones específicas. Por ejemplo, esta demo desactiva `show_reading_time = false` en la sección [proyectos](https://welpo.github.io/tabi/es/projects/) en el archivo [`_index.md`](https://github.com/welpo/tabi/blob/main/content/projects/_index.es.md?plain=1), por lo que sus publicaciones individuales no muestran el tiempo de lectura.
 
@@ -984,9 +948,9 @@ Por defecto, la fecha se muestra debajo del título de la publicación. Puedes o
 
 tabi tiene tres formatos de fecha: `long_date_format`, `short_date_format` y `archive_date_format`. El formato corto se utiliza en los metadatos de una publicación, mientras que el formato largo se utiliza al listar las publicaciones (es decir, en la [sección de blog](/es/blog/) o en la [página principal](/es/)). El formato de archivo se usa para mostrar el día y el mes en la página de archivo.
 
-Por defecto es "6th July 2049" para los formatos corto y largo en inglés. Para otros idiomas, el predeterminado es `"%d %B %Y"` para el formato largo y `"%-d %b %Y"` para el formato corto. El formato de archivo predeterminado universal es `"%d %b"`.
+En inglés, los valores predeterminados son "6th July 2049" para el formato largo y "6th Jul 2049" para el formato corto. Para otros idiomas, el predeterminado es `"dd MMMM y"` para el formato largo y `"d MMM y"` para el formato corto. El formato de archivo predeterminado universal es `"dd MMM"`.
 
-En Zola, la sintaxis para el formateo de tiempo está inspirada en strftime. Una referencia completa está disponible en la [documentación de chrono](https://docs.rs/chrono/0.4.31/chrono/format/strftime/index.html).
+Los formatos de fecha usan [patrones UTS-35](https://unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table). Por ejemplo, `d`, `dd`, `MMM`, `MMMM` e `y` producen un día numérico, un día con cero inicial, un mes abreviado, un mes completo y el año. Rodea el texto literal con apóstrofos, como en `d 'de' MMMM 'de' y`. Los nombres textuales de los meses y los días de la semana siguen la configuración regional del idioma actual.
 
 #### Formatos de fecha por idioma
 
@@ -994,12 +958,12 @@ Puedes personalizar los formatos de fecha para idiomas específicos usando la ma
 
 ```toml
 date_formats = [
-    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y", archive = "%d de %b" },
-    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y", archive = "%d. %b" },
+    { lang = "es", long = "d 'de' MMMM 'de' y", short = "d MMM y" },
+    { lang = "de", long = "d. MMMM y", short = "dd.MM.y", archive = "dd. MMM" },
 ]
 ```
 
-Esto permite que diferentes idiomas usen formatos de fecha culturalmente apropiados (por ejemplo, "6 de julio de 2049" en español o "6. Juli 2049" en alemán).
+Esto permite que cada idioma elija el orden, la puntuación y el nivel de detalle.
 
 ### Separador personalizado
 
@@ -1088,7 +1052,7 @@ domain = "www.example.com"
 
 La sección de webmentions se ve así:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/webmention_light.webp", dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Captura de pantalla de webmentions mostrando reposts, me gusta, marcadores y comentarios", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/webmention_light.webp" dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Captura de pantalla de webmentions mostrando reposts, me gusta, marcadores y comentarios" full_width={true} />}}
 
 ### h-card representativa
 

@@ -1,7 +1,7 @@
 +++
 title = "Optimitza la càrrega amb un subconjunt de font personalitzat"
 date = 2023-04-29
-updated = 2025-01-12
+updated = 2026-09-12
 description = "Aprèn com crear un subconjunt personalitzat que només inclogui els glifs necessaris."
 
 [taxonomies]
@@ -21,9 +21,9 @@ Per solucionar això, tabi carrega un subconjunt de glifs per a l'encapçalament
 
 Per defecte, tabi inclou fitxers de subconjunts per a caràcters en anglès i espanyol (amb alguns símbols). Aquests fitxers es carreguen quan la pàgina o el lloc web de Zola està en aquest idioma.
 
-{% admonition(type="tip") %}
+{% <admonition type="tip"> %}
 Si estàs fent servir una font personalitzada, pots crear el teu propi subconjunt (segueix llegint) o desactivar completament els subconjunts predeterminats amb `enable_subset = false` a `config.toml`.
-{% end %}
+{% </admonition> %}
 
 Per a una optimització addicional, a continuació t'expliquem com crear un subconjunt de fonts personalitzat que només inclogui els caràcters utilitzats en el teu encapçalament.
 

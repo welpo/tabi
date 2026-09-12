@@ -1,7 +1,7 @@
 +++
 title = "Mastering tabi Settings: A Comprehensive Guide"
 date = 2023-09-18
-updated = 2026-01-31
+updated = 2026-09-13
 description = "Discover the many ways you can customise your tabi site."
 
 [taxonomies]
@@ -64,22 +64,6 @@ include_content = true
 
 **Note**: for Chinese/Japanese search support, you need to use a [custom Zola build](https://github.com/getzola/zola/blob/master/Cargo.toml#L54-L55).
 
-### Considerations for Zola 0.17.X Users
-
-Zola 0.17.X doesn't provide access to the `search.index_format` variable ([bug report](https://github.com/getzola/zola/issues/2165)). When using tabi, this variable defaults to the more efficient JSON index. However, due to [another bug](https://github.com/getzola/zola/issues/2193) fixed in 0.18.0, the JSON index for multi-language sites is not generated correctly.
-
-Users with Zola versions prior to 0.18.0 who want to use the JavaScript index need to set the `index_format` variable in two places:
-
-```toml
-[search]
-index_format = "elasticlunr_javascript"
-
-[extra]
-index_format = "elasticlunr_javascript"
-```
-
-This ensures tabi loads the right files. We recommend upgrading to Zola 0.18.0 or later for optimal functionality.
-
 ### Implementation Details
 
 For technical details about the search implementation in tabi, including when the index loads, accessibility features, and other specifics, see the [Pull Request #250](https://github.com/welpo/tabi/pull/250).
@@ -98,7 +82,7 @@ tabi offers comprehensive multilingual support for your Zola site, from setting 
 
 The [main page](/) of this demo has a header with an image, a title and description:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/header_light.webp", dark_src="blog/mastering-tabi-settings/img/header_dark.webp", alt="Main page header") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/header_light.webp" dark_src="blog/mastering-tabi-settings/img/header_dark.webp" alt="Main page header" />}}
 
 #### Heading
 
@@ -128,7 +112,7 @@ paginate_by = 5  # Show 5 posts per page.
 header = {title = "Hello! I'm tabi~", img = "img/main.webp", img_alt = "Your Name" }
 ```
 
-{{ admonition(type="note", text="The `paginate_by` setting goes in the main front matter, not in the `[extra]` section.") }}
+{{< admonition type="note" text="The `paginate_by` setting goes in the main front matter, not in the `[extra]` section." />}}
 
 **Option B: Serve posts from a subdirectory (e.g., `/blog`)**
 
@@ -145,7 +129,7 @@ section_path = "blog/_index.md"  # Where to find your posts.
 max_posts = 5  # Show up to 5 posts on the main page.
 ```
 
-{{ admonition(type="warning", text="Do not set both `paginate_by` and `section_path`. These settings are mutually exclusive and using both may result in no posts being displayed.") }}
+{{< admonition type="warning" text="Do not set both `paginate_by` and `section_path`. These settings are mutually exclusive and using both may result in no posts being displayed." />}}
 
 Additional notes:
 
@@ -156,7 +140,7 @@ Additional notes:
 
 You can pin posts to keep them at the top of the main page listing. In this demo, this post is pinned, so it appears first with a "pinned" icon and label:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/pinned_post_light.webp", dark_src="blog/mastering-tabi-settings/img/pinned_post_dark.webp", alt="Pinned post", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/pinned_post_light.webp" dark_src="blog/mastering-tabi-settings/img/pinned_post_dark.webp" alt="Pinned post" full_width={true} />}}
 
 Pinned posts are shown first, maintaining their relative order of the section's `sort_by`, followed by regular posts.
 
@@ -167,9 +151,9 @@ To pin a post, add the following to its front matter:
 pinned = true
 ```
 
-{{ admonition(type="info", text="This setting only affects your site's main pages (like `/`, `/es/`, `/fr/`). Other sections like `blog/`, `tags/`, or `archive/` show posts in their normal order.") }}
+{{< admonition type="info" text="This setting only affects your site's main pages (like `/`, `/es/`, `/fr/`). Other sections like `blog/`, `tags/`, or `archive/` show posts in their normal order." />}}
 
-{{ admonition(type="warning", text='When using pagination (`paginate_by`), pinned posts may appear twice: once on top of page 1, and again in their normal chronological position on subsequent pages.') }}
+{{< admonition type="warning" text="When using pagination (`paginate_by`), pinned posts may appear twice: once on top of page 1, and again in their normal chronological position on subsequent pages." />}}
 
 ##### Display the Date of Posts in Listing
 
@@ -183,9 +167,9 @@ By default, when listing posts, the date of post creation is shown. You can conf
 post_listing_date = "date"
 ```
 
-{% admonition(type="tip") %}
+{% <admonition type="tip"> %}
 This setting follows the hierarchy: you can set a global value in `config.toml` or override it for specific sections in their `_index.md` file. In both cases, add it to the `[extra]` section.
-{% end %}
+{% </admonition> %}
 
 #### Listing Projects
 
@@ -226,7 +210,7 @@ The default theme can be specified with the `default_theme` variable, which acce
 
 tabi's skins change the main colour of the site. You can set the skin in `config.toml` with `skin = "skin_name"`. For example, `skin = "lavender"` looks like this (click to switch between light and dark mode):
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="lavender skin in light mode", toggled_alt="lavender skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lavender_light.webp" toggled_src="blog/customise-tabi/skins/lavender_dark.webp" default_alt="lavender skin in light mode" toggled_alt="lavender skin in dark mode" full_width={true} />}}
 
 Explore the available skins and learn how to create your own reading [the documentation](@/blog/customise-tabi/index.md#skins).
 
@@ -240,15 +224,13 @@ tabi uses a serif font for article paragraphs (the one you're seeing now). You c
 
 Click on the image below to compare the two looks:
 
-{{ image_toggler(default_src="blog/mastering-tabi-settings/img/serif.webp", toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp", default_alt="Serif font", toggled_alt="Sans-serif font", full_width=true) }}
+{{< image_toggler default_src="blog/mastering-tabi-settings/img/serif.webp" toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp" default_alt="Serif font" toggled_alt="Sans-serif font" full_width={true} />}}
 
 ### External Link Indicator
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
 |:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
 |  ❌  |   ❌    |      ✅       |         ❌        |         ❌          |
-
-{{ admonition(type="info", text="Requires Zola 0.20.0 or later.") }}
 
 If you'd like to add an icon to external links, configure the `[markdown]` (not `[extra]`) section in your `config.toml`:
 
@@ -259,7 +241,7 @@ external_links_class = "external"
 
 This will add a small icon next to external links:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/external_link_light.webp", dark_src="blog/mastering-tabi-settings/img/external_link_dark.webp", alt="External link icon", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/external_link_light.webp" dark_src="blog/mastering-tabi-settings/img/external_link_dark.webp" alt="External link icon" full_width={true} />}}
 
 ### Custom CSS
 
@@ -281,7 +263,7 @@ stylesheets = ["css/custom.css", "css/another.css"]
 
 The browser theme colour is the colour that appears in the browser's tab bar:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/browser_theme_color_light.webp", dark_src="blog/mastering-tabi-settings/img/browser_theme_color_dark.webp" alt="tabi with a coloured browser theme") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/browser_theme_color_light.webp" dark_src="blog/mastering-tabi-settings/img/browser_theme_color_dark.webp" alt="tabi with a coloured browser theme" />}}
 
 You can set it in `config.toml` like `browser_theme_color = "#087e96"`. If you'd like different colours for dark/light mode, you can set an array of colours with `browser_theme_color = ["#ffffff", "#000000"]`. The first colour will be used for light mode, the second for dark mode.
 
@@ -325,7 +307,7 @@ For a detailed explanation of the series feature, see the [series documentation]
 
 By default, a "Jump to posts" link automatically appears next to the series title when a series has a content over 2000 characters:
 
-{{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="jump to series posts link", full_width=true) }}
+{{< dual_theme_image light_src="blog/series/img/jump_to_series_posts_light.webp" dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="jump to series posts link" full_width={true} />}}
 
 Set `show_jump_to_posts = true` to force the feature on and `show_jump_to_posts = false` to force it off.
 
@@ -363,15 +345,15 @@ This enables two features:
 
 1. `show_remote_source = true` adds a link to the source code of your site (your `remote_repository_url`) will be displayed on the footer:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/site_source_light.webp", dark_src="blog/mastering-tabi-settings/img/site_source_dark.webp" alt="Page footer, showing a 'Site source' link") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/site_source_light.webp" dark_src="blog/mastering-tabi-settings/img/site_source_dark.webp" alt="Page footer, showing a 'Site source' link" />}}
 
 1. `show_remote_changes = true` adds a "See changes ↗" link to the commit history of updated posts, next to the last updated date [^1]:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/see_changes_light.webp", dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Post title and metadata, showing a 'See changes' link") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/see_changes_light.webp" dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Post title and metadata, showing a 'See changes' link" />}}
 
 Clicking on this link will take you to the commit history of the post, where you can see the changes made to it:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/commit_history_light.webp", dark_src="blog/mastering-tabi-settings/img/commit_history_dark.webp" alt="Commit history of a post", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/commit_history_light.webp" dark_src="blog/mastering-tabi-settings/img/commit_history_dark.webp" alt="Commit history of a post" full_width={true} />}}
 
 ---
 
@@ -428,7 +410,7 @@ The individual project's page is rendered with the default template, unless you 
 
 If you add tags to your projects, you will see a tag filter:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/projects_tag_filter_light.webp", dark_src="blog/mastering-tabi-settings/img/projects_tag_filter_dark.webp", alt="Projects page with tag filter", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/projects_tag_filter_light.webp" dark_src="blog/mastering-tabi-settings/img/projects_tag_filter_dark.webp" alt="Projects page with tag filter" full_width={true} />}}
 
 The tag filtering system uses progressive enhancement:
 
@@ -437,7 +419,7 @@ The tag filtering system uses progressive enhancement:
 
 To disable this feature, set `enable_cards_tag_filtering = false` in the `[extra]` section of the `projects/_index.md` file or in `config.toml`.
 
-{% admonition(type="tip") %}
+{% <admonition type="tip"> %}
 
 To filter projects by tags, you need to set tags in the front matter of each project. For example:
 
@@ -449,7 +431,7 @@ weight = 40
 tags = ["tag one", "tag 2", "third tag"]
 ```
 
-{% end %}
+{% </admonition> %}
 
 ### Archive
 
@@ -478,7 +460,7 @@ The archive displays posts in reverse chronological order (newest first). You ca
 archive_reverse = true  # displays oldest posts first.
 ```
 
-{{ admonition(type="note", text="The Archive page will only list posts that have a date in their front matter.") }}
+{{< admonition type="note" text="The Archive page will only list posts that have a date in their front matter." />}}
 
 ### Tags
 
@@ -586,7 +568,7 @@ For example, if you set `base_canonical_url = "https://example.com"`, the canoni
 
 Social media cards are the images that are displayed when you share a link on social media:
 
-{{ dimmable_image(src="img/with_social_media_card.webp", alt="A screenshot of WhatsApp showing a link with a social media card") }}
+{{< dimmable_image src="img/with_social_media_card.webp" alt="A screenshot of WhatsApp showing a link with a social media card" />}}
 
 You can set the social media image with `social_media_card = "img/social_media_card.png"`.
 
@@ -600,7 +582,7 @@ If both relative and absolute paths are valid, the relative path will take prece
 
 Since it follows the [hierarchy](#settings-hierarchy), if it's not set on a page, but is set on a section, the section's image will be used. If it's not set on a page or section, but is set in `config.toml`, the global image will be used.
 
-{{ admonition(type="tip", title="PROTIP", text="Automate their creation with a [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [Automating Link Previews for Zola Sites](https://osc.garden/blog/automating-social-media-cards-zola/).") }}
+{{< admonition type="tip" title="PROTIP" text="Automate their creation with a [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [Automating Link Previews for Zola Sites](https://osc.garden/blog/automating-social-media-cards-zola/)." />}}
 
 ### Fediverse Creator
 
@@ -649,7 +631,7 @@ menu = [
 
 Quick navigation buttons are the buttons that appear on the bottom right of the screen. You should see them on this page, if you're not on mobile. They look like this:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_light.webp", dark_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_dark.webp" alt="Quick navigation buttons") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_light.webp" dark_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_dark.webp" alt="Quick navigation buttons" />}}
 
 The buttons allow you to quickly navigate through an expandable mini-table of contents, to the comment section (if enabled), as well as to the top of the page.
 
@@ -673,7 +655,7 @@ Read more about the table of contents and how to customise it by reading [the do
 
 Displays links to the previous and next articles at the bottom of posts. It looks like this:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp", dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp" alt="Previous and next article links", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp" dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp" alt="Previous and next article links" full_width={true} />}}
 
 To activate this feature, set `show_previous_next_article_links = true` and ensure your section has a `sort_by` value (e.g. `sort_by = "date"`).
 
@@ -685,22 +667,6 @@ To make it narrower, matching the article width, set `previous_next_article_link
 
 All of these settings follow the hierarchy.
 
-### Footnote Backlinks
-
-{{ admonition(type="warning", title="DEPRECATION WARNING", text="Zola v0.19.0 and later can do this natively. Set `bottom_footnotes = true` in your config's `[markdown]` section.") }}
-
-| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
-|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
-|  ✅  |   ✅    |      ✅       |         ✅        |         ✅          |
-
-Setting `footnote_backlinks = true` will add backlinks to the footnotes of your posts, like this:
-
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/footnote_backlinks_light.webp", dark_src="blog/mastering-tabi-settings/img/footnote_backlinks_dark.webp" alt="Footnote backlinks", full_width=true) }}
-
-When you click on a backlink (the arrow ↩), it will take you back to the text where the footnote was referenced.
-
----
-
 ## Usability
 
 ### Copy Button on Code Blocks
@@ -711,7 +677,7 @@ When you click on a backlink (the arrow ↩), it will take you back to the text 
 
 Setting `copy_button = true` will add a small copy button to the top right of code blocks, like this:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp", dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp" alt="Copy button on code blocks", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp" dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp" alt="Copy button on code blocks" full_width={true} />}}
 
 ### Clickable Code Block Names
 
@@ -892,7 +858,7 @@ To use a custom icon, you can add it to your site's `static/social_icons` direct
 { name = "custom", url = "https://example.com", icon = "custom" }
 ```
 
-{{ admonition(type="note", text="All social links include the `rel='me'` [attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/me). This helps search engines and web services verify that the social media accounts are owned by you.") }}
+{{< admonition type="note" text="All social links include the `rel='me'` [attribute](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/me). This helps search engines and web services verify that the social media accounts are owned by you." />}}
 
 ### Feed Icon
 
@@ -903,8 +869,6 @@ To use a custom icon, you can add it to your site's `static/social_icons` direct
 You can add a link to your RSS/Atom feed to the footer with `feed_icon = true`.
 
 To use a custom icon, set `feed_icon` to the icon name (e.g. `feed_icon = "square-rss"`). The icon must exist in `static/social_icons/` (without the `.svg` extension).
-
-Note for Zola 0.19.X users: when there are two filenames in `feed_filenames`, only the first one will be linked in the footer.
 
 ### Footer Menu
 
@@ -944,7 +908,7 @@ You can use the following variables:
 
 Markdown is rendered. The example above:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copyright_light.webp", dark_src="blog/mastering-tabi-settings/img/copyright_dark.webp" alt="Copyright section", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/copyright_light.webp" dark_src="blog/mastering-tabi-settings/img/copyright_dark.webp" alt="Copyright section" full_width={true} />}}
 
 If you have a multilingual site and want to set different copyright notices for different languages, you can add the corresponding translation to `copyright_translations.{language_code}` for each language you want to support. The language code must match [tabi's language code](https://welpo.github.io/tabi/blog/faq-languages/#what-are-these-two-letter-codes). For example, for Spanish:
 
@@ -974,7 +938,7 @@ This will display the authors set on `authors = []` in the front matter of the p
 
 You can enable or hide the reading time of a post with `show_reading_time`. If you set it to `true`, it will be displayed in the post's metadata, like this:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/see_changes_light.webp", dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Post title and metadata, showing a 'See changes' link") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/see_changes_light.webp" dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Post title and metadata, showing a 'See changes' link" />}}
 
 Since it follows [the hierarchy](#settings-hierarchy), you can enable it or hide it for specific pages or sections. For example, this demo sets `show_reading_time = false` in the [projects](https://welpo.github.io/tabi/projects/) section's [`_index.md`](https://github.com/welpo/tabi/blob/main/content/projects/_index.md?plain=1), so their individual posts don't show the reading time.
 
@@ -994,9 +958,9 @@ By default, the date is shown below the post title. You can hide it with `show_d
 
 tabi has three date formats: `long_date_format`, `short_date_format` and `archive_date_format`. The short format is used in a post's metadata, while the long format is used when listing posts (i.e. on the [blog section](@/blog/_index.md) or the [main page](@/_index.md)). The archive format is used to display day and month on the archive page.
 
-The default is "6th July 2049" for `long_date_format` and `short_date_format` in English. For other languages, the defaut is `"%d %B %Y"` for the long format and `"%-d %b %Y"` for the short format. The universal default for the archive format is `"%d %b"`.
+In English, the defaults are "6th July 2049" for `long_date_format` and "6th Jul 2049" for `short_date_format`. For other languages, the default is `"dd MMMM y"` for the long format and `"d MMM y"` for the short format. The universal default for the archive format is `"dd MMM"`.
 
-In Zola, time formatting syntax is inspired fom strftime. A full reference is available in the [chrono docs](https://docs.rs/chrono/0.4.31/chrono/format/strftime/index.html).
+Date formats use [UTS-35 patterns](https://unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table). For example, `d`, `dd`, `MMM`, `MMMM` and `y` produce a numeric day, zero-padded day, abbreviated month, full month and year. Quote literal text with apostrophes, as in `d 'of' MMMM y`. Textual month and weekday names follow the current language's locale.
 
 #### Per-language date formats
 
@@ -1004,12 +968,12 @@ You can customise date formats for specific languages using the `date_formats` a
 
 ```toml
 date_formats = [
-    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y", archive = "%d de %b" },
-    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y", archive = "%d. %b" },
+    { lang = "es", long = "d 'de' MMMM 'de' y", short = "d MMM y" },
+    { lang = "de", long = "d. MMMM y", short = "dd.MM.y", archive = "dd. MMM" },
 ]
 ```
 
-This allows different languages to use culturally appropriate date formatting (e.g. Spanish "3 de febrero de 2024" vs German "3. Februar 2024").
+This lets each language choose its ordering, punctuation, and amount of detail.
 
 ### Custom Separator
 
@@ -1098,7 +1062,7 @@ domain = "www.example.com"
 
 The webmentions section looks like this:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/webmention_light.webp", dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Webmentions screenshot showing reposts, likes, bookmarks, and comments", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/webmention_light.webp" dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Webmentions screenshot showing reposts, likes, bookmarks, and comments" full_width={true} />}}
 
 ### Representative h-card
 

@@ -96,7 +96,7 @@ translation_missing = "или еще не переведена на ваш яз�
 check_url = "Проверьте URL на ошибки или"
 go_home = "вернитесь на главную страницу"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "Показать оригинальную цитату"
 show_translation = "Показать перевод"

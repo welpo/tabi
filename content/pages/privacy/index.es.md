@@ -2,12 +2,12 @@
 title = "Política de privacidad"
 path = "/es/privacy"
 date = 2023-10-31
-updated = 2024-05-12
+updated = 2026-09-12
 +++
 
 Esta política de privacidad describe cómo recopilamos y procesamos tus datos en este sitio web.
 
-{{ toc() }}
+{{< toc />}}
 
 ## ¿Qué datos recopilamos?
 

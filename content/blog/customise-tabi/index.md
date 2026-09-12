@@ -1,7 +1,7 @@
 +++
 title = "Customise tabi with skins and a default theme"
 date = 2023-08-09
-updated = 2024-09-12
+updated = 2026-09-13
 description = "Learn how to customise tabi using skins and setting a default theme, making your site uniquely yours."
 
 [taxonomies]
@@ -54,13 +54,13 @@ Take a look below at the available skins below.
 
 The default skin. If the `skin` variable is unset (or set to `"teal"`), this is what tabi looks like:
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/teal_light.webp", toggled_src="blog/customise-tabi/skins/teal_dark.webp", default_alt="teal skin in light mode", toggled_alt="teal skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/teal_light.webp" toggled_src="blog/customise-tabi/skins/teal_dark.webp" default_alt="teal skin in light mode" toggled_alt="teal skin in dark mode" full_width={true} />}}
 
 <hr>
 
 ### Lavender
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="lavender skin in light mode", toggled_alt="lavender skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lavender_light.webp" toggled_src="blog/customise-tabi/skins/lavender_dark.webp" default_alt="lavender skin in light mode" toggled_alt="lavender skin in dark mode" full_width={true} />}}
 
 To apply, use `skin = "lavender"`.
 
@@ -69,7 +69,7 @@ To apply, use `skin = "lavender"`.
 
 ### Red
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/red_light.webp", toggled_src="blog/customise-tabi/skins/red_dark.webp", default_alt="red skin in light mode", toggled_alt="red skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/red_light.webp" toggled_src="blog/customise-tabi/skins/red_dark.webp" default_alt="red skin in light mode" toggled_alt="red skin in dark mode" full_width={true} />}}
 
 Switch to this by setting `skin = "red"`.
 
@@ -80,7 +80,7 @@ Switch to this by setting `skin = "red"`.
 
 A skin designed by 🅿️.
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/mint_light.webp", toggled_src="blog/customise-tabi/skins/mint_dark.webp", default_alt="mint skin in light mode", toggled_alt="mint skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/mint_light.webp" toggled_src="blog/customise-tabi/skins/mint_dark.webp" default_alt="mint skin in light mode" toggled_alt="mint skin in dark mode" full_width={true} />}}
 
 Activate it with `skin = "mint"`.
 
@@ -91,7 +91,7 @@ Activate it with `skin = "mint"`.
 
 Inspired by the Japanese cherry blossom season.
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/sakura_light.webp", toggled_src="blog/customise-tabi/skins/sakura_dark.webp", default_alt="sakura skin in light mode", toggled_alt="sakura skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/sakura_light.webp" toggled_src="blog/customise-tabi/skins/sakura_dark.webp" default_alt="sakura skin in light mode" toggled_alt="sakura skin in dark mode" full_width={true} />}}
 
 To enable this skin, adjust `skin = "sakura"`.
 
@@ -100,7 +100,7 @@ To enable this skin, adjust `skin = "sakura"`.
 
 ### Blue
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/blue_light.webp", toggled_src="blog/customise-tabi/skins/blue_dark.webp", default_alt="blue skin in light mode", toggled_alt="blue skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/blue_light.webp" toggled_src="blog/customise-tabi/skins/blue_dark.webp" default_alt="blue skin in light mode" toggled_alt="blue skin in dark mode" full_width={true} />}}
 
 For this appearance, set `skin = "blue"`.
 
@@ -111,7 +111,7 @@ For this appearance, set `skin = "blue"`.
 
 *Indigo* for blue (in light theme) and *ingot* for gold (in dark theme).
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/indigo_ingot_light.webp", toggled_src="blog/customise-tabi/skins/indigo_ingot_dark.webp", default_alt="indigo ingot skin in light mode", toggled_alt="indigo ingot skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/indigo_ingot_light.webp" toggled_src="blog/customise-tabi/skins/indigo_ingot_dark.webp" default_alt="indigo ingot skin in light mode" toggled_alt="indigo ingot skin in dark mode" full_width={true} />}}
 
 To activate this skin, use `skin = "indigo_ingot"`.
 
@@ -122,14 +122,14 @@ To activate this skin, use `skin = "indigo_ingot"`.
 
 Inspired by the colours of Evangelion Unit-01 (in dark theme) and Unit-02 (in light theme).
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/evangelion_light.webp", toggled_src="blog/customise-tabi/skins/evangelion_dark.webp", default_alt="evangelion skin in light mode", toggled_alt="evangelion skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/evangelion_light.webp" toggled_src="blog/customise-tabi/skins/evangelion_dark.webp" default_alt="evangelion skin in light mode" toggled_alt="evangelion skin in dark mode" full_width={true} />}}
 
 
 <hr>
 
 ### Monochrome
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/monochrome_light.webp", toggled_src="blog/customise-tabi/skins/monochrome_dark.webp", default_alt="monochrome skin in light mode", toggled_alt="monochrome skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/monochrome_light.webp" toggled_src="blog/customise-tabi/skins/monochrome_dark.webp" default_alt="monochrome skin in light mode" toggled_alt="monochrome skin in dark mode" full_width={true} />}}
 
 To achieve this look, set `skin = "monochrome"`.
 
@@ -140,7 +140,7 @@ To achieve this look, set `skin = "monochrome"`.
 
 **WARNING!** This skin's light theme may have [low contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html), affecting accessibility and Lighthouse rating. (Dark theme is fine.)
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lowcontrast_orange_light.webp", toggled_src="blog/customise-tabi/skins/lowcontrast_orange_dark.webp", default_alt="low contrast orange skin in light mode", toggled_alt="low contrast orange skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lowcontrast_orange_light.webp" toggled_src="blog/customise-tabi/skins/lowcontrast_orange_dark.webp" default_alt="low contrast orange skin in light mode" toggled_alt="low contrast orange skin in dark mode" full_width={true} />}}
 
 To use, set `skin = "lowcontrast_orange"`.
 
@@ -151,7 +151,7 @@ To use, set `skin = "lowcontrast_orange"`.
 
 **WARNING!** This skin's light theme may have [low contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html), affecting accessibility and Lighthouse rating. (Dark theme is fine.)
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lowcontrast_peach_light.webp", toggled_src="blog/customise-tabi/skins/lowcontrast_peach_dark.webp", default_alt="low contrast peach skin in light mode", toggled_alt="low contrast peach skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lowcontrast_peach_light.webp" toggled_src="blog/customise-tabi/skins/lowcontrast_peach_dark.webp" default_alt="low contrast peach skin in light mode" toggled_alt="low contrast peach skin in dark mode" full_width={true} />}}
 
 To enable it, specify `skin = "lowcontrast_peach"`.
 
@@ -162,7 +162,7 @@ To enable it, specify `skin = "lowcontrast_peach"`.
 
 **WARNING!** This skin's light theme may have [low contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html), affecting accessibility and Lighthouse rating. (Dark theme is fine.)
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lowcontrast_pink_light.webp", toggled_src="blog/customise-tabi/skins/lowcontrast_pink_dark.webp", default_alt="low contrast pink skin in light mode", toggled_alt="low contrast pink skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lowcontrast_pink_light.webp" toggled_src="blog/customise-tabi/skins/lowcontrast_pink_dark.webp" default_alt="low contrast pink skin in light mode" toggled_alt="low contrast pink skin in dark mode" full_width={true} />}}
 
 For this colourscheme, choose `skin = "lowcontrast_pink"`.
 

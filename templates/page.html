@@ -3,9 +3,9 @@
 {% block main_content %}
 {%- set separator = config.extra.separator | default(value="•") -%}
 
-{%- set rel_attributes = macros_rel_attributes::rel_attributes() | trim -%}
+{%- set rel_attributes %}{{< rel_attributes />}}{% endset %}{% set rel_attributes = rel_attributes | trim | trim -%}
 
-{%- set blank_target = macros_target_attribute::target_attribute(new_tab=config.markdown.external_links_target_blank) -%}
+{%- set blank_target %}{{< target_attribute new_tab={config.markdown.external_links_target_blank} />}}{% endset %}{% set blank_target = blank_target | trim -%}
 
 {# Debugging #}
 {# <div><pre>
@@ -21,17 +21,17 @@
     {%- elif page -%}
         {%- set current_section = "" -%}
         {%- if page.ancestors | length > 0 -%}
-            {%- set last_ancestor = page.ancestors | slice(start=-1) -%}
-            {%- set_global current_section = get_section(path=last_ancestor.0, metadata_only=true) -%}
+            {%- set last_ancestor = page.ancestors | last -%}
+            {%- set_global current_section = get_section(path=last_ancestor, metadata_only=true) -%}
         {%- else -%}
             {%- set components = page.components -%}
             {%- for i in range(start=1, end=components | length) -%}
                 {%- if lang == config.default_language -%}
-                    {%- set potential_path = components | slice(end=components | length - i) | join(sep="/") -%}
+                    {%- set potential_path = components[:components | length - i] | join(sep="/") -%}
                     {%- set potential_page = potential_path ~ "/index.md" -%}
                     {%- set potential_section = potential_path ~ "/_index.md" -%}
                 {%- else -%}
-                    {%- set potential_path = components | slice(start=1, end=components | length - i) | join(sep="/") -%}
+                    {%- set potential_path = components[1:components | length - i] | join(sep="/") -%}
                     {%- set potential_page = potential_path ~ "/index." ~ lang ~ ".md" -%}
                     {%- set potential_section = potential_path ~ "/_index." ~ lang ~ ".md" -%}
                 {%- endif -%}
@@ -60,8 +60,6 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
         "iine",
         "iine_icon",
         "enable_cards_tag_filtering",
-        "footnote_backlinks",
-        "add_src_to_code_block",
         "force_codeblock_ltr",
         "copy_button",
         "katex",
@@ -84,7 +82,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 <th>page</th>
                 <th>section</th>
                 <th>config</th>
-                <th>macro output</th>
+                <th>component output</th>
             </tr>
         </thead>
         <tbody>
@@ -94,7 +92,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                     <td>{{ page.extra[setting] | default(value="⬛") }}</td>
                     <td>{{ current_section.extra[setting] | default(value="⬛") }}</td>
                     <td>{{ config.extra[setting] | default(value="⬛") }}</td>
-                    <td>{{ macros_settings::evaluate_setting_priority(setting=setting, page=page) }}</td>
+                    <td>{{< evaluate_setting_priority setting={setting} />}}</td>
                 </tr>
             {% endfor %}
         </tbody>
@@ -114,11 +112,12 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
         <ul class="meta">
             {#- Draft indicator -#}
             {% if page.draft %}
-                <li class="draft-label">{{ macros_translate::translate(key="draft", default="DRAFT", language_strings=language_strings) }}</li>
+                <li class="draft-label">{{< translate key="draft" default="DRAFT" />}}</li>
             {% endif %}
 
          {#- Author(s) -#}
-            {%- if page.authors or config.author and macros_settings::evaluate_setting_priority(setting="show_author", page=page, default_global_value=false) == "true" -%}
+            {%- set show_author_value %}{{< evaluate_setting_priority setting="show_author" default_global_value="false" />}}{% endset -%}
+            {%- if page.authors or config.author and show_author_value | trim == "true" -%}
                 {%- if page.authors -%}
                     {%- set author_list = page.authors -%}
                 {%- else -%}
@@ -126,48 +125,54 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- endif -%}
 
                 {%- if author_list | length == 1 -%}
-                    {%- set author_string = '<span class="p-author">' ~ author_list.0 ~ '</span>' -%}
+                    {%- set author_string = '<span class="p-author">' ~ author_list[0] ~ '</span>' -%}
                 {%- else -%}
                     {%- set last_author = author_list | last -%}
-                    {%- set other_authors = author_list | slice(end=-1) -%}
-                    {%- set author_separator = macros_translate::translate(key="author_separator", default=", ", language_strings=language_strings) -%}
+                    {%- set other_authors = author_list[:-1] -%}
+                    {%- set author_separator = language_strings["author_separator"] | default(value=", ") -%}
                    {%- set author_separator = '</span>' ~ author_separator ~ '<span class="p-author">' -%}
-                    {%- set conjunction = macros_translate::translate(key="author_conjunction", default=" and ", language_strings=language_strings) -%}
+                    {%- set conjunction = language_strings["author_conjunction"] | default(value=" and ") -%}
                     {%- set conjunction = '</span>' ~ conjunction ~ '<span class="p-author">' -%}
                     {%- set author_string = other_authors | join(sep=author_separator) -%}
                     {%- set author_string = author_string ~ conjunction ~ last_author -%}
                     {%- set author_string = '<span class="p-author">' ~ author_string ~ '</span>' -%}
                 {%- endif -%}
 
-                {%- set by_author = macros_translate::translate(key="by_author", default="By $AUTHOR", language_strings=language_strings) -%}
+                {%- set by_author = language_strings["by_author"] | default(value="By $AUTHOR") -%}
                 <li>{{ by_author | replace(from="$AUTHOR", to=author_string) | safe }}</li>
                 {%- set previous_visible = true -%}
             {%- endif -%}
 
-            {%- if config.extra.hcard and config.extra.hcard.enable and ( not author_list or author_list is containing(config.author)) -%}
+            {%- if config.extra.hcard and config.extra.hcard.enable and ( not author_list or author_list is containing(pat=config.author)) -%}
                 {% include "partials/hcard_small.html" %}
             {%- endif -%}
 
             {%- set separator_with_class = "<span class='separator' aria-hidden='true'>" ~ separator ~ "</span>"-%}
 
             {#- Date -#}
-            {%- if page.date and macros_settings::evaluate_setting_priority(setting="show_date", page=page, default_global_value=true) == "true" -%}
-                <li><time class="dt-published" datetime="{{ page.date }}">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_format_date::format_date(date=page.date, short=true, language_strings=language_strings) }}</time></li>
+            {%- set show_date_value %}{{< evaluate_setting_priority setting="show_date" default_global_value="true" />}}{% endset -%}
+            {%- if page.date and show_date_value | trim == "true" -%}
+                {%- set format_date_value %}{{< format_date date={page.date} short={true} />}}{% endset -%}
+                <li><time class="dt-published" datetime="{{ page.date }}">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ format_date_value | trim }}</time></li>
                 {#- Variable to keep track of whether we've shown a section, to avoid separators as the first element -#}
                 {%- set previous_visible = true -%}
             {%- endif -%}
 
             {#- Reading time -#}
-            {%- if macros_settings::evaluate_setting_priority(setting="show_reading_time", page=page, default_global_value=true) == "true" -%}
-                <li title="{{ macros_translate::translate(key="words", number=page.word_count, default="$NUMBER words", language_strings=language_strings) }}">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ macros_translate::translate(key="min_read", number=page.reading_time, default="$NUMBER min read", language_strings=language_strings) }}</li>
+            {%- set show_reading_time_value %}{{< evaluate_setting_priority setting="show_reading_time" default_global_value="true" />}}{% endset -%}
+            {%- if show_reading_time_value | trim == "true" -%}
+                {%- set translate_value %}{{< translate key="words" number={page.word_count | str} default="$NUMBER words" />}}{% endset -%}
+                {%- set translate_value_2 %}{{< translate key="min_read" number={page.reading_time | str} default="$NUMBER min read" />}}{% endset -%}
+                <li title="{{ translate_value | trim | safe }}">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{ translate_value_2 | trim | safe }}</li>
                 {%- set previous_visible = true -%}
             {%- endif -%}
 
             {#- Tags -#}
             {%- if page.taxonomies and page.taxonomies.tags -%}
-                <li class="tag">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{- macros_translate::translate(key="tags", default="tags", language_strings=language_strings) | capitalize -}}:&nbsp;</li>
+                {%- set tags_label = language_strings["tags"] | default(value="tags") -%}
+                <li class="tag">{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}{{- tags_label | capitalize -}}:&nbsp;</li>
                 {%- for tag in page.taxonomies.tags -%}
-                    <li class="tag"><a class="p-category" href="{{ get_taxonomy_url(kind='tags', name=tag, lang=lang) | safe }}">{{ tag }}</a>
+                    <li class="tag"><a class="p-category" href="{{ get_taxonomy_url(kind='tags', term=tag, lang=lang) | safe }}">{{ tag }}</a>
                     {%- if not loop.last -%}
                         ,&nbsp;
                     {%- endif -%}
@@ -178,14 +183,16 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
 
             {#- Last updated on -#}
             {% if page.updated %}
-                {%- set last_updated_str = macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -%}
-                {%- set formatted_date = macros_format_date::format_date(date=page.updated, short=true, language_strings=language_strings) -%}
+                {%- set last_updated_str = language_strings["last_updated_on"] | default(value="Updated on $DATE") -%}
+                {%- set formatted_date %}{{< format_date date={page.updated} short={true} />}}{% endset %}{% set formatted_date = formatted_date | trim -%}
                 {%- set updated_str = last_updated_str | replace(from="$DATE", to=formatted_date) -%}
                 {%- set previous_visible = true -%}
                 </ul><ul class="meta last-updated"><li><time class="dt-updated" datetime="{{ page.updated }}">{{ updated_str }}</time></li>
                 {#- Show link to remote changes if enabled -#}
-                {%- if config.extra.remote_repository_url and macros_settings::evaluate_setting_priority(setting="show_remote_changes", page=page, default_global_value=true) == "true" -%}
-                    <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}<a class="external" href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ macros_translate::translate(key="see_changes", default="See changes", language_strings=language_strings) }}</a></li>
+                {%- set show_remote_changes_value %}{{< evaluate_setting_priority setting="show_remote_changes" default_global_value="true" />}}{% endset -%}
+                {%- if config.extra.remote_repository_url and show_remote_changes_value | trim == "true" -%}
+                    {%- set see_changes_label = language_strings["see_changes"] | default(value="See changes") -%}
+                    <li>{%- if previous_visible -%}{{ separator_with_class | safe }}{%- endif -%}<a class="external" href="{% include "partials/history_url.html" %}" {{ blank_target }} rel="{{ rel_attributes }}">{{ see_changes_label }}</a></li>
                 {%- endif -%}
             {% endif %}
         </ul>
@@ -196,10 +203,10 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
         {#- Using the `ancestors` field of a section is not possible because transparent sections are not present in this field. -#}
         {%- set series_path_components = [] -%}
         {%- set section_paths = [] -%}
-        {%- for path in page.relative_path | split(pat="/") | slice(end=-1) -%}
-            {%- set_global series_path_components = series_path_components | concat(with=path) -%}
-            {%- set section_path = series_path_components | concat(with="_index.md") | join(sep="/") -%}
-            {%- set_global section_paths = section_paths | concat(with=section_path) -%}
+        {%- for path in (page.relative_path | split(pat="/"))[:-1] -%}
+            {%- set_global series_path_components = [...series_path_components, path] -%}
+            {%- set section_path = [...series_path_components, "_index.md"] | join(sep="/") -%}
+            {%- set_global section_paths = [...section_paths, section_path] -%}
         {%- endfor -%}
         {#- The series the page is part of is the closest section flagged as a series, if any -#}
         {%- for section_path in section_paths | reverse -%}
@@ -209,7 +216,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                 {%- if "series" in loaded_section.extra and loaded_section.extra.series -%}
                     {%- set_global series_section = loaded_section -%}
                     {%- set_global series_ordered_pages = loaded_section.pages -%}
-                    {%- if loaded_section.paginate_by | default(value=0) > 0 and loaded_section.paginate_reversed -%}
+                    {%- if (loaded_section.paginate_by or 0) > 0 and loaded_section.paginate_reversed -%}
                         {%- set_global series_ordered_pages = loaded_section.pages | reverse -%}
                     {%- endif -%}
                     {%- break -%}
@@ -217,21 +224,22 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {%- endif -%}
         {%- endfor -%}
 
-        {% if page.extra.tldr %}
+        {% if page?.extra?.tldr %}
             <div class="admonition note">
                 <div class="admonition-icon admonition-icon-note"></div>
                 <div class="admonition-content">
                     <strong class="admonition-title">
                         <span title="Too long; didn't read (summary)">TL;DR</span>
                     </strong>
-                    <p>{{ page.extra.tldr | markdown | safe }}</p>
+                    <p>{{ page?.extra?.tldr | markdown | safe }}</p>
                 </div>
             </div>
         {% endif %}
 
         {#- Optional table of contents below the header -#}
-        {% if page.toc and macros_settings::evaluate_setting_priority(setting="toc", page=page, default_global_value=false) == "true" %}
-            {{ macros_toc::toc(page=page, header=true, language_strings=language_strings) }}
+        {%- set toc_value %}{{< evaluate_setting_priority setting="toc" default_global_value="false" />}}{% endset -%}
+        {% if page.toc and toc_value | trim == "true" %}
+            {{< table_of_contents header={true} />}}
         {% endif %}
 
         {#- Optional Summary paragraph for readers -#}
@@ -242,28 +250,28 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
 
         <section class="e-content body">
             {#- Replace series_intro placeholder -#}
-            {%- set content_with_intro = page.content -%}
+            {%- set content_with_intro = page.content | safe -%}
             {%- if "<!-- series_intro -->" in page.content -%}
-                {%- set series_intro_html = macros_series_page::get_introduction(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings) -%}
+                {%- set series_intro_html %}{{< get_introduction series_section={series_section} series_ordered_pages={series_ordered_pages} />}}{% endset %}{% set series_intro_html = series_intro_html | trim -%}
                 {%- set content_with_intro = content_with_intro | replace(from="<!-- series_intro -->", to=series_intro_html) -%}
             {%- elif series_section -%}
-                {%- set series_intro_html = macros_series_page::get_introduction(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings) -%}
+                {%- set series_intro_html %}{{< get_introduction series_section={series_section} series_ordered_pages={series_ordered_pages} />}}{% endset %}{% set series_intro_html = series_intro_html | trim -%}
                 {%- set content_with_intro = series_intro_html ~ content_with_intro -%}
             {%- endif -%}
 
             {#- Handle series_outro placeholder -#}
             {%- set processed_content = content_with_intro -%}
             {%- if "<!-- series_outro -->" in content_with_intro -%}
-                {%- set series_outro_html = macros_series_page::get_outro(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings) -%}
+                {%- set series_outro_html %}{{< get_outro series_section={series_section} series_ordered_pages={series_ordered_pages} />}}{% endset %}{% set series_outro_html = series_outro_html | trim -%}
                 {%- set processed_content = processed_content | replace(from="<!-- series_outro -->", to=series_outro_html) -%}
             {%- elif series_section -%}
-                {%- set series_outro_html = macros_series_page::get_outro(page=page, series_section=series_section, series_ordered_pages=series_ordered_pages, language_strings=language_strings) -%}
+                {%- set series_outro_html %}{{< get_outro series_section={series_section} series_ordered_pages={series_ordered_pages} />}}{% endset %}{% set series_outro_html = series_outro_html | trim -%}
                 {#- We want the outro at the end of the article, but before footnote definitions -#}
                 {%- set footnotes_marker = '<hr><ol class="footnotes-list">' -%}
                 {%- if footnotes_marker in content_with_intro -%}
                     {%- set content_sections = processed_content | split(pat=footnotes_marker) -%}
                     {%- set main_content = content_sections | first -%}
-                    {%- set footnotes_content = content_sections | slice(start=1) | join(sep=footnotes_marker) -%}
+                    {%- set footnotes_content = content_sections[1:] | join(sep=footnotes_marker) -%}
                     {%- set processed_content = main_content ~ series_outro_html ~ footnotes_marker ~ footnotes_content -%}
                 {%- else -%}
                     {%- set processed_content = processed_content ~ series_outro_html -%}
@@ -273,19 +281,23 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
             {#- Replace TOC and render final content -#}
             {#- The replace pattern is used to enable arbitrary locations for the Table of Contents -#}
             {#- This is Philipp Oppermann's workaround: https://github.com/getzola/zola/issues/584#issuecomment-474329637 -#}
-            {{ processed_content | replace(from="<!-- toc -->", to=macros_toc::toc(page=page, header=false, language_strings=language_strings)) | safe }}
+            {%- set toc_html %}{{< table_of_contents header={false} />}}{% endset -%}
+            {{ processed_content | safe | replace(from="<!-- toc -->", to=toc_html) | safe }}
         </section>
 
         {#- iine button -#}
-        {%- if macros_settings::evaluate_setting_priority(setting="iine", page=page, default_global_value=false) == "true" -%}
-            {% include "partials/iine_button.html" %}
+        {%- set iine_value %}{{< evaluate_setting_priority setting="iine" default_global_value="false" />}}{% endset -%}
+        {%- if iine_value | trim == "true" -%}
+            {{< iine_button />}}
         {%- endif -%}
 
-        {% if macros_settings::evaluate_setting_priority(setting="show_previous_next_article_links", page=page, default_global_value=true) == "true" %}
+        {%- set show_previous_next_article_links_value %}{{< evaluate_setting_priority setting="show_previous_next_article_links" default_global_value="true" />}}{% endset -%}
+        {% if show_previous_next_article_links_value | trim == "true" %}
             {%- if page.lower or page.higher -%}
-                {% set next_label = macros_translate::translate(key="next", default="Next", language_strings=language_strings) %}
-                {% set prev_label = macros_translate::translate(key="prev", default="Prev", language_strings=language_strings) %}
-                {% if macros_settings::evaluate_setting_priority(setting="invert_previous_next_article_links", page=page, default_global_value=true) == "true" %}
+                {% set next_label = language_strings["next"] | default(value="Next") %}
+                {% set prev_label = language_strings["prev"] | default(value="Prev") %}
+                {%- set invert_previous_next_article_links_value %}{{< evaluate_setting_priority setting="invert_previous_next_article_links" default_global_value="true" />}}{% endset -%}
+                {% if invert_previous_next_article_links_value | trim == "true" %}
                     {% if page.higher %}
                         {% set left_link = page.higher.permalink %}
                         {% set left_label = prev_label %}
@@ -308,7 +320,8 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
                         {% set right_title = page.higher.title %}
                     {% endif %}
                 {% endif %}
-                {% if macros_settings::evaluate_setting_priority(setting="previous_next_article_links_full_width", page=page, default_global_value=true) == "true" %}
+                {%- set previous_next_article_links_full_width_value %}{{< evaluate_setting_priority setting="previous_next_article_links_full_width" default_global_value="true" />}}{% endset -%}
+                {% if previous_next_article_links_full_width_value | trim == "true" %}
                     {%- set full_width_class = "full-width" -%}
                 {% endif %}
             <nav class="{{ full_width_class | default(value="") }} article-navigation">
@@ -354,7 +367,7 @@ Current section extra: {% if current_section %}{{ current_section.extra | json_e
 
         {#- Webmentions -#}
         {%- set global_webmentions_enabled = config.extra.webmentions.enable | default(value=false) -%}
-        {%- set page_webmentions_enabled = page.extra.webmentions | default(value=global_webmentions_enabled) -%}
+        {%- set page_webmentions_enabled = page?.extra?.webmentions | default(value=global_webmentions_enabled) -%}
         {%- set webmentions_enabled = global_webmentions_enabled and page_webmentions_enabled != false or page_webmentions_enabled == true -%}
         {%- if webmentions_enabled -%}
             {%- include "partials/webmentions.html" -%}

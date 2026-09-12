@@ -1,24 +1,30 @@
-{%- set social_media_card = macros_settings::evaluate_setting_priority(setting="social_media_card", page=page | default(value=""), section=section | default(value=""), default_global_value="") -%}
+{%- set social_media_card %}{{< evaluate_setting_priority setting="social_media_card" default_global_value="" />}}{% endset %}{% set social_media_card = social_media_card | trim -%}
 {% if social_media_card %}
-    {# Get base path from page/section #}
+    {#- `get_image_metadata` resolves paths relative to `content`. -#}
     {% set base_path = "" %}
-    {% if section and section.path %}
-        {% set base_path = section.path | trim_end_matches(pat="/_index.md") %}
-        {% if base_path and not social_media_card is starting_with("/") %}
-            {% set base_path = base_path ~ "/" %}
+    {% if section and section.relative_path %}
+        {% set section_dirs = (section.relative_path | split(pat="/"))[:-1] %}
+        {% if section_dirs | length > 0 %}
+            {% set base_path = section_dirs | join(sep="/") ~ "/" %}
         {% endif %}
-    {% else %}
-        {% set base_path = page.colocated_path | default(value="") %}
+    {% elif page and page.relative_path %}
+        {#- Derive the directory from `relative_path` for flat and colocated pages. -#}
+        {% set page_dirs = (page.relative_path | split(pat="/"))[:-1] %}
+        {% if page_dirs | length > 0 %}
+            {% set base_path = page_dirs | join(sep="/") ~ "/" %}
+        {% endif %}
     {% endif %}
 
-    {% set current_path = base_path ~ social_media_card | trim_start_matches(pat="/") %}
+    {% set card = social_media_card | trim_start(pat="/") %}
+    {% set current_path = base_path ~ card %}
 
     {# Try parent path by removing the last directory component #}
-    {% set parent_path = base_path | split(pat="/") | slice(end=-2) | join(sep="/") %}
-    {% if parent_path and not social_media_card is starting_with("/") %}
-        {% set parent_path = parent_path ~ "/" %}
+    {% set parent_dirs = (base_path | split(pat="/"))[:-2] %}
+    {% set parent_path = "" %}
+    {% if parent_dirs | length > 0 %}
+        {% set parent_path = parent_dirs | join(sep="/") ~ "/" %}
     {% endif %}
-    {% set parent_relative_path = parent_path ~ social_media_card | trim_start_matches(pat="/") %}
+    {% set parent_relative_path = parent_path ~ card %}
 
     {# Check all possible locations #}
     {%- set current_meta = get_image_metadata(path=current_path, allow_missing=true) -%}

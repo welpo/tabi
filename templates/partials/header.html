@@ -1,7 +1,8 @@
 <head>
     <meta charset="UTF-8">
 
-    {%- if macros_settings::evaluate_setting_priority(setting="enable_csp", page=page | default(value=""), section=section | default(value=""), default_global_value="true") == "true" -%}
+    {%- set enable_csp_value %}{{< evaluate_setting_priority setting="enable_csp" default_global_value="true" />}}{% endset -%}
+    {%- if enable_csp_value | trim == "true" -%}
         {%- include "partials/content_security_policy.html" -%}
     {%- endif -%}
 
@@ -20,23 +21,16 @@
     {% endif %}
 
     {# Feeds #}
-    {% if config.generate_feeds | default(value=config.generate_feed) %}
-        {% if config.feed_filenames %}
-            {# Zola 0.19 and newer #}
-            {% for feed in config.feed_filenames %}
-                {% if feed == "atom.xml" %}
-                    <link rel="alternate" type="application/atom+xml" title="{{ config.title | safe }} - Atom Feed" href="{{ get_url(path=feed, trailing_slash=false) | safe }}">
-                {% elif feed == "rss.xml" %}
-                    <link rel="alternate" type="application/rss+xml" title="{{ config.title | safe }} - RSS Feed" href="{{ get_url(path=feed, trailing_slash=false) | safe }}">
-                {% else %}
-                    <link rel="alternate" href="{{ get_url(path=feed, trailing_slash=false) | safe }}">
-                {% endif %}
-            {% endfor %}
-        {% else %}
-            {# Older Zola versions #}
-            {% set feed_url = config.feed_filename | default(value="atom.xml") %}
-            <link rel="alternate" type="application/atom+xml" title="{{ config.title | safe }}" href="{{ get_url(path=feed_url, trailing_slash=false) | safe }}">
-        {% endif %}
+    {% if config.generate_feeds %}
+        {% for feed in config.feed_filenames %}
+            {% if feed == "atom.xml" %}
+                <link rel="alternate" type="application/atom+xml" title="{{ config.title }} - Atom Feed" href="{{ get_url(path=feed, lang=lang, trailing_slash=false) | safe }}">
+            {% elif feed == "rss.xml" %}
+                <link rel="alternate" type="application/rss+xml" title="{{ config.title }} - RSS Feed" href="{{ get_url(path=feed, lang=lang, trailing_slash=false) | safe }}">
+            {% else %}
+                <link rel="alternate" href="{{ get_url(path=feed, lang=lang, trailing_slash=false) | safe }}">
+            {% endif %}
+        {% endfor %}
     {% endif %}
 
     {# CSS #}
@@ -51,22 +45,33 @@
         {% endif %}
     {% endif %}
 
-    {# Define array of CSS files to load. main.css is always loaded. #}
-    {%- set stylesheets = [ "main.css" ] -%}
+    {# The generated highlighting stylesheet goes first so main.css can override it.
+       Nothing is added when highlighting is unset or inline. #}
+    {%- set stylesheets = [] -%}
+    {%- if config.markdown.highlighting -%}
+        {%- if config.markdown.highlighting.style == "class" -%}
+            {%- if config.markdown.highlighting.theme -%}
+                {%- set stylesheets = [...stylesheets, "giallo.css"] -%}
+            {%- elif config.markdown.highlighting.light_theme -%}
+                {%- set stylesheets = [...stylesheets, "giallo-light.css", "giallo-dark.css"] -%}
+            {%- endif -%}
+        {%- endif -%}
+    {%- endif -%}
+    {%- set stylesheets = [...stylesheets, "main.css"] -%}
 
     {# Load extra CSS files from config.toml #}
     {%- if config.extra.stylesheets -%}
-        {%- set stylesheets = stylesheets | concat(with=config.extra.stylesheets) -%}
+        {%- set stylesheets = [...stylesheets, ...config.extra.stylesheets] -%}
     {%- endif -%}
 
     {# Load extra CSS files from page metadata #}
-    {%- if page.extra.stylesheets -%}
-        {%- set stylesheets = stylesheets | concat(with=page.extra.stylesheets) -%}
+    {%- if page?.extra?.stylesheets -%}
+        {%- set stylesheets = [...stylesheets, ...page?.extra?.stylesheets] -%}
     {%- endif -%}
 
     {# Load extra CSS for custom skin #}
     {%- if config.extra.skin -%}
-        {%- set stylesheets = stylesheets | concat(with='skins/' ~ config.extra.skin ~ '.css') -%}
+        {%- set stylesheets = [...stylesheets, 'skins/' ~ config.extra.skin ~ '.css'] -%}
     {%- endif -%}
 
     {# Load all stylesheets #}
@@ -76,7 +81,7 @@
 
     <meta name="color-scheme" content="{%- if config.extra.theme_switcher -%}light dark{%- elif config.extra.default_theme -%}{{config.extra.default_theme}}{%- else -%}light{%- endif -%}" />
 
-    {%- if config.extra.browser_theme_color and config.extra.browser_theme_color is iterable -%}
+    {%- if config.extra.browser_theme_color and config.extra.browser_theme_color is array -%}
         {# Handle array values: theme_color[0] for light mode, theme_color[1] for dark mode #}
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ config.extra.browser_theme_color[0] }}" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ config.extra.browser_theme_color[1] }}" />
@@ -92,8 +97,8 @@
         <meta name="description" content="{{ section.description }}" />
         <meta property="og:description" content="{{ section.description }}" />
     {%- elif page.summary %}
-        <meta name="description" content="{{ page.summary | striptags | trim_end_matches(pat=".") | safe }}…" />
-        <meta property="og:description" content="{{ page.summary | striptags | trim_end_matches(pat=".") | safe }}…" />
+        <meta name="description" content="{{ page.summary | striptags | trim_end(pat=".") }}…" />
+        <meta property="og:description" content="{{ page.summary | striptags | trim_end(pat=".") }}…" />
     {%- else %}
         <meta name="description" content="{{ config.description }}" />
         <meta property="og:description" content="{{ config.description }}" />
@@ -103,7 +108,7 @@
         <meta name="robots" content="noindex, follow" />
     {% endif %}
 
-    <meta property="og:title" content="{{ page.title | default(value=config.title) | safe }}" />
+    <meta property="og:title" content="{{ page.title or config.title }}" />
     <meta property="og:type" content="article" />
 
     {# Image for social media sharing #}
@@ -113,13 +118,13 @@
     {%- if config.languages | length > 0 and current_url %}
         {%- include "partials/multilingual_tags.html" -%}
     {%- else -%}
-        <meta property="og:locale" content="{{ macros_translate::translate(key="date_locale", default="en_GB", language_strings=language_strings) }}" />
+        <meta property="og:locale" content="{{< translate key="date_locale" default="en_GB" />}}" />
     {%- endif %}
 
     {# Set canonical URL #}
     {%- if current_url -%}
-        {%- if page.extra.canonical_url or section.extra.canonical_url -%}
-            {%- set canonical_url = page.extra.canonical_url | default(value=section.extra.canonical_url) -%}
+        {%- if page?.extra?.canonical_url or section?.extra?.canonical_url -%}
+            {%- set canonical_url = page?.extra?.canonical_url | default(value=section?.extra?.canonical_url) -%}
         {%- elif config.extra.base_canonical_url -%}
             {%- set canonical_url = current_url | replace(from=config.base_url, to=config.extra.base_canonical_url) -%}
         {%- endif -%}
@@ -153,17 +158,7 @@
 
     {# Search #}
     {%- if config.build_search_index -%}
-        {%- if config.search.index_format -%}
-            {%- set search_index_format = config.search.index_format -%}
-        {%- elif config.extra.index_format -%}
-            {# Necessary to support Zola 0.17.X, as it doesn't have access to config.search.index_format #}
-            {# See: https://github.com/getzola/zola/issues/2165 #}
-            {%- set search_index_format = config.extra.index_format -%}
-        {%- else -%}
-            {%- set search_index_format = "elasticlunr_json" -%}
-        {%- endif -%}
-
-        {%- if search_index_format == "elasticlunr_javascript" -%}
+        {%- if config.search.index_format == "elasticlunr_javascript" -%}
             <script defer src="{{ get_url(path='search_index.' ~ lang ~ '.js', cachebust=true) | safe }}"></script>
         {%- endif -%}
 
@@ -181,5 +176,5 @@
     {%- endif -%}
 
     {# Users can optionally provide this template to add content to the head element. #}
-    {% include "tabi/extend_head.html" ignore missing %}
+    {% include "tabi/extend_head.html" %}
 </head>

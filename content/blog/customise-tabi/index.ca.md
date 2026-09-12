@@ -1,7 +1,7 @@
 +++
 title = "Personalitza el color de tabi i el tema per defecte"
 date = 2023-08-09
-updated = 2024-09-12
+updated = 2026-09-13
 description = "Aprèn a personalitzar tabi fent servir skins i establint un tema per defecte, aconseguint un aspecte únic."
 
 [taxonomies]
@@ -54,13 +54,13 @@ Fes una ullada a les skins disponibles a continuació.
 
 La skin per defecte. Si la variable `skin` no està configurada (o és igual a `"teal"`), aquest és l'aspecte de tabi:
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/teal_light.webp", toggled_src="blog/customise-tabi/skins/teal_dark.webp", default_alt="teal skin in light mode", toggled_alt="teal skin in dark mode", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/teal_light.webp" toggled_src="blog/customise-tabi/skins/teal_dark.webp" default_alt="teal skin in light mode" toggled_alt="teal skin in dark mode" full_width={true} />}}
 
 <hr>
 
 ### Lavanda
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="skin lavanda en mode clar", toggled_alt="skin lavanda en mode fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lavender_light.webp" toggled_src="blog/customise-tabi/skins/lavender_dark.webp" default_alt="skin lavanda en mode clar" toggled_alt="skin lavanda en mode fosc" full_width={true} />}}
 
 Per aplicar-la, utilitza `skin = "lavender"`.
 
@@ -68,7 +68,7 @@ Per aplicar-la, utilitza `skin = "lavender"`.
 
 ### Vermell
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/red_light.webp", toggled_src="blog/customise-tabi/skins/red_dark.webp", default_alt="skin vermell en mode clar", toggled_alt="skin vermell en mode fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/red_light.webp" toggled_src="blog/customise-tabi/skins/red_dark.webp" default_alt="skin vermell en mode clar" toggled_alt="skin vermell en mode fosc" full_width={true} />}}
 
 Canvia a aquesta skin establint `skin = "red"`.
 
@@ -78,7 +78,7 @@ Canvia a aquesta skin establint `skin = "red"`.
 
 Una skin dissenyada per 🅿️.
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/mint_light.webp", toggled_src="blog/customise-tabi/skins/mint_dark.webp", default_alt="skin menta amb tema clar", toggled_alt="skin menta amb tema fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/mint_light.webp" toggled_src="blog/customise-tabi/skins/mint_dark.webp" default_alt="skin menta amb tema clar" toggled_alt="skin menta amb tema fosc" full_width={true} />}}
 
 Activa-la amb `skin = "mint"`.
 
@@ -88,7 +88,7 @@ Activa-la amb `skin = "mint"`.
 
 Inspirat per la temporada de floració dels cirerers al Japó.
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/sakura_light.webp", toggled_src="blog/customise-tabi/skins/sakura_dark.webp", default_alt="skin sakura en mode clar", toggled_alt="skin sakura en mode fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/sakura_light.webp" toggled_src="blog/customise-tabi/skins/sakura_dark.webp" default_alt="skin sakura en mode clar" toggled_alt="skin sakura en mode fosc" full_width={true} />}}
 
 Per habilitar aquesta skin, ajusta `skin = "sakura"`.
 
@@ -96,7 +96,7 @@ Per habilitar aquesta skin, ajusta `skin = "sakura"`.
 
 ### Blau
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/blue_light.webp", toggled_src="blog/customise-tabi/skins/blue_dark.webp", default_alt="skin blau en mode clar", toggled_alt="skin blau en mode fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/blue_light.webp" toggled_src="blog/customise-tabi/skins/blue_dark.webp" default_alt="skin blau en mode clar" toggled_alt="skin blau en mode fosc" full_width={true} />}}
 
 Per activar aquesta aparença, estableix `skin = "blue"`.
 
@@ -106,7 +106,7 @@ Per activar aquesta aparença, estableix `skin = "blue"`.
 
 *Indigo* pel blau (en el tema clar) i *lingot* pel daurat (en el tema fosc).
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/indigo_ingot_light.webp", toggled_src="blog/customise-tabi/skins/indigo_ingot_dark.webp", default_alt="skin lingot indigo en mode clar", toggled_alt="skin lingot indigo en mode fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/indigo_ingot_light.webp" toggled_src="blog/customise-tabi/skins/indigo_ingot_dark.webp" default_alt="skin lingot indigo en mode clar" toggled_alt="skin lingot indigo en mode fosc" full_width={true} />}}
 
 Per activar aquest tema, utilitza `skin = "indigo_ingot"`.
 
@@ -116,13 +116,13 @@ Per activar aquest tema, utilitza `skin = "indigo_ingot"`.
 
 Inspirat pels colors de la Unitat Evangelion-01 (en el tema fosc) i la Unitat-02 (en el tema clar).
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/evangelion_light.webp", toggled_src="blog/customise-tabi/skins/evangelion_dark.webp", default_alt="skin evangelion en mode clar", toggled_alt="skin evangelion en mode fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/evangelion_light.webp" toggled_src="blog/customise-tabi/skins/evangelion_dark.webp" default_alt="skin evangelion en mode clar" toggled_alt="skin evangelion en mode fosc" full_width={true} />}}
 
 <hr>
 
 ### Monocromàtic
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/monochrome_light.webp", toggled_src="blog/customise-tabi/skins/monochrome_dark.webp", default_alt="skin monocromàtic en mode clar", toggled_alt="skin monocromàtic en mode fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/monochrome_light.webp" toggled_src="blog/customise-tabi/skins/monochrome_dark.webp" default_alt="skin monocromàtic en mode clar" toggled_alt="skin monocromàtic en mode fosc" full_width={true} />}}
 
 Per aconseguir aquesta aparença, estableix `skin = "monochrome"`.
 
@@ -132,7 +132,7 @@ Per aconseguir aquesta aparença, estableix `skin = "monochrome"`.
 
 **AVÍS!** Aquesta skin en mode clar pot tenir [baix contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html), afectant l'accessibilitat i la qualificació Lighthouse. (El mode fosc té bon contrast.)
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lowcontrast_orange_light.webp", toggled_src="blog/customise-tabi/skins/lowcontrast_orange_dark.webp", default_alt="skin taronja de baix contrast en mode clar", toggled_alt="skin taronja de baix contrast en mode fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lowcontrast_orange_light.webp" toggled_src="blog/customise-tabi/skins/lowcontrast_orange_dark.webp" default_alt="skin taronja de baix contrast en mode clar" toggled_alt="skin taronja de baix contrast en mode fosc" full_width={true} />}}
 
 Per utilitzar-la, estableix `skin = "lowcontrast_orange"`.
 
@@ -142,7 +142,7 @@ Per utilitzar-la, estableix `skin = "lowcontrast_orange"`.
 
 **AVÍS!** Aquesta skin en mode clar pot tenir [baix contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html), afectant l'accessibilitat i la qualificació Lighthouse. (El mode fosc té bon contrast.)
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lowcontrast_peach_light.webp", toggled_src="blog/customise-tabi/skins/lowcontrast_peach_dark.webp", default_alt="skin préssec de baix contrast en mode clar", toggled_alt="skin préssec de baix contrast en mode fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lowcontrast_peach_light.webp" toggled_src="blog/customise-tabi/skins/lowcontrast_peach_dark.webp" default_alt="skin préssec de baix contrast en mode clar" toggled_alt="skin préssec de baix contrast en mode fosc" full_width={true} />}}
 
 Especifica `skin = "lowcontrast_peach"` per utilitzar aquesta skin.
 
@@ -152,7 +152,7 @@ Especifica `skin = "lowcontrast_peach"` per utilitzar aquesta skin.
 
 **AVÍS!** Aquesta skin en mode clar pot tenir [baix contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html), afectant l'accessibilitat i la qualificació Lighthouse. (El mode fosc té bon contrast.)
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lowcontrast_pink_light.webp", toggled_src="blog/customise-tabi/skins/lowcontrast_pink_dark.webp", default_alt="skin rosa de baix contrast en tema clar", toggled_alt="skin rosa de baix contrast en tema fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lowcontrast_pink_light.webp" toggled_src="blog/customise-tabi/skins/lowcontrast_pink_dark.webp" default_alt="skin rosa de baix contrast en tema clar" toggled_alt="skin rosa de baix contrast en tema fosc" full_width={true} />}}
 
 Per utilitzar aquests colors, assigna `skin = "lowcontrast_pink"`.
 

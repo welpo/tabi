@@ -1,7 +1,7 @@
 +++
 title = "Lost in Translation? Explora les capacitats multilingües de tabi"
 date = 2023-09-12
-updated = 2026-01-03
+updated = 2026-09-13
 description = "Descobreix com tabi t'ajuda a connectar amb una audiència global gràcies a les seves funcions multilingües. Aprèn a canviar la llengua per defecte, afegir més llengües i aportar les teves pròpies traduccions."
 
 [taxonomies]
@@ -114,12 +114,12 @@ Pots establir formats de data específics per idioma al teu `config.toml` utilit
 
 ```toml
 date_formats = [
-    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y", archive = "%d de %b" },
-    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y", archive = "%d. %b" },
+    { lang = "es", long = "d 'de' MMMM 'de' y", short = "d MMM y" },
+    { lang = "de", long = "d. MMMM y", short = "dd.MM.y", archive = "dd. MMM" },
 ]
 ```
 
-Això permet que cada idioma mostri les dates segons les convencions locals. Per exemple, l'espanyol mostrarà «3 de febrero de 2024» mentre que l'alemany mostrarà «3. Februar 2024». Si no es defineix un format específic per a un idioma, tabi utilitzarà la configuració global `long_date_format`, `short_date_format` i `archive_date_format`.
+Aquests són [patrons UTS-35](https://unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table), i els noms textuals dels mesos i dels dies de la setmana segueixen la configuració regional de l'idioma. Això permet que cada idioma utilitzi l'ordre, la puntuació i el nivell de detall que prefereixi. Si no es defineix un format específic per a un idioma, tabi utilitza la configuració global `long_date_format`, `short_date_format` i `archive_date_format`.
 
 ## Què passa si falta una traducció o està incompleta?
 

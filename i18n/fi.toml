@@ -91,7 +91,7 @@ translation_missing = "tai sitä ei ole vielä käännetty kielellesi"
 check_url = "Tarkista URL-osoitteesta mahdolliset virheet tai"
 go_home = "palaa etusivulle"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "Näytä alkuperäinen lainaus"
 show_translation = "Näytä käännös"

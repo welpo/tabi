@@ -1,7 +1,7 @@
 +++
 title = "Domina la configuració de tabi: guia completa"
 date = 2023-09-18
-updated = 2026-01-31
+updated = 2026-09-13
 description = "Descobreix les múltiples maneres en què pots personalitzar tabi."
 
 [taxonomies]
@@ -64,22 +64,6 @@ include_content = true
 
 **Nota**: per suport de cerca en Xinès/Japonès, necessites utilitzar una [build personalitzada de Zola](https://github.com/getzola/zola/blob/master/Cargo.toml#L54-L55). Addicionalment, actualment no hi ha suport per a la cerca en català.
 
-### Consideracions per a usuaris de Zola 0.17.X
-
-Zola 0.17.X no proporciona accés a la variable `search.index_format` ([informe del bug](https://github.com/getzola/zola/issues/2165)). En utilitzar tabi, s'assumeix l'ús de l'índex JSON, que és més eficient. No obstant això, a causa d'[un altre bug](https://github.com/getzola/zola/issues/2193) solucionat en 0.18.0, l'índex JSON per a llocs multilingües no es genera correctament.
-
-Els usuaris amb versions de Zola anteriors a 0.18.0 que vulguin utilitzar l'índex JavaScript necessiten establir la variable `index_format` a dos llocs:
-
-```toml
-[search]
-index_format = "elasticlunr_javascript"
-
-[extra]
-index_format = "elasticlunr_javascript"
-```
-
-Això assegura que tabi carregui els arxius correctes. Recomanem actualitzar a Zola 0.18.0 o posterior per a una funcionalitat òptima.
-
 ### Detalls d'implementació
 
 Per a detalls tècnics sobre la implementació de la cerca, incloent quan es carrega l'índex, característiques d'accessibilitat i altres detalls, consulta el [Pull Request #250](https://github.com/welpo/tabi/pull/250).
@@ -98,7 +82,7 @@ tabi ofereix suport multilingüe complet per al teu lloc Zola, des de configurar
 
 La [pàgina principal](/) d'aquesta demo té una capçalera amb una imatge, un títol i una descripció:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/header_light.webp", dark_src="blog/mastering-tabi-settings/img/header_dark.webp", alt="Capçalera de la pàgina principal") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/header_light.webp" dark_src="blog/mastering-tabi-settings/img/header_dark.webp" alt="Capçalera de la pàgina principal" />}}
 
 #### Capçalera
 
@@ -128,7 +112,7 @@ paginate_by = 5  # Mostra 5 publicacions per pàgina.
 header = {title = "Hola! Soc tabi~", img = "img/main.webp", img_alt = "El teu nom" }
 ```
 
-{{ admonition(type="note", text="La configuració `paginate_by` va al front matter principal, no a la secció `[extra]`.") }}
+{{< admonition type="note" text="La configuració `paginate_by` va al front matter principal, no a la secció `[extra]`." />}}
 
 **Opció B: Servir publicacions des d'un subdirectori (per exemple, `/blog`)**
 
@@ -145,7 +129,7 @@ section_path = "blog/_index.md"  # On trobar les teves publicacions.
 max_posts = 5  # Mostra fins a 5 publicacions a la pàgina principal.
 ```
 
-{{ admonition(type="warning", title="ALERTA", text="No configuris `paginate_by` i `section_path` alhora. Aquestes configuracions són mútuament excloents i usar ambdues pot fer que no es mostrin publicacions.") }}
+{{< admonition type="warning" title="ALERTA" text="No configuris `paginate_by` i `section_path` alhora. Aquestes configuracions són mútuament excloents i usar ambdues pot fer que no es mostrin publicacions." />}}
 
 Notes addicionals:
 
@@ -156,7 +140,7 @@ Notes addicionals:
 
 Pots fixar entrades per mantenir-les a la part superior de la pàgina principal. En aquesta demo, aquesta entrada està fixada, així que apareix primera amb una icona i etiqueta de "fixada":
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/pinned_post_light.webp", dark_src="blog/mastering-tabi-settings/img/pinned_post_dark.webp", alt="Entrada fixada", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/pinned_post_light.webp" dark_src="blog/mastering-tabi-settings/img/pinned_post_dark.webp" alt="Entrada fixada" full_width={true} />}}
 
 Les entrades fixades es mostren primer, mantenint el seu ordre relatiu segons el `sort_by` de la secció, seguides per les entrades regulars.
 
@@ -167,9 +151,9 @@ Per fixar una entrada, afegeix el següent al seu front matter:
 pinned = true
 ```
 
-{{ admonition(type="info", text="Aquesta configuració només afecta les pàgines principals del lloc (com `/`, `/es/`, `/fr/`). Altres seccions com `blog/`, `tags/` o `archive/` mostren les publicacions en el seu ordre habitual.") }}
+{{< admonition type="info" text="Aquesta configuració només afecta les pàgines principals del lloc (com `/`, `/es/`, `/fr/`). Altres seccions com `blog/`, `tags/` o `archive/` mostren les publicacions en el seu ordre habitual." />}}
 
-{{ admonition(type="warning", text='Quan s'utilitza la paginació (`paginate_by`), les entrades fixades poden aparèixer dues vegades: una vegada a la part superior de la primera pàgina, i una altra en la seva posició cronològica normal en pàgines posteriors.') }}
+{{< admonition type="warning" text="Quan s'utilitza la paginació (`paginate_by`), les entrades fixades poden aparèixer dues vegades: una vegada a la part superior de la primera pàgina, i una altra en la seva posició cronològica normal en pàgines posteriors." />}}
 
 ##### Mostrar la data dels articles al llistat
 Per defecte, quan es llisten els articles, es mostra la data de creació. Pots configurar quina(es) data(es) mostrar utilitzant l'opció `post_listing_date`. Configuracions disponibles:
@@ -178,9 +162,9 @@ Per defecte, quan es llisten els articles, es mostra la data de creació. Pots c
 - `updated`: Mostra només la data de l'última actualització de l'article. Si no hi ha data d'actualització, es mostra la data de publicació original.
 - `both`: Mostra tant la data de publicació original com la data de l'última actualització.
 
-{% admonition(type="tip") %}
+{% <admonition type="tip"> %}
 Aquesta configuració segueix la jerarquia: pots establir un valor global a `config.toml` o canviar-lo per a seccions específiques al seu arxiu `_index.md`. En ambdós casos, afegeix-lo a la secció `[extra]`.
-{% end %}
+{% </admonition> %}
 
 #### Llistat de Projectes
 
@@ -221,7 +205,7 @@ El mode predeterminat es pot especificar amb la variable `default_theme`, que ac
 
 Les skins («pells») de tabi canvien el color principal del lloc web. Pots configurar la skin a `config.toml` amb `skin = "nom_de_la_skin`. Per exemple, `skin = "lavender"` es veu així (clica per canviar entre mode clar i fosc):
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="pell lavender en mode clar", toggled_alt="pell lavender en mode fosc", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lavender_light.webp" toggled_src="blog/customise-tabi/skins/lavender_dark.webp" default_alt="pell lavender en mode clar" toggled_alt="pell lavender en mode fosc" full_width={true} />}}
 
 Explora les skins disponibles i aprèn com crear la teva pròpia consultant [la documentació](@/blog/customise-tabi/index.ca.md#skins).
 
@@ -235,15 +219,13 @@ tabi utilitza una font serif per als paràgrafs dels articles (la que estàs vei
 
 Fes clic a la imatge a continuació per comparar les fonts:
 
-{{ image_toggler(default_src="blog/mastering-tabi-settings/img/serif.webp", toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp", default_alt="Font serif", toggled_alt="Font sans-serif", full_width=true) }}
+{{< image_toggler default_src="blog/mastering-tabi-settings/img/serif.webp" toggled_src="blog/mastering-tabi-settings/img/sans-serif.webp" default_alt="Font serif" toggled_alt="Font sans-serif" full_width={true} />}}
 
 ### Indicador d'enllaços externs
 
 | Pàgina | Secció | `config.toml` | Segueix Jerarquia | Requereix JavaScript |
 |:------:|:------:|:-------------:|:-----------------:|:-------------------:|
 |   ❌   |   ❌   |      ✅       |         ❌        |         ❌          |
-
-{{ admonition(type="info", text="Requereix Zola 0.20.0 o posterior.") }}
 
 Si vols afegir una icona als enllaços externs, configura la secció `[markdown]` (no `[extra]`) al teu `config.toml`:
 
@@ -254,7 +236,7 @@ external_links_class = "external"
 
 Això afegirà una petita icona al costat dels enllaços externs:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/external_link_light.webp", dark_src="blog/mastering-tabi-settings/img/external_link_dark.webp", alt="Icona d'enllaç extern", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/external_link_light.webp" dark_src="blog/mastering-tabi-settings/img/external_link_dark.webp" alt="Icona d'enllaç extern" full_width={true} />}}
 
 ### Estils CSS personalitzats
 
@@ -276,7 +258,7 @@ stylesheets = ["css/custom.css", "css/another.css"]
 
 El color del tema del navegador és el color que apareix a la barra de pestanyes del navegador:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/browser_theme_color_light.webp", dark_src="blog/mastering-tabi-settings/img/browser_theme_color_dark.webp" alt="pestanyes amb un tema de navegador de color") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/browser_theme_color_light.webp" dark_src="blog/mastering-tabi-settings/img/browser_theme_color_dark.webp" alt="pestanyes amb un tema de navegador de color" />}}
 
 Pots establir-ho a `config.toml` com a `browser_theme_color = "#087e96"`. Si vols diferents colors per als modes clar/obscur, pots establir un conjunt de colors amb `browser_theme_color = ["#ffffff", "#000000"]`. El primer color és per al mode clar, el segon per al fosc.
 
@@ -319,7 +301,7 @@ Per a una explicació detallada, consulta la [documentació de sèries](@/blog/s
 
 Per defecte, apareix automàticament un enllaç "Salta a les publicacions" al costat del títol de la sèrie quan una sèrie té un contingut de més de 2000 caràcters:
 
-{{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="enllaç per saltar a les publicacions de la sèrie", full_width=true) }}
+{{< dual_theme_image light_src="blog/series/img/jump_to_series_posts_light.webp" dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="enllaç per saltar a les publicacions de la sèrie" full_width={true} />}}
 
 Estableix `show_jump_to_posts = true` per forçar l'activació de la funció i `show_jump_to_posts = false` per desactivar-la.
 
@@ -357,15 +339,15 @@ Això habilita dues funcions:
 
 1. `show_remote_source = true` afegeix un enllaç al codi font del teu lloc web (el teu `remote_repository_url`) que es mostrarà al peu de pàgina:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/site_source_light.webp", dark_src="blog/mastering-tabi-settings/img/site_source_dark.webp" alt="Peu de pàgina del lloc web, mostrant un enllaç 'Codi font del lloc'") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/site_source_light.webp" dark_src="blog/mastering-tabi-settings/img/site_source_dark.webp" alt="Peu de pàgina del lloc web, mostrant un enllaç 'Codi font del lloc'" />}}
 
 2. `show_remote_changes = true` afegeix un enllaç "Veure canvis ↗" a l'historial de commits de l'article actualitzat, al costat de la data de l'última actualització [^1]:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/see_changes_light.webp", dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Títol de l'article i metadades, mostrant un enllaç 'Veure canvis'") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/see_changes_light.webp" dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Títol de l'article i metadades, mostrant un enllaç 'Veure canvis'" />}}
 
 En clicar aquest enllaç, seràs dirigit a l'historial de commits de l'article, on podràs veure els canvis realitzats en ell:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/commit_history_light.webp", dark_src="blog/mastering-tabi-settings/img/commit_history_dark.webp" alt="Historial de commits d'un article", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/commit_history_light.webp" dark_src="blog/mastering-tabi-settings/img/commit_history_dark.webp" alt="Historial de commits d'un article" full_width={true} />}}
 
 ---
 
@@ -422,7 +404,7 @@ La pàgina del projecte individual es renderitza amb la plantilla predeterminada
 
 Si afegeixes etiquetes als teus projectes, veuràs un filtre d'etiquetes:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/projects_tag_filter_light.webp", dark_src="blog/mastering-tabi-settings/img/projects_tag_filter_dark.webp", alt="Pàgina de projectes amb filtre d'etiquetes", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/projects_tag_filter_light.webp" dark_src="blog/mastering-tabi-settings/img/projects_tag_filter_dark.webp" alt="Pàgina de projectes amb filtre d'etiquetes" full_width={true} />}}
 
 El sistema de filtratge d'etiquetes utilitza millora progressiva:
 
@@ -431,7 +413,7 @@ El sistema de filtratge d'etiquetes utilitza millora progressiva:
 
 Per desactivar aquesta funció, estableix `enable_cards_tag_filtering = false` a la secció `[extra]` del fitxer `projects/_index.md` o a `config.toml`.
 
-{% admonition(type="tip") %}
+{% <admonition type="tip"> %}
 
 Per filtrar projectes per etiquetes, necessites establir etiquetes a la front matter de cada projecte. Per exemple:
 
@@ -443,7 +425,7 @@ weight = 40
 tags = ["etiqueta", "etiqueta 2", "tercera etiqueta"]
 ```
 
-{% end %}
+{% </admonition> %}
 
 ### Arxiu
 
@@ -472,7 +454,7 @@ L'arxiu mostra les publicacions en ordre cronològic invers (les més recents pr
 archive_reverse = true  # mostra les publicacions més antigues primer
 ```
 
-{{ admonition(type="note", title="nota" text="La pàgina d'arxiu només llistarà publicacions que tinguin data al seu encapçalament.") }}
+{{< admonition type="note" title="nota" text="La pàgina d'arxiu només llistarà publicacions que tinguin data al seu encapçalament." />}}
 
 ### Etiquetes
 
@@ -580,7 +562,7 @@ Per exemple, si configures `base_canonical_url = "https://example.com"`, l'URL c
 
 Les targetes per a xarxes socials són les imatges que es mostren quan comparteixes un enllaç a les xarxes socials:
 
-{{ dimmable_image(src="img/with_social_media_card.webp", alt="Una captura de pantalla de WhatsApp mostrant un enllaç amb una targeta per a xarxes socials") }}
+{{< dimmable_image src="img/with_social_media_card.webp" alt="Una captura de pantalla de WhatsApp mostrant un enllaç amb una targeta per a xarxes socials" />}}
 
 Pots establir la imatge per a xarxes socials amb `social_media_card = "img/social_media_card.png"`.
 
@@ -594,7 +576,7 @@ Si ambdues rutes, relativa i absoluta, són vàlides, la ruta relativa tindrà p
 
 Ja que segueix la [jerarquia](#jerarquia-de-configuracio), si no està configurat en una pàgina, però sí ho està en una secció, s'utilitzarà la imatge de la secció. Si no està configurat en una pàgina o secció, però sí en `config.toml`, s'utilitzarà la imatge global.
 
-{{ admonition(type="tip", title="CONSELL", text="Automatitza la seva creació amb un [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [Automatitzant les vistes prèvies dels enllaços amb Zola](https://osc.garden/ca/blog/automating-social-media-cards-zola/).") }}
+{{< admonition type="tip" title="CONSELL" text="Automatitza la seva creació amb un [script](https://github.com/welpo/osc.garden/blob/main/static/code/social-cards-zola): [Automatitzant les vistes prèvies dels enllaços amb Zola](https://osc.garden/ca/blog/automating-social-media-cards-zola/)." />}}
 
 ### Creador del fedivers
 
@@ -641,7 +623,7 @@ menu = [
 
 Els botons de navegació ràpida són els botons que apareixen a la part inferior dreta de la pantalla. Hauries de veure'ls en aquesta pàgina, si no estàs en un dispositiu mòbil. Es veuen així:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_light.webp", dark_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_dark.webp", alt="Botons de navegació ràpida") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_light.webp" dark_src="blog/mastering-tabi-settings/img/quick_navigation_buttons_dark.webp" alt="Botons de navegació ràpida" />}}
 
 Per activar-los, estableix `quick_navigation_buttons = true`.
 
@@ -663,7 +645,7 @@ Per saber més sobre com personalitzar-ho, consulta [la documentació sobre la T
 
 Mostra enllaços als articles anterior i següent a la part inferior dels posts. Es veu així:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp", dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp", alt="Enllaços als articles anterior i següent", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_light.webp" dark_src="blog/mastering-tabi-settings/img/show_previous_next_article_links_dark.webp" alt="Enllaços als articles anterior i següent" full_width={true} />}}
 
 Per activar aquesta funció, estableix `show_previous_next_article_links = true` i assegura't que la secció té un valor `sort_by` (per exemple `sort_by = "date"`).
 
@@ -673,22 +655,6 @@ Per invertir l'ordre (articles següents al costat dret i articles anteriors al 
 Per defecte, aquesta secció de navegació tindrà l'amplada completa del lloc (igual que la barra de navegació de la part superior). Per fer-la més estreta, coincidint amb l'amplada de l'article, configura `previous_next_article_links_full_width = false`.
 
 Totes aquestes configuracions segueixen la jerarquia.
-
-### Enllaços de retorn a les notes a peu de pàgina
-
-{{ admonition(type="warning", title="ADVERTÈNCIA DE DEPRECACIÓ", text="Zola v0.19.0 i posterior pot fer això de forma nativa. Estableix `bottom_footnotes = true` a la secció `[markdown]` de la teva configuració.") }}
-
-| Pàgina | Secció | `config.toml` | Segueix la jerarquia | Requereix JavaScript |
-|:------:|:------:|:-------------:|:------------------:|:--------------------:|
-|   ✅   |   ✅   |      ✅       |        ✅          |          ✅          |
-
-Establir `footnote_backlinks = true` afegirà enllaços de retorn a les notes a peu de pàgina de les teves publicacions, com aquest:
-
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/footnote_backlinks_light.webp", dark_src="blog/mastering-tabi-settings/img/footnote_backlinks_dark.webp", alt="Enllaços de retorn a les notes a peu de pàgina", full_width=true) }}
-
-Quan facis clic en un enllaç de retorn (la fletxa ↩), et portarà de tornada al punt del text on es va fer referència a la nota a peu de pàgina.
-
----
 
 ## Usabilitat
 
@@ -700,7 +666,7 @@ Quan facis clic en un enllaç de retorn (la fletxa ↩), et portarà de tornada 
 
 Establir `copy_button = true` afegirà un petit botó de copiar a la part superior dreta dels blocs de codi, com aquest:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp", dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp", alt="Botó de copiar en blocs de codi", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp" dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp" alt="Botó de copiar en blocs de codi" full_width={true} />}}
 
 ### Nom del bloc de codi clicable
 
@@ -879,7 +845,7 @@ Per utilitzar una icona personalitzada, pots afegir-la al directori `static/soci
 { name = "custom", url = "https://example.com", icon = "custom" }
 ```
 
-{{ admonition(type="note", title="NOTA", text="Tots els enllaços a xarxes socials inclouen l'[atribut](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/me) `rel='me'`. Això ajuda els motors de cerca i serveis web a verificar que les comptes de xarxes socials et pertanyen.") }}
+{{< admonition type="note" title="NOTA" text="Tots els enllaços a xarxes socials inclouen l'[atribut](https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/me) `rel='me'`. Això ajuda els motors de cerca i serveis web a verificar que les comptes de xarxes socials et pertanyen." />}}
 
 ### Icona de feed
 
@@ -890,8 +856,6 @@ Per utilitzar una icona personalitzada, pots afegir-la al directori `static/soci
 Pots afegir un enllaç al teu feed RSS/Atom al peu de pàgina amb `feed_icon = true`.
 
 Per utilitzar una icona personalitzada, estableix `feed_icon` amb el nom de la icona (per exemple, `feed_icon = "square-rss"`). La icona ha d'existir a `static/social_icons/` (sense l'extensió `.svg`).
-
-Nota pels usuaris de Zola 0.19.X: quan hi ha dos noms de fitxer a `feed_filenames`, només s'enllaçarà el primer al peu de pàgina.
 
 #### Menú de peu de pàgina
 
@@ -929,7 +893,7 @@ copyright = "© $CURRENT_YEAR Your Name $SEPARATOR Unless otherwise noted, the c
 
 El text es processarà en Markdown. Per exemple, la configuració d'adalt:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/copyright_light.webp", dark_src="blog/mastering-tabi-settings/img/copyright_dark.webp" alt="Secció de drets d'autor", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/copyright_light.webp" dark_src="blog/mastering-tabi-settings/img/copyright_dark.webp" alt="Secció de drets d'autor" full_width={true} />}}
 
 Si tens un lloc multilingüe i vols establir diferents notificacions de drets d'autor per a diferents idiomes, afegeix la traducció corresponent a `copyright_translations.{codi_d'idioma}` per a cada idioma que vulguis donar suport. El codi de llengua ha de coincidir amb el [codi de llengua de tabi](https://welpo.github.io/tabi/ca/blog/faq-languages/#que-son-aquests-codis-de-dues-lletres). Per exemple, pel castellà:
 
@@ -959,7 +923,7 @@ Això mostrarà els autors establerts a la variable `authors = []` al front matt
 
 Pots activar o desactivar el temps estimat de lectura d'un article amb `show_reading_time`. Si el configures com a `true`, apareixerà a les metadades de l'article, com això:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/see_changes_light.webp", dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Títol de l'article i metadades, mostrant un enllaç «Veure canvis»") }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/see_changes_light.webp" dark_src="blog/mastering-tabi-settings/img/see_changes_dark.webp" alt="Títol de l'article i metadades, mostrant un enllaç «Veure canvis»" />}}
 
 Com que segueix [la jerarquia](#jerarquia-de-configuracio), pots activar-lo o desactivar-lo per a pàgines o seccions específiques. Per exemple, aquesta demo desactiva `show_reading_time = false` a la secció [projectes](https://welpo.github.io/tabi/ca/projects/) a l'arxiu [`_index.md`](https://github.com/welpo/tabi/blob/main/content/projects/_index.es.md?plain=1), de manera que les seves publicacions individuals no mostren el temps de lectura.
 
@@ -977,11 +941,11 @@ Per defecte, la data es mostra sota el títol de la publicació. Pots amagar-la 
 |:------:|:-------:|:-------------:|:---------------------:|:-------------------:|
 |   ❌   |   ❌    |      ✅       |          ❌           |         ❌          |
 
-tabi té tres formats de data: `long_date_format`, `short_date_format` i `archive_data_format`. El format curt s'utilitza a les metadades d'una publicació, mentre que el format llarg s'utilitza al llistar les publicacions (és a dir, a la [secció de blog](/ca/blog/) o a la [pàgina principal](/ca/)). El format d'arxiu s'utilitza per mostrar el dia i el mes a la pàgina d'arxiu.
+tabi té tres formats de data: `long_date_format`, `short_date_format` i `archive_date_format`. El format curt s'utilitza a les metadades d'una publicació, mentre que el format llarg s'utilitza al llistar les publicacions (és a dir, a la [secció de blog](/ca/blog/) o a la [pàgina principal](/ca/)). El format d'arxiu s'utilitza per mostrar el dia i el mes a la pàgina d'arxiu.
 
-Per defecte és "6th July 2049" per als formats curt i llarg en anglès. Per a altres idiomes, el predeterminat és `"%d %B %Y"` per al format llarg i `"%-d %b %Y"` per al format curt. El format d'arxiu predeterminat universal és `"%d %b"`.
+En anglès, els valors predeterminats són "6th July 2049" per al format llarg i "6th Jul 2049" per al format curt. Per a altres idiomes, el predeterminat és `"dd MMMM y"` per al format llarg i `"d MMM y"` per al format curt. El format d'arxiu predeterminat universal és `"dd MMM"`.
 
-A Zola, la sintaxi per al format de temps està inspirada en strftime. Una referència completa està disponible a la [documentació de chrono](https://docs.rs/chrono/0.4.31/chrono/format/strftime/index.html).
+Els formats de data utilitzen [patrons UTS-35](https://unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table). Per exemple, `d`, `dd`, `MMM`, `MMMM` i `y` produeixen un dia numèric, un dia amb zero inicial, un mes abreujat, un mes complet i l'any. Envolta el text literal amb apòstrofs, com a `d 'de' MMMM 'de' y`. Els noms textuals dels mesos i dels dies de la setmana segueixen la configuració regional de l'idioma actual.
 
 #### Formats de data per idioma
 
@@ -989,12 +953,12 @@ Pots personalitzar els formats de data per idiomes específics utilitzant la mat
 
 ```toml
 date_formats = [
-    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y", archive = "%d de %b" },
-    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y", archive = "%d. %b" },
+    { lang = "es", long = "d 'de' MMMM 'de' y", short = "d MMM y" },
+    { lang = "de", long = "d. MMMM y", short = "dd.MM.y", archive = "dd. MMM" },
 ]
 ```
 
-Això permet que diferents idiomes utilitzin formats de data culturalment apropiats (per exemple, "6. Juli 2049" per a alemany VS "6 de julio de 2049" per a espanyol).
+Això permet que cada idioma triï l'ordre, la puntuació i el nivell de detall.
 
 ### Separador personalitzat
 
@@ -1018,7 +982,6 @@ Configurant `invert_title_order = true`, pots invertir l'ordre del títol del ll
 
 ---
 
-Certainly, here is a high-quality, non-literal translation of the provided text into Catalan. I've adhered to your specifications, keeping the variables and English terms unchanged.
 
 ## Seguretat
 
@@ -1085,7 +1048,7 @@ domain = "www.example.com"
 
 La secció de webmentions es veu així:
 
-{{ dual_theme_image(light_src="blog/mastering-tabi-settings/img/webmention_light.webp", dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Captura de pantalla de webmentions mostrant republications, m'agrada, marcadors i comentaris", full_width=true) }}
+{{< dual_theme_image light_src="blog/mastering-tabi-settings/img/webmention_light.webp" dark_src="blog/mastering-tabi-settings/img/webmention_dark.webp" alt="Captura de pantalla de webmentions mostrant republications, m'agrada, marcadors i comentaris" full_width={true} />}}
 
 ### h-card representativa
 

@@ -12,14 +12,14 @@
 {%- endif -%}
 {%- set is_root_section = current_path == expected_root -%}
 
-{%- set show_projects_first = section.extra.show_projects_first | default(value=false) -%}
+{%- set show_projects_first = section?.extra?.show_projects_first | default(value=false) -%}
 {%- if show_projects_first -%}
     {%- set first_section = "projects" -%}
 {%- else -%}
     {%- set first_section = "posts" -%}
 {%- endif -%}
 
-{%- if section.extra.section_path or paginator and projects_path -%}
+{%- if section?.extra?.section_path or paginator and projects_path -%}
     {%- set more_than_one_section_shown = true -%}
 {%- endif -%}
 
@@ -27,7 +27,7 @@
 {%- if config.extra.hcard %}
     {%- include "partials/hcard.html" -%}
 {% endif -%}
-{%- if section.extra.header %}
+{%- if section?.extra?.header %}
     {%- include "partials/home_banner.html" -%}
 {%- elif section.content -%}
 <section>
@@ -35,12 +35,12 @@
 </section>
 {% endif -%}
 
-{% if section.extra.section_path -%}
-    {% set extra_section = get_section(path=section.extra.section_path) %}
+{% if section?.extra?.section_path -%}
+    {% set extra_section = get_section(path=section?.extra?.section_path) %}
 {% endif -%}
 
-{% if section.extra.section_path -%}
-    {% set path = section.extra.section_path | replace(from="/_index.md", to = "") %}
+{% if section?.extra?.section_path -%}
+    {% set path = section?.extra?.section_path | replace(from="/_index.md", to = "") %}
 {% else -%}
     {% set path = section.path %}
 {% endif -%}

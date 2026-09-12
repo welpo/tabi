@@ -87,7 +87,7 @@ translation_missing = "或尚未被翻譯成繁體中文"
 check_url = "請檢查網址是否有誤或"
 go_home = "返回首頁"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "顯示原文"
 show_translation = "顯示翻譯"

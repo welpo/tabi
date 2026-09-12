@@ -1,7 +1,7 @@
 +++
 title = "Taula de contingut"
 date = 2022-11-01
-updated = 2026-07-26
+updated = 2026-09-12
 description = "Una publicació que mostra la taula de contingut opcional i la seva configuració."
 
 [taxonomies]
@@ -29,7 +29,7 @@ Si prefereixes col·locar la TdC a un altre lloc (per exemple, després d'una in
 <!-- toc -->
 ```
 
-També pots utilitzar el shortcode `{{/* toc() */}}`, que simplement inserirà aquest text per tu ([idea de Michael Clayton](https://github.com/getzola/zola/issues/584#issuecomment-1546086781)).
+També pots utilitzar el componente `{% raw %}{{< toc />}}{% endraw %}`, que simplement inserirà aquest text per tu ([idea de Michael Clayton](https://github.com/getzola/zola/issues/584#issuecomment-1546086781)).
 
 Aquest mètode renderitzarà la TdC sense el capçalera "Taula de Contingut". Això et permet utilitzar un capçalera diferent (o cap) per la TdC, o fins i tot ocultar-la de forma predeterminada:
 

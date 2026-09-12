@@ -2,10 +2,10 @@
 
 {% block main_content %}
 
-{{ macros_page_header::page_header(title=section.title) }}
+{{< page_header title={section.title} />}}
 
 {# Set locale for date #}
-{% set date_locale = macros_translate::translate(key="date_locale", default="en_GB", language_strings=language_strings) %}
+{% set date_locale = language_strings["date_locale"] | default(value="en_GB") %}
 
 {#- Check for language-specific date formats -#}
 {%- set language_format = "" -%}
@@ -21,24 +21,21 @@
 
 <div class="archive">
     <ul class="list-with-title">
-        {%- set source_paths = section.extra.section_path | default(value="blog/") -%}
-        {%- if source_paths is iterable -%}
+        {%- set source_paths = section?.extra?.section_path | default(value="blog/") -%}
+        {%- if source_paths is array -%}
             {%- set paths = source_paths -%}
         {%- else -%}
             {%- set paths = [source_paths] -%}
         {%- endif %}
         {%- set all_posts = [] -%}
         {%- for path in paths -%}
-            {%- if lang == config.default_language %}
-                {%- set section_item = get_section(path=path ~ "_index.md") -%}
-            {%- else %}
-                {%- set section_item = get_section(path=path ~ "_index." ~ lang ~ ".md") -%}
-            {%- endif %}
-            {%- set_global all_posts = all_posts | concat(with=section_item.pages) -%}
+            {#- Resolve the canonical section path in the active language. -#}
+            {%- set section_item = get_section(path=path ~ "_index.md", lang=lang) -%}
+            {%- set_global all_posts = [...all_posts, ...section_item.pages] -%}
         {%- endfor %}
 
         {# Sort all posts by date #}
-        {%- set archive_reverse = section.extra.archive_reverse | default(value=false) -%}
+        {%- set archive_reverse = section?.extra?.archive_reverse | default(value=false) -%}
         {%- set all_posts = all_posts | sort(attribute="date") -%}
         {%- if not archive_reverse -%}
             {%- set all_posts = all_posts | reverse -%}
@@ -48,7 +45,7 @@
         {% set posts_by_year = all_posts | group_by(attribute="year") %}
         {% set years = [] %}
         {% for year, ignored in posts_by_year %}
-            {% set_global years = years | concat(with=[year]) %}
+            {% set_global years = [...years, year] %}
         {% endfor %}
 
         {# Iterate over years #}
@@ -72,7 +69,7 @@
                                 {%- elif config.extra.archive_date_format -%}
                                     {{ post.date | date(format=config.extra.archive_date_format, locale=date_locale) }}
                                 {%- else -%}
-                                    {{ post.date | date(format="%d %b", locale=date_locale) }}
+                                    {{ post.date | date(format="dd MMM", locale=date_locale) }}
                                 {%- endif -%}
                             </span>
                         </div>

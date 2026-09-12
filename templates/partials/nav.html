@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar">
         <div class="nav-title">
-            <a class="home-title" href="{{ get_url(path='/', lang=lang, trailing_slash=(lang == config.default_language)) }}">{{ config.title }}</a>
+            <a class="home-title" href="{{ get_url(path='/', lang=lang, trailing_slash=true) }}">{{ config.title }}</a>
         </div>
 
         {%- if config.extra.menu %}
@@ -11,7 +11,7 @@
                         {% for menu in config.extra.menu %}
                             <li>
                                 {% set trailing_slash = menu.trailing_slash | default(value=true) %}
-                                {%- if menu.url is starting_with("http") -%}
+                                {%- if menu.url is starting_with(pat="http") -%}
                                     {%- if trailing_slash -%}
                                         <a class="nav-links no-hover-padding" href="{{ menu.url }}/">
                                     {%- else -%}
@@ -20,7 +20,7 @@
                                 {%- else -%}
                                     <a class="nav-links no-hover-padding" href="{{ get_url(path=menu.url, lang=lang, trailing_slash=trailing_slash) }}">
                                 {%- endif -%}
-                                {{ macros_translate::translate(key=menu.name, default=menu.name, language_strings=language_strings) }}
+                                {{< translate key={menu.name} default={menu.name} />}}
                                 </a>
                             </li>
                         {% endfor %}
@@ -31,7 +31,7 @@
                         <ul class="menu-icons-group">
                             {# Search #}
                             {%- if config.build_search_index %}
-                            {%- set search_icon_title = macros_translate::translate(key='search_icon_title', default='Press $SHORTCUT to open search', language_strings=language_strings) -%}
+                            {%- set search_icon_title = language_strings["search_icon_title"] | default(value="Press $SHORTCUT to open search") -%}
                             <li class="js menu-icon">
                                 <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="{{ search_icon_title }}" aria-label="{{ search_icon_title }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">

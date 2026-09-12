@@ -1,0 +1,16 @@
+{#- The localised "page not found" message shown once per configured language on the 404 page. -#}
+{% component display_404_message(language_name: string, @config: map) %}
+    {%- set language_strings = load_data(path="i18n/" ~ language_name ~ '.toml', required=false) -%}
+    {%- if not language_strings -%}
+        {%- set language_strings = load_data(path="themes/tabi/i18n/" ~ language_name ~ '.toml', required=false) -%}
+    {%- endif -%}
+    {%- if not language_strings -%}{%- set language_strings = {} -%}{%- endif -%}
+    <p>{{< translate key="page_missing" default="The page you've requested seems to be missing" lang={language_name} />}}
+    {%- if config.languages | length > 0 -%}
+        &nbsp;{{< translate key="translation_missing" default="or hasn't been translated into your language yet" lang={language_name} />}}{{< translate key="full_stop" default="." lang={language_name} />}}
+    {%- else %}.
+    {%- endif %}<br>
+    {{< translate key="check_url" default="Check the URL for errors or" lang={language_name} />}}
+    <a href="{{ config.base_url }}{% if language_name != config.default_language %}/{{ language_name }}{% endif %}/">
+    {{< translate key="go_home" default="go back to the homepage" lang={language_name} />}}</a>{{< translate key="full_stop" default="." lang={language_name} />}}</p>
+{% endcomponent display_404_message %}

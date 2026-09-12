@@ -1,13 +1,13 @@
 {%- set separator = config.extra.separator | default(value="•") -%}
 
-{%- set rel_attributes = macros_rel_attributes::rel_attributes() | trim -%}
+{%- set rel_attributes %}{{< rel_attributes />}}{% endset %}{% set rel_attributes = rel_attributes | trim | trim -%}
 
-{%- set blank_target = macros_target_attribute::target_attribute(new_tab=config.markdown.external_links_target_blank) -%}
+{%- set blank_target %}{{< target_attribute new_tab={config.markdown.external_links_target_blank} />}}{% endset %}{% set blank_target = blank_target | trim -%}
 
 {#- Feed icon -#}
-{%- set feed_url = feed_utils::get_feed_url() -%}
-{%- set feed_icon_name = feed_utils::get_feed_icon_name() -%}
-{%- set should_show_feed = feed_utils::should_show_footer_feed_icon() == "true" -%}
+{%- set feed_url = config.feed_filenames[0] -%}
+{%- set feed_icon_name %}{{< feed_icon_name />}}{% endset %}{% set feed_icon_name = feed_icon_name | trim -%}
+{%- set should_show_feed = config.generate_feeds and config.extra.feed_icon and feed_url -%}
 
 {%- set should_show_footer_icons = should_show_feed or config.extra.socials or config.extra.email -%}
 
@@ -26,7 +26,7 @@
 
                     {# Mail icon #}
                     {%- if config.extra.email -%}
-                        {%- set email_already_encoded = (config.extra.email is not containing("@")) -%}
+                        {%- set email_already_encoded = (config.extra.email is not containing(pat="@")) -%}
                         {%- set email_needs_decoding = email_already_encoded or config.extra.encode_plaintext_email -%}
 
                         {%- if email_already_encoded -%}
@@ -75,7 +75,7 @@
 
                             {%- if menu.url == "sitemap.xml" -%}
                                 {%- set url = get_url(path=menu.url, trailing_slash=trailing_slash) -%}
-                            {%- elif menu.url is starting_with("http") -%}
+                            {%- elif menu.url is starting_with(pat="http") -%}
                                 {%- if menu.trailing_slash -%}
                                     {%- set url = menu.url ~ "/" -%}
                                 {%- else -%}
@@ -86,7 +86,7 @@
                             {%- endif -%}
 
                             <a class="nav-links no-hover-padding" href="{{ url }}">
-                                {{ macros_translate::translate(key=menu.name, default=menu.name, language_strings=language_strings) }}
+                                {{< translate key={menu.name} default={menu.name} />}}
                             </a>
                         </li>
                     {% endfor %}
@@ -100,16 +100,16 @@
                 {% include "partials/copyright.html" %}
 
                 {# Shows "Powered by Zola & tabi" notice #}
-                {{ macros_translate::translate(key="powered_by", default="Powered by", language_strings=language_strings) }}
+                {{< translate key="powered_by" default="Powered by" />}}
                 <a rel="{{ rel_attributes }}" {{ blank_target }} href="https://www.getzola.org">Zola</a>
-                {{ macros_translate::translate(key="and", default="&", language_strings=language_strings) }}
+                {{< translate key="and" default="&" />}}
                 <a rel="{{ rel_attributes }}" {{ blank_target }} href="https://github.com/welpo/tabi">tabi</a>
 
                 {# Shows link to remote repository #}
                 {%- if config.extra.remote_repository_url and config.extra.show_remote_source | default(value=true) -%}
                 {{ separator }}
                     <a rel="{{ rel_attributes }}" {{ blank_target }} href="{{ config.extra.remote_repository_url }}">
-                        {{ macros_translate::translate(key="site_source", default="Site source", language_strings=language_strings) }}
+                        {{< translate key="site_source" default="Site source" />}}
                     </a>
                 {%- endif -%}
             </small>

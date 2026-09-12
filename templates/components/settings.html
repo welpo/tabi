@@ -1,0 +1,83 @@
+{#
+Evaluates the priority of a setting across different scopes.
+
+The priority is as follows: page > section > config.
+
+Parameters:
+    - setting: The name of the setting to evaluate.
+    - page: The page object containing settings.
+    - default_global_value: The setting's default value.
+#}
+
+{% component evaluate_setting_priority(setting: string, @page = {}, @config: map, @lang: string, @section = {}, default_global_value = "") %}
+
+{%- if section -%}
+    {%- set current_section = section -%}
+{%- elif page -%}
+    {%- set current_section = "" -%}
+    {#- Retrieve last ancestor to determine current section, if applicable -#}
+    {#- Page and section lookups use canonical paths plus `lang`; `load_data` checks the
+        language-specific source filename. -#}
+    {%- if page.ancestors | length > 0 -%}
+        {%- set last_ancestor = page.ancestors | last -%}
+        {%- set canonical_ancestor = last_ancestor | replace(from="." ~ lang ~ ".md", to=".md") -%}
+        {%- set_global current_section = get_section(path=canonical_ancestor, lang=lang, metadata_only=true, allow_missing=true) -%}
+    {%- else -%}
+        {#- We're likely in a nested page. Try to find the parent page or nearest section. -#}
+        {%- set path_components = page.components -%}
+        {%- for i in range(start=1, end=path_components | length) -%}
+            {%- if lang == config.default_language -%}
+                {%- set potential_path = path_components[:path_components | length - i] | join(sep="/") -%}
+                {%- set page_file = potential_path ~ "/index.md" -%}
+                {%- set section_file = potential_path ~ "/_index.md" -%}
+            {%- else -%}
+                {%- set potential_path = path_components[1:path_components | length - i] | join(sep="/") -%}
+                {%- set page_file = potential_path ~ "/index." ~ lang ~ ".md" -%}
+                {%- set section_file = potential_path ~ "/_index." ~ lang ~ ".md" -%}
+            {%- endif -%}
+            {%- set canonical_page = potential_path ~ "/index.md" -%}
+            {%- set canonical_section = potential_path ~ "/_index.md" -%}
+            {#- Check for parent page first. -#}
+            {%- set page_data = load_data(path=page_file, required=false) -%}
+            {%- if page_data -%}
+                {%- set_global current_section = get_page(path=canonical_page, lang=lang, allow_missing=true) -%}
+                {%- break -%}
+            {%- endif -%}
+            {#- No parent page, check for section. -#}
+            {%- set section_data = load_data(path=section_file, required=false) -%}
+            {%- if section_data -%}
+                {%- set_global current_section = get_section(path=canonical_section, lang=lang, metadata_only=true, allow_missing=true) -%}
+                {%- break -%}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+{%- endif -%}
+
+{#- Check each optional scope before indexing into it. -#}
+{%- set page_value = "" -%}
+{%- if page and page.extra is defined -%}
+    {%- set page_value = page.extra[setting] | default(value="") -%}
+{%- endif -%}
+{%- set section_value = "" -%}
+{%- if current_section is defined and current_section and current_section.extra is defined -%}
+    {%- set section_value = current_section.extra[setting] | default(value="") -%}
+{%- endif -%}
+
+{%- set priority_order = [
+    page_value,
+    section_value,
+    config.extra[setting] | default(value="")
+] -%}
+
+{%- set output = default_global_value -%}
+
+{%- for value in priority_order -%}
+    {%- if value != "" -%}
+        {%- set_global output = value -%}
+        {%- break -%}
+    {%- endif -%}
+{%- endfor -%}
+
+{{- output -}}
+
+{% endcomponent evaluate_setting_priority %}

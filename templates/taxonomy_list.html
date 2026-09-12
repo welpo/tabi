@@ -2,9 +2,9 @@
 
 {% block main_content %}
 
-{%- set title = macros_translate::translate(key=taxonomy.name, default=taxonomy.name, language_strings=language_strings) -%}
+{%- set title = language_strings[taxonomy.name] | default(value=taxonomy.name) -%}
 
-{{ macros_page_header::page_header(title=title)}}
+{{< page_header title={title} />}}
 
 {% set tag_count = terms | length %}
 {% if config.extra.tag_sorting == "frequency" %}
@@ -22,7 +22,7 @@
                     <a href="{{ term.permalink | safe }}"
                        aria-label="{{ term.name }} –
                         {{ term.pages | length }}
-                        {{- macros_translate::translate(key="posts", number=number_of_posts, default="$NUMBER posts", language_strings=language_strings) -}}
+                        {{< translate key="posts" number={number_of_posts | str} default="$NUMBER posts" />}}
                     ">
                         {{ term.name }}
                     </a> <sup>{{ number_of_posts }}</sup>
@@ -30,7 +30,7 @@
                     <a href="{{ term.permalink | safe }}">
                         {{ term.name }} </a>
                     <span> – </span>
-                    {{- macros_translate::translate(key="posts", number=number_of_posts, default="$NUMBER posts", language_strings=language_strings) -}}
+                    {{< translate key="posts" number={number_of_posts | str} default="$NUMBER posts" />}}
                 {% endif %}
             </li>
         {%- endfor -%}

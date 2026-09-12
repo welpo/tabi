@@ -2,12 +2,12 @@
 title = "Política de privacitat"
 path = "/ca/privacy"
 date = 2023-10-31
-updated = 2024-05-12
+updated = 2026-09-12
 +++
 
 Aquesta política de privacitat detalla com recollim i processem les teves dades en aquest lloc web.
 
-{{ toc() }}
+{{< toc />}}
 
 ## Quines dades recollim?
 

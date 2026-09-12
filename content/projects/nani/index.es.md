@@ -46,7 +46,7 @@ https://example.com/nani/Directorio.zip
 ```
 
 Puedes configurar varias opciones a través de los parámetros. Aquí tienes la salida de `nani` --help:
-{% wide_container() %}
+{% <wide_container> %}
 
 ```
 Usage: nani [options] <infile>
@@ -81,4 +81,4 @@ Settings and options:
     -y, --symbolic   Create a symbolic link for files and directories
 ```
 
-{% end %}
+{% </wide_container> %}
