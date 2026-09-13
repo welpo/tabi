@@ -2,7 +2,7 @@
 {% if not config.title %}
 {{ throw(message="ERROR: No `title` set in `config.toml`. tabi requires a title to function.") }}
 {% endif %}
-{%- set prefix = config.title | safe -%}
+{%- set prefix = config.title -%}
 {%- set custom_separator = config.extra.separator | default(value="•") -%}
 {%- set separator = " " ~ custom_separator ~ " " -%}
 
@@ -27,7 +27,7 @@
     {%- set suffix = term.name -%}
 {% elif taxonomy.name %}
     {#- List of tags -#}
-    {%- set suffix = macros_translate::translate(key=taxonomy.name, language_strings=language_strings) | capitalize -%}
+    {%- set suffix = language_strings[taxonomy.name] | default(value=taxonomy.name) | capitalize -%}
 {% else %}
     {%- set suffix = "404" %}
 {%- endif -%}

@@ -87,7 +87,7 @@ translation_missing = "କିମ୍ବା ଆପଣଙ୍କର ଭାଷାକ�
 check_url = "ତୃଟିଗୁଡ଼ିକ ପାଇଁ URL କୁ ଦେଖନ୍ତୁ କିମ୍ବା"
 go_home = "ମୂଳ ପୃଷ୍ଠାକୁ ଫେରିଯାଆନ୍ତୁ"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "ମୂଳ ଉଦ୍ଧୃତ ଦେଖାନ୍ତୁ"
 show_translation = "ଅନୁବାଦ ଦେଖାନ୍ତୁ"

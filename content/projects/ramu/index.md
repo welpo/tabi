@@ -15,9 +15,9 @@ iine_icon = '🐏'
 
 <ruby>ラ<rt>ra</rt>ム<rt>mu</rt></ruby> is a Progressive Web App to practice reading and listening to Japanese numbers. The name reflects its purpose: achieving RAM (Random Access Memory) to numbers, as opposed to sequential memory (1, 2, 3…).
 
-{% wide_container() %}
+{% <wide_container> %}
 <video controls src="media/ラム_demo.mp4" title="ramu demo"></video>
-{% end %}
+{% </wide_container> %}
 
 #### [Try it now](https://ramu.osc.garden) • [GitHub](https://github.com/welpo/ramu) • [Blog post](https://osc.garden/blog/ramu-japanese-numbers-practice-web-app/) {.centered-text}
 

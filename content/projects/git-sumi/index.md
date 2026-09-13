@@ -14,9 +14,9 @@ canonical_url = "https://osc.garden/projects/git-sumi/"
 
 **git-sumi** is the non-opinionated commit message linter written in Rust.
 
-{% wide_container() %}
+{% <wide_container> %}
 <video controls src="https://cdn.jsdelivr.net/gh/welpo/git-sumi@main/assets/git-sumi_demo.mp4" title="git-sumi demo"></video>
-{% end %}
+{% </wide_container> %}
 
 #### [GitHub](https://github.com/welpo/git-sumi) • [Website](https://sumi.rs/) • [Documentation](https://sumi.rs/docs/) {.centered-text}
 

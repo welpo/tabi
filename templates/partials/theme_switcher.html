@@ -1,8 +1,8 @@
 <li class="theme-switcher-wrapper js">
     {#- Create the localised strings for the title and aria-label attributes -#}
-    {%- set toggle_str = macros_translate::translate(key='toggle_mode', default='Toggle $MODE mode', language_strings=language_strings) -%}
-    {%- set dark_str = macros_translate::translate(key='dark', default='dark', language_strings=language_strings) -%}
-    {%- set light_str = macros_translate::translate(key='light', default='light', language_strings=language_strings) -%}
+    {%- set toggle_str = language_strings["toggle_mode"] | default(value="Toggle $MODE mode") -%}
+    {%- set dark_str = language_strings["dark"] | default(value="dark") -%}
+    {%- set light_str = language_strings["light"] | default(value="light") -%}
 
     {%- set combined_mode_str = dark_str ~ "/" ~ light_str -%}
     {%- set title_label = toggle_str | replace(from="$MODE", to=combined_mode_str) -%}
@@ -17,7 +17,7 @@
         aria-pressed="false">
     </div>
 
-    {%- set reset_str = macros_translate::translate(key='reset_mode', default='Reset mode to default', language_strings=language_strings) -%}
+    {%- set reset_str = language_strings["reset_mode"] | default(value="Reset mode to default") -%}
 
     <div
         title="{{ reset_str }}"

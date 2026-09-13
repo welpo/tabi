@@ -15,9 +15,9 @@ iine_icon = '🐏'
 
 <ruby>ラ<rt>ra</rt>ム<rt>mu</rt></ruby> es una aplicación web progresiva para practicar la lectura y comprensión auditiva de números en japonés. El nombre refleja su propósito: lograr acceso aleatorio (RAM; memoria de acceso aleatorio) a los números, en contraposición a una memoria secuencial (1, 2, 3…).
 
-{% wide_container() %}
+{% <wide_container> %}
 <video controls src="media/ラム_demo.mp4" title="demo de ramu"></video>
-{% end %}
+{% </wide_container> %}
 
 #### [Pruébala ahora](https://ramu.osc.garden) • [GitHub](https://github.com/welpo/ramu) • [Artículo](https://osc.garden/es/blog/ramu-japanese-numbers-practice-web-app/) {.centered-text}
 

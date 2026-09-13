@@ -87,7 +87,7 @@ translation_missing = "of het is nog niet in jouw taal vertaald"
 check_url = "Controleer de URL op fouten of"
 go_home = "ga terug naar de startpagina"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "Toon origineel citaat"
 show_translation = "Vertaling tonen"

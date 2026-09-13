@@ -1,0 +1,14 @@
+{% component spoiler(text: string, fixed_blur = false) %}
+{# The `random_id` ensures that each instance has a "unique" id #}
+{# allowing individual interactive elements (like toggles) to function correctly. #}
+{# This avoids conflicts when multiple instances are used. #}
+{# More context: https://github.com/welpo/tabi/issues/82 #}
+{%- set random_id = get_random(start=0, end=100000) -%}
+
+<label class="spoiler-container{% if fixed_blur %} fixed-blur{% endif %}">
+    <input type="checkbox" id="spoiler-{{random_id}}" class="spoiler-toggle" role="button" aria-pressed="false" />
+    <span class="spoiler-content" title="reveal spoiler" tabindex="0">
+        <span class="spoiler-hidden">{{ text | markdown(inline=true) | safe }}</span>
+    </span>
+</label>
+{% endcomponent spoiler %}

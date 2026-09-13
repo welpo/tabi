@@ -1,7 +1,7 @@
 +++
 title = "Guía completa sobre series"
 date = 2024-11-08
-updated = 2025-02-21
+updated = 2026-09-13
 description = "Aprende a organizar tus publicaciones en series secuenciales, perfectas para tutoriales, cursos e historias de varias partes."
 
 [taxonomies]
@@ -20,7 +20,7 @@ Las publicaciones dentro de una serie no necesitan publicarse de forma consecuti
 
 El siguiente diagrama ilustra cómo las publicaciones de la serie (3, 5 y 8) existen dentro del flujo principal del blog mientras mantienen su propia secuencia ordenada dentro de Serie 1.
 
-{% mermaid(full_width=true) %}
+{% <mermaid full_width={true}> %}
 flowchart
     subgraph main[BLOG]
         P1[Post 1]
@@ -41,7 +41,7 @@ flowchart
     P3 o-.-o PS1
     P5 o-.-o PS2
     P8 o-.-o PS3
-{% end %}
+{% </mermaid> %}
 
 ## Inicio rápido
 
@@ -104,13 +104,13 @@ Para crear una serie, necesitas:
 
 La página principal de la serie muestra un resumen seguido de una lista de todas las publicaciones en la serie:
 
-{{ dual_theme_image(light_src="blog/series/img/series_light.webp", dark_src="blog/series/img/series_dark.webp" alt="una serie", full_width=true) }}
+{{< dual_theme_image light_src="blog/series/img/series_light.webp" dark_src="blog/series/img/series_dark.webp" alt="una serie" full_width={true} />}}
 
 ## Saltar a las publicaciones
 
 Si el contenido de una serie (el Markdown después del frontmatter en `_index.md`) supera los 2000 caracteres, aparece un enlace "Saltar a publicaciones" junto al título de la serie.
 
-{{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="enlace para saltar a las publicaciones de la serie", full_width=true) }}
+{{< dual_theme_image light_src="blog/series/img/jump_to_series_posts_light.webp" dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="enlace para saltar a las publicaciones de la serie" full_width={true} />}}
 
 Para forzar la activación o desactivación de esta función, configura `show_jump_to_posts` en la sección `[extra]` de tu sección de series o en `config.toml`. Esta configuración sigue [la jerarquía](@/blog/mastering-tabi-settings/index.es.md#jerarquia-de-configuracion).
 
@@ -124,7 +124,7 @@ Aunque las series mantienen su propio orden interno, permanecen independientes d
 
 Elige entre estos métodos de orden, cada uno con sus ventajas:
 
-{% wide_container() %}
+{% <wide_container> %}
 
 `sort_by` | ventajas                                                                                                                                      | desventajas
 ---------|-------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -132,9 +132,7 @@ Elige entre estos métodos de orden, cada uno con sus ventajas:
 `weight`  | El orden de las páginas es fácil de configurar de forma transparente.<br>La primera publicación tiene peso `1`, la segunda peso `2` y así sucesivamente. | Cada página de la serie debe tener su peso configurado.
 `date`    | El orden de las páginas se puede configurar una sola vez en la configuración de la sección. No hay que hacer nada en cada página.            | El orden de las páginas debe invertirse porque la primera página suele ser la más antigua. Esto solo se puede lograr paginando la sección (`paginate_by = 9999`) e invirtiendo su orden (`paginate_reversed = true`).
 
-{% end %}
-
-{{ admonition(type="danger", title="Versión de Zola para ordenar por fecha", text="Para invertir correctamente las fechas, se requiere Zola v0.19.3+ (no publicada) para que la información de paginación esté disponible a través de la función `get_section`. De lo contrario, cualquier cosa que dependa del orden de las páginas de la serie no será correcta (por ejemplo, página anterior/siguiente, listas ordenadas y no ordenadas...) Ver [Zola PR #2653](https://github.com/getzola/zola/pull/2653).") }}
+{% </wide_container> %}
 
 ### Indexación de páginas
 
@@ -145,7 +143,7 @@ Las páginas en una serie se indexan empezando desde 1, siguiendo su orden `sort
 post_listing_index_reversed = true  # Por defecto es false si no se configura
 ```
 
-{{ dual_theme_image(light_src="blog/series/img/series_reversed_light.webp", dark_src="blog/series/img/series_reversed_dark.webp" alt="una serie con índices invertidos", full_width=true) }}
+{{< dual_theme_image light_src="blog/series/img/series_reversed_light.webp" dark_src="blog/series/img/series_reversed_dark.webp" alt="una serie con índices invertidos" full_width={true} />}}
 
 Esta configuración sigue [la jerarquía](@/blog/mastering-tabi-settings/index.es.md#jerarquia-de-configuracion).
 
@@ -234,7 +232,7 @@ Hay tres tipos de variables:
 
 ### Variables básicas de serie
 
-{% wide_container() %}
+{% <wide_container> %}
 
 | Variable | Disponibilidad | Devuelve | Descripción | Ejemplo de uso | Ejemplo de salida |
 |----------|---------------|-----------|-------------|----------------|-------------------|
@@ -246,13 +244,13 @@ Hay tres tipos de variables:
 | `$SERIES_PAGES_OLIST` | Siempre | HTML | Lista ordenada de todos los artículos | `Artículos en la serie: $SERIES_PAGES_OLIST` | Artículos en la serie: <ol><li>Artículo actual</li><li><a href="...">Otros artículos</a></li></ol> |
 | `$SERIES_PAGES_ULIST` | Siempre | HTML | Lista desordenada de todos los artículos | `Artículos en la serie: $SERIES_PAGES_ULIST` | Artículos en la serie: <ul><li>Artículo actual</li><li><a href="...">Otros artículos</a></li></ul> |
 
-{% end %}
+{% </wide_container> %}
 
-{{ admonition(type="tip", title="CONSEJO: Texto personalizado con permalinks", text='Los enlaces markdown como `[texto]($SERIES_PERMALINK)` serán marcados (y [estilizados](@/blog/mastering-tabi-settings/index.es.md#indicador-enlaces-externos)) como externos. Si necesitas texto personalizado y quieres evitar el estilo externo, usa HTML: `<a href=\"$SERIES_PERMALINK\">tu texto</a>`.') }}
+{{< admonition type="tip" title="CONSEJO: Texto personalizado con permalinks" text="Los enlaces markdown como `[texto]($SERIES_PERMALINK)` serán marcados (y [estilizados](@/blog/mastering-tabi-settings/index.es.md#indicador-enlaces-externos)) como externos. Si necesitas texto personalizado y quieres evitar el estilo externo, usa HTML: `<a href=\"$SERIES_PERMALINK\">tu texto</a>`." />}}
 
 ### Variables de navegación
 
-{% wide_container() %}
+{% <wide_container> %}
 
 | Variable | Disponibilidad | Devuelve | Descripción | Ejemplo de uso | Ejemplo de salida |
 |----------|---------------|-----------|-------------|----------------|-------------------|
@@ -265,22 +263,22 @@ Hay tres tipos de variables:
 | `$NEXT_HTML_LINK` | Existe siguiente | HTML | Enlace listo para usar al siguiente | `Continúa con $NEXT_HTML_LINK` | Continúa con <a href="/series/learn-rust/patterns">Patrones avanzados</a> |
 | `$NEXT_DESCRIPTION` | Existe siguiente | Texto | Descripción del siguiente artículo | `Próximamente: $NEXT_DESCRIPTION` | Próximamente: Aprende sobre las características avanzadas de pattern matching en Rust |
 
-{% end %}
+{% </wide_container> %}
 
 ### Referencia al primer artículo
 
-{% wide_container() %}
+{% <wide_container> %}
 
 | Variable | Disponibilidad | Devuelve | Descripción | Ejemplo de uso | Ejemplo de salida |
 |----------|---------------|-----------|-------------|----------------|-------------------|
 | `$FIRST_TITLE` | Siempre | Texto | Título del primer artículo | `Comienza con $FIRST_TITLE` | Comienza con Introducción a Rust |
 | `$FIRST_HTML_LINK` | Siempre | HTML | Enlace listo para usar al primer artículo | `Empieza en $FIRST_HTML_LINK` | Empieza en <a href="/series/learn-rust/intro">Introducción a Rust</a> |
 
-{% end %}
+{% </wide_container> %}
 
 ### Ejemplo de plantilla
 
-{{ admonition(type="tip", title="Variables HTML vs texto", text="Usa variables HTML (que terminan en `_HTML_LINK`) cuando quieras enlaces listos para usar. Usa variables de texto (que terminan en `_TITLE` o `_PERMALINK`) cuando quieras más control sobre el formato.") }}
+{{< admonition type="tip" title="Variables HTML vs texto" text="Usa variables HTML (que terminan en `_HTML_LINK`) cuando quieras enlaces listos para usar. Usa variables de texto (que terminan en `_TITLE` o `_PERMALINK`) cuando quieras más control sobre el formato." />}}
 
 ```toml,name=series/_index.md
 # Introducción.
@@ -374,7 +372,7 @@ Nivel de dificultad: $DIFFICULTY
 """
 ```
 
-{{ admonition(type="warning", text="Aunque los marcadores se definen en mayúsculas (`$POSITION`), los nombres de variables en `series_template_variables` deben estar en minúsculas (`position`).") }}
+{{< admonition type="warning" text="Aunque los marcadores se definen en mayúsculas (`$POSITION`), los nombres de variables en `series_template_variables` deben estar en minúsculas (`position`)." />}}
 
 ### Ejemplo con variables personalizadas
 
@@ -406,4 +404,4 @@ Esto generará:
 🔑 Conceptos clave: Funciones, manejo de errores, coincidencia de patrones
 ```
 
-{{ admonition(type="warning", title="Variables faltantes", text="Si usas un marcador en tus plantillas pero no proporcionas su valor en `series_template_variables`, la compilación fallará con un error que lista las variables faltantes.") }}
+{{< admonition type="warning" title="Variables faltantes" text="Si usas un marcador en tus plantillas pero no proporcionas su valor en `series_template_variables`, la compilación fallará con un error que lista las variables faltantes." />}}

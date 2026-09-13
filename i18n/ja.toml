@@ -62,9 +62,9 @@ draft = "ドラフト"
 zero_min_read = "1分未満の読了時間"
 one_min_read = "$NUMBER 分の読了時間"
 many_min_read = "$NUMBER 分の読了時間"
-zero_words = "単語数ゼロ"
-one_words = "$NUMBER 単語"
-many_words = "$NUMBER 単語"
+zero_words = "文字数ゼロ"
+one_words = "$NUMBER 文字"
+many_words = "$NUMBER 文字"
 last_updated_on = "$DATE に更新"
 see_changes = "変更を見る"
 
@@ -91,7 +91,7 @@ translation_missing = "または、まだあなたの言語に翻訳されてい
 check_url = "URLが正しいか確認してください、または"
 go_home = "ホームページに戻る"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "オリジナルの引用を見る"
 show_translation = "翻訳を見る"

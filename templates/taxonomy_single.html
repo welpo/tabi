@@ -3,19 +3,19 @@
 {% block main_content %}
 
 {#- Feed icon -#}
-{%- set generate_feed = feed_utils::get_generate_feed() == "true" -%}
-{%- set feed_url = feed_utils::get_feed_url() -%}
+{%- set generate_feed = config.generate_feeds -%}
+{%- set feed_url = config.feed_filenames[0] -%}
 {%- set feed_pre_conditions = generate_feed and feed_url and taxonomy.feed -%}
-{%- set show_feed_icon = feed_pre_conditions and term.pages | filter(attribute="date") | length > 0 -%}
+{%- set show_feed_icon = feed_pre_conditions and [page for page in term.pages if page.date] | length > 0 -%}
 
-{{ macros_page_header::page_header(title=term.name, show_feed_icon=show_feed_icon) }}
+{{< page_header title={term.name} show_feed_icon={show_feed_icon} />}}
 
-{% set max = section.extra.max_posts | default(value=999999) %}
-{{ macros_list_posts::list_posts(posts=term.pages, max=max, language_strings=language_strings) }}
+{% set max = section?.extra?.max_posts | default(value=999999) %}
+{{< list_posts posts={term.pages} max={max} />}}
 
 <ul class="pagination">
     <li class="page-item">
-        <a class="all-tags" href="{{ get_url(path=taxonomy.name, lang=lang) }}/"><span class="arrow">←</span>&nbsp;{{- macros_translate::translate(key=taxonomy.name, default=taxonomy.name, language_strings=language_strings) -}}</a>
+        <a class="all-tags" href="{{ get_url(path=taxonomy.name, lang=lang) }}/"><span class="arrow">←</span>&nbsp;{{< translate key={taxonomy.name} default={taxonomy.name} />}}</a>
     </li>
 </ul>
 

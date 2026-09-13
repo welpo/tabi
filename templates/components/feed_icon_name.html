@@ -1,0 +1,7 @@
+{%- component feed_icon_name(@config: map) -%}
+    {%- if config.extra.feed_icon is string -%}
+        {{- config.extra.feed_icon -}}
+    {%- elif config.extra.feed_icon -%}
+        {{- "rss" -}}
+    {%- endif -%}
+{%- endcomponent feed_icon_name -%}

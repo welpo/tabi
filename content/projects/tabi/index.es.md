@@ -15,7 +15,7 @@ iine_icon = '🌱'
 
 [**tabi**](https://github.com/welpo/tabi) es un tema moderno y rico en funcionalidad para [Zola](https://www.getzola.org/), un generador de sitios web estáticos muy rápido.
 
-{{ full_width_image(src="https://cdn.jsdelivr.net/gh/welpo/tabi@main/light_dark_screenshot.png", alt="Modos claro y oscuro de tabi") }}
+{{< full_width_image src="https://cdn.jsdelivr.net/gh/welpo/tabi@main/light_dark_screenshot.png" alt="Modos claro y oscuro de tabi" />}}
 
 #### [Ver en GitHub](https://github.com/welpo/tabi) • [Demo y documentación](https://welpo.github.io/tabi/es/) {.centered-text}
 
@@ -30,7 +30,6 @@ iine_icon = '🌱'
 - Soporte para [Indieweb](https://indieweb.org/) con microformatos, soporte para [hcard](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#h-card-representativa) y [webmentions](https://welpo.github.io/tabi/blog/mastering-tabi-settings/#webmentions).
 - Botones de «me gusta» de [iine](https://iine.to/) para mostrar aprecio anónimo por tu contenido.
 - Soporte para [diagramas de Mermaid](https://welpo.github.io/tabi/es/blog/shortcodes/#diagramas-de-mermaid) para crear diagramas y gráficos con texto.
-- Resaltado de sintaxis de código con colores basados en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - Soporte para [comentarios usando giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/es/blog/comments/).
 - Todo el JavaScript se puede [deshabilitar completamente](https://welpo.github.io/tabi/es/blog/javascript/).
 - [Búsqueda local](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#busqueda) con una interfaz accesible y multilingüe.
@@ -45,7 +44,7 @@ iine_icon = '🌱'
 - [URL canónicas personalizables](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#url-canonica).
 - [Botones de navegación rápida](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#botones-de-navegacion-rapida).
 - [Tarjetas para redes sociales](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#tarjetas-para-redes-sociales).
-- [Shortcodes personalizados](https://welpo.github.io/tabi/es/blog/shortcodes/).
+- [Componentes personalizados](https://welpo.github.io/tabi/es/blog/shortcodes/).
 - [Skins personalizables](https://welpo.github.io/tabi/es/blog/customise-tabi/).
 - [Publicaciones fijadas](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#fijar-publicaciones).
 - [Página de proyectos](https://welpo.github.io/tabi/es/projects/).

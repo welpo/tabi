@@ -91,7 +91,7 @@ translation_missing = "또는 아직 해당 언어로 번역되지 않았습니�
 check_url = "URL을 확인하거나"
 go_home = "홈페이지로 돌아가기"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "원문 인용 보기"
 show_translation = "번역 보기"

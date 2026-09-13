@@ -1,7 +1,7 @@
 +++
 title = "Optimise loading times with a custom font subset"
 date = 2023-04-29
-updated = 2025-01-12
+updated = 2026-09-12
 description = "Learn how to create a custom subset that only includes the necessary glyphs."
 
 [taxonomies]
@@ -21,9 +21,9 @@ To fix this, tabi loads a subset of glyphs for the header. Since this (slightly)
 
 By default, there are subset files for English and Spanish characters (with a few symbols). These files are loaded when the Zola page/site is set to that language.
 
-{% admonition(type="tip") %}
+{% <admonition type="tip"> %}
 If you're using a custom font, either create your custom subset (see below) or disable the built-in subsets completely with `enable_subset = false` in your `config.toml`.
-{% end %}
+{% </admonition> %}
 
 Here's how you can create a custom font subset that only includes the characters used in your header, for maximum efficiency.
 

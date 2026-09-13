@@ -1,7 +1,7 @@
 +++
 title = "A Complete Guide to Series"
 date = 2024-11-08
-updated = 2025-02-21
+updated = 2026-09-13
 description = "Learn how to organize your posts into sequential series, perfect for tutorials, courses, and multi-part stories."
 
 [taxonomies]
@@ -20,7 +20,7 @@ Posts within a series do not need to be published consecutively; the series feat
 
 The diagram below illustrates how series posts (3, 5, and 8) exist within the main blog flow while maintaining their own ordered sequence within Series 1.
 
-{% mermaid(full_width=true) %}
+{% <mermaid full_width={true}> %}
 flowchart
     subgraph main[BLOG]
         P1[Post 1]
@@ -41,7 +41,7 @@ flowchart
     P3 o-.-o PS1
     P5 o-.-o PS2
     P8 o-.-o PS3
-{% end %}
+{% </mermaid> %}
 
 ## Quick Start
 
@@ -104,13 +104,13 @@ To create a series, you need to:
 
 The series main page displays an overview followed by a list of all posts in the series:
 
-{{ dual_theme_image(light_src="blog/series/img/series_light.webp", dark_src="blog/series/img/series_dark.webp" alt="a series", full_width=true) }}
+{{< dual_theme_image light_src="blog/series/img/series_light.webp" dark_src="blog/series/img/series_dark.webp" alt="a series" full_width={true} />}}
 
 ## Jump to Posts
 
 If the content of a series (the Markdown after the front matter in `_index.md`) is over 2000 characters, a "Jump to posts" link appears next to the series title.
 
-{{ dual_theme_image(light_src="blog/series/img/jump_to_series_posts_light.webp", dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="jump to series posts link", full_width=true) }}
+{{< dual_theme_image light_src="blog/series/img/jump_to_series_posts_light.webp" dark_src="blog/series/img/jump_to_series_posts_dark.webp" alt="jump to series posts link" full_width={true} />}}
 
 To force the feature on or off, set `show_jump_to_posts` in the `[extra]` section of your series section or in `config.toml`. This setting follows [the hierarchy](@/blog/mastering-tabi-settings/index.md#settings-hierarchy).
 
@@ -124,7 +124,7 @@ While series maintain their own internal order, they remain independent from the
 
 Choose from these sorting methods, each with its own advantages:
 
-{% wide_container() %}
+{% <wide_container> %}
 
 `sort_by` | pros                                                                                                                                      | cons
 ---------|-------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -132,9 +132,7 @@ Choose from these sorting methods, each with its own advantages:
  `weight`  | The series pages order is easy to set up transparently.<br>First series post has weight `1`, second series post has weight `2` and so on. | Each series page must have its weight set accordingly.
  `date`    | The series pages order can be configured once in the series section configuration. No need to do anything on each series page.            | The series pages order has to be reversed because the first page is usually the oldest. This can only be achieved by paginating the series section (`paginate_by = 9999`) and reversing its order (`paginate_reversed = true`).
 
-{% end %}
-
-{{ admonition(type="danger", title="Zola version to sort by date", text="In order to properly reverse dates, Zola v0.19.3+ (unreleased) is required so that pagination information is available through the `get_section` function. Anything relying on the series pages order won't be correct in a series page otherwise (e.g. previous/next series page, ordered and unordered list…) See [Zola PR #2653](https://github.com/getzola/zola/pull/2653).") }}
+{% </wide_container> %}
 
 ### Page Indexing
 
@@ -145,7 +143,7 @@ Pages in a series are indexed starting from 1, following their `sort_by` order. 
 post_listing_index_reversed = true  # Defaults to false if unset.
 ```
 
-{{ dual_theme_image(light_src="blog/series/img/series_reversed_light.webp", dark_src="blog/series/img/series_reversed_dark.webp" alt="a series with indexes reversed", full_width=true) }}
+{{< dual_theme_image light_src="blog/series/img/series_reversed_light.webp" dark_src="blog/series/img/series_reversed_dark.webp" alt="a series with indexes reversed" full_width={true} />}}
 
 This setting follows [the hierarchy](@/blog/mastering-tabi-settings/index.md#settings-hierarchy).
 
@@ -234,7 +232,7 @@ There are three types of variables:
 
 ### Basic Series Variables
 
-{% wide_container() %}
+{% <wide_container> %}
 
 | Variable | Availability | Returns | Description | Example Usage | Example Output |
 |----------|-------------|---------|-------------|---------------|----------------|
@@ -246,13 +244,13 @@ There are three types of variables:
 | `$SERIES_PAGES_OLIST` | Always | HTML | Ordered list of all articles | `Articles in series: $SERIES_PAGES_OLIST` | Articles in series: <ol><li>Current article</li><li><a href="...">Other articles</a></li></ol> |
 | `$SERIES_PAGES_ULIST` | Always | HTML | Unordered list of all articles | `Articles in series: $SERIES_PAGES_ULIST` | Articles in series: <ul><li>Current article</li><li><a href="...">Other articles</a></li></ul> |
 
-{% end %}
+{% </wide_container> %}
 
-{{ admonition(type="tip", title="TIP: Custom text with permalinks", text='Markdown links like `[text]($SERIES_PERMALINK)` will be marked (and [styled](@/blog/mastering-tabi-settings/index.md#external-link-indicator)) as external. If you need custom text and want to avoid external styling, use HTML: `<a href=\"$SERIES_PERMALINK\">your text</a>`.') }}
+{{< admonition type="tip" title="TIP: Custom text with permalinks" text="Markdown links like `[text]($SERIES_PERMALINK)` will be marked (and [styled](@/blog/mastering-tabi-settings/index.md#external-link-indicator)) as external. If you need custom text and want to avoid external styling, use HTML: `<a href=\"$SERIES_PERMALINK\">your text</a>`." />}}
 
 ### Navigation Variables
 
-{% wide_container() %}
+{% <wide_container> %}
 
 | Variable | Availability | Returns | Description | Example Usage | Example Output |
 |----------|-------------|---------|-------------|---------------|----------------|
@@ -265,22 +263,22 @@ There are three types of variables:
 | `$NEXT_HTML_LINK` | Next exists | HTML | Ready-to-use link to next | `Continue with $NEXT_HTML_LINK` | Continue with <a href="/series/learn-rust/patterns">Advanced Patterns</a> |
 | `$NEXT_DESCRIPTION` | Next exists | Text | Description of next article | `Coming up: $NEXT_DESCRIPTION` | Coming up: Learn about Rust's advanced pattern matching features |
 
-{% end %}
+{% </wide_container> %}
 
 ### First Article Reference
 
-{% wide_container() %}
+{% <wide_container> %}
 
 | Variable | Availability | Returns | Description | Example Usage | Example Output |
 |----------|-------------|---------|-------------|---------------|----------------|
 | `$FIRST_TITLE` | Always | Text | First article's title | `Start with $FIRST_TITLE` | Start with Introduction to Rust |
 | `$FIRST_HTML_LINK` | Always | HTML | Ready-to-use link to first article | `Begin at $FIRST_HTML_LINK` | Begin at <a href="/series/learn-rust/intro">Introduction to Rust</a> |
 
-{% end %}
+{% </wide_container> %}
 
 ### Template Example
 
-{{ admonition(type="tip", title="HTML vs text variables", text="Use HTML variables (ending in `_HTML_LINK`) when you want ready-made links. Use text variables (ending in `_TITLE` or `_PERMALINK`) when you want more control over the formatting.") }}
+{{< admonition type="tip" title="HTML vs text variables" text="Use HTML variables (ending in `_HTML_LINK`) when you want ready-made links. Use text variables (ending in `_TITLE` or `_PERMALINK`) when you want more control over the formatting." />}}
 
 ```toml,name=series/_index.md
 # Introduction.
@@ -374,7 +372,7 @@ Difficulty level: $DIFFICULTY
 """
 ```
 
-{{ admonition(type="warning", text="While placeholders are defined with uppercase (`$POSITION`), the variable names in `series_template_variables` must be lowercase (`position`).") }}
+{{< admonition type="warning" text="While placeholders are defined with uppercase (`$POSITION`), the variable names in `series_template_variables` must be lowercase (`position`)." />}}
 
 ### Example with Custom Variables
 
@@ -406,4 +404,4 @@ This will output:
 🔑 Key concepts: Functions, Error Handling, Pattern Matching
 ```
 
-{{ admonition(type="warning", title="Missing Variables", text="If you use a placeholder in your templates but don't provide its value in `series_template_variables`, the build will fail with an error listing the missing variables.") }}
+{{< admonition type="warning" title="Missing Variables" text="If you use a placeholder in your templates but don't provide its value in `series_template_variables`, the build will fail with an error listing the missing variables." />}}

@@ -17,7 +17,7 @@ La Calculadora de royalties de streaming permite a los músicos estimar sus gana
 Puedes introducir una cantidad objetivo de ganancias para ver cuántas reproducciones se necesitan en cada plataforma, o introducir el número de reproducciones por servicio para calcular las royalties esperadas. Aquí tienes una captura de pantalla:
 
 <a href="https://osc.garden/es/royalties-calculator/" target="_blank">
-   {{ dual_theme_image(light_src="https://cdn.jsdelivr.net/gh/welpo/osc.garden@main/content/blog/data-analysis-music-streaming/img/calculator_light.es.webp", dark_src="https://cdn.jsdelivr.net/gh/welpo/osc.garden@main/content/blog/data-analysis-music-streaming/img/calculator_dark.es.webp" alt="Calculadora de royalties de streaming") }}
+   {{< dual_theme_image light_src="https://cdn.jsdelivr.net/gh/welpo/osc.garden@main/content/blog/data-analysis-music-streaming/img/calculator_light.es.webp" dark_src="https://cdn.jsdelivr.net/gh/welpo/osc.garden@main/content/blog/data-analysis-music-streaming/img/calculator_dark.es.webp" alt="Calculadora de royalties de streaming" />}}
 </a>
 
 #### [¡Pruébala!](https://osc.garden/es/royalties-calculator/) • [Código fuente (JavaScript)](https://github.com/welpo/osc.garden/blob/main/content/pages/royalties-calculator/js/streamsMonthCalculator.js) {.centered-text}

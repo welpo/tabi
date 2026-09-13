@@ -29,7 +29,7 @@
     </script>
 
 {% elif analytics_service == "plausible" %}
-{% if analytics_id is matching("^pa-[^\.]+$") %}
+{% if analytics_id is matching(pat="^pa-[^\\.]+$") %}
     {# Use new script available in Plausible 3.1.0 or later #}
     <script defer src="{{ get_url(path='js/initializePlausible.min.js', trailing_slash=false) | safe }}"></script>
     <script defer src="{% if self_hosted_url %}{{ self_hosted_url ~ '/js/' }}{% else %}https://plausible.io/js/{% endif %}{{ analytics_id }}.js"></script>

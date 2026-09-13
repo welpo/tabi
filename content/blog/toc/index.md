@@ -1,7 +1,7 @@
 +++
 title = "Table of Contents"
 date = 2022-11-01
-updated = 2026-07-26
+updated = 2026-09-12
 description = "A post showcasing the optional Table of Contents and its options."
 
 [taxonomies]
@@ -28,7 +28,7 @@ If you'd rather show the ToC elsewhere on your post (e.g. after an introduction)
 <!-- toc -->
 ```
 
-You can also use the simple `{{/* toc() */}}` shortcode, which will simply write that string for you, effectively inserting the ToC ([Michael Clayton's idea](https://github.com/getzola/zola/issues/584#issuecomment-1546086781)).
+You can also use the simple `{% raw %}{{< toc />}}{% endraw %}` component, which will simply write that string for you, effectively inserting the ToC ([Michael Clayton's idea](https://github.com/getzola/zola/issues/584#issuecomment-1546086781)).
 
 This method will render the ToC without the "Table of Contents" header. This allows you to use a different (or no) header for the ToC, or hide it like this:
 

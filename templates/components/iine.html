@@ -1,0 +1,11 @@
+{% component iine(@page = {}, icon = "", label = "", slug = "") %}
+{%- set button_icon = icon -%}
+{%- if not button_icon -%}{%- set button_icon = "heart" -%}{%- endif -%}
+{%- set final_label = label -%}
+{%- if not final_label -%}{%- set final_label = "Like this post" -%}{%- endif -%}
+{%- set final_slug = slug -%}
+{%- if not final_slug and page -%}
+    {%- set final_slug = page.path -%}
+{%- endif -%}
+{{< iine_button button_icon={button_icon} label={final_label} slug={final_slug} />}}
+{% endcomponent iine %}

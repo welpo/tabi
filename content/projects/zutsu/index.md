@@ -12,9 +12,9 @@ canonical_url = "https://osc.garden/projects/zutsu/"
 social_media_card = "social_cards/projects_zutsu.jpg"
 +++
 
-{% wide_container() %}
+{% <wide_container> %}
 <video controls src="https://cdn.jsdelivr.net/gh/welpo/zutsu/assets/ずつ_demo.mov" title="zutsu demo"></video>
-{% end %}
+{% </wide_container> %}
 
 #### [Try it now](https://zutsu.osc.garden) • [GitHub](https://github.com/welpo/zutsu) • [Blog post](https://osc.garden/blog/zutsu-offline-task-planner-web-app/) {.centered-text}
 

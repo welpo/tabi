@@ -37,7 +37,7 @@ bottom_footnotes = true
 smart_punctuation = true
 # Set to 'external' to add an indicator next to external links.
 external_links_class = "external"
-# Render GitHub-style alerts, e.g. `> [!NOTE]`. Requires Zola 0.21+.
+# Render GitHub-style alerts, e.g. `> [!NOTE]`.
 github_alerts = true
 
 [markdown.highlighting]
@@ -61,6 +61,13 @@ generate_feeds = true
 taxonomies = [{name = "tags", feed = true}]
 build_search_index = true
 
+[languages.es.search]
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+index_format = "elasticlunr_json"
+
 [languages.ca]
 title = "~/tabi"
 description = "tabi és un tema accessible per a Zola amb cerca, suport multilingüe, JavaScript opcional, una puntuació perfecta a Lighthouse i documentació exhaustiva. Dissenyat per a llocs web i blogs personals."
@@ -77,13 +84,6 @@ build_search_index = false
 [extra]
 # Check out the documentation (or the comments below) to learn how to customise tabi:
 # https://welpo.github.io/tabi/blog/mastering-tabi-settings/
-
-# Search index format.
-# For Zola 0.17.X users only.
-# This MUST MATCH the setting in [search].index_format.
-# Example: If [search].index_format is "elasticlunr_javascript", set:
-# index_format = "elasticlunr_javascript"
-# index_format = ""
 
 # Use sans-serif font everywhere.
 # By default, the serif font is only used in articles.
@@ -191,12 +191,6 @@ iine_unified_languages = true
 # Can be set at section levels, following the hierarchy: section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 post_listing_index_reversed = false  # Defaults to false.
 
-# DEPRECATED!
-# Use Zola's built-in `bottom_footnotes = true` in the [markdown] section instead. (Available since v0.19.0)
-# Adds backlinks to footnotes (loads ~500 bytes of JavaScripts).
-# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
-footnote_backlinks = false
-
 # Enable KaTeX for all posts.
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 katex = false
@@ -235,22 +229,22 @@ quick_navigation_buttons = false
 toc = false
 
 # Date format used when listing posts (main page, /blog section, tag posts list…)
-# Default is "6th July 2049" in English and "%d %B %Y" in other languages.
-long_date_format = "%d %B %Y"
+# Default is "6th July 2049" in English and "dd MMMM y" in other languages.
+long_date_format = "dd MMMM y"
 
 # Date format used for blog posts.
-# Default is "6th July 2049" in English and "%-d %B %Y" in other languages.
+# Default is "6th Jul 2049" in English and "d MMM y" in other languages.
 short_date_format = ""
 
 # Date format used for the archive page.
-# Default is "06 July" in English and "%d %b" in other languages.
+# Default is "06 July" in English and "dd MMM" in other languages.
 archive_date_format = ""
 
-# Per-language date format overrides.
-# Examples: Spanish uses "3 de febrero de 2024", German uses "3. Februar 2024"
+# Per-language date format overrides. Formats use UTS-35.
+# Examples: Spanish uses "3 de febrero de 2024", German uses "3. Februar 2024".
 date_formats = [
-    { lang = "es", long = "%d de %B de %Y", short = "%-d %b %Y" },
-    { lang = "de", long = "%d. %B %Y", short = "%d.%m.%Y", archive = "%d. %b" },
+    { lang = "es", long = "d 'de' MMMM 'de' y", short = "d MMM y" },
+    { lang = "de", long = "d. MMMM y", short = "dd.MM.y", archive = "dd. MMM" },
 ]
 
 # Custom separator used in title tag and posts metadata (between date, time to read, and tags).
@@ -299,7 +293,6 @@ menu = [
 # The RSS icon will be shown if (1) it's enabled and (2) the following variable is set.
 # Set to true to use the default "rss" icon, or specify a custom icon name (e.g. "square-rss").
 # The icon must exist in static/social_icons/ (without the .svg extension).
-# Note for Zola 0.19.X users: when `feed_filenames` has two filenames, only the first one will be linked in the footer.
 feed_icon = true
 
 # Show the full post content in the Atom feed.
@@ -347,7 +340,6 @@ footer_menu = [
 # copyright = "$TITLE © $CURRENT_YEAR $AUTHOR $SEPARATOR Unless otherwise noted, the content in this website is available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license."
 
 # For multi-language sites, you can set a different copyright for each language.
-# The old way of setting `translated_copyright = true` and using i18n files is deprecated.
 # If a translation is missing for language, the `copyright` value will be used.
 # copyright_translations.es = "$TITLE © $CURRENT_YEAR $AUTHOR $SEPARATOR A menos que se indique lo contrario, el contenido de esta web está disponible bajo la licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es)."
 

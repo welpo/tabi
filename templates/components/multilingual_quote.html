@@ -1,0 +1,39 @@
+{% component multilingual_quote(original: string, translated: string, @lang: string, author = "") %}
+{# Load internationalisation data #}
+{%- set language_strings = load_data(path="i18n/" ~ lang ~ '.toml', required=false) -%}
+{%- if not language_strings -%}
+    {%- set language_strings = load_data(path="themes/tabi/i18n/" ~ lang ~ ".toml", required=false) -%}
+{%- endif -%}
+{%- if not language_strings -%}{%- set language_strings = {} -%}{%- endif -%}
+
+{%- set open_quote = language_strings["open_quotation_mark"] | default(value="“") -%}
+{%- set close_quote = language_strings["close_quotation_mark"] | default(value="”") -%}
+
+{#- The `random_id` ensures that each instance has a "unique" id -#}
+{#- allowing individual interactive elements (like toggles) to function correctly. -#}
+{#- This avoids conflicts when multiple instances are used. -#}
+{#- More context: https://github.com/welpo/tabi/issues/82 -#}
+{%- set random_id = get_random(start=0, end=100000) -%}
+
+<div class="quote-container">
+    <input type="checkbox" id="toggle-{{ random_id }}" class="quote-toggle">
+    <div class="quote">
+        <div class="translated">
+            <blockquote>
+                <p>{{ open_quote ~ translated ~ close_quote }}</p>
+                <p>{% if author %}— {{ author | safe }}{% endif %} <label for="toggle-{{ random_id }}" class="quote-label quote-label-original">
+                    ({{< translate key="show_original_quote" default="Show original quote" />}})
+                </label></p>
+            </blockquote>
+        </div>
+        <div class="original">
+            <blockquote>
+                <p>{{ open_quote ~ original ~ close_quote }}</p>
+                <p>{% if author %}— {{ author | safe }}{% endif %} <label for="toggle-{{ random_id }}" class="quote-label quote-label-translate">
+                    ({{< translate key="show_translation" default="Show translation" />}})
+                </label></p>
+            </blockquote>
+        </div>
+    </div>
+</div>
+{% endcomponent multilingual_quote %}

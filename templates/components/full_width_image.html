@@ -1,0 +1,29 @@
+{% component full_width_image(src: string, @page = {}, alt = "", raw_path = false, lazy_loading = true) %}
+{%- set meta = {} -%}
+{#- Set paths based on whether the src is remote or local -#}
+{%- if src is starting_with(pat="http") or raw_path -%}
+    {%- set image_url = src -%}
+{%- else -%}
+    {%- set colocated_path = "" -%}
+    {%- if page and page.relative_path -%}
+        {%- set page_dirs = (page.relative_path | split(pat="/"))[:-1] -%}
+        {%- if page_dirs | length > 0 -%}
+            {%- set colocated_path = page_dirs | join(sep="/") ~ "/" -%}
+        {%- endif -%}
+    {%- endif -%}
+    {%- set relative_path = colocated_path ~ src -%}
+    {%- set meta = get_image_metadata(path=relative_path, allow_missing=true) -%}
+
+    {#- Fallback to absolute path if relative path doesn't work -#}
+    {%- if not meta -%}
+        {%- set meta = get_image_metadata(path=src, allow_missing=true) -%}
+        {%- set image_url = get_url(path=src, cachebust=true) -%}
+    {%- else %}
+        {%- set image_url = get_url(path=relative_path, cachebust=true) -%}
+    {%- endif -%}
+{%- endif -%}
+
+<div class="full-width">
+    <img src="{{ image_url }}"{% if alt %} alt="{{ alt }}"{% endif %}{% if meta.width %} width="{{ meta.width }}"{% endif %}{% if meta.height %} height="{{ meta.height }}"{% endif %}{% if lazy_loading %} loading="lazy"{% endif %}/>
+</div>
+{% endcomponent full_width_image %}

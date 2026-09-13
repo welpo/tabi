@@ -15,7 +15,7 @@ iine_icon = '🌱'
 
 [**tabi**](https://github.com/welpo/tabi) és un tema modern i ric en funcionalitat per a [Zola](https://www.getzola.org/), un generador de llocs web estàtics molt ràpid.
 
-{{ full_width_image(src="https://cdn.jsdelivr.net/gh/welpo/tabi@main/light_dark_screenshot.png", alt="Modes clar i fosc de tabi") }}
+{{< full_width_image src="https://cdn.jsdelivr.net/gh/welpo/tabi@main/light_dark_screenshot.png" alt="Modes clar i fosc de tabi" />}}
 
 #### [Veure a GitHub](https://github.com/welpo/tabi) • [Demo i documentación](https://welpo.github.io/tabi/ca/) {.centered-text}
 
@@ -30,7 +30,6 @@ iine_icon = '🌱'
 - Suport per a [Indieweb](https://indieweb.org/) amb microformats, suport per a [hcard](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#h-card-representativa) i [webmentions](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#webmentions).
 - Suport per a [diagrames de Mermaid](https://welpo.github.io/tabi/ca/blog/shortcodes/#diagrames-de-mermaid) per a crear diagrames i gràfics amb text.
 - Botons de «m'agrada» d'[iine](https://iine.to/) per mostrar apreciació anònima pel teu contingut.
-- Ressaltat de sintaxi de codi amb colors basats en [Catppuccin](https://github.com/catppuccin/catppuccin) Frappé.
 - Suport per a [comentaris usant giscus, utterances, Hyvor Talk o Isso](https://welpo.github.io/tabi/ca/blog/comments/).
 - [Cerca local](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#cerca) amb una interfície accessible i multilingüe.
 - Tot el JavaScript es pot [deshabilitar completament](https://welpo.github.io/tabi/ca/blog/javascript/).
@@ -45,7 +44,7 @@ iine_icon = '🌱'
 - [URL canòniques personalitzables](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#url-canonica).
 - [Targetes per a xarxes socials](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#targetes-per-a-xarxes-socials).
 - [Botons de navegació ràpida](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#botons-de-navegacio-rapida).
-- [Shortcodes personalitzats](https://welpo.github.io/tabi/ca/blog/shortcodes/).
+- [Components personalitzats](https://welpo.github.io/tabi/ca/blog/shortcodes/).
 - [Skins personalitzables](https://welpo.github.io/tabi/ca/blog/customise-tabi/).
 - [Publicacions fixades](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#fixar-entrades).
 - [Pàgina de projectes](https://welpo.github.io/tabi/ca/projects/).

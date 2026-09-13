@@ -102,7 +102,7 @@ translation_missing = "أو لم يتم ترجمتها إلى اللغة الت�
 check_url = "تحقق من أن الرابط صحيح أو"
 go_home = "انتقل إلى الصفحة الرئيسية"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "إظهار الإقتباس الأصلي"
 show_translation = "إظهار الترجمة"

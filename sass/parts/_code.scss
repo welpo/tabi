@@ -14,33 +14,6 @@ code {
         color: inherit;
     }
 
-    /* Legacy table support for Zola versions older than 0.22.0 */
-    table {
-        margin: 0rem;
-        border-collapse: collapse;
-        border-spacing: 0rem;
-        width: 100%;
-        text-align: start;
-
-        td, th, tr {
-            border: none;
-            padding: 0rem;
-        }
-
-        tbody td:first-child {
-            opacity: 50%;
-            padding-inline-end: 0.8rem;
-            width: 1px;
-            user-select: none;
-            text-align: end;
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: inherit;
-        }
-    }
-
-    /* Span-based layout (Giallo; Zola v0.22.0 and above) */
     .giallo-l {
         float: left;
         clear: left;
@@ -75,15 +48,21 @@ pre {
     overflow-x: auto;
     line-height: 1.4;
 
+    // Token colours come from the stylesheet Zola generates for the configured
+    // highlighting theme; only the background follows the site's palette.
+    &.z-code {
+        background-color: var(--codeblock-bg);
+    }
+
     code,
     code td {
         font-size: 0.8rem;  // Fits ~77 characters.
     }
 
-    // Supports both native Zola way of adding src, and old shortcode-based logic.
-    // See: https://github.com/welpo/tabi/pull/489
+    // Source names can be attached to the pre or code element.
     code .source-path,
-    code[data-name]::after {
+    &[data-name]::after,
+    &:not([data-name]) code[data-name]::after {
         display: block;
         position: absolute;
         top: 0;
@@ -100,7 +79,8 @@ pre {
         white-space: nowrap;
     }
 
-    code[data-name]::after {
+    &[data-name]::after,
+    &:not([data-name]) code[data-name]::after {
         content: attr(data-name);
     }
 

@@ -14,7 +14,8 @@
         {%- if not other_language_strings -%}
             {%- set other_language_strings = load_data(path="themes/tabi/i18n/" ~ lcode ~ ".toml", required=false) -%}
         {%- endif -%}
-        <meta property="og:locale:alternate" content="{{ macros_translate::translate(key="date_locale", default="en_GB", language_strings=other_language_strings) }}" />
+        {%- if not other_language_strings -%}{%- set other_language_strings = {} -%}{%- endif -%}
+        <meta property="og:locale:alternate" content="{{< translate key="date_locale" default="en_GB" language_strings={other_language_strings} lang={lcode} />}}" />
 
         {# Construct href for hreflang #}
         {%- set href = translation.permalink -%}

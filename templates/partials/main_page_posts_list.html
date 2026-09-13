@@ -1,7 +1,10 @@
+{#- Define the optional contexts used by this shared partial. -#}
+{%- if not extra_section is defined -%}{%- set extra_section = {} -%}{%- endif -%}
+{%- if not is_root_section is defined -%}{%- set is_root_section = false -%}{%- endif -%}
 {%- if paginator or extra_section -%}
     <div id="posts-list">
         <div>
-            {{ macros_page_header::page_header(title=section.title) }}
+            {{< page_header title={section.title} />}}
         </div>
 
         {# Check if both paginate_by and section_path are set #}
@@ -43,17 +46,8 @@
             {%- set pages = extra_section.pages -%}
         {%- endif -%}
 
-        {% set max_posts = section.extra.max_posts | default(value=999999) %}
-        {{ macros_list_posts::list_posts(
-            posts=pages,
-            all_posts=all_posts,
-            max=max_posts,
-            language_strings=language_strings,
-            section_path=extra_section.path | default(value="blog"),
-            pinned_first=is_root_section,
-            current_page=paginator.current_index | default(value=1),
-            paginator=paginator | default(value="")
-        ) }}
+        {% set max_posts = section?.extra?.max_posts | default(value=999999) %}
+        {{< list_posts posts={pages} all_posts={all_posts} max={max_posts} section_path={extra_section.path | default(value="blog")} pinned_first={is_root_section} current_page={paginator.current_index | default(value=1)} />}}
     </div>
 
     {% if paginator and paginator.pages | length > 0 %}

@@ -1,0 +1,9 @@
+{% component aside(text = "", position = "") %}
+{%- if not text and body is defined -%}
+    {%- set text = body -%}
+{%- endif -%}
+
+<aside {% if position %}data-position="{{ position }}"{% endif %}>
+    {{ text | markdown | safe }}
+</aside>
+{% endcomponent aside %}

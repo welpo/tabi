@@ -89,7 +89,7 @@ translation_missing = "या फिर आपकी भाषा में अ�
 check_url = "URL में त्रुटियों की जांच करें या"
 go_home = "मुख्य पृष्ठ पर वापस जाएं"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "मौलिक उद्धरण दिखाएं"
 show_translation = "अनुवाद दिखाएं"

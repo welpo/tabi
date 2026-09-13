@@ -1,7 +1,7 @@
 +++
 title = "Personaliza el color de tabi y el tema predeterminado"
 date = 2023-08-09
-updated = 2024-09-12
+updated = 2026-09-13
 description = "Aprende a personalizar tabi usando skins y estableciendo un tema predeterminado, haciendo que tu sitio sea único."
 
 [taxonomies]
@@ -54,13 +54,13 @@ Echa un vistazo a las pieles disponibles a continuación.
 
 La skin predeterminada. Si la variable `skin` no está configurada (o es igual a `"teal"`), este es el aspecto de tabi:
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/teal_light.webp", toggled_src="blog/customise-tabi/skins/teal_dark.webp", default_alt="skin aguamarina en tema claro", toggled_alt="skin aguamarina en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/teal_light.webp" toggled_src="blog/customise-tabi/skins/teal_dark.webp" default_alt="skin aguamarina en tema claro" toggled_alt="skin aguamarina en tema oscuro" full_width={true} />}}
 
 <hr>
 
 ### Lavanda
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lavender_light.webp", toggled_src="blog/customise-tabi/skins/lavender_dark.webp", default_alt="skin lavanda en tema claro", toggled_alt="skin lavanda en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lavender_light.webp" toggled_src="blog/customise-tabi/skins/lavender_dark.webp" default_alt="skin lavanda en tema claro" toggled_alt="skin lavanda en tema oscuro" full_width={true} />}}
 
 Aplica esta skin con `skin = "lavender"`.
 
@@ -68,7 +68,7 @@ Aplica esta skin con `skin = "lavender"`.
 
 ### Rojo
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/red_light.webp", toggled_src="blog/customise-tabi/skins/red_dark.webp", default_alt="skin rojo en tema claro", toggled_alt="skin rojo en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/red_light.webp" toggled_src="blog/customise-tabi/skins/red_dark.webp" default_alt="skin rojo en tema claro" toggled_alt="skin rojo en tema oscuro" full_width={true} />}}
 
 Cambia a esta skin con la configuración `skin = "red"`.
 
@@ -78,7 +78,7 @@ Cambia a esta skin con la configuración `skin = "red"`.
 
 Una skin hecha por 🅿️.
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/mint_light.webp", toggled_src="blog/customise-tabi/skins/mint_dark.webp", default_alt="skin menta en tema claro", toggled_alt="skin menta en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/mint_light.webp" toggled_src="blog/customise-tabi/skins/mint_dark.webp" default_alt="skin menta en tema claro" toggled_alt="skin menta en tema oscuro" full_width={true} />}}
 
 Actívala con `skin = "mint"`.
 
@@ -88,7 +88,7 @@ Actívala con `skin = "mint"`.
 
 Inspirada en la temporada de florecimiento de los cerezos en Japón.
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/sakura_light.webp", toggled_src="blog/customise-tabi/skins/sakura_dark.webp", default_alt="skin sakura en tema claro", toggled_alt="skin sakura en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/sakura_light.webp" toggled_src="blog/customise-tabi/skins/sakura_dark.webp" default_alt="skin sakura en tema claro" toggled_alt="skin sakura en tema oscuro" full_width={true} />}}
 
 Para activar esta skin, ajusta `skin = "sakura"`.
 
@@ -96,7 +96,7 @@ Para activar esta skin, ajusta `skin = "sakura"`.
 
 ### Azul
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/blue_light.webp", toggled_src="blog/customise-tabi/skins/blue_dark.webp", default_alt="skin azul en tema claro", toggled_alt="skin azul en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/blue_light.webp" toggled_src="blog/customise-tabi/skins/blue_dark.webp" default_alt="skin azul en tema claro" toggled_alt="skin azul en tema oscuro" full_width={true} />}}
 
 Para lograr esta apariencia, establece `skin = "blue"`.
 
@@ -106,7 +106,7 @@ Para lograr esta apariencia, establece `skin = "blue"`.
 
 *Índigo* por el azul (en el tema claro) y *lingote* por el oro (en el tema oscuro).
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/indigo_ingot_light.webp", toggled_src="blog/customise-tabi/skins/indigo_ingot_dark.webp", default_alt="skin lingote índigo en tema claro", toggled_alt="skin lingote índigo en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/indigo_ingot_light.webp" toggled_src="blog/customise-tabi/skins/indigo_ingot_dark.webp" default_alt="skin lingote índigo en tema claro" toggled_alt="skin lingote índigo en tema oscuro" full_width={true} />}}
 
 Para activar esta skin, usa `skin = "indigo_ingot"`.
 
@@ -116,7 +116,7 @@ Para activar esta skin, usa `skin = "indigo_ingot"`.
 
 Inspirada en los colores de la Unidad-01 de Evangelion (en el tema oscuro) y el EVA-02 (en el tema claro).
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/evangelion_light.webp", toggled_src="blog/customise-tabi/skins/evangelion_dark.webp", default_alt="skin evangelion en tema claro", toggled_alt="skin evangelion en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/evangelion_light.webp" toggled_src="blog/customise-tabi/skins/evangelion_dark.webp" default_alt="skin evangelion en tema claro" toggled_alt="skin evangelion en tema oscuro" full_width={true} />}}
 
 Actívala con `skin = "evangelion"`.
 
@@ -124,7 +124,7 @@ Actívala con `skin = "evangelion"`.
 
 ### Monocromático
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/monochrome_light.webp", toggled_src="blog/customise-tabi/skins/monochrome_dark.webp", default_alt="skin monocromático en tema claro", toggled_alt="skin monocromático en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/monochrome_light.webp" toggled_src="blog/customise-tabi/skins/monochrome_dark.webp" default_alt="skin monocromático en tema claro" toggled_alt="skin monocromático en tema oscuro" full_width={true} />}}
 
 Si te gusta este look, usa `skin = "monochrome"`.
 
@@ -134,7 +134,7 @@ Si te gusta este look, usa `skin = "monochrome"`.
 
 **¡ADVERTENCIA!** El tema claro de esta skin podría tener [poco contraste](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html), afectando la accesibilidad y la calificación de Lighthouse. (El tema oscuro tiene buen contraste.)
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lowcontrast_orange_light.webp", toggled_src="blog/customise-tabi/skins/lowcontrast_orange_dark.webp", default_alt="skin naranja de bajo contraste en tema claro", toggled_alt="skin naranja de bajo contraste en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lowcontrast_orange_light.webp" toggled_src="blog/customise-tabi/skins/lowcontrast_orange_dark.webp" default_alt="skin naranja de bajo contraste en tema claro" toggled_alt="skin naranja de bajo contraste en tema oscuro" full_width={true} />}}
 
 Para activarla, configura `skin = "lowcontrast_orange"`.
 
@@ -144,7 +144,7 @@ Para activarla, configura `skin = "lowcontrast_orange"`.
 
 **¡ADVERTENCIA!** El tema claro de esta skin podría tener [poco contraste](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html), afectando la accesibilidad y la calificación de Lighthouse. (El tema oscuro tiene buen contraste.)
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lowcontrast_peach_light.webp", toggled_src="blog/customise-tabi/skins/lowcontrast_peach_dark.webp", default_alt="skin melocotón de bajo contraste en tema claro", toggled_alt="skin melocotón de bajo contraste en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lowcontrast_peach_light.webp" toggled_src="blog/customise-tabi/skins/lowcontrast_peach_dark.webp" default_alt="skin melocotón de bajo contraste en tema claro" toggled_alt="skin melocotón de bajo contraste en tema oscuro" full_width={true} />}}
 
 Especifica `skin = "lowcontrast_peach"` para usar esta skin.
 
@@ -154,7 +154,7 @@ Especifica `skin = "lowcontrast_peach"` para usar esta skin.
 
 **¡ADVERTENCIA!** El tema claro de esta skin podría tener [poco contraste](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html), afectando la accesibilidad y la calificación de Lighthouse. (El tema oscuro tiene buen contraste.)
 
-{{ image_toggler(default_src="blog/customise-tabi/skins/lowcontrast_pink_light.webp", toggled_src="blog/customise-tabi/skins/lowcontrast_pink_dark.webp", default_alt="skin rosa de bajo contraste en tema claro", toggled_alt="skin rosa de bajo contraste en tema oscuro", full_width=true) }}
+{{< image_toggler default_src="blog/customise-tabi/skins/lowcontrast_pink_light.webp" toggled_src="blog/customise-tabi/skins/lowcontrast_pink_dark.webp" default_alt="skin rosa de bajo contraste en tema claro" toggled_alt="skin rosa de bajo contraste en tema oscuro" full_width={true} />}}
 
 Para usar estos colores, asigna `skin = "lowcontrast_pink"`.
 

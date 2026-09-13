@@ -1,7 +1,7 @@
 +++
 title = "Exemples de Markdown"
 date = 2023-01-31
-updated = 2026-06-10
+updated = 2026-09-12
 description = "Aquesta publicació mostra alguns exemples de format en Markdown, incloent-hi una taula, blocs de codi i etiquetes, citacions, taules i notes a peu de pàgina."
 
 [taxonomies]
@@ -115,7 +115,7 @@ A Rust, declares una variable mutable amb `let mut x = 5;`, mentre que a Python,
 
 ## Alertes estil GitHub
 
-Configurar `github_alerts = true` a la secció `[markdown]` del teu `config.toml` (requereix Zola 0.21+) activa les [alertes estil GitHub](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts):
+Configurar `github_alerts = true` a la secció `[markdown]` del teu `config.toml` activa les [alertes estil GitHub](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts):
 
 ```markdown
 > [!NOTE]
@@ -148,7 +148,7 @@ html:lang(eo) {
 }
 ```
 
-Per tenir control total sobre el títol, la icona i els colors, consulta el [shortcode d'advertències](@/blog/shortcodes/index.ca.md#advertencies).
+Per tenir control total sobre el títol, la icona i els colors, consulta el [component d'advertències](@/blog/shortcodes/index.ca.md#advertencies).
 
 ---
 

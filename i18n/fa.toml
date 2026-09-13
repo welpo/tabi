@@ -88,7 +88,7 @@ translation_missing = "یا هنوز به زبان شما ترجمه نشده ا
 check_url = "آدرس اینترنتی را بررسی کنید و یا"
 go_home = "به صفحه اصلی برگردید"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "نقل قول اصلی را نشان بده"
 show_translation = "ترجمه را نشان بده"

@@ -87,7 +87,7 @@ translation_missing = "o encara no s'ha traduït al teu idioma"
 check_url = "Comprova l'URL per detectar errors o"
 go_home = "torna a la pàgina d'inici"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "Mostra la cita original"
 show_translation = "Mostra la traducció"

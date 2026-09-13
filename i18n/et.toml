@@ -87,7 +87,7 @@ translation_missing = "või pole seda veel teie keelde tõlgitud"
 check_url = "Kontrollige URL-i vigade suhtes või"
 go_home = "minge tagasi avalehele"
 
-# For multilingual quote shortcode.
+# For the multilingual quote component.
 # https://welpo.github.io/tabi/blog/shortcodes/#multilingual-quotes
 show_original_quote = "Näita originaaltsitaati"
 show_translation = "Näita tõlget"

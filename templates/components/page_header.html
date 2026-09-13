@@ -1,0 +1,20 @@
+{% component page_header(title: string, @config: map, @lang: string, @term = {}, show_feed_icon = false) %}
+
+{%- set rel_attributes %}{{< rel_attributes />}}{% endset -%}
+{%- set rel_attributes = rel_attributes | trim -%}
+
+{%- set blank_target %}{{< target_attribute new_tab={config.markdown.external_links_target_blank} />}}{% endset -%}
+{%- set blank_target = blank_target | trim -%}
+
+<h1 class="title-container section-title bottom-divider">
+    {{ title -}}
+    {% if show_feed_icon %}
+        {%- set feed_url = config.feed_filenames[0] -%}
+        {%- set feed_icon %}{{< feed_icon_name />}}{% endset -%}
+        <a class="no-hover-padding social" rel="{{ rel_attributes }}" {{ blank_target }} href="{{ get_url(path=term.path ~ feed_url, lang=lang, trailing_slash=false) | safe }}">
+            <img loading="lazy" alt="feed" title="feed" src="{{ get_url(path='/social_icons/' ~ feed_icon | trim ~ '.svg') }}">
+        </a>
+    {% endif %}
+</h1>
+
+{% endcomponent page_header %}

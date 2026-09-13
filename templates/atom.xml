@@ -1,10 +1,15 @@
-{%- import "macros/translate.html" as macros_translate -%}
-{%- import "macros/settings.html" as macros_settings -%}
+{#- Feeds render for the whole site, sections, and taxonomy terms. Define every optional
+    context so the shared template can inspect it safely. -#}
+{%- if not section is defined -%}{%- set section = {} -%}{%- endif -%}
+{%- if not term is defined -%}{%- set term = {} -%}{%- endif -%}
+{%- if not taxonomy is defined -%}{%- set taxonomy = {} -%}{%- endif -%}
+{%- if not page is defined -%}{%- set page = {} -%}{%- endif -%}
 {#- Load the internationalisation data -#}
 {%- set language_strings = load_data(path="i18n/" ~ lang ~ '.toml', required=false) -%}
 {%- if not language_strings -%}
     {%- set language_strings = load_data(path="themes/tabi/i18n/" ~ lang ~ ".toml", required=false) -%}
 {%- endif -%}
+{%- if not language_strings -%}{%- set language_strings = {} -%}{%- endif -%}
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="{{ get_url(path='/feed_style.xsl', trailing_slash=false) | safe }}" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ lang }}">
@@ -14,16 +19,16 @@
             {{  config.extra.separator | default(value="•") }}
         </tabi:separator>
         <tabi:about_feeds>
-            {{- macros_translate::translate(key="about_feeds", default="This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader", language_strings=language_strings) -}}
+            {{< translate key="about_feeds" default="This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader" language_strings={language_strings} lang />}}
         </tabi:about_feeds>
         <tabi:visit_the_site>
-            {{- macros_translate::translate(key="visit_the_site", default="Visit website", language_strings=language_strings) -}}
+            {{< translate key="visit_the_site" default="Visit website" language_strings={language_strings} lang />}}
         </tabi:visit_the_site>
         <tabi:recent_posts>
-            {{- macros_translate::translate(key="recent_posts", default="Recent posts", language_strings=language_strings) -}}
+            {{< translate key="recent_posts" default="Recent posts" language_strings={language_strings} lang />}}
         </tabi:recent_posts>
         <tabi:last_updated_on>
-            {{- macros_translate::translate(key="last_updated_on", default="Updated on $DATE", language_strings=language_strings) -}}
+            {{< translate key="last_updated_on" default="Updated on $DATE" language_strings={language_strings} lang />}}
         </tabi:last_updated_on>
         <tabi:default_theme>
             {{- config.extra.default_theme | default(value="") -}}
@@ -67,23 +72,25 @@
     " rel="alternate" type="text/html"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     {%- if last_updated -%}
-    <updated>{{ last_updated | date(format="%+") }}</updated>
+    <updated>{{ last_updated | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</updated>
     {%- endif -%}
     <id>{{ feed_url | safe }}</id>
     {%- for page in pages %}
-    {%- if macros_settings::evaluate_setting_priority(setting="hide_from_feed", page=page, default_global_value=false) == "true" -%}
+    {%- set hide_from_feed_value %}{{< evaluate_setting_priority setting="hide_from_feed" page={page} default_global_value="false" config lang />}}{% endset -%}
+    {%- if hide_from_feed_value | trim == "true" -%}
         {%- continue -%}
     {%- endif -%}
     {#- Skip if hide_from_main_feed is true and this is the main feed -#}
-    {%- if macros_settings::evaluate_setting_priority(setting="hide_from_main_feed", page=page, default_global_value=false) == "true"
+    {%- set hide_from_main_feed_value %}{{< evaluate_setting_priority setting="hide_from_main_feed" page={page} default_global_value="false" config lang />}}{% endset -%}
+    {%- if hide_from_main_feed_value | trim == "true"
          and not section
          and not term -%}
         {%- continue -%}
     {%- endif -%}
     <entry xml:lang="{{ page.lang }}">
         <title>{{ page.title }}</title>
-        <published>{{ page.date | date(format="%+") }}</published>
-        <updated>{{ page.updated | default(value=page.date) | date(format="%+") }}</updated>
+        <published>{{ page.date | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</published>
+        <updated>{{ (page.updated or page.date) | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</updated>
         <author>
             <name>
             {%- if page.authors -%}
@@ -103,7 +110,7 @@
         {% if page.description -%}
             <summary type="html">{{ page.description }}</summary>
         {% elif page.summary -%}
-            <summary type="html">{{ page.summary | striptags | trim_end_matches(pat=".") | safe }}…</summary>
+            <summary type="html">{{ page.summary | striptags | trim_end(pat=".") | safe }}…</summary>
         {% endif -%}
     </entry>
     {%- endfor %}

@@ -1,13 +1,10 @@
 {%- if config.extra.copyright -%}
     {% set copyright = config.extra.copyright %}
-    {# Try to look for a language-specific copyright notice in the new config setup #}
+    {# Use a language-specific copyright notice when one is configured. #}
     {%- if config.extra.copyright_translations -%}
         {%- if lang in config.extra.copyright_translations -%}
             {% set copyright = config.extra.copyright_translations[lang] %}
         {%- endif -%}
-    {%- elif config.extra.translate_copyright -%}
-        {# Old way to translate the copyright through toml files #}
-        {{ throw(message="ERROR: The 'translate_copyright' feature has been deprecated. Please set 'copyright_translations' in config.toml. See the documentation: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#copyright") }}
     {%- endif -%}
 
     {# Check for missing variables in the notice #}
@@ -19,7 +16,7 @@
             {% set var_name = placeholder | replace(from="$", to="") | lower %}
             {% if not config[var_name] %}
                 {# Append the variable name to the list of missing variables #}
-                {% set_global missing_vars = missing_vars | concat(with=var_name) %}
+                {% set_global missing_vars = [...missing_vars, var_name] %}
             {% endif %}
         {% endif %}
     {% endfor %}
@@ -30,8 +27,8 @@
     {% endif %}
 
     {# At this point, we know that all variables needed defined, so we can safely override the missing ones #}
-    {% set author = config.author | default(value="") %}
-    {% set title = config.title | default(value="") %}
+    {% set author = config.author or "" %}
+    {% set title = config.title or "" %}
 
     {# Render the copyright notice, replacing the variables #}
     {% set current_year = now() | date(format="%Y") %}

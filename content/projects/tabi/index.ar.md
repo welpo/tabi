@@ -12,7 +12,7 @@ local_image = "projects/tabi/tabi.webp"
 
 [**تابي**](https://github.com/welpo/tabi) هي سمة عصرية غنية بالمميزات لـ[Zola](https://www.getzola.org/)، منشئ مواقع ثابتة سريع.
 
-{{ full_width_image(src="https://cdn.jsdelivr.net/gh/welpo/tabi@main/light_dark_screenshot.png", alt="تابي في الوضعين الفاتح والداكن") }}
+{{< full_width_image src="https://cdn.jsdelivr.net/gh/welpo/tabi@main/light_dark_screenshot.png" alt="تابي في الوضعين الفاتح والداكن" />}}
 
 #### [عرض على GitHub](https://github.com/welpo/tabi) • [عرض توضيحي وتوثيق](https://welpo.github.io/tabi/) {.centered-text}
 

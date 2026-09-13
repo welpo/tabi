@@ -2,12 +2,12 @@
 title = "Privacy Policy"
 path = "privacy"
 date = 2023-10-31
-updated = 2024-05-12
+updated = 2026-09-12
 +++
 
 This privacy policy outlines how we collect and process your data on this website.
 
-{{ toc() }}
+{{< toc />}}
 
 ## What data do we collect?
 

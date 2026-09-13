@@ -1,0 +1,11 @@
+{% component target_attribute(new_tab: bool) %}
+
+{%- set blank_target = "" -%}
+
+{%- if new_tab -%}
+    {%- set blank_target = "target=_blank" -%}
+{%- endif -%}
+
+{{ blank_target }}
+
+{% endcomponent target_attribute %}
