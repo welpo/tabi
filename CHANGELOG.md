@@ -4,6 +4,16 @@ Welcome to the changelog for tabi. This document aims to provide a comprehensive
 
 We use Semantic Versioning (SemVer) for our version numbers, formatted as MAJOR.MINOR.PATCH. Major version changes involve significant (breaking) changes, minor versions introduce features and improvements in a backward compatible manner, and patch versions are for bug fixes and minor tweaks.
 
+## [5.0.0](https://github.com/welpo/tabi/compare/v4.2.0..v5.0.0) - 2026-09-13
+
+### 💥 BREAKING CHANGES 💥
+
+- *(zola)* Migrate to Zola 0.23 ([#705](https://github.com/welpo/tabi/issues/705)) by [@welpo](https://github.com/welpo)
+
+### ✨ Features
+
+- *(zola)* [**‼️BREAKING‼️**] Migrate to Zola 0.23 ([#705](https://github.com/welpo/tabi/issues/705)) by [@welpo](https://github.com/welpo)
+
 ## [4.2.0](https://github.com/welpo/tabi/compare/v4.1.0..v4.2.0) - 2026-09-12
 
 ### ✨ Features
