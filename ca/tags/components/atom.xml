@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://welpo.github.io/tabi/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ca">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https://welpo.github.io/tabi</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>
+            Aquest és un canal web, també conegut com a canal Atom. Subscriu-te copiant l'URL de la barra d'adreces al teu lector de notícies. Visita About Feeds per aprendre més i començar. És gratuït.
+        </tabi:about_feeds>
+        <tabi:visit_the_site>
+            Visita la web
+        </tabi:visit_the_site>
+        <tabi:recent_posts>
+            Publicacions recents
+        </tabi:recent_posts>
+        <tabi:last_updated_on>
+            Actualitzat el $DATE
+        </tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>components</tabi:current_section>
+    </tabi:metadata><title>~/tabi - components</title>
+        <subtitle>tabi és un tema accessible per a Zola amb cerca, suport multilingüe, JavaScript opcional, una puntuació perfecta a Lighthouse i documentació exhaustiva. Dissenyat per a llocs web i blogs personals.</subtitle>
+    <link href="https://welpo.github.io/tabi/ca/tags/components/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://welpo.github.io/tabi/ca/tags/components/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-09-13T00:00:00+00:00</updated><id>https://welpo.github.io/tabi/ca/tags/components/atom.xml</id><entry xml:lang="ca">
+        <title>Actualitza el teu lloc tabi a Zola 0.23</title>
+        <published>2026-09-13T00:00:00+00:00</published>
+        <updated>2026-09-13T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/ca/blog/upgrading-to-zola-0-23/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/ca/blog/upgrading-to-zola-0-23/</id>
+        <summary type="html">Zola 0.23 trenca moltes coses; tabi 5.0.0 també.</summary>
+        </entry><entry xml:lang="ca">
+        <title>Components personalitzats</title>
+        <published>2023-02-19T00:00:00+00:00</published>
+        <updated>2026-09-13T00:00:00+00:00</updated>
+        <author>
+            <name>welpo</name>
+        </author>
+        <link rel="alternate" href="https://welpo.github.io/tabi/ca/blog/shortcodes/" type="text/html"/>
+        <id>https://welpo.github.io/tabi/ca/blog/shortcodes/</id>
+        <summary type="html">Aquest tema inclou alguns components personalitzats útils que pots utilitzar per millorar les teves publicacions. Ja sigui per mostrar imatges que s&#39;adapten als temes clar i fosc, o per donar format a una secció de referències amb un aspecte professional, aquests components personalitzats t&#39;ajudaran.</summary>
+        </entry>
+</feed>
