@@ -77,7 +77,7 @@
 {# JavaScript to make code block names clickable when they are URLs: https://welpo.github.io/tabi/blog/shortcodes/#show-source-or-path #}
 {%- set code_block_name_links_value %}{{< evaluate_setting_priority setting="code_block_name_links" default_global_value="false" />}}{% endset -%}
 {%- if code_block_name_links_value | trim == "true" -%}
-    <script defer src="{{ get_url(path='js/codeBlockNameLinks.min.js', trailing_slash=false) | safe }}"></script>
+    <script defer src="{{ get_url(path='js/codeBlockNameLinks.min.js', trailing_slash=false) | safe }}" data-new-tab="{{ config.markdown.external_links_target_blank }}" data-no-follow="{{ config.markdown.external_links_no_follow }}" data-no-referrer="{{ config.markdown.external_links_no_referrer }}"></script>
 {%- endif -%}
 
 {# Add iine.js for the like button #}
