@@ -1,3 +1,6 @@
+// Open links in a new tab only when the site enables `external_links_target_blank`.
+const openInNewTab = document.currentScript?.dataset.newTab === 'true';
+
 document.addEventListener("DOMContentLoaded", function() {
     // Convert URLs in data-name to links.
     const processedCodeBlocks = new Set();
@@ -12,6 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
             const link = document.createElement('a');
             link.href = name;
             link.className = 'source-path';
+            if (openInNewTab) {
+                link.target = '_blank';
+                link.rel = 'noopener';
+            }
             link.textContent = name;
             code.insertBefore(link, code.firstChild);
             code.removeAttribute('data-name');
