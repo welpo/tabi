@@ -146,6 +146,11 @@ show_remote_source = true  # Defaults to true.
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 copy_button = true
 
+# Load the stylesheet for syntax-highlighted code blocks (with class-based highlighting).
+# Set to false here and to true on the pages or sections that show code, to only load it there.
+# Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
+syntax_highlighting_css = true
+
 # Make code block names clickable if they are URLs (loads ~400 bytes of JavaScript).
 # Can be set at page or section levels, following the hierarchy: page > section > config. See: https://welpo.github.io/tabi/blog/mastering-tabi-settings/#settings-hierarchy
 code_block_name_links = false

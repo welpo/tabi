@@ -46,9 +46,10 @@
     {% endif %}
 
     {# The generated highlighting stylesheet goes first so main.css can override it.
-       Nothing is added when highlighting is unset or inline. #}
+       Nothing is added when highlighting is unset or inline, or when syntax_highlighting_css is false. #}
     {%- set stylesheets = [] -%}
-    {%- if config.markdown.highlighting -%}
+    {%- set syntax_highlighting_css_value %}{{< evaluate_setting_priority setting="syntax_highlighting_css" default_global_value="true" />}}{% endset -%}
+    {%- if config.markdown.highlighting and syntax_highlighting_css_value | trim == "true" -%}
         {%- if config.markdown.highlighting.style == "class" -%}
             {%- if config.markdown.highlighting.theme -%}
                 {%- set stylesheets = [...stylesheets, "giallo.css"] -%}
