@@ -45,8 +45,8 @@
 {%- if full_width -%}
     <div class="full-width">
 {%- endif -%}
-<img class="{{ light_class_list }}" src="{{ light_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if light_meta.width %} width="{{ light_meta.width }}"{% endif %}{% if light_meta.height %} height="{{ light_meta.height }}" {% endif %}>
-<img class="{{ dark_class_list }}" src="{{ dark_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if dark_meta.width %} width="{{ dark_meta.width }}"{% endif %}{% if dark_meta.height %} height="{{ dark_meta.height }}" {% endif %}>
+<img class="{{ light_class_list }}" src="{{ light_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt | escape }}"{% endif %}{% if light_meta.width %} width="{{ light_meta.width }}"{% endif %}{% if light_meta.height %} height="{{ light_meta.height }}" {% endif %}>
+<img class="{{ dark_class_list }}" src="{{ dark_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt | escape }}"{% endif %}{% if dark_meta.width %} width="{{ dark_meta.width }}"{% endif %}{% if dark_meta.height %} height="{{ dark_meta.height }}" {% endif %}>
 {%- if full_width -%}
     </div>
 {%- endif -%}
