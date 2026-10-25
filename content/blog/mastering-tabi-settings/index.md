@@ -74,6 +74,24 @@ For technical details about the search implementation in tabi, including when th
 
 tabi offers comprehensive multilingual support for your Zola site, from setting a default language to adding as many as you wish. Refer to the [multilingual FAQ](@/blog/faq-languages/index.md) for more information.
 
+### Page Language
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ✅  |   ❌    |      ❌       |         ❌        |         ❌          |
+
+If a page is written in a different language than the rest of your site (for example, a Dutch post on an English blog), set its language in the page's front matter:
+
+```toml,hl_lines=02-03
+title = "Een Nederlandse post"
+[extra]
+lang = "nl"
+```
+
+This sets the page's `lang` attribute and text direction (so `lang = "ar"` makes the page right-to-left), and marks the post's language in the Atom feed. Browsers, screen readers, search engines and translation tools use these.
+
+Unlike a [translation](@/blog/faq-languages/index.md), the page stays in the same section, feed and tag pages as your other posts, and the interface (menu, dates…) stays in your site's language. The language doesn't need to be configured in `config.toml`.
+
 ---
 
 ## Appearance
