@@ -679,6 +679,16 @@ Setting `copy_button = true` will add a small copy button to the top right of co
 
 {{< dual_theme_image light_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_light.webp" dark_src="blog/mastering-tabi-settings/img/copy_button_on_code_blocks_dark.webp" alt="Copy button on code blocks" full_width={true} />}}
 
+### Syntax Highlighting Stylesheet
+
+| Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
+|:----:|:-------:|:-------------:|:-----------------:|:-------------------:|
+|  ✅  |   ✅    |      ✅       |         ✅        |         ❌          |
+
+With class-based syntax highlighting (`style = "class"` under `[markdown.highlighting]`), the colours of code blocks come from a stylesheet Zola generates. tabi loads it on every page by default.
+
+If only some pages show code, you can load it just there: set `syntax_highlighting_css = false` in `config.toml`, and `syntax_highlighting_css = true` in the `[extra]` section of those pages, or of a section whose pages show code. Remember list pages, too: a post's summary can contain code (when it has no `description`), and it's shown on list pages such as your home page.
+
 ### Clickable Code Block Names
 
 | Page | Section | `config.toml` | Follows Hierarchy | Requires JavaScript |
