@@ -39,7 +39,6 @@ iine_icon = '🌱'
 - [Aviso de derechos de autor personalizado](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#copyright).
 - [Cabeceras de seguridad personalizables](https://welpo.github.io/tabi/es/blog/security/).
 - [Botón de copiar para bloques de código](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#boton-de-copiar-en-bloques-de-codigo).
-- [Enlaces de retroceso para notas al pie](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#enlaces-de-retorno-en-notas-al-pie).
 - [Tabla de contenidos personalizable](https://welpo.github.io/tabi/es/blog/toc/).
 - [URL canónicas personalizables](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#url-canonica).
 - [Botones de navegación rápida](https://welpo.github.io/tabi/es/blog/mastering-tabi-settings/#botones-de-navegacion-rapida).

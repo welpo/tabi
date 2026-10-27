@@ -37,7 +37,6 @@ iine_icon = '🌱'
 - [Mapa del lloc estilitzat i llegible per humans](https://welpo.github.io/tabi/sitemap.xml).
 - [Capçaleres de seguretat personalitzables](https://welpo.github.io/tabi/ca/blog/security/).
 - [Feed Atom estilitzat i llegible per humans](https://welpo.github.io/tabi/ca/atom.xml).
-- [Enllaços de retrocés per a notes al peu](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#enllacos-de-retorn-a-les-notes-a-peu-de-pagina).
 - [Taula de continguts personalitzable](https://welpo.github.io/tabi/ca/blog/toc/).
 - [Avís de drets d'autor personalitzat](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#copyright).
 - [Botó de copiar per a blocs de codi](https://welpo.github.io/tabi/ca/blog/mastering-tabi-settings/#boto-de-copiar-en-blocs-de-codi).
