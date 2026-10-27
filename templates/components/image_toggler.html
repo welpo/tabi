@@ -55,10 +55,10 @@
     <input type="checkbox" id="toggle-img-{{ random_id }}" class="image-toggler-toggle">
     <label for="toggle-img-{{ random_id }}" class="image-label">
         <{{ tag }} class="image-default">
-            <img class="{{ img_class_list }}" src="{{ default_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if default_alt %} alt="{{ default_alt }}"{% endif %}{% if default_meta.width %} width="{{ default_meta.width }}"{% endif %}{% if default_meta.height %} height="{{ default_meta.height }}"{% endif %}>
+            <img class="{{ img_class_list }}" src="{{ default_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if default_alt %} alt="{{ default_alt | escape }}"{% endif %}{% if default_meta.width %} width="{{ default_meta.width }}"{% endif %}{% if default_meta.height %} height="{{ default_meta.height }}"{% endif %}>
         </{{ tag }}>
         <{{ tag }} class="image-toggled">
-            <img class="{{ img_class_list }}" src="{{ toggled_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if toggled_alt %} alt="{{ toggled_alt }}"{% endif %}{% if toggled_meta.width %} width="{{ toggled_meta.width }}"{% endif %}{% if toggled_meta.height %} height="{{ toggled_meta.height }}"{% endif %}>
+            <img class="{{ img_class_list }}" src="{{ toggled_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if toggled_alt %} alt="{{ toggled_alt | escape }}"{% endif %}{% if toggled_meta.width %} width="{{ toggled_meta.width }}"{% endif %}{% if toggled_meta.height %} height="{{ toggled_meta.height }}"{% endif %}>
         </{{ tag }}>
     </label>
 </{{ tag }}>

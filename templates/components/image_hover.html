@@ -49,10 +49,10 @@
 
 <{{ tag }} class="image-hover-container{% if full_width %} full-width{% endif %}">
     <{{ tag }} class="image-default">
-        <img class="{{ img_class_list }}" src="{{ default_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if default_alt %} alt="{{ default_alt }}"{% endif %}{% if default_meta.width %} width="{{ default_meta.width }}"{% endif %}{% if default_meta.height %} height="{{ default_meta.height }}"{% endif %}>
+        <img class="{{ img_class_list }}" src="{{ default_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if default_alt %} alt="{{ default_alt | escape }}"{% endif %}{% if default_meta.width %} width="{{ default_meta.width }}"{% endif %}{% if default_meta.height %} height="{{ default_meta.height }}"{% endif %}>
     </{{ tag }}>
     <{{ tag }} class="image-hovered">
-        <img class="{{ img_class_list }}" src="{{ hovered_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if hovered_alt %} alt="{{ hovered_alt }}"{% endif %}{% if hovered_meta.width %} width="{{ hovered_meta.width }}"{% endif %}{% if hovered_meta.height %} height="{{ hovered_meta.height }}"{% endif %}>
+        <img class="{{ img_class_list }}" src="{{ hovered_image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if hovered_alt %} alt="{{ hovered_alt | escape }}"{% endif %}{% if hovered_meta.width %} width="{{ hovered_meta.width }}"{% endif %}{% if hovered_meta.height %} height="{{ hovered_meta.height }}"{% endif %}>
     </{{ tag }}>
 </{{ tag }}>
 {% endcomponent image_hover %}

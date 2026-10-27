@@ -31,7 +31,7 @@
 {%- if full_width -%}
     <div class="full-width">
 {%- endif -%}
-<img class="{{ class_list }}" src="{{ image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt }}"{% endif %}{% if meta.width %} width="{{ meta.width }}"{% endif %}{% if meta.height %} height="{{ meta.height }}" {% endif %}/>
+<img class="{{ class_list }}" src="{{ image_url }}"{% if lazy_loading %} loading="lazy"{% endif %}{% if alt %} alt="{{ alt | escape }}"{% endif %}{% if meta.width %} width="{{ meta.width }}"{% endif %}{% if meta.height %} height="{{ meta.height }}" {% endif %}/>
 {%- if full_width -%}
     </div>
 {%- endif -%}
