@@ -38,7 +38,7 @@ many_results = "$NUMBER результатів"
 # Navigation.
 skip_to_content = "Перейти до вмісту"
 pinned = "Закріплено"
-jump_to_posts = "Перейти до дописів"
+jump_to_posts = "Перейти до постів"
 read_more = "Читати далі"
 one_posts = "$NUMBER пост"
 few_posts = "$NUMBER пости"  # 2, 3, 4 but not 12-14
@@ -86,7 +86,7 @@ copied = "Скопійовано!"
 copy_code_to_clipboard = "Копіювати код у буфер обміну"
 
 # iine appreciation button.
-like_this_post = "Мені подобається ця стаття"
+like_this_post = "Мені подобається цей пост"
 
 # Footer: Powered by Zola and tabi.
 powered_by = "На базі"
