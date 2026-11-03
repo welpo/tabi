@@ -12,7 +12,7 @@
 
 language_name = "Українська"  # Shown in language picker for multi-language sites.
 date_locale = "uk_UA"
-full-stop = "."  # Used at the end of a sentence.
+full_stop = "."  # Used at the end of a sentence.
 
 # Menu items.
 # Should match the names in config.extra.menu and config.extra.footer_menu.
@@ -48,10 +48,10 @@ next = "Наст."  # As in "Next" page.
 of = "з"  # E.g. Page 1 "of" 3
 all_posts = "Всі пости"
 all_tags = "Всі теги"
-all_projects = "Усі проекти"
-featured_projects = "Обрані проекти"
+all_projects = "Всі проєкти"
+featured_projects = "Обрані проєкти"
 language_selection = "Вибір мови"
-toggle_mode = "Перемкнути в режим $MODE"  # $MODE will be replaced by a value (or both) below.
+toggle_mode = "Перемкнути $MODE режим"  # $MODE will be replaced by a value (or both) below.
 dark = "темний"
 light = "світлий"
 reset_mode = "Скинути режим до типових налаштувань сайту"
@@ -89,7 +89,7 @@ copy_code_to_clipboard = "Копіювати код у буфер обміну"
 like_this_post = "Мені подобається ця стаття"
 
 # Footer: Powered by Zola and tabi.
-powered_by = "Під управлінням"
+powered_by = "На базі"
 and = "та"
 site_source = "Вихідний код сайту"
 
