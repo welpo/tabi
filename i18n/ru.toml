@@ -3,7 +3,7 @@
 
 language_name = "Русский"  # Shown in language picker for multi-language sites.
 date_locale = "ru_RU"
-full-stop = "."  # Used at the end of a sentence.
+full_stop = "."  # Used at the end of a sentence.
 
 # Note on pluralization prefixes:
 # - few_: for numbers ending in 2-4, except 12-14, in genitive singular.
@@ -33,7 +33,7 @@ many_results = "$NUMBER результатов"  # 5-9, 0, 11-14, and others
 # Navigation.
 skip_to_content = "Перейти к содержанию"
 pinned = "Закреплено"
-jump_to_posts = "Перейти к записям"
+jump_to_posts = "Перейти к постам"
 read_more = "Читать далее"
 post = "пост"
 one_posts = "$NUMBER пост"
@@ -82,17 +82,17 @@ copied = "Скопировано!"
 copy_code_to_clipboard = "Скопировать код в буфер обмена"
 
 # iine appreciation button.
-like_this_post = "Мне нравится эта статья"
+like_this_post = "Мне нравится этот пост"
 
 # Footer: Powered by Zola and tabi.
-powered_by = "Под управлением"
-and = "&"
+powered_by = "На базе"
+and = "и"
 site_source = "Исходный код сайта"
 
 # 404 error.
 # https://welpo.github.io/tabi/404.html
 page_missing = "Запрашиваемая вами страница отсутствует"
-translation_missing = "или еще не переведена на ваш язык"
+translation_missing = "или ещё не переведена на ваш язык"
 check_url = "Проверьте URL на ошибки или"
 go_home = "вернитесь на главную страницу"
 
