@@ -15,7 +15,7 @@ jobs:
     if: github.event_name == 'pull_request'
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
 
       - name: Zola Build
         uses: shalzz/zola-deploy-action@v0.23.6
@@ -34,7 +34,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
 
       - name: Build and Deploy
         uses: shalzz/zola-deploy-action@v0.23.6
