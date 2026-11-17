@@ -14,7 +14,18 @@
 
     {# Favicon #}
     {% if config.extra.favicon %}
-        <link rel="icon" type="image/png" href="{{ get_url(path=config.extra.favicon) }}"/>
+        {#- The type follows the file extension; left out for unknown ones, so browsers detect it. -#}
+        {%- set favicon_path = config.extra.favicon | lower -%}
+        {%- set favicon_type = "" -%}
+        {%- if favicon_path is ending_with(pat=".svg") -%}{%- set favicon_type = "image/svg+xml" -%}
+        {%- elif favicon_path is ending_with(pat=".ico") -%}{%- set favicon_type = "image/x-icon" -%}
+        {%- elif favicon_path is ending_with(pat=".png") -%}{%- set favicon_type = "image/png" -%}
+        {%- elif favicon_path is ending_with(pat=".webp") -%}{%- set favicon_type = "image/webp" -%}
+        {%- elif favicon_path is ending_with(pat=".gif") -%}{%- set favicon_type = "image/gif" -%}
+        {%- elif favicon_path is ending_with(pat=".avif") -%}{%- set favicon_type = "image/avif" -%}
+        {%- elif favicon_path is ending_with(pat=".jpg") or favicon_path is ending_with(pat=".jpeg") -%}{%- set favicon_type = "image/jpeg" -%}
+        {%- endif %}
+        <link rel="icon"{% if favicon_type %} type="{{ favicon_type }}"{% endif %} href="{{ get_url(path=config.extra.favicon) }}"/>
     {% endif %}
     {% if config.extra.favicon_emoji %}
         <link rel=icon href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50%" x="50%" dominant-baseline="central" text-anchor="middle" font-size="88">{{ config.extra.favicon_emoji }}</text></svg>'>
