@@ -87,7 +87,7 @@
          and not term -%}
         {%- continue -%}
     {%- endif -%}
-    <entry xml:lang="{{ page.lang }}">
+    <entry xml:lang="{{ page.extra.lang | default(value=page.lang) }}">
         <title>{{ page.title }}</title>
         <published>{{ page.date | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</published>
         <updated>{{ (page.updated or page.date) | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</updated>
